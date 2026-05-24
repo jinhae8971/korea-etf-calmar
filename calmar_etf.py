@@ -109,10 +109,12 @@ def family_of(name):
 
 # ---------------------------------------------------------------- compute
 def compute_top10():
+    """실행 시점 기준 최근 1년(롤링 12개월) 윈도우로 수익률·MDD·칼마 산출."""
     today = datetime.date.today()
     today_str = today.strftime("%Y%m%d")
-    year = today.year
-    start = f"{year-1}1215"
+    one_year_ago = today - datetime.timedelta(days=365)
+    # 윈도우 시작 직전 종가(base)를 확보하기 위해 15일 여유를 두고 수집
+    start = (one_year_ago - datetime.timedelta(days=15)).strftime("%Y%m%d")
 
     etfs = get_etf_list()
     name_map = dict(etfs)
@@ -121,22 +123,32 @@ def compute_top10():
         for code, prices in ex.map(lambda c: get_prices(c[0], start, today_str), etfs):
             results[code] = prices
 
+    def pdate(s):
+        return datetime.datetime.strptime(s, "%Y%m%d").date()
+
     rows = []
     for code, prices in results.items():
         name = name_map.get(code, code)
         if excluded(name) or not prices or len(prices) < 2:
             continue
         prices = sorted(prices, key=lambda x: x[0])
-        prior = [p for p in prices if int(p[0][:4]) < year]
-        cur = [p for p in prices if int(p[0][:4]) == year]
-        if not prior or not cur:
+        # 1년 미만 상장(데이터 부족) 제외: 가장 이른 종가가 윈도우 시작보다 한참 뒤면 제외
+        if pdate(prices[0][0]) > one_year_ago + datetime.timedelta(days=14):
             continue
-        base = prior[-1][1]
+        window = [p for p in prices if pdate(p[0]) >= one_year_ago]
+        before = [p for p in prices if pdate(p[0]) < one_year_ago]
+        if not window:
+            continue
+        # base = 1년 전 직전 거래일 종가(없으면 윈도우 첫 종가)
+        if before:
+            base, base_date = before[-1][1], before[-1][0]
+        else:
+            base, base_date = window[0][1], window[0][0]
         if base <= 0:
             continue
-        last = cur[-1][1]
-        ytd = last / base - 1
-        curve = [base] + [p[1] for p in cur]
+        last, last_date = window[-1][1], window[-1][0]
+        ret = last / base - 1
+        curve = [base] + [p[1] for p in window]
         peak, mdd = curve[0], 0.0
         for v in curve:
             if v > peak:
@@ -144,12 +156,12 @@ def compute_top10():
             dd = v / peak - 1
             if dd < mdd:
                 mdd = dd
-        calmar = None if abs(mdd) < 1e-9 else ytd / abs(mdd)
-        if ytd > 0 and calmar is not None:
+        calmar = None if abs(mdd) < 1e-9 else ret / abs(mdd)
+        if ret > 0 and calmar is not None:
             rows.append({
                 "code": code, "name": name, "family": family_of(name),
-                "ytd": ytd, "mdd": mdd, "calmar": calmar,
-                "base_date": prior[-1][0], "last_date": cur[-1][0],
+                "ret": ret, "mdd": mdd, "calmar": calmar,
+                "base_date": base_date, "last_date": last_date,
             })
     rows.sort(key=lambda r: r["calmar"], reverse=True)
     return rows[:10], today_str
@@ -205,13 +217,13 @@ def build_message(top10, today_str, diff):
     def fmt_d(s):
         return f"{s[:4]}-{s[4:6]}-{s[6:]}"
     lines = ["<b>📊 국내 ETF 칼마비율 TOP 10</b>",
-             f"<i>기준: {fmt_d(base_date)} → {fmt_d(last_date)}</i>", ""]
+             f"<i>최근 1년 기준: {fmt_d(base_date)} → {fmt_d(last_date)}</i>", ""]
     medal = {1: "🥇", 2: "🥈", 3: "🥉"}
     for i, r in enumerate(top10, 1):
         tag = medal.get(i, f"{i}.")
         lines.append(
             f"{tag} <b>{r['name']}</b> ({r['family']})\n"
-            f"    칼마 <b>{r['calmar']:.2f}</b> · YTD {r['ytd']*100:+.1f}% · MDD {r['mdd']*100:.1f}%")
+            f"    칼마 <b>{r['calmar']:.2f}</b> · 1Y {r['ret']*100:+.1f}% · MDD {r['mdd']*100:.1f}%")
     lines.append("")
     if diff is None:
         lines.append("ℹ️ 지난주 비교 기준 스냅샷이 아직 없어요. 다음 주부터 변동을 알려드릴게요.")
@@ -225,26 +237,4 @@ def build_message(top10, today_str, diff):
             parts.append(f"지난주({fmt_d(diff['ref_date'])}) 대비 TOP10 구성 변동 없음")
         lines.append("<b>지난주 대비</b>")
         lines.extend(parts)
-    return "\n".join(lines)
-
-
-# ---------------------------------------------------------------- main
-def main():
-    cfg = load_config()
-    top10, today_str = compute_top10()
-    if not top10:
-        raise RuntimeError("산출된 종목이 없습니다. 데이터 수집 확인 필요")
-    history = load_history()
-    diff = weekly_diff(history, today_str, top10)
-    msg = build_message(top10, today_str, diff)
-    print(msg)
-    if "--dry-run" not in sys.argv:
-        if not (cfg["telegram_token"] and cfg["telegram_chat_id"]):
-            raise RuntimeError("TELEGRAM_TOKEN / TELEGRAM_CHAT_ID 가 설정되지 않았습니다.")
-        send_telegram([msg], cfg["telegram_token"], cfg["telegram_chat_id"])
-        print("[telegram] sent.")
-    save_history(history, today_str, top10)
-
-
-if __name__ == "__main__":
-    main()
+ 
