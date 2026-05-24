@@ -237,4 +237,26 @@ def build_message(top10, today_str, diff):
             parts.append(f"지난주({fmt_d(diff['ref_date'])}) 대비 TOP10 구성 변동 없음")
         lines.append("<b>지난주 대비</b>")
         lines.extend(parts)
- 
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------- main
+def main():
+    cfg = load_config()
+    top10, today_str = compute_top10()
+    if not top10:
+        raise RuntimeError("산출된 종목이 없습니다. 데이터 수집 확인 필요")
+    history = load_history()
+    diff = weekly_diff(history, today_str, top10)
+    msg = build_message(top10, today_str, diff)
+    print(msg)
+    if "--dry-run" not in sys.argv:
+        if not (cfg["telegram_token"] and cfg["telegram_chat_id"]):
+            raise RuntimeError("TELEGRAM_TOKEN / TELEGRAM_CHAT_ID 가 설정되지 않았습니다.")
+        send_telegram([msg], cfg["telegram_token"], cfg["telegram_chat_id"])
+        print("[telegram] sent.")
+    save_history(history, today_str, top10)
+
+
+if __name__ == "__main__":
+    main()
