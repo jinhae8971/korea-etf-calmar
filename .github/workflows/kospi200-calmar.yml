@@ -1,0 +1,65 @@
+name: kospi200-calmar-top10
+
+on:
+  schedule:
+    # 평일(KST 월~금) 오전 7시 10분 = UTC 전날 22시 10분 (일~목)
+    - cron: "10 22 * * 0-4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kospi200-calmar
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run kospi200 calmar report
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TZ: "Asia/Seoul"
+        run: python kospi200_calmar.py
+
+      - name: Commit snapshot history
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add snapshot_history_kospi200.json
+          if git diff --staged --quiet; then
+            echo "no snapshot change"
+          else
+            git commit -m "chore: update kospi200 snapshot $(date +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'EOF'
+          import os, urllib.parse, urllib.request
+          data = urllib.parse.urlencode({
+              "chat_id": os.environ["TELEGRAM_CHAT_ID"],
+              "text": "❌ 코스피200 칼마비율 워크플로우 실행 실패! GitHub Actions 로그를 확인하세요.",
+          }).encode()
+          urllib.request.urlopen(
+              f"https://api.telegram.org/bot{os.environ['TELEGRAM_TOKEN']}/sendMessage",
+              data=data, timeout=10)
+          EOF
