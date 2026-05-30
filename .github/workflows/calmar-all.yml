@@ -1,0 +1,98 @@
+name: calmar-all-top10
+
+on:
+  schedule:
+    # 평일(KST 월~금) 오전 7시 = UTC 전날 22시 (일~목)
+    - cron: "0 22 * * 0-4"
+  workflow_dispatch:        # 수동 실행/테스트용
+
+permissions:
+  contents: write           # snapshot_history*.json 커밋용
+
+concurrency:
+  group: calmar-all
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TZ: "Asia/Seoul"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      # ---- 4개 종목 순차 실행 (하나가 실패해도 나머지는 계속) ----
+      - name: 1) Korea ETF calmar
+        id: korea
+        continue-on-error: true
+        run: python calmar_etf.py
+
+      - name: 2) KOSPI200 calmar
+        id: kospi
+        continue-on-error: true
+        run: python kospi200_calmar.py
+
+      - name: 3) S&P500 calmar
+        id: sp500
+        continue-on-error: true
+        run: python sp500_calmar.py
+
+      - name: 4) US ETF calmar
+        id: usetf
+        continue-on-error: true
+        run: python us_etf_calmar.py
+
+      # ---- 스냅샷 4개를 한 번에 커밋 (순차 단일 잡이라 push 경합 없음) ----
+      - name: Commit snapshot history
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add snapshot_history.json snapshot_history_kospi200.json snapshot_history_sp500.json snapshot_history_us_etf.json
+          if git diff --staged --quiet; then
+            echo "no snapshot change"
+          else
+            git commit -m "chore: update calmar snapshots $(date +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push
+          fi
+
+      # ---- 결과 집계 및 실패 시 텔레그램 알림 ----
+      - name: Report result
+        if: always()
+        env:
+          KOREA: ${{ steps.korea.outcome }}
+          KOSPI: ${{ steps.kospi.outcome }}
+          SP500: ${{ steps.sp500.outcome }}
+          USETF: ${{ steps.usetf.outcome }}
+        run: |
+          python - <<'EOF'
+          import os, urllib.parse, urllib.request
+          res = {
+              "한국 ETF":  os.environ["KOREA"],
+              "코스피200": os.environ["KOSPI"],
+              "S&P500":    os.environ["SP500"],
+              "미국 ETF":  os.environ["USETF"],
+          }
+          failed = [k for k, v in res.items() if v != "success"]
+          if failed:
+              text = "❌ 칼마 통합 워크플로우 일부 실패: " + ", ".join(failed) + " — GitHub Actions 로그를 확인하세요."
+              data = urllib.parse.urlencode({
+                  "chat_id": os.environ["TELEGRAM_CHAT_ID"], "text": text,
+              }).encode()
+              urllib.request.urlopen(
+                  f"https://api.telegram.org/bot{os.environ['TELEGRAM_TOKEN']}/sendMessage",
+                  data=data, timeout=10)
+              raise SystemExit(1)
+          print("all 4 reports succeeded")
+          EOF
