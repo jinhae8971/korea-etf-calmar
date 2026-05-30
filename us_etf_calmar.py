@@ -5,7 +5,7 @@
 - 유니버스: 주요 유동 미국 ETF 큐레이션 세트(레버리지·인버스·채권형 제외)
 - 심볼 해석: 네이버 autoComplete → reutersCode
 - 일별 종가: 네이버 해외 차트 API (실데이터 직접 수집), USD 기준
-- 윈도우: 실행 시점 기준 최근 1년(롤링 12개월)
+- 윈도우: 실행 시점 기준 최근 6개월(롤링 6M)
 - 주간 변동: snapshot_history_us_etf.json 에 누적, ~7일 전 스냅샷과 비교
 """
 import os, sys, json, re, datetime, urllib.request, urllib.parse
@@ -95,8 +95,8 @@ def get_prices(reuters, start, end):
 def compute_top10():
     today = datetime.date.today()
     today_str = today.strftime("%Y%m%d")
-    one_year_ago = today - datetime.timedelta(days=365)
-    start = (one_year_ago - datetime.timedelta(days=15)).strftime("%Y%m%d")
+    window_start = today - datetime.timedelta(days=182)  # 최근 6개월(롤링 6M) 윈도우
+    start = (window_start - datetime.timedelta(days=15)).strftime("%Y%m%d")
 
     syms = sorted(set(UNIVERSE))
 
@@ -123,10 +123,10 @@ def compute_top10():
         if not prices or len(prices) < 2:
             continue
         prices = sorted(prices, key=lambda x: x[0])
-        if pdate(prices[0][0]) > one_year_ago + datetime.timedelta(days=14):
+        if pdate(prices[0][0]) > window_start + datetime.timedelta(days=14):
             continue
-        window = [p for p in prices if pdate(p[0]) >= one_year_ago]
-        before = [p for p in prices if pdate(p[0]) < one_year_ago]
+        window = [p for p in prices if pdate(p[0]) >= window_start]
+        before = [p for p in prices if pdate(p[0]) < window_start]
         if not window:
             continue
         if before:
@@ -137,6 +137,8 @@ def compute_top10():
             continue
         last, last_date = window[-1][1], window[-1][0]
         ret = last / base - 1
+        _span_days = (pdate(last_date) - pdate(base_date)).days
+        ann_ret = (1 + ret) ** (365.0 / _span_days) - 1 if _span_days > 0 else ret
         curve = [base] + [p[1] for p in window]
         peak, mdd = curve[0], 0.0
         for v in curve:
@@ -145,7 +147,7 @@ def compute_top10():
             dd = v / peak - 1
             if dd < mdd:
                 mdd = dd
-        calmar = None if abs(mdd) < 1e-9 else ret / abs(mdd)
+        calmar = None if abs(mdd) < 1e-9 else ann_ret / abs(mdd)
         if ret > 0 and calmar is not None:
             rows.append({
                 "code": sym, "name": names.get(sym, sym),
@@ -208,7 +210,7 @@ def build_message(top10, today_str, diff):
         tag = medal.get(i, f"{i}.")
         lines.append(
             f"{tag} <b>{r['code']}</b> {r['name']}\n"
-            f"    칼마 <b>{r['calmar']:.2f}</b> · 1Y {r['ret']*100:+.1f}% · MDD {r['mdd']*100:.1f}%")
+            f"    칼마 <b>{r['calmar']:.2f}</b> · 6M {r['ret']*100:+.1f}% · MDD {r['mdd']*100:.1f}%")
     lines.append("")
     if diff is None:
         lines.append("ℹ️ 지난주 비교 기준 스냅샷이 아직 없어요. 다음 주부터 변동을 알려드릴게요.")
