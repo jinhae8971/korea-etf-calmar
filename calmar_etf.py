@@ -109,12 +109,12 @@ def family_of(name):
 
 # ---------------------------------------------------------------- compute
 def compute_top10():
-    """실행 시점 기준 최근 1년(롤링 12개월) 윈도우로 수익률·MDD·칼마 산출."""
+    """실행 시점 기준 최근 6개월(롤링 6M) 윈도우로 수익률·MDD·칼마 산출."""
     today = datetime.date.today()
     today_str = today.strftime("%Y%m%d")
-    one_year_ago = today - datetime.timedelta(days=365)
+    window_start = today - datetime.timedelta(days=182)  # 최근 6개월(롤링 6M) 윈도우
     # 윈도우 시작 직전 종가(base)를 확보하기 위해 15일 여유를 두고 수집
-    start = (one_year_ago - datetime.timedelta(days=15)).strftime("%Y%m%d")
+    start = (window_start - datetime.timedelta(days=15)).strftime("%Y%m%d")
 
     etfs = get_etf_list()
     name_map = dict(etfs)
@@ -132,14 +132,14 @@ def compute_top10():
         if excluded(name) or not prices or len(prices) < 2:
             continue
         prices = sorted(prices, key=lambda x: x[0])
-        # 1년 미만 상장(데이터 부족) 제외: 가장 이른 종가가 윈도우 시작보다 한참 뒤면 제외
-        if pdate(prices[0][0]) > one_year_ago + datetime.timedelta(days=14):
+        # 6개월 미만 상장(데이터 부족) 제외: 가장 이른 종가가 윈도우 시작보다 한참 뒤면 제외
+        if pdate(prices[0][0]) > window_start + datetime.timedelta(days=14):
             continue
-        window = [p for p in prices if pdate(p[0]) >= one_year_ago]
-        before = [p for p in prices if pdate(p[0]) < one_year_ago]
+        window = [p for p in prices if pdate(p[0]) >= window_start]
+        before = [p for p in prices if pdate(p[0]) < window_start]
         if not window:
             continue
-        # base = 1년 전 직전 거래일 종가(없으면 윈도우 첫 종가)
+        # base = 6개월 전 직전 거래일 종가(없으면 윈도우 첫 종가)
         if before:
             base, base_date = before[-1][1], before[-1][0]
         else:
@@ -148,6 +148,8 @@ def compute_top10():
             continue
         last, last_date = window[-1][1], window[-1][0]
         ret = last / base - 1
+        _span_days = (pdate(last_date) - pdate(base_date)).days
+        ann_ret = (1 + ret) ** (365.0 / _span_days) - 1 if _span_days > 0 else ret
         curve = [base] + [p[1] for p in window]
         peak, mdd = curve[0], 0.0
         for v in curve:
@@ -156,7 +158,7 @@ def compute_top10():
             dd = v / peak - 1
             if dd < mdd:
                 mdd = dd
-        calmar = None if abs(mdd) < 1e-9 else ret / abs(mdd)
+        calmar = None if abs(mdd) < 1e-9 else ann_ret / abs(mdd)
         if ret > 0 and calmar is not None:
             rows.append({
                 "code": code, "name": name, "family": family_of(name),
@@ -223,7 +225,7 @@ def build_message(top10, today_str, diff):
         tag = medal.get(i, f"{i}.")
         lines.append(
             f"{tag} <b>{r['name']}</b> ({r['family']})\n"
-            f"    칼마 <b>{r['calmar']:.2f}</b> · 1Y {r['ret']*100:+.1f}% · MDD {r['mdd']*100:.1f}%")
+            f"    칼마 <b>{r['calmar']:.2f}</b> · 6M {r['ret']*100:+.1f}% · MDD {r['mdd']*100:.1f}%")
     lines.append("")
     if diff is None:
         lines.append("ℹ️ 지난주 비교 기준 스냅샷이 아직 없어요. 다음 주부터 변동을 알려드릴게요.")
