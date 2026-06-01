@@ -2,8 +2,9 @@ name: calmar-all-top10
 
 on:
   schedule:
-    # 평일(KST 월~금) 오전 7시 = UTC 전날 22시 (일~목)
-    - cron: "0 22 * * 0-4"
+    # 평일(KST 월~금) 오전 7시 목표 = UTC 전날 21:50 트리거 (일~목)
+    # 정각(:00)은 GitHub 스케줄러 혼잡으로 지연이 큼 → 10분 앞당기고 off-peak 분으로 → 실제 도착 ≈ 07:00 KST
+    - cron: "50 21 * * 0-4"
   workflow_dispatch:        # 수동 실행/테스트용
 
 permissions:
