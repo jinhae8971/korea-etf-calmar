@@ -323,7 +323,8 @@ function render() {
     const gen = new Date(LATEST.generated_at);
     document.getElementById("sub").innerHTML =
       `<b>${esc(LATEST.window)}</b> · 연율화 수익률 ÷ |MDD| · ${ok}/${LATEST.universes.length} 유니버스 산출<br>` +
-      `갱신 ${gen.toLocaleString("ko-KR", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" })} KST`;
+      // 라벨이 KST 이므로 뷰어의 로컬 타임존과 무관하게 서울 기준으로 고정 표기한다.
+      `갱신 ${gen.toLocaleString("ko-KR", { timeZone: "Asia/Seoul", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" })} KST`;
     renderTabs(); render();
   } catch (e) {
     document.getElementById("sub").textContent = "데이터를 불러오지 못했습니다";
