@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>칼마비율 TOP 10 · 4대 유니버스</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --bg: #fafbfc;
+    --surface: #ffffff;
+    --border: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-tertiary: #9ca3af;
+    --success: #059669;
+    --success-light: #ecfdf5;
+    --error: #dc2626;
+    --error-light: #fef2f2;
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+    --gain: #059669;
+    --loss: #e11d48;
+    --track: #eef1f5;
+  }
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0b1120;
+    --surface: #111827;
+    --border: #273449;
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-tertiary: #6b7280;
+    --success: #34d399;
+    --success-light: rgba(16,185,129,.14);
+    --error: #fb7185;
+    --error-light: rgba(244,63,94,.14);
+    --warning: #fbbf24;
+    --warning-light: rgba(245,158,11,.14);
+    --primary: #60a5fa;
+    --primary-light: rgba(96,165,250,.16);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
+    --gain: #34d399;
+    --loss: #fb7185;
+    --track: #1b2536;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text-primary);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    font-feature-settings: "tnum" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+  .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 20px 16px 56px; }
+
+  /* ── header ─────────────────────────────────────────────── */
+  header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+  h1 { font-size: 19px; font-weight: 800; margin: 0 0 4px; letter-spacing: -.02em; }
+  .sub { font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; }
+  .sub b { color: var(--text-primary); font-weight: 600; }
+  .spacer { flex: 1; }
+  .icon-btn {
+    flex: none; width: 34px; height: 34px; border-radius: 9px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-secondary);
+    font-size: 15px; line-height: 1; display: grid; place-items: center;
+  }
+  .icon-btn:hover { color: var(--text-primary); }
+  .icon-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+  /* ── tabs ───────────────────────────────────────────────── */
+  .tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 12px; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex: none; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+    padding: 8px 13px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-secondary);
+    font: inherit; font-size: 13px; font-weight: 600; white-space: nowrap;
+    transition: background .12s, color .12s, border-color .12s;
+  }
+  .tab:hover { color: var(--text-primary); }
+  .tab[aria-selected="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+  [data-theme="dark"] .tab[aria-selected="true"] { color: #06101f; }
+  .tab:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  .tab .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--error); }
+  .tab[aria-selected="true"] .dot { background: currentColor; }
+
+  /* ── panel ──────────────────────────────────────────────── */
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-sm); overflow: hidden; }
+  .panel-head { padding: 13px 16px; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .panel-title { font-size: 14px; font-weight: 700; }
+  .meta { font-size: 11.5px; color: var(--text-tertiary); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .chip.in { background: var(--success-light); color: var(--success); }
+  .chip.out { background: var(--error-light); color: var(--error); }
+  .chip.flat { background: var(--track); color: var(--text-tertiary); }
+
+  /* ── table ──────────────────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    font-size: 11px; font-weight: 600; color: var(--text-tertiary); text-align: right;
+    padding: 9px 10px; border-bottom: 1px solid var(--border); white-space: nowrap;
+    position: sticky; top: 0; background: var(--surface); z-index: 1;
+  }
+  thead th:first-child, thead th:nth-child(2) { text-align: left; }
+  tbody td { padding: 11px 10px; border-bottom: 1px solid var(--border); font-size: 13px; text-align: right; vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover { background: color-mix(in srgb, var(--primary) 4%, transparent); }
+  .rank { width: 44px; text-align: left; font-weight: 700; color: var(--text-tertiary); font-size: 13px; padding-left: 16px; }
+  .rank.medal { font-size: 15px; }
+  .name { text-align: left; font-weight: 600; line-height: 1.35; }
+  .name .tick { display: block; font-size: 11px; font-weight: 500; color: var(--text-tertiary); margin-top: 1px; }
+  .calmar { font-weight: 800; font-size: 14.5px; width: 66px; }
+  .ret { color: var(--gain); font-weight: 600; width: 74px; }
+  .mdd { color: var(--loss); font-weight: 600; width: 74px; }
+  td.prof { width: 190px; padding-right: 16px; }
+  td.trend { width: 78px; padding-right: 16px; }
+
+  /* ── signature: 수익·낙폭 프로파일 바 ─────────────────────── */
+  /* 칼마는 '얼마나 벌었나'가 아니라 '얼마나 안 깨지고 벌었나'다.
+     중심선 기준 오른쪽=수익, 왼쪽=낙폭. 오른쪽이 길고 왼쪽이 짧을수록 칼마가 높다. */
+  .prof-bar { position: relative; height: 20px; }
+  .prof-bar .axis { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border); }
+  .prof-bar .seg { position: absolute; top: 4px; height: 12px; border-radius: 3px; }
+  .prof-bar .seg.g { left: 50%; background: var(--gain); }
+  .prof-bar .seg.l { right: 50%; background: var(--loss); opacity: .85; }
+  .legend { display: flex; gap: 10px; align-items: center; font-size: 11px; color: var(--text-tertiary); }
+  .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+
+  .spark { display: block; overflow: visible; }
+  .spark path { fill: none; stroke: var(--text-tertiary); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .spark circle { fill: var(--primary); }
+  .trend-na { font-size: 11px; color: var(--text-tertiary); }
+
+  /* ── states ─────────────────────────────────────────────── */
+  .state { padding: 40px 16px; text-align: center; color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
+  .state.err { color: var(--error); }
+  .state code { font-size: 11.5px; color: var(--text-tertiary); word-break: break-all; }
+  footer { margin-top: 16px; font-size: 11.5px; color: var(--text-tertiary); line-height: 1.7; }
+  footer a { color: var(--text-secondary); }
+  .foot-row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; justify-content: space-between; }
+
+  @media (max-width: 720px) {
+    td.prof, th.prof { display: none; }
+    .wrap { padding: 16px 12px 40px; }
+    .rank { width: 34px; padding-left: 12px; }
+    .calmar { width: 56px; }
+    .ret, .mdd { width: 62px; font-size: 12px; }
+    td.trend { width: 62px; padding-right: 12px; }
+    tbody td { padding: 10px 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>칼마비율 TOP 10</h1>
+      <div class="sub" id="sub">불러오는 중…</div>
+    </div>
+    <div class="spacer"></div>
+    <button class="icon-btn" id="theme" aria-label="테마 전환">◐</button>
+  </header>
+
+  <div class="tabs" id="tabs" role="tablist"></div>
+
+  <div class="panel">
+    <div class="panel-head" id="panelHead" hidden></div>
+    <div id="body"><div class="state">데이터를 불러오는 중…</div></div>
+  </div>
+
+  <footer>
+    <div class="foot-row">
+      <div>
+        칼마비율 = <b>연율화 수익률 ÷ |최대낙폭|</b> · 롤링 6M · 종가 기준 · 레버리지/인버스/채권형 제외<br>
+        수익률이 음(−)인 종목은 순위에서 제외됩니다.
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--gain)"></i>수익</span>
+        <span><i style="background:var(--loss)"></i>낙폭</span>
+      </div>
+    </div>
+    <div style="margin-top:8px">
+      <a href="https://github.com/jinhae8971/korea-etf-calmar/actions" target="_blank" rel="noopener">GitHub Actions 실행 이력</a>
+      · 평일 07:00 KST 자동 갱신
+    </div>
+  </footer>
+</div>
+
+<script>
+const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
+let LATEST = null, HISTORY = null, active = 0;
+
+/* ── theme ───────────────────────────────────────────────── */
+const themeBtn = document.getElementById("theme");
+const saved = localStorage.getItem("calmar-theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+setTheme(saved || (prefersDark ? "dark" : "light"));
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  localStorage.setItem("calmar-theme", t);
+  themeBtn.textContent = t === "dark" ? "☀" : "☾";
+}
+themeBtn.onclick = () => setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+
+/* ── helpers ─────────────────────────────────────────────── */
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pct = v => (v * 100).toFixed(1);
+const fmtDate = s => (s && s.length === 8) ? `${s.slice(0,4)}-${s.slice(4,6)}-${s.slice(6)}` : (s || "-");
+
+function nameCell(row, display) {
+  const n = esc(row.name), c = esc(row.code), f = esc(row.family || "");
+  if (display === "code_name") return `${c}<span class="tick">${n}</span>`;
+  if (display === "name_code") return `${n}<span class="tick">${c}</span>`;
+  if (display === "name_family" && f && f !== "-") return `${n}<span class="tick">${f}</span>`;
+  return `${n}<span class="tick">${c}</span>`;
+}
+
+/* 순위 추이: 최근 스냅샷들에서 해당 종목의 TOP10 내 순위 궤적 (1위가 위쪽) */
+function sparkline(uid, code) {
+  const snaps = (HISTORY?.universes?.[uid] || []).slice(-12);
+  if (snaps.length < 3) return `<span class="trend-na">–</span>`;
+  const pts = snaps.map(s => {
+    const i = (s.top10 || []).findIndex(x => x.code === code);
+    return i < 0 ? null : i + 1;
+  });
+  if (pts.filter(Boolean).length < 2) return `<span class="trend-na">신규</span>`;
+  const W = 60, H = 18, n = pts.length;
+  const x = i => (n === 1 ? 0 : (i / (n - 1)) * W);
+  const y = r => ((r - 1) / 9) * (H - 2) + 1;      // rank 1 → 상단
+  let d = "", pen = false, last = null;
+  pts.forEach((r, i) => {
+    if (r == null) { pen = false; return; }
+    d += `${pen ? "L" : "M"}${x(i).toFixed(1)},${y(r).toFixed(1)}`;
+    pen = true; last = { x: x(i), y: y(r) };
+  });
+  const tip = last ? `<circle cx="${last.x.toFixed(1)}" cy="${last.y.toFixed(1)}" r="2"/>` : "";
+  return `<svg class="spark" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true"><path d="${d}"/>${tip}</svg>`;
+}
+
+/* ── render ──────────────────────────────────────────────── */
+function renderTabs() {
+  document.getElementById("tabs").innerHTML = LATEST.universes.map((u, i) => `
+    <button class="tab" role="tab" aria-selected="${i === active}" data-i="${i}">
+      ${u.icon} ${esc(u.label)}${u.status !== "ok" ? '<span class="dot" title="산출 실패"></span>' : ""}
+    </button>`).join("");
+  document.querySelectorAll(".tab").forEach(b => b.onclick = () => { active = +b.dataset.i; render(); });
+}
+
+function render() {
+  const u = LATEST.universes[active];
+  const head = document.getElementById("panelHead");
+  const body = document.getElementById("body");
+  head.hidden = false;
+
+  const d = u.diff;
+  let chips = "";
+  if (u.status === "ok") {
+    if (!d) chips = `<span class="chip flat">주간 비교 기준 스냅샷 축적 중</span>`;
+    else {
+      const inC = (d.entered || []).map(n => `<span class="chip in">🆕 ${esc(n)}</span>`).join("");
+      const outC = (d.exited || []).map(n => `<span class="chip out">🔻 ${esc(n)}</span>`).join("");
+      chips = (inC + outC) || `<span class="chip flat">${fmtDate(d.ref_date)} 대비 구성 변동 없음</span>`;
+    }
+  }
+  head.innerHTML = `
+    <span class="panel-title">${u.icon} ${esc(u.label)}</span>
+    <span class="meta">${u.currency}${u.status === "ok" ? ` · ${fmtDate(u.base_date)} → ${fmtDate(u.last_date)}` : ""}</span>
+    <span style="flex:1"></span>
+    <span class="chips">${chips}</span>`;
+
+  if (u.status !== "ok") {
+    body.innerHTML = `<div class="state err">이 유니버스는 이번 실행에서 산출되지 않았습니다.<br>
+      <code>${esc(u.error || "원인 미상")}</code><br>
+      <span style="color:var(--text-tertiary)">다음 평일 07:00 실행에서 자동 재시도됩니다.</span></div>`;
+    return;
+  }
+
+  const scale = Math.max(...u.rows.map(r => Math.max(Math.abs(r.ret), Math.abs(r.mdd))), 1e-6);
+  body.innerHTML = `
+    <table>
+      <thead><tr>
+        <th class="rank">#</th><th>종목</th><th>칼마</th><th>6M 수익</th><th>MDD</th>
+        <th class="prof">수익 · 낙폭 프로파일</th><th>순위추이</th>
+      </tr></thead>
+      <tbody>${u.rows.map(r => `
+        <tr>
+          <td class="rank ${MEDAL[r.rank] ? "medal" : ""}">${MEDAL[r.rank] || r.rank}</td>
+          <td class="name">${nameCell(r, u.display)}</td>
+          <td class="calmar num">${r.calmar.toFixed(2)}</td>
+          <td class="ret num">+${pct(r.ret)}%</td>
+          <td class="mdd num">${pct(r.mdd)}%</td>
+          <td class="prof">
+            <div class="prof-bar" title="수익 +${pct(r.ret)}% / 낙폭 ${pct(r.mdd)}%">
+              <div class="axis"></div>
+              <div class="seg g" style="width:${(Math.abs(r.ret) / scale * 50).toFixed(1)}%"></div>
+              <div class="seg l" style="width:${(Math.abs(r.mdd) / scale * 50).toFixed(1)}%"></div>
+            </div>
+          </td>
+          <td class="trend">${sparkline(u.id, r.code)}</td>
+        </tr>`).join("")}
+      </tbody>
+    </table>`;
+}
+
+/* ── load ────────────────────────────────────────────────── */
+(async () => {
+  const v = Date.now();
+  try {
+    const [a, b] = await Promise.all([
+      fetch(`data/latest.json?v=${v}`).then(r => { if (!r.ok) throw new Error(`latest.json ${r.status}`); return r.json(); }),
+      fetch(`data/history.json?v=${v}`).then(r => r.ok ? r.json() : null).catch(() => null),
+    ]);
+    LATEST = a; HISTORY = b;
+    const ok = LATEST.universes.filter(u => u.status === "ok").length;
+    const gen = new Date(LATEST.generated_at);
+    document.getElementById("sub").innerHTML =
+      `<b>${esc(LATEST.window)}</b> · 연율화 수익률 ÷ |MDD| · ${ok}/${LATEST.universes.length} 유니버스 산출<br>` +
+      `갱신 ${gen.toLocaleString("ko-KR", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" })} KST`;
+    renderTabs(); render();
+  } catch (e) {
+    document.getElementById("sub").textContent = "데이터를 불러오지 못했습니다";
+    document.getElementById("body").innerHTML =
+      `<div class="state err">데이터를 불러오지 못했습니다.<br><code>${esc(e.message)}</code><br>
+       <span style="color:var(--text-tertiary)">워크플로우가 아직 한 번도 실행되지 않았다면 첫 실행 후 표시됩니다.</span></div>`;
+  }
+})();
+</script>
+</body>
+</html>

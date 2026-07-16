@@ -6,9 +6,14 @@ on:
     # 정각(:00)은 GitHub 스케줄러 혼잡으로 지연이 큼 → 10분 앞당기고 off-peak 분으로 → 실제 도착 ≈ 07:00 KST
     - cron: "50 21 * * 0-4"
   workflow_dispatch:        # 수동 실행/테스트용
+    inputs:
+      dry_run:
+        description: "텔레그램 발송 없이 산출만 (docs 데이터는 갱신)"
+        type: boolean
+        default: false
 
 permissions:
-  contents: write           # snapshot_history*.json 커밋용
+  contents: write           # snapshot_history*.json + docs/data/*.json 커밋용
 
 concurrency:
   group: calmar-all
@@ -32,68 +37,45 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      # ---- 4개 종목 순차 실행 (하나가 실패해도 나머지는 계속) ----
-      - name: 1) Korea ETF calmar
-        id: korea
-        continue-on-error: true
-        run: python calmar_etf.py
+      # ---- 4개 유니버스를 한 프로세스에서 산출 → 텔레그램 '1건' 발송 ----
+      # calmar_hub.py 가 각 모듈의 compute_top10() 을 호출하므로
+      # 개별 스크립트(calmar_etf.py 등)를 따로 실행하지 않는다. (= 메시지 4건 → 1건)
+      # 일부 유니버스가 실패해도 허브는 exit 0 을 유지하고 통합 메시지에 ⚠️ 로 표시한다.
+      # 따라서 아래 실패 알림은 '전체 실패(허브 자체 예외)' 일 때만 동작한다.
+      - name: Calmar hub (4 universes -> 1 message + docs data)
+        run: python calmar_hub.py ${{ inputs.dry_run && '--dry-run' || '' }}
 
-      - name: 2) KOSPI200 calmar
-        id: kospi
-        continue-on-error: true
-        run: python kospi200_calmar.py
-
-      - name: 3) S&P500 calmar
-        id: sp500
-        continue-on-error: true
-        run: python sp500_calmar.py
-
-      - name: 4) US ETF calmar
-        id: usetf
-        continue-on-error: true
-        run: python us_etf_calmar.py
-
-      # ---- 스냅샷 4개를 한 번에 커밋 (순차 단일 잡이라 push 경합 없음) ----
-      - name: Commit snapshot history
+      # ---- 스냅샷 + 대시보드 데이터 커밋 (Pages: main 브랜치 /docs 서빙) ----
+      - name: Commit snapshots & dashboard data
         if: always()
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add snapshot_history.json snapshot_history_kospi200.json snapshot_history_sp500.json snapshot_history_us_etf.json
+          git add snapshot_history.json snapshot_history_kospi200.json \
+                  snapshot_history_sp500.json snapshot_history_us_etf.json \
+                  docs/data/latest.json docs/data/history.json
           if git diff --staged --quiet; then
-            echo "no snapshot change"
+            echo "no change"
           else
-            git commit -m "chore: update calmar snapshots $(date +%Y-%m-%d)"
+            git commit -m "chore: update calmar snapshots & dashboard $(date +%Y-%m-%d)"
             git pull --rebase origin main
             git push
           fi
 
-      # ---- 결과 집계 및 실패 시 텔레그램 알림 ----
-      - name: Report result
-        if: always()
-        env:
-          KOREA: ${{ steps.korea.outcome }}
-          KOSPI: ${{ steps.kospi.outcome }}
-          SP500: ${{ steps.sp500.outcome }}
-          USETF: ${{ steps.usetf.outcome }}
+      # ---- 전체 실패 시에만 알림 (부분 실패는 통합 메시지 안에 인라인 표시) ----
+      - name: Notify total failure
+        if: failure()
         run: |
           python - <<'EOF'
           import os, urllib.parse, urllib.request
-          res = {
-              "한국 ETF":  os.environ["KOREA"],
-              "코스피200": os.environ["KOSPI"],
-              "S&P500":    os.environ["SP500"],
-              "미국 ETF":  os.environ["USETF"],
-          }
-          failed = [k for k, v in res.items() if v != "success"]
-          if failed:
-              text = "❌ 칼마 통합 워크플로우 일부 실패: " + ", ".join(failed) + " — GitHub Actions 로그를 확인하세요."
-              data = urllib.parse.urlencode({
-                  "chat_id": os.environ["TELEGRAM_CHAT_ID"], "text": text,
-              }).encode()
-              urllib.request.urlopen(
-                  f"https://api.telegram.org/bot{os.environ['TELEGRAM_TOKEN']}/sendMessage",
-                  data=data, timeout=10)
-              raise SystemExit(1)
-          print("all 4 reports succeeded")
+          run = f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+          text = ("❌ 칼마 통합 워크플로우 실패 — 4개 유니버스 전부 산출 실패이거나 허브 오류입니다.\n"
+                  f"로그: {run}")
+          data = urllib.parse.urlencode({
+              "chat_id": os.environ["TELEGRAM_CHAT_ID"], "text": text,
+              "disable_web_page_preview": "true",
+          }).encode()
+          urllib.request.urlopen(
+              f"https://api.telegram.org/bot{os.environ['TELEGRAM_TOKEN']}/sendMessage",
+              data=data, timeout=10)
           EOF
