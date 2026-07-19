@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-17T07:42:44+09:00",
+ "generated_at": "2026-07-20T07:37:21+09:00",
  "window": "롤링 6M (182일)",
  "metric": "칼마비율 = 연율화 수익률 ÷ |MDD|",
  "universes": [
@@ -11,19 +11,19 @@
    "display": "name_family",
    "status": "ok",
    "error": null,
-   "base_date": "20260115",
+   "base_date": "20260116",
    "last_date": "20260716",
    "diff": {
-    "ref_date": "20260710",
+    "ref_date": "20260713",
     "entered": [
      "ACE 라이프자산주주가치액티브",
      "UNICORN SK하이닉스밸류체인액티브",
      "HANARO 글로벌생성형AI액티브",
-     "RISE 미국AI테크액티브"
+     "RISE 미국반도체NYSE(H)"
     ],
     "exited": [
-     "KODEX 한중반도체(합성)",
      "TIGER 한중반도체(합성)",
+     "KODEX 한중반도체(합성)",
      "KODEX 200IT TR",
      "TIGER 200 IT"
     ]
@@ -34,8 +34,8 @@
      "code": "474590",
      "name": "WON 반도체밸류체인액티브",
      "family": "우리자산운용",
-     "calmar": 14.87,
-     "ret": 1.1483,
+     "calmar": 14.45,
+     "ret": 1.1158,
      "mdd": -0.2445
     },
     {
@@ -43,81 +43,81 @@
      "code": "395270",
      "name": "HANARO Fn K-반도체",
      "family": "NH아문디자산운용",
-     "calmar": 12.98,
-     "ret": 1.3658,
+     "calmar": 12.8,
+     "ret": 1.3409,
      "mdd": -0.3561
     },
     {
      "rank": 3,
-     "code": "494330",
-     "name": "ACE 라이프자산주주가치액티브",
-     "family": "한국투자신탁운용",
-     "calmar": 12.32,
-     "ret": 0.8513,
-     "mdd": -0.1979
-    },
-    {
-     "rank": 4,
      "code": "367760",
      "name": "RISE 네트워크인프라",
      "family": "KB자산운용",
-     "calmar": 12.3,
-     "ret": 1.2953,
+     "calmar": 12.04,
+     "ret": 1.2649,
      "mdd": -0.3489
     },
     {
-     "rank": 5,
-     "code": "442580",
-     "name": "PLUS 글로벌HBM반도체",
-     "family": "한화자산운용",
-     "calmar": 12.21,
-     "ret": 1.1407,
-     "mdd": -0.295
+     "rank": 4,
+     "code": "494330",
+     "name": "ACE 라이프자산주주가치액티브",
+     "family": "한국투자신탁운용",
+     "calmar": 12.02,
+     "ret": 0.829,
+     "mdd": -0.1979
     },
     {
-     "rank": 6,
+     "rank": 5,
      "code": "494220",
      "name": "UNICORN SK하이닉스밸류체인액티브",
      "family": "-",
-     "calmar": 11.85,
-     "ret": 1.109,
+     "calmar": 11.44,
+     "ret": 1.0726,
      "mdd": -0.2926
     },
     {
+     "rank": 6,
+     "code": "442580",
+     "name": "PLUS 글로벌HBM반도체",
+     "family": "한화자산운용",
+     "calmar": 11.28,
+     "ret": 1.0678,
+     "mdd": -0.295
+    },
+    {
      "rank": 7,
-     "code": "461340",
-     "name": "HANARO 글로벌생성형AI액티브",
-     "family": "NH아문디자산운용",
-     "calmar": 11.26,
-     "ret": 0.5589,
-     "mdd": -0.1276
-    },
-    {
-     "rank": 8,
-     "code": "298770",
-     "name": "KODEX 한국대만IT프리미어",
-     "family": "삼성자산운용",
-     "calmar": 11.07,
-     "ret": 0.794,
-     "mdd": -0.2013
-    },
-    {
-     "rank": 9,
-     "code": "495940",
-     "name": "RISE 미국AI테크액티브",
-     "family": "KB자산운용",
-     "calmar": 10.96,
-     "ret": 0.568,
-     "mdd": -0.1337
-    },
-    {
-     "rank": 10,
      "code": "0036D0",
      "name": "TIME 미국배당다우존스액티브",
      "family": "-",
-     "calmar": 10.93,
-     "ret": 0.2283,
+     "calmar": 10.73,
+     "ret": 0.2231,
      "mdd": -0.0467
+    },
+    {
+     "rank": 8,
+     "code": "461340",
+     "name": "HANARO 글로벌생성형AI액티브",
+     "family": "NH아문디자산운용",
+     "calmar": 10.67,
+     "ret": 0.5314,
+     "mdd": -0.1276
+    },
+    {
+     "rank": 9,
+     "code": "298770",
+     "name": "KODEX 한국대만IT프리미어",
+     "family": "삼성자산운용",
+     "calmar": 10.61,
+     "ret": 0.7624,
+     "mdd": -0.2013
+    },
+    {
+     "rank": 10,
+     "code": "469050",
+     "name": "RISE 미국반도체NYSE(H)",
+     "family": "KB자산운용",
+     "calmar": 10.41,
+     "ret": 0.6062,
+     "mdd": -0.1538
     }
    ]
   },
@@ -129,10 +129,10 @@
    "display": "name",
    "status": "ok",
    "error": null,
-   "base_date": "20260115",
+   "base_date": "20260116",
    "last_date": "20260716",
    "diff": {
-    "ref_date": "20260710",
+    "ref_date": "20260713",
     "entered": [
      "한국콜마"
     ],
@@ -146,7 +146,7 @@
      "code": "009150",
      "name": "삼성전기",
      "family": "",
-     "calmar": 41.84,
+     "calmar": 42.57,
      "ret": 3.4111,
      "mdd": -0.4449
     },
@@ -155,8 +155,8 @@
      "code": "047040",
      "name": "대우건설",
      "family": "",
-     "calmar": 23.08,
-     "ret": 2.8161,
+     "calmar": 17.84,
+     "ret": 2.3667,
      "mdd": -0.5922
     },
     {
@@ -164,8 +164,8 @@
      "code": "402340",
      "name": "SK스퀘어",
      "family": "",
-     "calmar": 17.07,
-     "ret": 1.8219,
+     "calmar": 15.81,
+     "ret": 1.7144,
      "mdd": -0.4107
     },
     {
@@ -173,8 +173,8 @@
      "code": "000660",
      "name": "SK하이닉스",
      "family": "",
-     "calmar": 13.76,
-     "ret": 1.4593,
+     "calmar": 13.62,
+     "ret": 1.4365,
      "mdd": -0.369
     },
     {
@@ -182,54 +182,54 @@
      "code": "004170",
      "name": "신세계",
      "family": "",
-     "calmar": 12.43,
-     "ret": 1.1036,
+     "calmar": 11.94,
+     "ret": 1.063,
      "mdd": -0.2771
     },
     {
      "rank": 6,
-     "code": "032830",
-     "name": "삼성생명",
-     "family": "",
-     "calmar": 8.93,
-     "ret": 1.0533,
-     "mdd": -0.3622
-    },
-    {
-     "rank": 7,
      "code": "023530",
      "name": "롯데쇼핑",
      "family": "",
-     "calmar": 8.77,
-     "ret": 0.9209,
+     "calmar": 8.34,
+     "ret": 0.8798,
      "mdd": -0.3081
     },
     {
-     "rank": 8,
-     "code": "011070",
-     "name": "LG이노텍",
-     "family": "",
-     "calmar": 8.16,
-     "ret": 1.39,
-     "mdd": -0.581
-    },
-    {
-     "rank": 9,
+     "rank": 7,
      "code": "034730",
      "name": "SK",
      "family": "",
-     "calmar": 7.87,
-     "ret": 0.9237,
+     "calmar": 8.13,
+     "ret": 0.9398,
      "mdd": -0.345
     },
     {
-     "rank": 10,
+     "rank": 8,
      "code": "161890",
      "name": "한국콜마",
      "family": "",
-     "calmar": 7.79,
-     "ret": 0.6734,
+     "calmar": 8.01,
+     "ret": 0.6839,
      "mdd": -0.2321
+    },
+    {
+     "rank": 9,
+     "code": "011070",
+     "name": "LG이노텍",
+     "family": "",
+     "calmar": 7.8,
+     "ret": 1.3357,
+     "mdd": -0.581
+    },
+    {
+     "rank": 10,
+     "code": "032830",
+     "name": "삼성생명",
+     "family": "",
+     "calmar": 7.75,
+     "ret": 0.9402,
+     "mdd": -0.3622
     }
    ]
   },
@@ -241,19 +241,21 @@
    "display": "name_code",
    "status": "ok",
    "error": null,
-   "base_date": "20260115",
-   "last_date": "20260716",
+   "base_date": "20260116",
+   "last_date": "20260717",
    "diff": {
-    "ref_date": "20260710",
+    "ref_date": "20260713",
     "entered": [
      "Targa Resources",
-     "Datadog",
-     "Valero Energy"
+     "Valero Energy",
+     "Marathon Petroleum",
+     "Datadog"
     ],
     "exited": [
      "Western Digital",
      "Marvell Technology",
-     "Intel"
+     "Advanced Micro Devices",
+     "Flex Ltd."
     ]
    },
    "rows": [
@@ -262,8 +264,8 @@
      "code": "DVA",
      "name": "DaVita",
      "family": "",
-     "calmar": 50.28,
-     "ret": 1.211,
+     "calmar": 53.26,
+     "ret": 1.2625,
      "mdd": -0.0778
     },
     {
@@ -271,81 +273,81 @@
      "code": "DELL",
      "name": "Dell Technologies",
      "family": "",
-     "calmar": 47.35,
-     "ret": 2.2708,
+     "calmar": 47.91,
+     "ret": 2.2883,
      "mdd": -0.2063
     },
     {
      "rank": 3,
-     "code": "SNDK",
-     "name": "Sandisk",
-     "family": "",
-     "calmar": 27.72,
-     "ret": 2.4481,
-     "mdd": -0.3957
-    },
-    {
-     "rank": 4,
      "code": "FTNT",
      "name": "Fortinet",
      "family": "",
-     "calmar": 24.11,
-     "ret": 1.1067,
+     "calmar": 25.22,
+     "ret": 1.1439,
      "mdd": -0.1434
     },
     {
-     "rank": 5,
-     "code": "MU",
-     "name": "Micron Technology",
+     "rank": 4,
+     "code": "SNDK",
+     "name": "Sandisk",
      "family": "",
-     "calmar": 18.01,
-     "ret": 1.5345,
-     "mdd": -0.3031
+     "calmar": 23.34,
+     "ret": 2.2755,
+     "mdd": -0.4198
     },
     {
-     "rank": 6,
+     "rank": 5,
      "code": "TRGP",
      "name": "Targa Resources",
      "family": "",
-     "calmar": 17.6,
-     "ret": 0.5405,
+     "calmar": 17.04,
+     "ret": 0.5264,
      "mdd": -0.0783
     },
     {
-     "rank": 7,
-     "code": "AMD",
-     "name": "Advanced Micro Devices",
-     "family": "",
-     "calmar": 14.55,
-     "ret": 1.1979,
-     "mdd": -0.2647
-    },
-    {
-     "rank": 8,
-     "code": "STX",
-     "name": "Seagate Technology",
-     "family": "",
-     "calmar": 13.94,
-     "ret": 1.3273,
-     "mdd": -0.3186
-    },
-    {
-     "rank": 9,
-     "code": "DDOG",
-     "name": "Datadog",
-     "family": "",
-     "calmar": 13.82,
-     "ret": 1.1704,
-     "mdd": -0.27
-    },
-    {
-     "rank": 10,
+     "rank": 6,
      "code": "VLO",
      "name": "Valero Energy",
      "family": "",
-     "calmar": 13.71,
-     "ret": 0.6267,
+     "calmar": 15.4,
+     "ret": 0.6878,
      "mdd": -0.1206
+    },
+    {
+     "rank": 7,
+     "code": "STX",
+     "name": "Seagate Technology",
+     "family": "",
+     "calmar": 15.25,
+     "ret": 1.4144,
+     "mdd": -0.3186
+    },
+    {
+     "rank": 8,
+     "code": "MU",
+     "name": "Micron Technology",
+     "family": "",
+     "calmar": 14.86,
+     "ret": 1.3403,
+     "mdd": -0.3031
+    },
+    {
+     "rank": 9,
+     "code": "MPC",
+     "name": "Marathon Petroleum",
+     "family": "",
+     "calmar": 14.36,
+     "ret": 0.7799,
+     "mdd": -0.1517
+    },
+    {
+     "rank": 10,
+     "code": "DDOG",
+     "name": "Datadog",
+     "family": "",
+     "calmar": 13.87,
+     "ret": 1.1735,
+     "mdd": -0.27
     }
    ]
   },
@@ -357,14 +359,14 @@
    "display": "code_name",
    "status": "ok",
    "error": null,
-   "base_date": "20260115",
-   "last_date": "20260716",
+   "base_date": "20260116",
+   "last_date": "20260717",
    "diff": {
-    "ref_date": "20260710",
+    "ref_date": "20260713",
     "entered": [
      "United States Oil Fund LP",
-     "iShares Russell 1000 Value ETF",
-     "First Trust NASDAQ Cybersecurity ETF"
+     "First Trust NASDAQ Cybersecurity ETF",
+     "iShares Russell 1000 Value ETF"
     ],
     "exited": [
      "Invesco S&P 500 Pure Growth ETF",
@@ -378,90 +380,90 @@
      "code": "EWT",
      "name": "Ishares Msci Taiwan ETF",
      "family": "",
-     "calmar": 11.61,
-     "ret": 0.4885,
-     "mdd": -0.1051
+     "calmar": 8.59,
+     "ret": 0.4454,
+     "mdd": -0.1273
     },
     {
      "rank": 2,
-     "code": "SOXX",
-     "name": "iShares Semiconductor ETF",
-     "family": "",
-     "calmar": 7.79,
-     "ret": 0.5732,
-     "mdd": -0.1901
-    },
-    {
-     "rank": 3,
      "code": "VLUE",
      "name": "iShares MSCI USA Value Factor ETF",
      "family": "",
-     "calmar": 7.74,
-     "ret": 0.3142,
+     "calmar": 7.63,
+     "ret": 0.3105,
      "mdd": -0.0943
     },
     {
-     "rank": 4,
-     "code": "SMH",
-     "name": "VanEck Semiconductor ETF",
+     "rank": 3,
+     "code": "SOXX",
+     "name": "iShares Semiconductor ETF",
      "family": "",
-     "calmar": 7.12,
-     "ret": 0.4352,
-     "mdd": -0.1495
+     "calmar": 6.53,
+     "ret": 0.5237,
+     "mdd": -0.2034
     },
     {
-     "rank": 5,
+     "rank": 4,
      "code": "SCHD",
      "name": "Schwab US Dividend Equity ETF",
      "family": "",
-     "calmar": 6.42,
-     "ret": 0.1381,
+     "calmar": 6.45,
+     "ret": 0.1388,
      "mdd": -0.0461
     },
     {
-     "rank": 6,
+     "rank": 5,
      "code": "USO",
      "name": "United States Oil Fund LP",
      "family": "",
-     "calmar": 5.61,
-     "ret": 0.6772,
+     "calmar": 6.16,
+     "ret": 0.7301,
      "mdd": -0.3249
     },
     {
-     "rank": 7,
+     "rank": 6,
      "code": "XBI",
      "name": "State Street SPDR S&P Biotech ETF",
      "family": "",
-     "calmar": 5.1,
-     "ret": 0.2224,
+     "calmar": 5.61,
+     "ret": 0.2422,
      "mdd": -0.0972
+    },
+    {
+     "rank": 7,
+     "code": "SMH",
+     "name": "VanEck Semiconductor ETF",
+     "family": "",
+     "calmar": 5.57,
+     "ret": 0.39,
+     "mdd": -0.168
     },
     {
      "rank": 8,
      "code": "EWY",
      "name": "Ishares Msci South Korea ETF",
      "family": "",
-     "calmar": 4.59,
-     "ret": 0.471,
-     "mdd": -0.2547
+     "calmar": 4.26,
+     "ret": 0.4484,
+     "mdd": -0.2585
     },
     {
      "rank": 9,
-     "code": "IWD",
-     "name": "iShares Russell 1000 Value ETF",
-     "family": "",
-     "calmar": 4.15,
-     "ret": 0.138,
-     "mdd": -0.0714
-    },
-    {
-     "rank": 10,
      "code": "CIBR",
      "name": "First Trust NASDAQ Cybersecurity ETF",
      "family": "",
+     "calmar": 4.14,
+     "ret": 0.2844,
+     "mdd": -0.1574
+    },
+    {
+     "rank": 10,
+     "code": "IWD",
+     "name": "iShares Russell 1000 Value ETF",
+     "family": "",
      "calmar": 3.97,
-     "ret": 0.2743,
-     "mdd": -0.1577
+     "ret": 0.1326,
+     "mdd": -0.0714
     }
    ]
   }
