@@ -39,15 +39,17 @@ KST = datetime.timezone(datetime.timedelta(hours=9))
 # ── 유니버스 레지스트리 ────────────────────────────────────────────────────────
 # module    : compute_top10 / load_history / weekly_diff / save_history 를 제공하는 모듈
 # display   : 텔레그램 한 줄 표기 방식
-#   name        → 종목명만                (코스피200)
-#   name_family → 종목명 (운용사)          (한국 ETF)
-#   name_code   → 종목명 (티커)            (S&P500)
-#   code_name   → 티커 종목명              (미국 ETF)
+#   name             → 종목명만                        (미사용)
+#   name_family      → 종목명 (운용사)                  (미사용)
+#   name_code        → 종목명 (티커/종목코드)           (코스피200·S&P500)
+#   name_code_family → 종목명 (종목코드 · 운용사)       (한국 ETF)
+#   code_name        → 티커 종목명                      (미국 ETF)
+# [2026-08-07] 국내 유니버스(한국 ETF·코스피200)에 6자리 종목코드 노출 추가.
 UNIVERSES = [
     {"id": "kr_etf",   "label": "한국 ETF",  "icon": "🇰🇷", "module": "calmar_etf",
-     "currency": "KRW", "display": "name_family"},
+     "currency": "KRW", "display": "name_code_family"},
     {"id": "kospi200", "label": "코스피200", "icon": "🏛",  "module": "kospi200_calmar",
-     "currency": "KRW", "display": "name"},
+     "currency": "KRW", "display": "name_code"},
     {"id": "sp500",    "label": "S&P500",   "icon": "🇺🇸", "module": "sp500_calmar",
      "currency": "USD", "display": "name_code"},
     {"id": "us_etf",   "label": "미국 ETF",  "icon": "🗽",  "module": "us_etf_calmar",
@@ -140,6 +142,9 @@ def label_of(row: dict, display: str) -> str:
     name = html.escape(row["name"])
     code = html.escape(row["code"])
     family = html.escape(row.get("family") or "")
+    if display == "name_code_family":
+        inner = f"{code} · {family}" if (family and family != "-") else code
+        return f"{name} <i>({inner})</i>"
     if display == "name_family" and family and family != "-":
         return f"{name} <i>({family})</i>"
     if display == "name_code":

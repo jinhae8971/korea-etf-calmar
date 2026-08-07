@@ -219,6 +219,7 @@ function nameCell(row, display) {
   const n = esc(row.name), c = esc(row.code), f = esc(row.family || "");
   if (display === "code_name") return `${c}<span class="tick">${n}</span>`;
   if (display === "name_code") return `${n}<span class="tick">${c}</span>`;
+  if (display === "name_code_family") return `${n}<span class="tick">${c}${(f && f !== "-") ? " · " + f : ""}</span>`;
   if (display === "name_family" && f && f !== "-") return `${n}<span class="tick">${f}</span>`;
   return `${n}<span class="tick">${c}</span>`;
 }
