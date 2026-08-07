@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-07T10:27:32+09:00",
+ "generated_at": "2026-08-07T17:55:02+09:00",
  "window": "롤링 6M (182일)",
  "metric": "칼마비율 = 연율화 수익률 ÷ |MDD|",
  "universes": [
@@ -8,7 +8,7 @@
    "label": "한국 ETF",
    "icon": "🇰🇷",
    "currency": "KRW",
-   "display": "name_family",
+   "display": "name_code_family",
    "status": "ok",
    "error": null,
    "base_date": "20260205",
@@ -16,8 +16,8 @@
    "diff": {
     "ref_date": "20260731",
     "entered": [
-     "TIGER 글로벌AI사이버보안",
      "ACE 라이프자산주주가치액티브",
+     "TIGER 글로벌AI사이버보안",
      "SOL 미국AI반도체칩메이커",
      "TIGER 미국AI반도체팹리스",
      "RISE 미국반도체NYSE(H)",
@@ -42,8 +42,8 @@
      "code": "0036D0",
      "name": "TIME 미국배당다우존스액티브",
      "family": "-",
-     "calmar": 10.75,
-     "ret": 0.2263,
+     "calmar": 10.85,
+     "ret": 0.2282,
      "mdd": -0.0467
     },
     {
@@ -51,35 +51,35 @@
      "code": "360140",
      "name": "KODEX 200롱코스닥150숏선물",
      "family": "삼성자산운용",
-     "calmar": 9.35,
-     "ret": 0.7618,
-     "mdd": -0.2239
+     "calmar": 8.45,
+     "ret": 0.7194,
+     "mdd": -0.2304
     },
     {
      "rank": 3,
-     "code": "418670",
-     "name": "TIGER 글로벌AI사이버보안",
-     "family": "미래에셋자산운용",
-     "calmar": 7.45,
-     "ret": 0.4698,
-     "mdd": -0.1551
-    },
-    {
-     "rank": 4,
      "code": "494330",
      "name": "ACE 라이프자산주주가치액티브",
      "family": "한국투자신탁운용",
-     "calmar": 7.4,
-     "ret": 0.6116,
+     "calmar": 7.59,
+     "ret": 0.6241,
      "mdd": -0.2148
+    },
+    {
+     "rank": 4,
+     "code": "418670",
+     "name": "TIGER 글로벌AI사이버보안",
+     "family": "미래에셋자산운용",
+     "calmar": 7.26,
+     "ret": 0.4595,
+     "mdd": -0.1551
     },
     {
      "rank": 5,
      "code": "479620",
      "name": "SOL 미국AI반도체칩메이커",
      "family": "신한자산운용",
-     "calmar": 6.11,
-     "ret": 0.7264,
+     "calmar": 6.2,
+     "ret": 0.7349,
      "mdd": -0.3225
     },
     {
@@ -87,8 +87,8 @@
      "code": "491830",
      "name": "TIGER 미국AI반도체팹리스",
      "family": "미래에셋자산운용",
-     "calmar": 5.69,
-     "ret": 0.6909,
+     "calmar": 5.74,
+     "ret": 0.6958,
      "mdd": -0.3251
     },
     {
@@ -96,8 +96,8 @@
      "code": "469050",
      "name": "RISE 미국반도체NYSE(H)",
      "family": "KB자산운용",
-     "calmar": 5.43,
-     "ret": 0.5762,
+     "calmar": 5.52,
+     "ret": 0.5838,
      "mdd": -0.2722
     },
     {
@@ -105,8 +105,8 @@
      "code": "494340",
      "name": "ACE 글로벌AI맞춤형반도체",
      "family": "한국투자신탁운용",
-     "calmar": 4.76,
-     "ret": 0.7284,
+     "calmar": 4.8,
+     "ret": 0.7329,
      "mdd": -0.4159
     },
     {
@@ -114,8 +114,8 @@
      "code": "0151S0",
      "name": "KODEX 미국AI반도체TOP3플러스",
      "family": "삼성자산운용",
-     "calmar": 4.72,
-     "ret": 0.5555,
+     "calmar": 4.76,
+     "ret": 0.56,
      "mdd": -0.2997
     },
     {
@@ -123,8 +123,8 @@
      "code": "461340",
      "name": "HANARO 글로벌생성형AI액티브",
      "family": "NH아문디자산운용",
-     "calmar": 4.65,
-     "ret": 0.4744,
+     "calmar": 4.73,
+     "ret": 0.4818,
      "mdd": -0.2517
     }
    ]
@@ -134,7 +134,7 @@
    "label": "코스피200",
    "icon": "🏛",
    "currency": "KRW",
-   "display": "name",
+   "display": "name_code",
    "status": "ok",
    "error": null,
    "base_date": "20260205",
@@ -142,9 +142,9 @@
    "diff": {
     "ref_date": "20260731",
     "entered": [
-     "LIG디펜스앤에어로스페이스",
      "OCI홀딩스",
-     "SK스퀘어"
+     "LIG디펜스앤에어로스페이스",
+     "LG전자"
     ],
     "exited": [
      "KT&G",
@@ -158,8 +158,8 @@
      "code": "009150",
      "name": "삼성전기",
      "family": "",
-     "calmar": 28.59,
-     "ret": 3.3207,
+     "calmar": 29.81,
+     "ret": 3.4069,
      "mdd": -0.6128
     },
     {
@@ -167,8 +167,8 @@
      "code": "047040",
      "name": "대우건설",
      "family": "",
-     "calmar": 10.65,
-     "ret": 1.9134,
+     "calmar": 11.56,
+     "ret": 2.0221,
      "mdd": -0.6985
     },
     {
@@ -176,72 +176,72 @@
      "code": "007340",
      "name": "DN오토모티브",
      "family": "",
-     "calmar": 6.82,
-     "ret": 0.8134,
+     "calmar": 6.42,
+     "ret": 0.7761,
      "mdd": -0.334
     },
     {
      "rank": 4,
-     "code": "161890",
-     "name": "한국콜마",
-     "family": "",
-     "calmar": 6.11,
-     "ret": 0.5569,
-     "mdd": -0.2321
-    },
-    {
-     "rank": 5,
      "code": "011070",
      "name": "LG이노텍",
      "family": "",
-     "calmar": 5.99,
-     "ret": 1.3136,
+     "calmar": 6.15,
+     "ret": 1.339,
      "mdd": -0.7229
     },
     {
-     "rank": 6,
-     "code": "078930",
-     "name": "GS",
+     "rank": 5,
+     "code": "161890",
+     "name": "한국콜마",
      "family": "",
-     "calmar": 4.19,
-     "ret": 0.4156,
-     "mdd": -0.2387
+     "calmar": 6.09,
+     "ret": 0.5554,
+     "mdd": -0.2321
+    },
+    {
+     "rank": 6,
+     "code": "010060",
+     "name": "OCI홀딩스",
+     "family": "",
+     "calmar": 5.09,
+     "ret": 0.9675,
+     "mdd": -0.5616
     },
     {
      "rank": 7,
      "code": "079550",
      "name": "LIG디펜스앤에어로스페이스",
      "family": "",
-     "calmar": 4.16,
-     "ret": 0.6249,
+     "calmar": 4.84,
+     "ret": 0.7054,
      "mdd": -0.3922
     },
     {
      "rank": 8,
-     "code": "010060",
-     "name": "OCI홀딩스",
+     "code": "078930",
+     "name": "GS",
      "family": "",
-     "calmar": 3.98,
-     "ret": 0.8014,
-     "mdd": -0.5616
+     "calmar": 4.33,
+     "ret": 0.4271,
+     "mdd": -0.2387
     },
     {
      "rank": 9,
-     "code": "483650",
-     "name": "달바글로벌",
+     "code": "066570",
+     "name": "LG전자",
      "family": "",
-     "calmar": 3.63,
-     "ret": 0.4374,
-     "mdd": -0.2923
+     "calmar": 3.84,
+     "ret": 0.8445,
+     "mdd": -0.6229
     },
     {
      "rank": 10,
-     "code": "402340",
-     "name": "SK스퀘어",
+     "code": "483650",
+     "name": "달바글로벌",
      "family": "",
-     "calmar": 3.49,
-     "ret": 0.7566,
-     "mdd": -0.5944
+     "calmar": 3.78,
+     "ret": 0.4522,
+     "mdd": -0.2923
     }
    ]
   },
