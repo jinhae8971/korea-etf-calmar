@@ -35,6 +35,21 @@ NAMES = {
     "DIVO": "Amplify CWP 배당인컴",
 }
 
+# 사유 자동 판별이 안 될 때 안내할 운용사 분배 공시 페이지
+DIST_URL = {
+    "QQQI": "https://neosfunds.com/qqqi/",
+    "BALI": "https://www.ishares.com/us/products/333207/",
+    "JEPI": "https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332",
+    "SCHD": "https://www.schwabassetmanagement.com/products/schd",
+    "IDVO": "https://amplifyetfs.com/idvo/",
+    "SPYI": "https://neosfunds.com/spyi/",
+    "DIVO": "https://amplifyetfs.com/divo/",
+}
+
+# 종목별 옵션 프리미엄 환경을 대표하는 변동성 지수
+VOL_INDEX = {"QQQI": "^VXN", "JEPQ": "^VXN"}
+DEFAULT_VOL_INDEX = "^VIX"
+
 
 # ----------------------------------------------------------------------
 # 설정 / 입출력
@@ -170,6 +185,35 @@ def collect(ticker: str) -> dict:
         if avg6 > 0:
             div_vs_avg = last_div / avg6 - 1.0
 
+    # --- 사유 판별용 보조 지표 ---
+    # (a) 지급 간격: 회차 스킵/지연 여부
+    interval_days = interval_median = None
+    if len(div) >= 4:
+        gaps = div.index.to_series().diff().dt.days.dropna()
+        interval_days = int(gaps.iloc[-1])
+        interval_median = int(gaps.iloc[-6:-1].median()) if len(gaps) >= 3 else None
+
+    # (b) 직전 회차가 비정상 고액이었는지 (기저효과)
+    prev_vs_avg = None
+    if len(div) >= 7 and prev_div:
+        base = float(div.iloc[-7:-1].mean())
+        if base > 0:
+            prev_vs_avg = prev_div / base - 1.0
+
+    # (c) 분배율(분배금 ÷ 배당락일 종가) 편차
+    #     절대액은 줄었는데 분배율이 그대로면 = 기준가 하락에 따른 감소
+    div_rate_dev = None
+    if len(div) >= 4:
+        rates = []
+        for dt, amt in div.iloc[-6:].items():
+            near = px[px.index <= dt]
+            if not near.empty and float(near.iloc[-1]) > 0:
+                rates.append(float(amt) / float(near.iloc[-1]))
+        if len(rates) >= 4:
+            avg_rate = sum(rates[:-1]) / len(rates[:-1])
+            if avg_rate > 0:
+                div_rate_dev = rates[-1] / avg_rate - 1.0
+
     adj_1y = adj[adj.index > last_date - pd.Timedelta(days=365)]
 
     return {
@@ -189,12 +233,90 @@ def collect(ticker: str) -> dict:
         "prev_div": prev_div,
         "div_chg": div_chg,
         "div_vs_avg": div_vs_avg,
+        "interval_days": interval_days,
+        "interval_median": interval_median,
+        "prev_vs_avg": prev_vs_avg,
+        "div_rate_dev": div_rate_dev,
         "last_div_date": last_div_date,
         "aum": fetch_aum(ticker),
         "mdd_1y": max_drawdown(adj_1y),
         "mdd_all": max_drawdown(adj),
         "inception": str(adj.index[0].date()),
     }
+
+
+def fetch_vol_context() -> dict:
+    """옵션 프리미엄 환경 판단용. 실패해도 전체 실행을 막지 않는다."""
+    out = {}
+    for sym in ("^VIX", "^VXN"):
+        try:
+            h = yf.Ticker(sym).history(period="1y")["Close"].dropna()
+            if len(h) >= 130:
+                out[sym] = {
+                    "m1": float(h.iloc[-21:].mean()),
+                    "m6": float(h.iloc[-126:].mean()),
+                    "last": float(h.iloc[-1]),
+                }
+        except Exception as e:  # noqa: BLE001
+            print(f"[vol] {sym} 수집 실패: {e}")
+    return out
+
+
+def diagnose_distribution(r: dict, vol_ctx: dict) -> list:
+    """분배금 추세 이탈의 사유 후보를 근거와 함께 반환한다.
+
+    단정하지 않는다 — 관측된 정황만 제시하고, 판별 불가 시 공시 확인을 안내한다.
+    """
+    reasons = []
+
+    # 1) 회차 스킵·지연
+    if r.get("interval_days") and r.get("interval_median"):
+        if r["interval_days"] > r["interval_median"] * 1.5:
+            reasons.append(
+                f"지급 간격 {r['interval_days']}일 (통상 {r['interval_median']}일) — 회차 스킵·지연 가능성"
+            )
+
+    # 2) 직전 회차 기저효과
+    if r.get("prev_vs_avg") is not None and r["prev_vs_avg"] > 0.25:
+        reasons.append(
+            f"직전 회차가 평균 대비 {r['prev_vs_avg'] * 100:+.0f}% 고액 — 기저효과(특별분배 등)"
+        )
+
+    # 3) 분배율은 유지 → 기준가 하락에 따른 절대액 감소
+    if r.get("div_rate_dev") is not None and abs(r["div_rate_dev"]) < 0.05:
+        reasons.append(
+            f"분배율(분배금÷기준가)은 평시 대비 {r['div_rate_dev'] * 100:+.1f}%로 유지 — "
+            "정책 변경이 아닌 기준가 하락 반영"
+        )
+
+    # 3-b) 분배율 자체가 축소 → 기준가 요인이 아닌 실제 감액
+    if r.get("div_rate_dev") is not None and r["div_rate_dev"] <= -0.10:
+        reasons.append(
+            f"분배율도 평시 대비 {r['div_rate_dev'] * 100:+.1f}% 축소 — "
+            "기준가 요인이 아닌 분배 자체의 감액"
+        )
+
+    # 4) 옵션 프리미엄 환경 축소
+    sym = VOL_INDEX.get(r["ticker"], DEFAULT_VOL_INDEX)
+    v = vol_ctx.get(sym)
+    if v and v["m6"] > 0:
+        ch = v["m1"] / v["m6"] - 1.0
+        if ch < -0.10:
+            reasons.append(
+                f"{sym} 1M평균 {v['m1']:.1f} vs 6M평균 {v['m6']:.1f} ({ch * 100:+.0f}%) — "
+                "콜 프리미엄 수취 환경 축소"
+            )
+
+    # 5) 기초자산 급등 (콜 피인 → 프리미엄 재원 압박)
+    if r.get("r_1m") is not None and r["r_1m"] > 0.07:
+        reasons.append(f"기초자산 1M {r['r_1m'] * 100:+.1f}% 급등 — 콜 피인 구간")
+
+    if not reasons:
+        url = DIST_URL.get(r["ticker"])
+        tail = f" → {url}" if url else ""
+        reasons.append(f"자동 판별 불가 — 운용사 분배 공시 확인 필요{tail}")
+
+    return reasons
 
 
 # ----------------------------------------------------------------------
@@ -224,7 +346,8 @@ def delta_pp(cur, prev, digits=2):
     return cur - prev
 
 
-def build_message(rows: list, prev_snap: dict, asof: str) -> str:
+def build_message(rows: list, prev_snap: dict, asof: str, vol_ctx: dict = None) -> str:
+    vol_ctx = vol_ctx or {}
     lines = [
         "📊 <b>인컴 ETF 주간 브리프</b>",
         f"기준일 {asof} · 종가 기준",
@@ -289,9 +412,13 @@ def build_message(rows: list, prev_snap: dict, asof: str) -> str:
         r for r in ok
         if r.get("div_vs_avg") is not None and r["div_vs_avg"] < -0.15
     ]
-    if cuts:
-        txt = ", ".join(f"{c['ticker']} {c['div_vs_avg'] * 100:+.1f}%" for c in cuts)
-        lines.append(f"⚠️ 분배금 추세 이탈 (6회평균비): {txt}")
+    for c in cuts:
+        lines.append(
+            f"⚠️ <b>{c['ticker']} 분배금 추세 이탈</b> "
+            f"{c['div_vs_avg'] * 100:+.1f}% (6회평균비)"
+        )
+        for reason in diagnose_distribution(c, vol_ctx):
+            lines.append(f"   · {reason}")
 
     # AUM 순유출 경보
     outs = []
@@ -349,7 +476,13 @@ def main():
     if history:
         prev_snap = {r["ticker"]: r for r in history[-1].get("rows", []) if r.get("ok")}
 
-    msg = build_message(rows, prev_snap, asof)
+    need_diag = any(
+        r.get("ok") and r.get("div_vs_avg") is not None and r["div_vs_avg"] < -0.15
+        for r in rows
+    )
+    vol_ctx = fetch_vol_context() if need_diag else {}
+
+    msg = build_message(rows, prev_snap, asof, vol_ctx)
     print(msg)
     send_telegram([msg], cfg["telegram_token"], cfg["telegram_chat_id"])
 

@@ -69,6 +69,7 @@ class TestMessage(unittest.TestCase):
             ttm_div=7.626, ttm_yield=0.1367, last_div=0.636, prev_div=0.62,
             div_chg=0.0258, last_div_date="2026-07-31", aum=13.4e9,
             mdd_1y=-0.082, mdd_all=-0.20, inception="2024-01-30", div_vs_avg=0.01,
+            interval_days=30, interval_median=30, prev_vs_avg=0.0, div_rate_dev=0.0,
         )
         base.update(kw)
         return base
@@ -90,6 +91,65 @@ class TestMessage(unittest.TestCase):
     def test_failed_row_does_not_crash(self):
         msg = m.build_message([{"ticker": "BALI", "ok": False}], {}, "2026-08-14")
         self.assertIn("데이터 수집 실패", msg)
+
+
+class TestDiagnosis(unittest.TestCase):
+    def base(self, **kw):
+        r = dict(
+            ticker="BALI", r_1m=0.01, interval_days=30, interval_median=30,
+            prev_vs_avg=0.0, div_rate_dev=-0.30, div_vs_avg=-0.21,
+        )
+        r.update(kw)
+        return r
+
+    def test_skipped_payout(self):
+        out = m.diagnose_distribution(self.base(interval_days=62), {})
+        self.assertTrue(any("스킵" in x for x in out))
+
+    def test_base_effect(self):
+        out = m.diagnose_distribution(self.base(prev_vs_avg=0.40), {})
+        self.assertTrue(any("기저효과" in x for x in out))
+
+    def test_nav_linked(self):
+        out = m.diagnose_distribution(self.base(div_rate_dev=0.01), {})
+        self.assertTrue(any("기준가 하락" in x for x in out))
+
+    def test_real_cut_detected(self):
+        out = m.diagnose_distribution(self.base(div_rate_dev=-0.28), {})
+        self.assertTrue(any("분배 자체의 감액" in x for x in out))
+
+    def test_vol_regime(self):
+        ctx = {"^VIX": {"m1": 12.0, "m6": 18.0, "last": 12.0}}
+        out = m.diagnose_distribution(self.base(), ctx)
+        self.assertTrue(any("프리미엄 수취 환경 축소" in x for x in out))
+
+    def test_vxn_for_qqqi(self):
+        ctx = {"^VXN": {"m1": 15.0, "m6": 22.0, "last": 15.0}}
+        out = m.diagnose_distribution(self.base(ticker="QQQI"), ctx)
+        self.assertTrue(any("^VXN" in x for x in out))
+
+    def test_underlying_rally(self):
+        out = m.diagnose_distribution(self.base(r_1m=0.11), {})
+        self.assertTrue(any("콜 피인" in x for x in out))
+
+    def test_fallback_with_url(self):
+        out = m.diagnose_distribution(self.base(div_rate_dev=-0.07), {})
+        self.assertEqual(len(out), 1)
+        self.assertIn("자동 판별 불가", out[0])
+        self.assertIn("ishares.com", out[0])
+
+    def test_message_includes_reasons(self):
+        rows = [dict(
+            ticker="BALI", ok=True, name="테스트", date="2026-08-14", price=35.19,
+            r_1w=0.01, r_1m=0.02, r_3m=0.03, r_ytd=0.16, r_1y=0.22,
+            ttm_div=2.65, ttm_yield=0.0754, last_div=0.189, prev_div=0.267,
+            div_chg=-0.29, div_vs_avg=-0.21, last_div_date="2026-08-01",
+            aum=1.32e9, mdd_1y=-0.067, mdd_all=-0.166, inception="2023-09-28",
+            interval_days=61, interval_median=30, prev_vs_avg=0.0, div_rate_dev=-0.3,
+        )]
+        msg = m.build_message(rows, {}, "2026-08-14", {})
+        self.assertIn("분배금 추세 이탈", msg)
+        self.assertIn("스킵", msg)
 
 
 class TestConfig(unittest.TestCase):
