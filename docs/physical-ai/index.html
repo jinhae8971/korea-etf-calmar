@@ -58,6 +58,33 @@ fetch('./data/latest.json?t='+Date.now()).then(r=>r.ok?r.json():Promise.reject(r
  h+=`<div class="card"><h3>기성 자동화와의 관계</h3>
   <div class="stage" style="font-size:22px">${dc.corr==null?'–':dc.corr.toFixed(2)}</div>
   <div class="meta">${dc.corr==null?'데이터 부족':(dc.decoupled?'임계 '+dc.threshold+' 미만 — 독립 사이클 조짐':'동행 중')}</div></div>`;
+ const wl=d.watchlist;
+ if(wl&&wl.stocks&&wl.stocks.length){
+   h+=`<div class="card"><h3>흐름 적합도 상위 10 (미국 상장)</h3>`+
+     wl.stocks.map(r=>{
+       const x=r.detail||{};
+       const tag=(x.independence>=0.6)?'<span class="n"> 순수형</span>':
+                 ((x.independence<0.35)?'<span class="n"> 반도체 동행형</span>':'');
+       return `<div class="ms"><div><div class="l">${r.rank}. <b>${esc(r.ticker)}</b>${tag}</div>
+        <div class="n">순도 ${(x.purity??0).toFixed(2)} · 실현 ${(x.realization??0).toFixed(2)}
+        · 독립 ${(x.independence??0).toFixed(2)} · 생존 ${(x.resilience??0).toFixed(2)}
+        · 유동 ${(x.liquidity??0).toFixed(2)}</div></div>
+        <div class="v"><b>${r.score}</b><br><span class="n">점</span></div></div>`;
+     }).join('')+
+     `<div class="n" style="margin-top:10px">가중치 ${Object.entries(wl.weights||{})
+       .map(([k,v])=>k+' '+v).join(' · ')}</div>
+      <div class="n">${esc(wl.note||'')}</div></div>`;
+   const e=wl.etfs||[];
+   if(e.length){
+     const neg=e[0].exposure!=null&&e[0].exposure<0;
+     h+=`<div class="card"><h3>ETF</h3>`+
+       (neg?`<div class="alert">후보 ETF 전부 순수 노출이 음수입니다 — 로봇 ETF 들이
+         순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.</div>`:'')+
+       e.map(r=>`<div class="ms"><div class="l">${r.rank}. <b>${esc(r.ticker)}</b>
+        <div class="n">순수노출 ${r.exposure==null?'–':(r.exposure>0?'+':'')+r.exposure.toFixed(2)}</div></div>
+        <div class="v"><b>${r.score}</b></div></div>`).join('')+`</div>`;
+   }
+ }
  const st=d.data_status||{};
  h+=`<div class="card"><h3>데이터 상태</h3>`+Object.entries(st).map(([k,v])=>
   `<div class="ms"><div class="l">${esc(k)}</div><div class="v">${esc(v.mode)}</div></div>`).join('')+`</div>`;

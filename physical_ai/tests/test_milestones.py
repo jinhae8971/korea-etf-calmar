@@ -115,3 +115,38 @@ class TestAlert(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestWatchlist(unittest.TestCase):
+    """스크리너의 방향성 버그는 조용히 상위권을 오염시키므로 반드시 고정한다."""
+    def setUp(self):
+        from core import watchlist as W
+        self.W = W
+
+    def test_rank_pct_best_gets_one(self):
+        r = self.W.rank_pct({"a": 1.0, "b": 5.0, "c": 3.0})
+        self.assertEqual(r["b"], 1.0)   # 값이 클수록 좋다 → 최고값이 1.0
+        self.assertEqual(r["a"], 0.0)
+
+    def test_rank_pct_lower_is_better(self):
+        r = self.W.rank_pct({"a": 1.0, "b": 5.0}, higher_is_better=False)
+        self.assertEqual(r["a"], 1.0)
+
+    def test_rank_pct_ignores_none(self):
+        r = self.W.rank_pct({"a": None, "b": 2.0, "c": 4.0})
+        self.assertNotIn("a", r)
+        self.assertEqual(len(r), 2)
+
+    def test_score_universe_filter(self):
+        comp = {"x": {"AAA": 1.0, "ETF1": 1.0}}
+        out = self.W.score(comp, {"x": 1.0}, universe=["AAA"])
+        self.assertIn("AAA", out)
+        self.assertNotIn("ETF1", out)   # ETF 가 종목 순위에 섞이면 안 된다
+
+    def test_score_drops_low_coverage(self):
+        comp = {"a": {"T": 1.0}}
+        out = self.W.score(comp, {"a": 0.3, "b": 0.7}, min_coverage=0.6)
+        self.assertNotIn("T", out)      # 근거 부족은 순위에서 제외
+
+    def test_correlation_needs_samples(self):
+        self.assertIsNone(self.W.correlation([0.1] * 3, [0.2] * 3))

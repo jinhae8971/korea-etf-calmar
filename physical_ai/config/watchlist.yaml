@@ -1,0 +1,65 @@
+# 워치리스트 스크리너 — 미국 상장 한정
+#
+# 후보군은 넓게 두고 순위는 기계가 매긴다. 내가 고른 10개를 보여주는 것이
+# 아니라, 사전 등록된 가중치로 계산된 상위 10개를 보여주는 것이 목적이다.
+
+meta:
+  top_n: 10
+  market: US
+  note: >
+    이 목록은 추천이 아니라 스크리닝 결과다. 흐름 적합도 점수가 높다는 것은
+    '이 테마의 순수 노출이 크다'는 뜻이지 '오를 것'이라는 뜻이 아니다.
+    현재 국면이 NARRATIVE_LED(서사 선행)이므로, 상위 종목일수록
+    실현이 오지 않을 때의 하방도 크다.
+
+# 종목 후보 — CIK 는 EDGAR 순도 산출에 필요 (미국 상장만)
+stocks:
+  SYM:  "0001837240"   # Symbotic — 물류 자동화
+  SERV: "0001842356"   # Serve Robotics — 배송 로봇
+  RR:   "0001891856"   # Richtech Robotics — 서비스 로봇
+  ISRG: "0001035267"   # Intuitive Surgical — 수술 로봇
+  TER:  "0000097210"   # Teradyne — 로봇(UR/MiR) + 반도체 테스트
+  ROK:  "0001024478"   # Rockwell Automation
+  CGNX: "0000851205"   # Cognex — 머신비전
+  ZBRA: "0000877212"   # Zebra Technologies
+  NDSN: "0000072331"   # Nordson
+  OMCL: "0000926326"   # Omnicell — 약국 자동화
+  KTOS: "0001069258"   # Kratos — 무인기
+  PATH: "0001734722"   # UiPath — 소프트웨어 로봇
+  AMBA: "0001280263"   # Ambarella — 엣지 비전 SoC
+  NVTS: "0001841925"   # Navitas — 전력 반도체
+  AVAV: "0001368622"   # AeroVironment — 무인 시스템
+  TDY:  "0000094990"   # Teledyne
+  EMR:  "0000066570"   # Emerson Electric
+  HON:  "0000773840"   # Honeywell — 창고 자동화
+  TSLA: "0001318605"   # Tesla — Optimus
+  NVDA: "0001045810"   # NVIDIA — Isaac/GR00T
+  AMD:  "0000002488"
+  MASS: "0001812727"   # 908 Devices (참고용 소형)
+  OUST: "0001816581"   # Ouster — 라이다
+  INVZ: "0001835654"   # Innoviz — 라이다
+  LAZR: "0001758057"   # Luminar — 라이다
+
+# ETF 후보 — 보유종목을 무료로 못 얻으므로 수익률 상관으로 노출을 역산한다
+etfs: [BOTZ, ROBO, ROBT, ARKQ, IRBO, THNQ, KROP, ARKX, XAR, IYJ]
+
+# 순도 산출용 용어 (기업 자사 공시 내 언급)
+purity_terms: ["robot", "robotics", "humanoid", "physical AI", "autonomous mobile"]
+purity_window: {start: "2024-01-01", end: "2026-08-31"}
+
+# 가중치 — 사전 등록. 결과를 보고 조정하지 않는다.
+weights:
+  purity: 0.30        # 테마 순도 (EDGAR 언급 밀도)
+  realization: 0.25   # 매출 YoY 지속성 — 지금 비어 있는 축이므로 가장 중요
+  independence: 0.20  # 기성 자동화와 낮은 상관 = 테마 고유 노출
+  resilience: 0.15    # 영업이익률 — 서사 선행 국면에서 버틸 체력
+  liquidity: 0.10     # 거래 가능성
+
+etf_weights:
+  pure_exposure: 0.60   # corr(순수바스켓) - corr(기성자동화)
+  independence: 0.25
+  liquidity: 0.15
+
+changelog:
+  - "2026-08-16 최초 등록"
+  - "2026-08-16 IRBT 제거 — 시세·공시 모두 취득 불가(상장폐지로 추정)"

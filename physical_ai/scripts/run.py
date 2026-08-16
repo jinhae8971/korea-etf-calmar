@@ -23,6 +23,8 @@ import yaml  # noqa: E402
 
 from core import milestones as ms  # noqa: E402
 from core import narrative, prices, realization  # noqa: E402
+sys.path.insert(0, str(ROOT / "scripts"))
+from build_watchlist import build as build_watchlist  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -119,6 +121,29 @@ def render(report: dict, dashboard: str = "") -> str:
     if degraded:
         lines += ["", f"⚠️ 데이터 상태: {', '.join(degraded)}"]
 
+    wl = report.get("watchlist")
+    if wl and wl.get("stocks"):
+        lines += ["", "<b>📋 흐름 적합도 상위 10 (미국 상장)</b>"]
+        for r in wl["stocks"]:
+            tag = ""
+            d = r.get("detail", {})
+            if d.get("independence", 0) >= 0.6:
+                tag = " · 순수형"
+            elif d.get("independence", 1) < 0.35:
+                tag = " · 반도체 동행형"
+            lines.append(f"  {r['rank']:>2}. {r['ticker']:<5} {r['score']:.0f}점{tag}")
+        etfs = wl.get("etfs") or []
+        if etfs:
+            best = etfs[0]
+            exp = best.get("exposure")
+            if exp is not None and exp < 0:
+                lines += ["", "<b>ETF</b> — 후보 전부 순수 노출이 음수입니다. "
+                              "로봇 ETF 들이 순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.",
+                          f"  (최상위 {best['ticker']} 순수노출 {exp:+.2f})"]
+            else:
+                lines += ["", "<b>ETF</b> " + " / ".join(
+                    f"{e['ticker']} {e['score']:.0f}" for e in etfs[:3])]
+
     lines += ["", "<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>",
               "<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>"]
     if dashboard:
@@ -144,9 +169,11 @@ def main() -> int:
     legacy = cfg["baskets"]["legacy"]["tickers"]
     aisemi = cfg["baskets"]["aisemi"]["tickers"]
     bench = cfg["meta"]["benchmark"]
-    series, pstatus = prices.collect(
-        sorted(set(pure + legacy + aisemi + [bench])), str(ROOT / "data" / "prices.json"), 900
-    )
+    with open(ROOT / "config" / "watchlist.yaml", encoding="utf-8") as handle:
+        wl_cfg = yaml.safe_load(handle)
+    universe = sorted(set(pure + legacy + aisemi + [bench]
+                          + list(wl_cfg["stocks"]) + wl_cfg["etfs"]))
+    series, pstatus = prices.collect(universe, str(ROOT / "data" / "prices.json"), 900)
 
     ex_pure = basket_excess(series, pure, bench)
     ex_legacy = basket_excess(series, legacy, bench)
@@ -187,6 +214,12 @@ def main() -> int:
         "narrative": robot_narr,
         "data_status": {"prices": pstatus, "narrative": nstatus, "realization": rstatus},
     }
+    try:
+        report["watchlist"] = build_watchlist(cfg, series)
+        report["data_status"].update(report["watchlist"].pop("status", {}))
+    except Exception as exc:  # noqa: BLE001
+        print(f"::warning::워치리스트 산출 실패: {type(exc).__name__}: {exc}")
+        report["watchlist"] = None
     report["message"] = render(report, os.environ.get("DASHBOARD_URL", ""))
 
     record = {"date": today, "regime": summary.get("regime"), "gap": summary.get("gap"),
