@@ -1,6 +1,6 @@
 {
  "date": "2026-08-16",
- "generated_at": "2026-08-16T15:29:50+09:00",
+ "generated_at": "2026-08-16T15:31:00+09:00",
  "summary": {
   "narrative": {
    "label": "서사",
@@ -319,11 +319,11 @@
    {
     "rank": 1,
     "ticker": "TER",
-    "score": 77.6,
+    "score": 78.8,
     "coverage": 1.0,
     "detail": {
      "purity": 0.917,
-     "realization": 0.857,
+     "realization": 0.905,
      "independence": 0.265,
      "resilience": 0.952,
      "liquidity": 0.912
@@ -334,28 +334,12 @@
    },
    {
     "rank": 2,
-    "ticker": "NVDA",
-    "score": 74.3,
-    "coverage": 1.0,
-    "detail": {
-     "purity": 0.625,
-     "realization": 0.714,
-     "independence": 0.706,
-     "resilience": 0.905,
-     "liquidity": 1.0
-    },
-    "density": 0.1174,
-    "persistence": 0.25,
-    "margin": 0.308
-   },
-   {
-    "rank": 3,
     "ticker": "TSLA",
-    "score": 72.7,
+    "score": 73.9,
     "coverage": 1.0,
     "detail": {
      "purity": 1.0,
-     "realization": 0.667,
+     "realization": 0.714,
      "independence": 0.529,
      "resilience": 0.381,
      "liquidity": 0.971
@@ -363,6 +347,22 @@
     "density": 0.2812,
     "persistence": 0.25,
     "margin": 0.014
+   },
+   {
+    "rank": 3,
+    "ticker": "NVDA",
+    "score": 73.1,
+    "coverage": 1.0,
+    "detail": {
+     "purity": 0.625,
+     "realization": 0.667,
+     "independence": 0.706,
+     "resilience": 0.905,
+     "liquidity": 1.0
+    },
+    "density": 0.1174,
+    "persistence": 0.25,
+    "margin": 0.308
    },
    {
     "rank": 4,
@@ -382,6 +382,22 @@
    },
    {
     "rank": 5,
+    "ticker": "ZBRA",
+    "score": 65.5,
+    "coverage": 1.0,
+    "detail": {
+     "purity": 0.75,
+     "realization": 0.619,
+     "independence": 0.559,
+     "resilience": 0.619,
+     "liquidity": 0.706
+    },
+    "density": 0.1413,
+    "persistence": 0.0,
+    "margin": 0.206
+   },
+   {
+    "rank": 6,
     "ticker": "AVAV",
     "score": 65.4,
     "coverage": 0.75,
@@ -396,13 +412,13 @@
     "margin": -0.658
    },
    {
-    "rank": 6,
+    "rank": 7,
     "ticker": "SYM",
-    "score": 61.9,
+    "score": 63.1,
     "coverage": 1.0,
     "detail": {
      "purity": 0.667,
-     "realization": 0.762,
+     "realization": 0.81,
      "independence": 0.588,
      "resilience": 0.429,
      "liquidity": 0.471
@@ -412,13 +428,13 @@
     "margin": 0.046
    },
    {
-    "rank": 7,
+    "rank": 8,
     "ticker": "KTOS",
-    "score": 60.8,
+    "score": 59.6,
     "coverage": 1.0,
     "detail": {
      "purity": 0.292,
-     "realization": 0.81,
+     "realization": 0.762,
      "independence": 1.0,
      "resilience": 0.333,
      "liquidity": 0.676
@@ -428,13 +444,13 @@
     "margin": -0.003
    },
    {
-    "rank": 8,
+    "rank": 9,
     "ticker": "AMBA",
-    "score": 58.8,
+    "score": 57.6,
     "coverage": 1.0,
     "detail": {
      "purity": 0.792,
-     "realization": 0.905,
+     "realization": 0.857,
      "independence": 0.176,
      "resilience": 0.238,
      "liquidity": 0.529
@@ -444,36 +460,20 @@
     "margin": -0.193
    },
    {
-    "rank": 9,
-    "ticker": "HON",
-    "score": 56.2,
-    "coverage": 1.0,
-    "detail": {
-     "purity": 0.208,
-     "realization": 0.524,
-     "independence": 0.882,
-     "resilience": 0.714,
-     "liquidity": 0.853
-    },
-    "density": 0.0015,
-    "persistence": 0.0,
-    "margin": 0.23
-   },
-   {
     "rank": 10,
-    "ticker": "ZBRA",
-    "score": 56.0,
+    "ticker": "ISRG",
+    "score": 56.6,
     "coverage": 1.0,
     "detail": {
-     "purity": 0.75,
-     "realization": 0.238,
-     "independence": 0.559,
-     "resilience": 0.619,
-     "liquidity": 0.706
+     "purity": 0.542,
+     "realization": 0.143,
+     "independence": 0.647,
+     "resilience": 1.0,
+     "liquidity": 0.882
     },
-    "density": 0.1413,
+    "density": 0.0683,
     "persistence": 0.0,
-    "margin": 0.206
+    "margin": 0.336
    }
   ],
   "etfs": [
@@ -552,5 +552,5 @@
   },
   "note": "이 목록은 추천이 아니라 스크리닝 결과다. 흐름 적합도 점수가 높다는 것은 '이 테마의 순수 노출이 크다'는 뜻이지 '오를 것'이라는 뜻이 아니다. 현재 국면이 NARRATIVE_LED(서사 선행)이므로, 상위 종목일수록 실현이 오지 않을 때의 하방도 크다.\n"
  },
- "message": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-08-16</b>\n\n<b>서사</b> ●● 2/2   <b>실현</b> ○○○ 0/3   <b>가격</b> ○ 0/1\n축 간 격차 +1.00 — 서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간\n\n✅ ① 서사 점화  7.14배 / 기준 3.00배 · AI반도체 2023Q1\n     <i>2년 전 대비 언급 배수</i>\n✅ ② 산업 전반 확산  2.21배 / 기준 2.00배 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ③ 매출 가속 정착  +12% / 기준 +25% · AI반도체 2023Q4\n     <i>최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%</i>\n⚪ ④ 공급 병목 출현  +85% / 기준 +10% · AI반도체 2024Q1\n     <i>2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 +3% · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -17% / 기준 +20% · AI반도체 2023Q2\n     <i>2026Q3 12개월 초과수익</i>\n\nℹ️ 서사 선행 상태 1회 연속 (경고 기준 6회)\n\n<b>디커플링</b> 상관 +0.21 — 독립 사이클 조짐\n\n⚠️ 데이터 상태: purity\n\n<b>📋 흐름 적합도 상위 10 (미국 상장)</b>\n   1. TER   78점 · 반도체 동행형\n   2. NVDA  74점 · 순수형\n   3. TSLA  73점\n   4. OUST  66점 · 반도체 동행형\n   5. AVAV  65점 · 순수형\n   6. SYM   62점\n   7. KTOS  61점 · 순수형\n   8. AMBA  59점 · 반도체 동행형\n   9. HON   56점 · 순수형\n  10. ZBRA  56점\n\n<b>ETF</b> — 후보 전부 순수 노출이 음수입니다. 로봇 ETF 들이 순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.\n  (최상위 ARKX 순수노출 -0.08)\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/"
+ "message": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-08-16</b>\n\n<b>서사</b> ●● 2/2   <b>실현</b> ○○○ 0/3   <b>가격</b> ○ 0/1\n축 간 격차 +1.00 — 서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간\n\n✅ ① 서사 점화  7.14배 / 기준 3.00배 · AI반도체 2023Q1\n     <i>2년 전 대비 언급 배수</i>\n✅ ② 산업 전반 확산  2.21배 / 기준 2.00배 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ③ 매출 가속 정착  +12% / 기준 +25% · AI반도체 2023Q4\n     <i>최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%</i>\n⚪ ④ 공급 병목 출현  +85% / 기준 +10% · AI반도체 2024Q1\n     <i>2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 +3% · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -17% / 기준 +20% · AI반도체 2023Q2\n     <i>2026Q3 12개월 초과수익</i>\n\nℹ️ 서사 선행 상태 1회 연속 (경고 기준 6회)\n\n<b>디커플링</b> 상관 +0.21 — 독립 사이클 조짐\n\n⚠️ 데이터 상태: purity\n\n<b>📋 흐름 적합도 상위 10 (미국 상장)</b>\n   1. TER   79점 · 반도체 동행형\n   2. TSLA  74점\n   3. NVDA  73점 · 순수형\n   4. OUST  66점 · 반도체 동행형\n   5. ZBRA  66점\n   6. AVAV  65점 · 순수형\n   7. SYM   63점\n   8. KTOS  60점 · 순수형\n   9. AMBA  58점 · 반도체 동행형\n  10. ISRG  57점 · 순수형\n\n<b>ETF</b> — 후보 전부 순수 노출이 음수입니다. 로봇 ETF 들이 순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.\n  (최상위 ARKX 순수노출 -0.08)\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/"
 }
