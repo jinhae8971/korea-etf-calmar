@@ -166,9 +166,12 @@ def collect(symbols: list[str], cache_path: str, keep_days: int = 420) -> tuple[
         else:
             failed.append(symbol)
 
-    cache["series"] = out
-    cache["updated"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
-    save_cache(cache_path, cache)
+    # 시계열 내용이 동일하면 updated 타임스탬프도 갱신하지 않는다.
+    # 그래야 워크플로우의 "변경 없음 → 커밋 생략" 가드가 실제로 발동한다.
+    if cache.get("series") != out:
+        cache["series"] = out
+        cache["updated"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+        save_cache(cache_path, cache)
 
     if not fresh:
         mode = "CACHE_ONLY" if out else "FAILED"

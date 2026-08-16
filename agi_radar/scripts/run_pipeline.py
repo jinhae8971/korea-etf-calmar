@@ -122,11 +122,29 @@ def write_outputs(report: dict, mode: str, cfg: dict) -> None:
 
     records = history.append(str(docs / "history.json"), report)
 
+    weekend_path = docs / "weekend.json"
+
+    def weekend_unchanged() -> bool:
+        """같은 종가일·같은 모드의 주말본이 이미 있으면 다시 쓰지 않는다.
+        장중 재실행 시 generated_at 만 바뀌어 빈 커밋이 쌓이는 것을 막는다."""
+        if os.environ.get("FORCE_REFRESH") or not weekend_path.exists():
+            return False
+        try:
+            prev = json.loads(weekend_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            return False
+        return (prev.get("as_of_close") == report.get("as_of_close")
+                and prev.get("brief_mode") == mode
+                and (prev.get("data_status") or {}).get("mode") == report["data_status"]["mode"])
+
     if mode == "weekly":
         review = weekly.weekly_review(records, report)
         report["weekly_review"] = review
         report["message"] = render.render_weekly(report, review, dashboard)
-        (docs / "weekend.json").write_text(
+        if weekend_unchanged():
+            print(f"[idempotent] 주간 리뷰 스냅샷 존재({report['as_of_close']}) — 쓰기 생략")
+            return
+        weekend_path.write_text(
             json.dumps(report, ensure_ascii=False, indent=1, default=str), encoding="utf-8"
         )
         print(f"[weekly] {review.get('span') or review.get('reason')}")
@@ -136,7 +154,10 @@ def write_outputs(report: dict, mode: str, cfg: dict) -> None:
         watch = weekly.watchlist(report, cfg["thresholds"])
         report["watchlist"] = watch
         report["message"] = render.render_watchlist(report, watch, dashboard)
-        (docs / "weekend.json").write_text(
+        if weekend_unchanged():
+            print(f"[idempotent] 워치리스트 스냅샷 존재({report['as_of_close']}) — 쓰기 생략")
+            return
+        weekend_path.write_text(
             json.dumps(report, ensure_ascii=False, indent=1, default=str), encoding="utf-8"
         )
         print(f"[watchlist] 발동 임박 {watch['armed_count']}개")
