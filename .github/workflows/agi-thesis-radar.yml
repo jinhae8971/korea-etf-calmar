@@ -102,6 +102,9 @@ jobs:
           python scripts/run_pipeline.py "$TARGET_DATE"
 
       - name: Commit
+        working-directory: ${{ github.workspace }}
+        env:
+          GEN_PATHS: "docs/agi-radar/data agi_radar/data"
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -109,9 +112,19 @@ jobs:
           git add -A
           git diff --staged --quiet && { echo "변경 없음"; exit 0; }
           git commit -m "data: agi radar $(date +%Y-%m-%d)"
+          # 이 레포는 여러 워크플로우가 동시에 푸시한다. 생성 파일은 이 잡이
+          # 단독 소유하므로, 충돌 시 리베이스로 씨름하지 말고 원격 최신 위에
+          # 생성물을 그대로 다시 얹는다 (충돌 자체가 발생하지 않는 구조).
           for i in 1 2 3; do
-            git push && exit 0
-            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            if git push; then exit 0; fi
+            echo "푸시 경합 감지 — 원격 최신 위에 재적용 ($i/3)"
+            tar cf /tmp/generated.tar ${GEN_PATHS}
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            tar xf /tmp/generated.tar
+            git add -A
+            git diff --staged --quiet && { echo "재적용 후 변경 없음"; exit 0; }
+            git commit -m "data: agi radar $(date +%Y-%m-%d)"
             sleep $((i * 5))
           done
-          echo "::error::푸시 실패"; exit 1
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
