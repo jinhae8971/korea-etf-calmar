@@ -34,18 +34,25 @@ footer{color:var(--muted);font-size:12px;border-top:1px solid var(--line);paddin
 <script>
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const CLS={PASS:'pass',FAIL:'fail',UNKNOWN:'unk'},ICON={PASS:'✅',FAIL:'❌',UNKNOWN:'⚪'};
-const fmt=v=>v==null?'–':(typeof v==='number'&&Math.abs(v)<5?(v*100).toFixed(0)+'%':v);
+const RATIO=new Set(['narrative','diffusion']);
+const fmt=(v,id)=>v==null?'–':(RATIO.has(id)?v.toFixed(2)+'배':(typeof v==='number'&&Math.abs(v)<5?(v*100).toFixed(0)+'%':v));
 fetch('./data/latest.json?t='+Date.now()).then(r=>r.ok?r.json():Promise.reject(r.status)).then(d=>{
  document.getElementById('meta').textContent=`${d.date} · 갱신 ${(d.generated_at||'').slice(0,16)}`;
  const s=d.summary;
- let h=`<div class="card"><h3>현재 국면</h3>
-  <div class="stage">${s.stage} / ${s.total} 단계</div>
-  <div class="bar">${d.milestones.map(m=>`<div class="seg ${m.status==='PASS'?'on':(m.status==='UNKNOWN'?'q':'')}"></div>`).join('')}</div>
-  ${s.next?`<div class="meta">다음 관문: ${esc(s.next)}</div>`:''}</div>`;
+ const AX=['narrative','realization','price'];
+ const axbar=a=>`<div class="bar">${Array.from({length:a.total},(_,i)=>
+   `<div class="seg ${i<a.passed?'on':''}"></div>`).join('')}</div>`;
+ let h=`<div class="card"><h3>축별 진행도</h3>`+
+  AX.map(k=>`<div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:13.5px">
+      <span>${esc(s[k].label)}</span><b>${s[k].passed} / ${s[k].total}</b></div>
+    ${axbar(s[k])}</div>`).join('')+
+  `<div style="margin-top:14px;font-size:13.5px">축 간 격차 <b>${(s.gap>=0?'+':'')+s.gap.toFixed(2)}</b></div>
+   <div class="meta">${esc(d.regime_text||'')}</div></div>`;
  h+=`<div class="card"><h3>마일스톤</h3>`+d.milestones.map(m=>`
   <div class="ms"><div><div class="l ${CLS[m.status]}">${ICON[m.status]} ${esc(m.label)}</div>
   <div class="n">${esc(m.rule)}${m.note?' · '+esc(m.note):''}</div></div>
-  <div class="v"><b>${fmt(m.current)}</b><br><span class="n">기준 ${fmt(m.target)}${m.reference?' · AI반도체 '+esc(m.reference):''}</span></div></div>`).join('')+`</div>`;
+  <div class="v"><b>${fmt(m.current,m.id)}</b><br><span class="n">기준 ${fmt(m.target,m.id)}${m.reference?' · AI반도체 '+esc(m.reference):''}</span></div></div>`).join('')+`</div>`;
  if(d.alert) h+=`<div class="card"><div class="alert ${d.alert.level==='WARN'?'warn':''}">${esc(d.alert.text)}</div></div>`;
  const dc=d.decoupling||{};
  h+=`<div class="card"><h3>기성 자동화와의 관계</h3>

@@ -40,38 +40,58 @@ terms:
 
 # 마일스톤 판정 기준 (사전 등록)
 milestones:
+  # [2026-08-16 구조 교정] ①~⑥을 하나의 사다리로 늘어놓았던 것이 오류였다.
+  # ①④는 서사 축, ②③⑤는 실현 축, ⑥은 가격 축으로 서로 다른 사다리다.
+  # "④가 켜졌는데 ②가 꺼짐"은 모순이 아니라 축 간 격차이며, 그 격차 자체가
+  # 메타버스형 서사 선행을 판별하는 핵심 지표다.
   - id: narrative
+    axis: narrative
     label: "① 서사 점화"
     rule: "로봇 용어 공시 언급 4분기 합이 2년 전 대비 3배 이상"
     threshold: 3.0
-  - id: revenue
-    label: "② 선도기업 매출 가속"
-    rule: "순수 바스켓 매출 YoY 중앙값이 자기 이력 z ≥ +1.0 이고 절대값 ≥ 25%"
-    z_threshold: 1.0
-    abs_threshold: 0.25
-  - id: bottleneck
-    label: "③ 공급 병목 출현"
-    rule: "재고 YoY 가 매출 YoY 를 10%p 이상 초과 (선행 축적)"
-    gap_threshold: 0.10
   - id: diffusion
-    label: "④ 산업 전반 확산"
+    axis: narrative
+    label: "② 산업 전반 확산"
     rule: "로봇 용어를 언급한 SIC 산업 수 4분기 평균이 2년 전 대비 2배 이상"
     threshold: 2.0
+  - id: revenue
+    axis: realization
+    label: "③ 매출 가속 정착"
+    # [실증 교정] 단일 분기 판정은 메타버스를 걸러내지 못한다.
+    # 메타버스도 2021Q1 +90%, 2023Q1 +39%를 찍었으나 한 번도 유지되지 않았다
+    # (통과 이력 1,1,1,0,0,0,1,1,0,0,0,0). AI 반도체는 2023Q4부터 정착했다.
+    # 따라서 크기가 아니라 지속성으로 판정한다.
+    rule: "최근 4분기 중 3분기 이상 매출 YoY 중앙값 ≥ 25%"
+    abs_threshold: 0.25
+    persistence: 3
+    window: 4
+  - id: bottleneck
+    axis: realization
+    label: "④ 공급 병목 출현"
+    rule: "재고 YoY 가 매출 YoY 를 10%p 이상 초과 (③ 통과 후에만 판정)"
+    gap_threshold: 0.10
   - id: margin
+    axis: realization
     label: "⑤ 이익률 확장"
     rule: "순수 바스켓 영업이익률이 4분기 전 대비 +3%p 이상"
     threshold: 0.03
   - id: rerating
+    axis: price
     label: "⑥ 가격 재평가"
     rule: "순수 바스켓 12개월 초과수익 ≥ +20%"
     threshold: 0.20
 
+axes:
+  narrative: {label: "서사", total: 2}
+  realization: {label: "실현", total: 3}
+  price: {label: "가격", total: 1}
+
 # AI 추론반도체가 각 단계를 통과한 시점 (2026-08 관측 기준 고정값, 비교용)
 reference_timeline:
   narrative: 2023Q1
-  revenue: 2023Q2
-  bottleneck: 2023Q3
   diffusion: 2024Q1
+  revenue: 2023Q4     # 매출 가속이 '정착'한 시점 (산발적 통과는 2022Q1부터 있었음)
+  bottleneck: 2024Q1
   margin: 2024Q2
   rerating: 2023Q2
 
@@ -83,3 +103,6 @@ alerts:
 
 changelog:
   - "2026-08-16 최초 등록. 검증 근거는 /areas/physical-ai-cycle 참조"
+  - "2026-08-16 구조 교정: 단일 사다리 → 서사/실현/가격 3축 분리. ② 매출 판정을
+     단일 분기 z-score 에서 '최근 4분기 중 3분기 지속'으로 교체 — 메타버스가
+     단일 분기로는 통과했으나 지속성으로는 한 번도 통과하지 못했음을 실증"

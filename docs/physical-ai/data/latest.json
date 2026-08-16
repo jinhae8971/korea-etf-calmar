@@ -1,46 +1,45 @@
 {
  "date": "2026-08-16",
- "generated_at": "2026-08-16T14:55:32+09:00",
+ "generated_at": "2026-08-16T15:10:37+09:00",
  "summary": {
-  "stage": 1,
-  "total": 6,
-  "unknown": 1,
-  "next": "② 선도기업 매출 가속"
+  "narrative": {
+   "label": "서사",
+   "passed": 2,
+   "total": 2,
+   "unknown": 0
+  },
+  "realization": {
+   "label": "실현",
+   "passed": 0,
+   "total": 3,
+   "unknown": 1
+  },
+  "price": {
+   "label": "가격",
+   "passed": 0,
+   "total": 1,
+   "unknown": 0
+  },
+  "gap": 1.0,
+  "regime": "NARRATIVE_LED"
  },
+ "regime_text": "서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간",
  "milestones": [
   {
    "id": "narrative",
+   "axis": "narrative",
    "label": "① 서사 점화",
    "rule": "로봇 용어 공시 언급 4분기 합이 2년 전 대비 3배 이상",
    "status": "PASS",
    "current": 7.14,
    "target": 3.0,
-   "note": "2년 전 대비 배수",
+   "note": "2년 전 대비 언급 배수",
    "reference": "2023Q1"
   },
   {
-   "id": "revenue",
-   "label": "② 선도기업 매출 가속",
-   "rule": "순수 바스켓 매출 YoY 중앙값이 자기 이력 z ≥ +1.0 이고 절대값 ≥ 25%",
-   "status": "FAIL",
-   "current": 0.115,
-   "target": 0.25,
-   "note": "2026Q2 매출YoY 중앙값 (z=-0.45)",
-   "reference": "2023Q2"
-  },
-  {
-   "id": "bottleneck",
-   "label": "③ 공급 병목 출현",
-   "rule": "재고 YoY 가 매출 YoY 를 10%p 이상 초과 (선행 축적)",
-   "status": "UNKNOWN",
-   "current": 0.854,
-   "target": 0.1,
-   "note": "2026Q2 재고YoY-매출YoY (②미통과 — 병목·적체 구분 불가)",
-   "reference": "2023Q3"
-  },
-  {
    "id": "diffusion",
-   "label": "④ 산업 전반 확산",
+   "axis": "narrative",
+   "label": "② 산업 전반 확산",
    "rule": "로봇 용어를 언급한 SIC 산업 수 4분기 평균이 2년 전 대비 2배 이상",
    "status": "PASS",
    "current": 2.21,
@@ -49,7 +48,30 @@
    "reference": "2024Q1"
   },
   {
+   "id": "revenue",
+   "axis": "realization",
+   "label": "③ 매출 가속 정착",
+   "rule": "최근 4분기 중 3분기 이상 매출 YoY 중앙값 ≥ 25%",
+   "status": "FAIL",
+   "current": 0.115,
+   "target": 0.25,
+   "note": "최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%",
+   "reference": "2023Q4"
+  },
+  {
+   "id": "bottleneck",
+   "axis": "realization",
+   "label": "④ 공급 병목 출현",
+   "rule": "재고 YoY 가 매출 YoY 를 10%p 이상 초과 (③ 통과 후에만 판정)",
+   "status": "UNKNOWN",
+   "current": 0.854,
+   "target": 0.1,
+   "note": "2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)",
+   "reference": "2024Q1"
+  },
+  {
    "id": "margin",
+   "axis": "realization",
    "label": "⑤ 이익률 확장",
    "rule": "순수 바스켓 영업이익률이 4분기 전 대비 +3%p 이상",
    "status": "FAIL",
@@ -60,6 +82,7 @@
   },
   {
    "id": "rerating",
+   "axis": "price",
    "label": "⑥ 가격 재평가",
    "rule": "순수 바스켓 12개월 초과수익 ≥ +20%",
    "status": "FAIL",
@@ -71,9 +94,9 @@
  ],
  "alert": {
   "level": "INFO",
-  "streak": 1,
+  "streak": 0,
   "limit": 6,
-  "text": "서사만 점화된 상태 1분기째 (경고 기준 6분기)"
+  "text": "서사 선행 상태 0회 연속 (경고 기준 6회)"
  },
  "decoupling": {
   "corr": 0.208,
@@ -284,5 +307,5 @@
    "from_cache": 0
   }
  },
- "message": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-08-16</b>\n\n<b>현재 국면: 1/6단계 통과</b>\n다음 관문: ② 선도기업 매출 가속\n\n✅ ① 서사 점화  7.14 / 기준 3.0 · AI반도체 2023Q1\n     <i>2년 전 대비 배수</i>\n❌ ② 선도기업 매출 가속  +12% / 기준 0.25 · AI반도체 2023Q2\n     <i>2026Q2 매출YoY 중앙값 (z=-0.45)</i>\n⚪ ③ 공급 병목 출현  +85% / 기준 0.1 · AI반도체 2023Q3\n     <i>2026Q2 재고YoY-매출YoY (②미통과 — 병목·적체 구분 불가)</i>\n✅ ④ 산업 전반 확산  +221% / 기준 2.0 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 0.03 · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -17% / 기준 0.2 · AI반도체 2023Q2\n     <i>2026Q3 12개월 초과수익</i>\n\nℹ️ 서사만 점화된 상태 1분기째 (경고 기준 6분기)\n\n<b>디커플링</b> 상관 +0.21 — 독립 사이클 조짐\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/"
+ "message": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-08-16</b>\n\n<b>서사</b> ●● 2/2   <b>실현</b> ○○○ 0/3   <b>가격</b> ○ 0/1\n축 간 격차 +1.00 — 서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간\n\n✅ ① 서사 점화  7.14배 / 기준 3.00배 · AI반도체 2023Q1\n     <i>2년 전 대비 언급 배수</i>\n✅ ② 산업 전반 확산  2.21배 / 기준 2.00배 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ③ 매출 가속 정착  +12% / 기준 +25% · AI반도체 2023Q4\n     <i>최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%</i>\n⚪ ④ 공급 병목 출현  +85% / 기준 +10% · AI반도체 2024Q1\n     <i>2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 +3% · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -17% / 기준 +20% · AI반도체 2023Q2\n     <i>2026Q3 12개월 초과수익</i>\n\nℹ️ 서사 선행 상태 0회 연속 (경고 기준 6회)\n\n<b>디커플링</b> 상관 +0.21 — 독립 사이클 조짐\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/"
 }

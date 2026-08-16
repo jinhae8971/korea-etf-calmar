@@ -1,11 +1,15 @@
-"""마일스톤 판정 — 사전 등록된 6단계를 통과했는지만 보고한다.
+"""마일스톤 판정 — 서사/실현/가격 3축으로 분리해 보고한다.
 
-설계 원칙(2026-08-16 검증에서 도출):
-  - 시차(N분기 뒤)를 계산해 보고하지 않는다. 순수 피지컬AI 바스켓의
-    상장 이력이 짧아 교차상관이 진동하며 허위해를 낸다.
-  - 각 단계는 통과/미통과 이진 판정 + 현재값 + 임계값까지의 거리를 함께 낸다.
-  - 판정 불가(데이터 부족)는 '미통과'가 아니라 별도 상태로 표기한다.
-    없는 걸 없다고 말하는 것과, 모르는 걸 없다고 말하는 것은 다르다.
+[2026-08-16 구조 교정]
+  ①~⑥을 하나의 사다리로 늘어놓았던 최초 설계는 틀렸다. "산업 확산이
+  켜졌는데 매출 가속은 꺼짐"이 모순처럼 보였으나, 둘은 애초에 다른 축이다.
+  ①② 는 서사(말), ③④⑤ 는 실현(돈), ⑥ 은 가격이다.
+  축 간 격차 자체가 메타버스형 서사 선행을 판별하는 핵심 지표다.
+
+[실증 근거]
+  메타버스 실현 축 통과 이력: 1,1,1,0,0,0,1,1,0,0,0,0  (한 번도 정착 못함)
+  AI 반도체:                 …,0,1,1,0,1,1,1,1,1,1     (2023Q4부터 정착)
+  둘 다 개별 분기로는 +90%, +39% 를 찍었다. 가른 것은 크기가 아니라 지속성이다.
 """
 
 from __future__ import annotations
@@ -33,116 +37,105 @@ def yoy(series: dict[str, float]) -> dict[str, float]:
     return out
 
 
-def zlast(series: dict[str, float]) -> tuple[float | None, float | None, str | None]:
+def zlast(series: dict[str, float]):
     if len(series) < 8:
         return None, None, None
     quarters = sorted(series)
     vals = [series[q] for q in quarters]
     mu, sd = statistics.mean(vals), statistics.pstdev(vals)
-    z = (vals[-1] - mu) / sd if sd else 0.0
-    return z, vals[-1], quarters[-1]
+    return ((vals[-1] - mu) / sd if sd else 0.0), vals[-1], quarters[-1]
 
 
-def median_yoy(per_ticker: dict[str, dict[str, dict[str, float]]], concept: str,
-               min_names: int = 2) -> dict[str, float]:
+def median_yoy(per_ticker: dict, concept: str, min_names: int = 2) -> dict[str, float]:
     buckets: dict[str, list[float]] = {}
     for data in per_ticker.values():
-        series = (data or {}).get(concept) or {}
-        for q, g in yoy(series).items():
+        for q, g in yoy((data or {}).get(concept) or {}).items():
             buckets.setdefault(q, []).append(g)
     return {q: statistics.median(v) for q, v in buckets.items() if len(v) >= min_names}
 
 
-def _result(mid, label, rule, status, current, target, note=None, ref=None):
-    return {"id": mid, "label": label, "rule": rule, "status": status,
-            "current": current, "target": target, "note": note, "reference": ref}
+def _r(spec, status, current, target, note=None, ref=None):
+    return {"id": spec["id"], "axis": spec["axis"], "label": spec["label"],
+            "rule": spec["rule"], "status": status, "current": current,
+            "target": target, "note": note, "reference": ref}
+
+
+def _ratio(series: dict, key: str, quarters: list[str]):
+    """4분기 창 대비 2년 전 4분기 창의 배수. 10-K 계절성을 4분기 합으로 흡수한다."""
+    if len(quarters) < 12:
+        return None
+    if key == "hits":
+        recent = sum(series[q][key] for q in quarters[-4:])
+        base = sum(series[q][key] for q in quarters[-12:-8])
+    else:
+        recent = statistics.mean(series[q][key] for q in quarters[-4:])
+        base = statistics.mean(series[q][key] for q in quarters[-12:-8])
+    return recent / base if base else None
 
 
 # --------------------------------------------------------------------------- #
-def evaluate(cfg: dict, narrative: dict, realization: dict,
-             price_excess: dict) -> list[dict]:
-    """narrative: {quarter: {hits, sic_n}} (로봇 용어 합산)
-    realization: {ticker: {concept: {quarter: value}}}
-    price_excess: {quarter: 순수 바스켓 12M 초과수익}
-    """
+def evaluate(cfg, narrative, realization, price_excess) -> list[dict]:
     specs = {m["id"]: m for m in cfg["milestones"]}
     ref = cfg.get("reference_timeline", {})
+    quarters = sorted(narrative)
     out: list[dict] = []
 
-    quarters = sorted(narrative)
-
-    # ① 서사 점화 — 4분기 합이 2년 전 대비 몇 배인가
+    # 서사 축 ---------------------------------------------------------------
     spec = specs["narrative"]
-    ratio = None
-    if len(quarters) >= 12:
-        recent = sum(narrative[q]["hits"] for q in quarters[-4:])
-        base = sum(narrative[q]["hits"] for q in quarters[-12:-8])
-        ratio = recent / base if base else None
-    if ratio is None:
-        out.append(_result("narrative", spec["label"], spec["rule"], UNKNOWN, None,
-                           spec["threshold"], "이력 12분기 미만", ref.get("narrative")))
-    else:
-        out.append(_result("narrative", spec["label"], spec["rule"],
-                           PASS if ratio >= spec["threshold"] else FAIL,
-                           round(ratio, 2), spec["threshold"], "2년 전 대비 배수",
-                           ref.get("narrative")))
+    ratio = _ratio(narrative, "hits", quarters)
+    out.append(_r(spec, UNKNOWN if ratio is None else
+                  (PASS if ratio >= spec["threshold"] else FAIL),
+                  None if ratio is None else round(ratio, 2), spec["threshold"],
+                  "2년 전 대비 언급 배수" if ratio is not None else "이력 12분기 미만",
+                  ref.get("narrative")))
 
-    # ② 선도기업 매출 가속 — 이 산업의 진짜 분기점
+    spec = specs["diffusion"]
+    dratio = _ratio(narrative, "sic_n", quarters)
+    out.append(_r(spec, UNKNOWN if dratio is None else
+                  (PASS if dratio >= spec["threshold"] else FAIL),
+                  None if dratio is None else round(dratio, 2), spec["threshold"],
+                  "SIC 다양성 배수 (버킷 상한 30)" if dratio is not None else "이력 부족",
+                  ref.get("diffusion")))
+
+    # 실현 축 ---------------------------------------------------------------
     spec = specs["revenue"]
     rev = median_yoy(realization, "revenue")
-    z, last, lq = zlast(rev)
-    if z is None:
-        out.append(_result("revenue", spec["label"], spec["rule"], UNKNOWN, None,
-                           spec["abs_threshold"], "분기 이력 8개 미만", ref.get("revenue")))
+    window, need = spec.get("window", 4), spec.get("persistence", 3)
+    rev_pass = False
+    if len(rev) < window:
+        out.append(_r(spec, UNKNOWN, None, spec["abs_threshold"],
+                      f"분기 이력 {len(rev)}개 (최소 {window})", ref.get("revenue")))
     else:
-        ok = z >= spec["z_threshold"] and last >= spec["abs_threshold"]
-        out.append(_result("revenue", spec["label"], spec["rule"], PASS if ok else FAIL,
-                           round(last, 3), spec["abs_threshold"],
-                           f"{lq} 매출YoY 중앙값 (z={z:+.2f})", ref.get("revenue")))
+        ordered = sorted(rev)
+        recent = [rev[q] for q in ordered[-window:]]
+        hits = sum(1 for v in recent if v >= spec["abs_threshold"])
+        rev_pass = hits >= need
+        lq = ordered[-1]
+        out.append(_r(spec, PASS if rev_pass else FAIL, round(rev[lq], 3),
+                      spec["abs_threshold"],
+                      f"최근 {window}분기 중 {hits}회 통과 (기준 {need}회) · "
+                      f"{lq} {rev[lq]:+.0%}", ref.get("revenue")))
 
-    # ③ 공급 병목 — 재고가 매출보다 앞서 쌓이는가
     spec = specs["bottleneck"]
     inv = median_yoy(realization, "inventory")
     common = sorted(set(inv) & set(rev))
     if not common:
-        out.append(_result("bottleneck", spec["label"], spec["rule"], UNKNOWN, None,
-                           spec["gap_threshold"], "재고·매출 공통 분기 없음", ref.get("bottleneck")))
+        out.append(_r(spec, UNKNOWN, None, spec["gap_threshold"],
+                      "재고·매출 공통 분기 없음", ref.get("bottleneck")))
     else:
         q = common[-1]
         gap = inv[q] - rev[q]
-        # [2026-08-16 설계 교정] 재고가 매출보다 빠르게 느는 것은 '공급 병목'일 수도
-        # '재고 적체'(수요 부진)일 수도 있어 그 자체로는 구분되지 않는다.
-        # 실제로 RR 은 재고 +135% / 매출 +1% 였다 — 병목이 아니라 안 팔린 것이다.
-        # 따라서 ② 매출 가속이 먼저 통과한 뒤에만 병목으로 판정한다(순차 게이트).
-        revenue_passed = out[-1]["status"] == PASS
-        if not revenue_passed:
-            out.append(_result("bottleneck", spec["label"], spec["rule"], UNKNOWN,
-                               round(gap, 3), spec["gap_threshold"],
-                               f"{q} 재고YoY-매출YoY (②미통과 — 병목·적체 구분 불가)",
-                               ref.get("bottleneck")))
+        # 재고가 매출보다 빨리 느는 것은 병목일 수도 적체(수요 부진)일 수도 있다.
+        # 실제로 RR 은 재고 +135% / 매출 +1% 였다 — 안 팔린 것이다.
+        if not rev_pass:
+            out.append(_r(spec, UNKNOWN, round(gap, 3), spec["gap_threshold"],
+                          f"{q} 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)",
+                          ref.get("bottleneck")))
         else:
-            out.append(_result("bottleneck", spec["label"], spec["rule"],
-                               PASS if gap >= spec["gap_threshold"] else FAIL,
-                               round(gap, 3), spec["gap_threshold"],
-                               f"{q} 재고YoY-매출YoY", ref.get("bottleneck")))
+            out.append(_r(spec, PASS if gap >= spec["gap_threshold"] else FAIL,
+                          round(gap, 3), spec["gap_threshold"],
+                          f"{q} 재고YoY-매출YoY", ref.get("bottleneck")))
 
-    # ④ 산업 전반 확산 — SIC 다양성
-    spec = specs["diffusion"]
-    dratio = None
-    if len(quarters) >= 12:
-        recent = statistics.mean(narrative[q]["sic_n"] for q in quarters[-4:])
-        base = statistics.mean(narrative[q]["sic_n"] for q in quarters[-12:-8])
-        dratio = recent / base if base else None
-    if dratio is None:
-        out.append(_result("diffusion", spec["label"], spec["rule"], UNKNOWN, None,
-                           spec["threshold"], "이력 부족", ref.get("diffusion")))
-    else:
-        out.append(_result("diffusion", spec["label"], spec["rule"],
-                           PASS if dratio >= spec["threshold"] else FAIL,
-                           round(dratio, 2), spec["threshold"],
-                           "SIC 다양성 배수 (버킷 상한 30)", ref.get("diffusion")))
-
-    # ⑤ 이익률 확장
     spec = specs["margin"]
     margins: dict[str, list[float]] = {}
     for data in realization.values():
@@ -158,60 +151,72 @@ def evaluate(cfg: dict, narrative: dict, realization: dict,
         prev = med.get(qshift(lq, -4))
         if prev is not None:
             delta = med[lq] - prev
-    if delta is None:
-        out.append(_result("margin", spec["label"], spec["rule"], UNKNOWN, None,
-                           spec["threshold"], "영업이익률 4분기 비교 불가", ref.get("margin")))
-    else:
-        out.append(_result("margin", spec["label"], spec["rule"],
-                           PASS if delta >= spec["threshold"] else FAIL,
-                           round(delta, 3), spec["threshold"], "YoY 마진 변화", ref.get("margin")))
+    out.append(_r(spec, UNKNOWN if delta is None else
+                  (PASS if delta >= spec["threshold"] else FAIL),
+                  None if delta is None else round(delta, 3), spec["threshold"],
+                  "YoY 마진 변화" if delta is not None else "4분기 비교 불가",
+                  ref.get("margin")))
 
-    # ⑥ 가격 재평가
+    # 가격 축 ---------------------------------------------------------------
     spec = specs["rerating"]
     if not price_excess:
-        out.append(_result("rerating", spec["label"], spec["rule"], UNKNOWN, None,
-                           spec["threshold"], "가격 데이터 부족", ref.get("rerating")))
+        out.append(_r(spec, UNKNOWN, None, spec["threshold"], "가격 데이터 부족",
+                      ref.get("rerating")))
     else:
         lq = sorted(price_excess)[-1]
-        val = price_excess[lq]
-        out.append(_result("rerating", spec["label"], spec["rule"],
-                           PASS if val >= spec["threshold"] else FAIL,
-                           round(val, 3), spec["threshold"],
-                           f"{lq} 12개월 초과수익", ref.get("rerating")))
+        out.append(_r(spec, PASS if price_excess[lq] >= spec["threshold"] else FAIL,
+                      round(price_excess[lq], 3), spec["threshold"],
+                      f"{lq} 12개월 초과수익", ref.get("rerating")))
 
+    order = [m["id"] for m in cfg["milestones"]]
+    return sorted(out, key=lambda m: order.index(m["id"]))
+
+
+def axis_summary(milestones: list[dict], cfg: dict) -> dict:
+    """축별 진행도 + 축 간 격차. 격차가 이 시스템의 핵심 판정값이다."""
+    axes = cfg.get("axes", {})
+    out: dict = {}
+    for key, meta in axes.items():
+        group = [m for m in milestones if m["axis"] == key]
+        out[key] = {
+            "label": meta["label"],
+            "passed": sum(1 for m in group if m["status"] == PASS),
+            "total": meta["total"],
+            "unknown": sum(1 for m in group if m["status"] == UNKNOWN),
+        }
+    narr, real = out.get("narrative", {}), out.get("realization", {})
+    n_pct = narr.get("passed", 0) / max(1, narr.get("total", 1))
+    r_pct = real.get("passed", 0) / max(1, real.get("total", 1))
+    out["gap"] = round(n_pct - r_pct, 3)
+    if out["gap"] >= 0.6:
+        out["regime"] = "NARRATIVE_LED"
+    elif out["gap"] <= -0.3:
+        out["regime"] = "REALIZATION_LED"
+    else:
+        out["regime"] = "BALANCED"
     return out
 
 
-def stage_summary(milestones: list[dict]) -> dict:
-    """가장 앞선 연속 통과 단계 = 현재 국면."""
-    passed = 0
-    for m in milestones:
-        if m["status"] == PASS:
-            passed += 1
-        else:
-            break
-    unknown = sum(1 for m in milestones if m["status"] == UNKNOWN)
-    return {"stage": passed, "total": len(milestones), "unknown": unknown,
-            "next": milestones[passed]["label"] if passed < len(milestones) else None}
+REGIME_TEXT = {
+    "NARRATIVE_LED": "서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간",
+    "REALIZATION_LED": "실현이 서사보다 앞섬 — 실적이 나오는데 아직 덜 알려진 구간",
+    "BALANCED": "서사와 실현이 나란히 진행 중",
+}
 
 
-def gap_alert(milestones: list[dict], history: list[dict], cfg: dict) -> dict | None:
-    """①만 켜진 채로 오래 지속되면 서사 선행 경고 (메타버스 패턴)."""
+def gap_alert(summary: dict, history: list[dict], cfg: dict) -> dict | None:
     limit = cfg.get("alerts", {}).get("watch_gap_quarters", 6)
-    by_id = {m["id"]: m for m in milestones}
-    if by_id.get("narrative", {}).get("status") != PASS:
-        return None
-    if by_id.get("revenue", {}).get("status") == PASS:
+    if summary.get("regime") != "NARRATIVE_LED":
         return None
     streak = 0
     for record in reversed(history):
-        if record.get("stage") == 1:
+        if record.get("regime") == "NARRATIVE_LED":
             streak += 1
         else:
             break
-    if streak < limit:
-        return {"level": "INFO", "streak": streak, "limit": limit,
-                "text": f"서사만 점화된 상태 {streak}분기째 (경고 기준 {limit}분기)"}
-    return {"level": "WARN", "streak": streak, "limit": limit,
-            "text": f"서사 점화 후 {streak}분기째 매출 가속이 오지 않음 — "
-                    "실현 없는 서사 확산 패턴을 경계할 구간"}
+    level = "WARN" if streak >= limit else "INFO"
+    text = (f"서사 선행 {streak}회 연속 관측 (경고 기준 {limit}회). "
+            "메타버스는 이 상태를 12분기 유지한 뒤 실현으로 넘어가지 못했습니다."
+            if level == "WARN" else
+            f"서사 선행 상태 {streak}회 연속 (경고 기준 {limit}회)")
+    return {"level": level, "streak": streak, "limit": limit, "text": text}

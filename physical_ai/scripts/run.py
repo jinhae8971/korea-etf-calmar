@@ -72,22 +72,35 @@ def rolling_corr(a: dict[str, float], b: dict[str, float], window: int = 12) -> 
 
 def render(report: dict, dashboard: str = "") -> str:
     summary = report["summary"]
+    bar = lambda a: "●" * a["passed"] + "○" * (a["total"] - a["passed"])
     lines = [
         f"<b>🤖 피지컬 AI·로봇 사이클 — {report['date']}</b>",
         "",
-        f"<b>현재 국면: {summary['stage']}/{summary['total']}단계 통과</b>",
+        f"<b>서사</b> {bar(summary['narrative'])} {summary['narrative']['passed']}/{summary['narrative']['total']}   "
+        f"<b>실현</b> {bar(summary['realization'])} {summary['realization']['passed']}/{summary['realization']['total']}   "
+        f"<b>가격</b> {bar(summary['price'])} {summary['price']['passed']}/{summary['price']['total']}",
+        f"축 간 격차 {summary['gap']:+.2f} — {html.escape(report.get('regime_text',''))}",
+        "",
     ]
-    if summary.get("next"):
-        lines.append(f"다음 관문: {html.escape(summary['next'])}")
-    lines.append("")
 
+    # 배수형(서사 축)과 비율형(실현·가격 축)은 표기 단위가 다르다
+    RATIO_IDS = {"narrative", "diffusion"}
     for m in report["milestones"]:
         cur = m["current"]
-        shown = f"{cur:+.0%}" if isinstance(cur, float) and abs(cur) < 5 else (
-            f"{cur}" if cur is not None else "–")
+        if cur is None:
+            shown = "–"
+        elif m["id"] in RATIO_IDS:
+            shown = f"{cur:.2f}배"
+        elif isinstance(cur, float) and abs(cur) < 5:
+            shown = f"{cur:+.0%}"
+        else:
+            shown = str(cur)
         ref = f" · AI반도체 {m['reference']}" if m.get("reference") else ""
+        tgt = (f"{m['target']:.2f}배" if m["id"] in RATIO_IDS
+               else (f"{m['target']:+.0%}" if isinstance(m["target"], float) and abs(m["target"]) < 5
+                     else m["target"]))
         lines.append(f"{BADGE.get(m['status'], '⚪')} {html.escape(m['label'])}  "
-                     f"{shown} / 기준 {m['target']}{ref}")
+                     f"{shown} / 기준 {tgt}{ref}")
         if m.get("note"):
             lines.append(f"     <i>{html.escape(str(m['note']))}</i>")
 
@@ -148,7 +161,7 @@ def main() -> int:
                                         str(ROOT / "data" / "realization.json"))
 
     result = ms.evaluate(cfg, robot_narr, real, ex_pure)
-    summary = ms.stage_summary(result)
+    summary = ms.axis_summary(result, cfg)
 
     hist_path = data_dir / "history.json"
     history = []
@@ -164,8 +177,9 @@ def main() -> int:
         "date": today,
         "generated_at": datetime.now(KST).isoformat(timespec="seconds"),
         "summary": summary,
+        "regime_text": ms.REGIME_TEXT.get(summary.get("regime"), ""),
         "milestones": result,
-        "alert": ms.gap_alert(result, history, cfg),
+        "alert": ms.gap_alert(summary, history, cfg),
         "decoupling": {"corr": None if corr is None else round(corr, 3),
                        "decoupled": corr is not None and corr < limit,
                        "threshold": limit},
@@ -175,7 +189,9 @@ def main() -> int:
     }
     report["message"] = render(report, os.environ.get("DASHBOARD_URL", ""))
 
-    record = {"date": today, "stage": summary["stage"],
+    record = {"date": today, "regime": summary.get("regime"), "gap": summary.get("gap"),
+              "narrative": summary["narrative"]["passed"],
+              "realization": summary["realization"]["passed"],
               "corr": report["decoupling"]["corr"],
               "status": {m["id"]: m["status"] for m in result}}
     history = [h for h in history if h.get("date") != today] + [record]
@@ -184,7 +200,10 @@ def main() -> int:
     (data_dir / "latest.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
 
-    print(f"[stage] {summary['stage']}/{summary['total']} (불명 {summary['unknown']})")
+    print(f"[axis] 서사 {summary['narrative']['passed']}/{summary['narrative']['total']} · "
+          f"실현 {summary['realization']['passed']}/{summary['realization']['total']} · "
+          f"가격 {summary['price']['passed']}/{summary['price']['total']} "
+          f"| 격차 {summary['gap']:+.2f} → {summary['regime']}")
     for m in result:
         print(f"  {m['status']:8} {m['label']} cur={m['current']} tgt={m['target']}")
     print(f"[decoupling] corr={report['decoupling']['corr']}")
