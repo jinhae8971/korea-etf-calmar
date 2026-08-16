@@ -1,0 +1,66 @@
+name: Physical AI Cycle
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"      # KST 월 08:00
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "특정 일자 강제 실행 (YYYY-MM-DD)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: physical-ai-cycle
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+    working-directory: physical_ai
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: physical_ai/requirements.txt
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests
+
+      - name: Run tracker
+        env:
+          DATA_DIR: ${{ github.workspace }}/docs/physical-ai/data
+          DASHBOARD_URL: https://jinhae8971.github.io/korea-etf-calmar/physical-ai/
+          TARGET_DATE: ${{ inputs.date }}
+          TZ: "Asia/Seoul"
+        run: |
+          set -euo pipefail
+          if [[ -n "${TARGET_DATE}" && ! "${TARGET_DATE}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::date 형식 오류: ${TARGET_DATE}"; exit 1
+          fi
+          python scripts/run.py "${TARGET_DATE}"
+
+      - name: Commit
+        working-directory: ${{ github.workspace }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet && { echo "변경 없음"; exit 0; }
+          git commit -m "data: physical-ai cycle $(date +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git push && exit 0
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::푸시 실패"; exit 1

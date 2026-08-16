@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>피지컬 AI·로봇 사이클</title>
+<style>
+:root{--bg:#0b0e14;--panel:#141922;--line:#232a36;--text:#e6e9ef;--muted:#8b95a7;
+--green:#3fb950;--amber:#d29922;--red:#f85149;--blue:#58a6ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-size:15px;line-height:1.55;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}
+h1{font-size:19px;margin:0 0 6px}.meta{color:var(--muted);font-size:12.5px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+.card h3{margin:0 0 12px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}
+.stage{font-size:30px;font-weight:700;letter-spacing:-.5px}
+.ms{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+padding:12px 0;border-bottom:1px solid var(--line)}.ms:last-child{border:none}
+.ms .l{font-size:14px}.ms .n{font-size:11.5px;color:var(--muted);margin-top:3px}
+.ms .v{text-align:right;font-size:13px;white-space:nowrap}
+.pass{color:var(--green)}.fail{color:var(--red)}.unk{color:var(--muted)}
+.bar{display:flex;gap:5px;margin:14px 0 4px}
+.seg{flex:1;height:8px;border-radius:4px;background:#232a36}
+.seg.on{background:var(--green)}.seg.q{background:var(--muted)}
+.alert{border-left:3px solid var(--amber);background:rgba(210,153,34,.08);
+padding:11px 13px;border-radius:0 8px 8px 0;font-size:13.5px}
+.alert.warn{border-color:var(--red);background:rgba(248,81,73,.08)}
+footer{color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:14px;margin-top:24px}
+.err{color:var(--red);padding:30px 0}
+</style></head><body><div class="wrap">
+<header><h1>🤖 피지컬 AI·로봇 사이클</h1><div class="meta" id="meta">불러오는 중…</div></header>
+<div id="root"></div>
+<footer>이 지표는 예측이 아니라 관측입니다. AI 추론반도체가 밟은 단계를 로봇이 통과했는지만 보고합니다.
+판정 기준은 사전 등록되어 있으며 결과를 보고 조정하지 않습니다.</footer></div>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const CLS={PASS:'pass',FAIL:'fail',UNKNOWN:'unk'},ICON={PASS:'✅',FAIL:'❌',UNKNOWN:'⚪'};
+const fmt=v=>v==null?'–':(typeof v==='number'&&Math.abs(v)<5?(v*100).toFixed(0)+'%':v);
+fetch('./data/latest.json?t='+Date.now()).then(r=>r.ok?r.json():Promise.reject(r.status)).then(d=>{
+ document.getElementById('meta').textContent=`${d.date} · 갱신 ${(d.generated_at||'').slice(0,16)}`;
+ const s=d.summary;
+ let h=`<div class="card"><h3>현재 국면</h3>
+  <div class="stage">${s.stage} / ${s.total} 단계</div>
+  <div class="bar">${d.milestones.map(m=>`<div class="seg ${m.status==='PASS'?'on':(m.status==='UNKNOWN'?'q':'')}"></div>`).join('')}</div>
+  ${s.next?`<div class="meta">다음 관문: ${esc(s.next)}</div>`:''}</div>`;
+ h+=`<div class="card"><h3>마일스톤</h3>`+d.milestones.map(m=>`
+  <div class="ms"><div><div class="l ${CLS[m.status]}">${ICON[m.status]} ${esc(m.label)}</div>
+  <div class="n">${esc(m.rule)}${m.note?' · '+esc(m.note):''}</div></div>
+  <div class="v"><b>${fmt(m.current)}</b><br><span class="n">기준 ${fmt(m.target)}${m.reference?' · AI반도체 '+esc(m.reference):''}</span></div></div>`).join('')+`</div>`;
+ if(d.alert) h+=`<div class="card"><div class="alert ${d.alert.level==='WARN'?'warn':''}">${esc(d.alert.text)}</div></div>`;
+ const dc=d.decoupling||{};
+ h+=`<div class="card"><h3>기성 자동화와의 관계</h3>
+  <div class="stage" style="font-size:22px">${dc.corr==null?'–':dc.corr.toFixed(2)}</div>
+  <div class="meta">${dc.corr==null?'데이터 부족':(dc.decoupled?'임계 '+dc.threshold+' 미만 — 독립 사이클 조짐':'동행 중')}</div></div>`;
+ const st=d.data_status||{};
+ h+=`<div class="card"><h3>데이터 상태</h3>`+Object.entries(st).map(([k,v])=>
+  `<div class="ms"><div class="l">${esc(k)}</div><div class="v">${esc(v.mode)}</div></div>`).join('')+`</div>`;
+ document.getElementById('root').innerHTML=h;
+}).catch(e=>{document.getElementById('root').innerHTML='<div class="err">데이터를 불러오지 못했습니다 ('+esc(e)+'). 최초 실행 이후 표시됩니다.</div>';});
+</script></body></html>

@@ -1,0 +1,85 @@
+# 피지컬 AI·로봇 사이클 트래커
+#
+# 이 파일은 '사전 등록된 판정 기준'이다. 결과를 보고 임계값을 고치면
+# 그 순간 이 시스템은 측정 도구가 아니라 사후 서술이 된다.
+# 변경 시 반드시 changelog 에 사유와 날짜를 남긴다.
+
+meta:
+  name: physical-ai-cycle
+  question: >
+    피지컬 AI·로봇이 AI 추론반도체가 밟은 경로의 어느 단계에 있는가.
+  method: >
+    시차(lag) 추정은 폐기했다. 2026-08-16 검증에서 순수 피지컬AI 바스켓의
+    상장 이력이 18분기뿐이라 교차상관 시차가 진동하며 허위해를 냈고,
+    기성 자동화 바스켓은 반도체 공급망 오염으로 시차 0분기가 나왔다.
+    대신 관측 가능한 마일스톤 통과 여부만 보고한다.
+  benchmark: SPY
+
+baskets:
+  # 순수 피지컬 AI — 판정의 주 대상
+  pure:
+    label: 순수 피지컬AI
+    tickers: [SYM, SERV, RR, "454910.KQ", "277810.KQ", "117730.KQ"]
+    ciks:    # XBRL 실현 축용 (미국 상장만)
+      SYM: "0001837240"
+      SERV: "0001842356"
+      RR: "0001891856"
+  # 기성 자동화 — 대조군. 반도체 공급망과 동행하므로 디커플링 판정에 쓴다
+  legacy:
+    label: 기성 자동화
+    tickers: [ROK, TER, CGNX, ZBRA, NDSN, AZTA, OMCL, FANUY]
+  # 상류 레퍼런스
+  aisemi:
+    label: AI 추론반도체
+    tickers: [NVDA, AVGO, AMD, MRVL, MU, SMCI, VRT, ANET, MPWR, TSM, ARM, CRDO]
+
+# 서사 축 — EDGAR 전문검색 용어
+terms:
+  robot: ["physical AI", "humanoid robot", "robotics automation", "autonomous mobile robot"]
+  aisemi: ["AI accelerator", "inference", "GPU cluster"]
+
+# 마일스톤 판정 기준 (사전 등록)
+milestones:
+  - id: narrative
+    label: "① 서사 점화"
+    rule: "로봇 용어 공시 언급 4분기 합이 2년 전 대비 3배 이상"
+    threshold: 3.0
+  - id: revenue
+    label: "② 선도기업 매출 가속"
+    rule: "순수 바스켓 매출 YoY 중앙값이 자기 이력 z ≥ +1.0 이고 절대값 ≥ 25%"
+    z_threshold: 1.0
+    abs_threshold: 0.25
+  - id: bottleneck
+    label: "③ 공급 병목 출현"
+    rule: "재고 YoY 가 매출 YoY 를 10%p 이상 초과 (선행 축적)"
+    gap_threshold: 0.10
+  - id: diffusion
+    label: "④ 산업 전반 확산"
+    rule: "로봇 용어를 언급한 SIC 산업 수 4분기 평균이 2년 전 대비 2배 이상"
+    threshold: 2.0
+  - id: margin
+    label: "⑤ 이익률 확장"
+    rule: "순수 바스켓 영업이익률이 4분기 전 대비 +3%p 이상"
+    threshold: 0.03
+  - id: rerating
+    label: "⑥ 가격 재평가"
+    rule: "순수 바스켓 12개월 초과수익 ≥ +20%"
+    threshold: 0.20
+
+# AI 추론반도체가 각 단계를 통과한 시점 (2026-08 관측 기준 고정값, 비교용)
+reference_timeline:
+  narrative: 2023Q1
+  revenue: 2023Q2
+  bottleneck: 2023Q3
+  diffusion: 2024Q1
+  margin: 2024Q2
+  rerating: 2023Q2
+
+# 경보 조건
+alerts:
+  # ②가 켜지는 순간이 이 산업의 분기점 — 가장 중요한 감시 대상
+  watch_gap_quarters: 6      # 서사만 켜진 채 이 분기 수를 넘기면 경고
+  decoupling_corr: 0.35      # 기성 자동화와의 상관이 이 아래로 내려가면 독립 사이클 조짐
+
+changelog:
+  - "2026-08-16 최초 등록. 검증 근거는 /areas/physical-ai-cycle 참조"
