@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AGI Thesis Radar</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141922; --line:#232a36; --text:#e6e9ef;
+    --muted:#8b95a7; --green:#3fb950; --amber:#d29922; --red:#f85149; --blue:#58a6ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;
+       font-size:15px;line-height:1.55}
+  .wrap{max-width:1080px;margin:0 auto;padding:20px 16px 64px}
+  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;
+         border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}
+  h1{font-size:19px;margin:0;letter-spacing:-.2px}
+  .meta{color:var(--muted);font-size:12.5px}
+  .verdict{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px;margin-bottom:18px}
+  .state{font-size:26px;font-weight:700;letter-spacing:-.5px}
+  .state.intact{color:var(--green)} .state.stressed{color:var(--amber)} .state.broken{color:var(--red)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .card h3{margin:0 0 10px;font-size:12px;color:var(--muted);font-weight:600;
+           text-transform:uppercase;letter-spacing:.7px}
+  .big{font-size:22px;font-weight:700}
+  .kv{display:flex;justify-content:space-between;padding:3px 0;font-size:13px}
+  .kv span:first-child{color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{padding:9px 8px;text-align:right;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px}
+  .pos{color:var(--green)} .neg{color:var(--red)} .mut{color:var(--muted)}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600}
+  .b-ok{background:rgba(63,185,80,.15);color:var(--green)}
+  .b-warn{background:rgba(210,153,34,.15);color:var(--amber)}
+  .b-bad{background:rgba(248,81,73,.15);color:var(--red)}
+  .b-mut{background:rgba(139,149,167,.15);color:var(--muted)}
+  .alert{border-left:3px solid var(--red);background:rgba(248,81,73,.07);
+         padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:8px;font-size:13.5px}
+  .alert.info{border-color:var(--blue);background:rgba(88,166,255,.07)}
+  ul{margin:6px 0;padding-left:18px} li{margin-bottom:5px;font-size:13.5px}
+  .agent{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+         padding:14px;margin-bottom:10px}
+  .agent .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .agent .nm{font-weight:600} .agent .an{font-size:13.5px;color:#c9d1d9}
+  .crit{font-size:13px;color:#b3bcc9;border-left:2px solid var(--line);
+        padding-left:10px;margin:8px 0}
+  footer{color:var(--muted);font-size:12px;margin-top:28px;
+         border-top:1px solid var(--line);padding-top:14px}
+  .err{color:var(--red);padding:32px 0}
+  .tabs{display:flex;gap:6px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+  .tab{padding:9px 16px;cursor:pointer;font-size:13.5px;color:var(--muted);
+       border-bottom:2px solid transparent;user-select:none}
+  .tab:hover{color:var(--text)}
+  .tab.on{color:var(--blue);border-bottom-color:var(--blue);font-weight:600}
+  .pane{display:none} .pane.on{display:block}
+  .chart{width:100%;height:150px;display:block}
+  .chart-legend{display:flex;gap:14px;font-size:11.5px;color:var(--muted);margin-top:6px}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+  .wl{display:flex;justify-content:space-between;align-items:center;gap:10px;
+      padding:11px 0;border-bottom:1px solid var(--line)}
+  .wl:last-child{border-bottom:none}
+  .wl .nm{font-size:13.5px} .wl .cd{font-size:11.5px;color:var(--muted);margin-top:2px}
+  .wl .gap{text-align:right;font-size:13px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🛰 AGI Thesis Radar</h1>
+    <div class="meta" id="meta">불러오는 중…</div>
+  </header>
+  <div class="tabs" id="tabs" style="display:none">
+    <div class="tab on" data-p="today">오늘</div>
+    <div class="tab" data-p="trend">추이</div>
+    <div class="tab" data-p="weekend">주말</div>
+  </div>
+  <div id="root"><div class="mut">데이터를 불러오는 중입니다…</div></div>
+  <footer>
+    논지 그래프 · 헤지 유효성 · 혼잡도 · 자금조달 스트레스 4계층 판정.
+    투자 판단의 참고 정보이며 매매 권유가 아닙니다.
+  </footer>
+</div>
+<script>
+const F = {
+  pct: v => v==null ? '–' : (v*100).toFixed(1)+'%',
+  num: v => v==null ? '–' : (+v).toFixed(2),
+  cls: v => v==null ? 'mut' : (v>0 ? 'pos' : (v<0 ? 'neg':'mut'))
+};
+const BADGE = {OK:'b-ok', NORMAL:'b-ok', WATCH:'b-warn', ALERT:'b-bad', BROKEN:'b-bad', NO_DATA:'b-mut'};
+const STATE = {
+  THESIS_INTACT:['논지 유지','intact'],
+  THESIS_STRESSED:['논지 압박','stressed'],
+  THESIS_BROKEN:['논지 훼손','broken']
+};
+const esc = s => String(s??'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function card(title, body){ return `<div class="card"><h3>${title}</h3>${body}</div>`; }
+
+function renderToday(r){
+  const v = r.verdict||{}, h = r.hedge||{}, c = r.crowding||{}, f = r.funding||{};
+  const [label, cls] = STATE[v.final_state] || [v.final_state||'–','stressed'];
+
+  let html = `<div class="verdict">
+      <div class="state ${cls}">${label}</div>
+      <div class="meta">확신도 ${v.confidence_score??'–'}% ·
+        판정 엔진 ${v.llm?'멀티에이전트 토론':'규칙 엔진'} ·
+        규칙 점수 ${(r.rule_verdict||{}).score??'–'}</div>
+      ${v.summary?`<p style="margin:12px 0 0;font-size:14px">${esc(v.summary)}</p>`:''}
+    </div>`;
+
+  html += '<div class="grid">';
+  html += card('헤지 유효성', `
+    <div class="big"><span class="badge ${BADGE[h.status]||'b-mut'}">${h.status||'–'}</span></div>
+    <div class="kv"><span>20일 상관</span><b class="${F.cls(h.corr20)}">${F.num(h.corr20)}</b></div>
+    <div class="kv"><span>변동성비 (z)</span><b>${F.num(h.spread_vol_ratio)} (${F.num(h.ratio_z)})</b></div>
+    <div class="kv"><span>롱 20일</span><b class="${F.cls(h.long_return_20d)}">${F.pct(h.long_return_20d)}</b></div>
+    <div class="kv"><span>숏 20일</span><b class="${F.cls(h.short_return_20d)}">${F.pct(h.short_return_20d)}</b></div>
+    <div class="kv"><span>동시손실</span><b>${h.both_legs_lose?'예':'아니오'}</b></div>
+    <div class="kv"><span>1년 발동률</span><b class="mut">${h.base_rate_broken_1y!=null?(h.base_rate_broken_1y*100).toFixed(0)+'%':'–'}</b></div>`);
+  html += card('포지셔닝 혼잡도', `
+    <div class="big">${c.score??'–'} <span class="badge ${BADGE[c.level]||'b-mut'}">${c.level||'–'}</span></div>
+    ${Object.entries(c.components||{}).map(([k,val])=>
+      `<div class="kv"><span>${esc(k)}</span><b>${val}</b></div>`).join('')}
+    <div class="kv"><span>기준</span><b class="mut">${esc((c.cutoffs||{}).basis||'–')}</b></div>`);
+  const hy = ((f.values||{}).hy_oas)||{};
+  html += card('자금조달 스트레스', `
+    <div class="big"><span class="badge ${BADGE[f.level]||'b-mut'}">${f.level||'–'}</span></div>
+    <div class="kv"><span>HY OAS</span><b>${hy.value!=null?hy.value.toFixed(2)+'%':'–'}</b></div>
+    <div class="kv"><span>20일 변화</span><b class="${F.cls(hy.change_20d)}">${hy.change_20d??'–'}</b></div>
+    <div class="kv"><span>수집 상태</span><b class="mut">${f.mode||'–'}</b></div>`);
+  const br = r.breadth||{};
+  html += card('논지 폭', `
+    <div class="big">${br.leading??'–'} / ${br.total??'–'}</div>
+    <div class="meta">롱 노드 중 60일 초과수익 개수</div>
+    ${r.bottleneck_shift?`<div class="kv" style="margin-top:8px"><span>병목 선두</span>
+      <b>${esc(r.bottleneck_shift.current||'–')}</b></div>`:''}`);
+  html += '</div>';
+
+  const alerts = (r.rule_verdict||{}).alerts||[];
+  if(alerts.length){
+    html += '<div class="card" style="margin-bottom:18px"><h3>경보</h3>' +
+      alerts.map(a=>`<div class="alert ${a.severity==='HIGH'?'':'info'}">${esc(a.text)}</div>`).join('') +
+      '</div>';
+  }
+
+  html += `<div class="card" style="margin-bottom:18px"><h3>논지 노드 — 병목 순위</h3>
+    <table><thead><tr><th>노드</th><th>구분</th><th>20일 초과</th><th>60일 초과</th>
+    <th>순위</th><th>변동</th><th>커버</th></tr></thead><tbody>` +
+    (r.nodes||[]).map(n=>`<tr>
+      <td>${esc(n.label)}</td>
+      <td><span class="badge ${n.role==='short'?'b-bad':(n.role==='demand'?'b-mut':'b-ok')}">${n.role}</span></td>
+      <td class="${F.cls(n.rs20)}">${F.pct(n.rs20)}</td>
+      <td class="${F.cls(n.rs60)}">${F.pct(n.rs60)}</td>
+      <td>${n.rank}</td>
+      <td class="${F.cls(n.rank_delta)}">${n.rank_delta>0?'▲':(n.rank_delta<0?'▼':'–')}${n.rank_delta?Math.abs(n.rank_delta):''}</td>
+      <td class="mut">${n.coverage}/${n.universe}</td></tr>`).join('') +
+    '</tbody></table></div>';
+
+  if((v.key_insights||[]).length || (v.action_items||[]).length){
+    html += `<div class="grid">
+      ${card('인사이트', '<ul>'+(v.key_insights||[]).map(i=>`<li>${esc(i)}</li>`).join('')+'</ul>')}
+      ${card('점검 항목', '<ul>'+(v.action_items||[]).map(i=>`<li>${esc(i)}</li>`).join('')+'</ul>')}
+    </div>`;
+  }
+
+  const reports = ((r.debate||{}).phase1_reports)||[];
+  if(reports.length){
+    html += '<h3 style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px">에이전트 토론</h3>';
+    html += reports.map(a=>`<div class="agent">
+      <div class="top"><span class="nm">${esc(a.avatar||'')} ${esc(a.agent_name)}</span>
+      <span class="badge ${a.stance==='BROKEN'?'b-bad':(a.stance==='STRESSED'?'b-warn':'b-ok')}">${esc(a.stance)} · ${a.confidence_score}</span></div>
+      <div class="an">${esc(a.analysis)}</div>
+      ${(a.key_points||[]).length?'<ul>'+a.key_points.map(p=>`<li>${esc(p)}</li>`).join('')+'</ul>':''}
+    </div>`).join('');
+    html += (((r.debate||{}).phase2_critiques)||[]).map(c=>
+      `<div class="crit"><b>${esc(c.from_agent)} → ${esc(c.to_agent)}</b><br>${esc(c.critique)}</div>`).join('');
+  }
+
+  return html;
+}
+
+
+// ── 순수 SVG 스파크라인 (외부 라이브러리 없음) ─────────────────────────
+function sparkline(series, opts){
+  const {w=680, h=150, pad=26, bands=[]} = opts||{};
+  const all = series.flatMap(s=>s.values.filter(v=>v!=null));
+  if(!all.length) return '<div class="mut">표시할 데이터가 없습니다.</div>';
+  let lo = Math.min(...all, ...bands.map(b=>b.y)), hi = Math.max(...all, ...bands.map(b=>b.y));
+  if(hi===lo){ hi+=1; lo-=1; }
+  const span = hi-lo, n = Math.max(...series.map(s=>s.values.length));
+  const X = i => pad + (n<2?0:i*(w-pad*2)/(n-1));
+  const Y = v => h-pad - (v-lo)/span*(h-pad*2);
+
+  let g = `<svg class="chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">`;
+  // 격자
+  for(let k=0;k<=3;k++){
+    const v = lo + span*k/3, y = Y(v);
+    g += `<line x1="${pad}" y1="${y}" x2="${w-pad}" y2="${y}" stroke="#232a36" stroke-width="1"/>`;
+    g += `<text x="4" y="${y+3}" fill="#8b95a7" font-size="9">${v.toFixed(2)}</text>`;
+  }
+  // 임계선
+  bands.forEach(b=>{
+    g += `<line x1="${pad}" y1="${Y(b.y)}" x2="${w-pad}" y2="${Y(b.y)}" stroke="${b.color}"
+           stroke-width="1" stroke-dasharray="4 4" opacity=".7"/>`;
+  });
+  // 라인
+  series.forEach(s=>{
+    let d='', started=false;
+    s.values.forEach((v,i)=>{
+      if(v==null){ started=false; return; }
+      d += (started?' L':'M')+X(i)+' '+Y(v); started=true;
+    });
+    if(d) g += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="1.8"
+                 stroke-linejoin="round" stroke-linecap="round"/>`;
+  });
+  g += '</svg>';
+  const legend = series.map(s=>`<span><i class="dot" style="background:${s.color}"></i>${esc(s.name)}</span>`)
+    .concat(bands.map(b=>`<span><i class="dot" style="background:${b.color}"></i>${esc(b.name)}</span>`))
+    .join('');
+  return g + `<div class="chart-legend">${legend}</div>`;
+}
+
+function paneTrend(hist){
+  if(!hist || hist.length<2)
+    return '<div class="card"><div class="mut">추이는 2거래일 이상 누적된 뒤 표시됩니다.</div></div>';
+  const last = hist.slice(-60);
+  const lbl = `${last[0].d} → ${last[last.length-1].d} (${last.length}거래일)`;
+  let html = `<div class="meta" style="margin-bottom:12px">${esc(lbl)}</div>`;
+
+  html += card('헤지 — 롱·숏 20일 상관', sparkline(
+    [{name:'상관', color:'#58a6ff', values:last.map(r=>r.corr)}],
+    {bands:[{name:'BROKEN 임계 -0.40', y:-0.40, color:'#f85149'},
+            {name:'WATCH 임계 -0.20', y:-0.20, color:'#d29922'}]}));
+
+  const cw = last.map(r=>r.crowd_watch).filter(v=>v!=null).pop();
+  const ca = last.map(r=>r.crowd_alert).filter(v=>v!=null).pop();
+  html += card('포지셔닝 혼잡도', sparkline(
+    [{name:'혼잡도', color:'#3fb950', values:last.map(r=>r.crowd)}],
+    {bands:[cw!=null?{name:'WATCH '+cw, y:cw, color:'#d29922'}:null,
+            ca!=null?{name:'ALERT '+ca, y:ca, color:'#f85149'}:null].filter(Boolean)}));
+
+  html += card('논지 폭 (초과수익 노드 비율)', sparkline(
+    [{name:'폭', color:'#d29922', values:last.map(r=>r.breadth)}],
+    {bands:[{name:'붕괴 0.25', y:0.25, color:'#f85149'},
+            {name:'양호 0.60', y:0.60, color:'#3fb950'}]}));
+
+  html += `<div class="card"><h3>판정 이력</h3><table>
+    <thead><tr><th>종가일</th><th>판정</th><th>헤지</th><th>상관</th>
+    <th>혼잡도</th><th>경보</th></tr></thead><tbody>` +
+    last.slice().reverse().slice(0,25).map(r=>`<tr>
+      <td>${esc(r.d)}</td>
+      <td><span class="badge ${r.state==='THESIS_BROKEN'?'b-bad':(r.state==='THESIS_STRESSED'?'b-warn':'b-ok')}">${esc((STATE[r.state]||['–'])[0])}</span></td>
+      <td><span class="badge ${BADGE[r.hedge]||'b-mut'}">${esc(r.hedge||'–')}</span></td>
+      <td class="${F.cls(r.corr)}">${F.num(r.corr)}</td>
+      <td>${r.crowd??'–'}</td>
+      <td class="mut">${(r.alerts||[]).length||'–'}</td></tr>`).join('') +
+    '</tbody></table></div>';
+  return html;
+}
+
+function paneWeekend(wk){
+  if(!wk) return '<div class="card"><div class="mut">주말 스냅샷이 아직 없습니다. 토요일 09:00 KST 이후 표시됩니다.</div></div>';
+  let html = `<div class="card" style="margin-bottom:14px">
+    <h3>${wk.brief_mode==='watchlist'?'다음 주 워치리스트':'주간 리뷰'}</h3>
+    <div class="meta">${esc(wk.date)} · 기준 종가 ${esc(wk.as_of_close||'–')}</div></div>`;
+
+  const r = wk.weekly_review;
+  if(r && r.available){
+    html += '<div class="grid">';
+    html += card('판정', `<div class="big">${esc((STATE[r.state.to]||['–'])[0])}</div>
+      <div class="meta">${esc((STATE[r.state.from]||['–'])[0])} → ${esc((STATE[r.state.to]||['–'])[0])}</div>
+      <div class="kv"><span>기간</span><b>${esc(r.span.from)} ~ ${esc(r.span.to)}</b></div>
+      <div class="kv"><span>거래일</span><b>${r.span.sessions}일</b></div>`);
+    html += card('헤지', `<div class="big">${esc(r.hedge.from)} → ${esc(r.hedge.to)}</div>
+      <div class="kv"><span>BROKEN</span><b>${r.hedge.broken_days}일</b></div>
+      <div class="kv"><span>WATCH</span><b>${r.hedge.watch_days}일</b></div>
+      <div class="kv"><span>상관 변화</span><b class="${F.cls(r.hedge.corr_delta)}">${F.num(r.hedge.corr_delta)}</b></div>`);
+    html += card('혼잡도 · 논지 폭', `
+      <div class="kv"><span>혼잡도</span><b>${r.crowding.from} → ${r.crowding.to}</b></div>
+      <div class="kv"><span>변화</span><b class="${F.cls(r.crowding.delta)}">${F.num(r.crowding.delta)}</b></div>
+      <div class="kv"><span>논지 폭</span><b>${r.breadth.from} → ${r.breadth.to}</b></div>
+      <div class="kv"><span>병목</span><b>${esc(r.bottleneck.to||'–')}</b></div>`);
+    html += '</div>';
+    if((r.movers_up||[]).length || (r.movers_down||[]).length){
+      html += '<div class="card" style="margin-bottom:14px"><h3>순위 변동</h3>' +
+        (r.movers_up||[]).map(m=>`<div class="kv"><span>▲ ${esc(m.label)}</span>
+          <b class="pos">${m.rank_delta}단계 · ${F.pct(m.rs20)}</b></div>`).join('') +
+        (r.movers_down||[]).map(m=>`<div class="kv"><span>▼ ${esc(m.label)}</span>
+          <b class="neg">${Math.abs(m.rank_delta)}단계 · ${F.pct(m.rs20)}</b></div>`).join('') +
+        '</div>';
+    }
+    if((r.alerts||[]).length){
+      html += '<div class="card"><h3>이번 주 경보</h3>' + r.alerts.map(([code,cnt])=>
+        `<div class="kv"><span>${esc(code)}</span><b>${cnt}일</b></div>`).join('') + '</div>';
+    }
+  }
+
+  const w = wk.watchlist;
+  if(w && (w.items||[]).length){
+    html += '<div class="card"><h3>임계선까지 남은 거리</h3>' + w.items.map(it=>`
+      <div class="wl">
+        <div><div class="nm">${it.breached?'🔴':(it.armed?'🟠':'🟢')} ${esc(it.name)}</div>
+             <div class="cd">${esc(it.condition)}</div></div>
+        <div class="gap"><b>${it.current}</b> → ${it.trigger}<br>
+             <span class="${it.breached?'neg':'mut'}">${it.breached?'이미 통과':'여유 '+it.distance}</span></div>
+      </div>`).join('') + '</div>';
+  }
+  return html;
+}
+
+// ── 부트 ────────────────────────────────────────────────────────────
+const PANES = {};
+function showPane(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t.dataset.p===name));
+  document.getElementById('root').innerHTML =
+    `<div class="pane on">${PANES[name]||'<div class="mut">준비 중…</div>'}</div>`;
+}
+
+const j = (u) => fetch(u+'?t='+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null);
+
+Promise.all([
+  j('./data/latest.json'), j('./data/history.json'), j('./data/weekend.json')
+]).then(([latest, hist, wk])=>{
+  if(!latest){
+    document.getElementById('root').innerHTML =
+      '<div class="err">데이터를 불러오지 못했습니다. 워크플로우 최초 실행 이후 표시됩니다.</div>';
+    return;
+  }
+  document.getElementById('meta').textContent =
+    `${latest.date} · 종가 기준 ${latest.as_of_close||'–'} · 데이터 ${(latest.data_status||{}).mode||'–'}`;
+  PANES.today   = renderToday(latest);
+  PANES.trend   = paneTrend(hist);
+  PANES.weekend = paneWeekend(wk);
+  document.getElementById('tabs').style.display = 'flex';
+  document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showPane(t.dataset.p));
+  showPane('today');
+});
+</script>
+</body>
+</html>

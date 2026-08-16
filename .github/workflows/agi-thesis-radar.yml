@@ -1,0 +1,117 @@
+name: AGI Thesis Radar
+
+# ─────────────────────────────────────────────────────────────
+#  이 파일 하나만 레포에 만들면 됩니다. 추가 작업 없음.
+#  최초 실행 시 소스를 스스로 내려받아 agi_radar/ 에 설치하고,
+#  이후에는 설치된 코드로 정상 동작합니다.
+#  PAT 도 시크릿도 필요 없습니다 (기본 GITHUB_TOKEN 만 사용).
+# ─────────────────────────────────────────────────────────────
+
+on:
+  schedule:
+    - cron: "10 22 * * 0-4"   # 평일 일간 브리프  KST 07:10
+    - cron: "0 0 * * 6"       # 토 주간 리뷰      KST 09:00
+    - cron: "0 0 * * 0"       # 일 워치리스트     KST 09:00
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "특정 일자 강제 실행 (YYYY-MM-DD)"
+        required: false
+        default: ""
+      mode:
+        description: "브리프 모드"
+        required: false
+        default: "auto"
+        type: choice
+        options: [auto, daily, weekly, watchlist]
+      reinstall:
+        description: "소스 강제 재설치"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agi-thesis-radar
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  SUBDIR: agi_radar
+  PAGES: docs/agi-radar
+  PKG_URL: https://paste.rs/9IYZS
+  PKG_MIRROR: https://paste.rs/8uEyo
+  PKG_SHA: 8ded06f878a2011ca4cc38a298327c6a11a48b7f9ae99c7f8ea159f1357ac5ea
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bootstrap source (first run only)
+        run: |
+          set -euo pipefail
+          if [ -f "$SUBDIR/scripts/run_pipeline.py" ] && [ "${{ inputs.reinstall }}" != "true" ]; then
+            echo "소스 설치됨 — 부트스트랩 생략"; exit 0
+          fi
+          echo "소스 내려받는 중…"
+          curl -fsSL "$PKG_URL" | base64 -d > /tmp/pkg.tgz \
+            || curl -fsSL "$PKG_MIRROR" | base64 -d > /tmp/pkg.tgz
+          echo "$PKG_SHA  /tmp/pkg.tgz" | sha256sum -c -
+          rm -rf "$SUBDIR"; mkdir -p "$SUBDIR"
+          tar xzf /tmp/pkg.tgz -C "$SUBDIR"
+          mkdir -p "$PAGES"
+          # 시딩된 data/ 를 함께 배치한다 — 첫 실행부터 대시보드가 렌더되고
+          # history 22건이 있어 주간 리뷰가 1주차부터 정상 집계된다
+          cp -r "$SUBDIR/docs/." "$PAGES/"
+          echo "설치 완료: $SUBDIR ($(find "$SUBDIR" -type f | wc -l) files)"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        working-directory: ${{ env.SUBDIR }}
+        run: pip install -r requirements.txt
+
+      - name: Test gate
+        working-directory: ${{ env.SUBDIR }}
+        run: python -m unittest discover -s tests
+
+      - name: Run pipeline
+        working-directory: ${{ env.SUBDIR }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DATA_DIR: ${{ github.workspace }}/docs/agi-radar/data
+          DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/agi-radar/
+          TARGET_DATE: ${{ inputs.date }}
+          BRIEF_MODE: ${{ inputs.mode || 'auto' }}
+          TZ: "Asia/Seoul"
+        run: |
+          set -euo pipefail
+          if [[ -n "$TARGET_DATE" && ! "$TARGET_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::date 형식 오류: $TARGET_DATE"; exit 1
+          fi
+          python scripts/run_pipeline.py "$TARGET_DATE"
+
+      - name: Commit
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet && { echo "변경 없음"; exit 0; }
+          git commit -m "data: agi radar $(date +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git push && exit 0
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::푸시 실패"; exit 1

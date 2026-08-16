@@ -1,0 +1,83 @@
+# L1 — AGI 논지 그래프
+# Situational Awareness LP의 투자 논지를 인과사슬로 명시화한다.
+# 각 노드는 "병목 후보"이며, 노드 간 상대강도 순위 변화가 병목 이동을 뜻한다.
+
+meta:
+  name: agi-thesis-radar
+  thesis: >
+    AI 모델 스케일링이 지속되면 연산 수요가 폭증하고, 병목은
+    연산 -> 메모리 -> 장비 -> 전력 -> 데이터센터 순으로 이동한다.
+    수요측(하이퍼스케일러) capex가 이 사슬의 상류 동력이며,
+    소프트웨어 애플리케이션 계층은 AI에 의해 마진이 압축될 수 있다.
+  benchmark: SPY
+  lookback_days: 420
+
+nodes:
+  - id: compute
+    label: 연산 (GPU/ASIC)
+    role: long
+    stage: 1
+    tickers: [NVDA, AVGO, AMD, TSM]
+  - id: memory
+    label: 메모리 (HBM/NAND)
+    role: long
+    stage: 2
+    tickers: [MU, SNDK, "000660.KS", "005930.KS"]
+  - id: equipment
+    label: 반도체 장비
+    role: long
+    stage: 3
+    tickers: [AMAT, LRCX, KLAC, ASML]
+  - id: power
+    label: 전력/발전/열관리
+    role: long
+    stage: 4
+    tickers: [GEV, VRT, ETN, CEG, BE, PWR]
+  - id: neocloud
+    label: 네오클라우드/데이터센터
+    role: long
+    stage: 5
+    tickers: [CRWV, NBIS, IREN, DLR, EQIX]
+  - id: hyperscaler
+    label: 수요측 하이퍼스케일러
+    role: demand
+    stage: 0
+    tickers: [MSFT, GOOGL, AMZN, META]
+  - id: disrupted_sw
+    label: 피파괴 소프트웨어 (숏 다리)
+    role: short
+    stage: 9
+    tickers: [ADBE, CRM, NOW, WDAY, INTU, HUBS, DOCU]
+
+benchmarks:
+  - SPY
+  - QQQ
+  - SMH
+  - IGV
+
+# L4 리스크 임계값 — SA가 죽은 지점을 계량화한 부분
+thresholds:
+  hedge:
+    # [실증 재보정 2026-08] 변동성비 절대 임계값은 무효였다 (전 구간 발동).
+    # BROKEN = 동시손실(롱 하락 + 숏 상승) AND 상관 <= corr20_broken 일 때만.
+    corr20_watch: -0.20
+    corr20_broken: -0.40
+    # 변동성비는 절대값이 아니라 자기 1년 이력 대비 z 로만 쓴다
+    ratio_z_watch: 1.0
+  crowding:
+    # 절대 점수가 아니라 자기 1년 이력의 분위수로 등급을 매긴다
+    watch_percentile: 0.70
+    alert_percentile: 0.90
+  funding:
+    hy_oas_watch: 4.00
+    hy_oas_alert: 5.00
+  breadth:
+    # 60일 초과수익 노드 수 / 롱 노드 수
+    intact: 0.60
+    broken: 0.25
+
+# FRED 시리즈 (러너에서만 접근 가능, 3회 연속 실패 시 서킷 브레이커)
+fred_series:
+  hy_oas: BAMLH0A0HYM2
+  bbb_oas: BAMLC0A4CBBB
+  ust10y: DGS10

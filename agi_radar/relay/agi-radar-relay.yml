@@ -1,0 +1,60 @@
+# 이 파일은 hynix-correction-monitor 레포의
+#   .github/workflows/agi-radar-relay.yml
+# 로 배치된다. (전략 Agent 봇 토큰 보유 레포)
+
+name: AGI Radar Relay
+
+on:
+  schedule:
+    # 평일 일간 — KST 07:20 = UTC 전날 22:20 (원본 수집 07:10 직후)
+    - cron: "20 22 * * 0-4"
+    # 토요일 주간 리뷰 — KST 토 09:10 = UTC 토 00:10
+    - cron: "10 0 * * 6"
+    # 일요일 워치리스트 — KST 일 09:10 = UTC 일 00:10
+    - cron: "10 0 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agi-radar-relay
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Relay brief
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 원본 위치 — 레포/경로가 바뀌면 여기만 고치면 된다
+          RADAR_REPO: ${{ vars.RADAR_REPO || 'korea-etf-calmar' }}
+          RADAR_BASE: ${{ vars.RADAR_BASE || 'docs/agi-radar/data' }}
+          TZ: "Asia/Seoul"
+        run: python agi_radar_relay.py
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -sS -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=$(printf '%s\n%s' '❌ AGI Radar 릴레이 실패' "${RUN_URL}")" \
+            || true
