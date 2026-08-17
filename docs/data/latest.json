@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-17T06:59:48+09:00",
+ "generated_at": "2026-08-18T07:03:54+09:00",
  "window": "롤링 6M (182일)",
  "metric": "칼마비율 = 연율화 수익률 ÷ |MDD|",
  "universes": [
@@ -14,18 +14,16 @@
    "base_date": "20260213",
    "last_date": "20260814",
    "diff": {
-    "ref_date": "20260810",
+    "ref_date": "20260811",
     "entered": [
      "TIGER 미국캐시카우100",
-     "RISE 네트워크인프라",
      "TIGER 글로벌클라우드컴퓨팅INDXX",
      "UNICORN 생성형AI강소기업액티브"
     ],
     "exited": [
-     "TIGER 미국AI반도체팹리스",
      "RISE 미국반도체NYSE(H)",
-     "HANARO 글로벌생성형AI액티브",
-     "KODEX 미국AI반도체TOP3플러스"
+     "TIGER 미국AI반도체팹리스",
+     "HANARO 글로벌생성형AI액티브"
     ]
    },
    "rows": [
@@ -132,7 +130,7 @@
    "base_date": "20260213",
    "last_date": "20260814",
    "diff": {
-    "ref_date": "20260810",
+    "ref_date": "20260811",
     "entered": [
      "SK스퀘어",
      "SK하이닉스"
@@ -244,14 +242,16 @@
    "status": "ok",
    "error": null,
    "base_date": "20260213",
-   "last_date": "20260814",
+   "last_date": "20260817",
    "diff": {
-    "ref_date": "20260810",
+    "ref_date": "20260811",
     "entered": [
-     "Valero Energy"
+     "Valero Energy",
+     "Marvell Technology"
     ],
     "exited": [
-     "Marvell Technology"
+     "Datadog",
+     "Airbnb"
     ]
    },
    "rows": [
@@ -260,8 +260,8 @@
      "code": "DELL",
      "name": "Dell Technologies",
      "family": "",
-     "calmar": 80.25,
-     "ret": 3.1775,
+     "calmar": 72.83,
+     "ret": 3.0838,
      "mdd": -0.2067
     },
     {
@@ -269,8 +269,8 @@
      "code": "PANW",
      "name": "Palo Alto Networks",
      "family": "",
-     "calmar": 28.54,
-     "ret": 1.3017,
+     "calmar": 26.13,
+     "ret": 1.2507,
      "mdd": -0.1514
     },
     {
@@ -278,8 +278,8 @@
      "code": "HUM",
      "name": "Humana",
      "family": "",
-     "calmar": 24.71,
-     "ret": 1.1133,
+     "calmar": 23.2,
+     "ret": 1.0875,
      "mdd": -0.141
     },
     {
@@ -287,8 +287,8 @@
      "code": "HPE",
      "name": "Hewlett Packard Enterprise",
      "family": "",
-     "calmar": 21.56,
-     "ret": 1.5875,
+     "calmar": 19.89,
+     "ret": 1.539,
      "mdd": -0.2657
     },
     {
@@ -296,8 +296,8 @@
      "code": "FTNT",
      "name": "Fortinet",
      "family": "",
-     "calmar": 20.79,
-     "ret": 0.8701,
+     "calmar": 18.76,
+     "ret": 0.8215,
      "mdd": -0.1207
     },
     {
@@ -305,8 +305,8 @@
      "code": "AMD",
      "name": "Advanced Micro Devices",
      "family": "",
-     "calmar": 19.91,
-     "ret": 1.4811,
+     "calmar": 18.48,
+     "ret": 1.4407,
      "mdd": -0.2605
     },
     {
@@ -314,36 +314,36 @@
      "code": "NTAP",
      "name": "NetApp",
      "family": "",
-     "calmar": 19.63,
-     "ret": 1.0219,
+     "calmar": 18.35,
+     "ret": 0.9938,
      "mdd": -0.1581
     },
     {
      "rank": 8,
-     "code": "CRWD",
-     "name": "CrowdStrike",
-     "family": "",
-     "calmar": 16.75,
-     "ret": 1.0198,
-     "mdd": -0.1848
-    },
-    {
-     "rank": 9,
      "code": "VLO",
      "name": "Valero Energy",
      "family": "",
-     "calmar": 15.94,
-     "ret": 0.7069,
+     "calmar": 16.29,
+     "ret": 0.7345,
      "mdd": -0.1206
     },
     {
-     "rank": 10,
-     "code": "DDOG",
-     "name": "Datadog",
+     "rank": 9,
+     "code": "MRVL",
+     "name": "Marvell Technology",
      "family": "",
-     "calmar": 15.5,
-     "ret": 1.0404,
-     "mdd": -0.2051
+     "calmar": 15.77,
+     "ret": 1.9809,
+     "mdd": -0.4836
+    },
+    {
+     "rank": 10,
+     "code": "CRWD",
+     "name": "CrowdStrike",
+     "family": "",
+     "calmar": 15.65,
+     "ret": 0.9914,
+     "mdd": -0.1848
     }
    ]
   },
@@ -356,14 +356,14 @@
    "status": "ok",
    "error": null,
    "base_date": "20260213",
-   "last_date": "20260814",
+   "last_date": "20260817",
    "diff": {
-    "ref_date": "20260810",
+    "ref_date": "20260811",
     "entered": [
-     "United States Oil Fund LP"
+     "State Street Technology Select Sector SPDR ETF"
     ],
     "exited": [
-     "iShares Semiconductor ETF"
+     "iShares Russell 1000 Value ETF"
     ]
    },
    "rows": [
@@ -372,8 +372,8 @@
      "code": "CIBR",
      "name": "First Trust NASDAQ Cybersecurity ETF",
      "family": "",
-     "calmar": 10.45,
-     "ret": 0.4903,
+     "calmar": 9.54,
+     "ret": 0.4633,
      "mdd": -0.1174
     },
     {
@@ -381,8 +381,8 @@
      "code": "VLUE",
      "name": "iShares MSCI USA Value Factor ETF",
      "family": "",
-     "calmar": 8.92,
-     "ret": 0.3465,
+     "calmar": 8.72,
+     "ret": 0.3462,
      "mdd": -0.0915
     },
     {
@@ -390,8 +390,8 @@
      "code": "BUG",
      "name": "Global X Cybersecurity ETF",
      "family": "",
-     "calmar": 8.46,
-     "ret": 0.545,
+     "calmar": 7.48,
+     "ret": 0.502,
      "mdd": -0.1646
     },
     {
@@ -399,8 +399,8 @@
      "code": "ARKG",
      "name": "ARK Genomic Revolution ETF",
      "family": "",
-     "calmar": 7.2,
-     "ret": 0.5321,
+     "calmar": 7.36,
+     "ret": 0.5529,
      "mdd": -0.1878
     },
     {
@@ -408,53 +408,53 @@
      "code": "XBI",
      "name": "State Street SPDR S&P Biotech ETF",
      "family": "",
-     "calmar": 6.12,
-     "ret": 0.2812,
+     "calmar": 6.41,
+     "ret": 0.2985,
      "mdd": -0.1051
     },
     {
      "rank": 6,
-     "code": "SKYY",
-     "name": "First Trust Cloud Computing ETF",
-     "family": "",
-     "calmar": 5.95,
-     "ret": 0.4471,
-     "mdd": -0.1846
-    },
-    {
-     "rank": 7,
      "code": "EWT",
      "name": "Ishares Msci Taiwan ETF",
      "family": "",
-     "calmar": 5.81,
-     "ret": 0.4657,
+     "calmar": 5.82,
+     "ret": 0.4757,
      "mdd": -0.1983
+    },
+    {
+     "rank": 7,
+     "code": "USO",
+     "name": "United States Oil Fund LP",
+     "family": "",
+     "calmar": 5.79,
+     "ret": 0.7094,
+     "mdd": -0.3249
     },
     {
      "rank": 8,
      "code": "VGT",
      "name": "Vanguard Information Technology Index Fund",
      "family": "",
-     "calmar": 5.75,
-     "ret": 0.3417,
+     "calmar": 5.62,
+     "ret": 0.3414,
      "mdd": -0.1397
     },
     {
      "rank": 9,
-     "code": "USO",
-     "name": "United States Oil Fund LP",
+     "code": "SKYY",
+     "name": "First Trust Cloud Computing ETF",
      "family": "",
-     "calmar": 5.44,
-     "ret": 0.661,
-     "mdd": -0.3249
+     "calmar": 5.4,
+     "ret": 0.4199,
+     "mdd": -0.1846
     },
     {
      "rank": 10,
      "code": "XLK",
      "name": "State Street Technology Select Sector SPDR ETF",
      "family": "",
-     "calmar": 5.37,
-     "ret": 0.3615,
+     "calmar": 5.29,
+     "ret": 0.3637,
      "mdd": -0.1596
     }
    ]
