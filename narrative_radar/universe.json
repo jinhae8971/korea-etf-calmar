@@ -4,7 +4,8 @@
   "note": "매핑은 관측 시작 전에 고정한다. 성과를 보고 구성종목을 갈아끼우면 사후선택 편향으로 지표가 무의미해진다. 변경 시 반드시 frozen_at 갱신 + 변경 이력 기록. llama 필드는 TVL 괴리 계산용 — TVL이 무의미한 카테고리(프라이버시·DePIN·오라클)는 의도적으로 비워둔다.",
   "changelog": [
     "2026-08-21 v1 최초 고정 (7개 내러티브 / 37종목 / 벤치마크 3종)",
-    "2026-08-21 v2 DefiLlama TVL 매핑 18종 추가 (llama 필드). 종목 구성 변경 없음"
+    "2026-08-21 v2 DefiLlama TVL 매핑 18종 추가 (llama 필드). 종목 구성 변경 없음",
+    "2026-08-21 v3 NEW_CHAINS 내러티브 8종목 추가. 규칙 기반 편입(TVL·시총 임계 + 2024년 이후) — 종목을 성과 보고 고르지 않았음을 명시. 기존 7개 내러티브 구성은 무변경"
   ],
   "benchmarks": [
     {
@@ -348,6 +349,93 @@
           "symbol": "FIL",
           "fit": 0.4,
           "role": "분산 스토리지"
+        }
+      ]
+    },
+    "NEW_CHAINS": {
+      "name": "신흥 체인 (2024년 이후)",
+      "thesis": "신규 L1/L2는 TVL이 인센티브로 먼저 쌓이고 가격은 상장 서사로 따로 움직여, 가격-예치금 괴리가 가장 크게 벌어지는 구간이다. 편입은 성과가 아니라 규칙으로 결정한다.",
+      "inclusion_rule": "① DefiLlama 체인 TVL ≥ $10M ② CoinGecko 시총 ≥ $10M인 자체 토큰 존재 ③ 체인 메인넷 또는 토큰 상장이 2024년 이후 ④ 다른 내러티브에 이미 편입된 체인(Plasma·Hyperliquid) 제외",
+      "members": [
+        {
+          "id": "monad",
+          "symbol": "MON",
+          "fit": 1.0,
+          "role": "병렬 EVM L1 — 체인 TVL 상위 10위",
+          "llama": {
+            "kind": "chain",
+            "key": "Monad"
+          }
+        },
+        {
+          "id": "megaeth",
+          "symbol": "MEGA",
+          "fit": 1.0,
+          "role": "실시간 블록 EVM L2",
+          "llama": {
+            "kind": "chain",
+            "key": "MegaETH"
+          }
+        },
+        {
+          "id": "berachain-bera",
+          "symbol": "BERA",
+          "fit": 1.0,
+          "role": "유동성 증명(PoL) L1",
+          "llama": {
+            "kind": "chain",
+            "key": "Berachain"
+          }
+        },
+        {
+          "id": "katana-network-token",
+          "symbol": "KAT",
+          "fit": 0.7,
+          "role": "DeFi 특화 L2",
+          "llama": {
+            "kind": "chain",
+            "key": "Katana"
+          }
+        },
+        {
+          "id": "sonic-3",
+          "symbol": "S",
+          "fit": 0.7,
+          "role": "고속 EVM L1 (2024 재출범)",
+          "llama": {
+            "kind": "chain",
+            "key": "Sonic"
+          }
+        },
+        {
+          "id": "linea",
+          "symbol": "LINEA",
+          "fit": 0.7,
+          "role": "zkEVM L2 (토큰 2025 상장)",
+          "llama": {
+            "kind": "chain",
+            "key": "Linea"
+          }
+        },
+        {
+          "id": "blast",
+          "symbol": "BLAST",
+          "fit": 0.4,
+          "role": "네이티브 이자 L2 (2024)",
+          "llama": {
+            "kind": "chain",
+            "key": "Blast"
+          }
+        },
+        {
+          "id": "worldcoin-wld",
+          "symbol": "WLD",
+          "fit": 0.4,
+          "role": "World Chain (2024 메인넷) — 토큰은 아이덴티티 프로젝트",
+          "llama": {
+            "kind": "chain",
+            "key": "World Chain"
+          }
         }
       ]
     }

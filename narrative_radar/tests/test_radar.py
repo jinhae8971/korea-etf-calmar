@@ -316,3 +316,23 @@ class TestTvlDivergence(unittest.TestCase):
         t7 = sum(k["tvl"] * k["change_7d"] for k in kids) / tot
         self.assertAlmostEqual(tot, 1000.0)
         self.assertAlmostEqual(t7, 9.0)
+
+    def test_new_chains_inclusion_rule_documented(self):
+        """규칙 기반 편입임을 파일에 남겨 사후선택 의심을 검증 가능하게 둔다."""
+        p = os.path.join(os.path.dirname(__file__), "..", "universe.json")
+        with open(p, encoding="utf-8") as f:
+            u = json.load(f)
+        n = u["narratives"]["NEW_CHAINS"]
+        self.assertIn("inclusion_rule", n)
+        self.assertGreaterEqual(len(n["members"]), 5)
+        for m in n["members"]:
+            self.assertIn("llama", m, m["symbol"])
+            self.assertEqual(m["llama"]["kind"], "chain", m["symbol"])
+
+    def test_no_chain_mapped_twice(self):
+        p = os.path.join(os.path.dirname(__file__), "..", "universe.json")
+        with open(p, encoding="utf-8") as f:
+            u = json.load(f)
+        keys = [m["llama"]["key"] for nar in u["narratives"].values()
+                for m in nar["members"] if m.get("llama")]
+        self.assertEqual(len(keys), len(set(keys)), "같은 체인/프로토콜이 두 번 매핑됨")
