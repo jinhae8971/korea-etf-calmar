@@ -1,0 +1,124 @@
+name: Narrative Radar
+
+on:
+  schedule:
+    - cron: "13 23 * * *"      # KST 매일 08:13 (비정각 분산)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "특정 일자 라벨 (YYYY-MM-DD, 비우면 오늘)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: narrative-radar
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  SRC_A: "https://paste.rs/NWCkh"
+  SRC_B: "https://paste.rs/b2uXP"
+  SRC_SHA: "a673a6915c672f63e36f30bb20d79b81074a812f1c83673c4bdaf5ce3111e8c4"
+  DIR: "narrative_radar"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 최초 실행 시 스스로 소스를 내려받아 설치한다 (sha256 검증 필수).
+      # 이후 실행에서는 레포에 커밋된 소스를 그대로 쓴다.
+      - name: Bootstrap source
+        run: |
+          set -euo pipefail
+          if [ -f "${DIR}/narrative_radar.py" ]; then
+            echo "소스 이미 설치됨 — 부트스트랩 생략"
+            exit 0
+          fi
+          ok=0
+          for u in "${SRC_A}" "${SRC_B}"; do
+            echo "시도: ${u}"
+            if curl -fsSL --retry 3 --retry-delay 4 "${u}" -o /tmp/src.b64; then
+              if base64 -d /tmp/src.b64 > /tmp/src.tgz 2>/dev/null; then
+                if echo "${SRC_SHA}  /tmp/src.tgz" | sha256sum -c - ; then
+                  ok=1; break
+                else
+                  echo "::warning::sha256 불일치 — 다음 미러"
+                fi
+              fi
+            fi
+          done
+          if [ "${ok}" != "1" ]; then
+            echo "::error::소스 부트스트랩 실패 (전 미러 불가)"; exit 1
+          fi
+          tar xzf /tmp/src.tgz -C .
+          find "${DIR}" -type f | sort
+
+      - name: Install deps
+        working-directory: narrative_radar
+        run: pip install -r requirements.txt
+
+      # 깨진 코드가 데이터를 오염시키지 않도록 수집 앞에 게이트를 둔다
+      - name: Test gate
+        working-directory: narrative_radar
+        run: python -m unittest discover -s tests -v
+
+      - name: Run radar
+        working-directory: narrative_radar
+        env:
+          TARGET_DATE: ${{ inputs.date }}
+          PAGES_URL: "https://jinhae8971.github.io/korea-etf-calmar/narrative-radar/"
+          DASHBOARD_DIR: ${{ github.workspace }}/docs/narrative-radar
+          TZ: "Asia/Seoul"
+        run: |
+          set -euo pipefail
+          if [[ -n "${TARGET_DATE}" && ! "${TARGET_DATE}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::date 입력 형식 오류 (YYYY-MM-DD): ${TARGET_DATE}"
+            exit 1
+          fi
+          python narrative_radar.py "${TARGET_DATE}"
+
+      # 수집이 실패해도 판정불가 스냅샷은 남겨야 릴레이가 오탐을 안 보낸다
+      - name: Commit
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add narrative_radar docs/narrative-radar 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+            exit 0
+          fi
+          git commit -m "chore(narrative-radar): $(date -u +%Y-%m-%d) 스냅샷"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -sS -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=$(printf '%s\n%s' '❌ Narrative Radar 실행 실패' "${RUN_URL}")" \
+            || true

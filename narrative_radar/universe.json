@@ -1,0 +1,355 @@
+{
+  "schema": 1,
+  "frozen_at": "2026-08-21",
+  "note": "매핑은 관측 시작 전에 고정한다. 성과를 보고 구성종목을 갈아끼우면 사후선택 편향으로 지표가 무의미해진다. 변경 시 반드시 frozen_at 갱신 + 변경 이력 기록. llama 필드는 TVL 괴리 계산용 — TVL이 무의미한 카테고리(프라이버시·DePIN·오라클)는 의도적으로 비워둔다.",
+  "changelog": [
+    "2026-08-21 v1 최초 고정 (7개 내러티브 / 37종목 / 벤치마크 3종)",
+    "2026-08-21 v2 DefiLlama TVL 매핑 18종 추가 (llama 필드). 종목 구성 변경 없음"
+  ],
+  "benchmarks": [
+    {
+      "id": "bitcoin",
+      "symbol": "BTC"
+    },
+    {
+      "id": "ethereum",
+      "symbol": "ETH"
+    },
+    {
+      "id": "solana",
+      "symbol": "SOL"
+    }
+  ],
+  "narratives": {
+    "RWA_EQUITY": {
+      "name": "토큰화 주식·RWA 담보",
+      "thesis": "주식·펀드의 온체인 발행과 담보 이동성. 트리거는 SEC innovation exemption 및 24/7 거래 허용 프레임워크.",
+      "members": [
+        {
+          "id": "ondo-finance",
+          "symbol": "ONDO",
+          "fit": 1.0,
+          "role": "토큰화 주식 발행 최대 사업자",
+          "llama": {
+            "kind": "protocol",
+            "key": "ondo-finance"
+          }
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "fit": 0.7,
+          "role": "가격·준비금 증명 오라클"
+        },
+        {
+          "id": "plume",
+          "symbol": "PLUME",
+          "fit": 1.0,
+          "role": "RWA 전용 체인",
+          "llama": {
+            "kind": "chain",
+            "key": "Plume Mainnet"
+          }
+        },
+        {
+          "id": "centrifuge",
+          "symbol": "CFG",
+          "fit": 0.7,
+          "role": "사모신용 토큰화",
+          "llama": {
+            "kind": "protocol",
+            "key": "centrifuge-protocol"
+          }
+        },
+        {
+          "id": "pendle",
+          "symbol": "PENDLE",
+          "fit": 0.4,
+          "role": "수익률 분리 (RWA 이자 파생)",
+          "llama": {
+            "kind": "protocol",
+            "key": "pendle"
+          }
+        },
+        {
+          "id": "morpho",
+          "symbol": "MORPHO",
+          "fit": 0.4,
+          "role": "RWA 담보 대출 레이어",
+          "llama": {
+            "kind": "protocol",
+            "key": "morpho-blue"
+          }
+        },
+        {
+          "id": "quant-network",
+          "symbol": "QNT",
+          "fit": 0.4,
+          "role": "기관 상호운용"
+        }
+      ]
+    },
+    "PRIVACY_PQ": {
+      "name": "프라이버시·포스트퀀텀",
+      "thesis": "규제 부채에서 기관 자산으로의 재분류 + 양자내성 로드맵. 리스크는 EU AMLR 2027.7 상장폐지와 선물 주도 레버리지.",
+      "members": [
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "fit": 1.0,
+          "role": "zk-SNARK 선택적 차폐 + PQ 로드맵"
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "fit": 1.0,
+          "role": "기본값 프라이버시"
+        },
+        {
+          "id": "dash",
+          "symbol": "DASH",
+          "fit": 0.4,
+          "role": "구세대 프라이버시 베타"
+        },
+        {
+          "id": "railgun",
+          "symbol": "RAIL",
+          "fit": 0.7,
+          "role": "EVM 프라이버시 레이어",
+          "llama": {
+            "kind": "protocol",
+            "key": "railgun"
+          }
+        },
+        {
+          "id": "quantum-resistant-ledger",
+          "symbol": "QRL",
+          "fit": 0.7,
+          "role": "순수 양자내성 플레이"
+        },
+        {
+          "id": "secret",
+          "symbol": "SCRT",
+          "fit": 0.4,
+          "role": "기밀 스마트컨트랙트"
+        }
+      ]
+    },
+    "ZK_INFRA": {
+      "name": "ZK 인프라 (프라이버시 파생)",
+      "thesis": "프라이버시 코인 리스크 없이 영지식 기술에 노출. 프라이버시 랠리의 후행 수혜 경로.",
+      "members": [
+        {
+          "id": "starknet",
+          "symbol": "STRK",
+          "fit": 1.0,
+          "role": "STARK 기반 L2",
+          "llama": {
+            "kind": "chain",
+            "key": "Starknet"
+          }
+        },
+        {
+          "id": "mina-protocol",
+          "symbol": "MINA",
+          "fit": 0.7,
+          "role": "재귀증명 경량 체인"
+        },
+        {
+          "id": "aleo",
+          "symbol": "ALEO",
+          "fit": 1.0,
+          "role": "프라이버시 우선 L1"
+        },
+        {
+          "id": "polyhedra-network",
+          "symbol": "ZKJ",
+          "fit": 0.7,
+          "role": "zk 브리지·증명"
+        }
+      ]
+    },
+    "STABLE_RAILS": {
+      "name": "스테이블 결제 레일",
+      "thesis": "에이전트 마이크로결제(중앙값 $0.01~0.10)는 카드망이 구조적으로 처리 불가. USDC 98.6% 집중이 대안 발행·정산 체인의 여지.",
+      "members": [
+        {
+          "id": "ethena",
+          "symbol": "ENA",
+          "fit": 1.0,
+          "role": "합성달러 발행",
+          "llama": {
+            "kind": "protocol",
+            "key": "ethena"
+          }
+        },
+        {
+          "id": "plasma",
+          "symbol": "XPL",
+          "fit": 1.0,
+          "role": "스테이블 특화 체인",
+          "llama": {
+            "kind": "chain",
+            "key": "Plasma"
+          }
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "fit": 0.7,
+          "role": "저가 송금 레일",
+          "llama": {
+            "kind": "chain",
+            "key": "Stellar"
+          }
+        },
+        {
+          "id": "celo",
+          "symbol": "CELO",
+          "fit": 0.4,
+          "role": "모바일 결제 L2",
+          "llama": {
+            "kind": "chain",
+            "key": "Celo"
+          }
+        },
+        {
+          "id": "sky",
+          "symbol": "SKY",
+          "fit": 0.7,
+          "role": "탈중앙 달러 발행",
+          "llama": {
+            "kind": "protocol",
+            "key": "sky-lending"
+          }
+        }
+      ]
+    },
+    "AI_AGENT": {
+      "name": "AI 에이전트",
+      "thesis": "자율 에이전트의 온체인 실행·결제. 실사용 정산액은 아직 소액이나 기존 결제망이 못 여는 신규 수요.",
+      "members": [
+        {
+          "id": "virtual-protocol",
+          "symbol": "VIRTUAL",
+          "fit": 1.0,
+          "role": "에이전트 발행 플랫폼"
+        },
+        {
+          "id": "autonolas",
+          "symbol": "OLAS",
+          "fit": 1.0,
+          "role": "자율 에이전트 코디네이션"
+        },
+        {
+          "id": "fetch-ai",
+          "symbol": "FET",
+          "fit": 0.7,
+          "role": "에이전트 네트워크"
+        }
+      ]
+    },
+    "PRED_PERP": {
+      "name": "예측시장·페르프 융합",
+      "thesis": "공유 유동성 레이어 위 페르프+아웃컴 마켓 통합. Polymarket·Kalshi가 무토큰이라 상장 노출 경로가 제한적.",
+      "members": [
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "fit": 1.0,
+          "role": "페르프 지배 + HIP-4 아웃컴 마켓",
+          "llama": {
+            "kind": "protocol",
+            "key": "hyperliquid"
+          }
+        },
+        {
+          "id": "aster-2",
+          "symbol": "ASTER",
+          "fit": 0.7,
+          "role": "페르프 DEX + 예측시장",
+          "llama": {
+            "kind": "protocol",
+            "key": "aster"
+          }
+        },
+        {
+          "id": "dydx-chain",
+          "symbol": "DYDX",
+          "fit": 0.4,
+          "role": "전통 페르프 DEX",
+          "llama": {
+            "kind": "protocol",
+            "key": "dydx"
+          }
+        },
+        {
+          "id": "gmx",
+          "symbol": "GMX",
+          "fit": 0.4,
+          "role": "풀 기반 페르프",
+          "llama": {
+            "kind": "protocol",
+            "key": "gmx"
+          }
+        },
+        {
+          "id": "drift-protocol",
+          "symbol": "DRIFT",
+          "fit": 0.4,
+          "role": "솔라나 페르프",
+          "llama": {
+            "kind": "protocol",
+            "key": "drift"
+          }
+        },
+        {
+          "id": "polygon-ecosystem-token",
+          "symbol": "POL",
+          "fit": 0.7,
+          "role": "Polymarket 정산 레일",
+          "llama": {
+            "kind": "chain",
+            "key": "Polygon"
+          }
+        }
+      ]
+    },
+    "DEPIN_COMPUTE": {
+      "name": "DePIN·분산 컴퓨트",
+      "thesis": "구조적 역풍 관찰용. 수요보다 공급이 먼저 도착한 섹터 — 바닥 확인 전까지 회피 기준선으로 사용한다.",
+      "members": [
+        {
+          "id": "bittensor",
+          "symbol": "TAO",
+          "fit": 1.0,
+          "role": "분산 모델 인센티브"
+        },
+        {
+          "id": "render-token",
+          "symbol": "RENDER",
+          "fit": 1.0,
+          "role": "GPU 렌더링"
+        },
+        {
+          "id": "akash-network",
+          "symbol": "AKT",
+          "fit": 1.0,
+          "role": "분산 컴퓨트 마켓"
+        },
+        {
+          "id": "helium",
+          "symbol": "HNT",
+          "fit": 0.7,
+          "role": "무선 인프라"
+        },
+        {
+          "id": "filecoin",
+          "symbol": "FIL",
+          "fit": 0.4,
+          "role": "분산 스토리지"
+        }
+      ]
+    }
+  }
+}
