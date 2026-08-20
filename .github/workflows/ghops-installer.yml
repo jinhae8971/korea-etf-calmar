@@ -1,0 +1,101 @@
+name: GHOPS Installer
+
+# 매니페스트 URL 하나만 주면 여러 레포에 소스·워크플로우를 배치하고 실행까지 트리거한다.
+# 설치 로직(ghops_install.py)은 매니페스트가 가리키는 URL에서 매번 새로 받아 실행하므로,
+# 로직이 개선돼도 이 파일을 다시 붙여넣을 필요가 없다.
+#
+# 사전 준비 (1회):
+#   Settings → Secrets and variables → Actions → New repository secret
+#   이름: GHOPS_PAT
+#   값 : fine-grained PAT (Contents: Read and write, Workflows: Read and write)
+#         대상 레포에 배포할 레포들을 모두 포함시킬 것
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest_url:
+        description: "매니페스트 URL (https://paste.rs/... 형태)"
+        required: true
+      dry_run:
+        description: "true면 검증만 하고 푸시·트리거하지 않음"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ghops-installer
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 입력값은 절대 run: 안에 직접 보간하지 않는다 (셸 인젝션 차단)
+      - name: Validate input
+        env:
+          MANIFEST_URL: ${{ inputs.manifest_url }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          if [[ ! "${MANIFEST_URL}" =~ ^https://(paste\.rs|raw\.githubusercontent\.com)/[A-Za-z0-9._/-]+$ ]]; then
+            echo "::error::허용되지 않은 매니페스트 URL 형식: ${MANIFEST_URL}"
+            exit 1
+          fi
+          if [[ "${DRY_RUN}" != "true" && "${DRY_RUN}" != "false" ]]; then
+            echo "::error::dry_run 은 true 또는 false"
+            exit 1
+          fi
+          echo "입력 검증 통과"
+
+      - name: Fetch manifest & installer
+        env:
+          MANIFEST_URL: ${{ inputs.manifest_url }}
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 4 --retry-delay 5 "${MANIFEST_URL}" -o /tmp/manifest.json
+          python - <<'PY'
+          import json
+          m = json.load(open("/tmp/manifest.json"))
+          for k in ("name", "version", "installer", "bundle", "targets"):
+              assert k in m, f"매니페스트에 {k} 없음"
+          assert m["installer"]["url"].startswith("https://"), "installer.url 은 https"
+          assert len(m["installer"]["sha256"]) == 64, "installer.sha256 형식 오류"
+          assert isinstance(m["targets"], list) and m["targets"], "targets 비어 있음"
+          print(f"매니페스트 OK — {m['name']} v{m['version']}, 대상 {len(m['targets'])}개")
+          open("/tmp/installer_url", "w").write(m["installer"]["url"])
+          open("/tmp/installer_sha", "w").write(m["installer"]["sha256"])
+          PY
+          curl -fsSL --retry 4 --retry-delay 5 "$(cat /tmp/installer_url)" -o /tmp/ghops_install.py
+          echo "$(cat /tmp/installer_sha)  /tmp/ghops_install.py" | sha256sum -c -
+          echo "설치기 sha256 검증 통과"
+
+      - name: Install
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GHOPS_PAT: ${{ secrets.GHOPS_PAT }}
+          HOST_OWNER: ${{ github.repository_owner }}
+          TZ: "Asia/Seoul"
+        run: |
+          set -euo pipefail
+          if [ -z "${GHOPS_PAT}" ]; then
+            echo "::error::GHOPS_PAT 시크릿이 비어 있습니다. Settings → Secrets → Actions 에서 등록하세요."
+            exit 1
+          fi
+          export MANIFEST_JSON="$(cat /tmp/manifest.json)"
+          python /tmp/ghops_install.py
+
+      - name: Dry run summary
+        if: ${{ inputs.dry_run == 'true' }}
+        run: |
+          echo "dry_run — 매니페스트와 설치기 검증만 수행했습니다. 푸시·트리거 없음."
