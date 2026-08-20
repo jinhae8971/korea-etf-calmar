@@ -23,12 +23,14 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 import tvl_divergence as tvl
+import discovery as disc
 
 KST = timezone(timedelta(hours=9))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 HISTORY_PATH = os.path.join(DATA_DIR, "history.json")
 LATEST_PATH = os.path.join(DATA_DIR, "latest.json")
+DISCOVERY_PATH = os.path.join(DATA_DIR, "discovery_state.json")
 
 CG_HOSTS = [
     "https://api.coingecko.com/api/v3",
@@ -436,6 +438,9 @@ def render_telegram(payload: dict) -> str:
         L.append("\n<b>■ TVL 괴리</b>")
         L.append("· 예치금 데이터를 받지 못했습니다 (괴리 산출 생략)")
 
+    if payload.get("discovery"):
+        L += disc.render(payload["discovery"])
+
     ev = payload["events"]
     L.append("\n<b>■ 내러티브 변화</b>")
     if not ev:
@@ -544,6 +549,38 @@ def render_dashboard(payload: dict, history: list) -> str:
         <svg viewBox="0 0 {W} {HT}" class="sp">{''.join(lines)}</svg>
         <div class="legend">{legend}</div>"""
 
+    dsc = payload.get("discovery") or {}
+    lag = dsc.get("lagging") or []
+    if lag:
+        lrows = []
+        for x in lag:
+            lrows.append(f"""
+            <tr><td><b>{esc(x['symbol'])}</b><div class="role">{esc(x.get('source', ''))}</div></td>
+            <td style="color:#2563eb;font-weight:700">{x['div']:+.0f}%p</td>
+            <td>{esc(x['horizon'])}</td>
+            <td style="color:#16a34a">{x['tvl_chg']:+.0f}%</td><td>{x['price_chg']:+.0f}%</td>
+            <td>${x['tvl'] / 1e6:,.0f}M</td>
+            <td>{x['mc_tvl'] if x['mc_tvl'] is not None else 'n/a'}</td>
+            <td>{x['fdv_tvl'] if x.get('fdv_tvl') else 'n/a'}</td>
+            <td class="nm">{esc(x.get('status', ''))}</td></tr>""")
+        hotrows = "".join(
+            f"<li class='watch'>{esc(h['symbol'])} {h['div']:+.0f}%p — "
+            f"TVL {h['tvl_chg']:+.0f}% vs 가격 {h['price_chg']:+.0f}%</li>"
+            for h in (dsc.get("hot") or [])[:5])
+        discsec = f"""
+<h2>괴리 발굴 <small>전체 시장 스캔 {dsc.get('scanned', 0)}개 · 예치금은 느는데 가격이 안 따라온 종목</small></h2>
+<div class="tblwrap"><table>
+<tr><th>종목</th><th>괴리</th><th>기간</th><th>TVL</th><th>가격</th><th>TVL 규모</th><th>MC/TVL</th><th>FDV/TVL</th><th>상태</th></tr>
+{''.join(lrows)}</table></div>
+<div class="note">고정 유니버스와 무관하게 DefiLlama 전체에서 gecko_id가 붙은 체인·프로토콜을 훑습니다.
+필터: TVL 증가 ≥20%(30일)/10%(7일), 괴리 ≤ -15%p, MC/TVL ≤ 1.5, 30일 가격 ≤ +50%, 거래대금 ≥ $1M,
+30일 증가분의 60% 이상이 하루에 발생한 종목은 제외(고래·인센티브 개시 배제).
+<b>MC/TVL은 유통량이 적은 신규 토큰에서 착시를 줍니다</b> — FDV/TVL을 함께 보세요.
+하루 반짝 등장은 알림으로 승격하지 않고 2일 이상 유지된 것만 알립니다.</div>
+{('<h2>과열 주의 <small>예치금은 빠지는데 가격만 오른 종목</small></h2><ul class="ev">' + hotrows + '</ul>') if hotrows else ''}"""
+    else:
+        discsec = ""
+
     dv = payload.get("divergence") or []
     if dv:
         drows = []
@@ -638,6 +675,7 @@ ul.ev li.none{{color:#7d86a0}}
 <tr><th></th><th>종목</th><th>내러티브</th><th>점수</th><th>30d</th><th>7d</th><th>회전z</th><th>시총</th></tr>
 {''.join(crow)}</table></div>
 {divsec}
+{discsec}
 <h2>내러티브 변화 <small>임계값 기반 관측</small></h2>
 <ul class="ev">{erow}</ul>
 {spark}
@@ -721,6 +759,24 @@ def main(argv):
     payload["divergence"] = div_rows
     payload["tvl_covered"] = len(tvl_map)
 
+    # 전체 시장 스캔 — 고정 유니버스 밖의 '예치금 선행' 후보 발굴
+    disc_state = load_json(DISCOVERY_PATH, {})
+    try:
+        cand = disc.collect_candidates()
+        prices = disc.fetch_prices(sorted(cand.keys()), fetch_markets)
+        hist_tvl = {}
+        target = (now - timedelta(days=30)).strftime("%Y-%m-%d")
+        for h in history:
+            if h.get("as_of", "") <= target:
+                hist_tvl = h.get("discovery_tvl") or {}
+        found = disc.screen(cand, prices, hist_tvl)
+        disc_state = disc.track(found, disc_state, as_of)
+        payload["discovery"] = found
+    except Exception as e:  # noqa: BLE001
+        print(f"[discovery] 스캔 실패 — 생략: {e}")
+        payload["discovery"] = {}
+        cand = {}
+
     dom = (glob.get("market_cap_percentage") or {}).get("btc")
     total = (glob.get("total_market_cap") or {}).get("usd")
     payload["market"] = {
@@ -734,7 +790,8 @@ def main(argv):
     payload["narratives"] = narratives
     payload["coins"] = rows
     payload["n_coins"] = len(rows)
-    payload["events"] = detect_changes(narratives, rows, glob, history) + tvl.events(div_rows)
+    payload["events"] = (detect_changes(narratives, rows, glob, history)
+                         + tvl.events(div_rows) + disc.events(payload.get("discovery") or {}))
     payload["watch"] = [
         "SEC innovation exemption 확정 시 RWA_EQUITY 재평가",
         "EU AMLR(2027.7) 관련 상장 공지 시 PRIVACY_PQ 하방",
@@ -750,6 +807,7 @@ def main(argv):
         "narratives": [{"code": n["code"], "rank": n["rank"], "rs30": n["rs30"],
                         "breadth": n["breadth"]} for n in narratives],
         "tvl": {cid: round(rec["tvl"], 2) for cid, rec in tvl_map.items()},
+        "discovery_tvl": {g: round(r["tvl"], 2) for g, r in (cand or {}).items()},
     }
     history = [h for h in history if h.get("as_of") != as_of] + [snap]
     history.sort(key=lambda h: h.get("as_of", ""))
@@ -757,6 +815,8 @@ def main(argv):
 
     if load_json(HISTORY_PATH, []) != history:
         save_json(HISTORY_PATH, history)
+    if load_json(DISCOVERY_PATH, {}) != disc_state:
+        save_json(DISCOVERY_PATH, disc_state)
 
     prev_latest = load_json(LATEST_PATH, {})
     if _comparable(prev_latest) != _comparable(payload):

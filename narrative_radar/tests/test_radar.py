@@ -336,3 +336,100 @@ class TestTvlDivergence(unittest.TestCase):
         keys = [m["llama"]["key"] for nar in u["narratives"].values()
                 for m in nar["members"] if m.get("llama")]
         self.assertEqual(len(keys), len(set(keys)), "같은 체인/프로토콜이 두 번 매핑됨")
+
+
+import discovery as ds  # noqa: E402
+
+
+def _m(sym, mcap, vol, r7, r30, fdv=None):
+    return {"symbol": sym, "name": sym, "market_cap": mcap, "total_volume": vol,
+            "fully_diluted_valuation": fdv,
+            "price_change_percentage_7d_in_currency": r7,
+            "price_change_percentage_30d_in_currency": r30}
+
+
+class TestDiscoveryScreen(unittest.TestCase):
+    def test_monad_like_case_is_found(self):
+        """TVL +33%, 가격 +14%, MC/TVL 0.33 — 실제 MON 케이스가 걸려야 한다."""
+        cand = {"monad": {"tvl": 936e6, "t7": 8.0, "t30": 32.8,
+                          "source": "chain:Monad", "spike_share": 0.2}}
+        mkt = {"monad": _m("MON", 306e6, 50e6, 23.3, 13.8, fdv=3e9)}
+        r = ds.screen(cand, mkt)
+        self.assertEqual([x["symbol"] for x in r["lagging"]], ["MON"])
+        self.assertAlmostEqual(r["lagging"][0]["div"], 13.8 - 32.8, places=1)
+        self.assertEqual(r["lagging"][0]["mc_tvl"], 0.33)
+        self.assertEqual(r["lagging"][0]["fdv_tvl"], 3.21)
+
+    def test_one_day_tvl_spike_rejected(self):
+        """고래 1명 예치·인센티브 개시로 만들어진 TVL은 걸러야 한다."""
+        cand = {"x": {"tvl": 500e6, "t7": 5.0, "t30": 80.0,
+                      "source": "chain:X", "spike_share": 0.9}}
+        r = ds.screen(cand, {"x": _m("X", 100e6, 20e6, 2.0, 5.0)})
+        self.assertEqual(r["lagging"], [])
+        self.assertIn("하루짜리 TVL 점프", r["rejected"])
+
+    def test_already_pumped_rejected(self):
+        """TVL +140%로 괴리는 크지만 가격이 이미 +60% 오른 종목은 '지연'이 아니다."""
+        cand = {"x": {"tvl": 500e6, "t7": 5.0, "t30": 140.0, "source": "c", "spike_share": 0.1}}
+        r = ds.screen(cand, {"x": _m("X", 100e6, 20e6, 10.0, 60.0)})
+        self.assertEqual(r["lagging"], [])
+        self.assertIn("이미 급등", r["rejected"])
+
+    def test_illiquid_rejected(self):
+        cand = {"x": {"tvl": 500e6, "t7": 5.0, "t30": 60.0, "source": "c", "spike_share": 0.1}}
+        r = ds.screen(cand, {"x": _m("X", 100e6, 1000, 2.0, 5.0)})
+        self.assertIn("거래대금 미달", r["rejected"])
+
+    def test_expensive_mc_tvl_rejected(self):
+        cand = {"x": {"tvl": 100e6, "t7": 5.0, "t30": 60.0, "source": "c", "spike_share": 0.1}}
+        r = ds.screen(cand, {"x": _m("X", 900e6, 20e6, 2.0, 5.0)})
+        self.assertIn("MC/TVL 과다", r["rejected"])
+
+    def test_hot_case_detected(self):
+        cand = {"y": {"tvl": 100e6, "t7": -25.0, "t30": -30.0, "source": "c", "spike_share": 0.0}}
+        r = ds.screen(cand, {"y": _m("Y", 100e6, 20e6, 20.0, 10.0)})
+        self.assertEqual([x["symbol"] for x in r["hot"]], ["Y"])
+        self.assertAlmostEqual(r["hot"][0]["div"], 45.0)
+
+    def test_single_day_share(self):
+        base = 1_700_000_000
+        # 마지막 하루에 전부 오른 시계열
+        s = [{"date": base + i * 86400, "tvl": 100} for i in range(30)]
+        s.append({"date": base + 30 * 86400, "tvl": 200})
+        self.assertAlmostEqual(ds._single_day_share(s, 30), 1.0)
+
+    def test_single_day_share_zero_when_flat(self):
+        base = 1_700_000_000
+        s = [{"date": base + i * 86400, "tvl": 100} for i in range(31)]
+        self.assertEqual(ds._single_day_share(s, 30), 0.0)
+
+
+class TestDiscoveryTracking(unittest.TestCase):
+    def test_new_then_promoted_after_two_days(self):
+        res = {"lagging": [{"id": "a", "symbol": "A"}]}
+        st = ds.track(res, {}, "2026-01-01")
+        self.assertEqual(res["lagging"][0]["status"], "신규")
+        self.assertEqual(res["alert"], [])          # 하루 반짝은 알리지 않는다
+        res2 = {"lagging": [{"id": "a", "symbol": "A"}]}
+        ds.track(res2, st, "2026-01-02")
+        self.assertEqual(res2["lagging"][0]["streak"], 2)
+        self.assertEqual(len(res2["alert"]), 1)
+
+    def test_dropped_recorded(self):
+        st = {"lagging": {"z": {"streak": 3, "first_seen": "2026-01-01",
+                                "last_seen": "2026-01-03", "symbol": "Z"}}}
+        res = {"lagging": []}
+        ds.track(res, st, "2026-01-04")
+        self.assertEqual(res["dropped"], ["Z"])
+
+    def test_render_reports_empty_scan_honestly(self):
+        out = "\n".join(ds.render({"lagging": [], "scanned": 92,
+                                   "rejected": {"MC/TVL 과다": 5}}))
+        self.assertIn("조건 충족 종목 없음", out)
+        self.assertIn("92", out)
+
+    def test_events_only_from_promoted(self):
+        self.assertEqual(ds.events({"lagging": [{"symbol": "A"}], "alert": []}), [])
+        ev = ds.events({"alert": [{"symbol": "A", "streak": 3, "tvl_chg": 30.0,
+                                   "price_chg": 5.0, "mc_tvl": 0.4, "source": "chain:A"}]})
+        self.assertEqual(ev[0]["kind"], "DISCOVERY_LAGGING")
