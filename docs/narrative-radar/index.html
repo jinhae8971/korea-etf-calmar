@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Narrative Radar</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:#e5e9f5;
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;
+font-size:15px;line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:22px;margin:0 0 4px} .sub{color:#8b93ab;font-size:13px;margin-bottom:18px}
+h2{font-size:16px;margin:28px 0 12px;padding-bottom:7px;border-bottom:1px solid #1e2740}
+h2 small{color:#8b93ab;font-weight:400;font-size:12px;margin-left:6px}
+.alert{background:#3b1111;border:1px solid #7f1d1d;padding:12px;border-radius:8px;margin:14px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:8px}
+.kpi{background:#121a30;border:1px solid #1e2740;border-radius:10px;padding:11px 13px}
+.kpi.wide{grid-column:span 2}
+.kpi span{display:block;color:#8b93ab;font-size:11px;letter-spacing:.4px}
+.kpi b{display:block;font-size:19px;margin:2px 0} .kpi i{font-size:11px;font-style:normal;color:#7d86a0}
+.nrow{background:#121a30;border:1px solid #1e2740;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.nname{font-weight:700;font-size:15px} .rk{display:inline-block;width:22px;height:22px;line-height:22px;
+text-align:center;background:#1e2740;border-radius:6px;font-size:12px;margin-right:8px}
+.track{position:relative;height:8px;background:#0b1020;border-radius:4px;margin:9px 0 6px}
+.fill{position:absolute;top:0;height:8px;border-radius:4px}
+.axis{position:absolute;left:50%;top:-2px;width:1px;height:12px;background:#39415c}
+.nval{font-weight:700;font-size:15px;display:inline-block}
+.nsub{color:#8b93ab;font-size:12px;display:inline-block;margin-left:10px}
+.thesis{color:#7d86a0;font-size:12px;margin-top:7px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 6px;border-bottom:1px solid #1e2740;text-align:right}
+th:nth-child(2),td:nth-child(2),th:nth-child(3),td:nth-child(3){text-align:left}
+th{color:#8b93ab;font-weight:500;font-size:11px}
+.rk2{color:#8b93ab;width:26px;text-align:center!important}
+.role{color:#7d86a0;font-size:11px;font-weight:400}
+.nm{color:#9aa3bb;font-size:12px}
+ul.ev{list-style:none;padding:0;margin:0}
+ul.ev li{padding:9px 12px;border-radius:8px;margin-bottom:7px;background:#121a30;border-left:3px solid #39415c}
+ul.ev li.high{border-left-color:#dc2626} ul.ev li.watch{border-left-color:#d97706}
+ul.ev li.none{color:#7d86a0}
+.sp{width:100%;background:#121a30;border:1px solid #1e2740;border-radius:10px}
+.legend{margin-top:8px;font-size:11px;color:#8b93ab}
+.lg{margin-right:12px;white-space:nowrap} .lg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px}
+.foot{margin-top:34px;color:#6d7590;font-size:11px;line-height:1.7}
+.tblwrap{overflow-x:auto}
+.note{color:#7d86a0;font-size:11px;margin-top:9px;line-height:1.65}
+</style></head><body><div class="wrap">
+<h1>🧭 Narrative Radar</h1>
+<div class="sub">2026-08-21 07:43 KST · 고정매핑 36종목 / 7개 내러티브</div>
+<div class="kpis">
+          <div class="kpi"><span>BTC</span><b>$72,723</b><i>+5.3%</i></div>
+          <div class="kpi"><span>도미넌스</span><b>58.7%</b><i>BTC 점유</i></div>
+          <div class="kpi"><span>총 시총</span><b>2.48T</b><i>USD</i></div>
+          <div class="kpi wide"><span>국면</span><b>BTC 집중 (알트 로테이션 미개시)</b><i>도미넌스 × 선두 상대강도</i></div>
+        </div>
+<h2>내러티브 순위 <small>30일 상대강도 · BTC 대비 구성종목 중앙값</small></h2>
+
+        <div class="nrow">
+          <div class="nname"><span class="rk">1</span>예측시장·페르프 융합</div>
+          <div class="track"><div class="fill" style="right:50%;width:14.5%;background:#dc2626"></div>
+            <div class="axis"></div></div>
+          <div class="nval" style="color:#dc2626">-6.4%</div>
+          <div class="nsub">폭 17%
+            · 7d -4.4% · 6종목</div>
+          <div class="thesis">공유 유동성 레이어 위 페르프+아웃컴 마켓 통합. Polymarket·Kalshi가 무토큰이라 상장 노출 경로가 제한적.</div>
+        </div>
+        <div class="nrow">
+          <div class="nname"><span class="rk">2</span>프라이버시·포스트퀀텀</div>
+          <div class="track"><div class="fill" style="right:50%;width:20.0%;background:#dc2626"></div>
+            <div class="axis"></div></div>
+          <div class="nval" style="color:#dc2626">-8.8%</div>
+          <div class="nsub">폭 17%
+            · 7d -7.7% · 6종목</div>
+          <div class="thesis">규제 부채에서 기관 자산으로의 재분류 + 양자내성 로드맵. 리스크는 EU AMLR 2027.7 상장폐지와 선물 주도 레버리지.</div>
+        </div>
+        <div class="nrow">
+          <div class="nname"><span class="rk">3</span>스테이블 결제 레일</div>
+          <div class="track"><div class="fill" style="right:50%;width:26.5%;background:#dc2626"></div>
+            <div class="axis"></div></div>
+          <div class="nval" style="color:#dc2626">-11.7%</div>
+          <div class="nsub">폭 20%
+            · 7d +2.0% · 5종목</div>
+          <div class="thesis">에이전트 마이크로결제(중앙값 $0.01~0.10)는 카드망이 구조적으로 처리 불가. USDC 98.6% 집중이 대안 발행·정산 체인의 여지.</div>
+        </div>
+        <div class="nrow">
+          <div class="nname"><span class="rk">4</span>토큰화 주식·RWA 담보</div>
+          <div class="track"><div class="fill" style="right:50%;width:31.1%;background:#dc2626"></div>
+            <div class="axis"></div></div>
+          <div class="nval" style="color:#dc2626">-13.7%</div>
+          <div class="nsub">폭 43%
+            · 7d -7.1% · 7종목</div>
+          <div class="thesis">주식·펀드의 온체인 발행과 담보 이동성. 트리거는 SEC innovation exemption 및 24/7 거래 허용 프레임워크.</div>
+        </div>
+        <div class="nrow">
+          <div class="nname"><span class="rk">5</span>DePIN·분산 컴퓨트</div>
+          <div class="track"><div class="fill" style="right:50%;width:33.3%;background:#dc2626"></div>
+            <div class="axis"></div></div>
+          <div class="nval" style="color:#dc2626">-14.7%</div>
+          <div class="nsub">폭 0%
+            · 7d -9.6% · 5종목</div>
+          <div class="thesis">구조적 역풍 관찰용. 수요보다 공급이 먼저 도착한 섹터 — 바닥 확인 전까지 회피 기준선으로 사용한다.</div>
+        </div>
+        <div class="nrow">
+          <div class="nname"><span class="rk">6</span>AI 에이전트</div>
+          <div class="track"><div class="fill" style="right:50%;width:42.4%;background:#dc2626"></div>
+            <div class="axis"></div></div>
+          <div class="nval" style="color:#dc2626">-18.7%</div>
+          <div class="nsub">폭 0%
+            · 7d -8.2% · 3종목</div>
+          <div class="thesis">자율 에이전트의 온체인 실행·결제. 실사용 정산액은 아직 소액이나 기존 결제망이 못 여는 신규 수요.</div>
+        </div>
+        <div class="nrow">
+          <div class="nname"><span class="rk">7</span>ZK 인프라 (프라이버시 파생)</div>
+          <div class="track"><div class="fill" style="right:50%;width:50.0%;background:#dc2626"></div>
+            <div class="axis"></div></div>
+          <div class="nval" style="color:#dc2626">-22.1%</div>
+          <div class="nsub">폭 0%
+            · 7d -6.5% · 4종목</div>
+          <div class="thesis">프라이버시 코인 리스크 없이 영지식 기술에 노출. 프라이버시 랠리의 후행 수혜 경로.</div>
+        </div>
+<h2>부합도 상위 종목 <small>고정 부합도 × 자금 반응 (관측치)</small></h2>
+<div class="tblwrap"><table>
+<tr><th></th><th>종목</th><th>내러티브</th><th>점수</th><th>30d</th><th>7d</th><th>회전z</th><th>시총</th></tr>
+
+        <tr><td class="rk2">1</td>
+        <td><b>PLUME</b><div class="role">RWA 전용 체인</div></td>
+        <td class="nm">토큰화 주식·RWA 담보</td>
+        <td style="color:#16a34a;font-weight:700">+1.86</td>
+        <td>+8.8%</td><td>-7.1%</td>
+        <td>+5.0</td>
+        <td>$83M</td></tr>
+        <tr><td class="rk2">2</td>
+        <td><b>ENA</b><div class="role">합성달러 발행</div></td>
+        <td class="nm">스테이블 결제 레일</td>
+        <td style="color:#16a34a;font-weight:700">+1.57</td>
+        <td>+21.5%</td><td>+18.5%</td>
+        <td>+0.0</td>
+        <td>$1,130M</td></tr>
+        <tr><td class="rk2">3</td>
+        <td><b>HYPE</b><div class="role">페르프 지배 + HIP-4 아웃컴 마켓</div></td>
+        <td class="nm">예측시장·페르프 융합</td>
+        <td style="color:#16a34a;font-weight:700">+1.20</td>
+        <td>+14.1%</td><td>+15.4%</td>
+        <td>-0.3</td>
+        <td>$16,409M</td></tr>
+        <tr><td class="rk2">4</td>
+        <td><b>LINK</b><div class="role">가격·준비금 증명 오라클</div></td>
+        <td class="nm">토큰화 주식·RWA 담보</td>
+        <td style="color:#16a34a;font-weight:700">+0.79</td>
+        <td>+12.8%</td><td>+4.8%</td>
+        <td>-0.3</td>
+        <td>$7,941M</td></tr>
+        <tr><td class="rk2">5</td>
+        <td><b>XPL</b><div class="role">스테이블 특화 체인</div></td>
+        <td class="nm">스테이블 결제 레일</td>
+        <td style="color:#16a34a;font-weight:700">+0.55</td>
+        <td>-5.7%</td><td>+2.0%</td>
+        <td>+0.7</td>
+        <td>$233M</td></tr>
+        <tr><td class="rk2">6</td>
+        <td><b>RAIL</b><div class="role">EVM 프라이버시 레이어</div></td>
+        <td class="nm">프라이버시·포스트퀀텀</td>
+        <td style="color:#16a34a;font-weight:700">+0.55</td>
+        <td>-3.9%</td><td>+15.7%</td>
+        <td>-0.4</td>
+        <td>$111M</td></tr>
+        <tr><td class="rk2">7</td>
+        <td><b>MORPHO</b><div class="role">RWA 담보 대출 레이어</div></td>
+        <td class="nm">토큰화 주식·RWA 담보</td>
+        <td style="color:#16a34a;font-weight:700">+0.47</td>
+        <td>+4.7%</td><td>+4.5%</td>
+        <td>-0.4</td>
+        <td>$1,518M</td></tr>
+        <tr><td class="rk2">8</td>
+        <td><b>ZEC</b><div class="role">zk-SNARK 선택적 차폐 + PQ 로드맵</div></td>
+        <td class="nm">프라이버시·포스트퀀텀</td>
+        <td style="color:#16a34a;font-weight:700">+0.42</td>
+        <td>-1.9%</td><td>+2.7%</td>
+        <td>-0.3</td>
+        <td>$9,683M</td></tr>
+        <tr><td class="rk2">9</td>
+        <td><b>XMR</b><div class="role">기본값 프라이버시</div></td>
+        <td class="nm">프라이버시·포스트퀀텀</td>
+        <td style="color:#16a34a;font-weight:700">+0.42</td>
+        <td>+8.2%</td><td>-10.0%</td>
+        <td>-0.4</td>
+        <td>$7,857M</td></tr>
+        <tr><td class="rk2">10</td>
+        <td><b>MINA</b><div class="role">재귀증명 경량 체인</div></td>
+        <td class="nm">ZK 인프라 (프라이버시 파생)</td>
+        <td style="color:#16a34a;font-weight:700">+0.21</td>
+        <td>-8.6%</td><td>+2.7%</td>
+        <td>-0.2</td>
+        <td>$61M</td></tr>
+        <tr><td class="rk2">11</td>
+        <td><b>ASTER</b><div class="role">페르프 DEX + 예측시장</div></td>
+        <td class="nm">예측시장·페르프 융합</td>
+        <td style="color:#16a34a;font-weight:700">+0.19</td>
+        <td>-3.7%</td><td>-4.6%</td>
+        <td>-0.3</td>
+        <td>$1,796M</td></tr>
+        <tr><td class="rk2">12</td>
+        <td><b>TAO</b><div class="role">분산 모델 인센티브</div></td>
+        <td class="nm">DePIN·분산 컴퓨트</td>
+        <td style="color:#16a34a;font-weight:700">+0.14</td>
+        <td>-2.5%</td><td>-9.6%</td>
+        <td>-0.3</td>
+        <td>$2,049M</td></tr>
+        <tr><td class="rk2">13</td>
+        <td><b>GMX</b><div class="role">풀 기반 페르프</div></td>
+        <td class="nm">예측시장·페르프 융합</td>
+        <td style="color:#16a34a;font-weight:700">+0.11</td>
+        <td>-1.4%</td><td>-9.6%</td>
+        <td>-0.3</td>
+        <td>$73M</td></tr>
+        <tr><td class="rk2">14</td>
+        <td><b>SKY</b><div class="role">탈중앙 달러 발행</div></td>
+        <td class="nm">스테이블 결제 레일</td>
+        <td style="color:#16a34a;font-weight:700">+0.08</td>
+        <td>-11.7%</td><td>+2.0%</td>
+        <td>-0.4</td>
+        <td>$1,450M</td></tr>
+        <tr><td class="rk2">15</td>
+        <td><b>POL</b><div class="role">Polymarket 정산 레일</div></td>
+        <td class="nm">예측시장·페르프 융합</td>
+        <td style="color:#16a34a;font-weight:700">+0.05</td>
+        <td>-9.1%</td><td>-4.2%</td>
+        <td>-0.3</td>
+        <td>$862M</td></tr></table></div>
+
+<h2>TVL 괴리 <small>가격 변화 − 예치금 변화 · 절대값 큰 순</small></h2>
+<div class="tblwrap"><table>
+<tr><th>종목</th><th>괴리</th><th>기간</th><th>가격</th><th>TVL</th><th>TVL 규모</th><th>MC/TVL</th><th>방향</th></tr>
+
+            <tr><td><b>ENA</b><div class="role">스테이블 결제 레일</div></td>
+            <td style="color:#dc2626;font-weight:700">+30%p</td>
+            <td>7d</td>
+            <td>+33%</td><td>+3%</td>
+            <td>$4,434M</td>
+            <td>0.25</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>HYPE</b><div class="role">예측시장·페르프 융합</div></td>
+            <td style="color:#dc2626;font-weight:700">+24%p</td>
+            <td>7d</td>
+            <td>+30%</td><td>+6%</td>
+            <td>$6,553M</td>
+            <td>2.50</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>XLM</b><div class="role">스테이블 결제 레일</div></td>
+            <td style="color:#2563eb;font-weight:700">-16%p</td>
+            <td>30d</td>
+            <td>-6%</td><td>+11%</td>
+            <td>$250M</td>
+            <td>25.03</td>
+            <td class="nm">가격 지연</td></tr>
+            <tr><td><b>RAIL</b><div class="role">프라이버시·포스트퀀텀</div></td>
+            <td style="color:#dc2626;font-weight:700">+16%p</td>
+            <td>7d</td>
+            <td>+30%</td><td>+15%</td>
+            <td>$85M</td>
+            <td>1.30</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>SKY</b><div class="role">스테이블 결제 레일</div></td>
+            <td style="color:#dc2626;font-weight:700">+14%p</td>
+            <td>7d</td>
+            <td>+17%</td><td>+3%</td>
+            <td>$5,732M</td>
+            <td>0.25</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>PENDLE</b><div class="role">토큰화 주식·RWA 담보</div></td>
+            <td style="color:#dc2626;font-weight:700">+12%p</td>
+            <td>7d</td>
+            <td>+10%</td><td>-3%</td>
+            <td>$1,166M</td>
+            <td>0.22</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>CFG</b><div class="role">토큰화 주식·RWA 담보</div></td>
+            <td style="color:#2563eb;font-weight:700">-12%p</td>
+            <td>7d</td>
+            <td>-11%</td><td>+0%</td>
+            <td>$1,635M</td>
+            <td>n/a</td>
+            <td class="nm">가격 지연</td></tr>
+            <tr><td><b>XPL</b><div class="role">스테이블 결제 레일</div></td>
+            <td style="color:#dc2626;font-weight:700">+8%p</td>
+            <td>30d</td>
+            <td>+4%</td><td>-4%</td>
+            <td>$633M</td>
+            <td>0.37</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>MORPHO</b><div class="role">토큰화 주식·RWA 담보</div></td>
+            <td style="color:#dc2626;font-weight:700">+8%p</td>
+            <td>7d</td>
+            <td>+19%</td><td>+12%</td>
+            <td>$8,873M</td>
+            <td>0.17</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>STRK</b><div class="role">ZK 인프라 (프라이버시 파생)</div></td>
+            <td style="color:#2563eb;font-weight:700">-7%p</td>
+            <td>30d</td>
+            <td>-13%</td><td>-6%</td>
+            <td>$164M</td>
+            <td>1.09</td>
+            <td class="nm">가격 지연</td></tr>
+            <tr><td><b>POL</b><div class="role">예측시장·페르프 융합</div></td>
+            <td style="color:#dc2626;font-weight:700">+6%p</td>
+            <td>30d</td>
+            <td>+0%</td><td>-6%</td>
+            <td>$815M</td>
+            <td>1.06</td>
+            <td class="nm">가격 선행</td></tr>
+            <tr><td><b>ONDO</b><div class="role">토큰화 주식·RWA 담보</div></td>
+            <td style="color:#dc2626;font-weight:700">+6%p</td>
+            <td>7d</td>
+            <td>+6%</td><td>+0%</td>
+            <td>$3,485M</td>
+            <td>0.49</td>
+            <td class="nm">가격 선행</td></tr></table></div>
+<div class="note">TVL은 펀더멘털이 아니라 예치금입니다. 인센티브 파밍으로 부풀 수 있고 중복 계상도 있습니다.
+프라이버시·DePIN·오라클처럼 TVL 개념이 무의미한 종목은 애초에 계산하지 않습니다(표에 없음).
+괴리는 판정이 아니라 "가격과 예치금이 다른 말을 하고 있다"는 관측입니다.</div>
+<h2>내러티브 변화 <small>임계값 기반 관측</small></h2>
+<ul class="ev"><li class="watch">PLUME 거래회전율 이상치 (z=5.0, 토큰화 주식·RWA 담보)</li><li class="watch">SCRT 거래회전율 이상치 (z=2.3, 프라이버시·포스트퀀텀)</li><li class="watch">ENA TVL 괴리 +30%p (7d) — 가격이 예치금보다 앞섬 [가격 +33% vs TVL +3%]</li></ul>
+
+<div class="foot">
+<b>이 대시보드가 하는 일:</b> 고정된 내러티브-종목 매핑에 대해 BTC 대비 초과수익 중앙값, 구성종목 확산 폭,
+거래회전율을 매일 측정하고 그 순위 변화를 기록합니다.<br>
+<b>하지 않는 일:</b> 미래 수익률 예측. 이 지표들은 사전 검증된 예측력이 없으며,
+"지금 자금이 어디에 반응하는가"에 대한 서술일 뿐입니다.<br>
+섹터 대표값은 평균이 아닌 중앙값입니다(소수 극단치 지배 방지). 구성종목은 성과를 보고 교체하지 않습니다(사후선택 편향 방지).<br>
+데이터: CoinGecko 공개 API · 투자 권유가 아닙니다.
+</div>
+</div></body></html>
