@@ -1,0 +1,62 @@
+name: Alpha Trend Radar
+
+on:
+  schedule:
+    - cron: '7 0 * * *'      # KST 09:07 — 알파 일봉 UTC 마감 직후
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alpha-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Unit tests (gate)
+        working-directory: alpha_radar
+        run: python -m unittest discover -s tests -v
+
+      - name: Run radar
+        working-directory: alpha_radar
+        env:
+          DOCS_DIR: ${{ github.workspace }}/docs/alpha-radar
+        run: python alpha_radar.py
+
+      - name: Commit snapshot
+        if: always()
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add alpha_radar/data docs/alpha-radar || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "chore(alpha-radar): $(date -u +%Y-%m-%d) 스냅샷"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break || sleep 8
+            done
+          fi
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TG: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          [ -n "$TG" ] || { echo "텔레그램 토큰 없음 — 알림 생략"; exit 0; }
+          curl -sS -X POST "https://api.telegram.org/bot${TG}/sendMessage" \
+            -d chat_id="${CHAT}" \
+            --data-urlencode text="⚠️ 알파 추세 레이더 수집 실패 — 판정 불가. Actions 로그를 확인하세요." \
+            -o /dev/null

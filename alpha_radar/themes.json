@@ -1,0 +1,36 @@
+{
+  "schema": "alpha-radar/themes@1",
+  "frozen_at": "2026-08-22",
+  "note": "테마는 종목 고정목록이 아니라 '키워드 규칙'이다. 알파 마켓은 종목 회전이 빠르므로 고정 유니버스를 쓰면 신규 상장이 원리적으로 누락된다(narrative-radar v1의 Monad 누락 교훈). 규칙만 고정하고 종목은 매 실행 재구성한다.",
+  "screen_rule": {
+    "min_liquidity_usd": 200000,
+    "min_volume24h_usd": 300000,
+    "min_marketcap_usd": 3000000,
+    "min_daily_bars": 20,
+    "exclude": ["offline", "fullyDelisted", "klines 미제공(alpha-trade 페어 없음)"],
+    "new_listing_track_days": 21
+  },
+  "risk_rule": {
+    "wash_suspect_churn": 100.0,
+    "thin_liquidity_usd": 500000,
+    "low_float_ratio": 0.30,
+    "overheated_ret30": 3.0
+  },
+  "themes": [
+    {"key": "AI_AGENT", "label": "AI·에이전트", "keywords": ["ai", "agent", "gpt", "llm", "neural", "brain", "intelli", "bot", "mind", "cogni", "openai", "deepseek", "swarm"]},
+    {"key": "DEPIN_COMPUTE", "label": "디핀·컴퓨트", "keywords": ["depin", "compute", "gpu", "node", "render", "network", "wireless", "storage", "cloud", "power", "grid", "solar"]},
+    {"key": "RWA_FIN", "label": "RWA·토큰화금융", "keywords": ["rwa", "real", "asset", "bond", "treasur", "gold", "stock", "equity", "credit", "yield", "fund", "capital", "bank"]},
+    {"key": "STABLE_PAY", "label": "스테이블·결제", "keywords": ["usd", "stable", "pay", "dollar", "cash", "card", "remit", "money", "peg"]},
+    {"key": "DEFI", "label": "디파이", "keywords": ["swap", "dex", "perp", "lend", "vault", "stake", "liquid", "amm", "farm", "finance", "fi", "dao", "exchange", "trade"]},
+    {"key": "CHAIN_INFRA", "label": "체인·인프라", "keywords": ["chain", "layer", "zk", "roll", "proof", "bridge", "vm", "protocol", "sdk", "oracle", "data", "index", "restak"]},
+    {"key": "GAME_META", "label": "게임·메타버스", "keywords": ["game", "play", "quest", "arena", "guild", "meta", "world", "land", "pixel", "craft", "hero", "nft", "art"]},
+    {"key": "PRIVACY_SEC", "label": "프라이버시·보안", "keywords": ["privacy", "secret", "anon", "shield", "guard", "secur", "vault", "cipher", "mask"]},
+    {"key": "MEME_CULT", "label": "밈·커뮤니티", "keywords": ["dog", "inu", "cat", "pepe", "moon", "elon", "trump", "baby", "shib", "wif", "bonk", "frog", "duck", "bull", "bear", "ape", "meme", "coin", "pump", "牛", "狗", "猫", "熊", "龙"]},
+    {"key": "SOCIAL_APP", "label": "소셜·앱", "keywords": ["social", "chat", "friend", "fan", "creator", "stream", "music", "video", "sport", "bet", "predict", "market"]}
+  ],
+  "chain_cohorts": ["BSC", "Solana", "Base", "Ethereum", "Sui", "Arbitrum", "Sonic", "TRON", "Linea"],
+  "limits": [
+    "테마 태깅은 토큰 이름·심볼의 키워드 매칭이다. 프로젝트 실제 사업과 다를 수 있고, 미매칭은 UNTAGGED로 남긴다.",
+    "테마 강도는 '지금 자금이 어디에 반응했는가'의 서술이며 미래 수익률을 주장하지 않는다."
+  ]
+}
