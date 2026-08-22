@@ -1,0 +1,47 @@
+name: Alpha Radar Backtest
+
+on:
+  schedule:
+    - cron: '41 0 * * 0'     # 일요일 KST 09:41 — 주 1회 재검증
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alpha-radar-backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Unit tests (gate)
+        working-directory: alpha_radar
+        run: python -m unittest discover -s tests
+
+      - name: Run walk-forward backtest
+        working-directory: alpha_radar
+        run: python backtest.py
+
+      - name: Commit backtest result
+        if: always()
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add alpha_radar/data/backtest.json || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "chore(alpha-radar): 백테스트 재검증 $(date -u +%Y-%m-%d)"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break || sleep 8
+            done
+          fi

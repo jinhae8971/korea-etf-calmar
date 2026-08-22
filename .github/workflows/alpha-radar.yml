@@ -27,6 +27,16 @@ jobs:
         working-directory: alpha_radar
         run: python -m unittest discover -s tests -v
 
+      - name: Bootstrap backtest (최초 1회만)
+        working-directory: alpha_radar
+        run: |
+          if [ ! -f data/backtest.json ]; then
+            echo "백테스트 결과 없음 — 최초 1회 생성"
+            python backtest.py || echo "::warning::백테스트 생성 실패 — 대시보드 검증 탭은 다음 주간 실행에서 채워집니다"
+          else
+            echo "백테스트 결과 존재 — 주간 워크플로우가 갱신합니다"
+          fi
+
       - name: Run radar
         working-directory: alpha_radar
         env:

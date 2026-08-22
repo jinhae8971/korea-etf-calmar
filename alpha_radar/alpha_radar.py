@@ -28,6 +28,8 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+import tracking
+
 # ----------------------------------------------------------------------------
 # 설정
 # ----------------------------------------------------------------------------
@@ -56,6 +58,14 @@ TOP_N_TELEGRAM = 5
 TOP_N_DASHBOARD = 20
 
 DASHBOARD_URL = "https://jinhae8971.github.io/korea-etf-calmar/alpha-radar/"
+
+BADGE = {
+    "POSITIVE": "과거검증에서 약한 우위 관측 (상세는 대시보드 검증 탭)",
+    "RELATIVE_ONLY": "유니버스 대비 상대우위만 확인 — 절대수익은 마이너스였음. 매수신호 아님",
+    "INCONCLUSIVE": "과거검증 결과 유의미한 우위 없음 (신뢰구간이 0을 포함)",
+    "NEGATIVE": "과거검증에서 우위 없음 — 순위를 매매 근거로 쓰지 말 것",
+    "UNKNOWN": "검증 표본 부족 — 판정 불가",
+}
 
 
 # ----------------------------------------------------------------------------
@@ -605,8 +615,13 @@ def render_telegram(payload):
         for e in ev:
             L.append("   · %s %s — %s" % (esc_html(e["symbol"]), e["type"], esc_html(e["detail"])))
 
+    bt = p.get("backtest_badge")
+    if bt:
+        L.append("")
+        L.append("🔬 <b>검증</b>: %s" % esc_html(bt))
+
     L.append("")
-    L.append("📊 <a href=\"%s\">전체 순위·차트 대시보드</a>" % DASHBOARD_URL)
+    L.append("📊 <a href=\"%s\">전체 순위·백테스트 대시보드</a>" % DASHBOARD_URL)
     L.append("<i>관측 리포트입니다. 점수는 '지금 자금이 반응한 자리'의 서술이며 미래 수익률을 주장하지 않습니다. "
              "알파 마켓은 유동성이 얕고 포인트 파밍성 거래가 섞여 있어 회전이상·유동성얕음 표시를 반드시 확인하세요.</i>")
     return "\n".join(L)
@@ -633,7 +648,133 @@ def bar_svg(rows, width=760):
     return "".join(out)
 
 
-def render_dashboard(payload):
+def _pct_cell(v, digits=1):
+    if v is None:
+        return "n/a"
+    return ("%+." + str(digits) + "f%%") % (v * 100)
+
+
+def render_backtest_section(bt):
+    if not bt:
+        return ("<h2>검증</h2><p class=note>백테스트가 아직 실행되지 않았습니다. "
+                "주간 백테스트 워크플로우가 돌면 이 자리에 채워집니다.</p>")
+
+    vclass = {"POSITIVE": "ok", "RELATIVE_ONLY": "warn", "INCONCLUSIVE": "warn",
+              "NEGATIVE": "bad", "UNKNOWN": "warn"}.get(bt.get("verdict"), "warn")
+    w = bt.get("window", {})
+    rows = []
+    for h in sorted(bt.get("horizons", {}), key=lambda x: int(x)):
+        H = bt["horizons"][h]
+        ex, en, ic, tm, um, ht = (H.get("excess"), H.get("excess_net"), H.get("ic"),
+                                  H.get("top_med"), H.get("uni_med"), H.get("hit"))
+        if not ex:
+            continue
+        sig = "유의" if (ex.get("ci_low") or 0) > 0 else "무의미"
+        rows.append(
+            "<tr><td>%s일</td><td class=%s>%s</td><td>[%s, %s]</td><td>%s</td>"
+            "<td>%s</td><td>%s</td><td>%.3f</td><td>%s</td></tr>" % (
+                h, "ok" if sig == "유의" else "muted", _pct_cell(ex["mean"]),
+                _pct_cell(ex.get("ci_low")), _pct_cell(ex.get("ci_high")),
+                _pct_cell(en["mean"]), _pct_cell(tm["mean"]), _pct_cell(um["mean"]),
+                ic["mean"], sig))
+
+    dec = bt.get("decay", {})
+    dk = sorted(dec, key=lambda x: int(x))
+    dvals = [(k, dec[k]["mean"]) for k in dk if dec[k].get("mean") is not None]
+    decay_svg = ""
+    if dvals:
+        mx = max(abs(v) for _, v in dvals) or 1.0
+        W, Hh = 700, 150
+        bw = W / max(1, len(dvals))
+        parts = ['<svg viewBox="0 0 %d %d" width="100%%">' % (W, Hh)]
+        parts.append('<line x1="0" y1="%d" x2="%d" y2="%d" stroke="#333"/>' % (Hh / 2, W, Hh / 2))
+        for i, (k, v) in enumerate(dvals):
+            hgt = abs(v) / mx * (Hh / 2 - 18)
+            y = (Hh / 2 - hgt) if v >= 0 else Hh / 2
+            parts.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s" rx="2"/>'
+                         % (i * bw + 6, y, bw - 12, hgt, "#2e9e6b" if v >= 0 else "#c1524b"))
+            parts.append('<text x="%.1f" y="%d" font-size="11" fill="#8a8f98" text-anchor="middle">%sd</text>'
+                         % (i * bw + bw / 2, Hh - 3, k))
+            parts.append('<text x="%.1f" y="%.1f" font-size="10" fill="#aaa" text-anchor="middle">%+.1f</text>'
+                         % (i * bw + bw / 2, y - 4 if v >= 0 else y + hgt + 12, v * 100))
+        parts.append("</svg>")
+        decay_svg = "".join(parts)
+
+    mrows = "".join(
+        "<tr><td>%s</td><td>%d</td><td class=%s>%s</td></tr>" % (
+            esc_html(m["month"]), m["n"], "ok" if m["excess_mean"] > 0 else "bad",
+            _pct_cell(m["excess_mean"])) for m in bt.get("monthly", []))
+
+    pr = bt.get("promoted", {})
+    prows = []
+    for h in sorted(pr, key=lambda x: int(x)):
+        e = pr[h].get("excess")
+        a = pr[h].get("abs")
+        if not e:
+            continue
+        prows.append("<tr><td>%s일</td><td>%d</td><td class=%s>%s</td><td>[%s, %s]</td><td>%s</td></tr>"
+                     % (h, e["n_dates"], "ok" if (e.get("ci_low") or 0) > 0 else "muted",
+                        _pct_cell(e["mean"]), _pct_cell(e.get("ci_low")), _pct_cell(e.get("ci_high")),
+                        _pct_cell(a["mean"]) if a else "n/a"))
+
+    bo = bt.get("breakout", {})
+    borows = "".join(
+        "<tr><td>%s일</td><td>%s</td><td>%d%%</td></tr>" % (
+            h, _pct_cell(bo[h]["mean"]), round(bo[h]["pct_positive"] * 100))
+        for h in sorted(bo, key=lambda x: int(x)) if bo.get(h))
+
+    limits = "".join("<li>%s</li>" % esc_html(x) for x in bt.get("limits", []))
+
+    return """<h2>검증 — 워크포워드 백테스트</h2>
+<div class="verdict %(vclass)s"><b>%(verdict)s</b><br>%(note)s</div>
+<div class=meta>구간 %(first)s ~ %(last)s · 리밸런스 %(nreb)d일 · 이력 보유 %(ntok)d종목(상장폐지 포함) ·
+왕복비용 %(cost).1f%% 가정 · 기준일 %(as_of)s</div>
+<div class=wrap><table>
+<tr><th>보유</th><th>초과수익</th><th>95%% 신뢰구간</th><th>비용차감</th><th>상위10 절대</th><th>유니버스 절대</th><th>순위상관</th><th>판정</th></tr>
+%(rows)s</table></div>
+<p class=note>초과수익 = 상위10 중앙 수익률 − 같은 날 유니버스 중앙 수익률. 신뢰구간은 5일 블록 부트스트랩 2,000회.
+<b>유니버스 절대 열을 반드시 함께 보세요</b> — 알파 토큰 전체가 시간이 갈수록 빠지기 때문에, 상대우위가 있어도 절대수익은 마이너스일 수 있습니다.</p>
+
+<h3>신호 감쇠 — 보유기간별 초과수익(%%p)</h3>%(decay)s
+<h3>승격 규칙(상위10 · 2일 유지) 효과</h3>
+<div class=wrap><table><tr><th>보유</th><th>표본일</th><th>초과수익</th><th>95%% 구간</th><th>절대수익</th></tr>%(prows)s</table></div>
+<h3>돌파 신호(20일 신고가 + 거래대금 1.5배) 신뢰도</h3>
+<div class=wrap><table><tr><th>보유</th><th>초과수익 평균</th><th>플러스 비율</th></tr>%(borows)s</table></div>
+<h3>월별 안정성 (14일 보유 초과수익)</h3>
+<div class=wrap><table><tr><th>월</th><th>표본일</th><th>초과수익</th></tr>%(mrows)s</table></div>
+<h3>이 검증이 말하지 않는 것</h3><ul class=note>%(limits)s</ul>
+""" % {"vclass": vclass, "verdict": esc_html(bt.get("verdict", "")),
+       "note": esc_html(bt.get("verdict_note", "")),
+       "first": esc_html(w.get("first", "?")), "last": esc_html(w.get("last", "?")),
+       "nreb": w.get("rebalance_days", 0), "ntok": w.get("tokens_with_history", 0),
+       "cost": (bt.get("config", {}).get("round_trip_cost", 0.01)) * 100,
+       "as_of": esc_html(bt.get("as_of_kst", "")),
+       "rows": "".join(rows), "decay": decay_svg, "prows": "".join(prows),
+       "borows": borows, "mrows": mrows, "limits": limits}
+
+
+def render_tracking_section(tr):
+    if not tr:
+        return ""
+    rows = []
+    for h in sorted(tr.get("horizons", {}), key=lambda x: int(x)):
+        H = tr["horizons"][h]
+        if H.get("status") != "집계":
+            rows.append("<tr><td>%s일</td><td>%d</td><td colspan=3 class=muted>표본 부족 — %d건 더 필요</td></tr>"
+                        % (h, H.get("n", 0), H.get("need", 0)))
+        else:
+            rows.append("<tr><td>%s일</td><td>%d</td><td class=%s>%s</td><td>%s</td><td>%d%%</td></tr>"
+                        % (h, H["n"], "ok" if H["excess_median"] > 0 else "bad",
+                           _pct_cell(H["excess_median"]), _pct_cell(H["abs_median"]),
+                           round(H["win_rate"] * 100)))
+    return """<h2>라이브 추적 — 실제 승격 후보의 이후 성과</h2>
+<div class=wrap><table><tr><th>보유</th><th>표본</th><th>초과수익(중앙)</th><th>절대수익(중앙)</th><th>초과 플러스 비율</th></tr>%s</table></div>
+<p class=note>배포 이후 <b>실제로 텔레그램에 승격된 후보만</b> 기록합니다(사후 선택 없음). 백테스트가 검증하지 못하는
+수급축(홀더·유동성 증감)까지 포함한 라이브 점수의 유일한 증거이며, 표본 20건이 쌓이기 전에는 수치를 내지 않습니다.
+현재 추적 중 %d건.</p>""" % ("".join(rows), tr.get("open_entries", 0))
+
+
+def render_dashboard(payload, backtest=None):
     p = payload
     rows = p["candidates"][:TOP_N_DASHBOARD]
     trs = []
@@ -655,36 +796,53 @@ def render_dashboard(payload):
                       (esc_html(e["symbol"]), e["type"], esc_html(e["detail"])) for e in p["events"][:20]) \
         or "<li>기록된 변화 없음</li>"
 
+    badge = p.get("backtest_badge") or "검증 미실행"
+    bclass = {"POSITIVE": "ok", "RELATIVE_ONLY": "warn", "INCONCLUSIVE": "warn",
+              "NEGATIVE": "bad"}.get((backtest or {}).get("verdict"), "warn")
+
     return """<!doctype html><html lang=ko><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>Binance Alpha Trend Radar</title>
 <style>
 body{background:#0f1115;color:#e6e6e6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:18px}
-h1{font-size:19px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 8px;color:#9fd0ff}
-.meta{color:#8a8f98;font-size:12px;margin-bottom:10px}
+h1{font-size:19px;margin:0 0 4px}h2{font-size:15px;margin:24px 0 8px;color:#9fd0ff}
+h3{font-size:13px;margin:18px 0 6px;color:#c9d4e0}
+.meta{color:#8a8f98;font-size:12px;margin-bottom:10px;line-height:1.6}
 table{width:100%%;border-collapse:collapse;font-size:12px}
 th,td{padding:6px 5px;border-bottom:1px solid #22262e;text-align:right;white-space:nowrap}
 th:nth-child(2),td:nth-child(2){text-align:left;white-space:normal}
 th{color:#8a8f98;font-weight:500}.sub{color:#6e737c;font-size:11px}
-.wrap{overflow-x:auto}.note{color:#8a8f98;font-size:11.5px;line-height:1.65;margin-top:8px}
+.wrap{overflow-x:auto}.note{color:#8a8f98;font-size:11.5px;line-height:1.7;margin-top:8px}
 .badge{display:inline-block;padding:2px 7px;border-radius:9px;font-size:11px;background:#1c2129;color:#9fd0ff}
+.verdict{border-radius:8px;padding:11px 13px;font-size:12.5px;line-height:1.65;margin:6px 0 10px}
+.verdict.ok{background:#12251b;border-left:3px solid #2e9e6b}
+.verdict.warn{background:#2a2415;border-left:3px solid #c9a227}
+.verdict.bad{background:#2a1717;border-left:3px solid #c1524b}
+.ok{color:#4bbd85}.bad{color:#e0736b}.muted{color:#7b818b}
 ul{padding-left:18px;font-size:12px;line-height:1.8}
+.tabs{display:flex;gap:6px;margin:12px 0}
+.tabs a{padding:5px 11px;border-radius:14px;background:#1a1e26;color:#9fd0ff;text-decoration:none;font-size:12px}
 </style>
 <h1>🛰️ Binance Alpha Trend Radar</h1>
 <div class=meta>%(as_of)s KST · 유니버스 %(n)d · 커버리지 %(cov)d%% · 상태 <span class=badge>%(status)s</span> · 국면 %(regime)s</div>
-<h2>추세 점수 상위</h2>%(svg)s
+<div class="verdict %(bclass)s">🔬 검증 요약 — %(badge)s</div>
+<div class=tabs><a href="#today">오늘</a><a href="#verify">검증</a><a href="#live">라이브 추적</a></div>
+
+<h2 id=today>추세 점수 상위</h2>%(svg)s
 <div class=wrap><table>
 <tr><th>#</th><th>종목</th><th>점수</th><th>7일</th><th>30일</th><th>60일고점比</th><th>거래대금</th><th>시총</th><th>유동성</th><th>회전</th><th>홀더</th><th>플래그</th></tr>
 %(rows)s</table></div>
-<h2>테마 상대강도</h2>
+<h3>테마 상대강도</h3>
 <div class=wrap><table><tr><th>테마</th><th>종목수</th><th>중앙 7일</th><th>중앙 점수</th><th>폭</th></tr>%(themes)s</table></div>
-<h2>변화 감지</h2><ul>%(events)s</ul>
+<h3>변화 감지</h3><ul>%(events)s</ul>
+
+<div id=verify>%(backtest)s</div>
+<div id=live>%(tracking)s</div>
+
 <p class=note>
 점수 = (0.60×차트구조 + 0.40×수급) × 테마적합(0.55~1.00) × 리스크감점.
-차트 = 30일·7일 수익률의 횡단면 로버스트 z + EMA 정렬 + 60일 고점 근접도 + 로그가격 추세 R².
-수급 = 회전율 z + 거래대금 5일/20일 확장 + 유동성/시총 z + (이력 축적 후) 홀더·유동성 증감 z.<br>
-이 시스템은 <b>관측기이지 예측기가 아닙니다.</b> 상위 노출은 "자금이 반응한 자리 + 차트 구조가 정렬된 상태"라는 서술이며 미래 수익률을 주장하지 않습니다.
-알파 마켓은 유동성이 얕고 에어드랍 포인트 파밍 거래가 섞여 있어, 거래량 기반 지표가 실수요를 과대평가할 수 있습니다(회전이상 플래그 참고).
+이 시스템은 <b>관측기이지 예측기가 아닙니다.</b> 알파 마켓은 유동성이 얕고 에어드랍 포인트 파밍 거래가 섞여 있어,
+거래량 기반 지표가 실수요를 과대평가할 수 있습니다(회전이상 플래그 참고).
 상위 10 진입 후 <b>2일 이상 유지</b>된 종목만 텔레그램으로 승격합니다.
 </p>
 </html>""" % {
@@ -693,6 +851,9 @@ ul{padding-left:18px;font-size:12px;line-height:1.8}
         "regime": esc_html(p["market"]["regime"]),
         "svg": bar_svg(rows[:12]), "rows": "".join(trs),
         "themes": theme_rows, "events": ev_rows,
+        "badge": esc_html(badge), "bclass": bclass,
+        "backtest": render_backtest_section(backtest),
+        "tracking": render_tracking_section(p.get("tracking")),
     }
 
 
@@ -843,6 +1004,27 @@ def run(offline_payload=None):
               "holders": r["s"]["holders"]} for r in new_listings],
             key=lambda x: x["mc"], reverse=True)[:10],
     }
+    bt = read_json(os.path.join(DATA_DIR, "backtest.json"), None)
+    if bt:
+        payload["backtest"] = {
+            "verdict": bt.get("verdict"), "note": bt.get("verdict_note"),
+            "horizon": bt.get("verdict_horizon"), "as_of": bt.get("as_of_kst"),
+            "window": bt.get("window"),
+        }
+        payload["backtest_badge"] = BADGE.get(bt.get("verdict"), bt.get("verdict", ""))
+
+    # 라이브 추적 — 오늘 승격분 기록 + 만기 도래분 성과 확정
+    hist_for_track = [h for h in hist if h["date"] != today] + [{
+        "date": today,
+        "tokens": {r["alpha_id"]: {"p": r["s"]["price"]} for r in rows}}]
+    hist_for_track.sort(key=lambda h: h["date"])
+    track_path = os.path.join(DATA_DIR, "track.json")
+    track = tracking.load(track_path)
+    promoted_rows = [r for r in rows if r.get("streak", 0) >= 2]
+    track = tracking.update(track, promoted_rows, hist_for_track, today)
+    write_json(track_path, track)
+    payload["tracking"] = tracking.summarize(track)
+
     payload["message"] = render_telegram(payload)
 
     write_json(os.path.join(DATA_DIR, "latest.json"), payload)
@@ -861,7 +1043,7 @@ def run(offline_payload=None):
     if docs:
         os.makedirs(docs, exist_ok=True)
         with open(os.path.join(docs, "index.html"), "w", encoding="utf-8") as f:
-            f.write(render_dashboard(payload))
+            f.write(render_dashboard(payload, bt))
 
     print("[result] status=%s universe=%d coverage=%.2f events=%d promoted=%d" % (
         status, len(rows), coverage, len(events),
