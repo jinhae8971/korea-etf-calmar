@@ -381,6 +381,20 @@ def main():
                                    "abs": summarize(promo[h], "abs")}
     v, note, hz = verdict(out["horizons"])
     out["verdict"], out["verdict_note"], out["verdict_horizon"] = v, note, hz
+
+    # 판정 등급이 바뀌면 조용히 넘어가지 않는다 — 다음 일일 브리프가 이 필드를 읽어 경고한다.
+    prev = ar.read_json(os.path.join(DATA_DIR, "backtest.json"), {}) or {}
+    pv = prev.get("verdict")
+    today = datetime.now(ar.KST).strftime("%Y-%m-%d")
+    out["prev_verdict"] = pv
+    if pv and pv != v:
+        out["verdict_changed"] = True
+        out["verdict_changed_at"] = today
+        print("[backtest] ⚠ 판정 변경: %s → %s" % (pv, v))
+    else:
+        out["verdict_changed"] = bool(prev.get("verdict_changed")) and \
+            prev.get("verdict_changed_at") == today
+        out["verdict_changed_at"] = prev.get("verdict_changed_at")
     out["limits"] = [
         "스냅샷 지표(시총·유동성·홀더)는 과거값이 없어 백테스트에 포함되지 않는다 — 검증된 것은 차트축과 거래대금축뿐이다. 수급축은 아래 라이브 추적으로만 검증된다.",
         "알파 마켓의 역사가 약 1년으로 짧고 이 구간의 시장국면은 사실상 하나다. 다른 국면에서 같은 결과가 나온다는 보장이 없다.",

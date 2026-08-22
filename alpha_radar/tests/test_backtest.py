@@ -237,3 +237,29 @@ class TestDashboardSections(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestVerdictChangeAlert(unittest.TestCase):
+    """판정이 바뀌었을 때 일일 브리프가 조용히 넘어가지 않는지."""
+
+    def _payload(self, alert=None):
+        return {
+            "as_of_kst": "2026-08-22 09:12", "data_status": "OK", "status_note": "",
+            "universe_size": 98, "coverage": 0.93,
+            "market": {"median_ret7": 0.02, "breadth": 0.5, "bnb_ret7": 0.01, "regime": "선별 강세"},
+            "candidates": [], "themes": [], "events": [],
+            "verdict_alert": alert, "backtest_badge": "테스트 배지",
+        }
+
+    def test_alert_rendered_when_present(self):
+        msg = ar.render_telegram(self._payload("검증 판정 변경: RELATIVE_ONLY → NEGATIVE (2026-09-01)"))
+        self.assertIn("🚨", msg)
+        self.assertIn("NEGATIVE", msg)
+
+    def test_no_alert_when_absent(self):
+        msg = ar.render_telegram(self._payload(None))
+        self.assertNotIn("🚨", msg)
+
+    def test_badge_line_always_present(self):
+        msg = ar.render_telegram(self._payload(None))
+        self.assertIn("검증", msg)

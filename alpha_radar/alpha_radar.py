@@ -560,6 +560,8 @@ def render_telegram(payload):
     p = payload
     L = []
     L.append("🛰️ <b>알파 추세 레이더</b>  %s KST" % p["as_of_kst"][:16])
+    if p.get("verdict_alert"):
+        L.append("🚨 <b>%s</b> — 대시보드 검증 탭 확인 필요" % esc_html(p["verdict_alert"]))
 
     if p["data_status"] != "OK":
         L.append("⚠️ 데이터 상태: <b>%s</b> — %s" % (p["data_status"], esc_html(p.get("status_note", ""))))
@@ -1012,6 +1014,16 @@ def run(offline_payload=None):
             "window": bt.get("window"),
         }
         payload["backtest_badge"] = BADGE.get(bt.get("verdict"), bt.get("verdict", ""))
+        # 판정 변경은 7일간 브리프 상단에 경고로 띄운다(대시보드 배지만 조용히 바뀌는 것을 막음)
+        chg_at = bt.get("verdict_changed_at")
+        if bt.get("verdict_changed") and chg_at:
+            try:
+                age = (datetime.strptime(today, "%Y-%m-%d") - datetime.strptime(chg_at, "%Y-%m-%d")).days
+            except ValueError:
+                age = 99
+            if 0 <= age <= 7:
+                payload["verdict_alert"] = "검증 판정 변경: %s → %s (%s)" % (
+                    bt.get("prev_verdict"), bt.get("verdict"), chg_at)
 
     # 라이브 추적 — 오늘 승격분 기록 + 만기 도래분 성과 확정
     hist_for_track = [h for h in hist if h["date"] != today] + [{
