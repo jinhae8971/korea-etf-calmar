@@ -31,6 +31,14 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 HISTORY_PATH = os.path.join(DATA_DIR, "history.json")
 LATEST_PATH = os.path.join(DATA_DIR, "latest.json")
 DISCOVERY_PATH = os.path.join(DATA_DIR, "discovery_state.json")
+BACKTEST_PATH = os.path.join(DATA_DIR, "backtest.json")
+
+BT_BADGE = {
+    "BIASED_POSITIVE": "과거검증 상한선에서만 약한 우위 — 사후선택 편향 포함, 매수신호 아님",
+    "INCONCLUSIVE": "과거검증에서 유의미한 우위 없음 (신뢰구간이 0을 포함)",
+    "NEGATIVE": "과거검증 결과 우위 없음 — 순위를 매매 근거로 쓰지 말 것",
+    "UNKNOWN": "검증 표본 부족 — 판정 불가",
+}
 
 CG_HOSTS = [
     "https://api.coingecko.com/api/v3",
@@ -454,6 +462,16 @@ def render_telegram(payload: dict) -> str:
         L.append("\n<b>■ 확인 대기</b>")
         for w in payload["watch"]:
             L.append(f"· {esc(w)}")
+
+    bt = load_json(BACKTEST_PATH, None)
+    if bt:
+        L.append("\n<b>■ 검증</b>")
+        L.append(f"· 판정 <b>{esc(bt.get('verdict', '?'))}</b> — "
+                 f"{esc(BT_BADGE.get(bt.get('verdict'), ''))}")
+        c30 = ((bt.get("coin") or {}).get("30") or {}).get("excess") or {}
+        if c30.get("mean") is not None:
+            L.append(f"· 30일 보유 시 부합도 상위5의 유니버스 대비 초과수익 "
+                     f"{c30['mean'] * 100:+.1f}%p (기준 {esc(bt.get('as_of_kst', '')[:10])})")
 
     L.append("\n<i>관측 지표입니다. 미래 수익률을 주장하지 않으며 투자 권유가 아닙니다.</i>")
     if payload.get("pages_url"):
