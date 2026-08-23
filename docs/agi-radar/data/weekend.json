@@ -1,6 +1,6 @@
 {
- "date": "2026-08-22",
- "generated_at": "2026-08-22T09:27:23+09:00",
+ "date": "2026-08-23",
+ "generated_at": "2026-08-23T10:05:34+09:00",
  "as_of_close": "2026-08-21",
  "nodes": [
   {
@@ -816,146 +816,41 @@
    "yahoo": 38
   }
  },
- "brief_mode": "weekly",
- "weekly_review": {
-  "available": true,
-  "span": {
-   "from": "2026-08-14",
-   "to": "2026-08-21",
-   "sessions": 5
-  },
-  "state": {
-   "from": "THESIS_INTACT",
-   "to": "THESIS_BROKEN",
-   "changed": {
-    "from": "THESIS_INTACT",
-    "to": "THESIS_BROKEN"
-   }
-  },
-  "score_delta": -65.0,
-  "hedge": {
-   "from": "WATCH",
-   "to": "WATCH",
-   "broken_days": 2,
-   "watch_days": 3,
-   "corr_delta": 0.0063,
-   "spread_now": -0.2399
-  },
-  "crowding": {
-   "from": 49.9,
-   "to": 48.8,
-   "delta": -1.1,
-   "level": "NORMAL"
-  },
-  "breadth": {
-   "from": 0.8,
-   "to": 0.2,
-   "delta": -0.6
-  },
-  "bottleneck": {
-   "from": "네오클라우드/데이터센터",
-   "to": "네오클라우드/데이터센터",
-   "changed": false
-  },
-  "alerts": [
-   [
-    "BOTTLENECK_SHIFT",
-    5
-   ],
-   [
-    "HEDGE_BROKEN",
-    2
-   ]
-  ],
-  "movers_up": [
+ "brief_mode": "watchlist",
+ "watchlist": {
+  "items": [
    {
-    "id": "memory",
-    "label": "메모리 (HBM/NAND)",
-    "role": "long",
-    "stage": 2,
-    "coverage": 4,
-    "universe": 4,
-    "rs20": 0.0662,
-    "rs60": -0.0002,
-    "rs20_prev": -0.3185,
-    "ret20": 0.1024,
-    "ret60": 0.0202,
-    "rank": 3,
-    "rank_prev": 7,
-    "rank_delta": 4,
-    "long_rank": 2
+    "name": "롱·숏 20일 상관",
+    "current": -0.5435,
+    "trigger": -0.4,
+    "distance": -0.1435,
+    "breached": true,
+    "condition": "-0.4 이하 + 동시손실이면 헤지 BROKEN",
+    "armed": true,
+    "note": "동시손실만 발생하면 즉시 BROKEN"
    },
    {
-    "id": "neocloud",
-    "label": "네오클라우드/데이터센터",
-    "role": "long",
-    "stage": 5,
-    "coverage": 5,
-    "universe": 5,
-    "rs20": 0.0724,
-    "rs60": -0.0873,
-    "rs20_prev": -0.1452,
-    "ret20": 0.1086,
-    "ret60": -0.067,
-    "rank": 2,
-    "rank_prev": 5,
-    "rank_delta": 3,
-    "long_rank": 1
+    "name": "혼잡도",
+    "current": 48.8,
+    "trigger": 66.9,
+    "distance": 18.1,
+    "breached": false,
+    "condition": "66.9 이상이면 WATCH",
+    "armed": false,
+    "note": null
+   },
+   {
+    "name": "논지 폭 (초과수익 노드 비율)",
+    "current": 0.2,
+    "trigger": 0.25,
+    "distance": -0.05,
+    "breached": true,
+    "condition": "0.25 이하면 논지 폭 붕괴 판정",
+    "armed": true,
+    "note": null
    }
   ],
-  "movers_down": [
-   {
-    "id": "compute",
-    "label": "연산 (GPU/ASIC)",
-    "role": "long",
-    "stage": 1,
-    "coverage": 4,
-    "universe": 4,
-    "rs20": -0.0466,
-    "rs60": -0.0522,
-    "rs20_prev": -0.0113,
-    "ret20": -0.0103,
-    "ret60": -0.0319,
-    "rank": 6,
-    "rank_prev": 3,
-    "rank_delta": -3,
-    "long_rank": 4
-   },
-   {
-    "id": "equipment",
-    "label": "반도체 장비",
-    "role": "long",
-    "stage": 3,
-    "coverage": 4,
-    "universe": 4,
-    "rs20": -0.0792,
-    "rs60": 0.0168,
-    "rs20_prev": -0.175,
-    "ret20": -0.0429,
-    "ret60": 0.0371,
-    "rank": 7,
-    "rank_prev": 6,
-    "rank_delta": -1,
-    "long_rank": 5
-   },
-   {
-    "id": "power",
-    "label": "전력/발전/열관리",
-    "role": "long",
-    "stage": 4,
-    "coverage": 6,
-    "universe": 6,
-    "rs20": -0.0314,
-    "rs60": -0.125,
-    "rs20_prev": -0.129,
-    "ret20": 0.0048,
-    "ret60": -0.1047,
-    "rank": 5,
-    "rank_prev": 4,
-    "rank_delta": -1,
-    "long_rank": 3
-   }
-  ]
+  "armed_count": 2
  },
- "message": "<b>📅 AGI Thesis Radar — 주간 리뷰 (2026-08-22)</b>\n\n기간 2026-08-14 → 2026-08-21 (5거래일)\n\n<b>🔄 판정 변화</b>  논지 유지 → <b>논지 훼손</b>\n\n<b>① 헤지</b>  WATCH → WATCH\n  BROKEN 2일 / WATCH 3일 (총 5일 중)\n  20일 상관 변화 ▲0.0063 · 주간 스프레드 -24.0%\n\n<b>② 혼잡도</b>  49.9 → 48.8 (▼1.1) · 현재 NORMAL\n<b>③ 논지 폭</b>  0.8 → 0.2 (▼0.6)\n\n<b>④ 병목</b>  네오클라우드/데이터센터 유지\n\n  ▲ 메모리 (HBM/NAND) 4단계 상승 (+6.6%)\n  ▲ 네오클라우드/데이터센터 3단계 상승 (+7.2%)\n  ▼ 연산 (GPU/ASIC) 3단계 하락 (-4.7%)\n  ▼ 반도체 장비 1단계 하락 (-7.9%)\n  ▼ 전력/발전/열관리 1단계 하락 (-3.1%)\n\n<b>⚠️ 이번 주 경보 발생</b>\n  · 병목 이동 — 5일\n  · 헤지 붕괴 — 2일\n\n<i>기준 종가 2026-08-21 · 미국장 휴장 중</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/agi-radar/\n\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>"
+ "message": "<b>🎯 AGI Thesis Radar — 다음 주 워치리스트 (2026-08-23)</b>\n\n현재 판정: 논지 훼손 · 발동 임박 지표 2개\n\n<b>임계선까지 남은 거리</b>\n🔴 <b>롱·숏 20일 상관</b>\n    현재 -0.5435 → 발동 -0.4 (<b>이미 통과</b>)\n    <i>-0.4 이하 + 동시손실이면 헤지 BROKEN</i>\n    ⚠️ 동시손실만 발생하면 즉시 BROKEN\n🟢 <b>혼잡도</b>\n    현재 48.8 → 발동 66.9 (여유 +18.1)\n    <i>66.9 이상이면 WATCH</i>\n🔴 <b>논지 폭 (초과수익 노드 비율)</b>\n    현재 0.2 → 발동 0.25 (<b>이미 통과</b>)\n    <i>0.25 이하면 논지 폭 붕괴 판정</i>\n\n<b>병목 상위 노드 (다음 주 관찰 대상)</b>\n  1. 네오클라우드/데이터센터 +7.2%\n  2. 메모리 (HBM/NAND) +6.6%\n  3. 전력/발전/열관리 -3.1%\n\n<i>기준 종가 2026-08-21</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/agi-radar/\n\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>"
 }
