@@ -59,6 +59,21 @@ TOP_N_DASHBOARD = 20
 
 DASHBOARD_URL = "https://jinhae8971.github.io/korea-etf-calmar/alpha-radar/"
 
+# 저시총 블루칩 '펌핑 후보' 트랙 (백테스트로 형태가 확인된 규칙)
+# 주의: 이 규칙의 기대값은 적중률이 아니라 꼬리에서 나온다. 메인 점수와 섞지 않고 별도 트랙으로 둔다.
+PUMP = {
+    "min_bars": 90,          # 상장 90일 이상 — 신규 상장 급등락 제외
+    "min_holders": 3000,     # 홀더 기반 최소 실체
+    "min_liq": 500000,
+    "max_churn": 50.0,       # 워시 의심 구간 제외
+    "min_float": 0.30,       # 언락 폭탄 제외
+    "max_mc": 100000000,     # 저시총 상한
+    "dd_low": -0.40,         # 30일 고점 대비 낙폭 구간
+    "dd_high": -0.15,
+    "min_volx": 1.2,         # 거래대금 5일/20일 확장
+    "max_show": 3,
+}
+
 BADGE = {
     "POSITIVE": "과거검증에서 약한 우위 관측 (상세는 대시보드 검증 탭)",
     "RELATIVE_ONLY": "유니버스 대비 상대우위만 확인 — 절대수익은 마이너스였음. 매수신호 아님",
@@ -556,6 +571,41 @@ FLAG_KO = {
 }
 
 
+def pump_candidates(rows):
+    """저시총 블루칩의 '눌림 후 거래대금 확장' 구간을 잡는다.
+    백테스트(2025-11~2026-08, 196픽) 결과: 14일 일별중앙 초과 +37%p(95% 하단 +8%p)이나
+    픽 단위 승률은 0.52, 5건 중 1건은 -30% 이하 — 즉 적중률이 아니라 꼬리로 버는 형태다.
+    같은 규칙을 내러티브 유니버스(대형주)에 적용하면 효과가 사라진다(실측). 알파 전용."""
+    mcs = sorted(r["s"]["mc"] for r in rows)
+    if not mcs:
+        return []
+    med_mc = mcs[len(mcs) // 2]
+    out = []
+    for r in rows:
+        f, s_ = r["f"], r["s"]
+        if f["bars"] < PUMP["min_bars"]:
+            continue
+        if s_["mc"] > min(med_mc, PUMP["max_mc"]):
+            continue
+        if (s_["holders"] < PUMP["min_holders"] or s_["liq"] < PUMP["min_liq"]
+                or s_["churn"] >= PUMP["max_churn"] or s_["float_ratio"] < PUMP["min_float"]):
+            continue
+        dd = f["dd30"] or 0.0
+        if not (PUMP["dd_low"] < dd < PUMP["dd_high"]):
+            continue
+        if not f["above_ema20"] or (f["volx"] or 0) < PUMP["min_volx"]:
+            continue
+        out.append({
+            "symbol": r["symbol"], "chain": r["chain"], "alpha_id": r["alpha_id"],
+            "theme_label": r.get("theme_label", r["theme"]),
+            "dd30": dd, "volx": f["volx"], "ret7": f["ret7"], "ret30": f["ret30"],
+            "mc": s_["mc"], "liq": s_["liq"], "holders": s_["holders"],
+            "turnover": round(s_["turnover"], 3), "score_rank": r["rank"],
+        })
+    out.sort(key=lambda x: x["volx"], reverse=True)
+    return out[:PUMP["max_show"]]
+
+
 def render_telegram(payload):
     p = payload
     L = []
@@ -616,6 +666,23 @@ def render_telegram(payload):
         L.append("📌 <b>변화 감지</b>")
         for e in ev:
             L.append("   · %s %s — %s" % (esc_html(e["symbol"]), e["type"], esc_html(e["detail"])))
+
+    pumps = p.get("pump") or []
+    if pumps:
+        L.append("")
+        L.append("🎲 <b>저시총 축적 후보</b> <i>(복권형 — 아래 주의 참고)</i>")
+        for x in pumps:
+            L.append("· <b>%s</b> (%s) · 30일고점比 %s · 거래대금 %.1f배" %
+                     (esc_html(x["symbol"]), x["chain"], fmt_pct(x["dd30"]), x["volx"]))
+            L.append("   시총 %s · 유동성 %s · 홀더 %s · 7일 %s" %
+                     (fmt_usd(x["mc"]), fmt_usd(x["liq"]), "{:,}".format(x["holders"]),
+                      fmt_pct(x["ret7"])))
+        ps = p.get("pump_stats")
+        if ps:
+            L.append("   <i>검증: 14일 초과 %s(중앙) · 픽 승률 %d%% · %d%%는 -30%% 이하. "
+                     "적중률이 아니라 꼬리로 버는 형태이니 소액·분산 전제.</i>"
+                     % (fmt_pct(ps.get("date_median"), 0), round((ps.get("win_rate") or 0) * 100),
+                        round((ps.get("tail_loss") or 0) * 100)))
 
     bt = p.get("backtest_badge")
     if bt:
@@ -776,6 +843,47 @@ def render_tracking_section(tr):
 현재 추적 중 %d건.</p>""" % ("".join(rows), tr.get("open_entries", 0))
 
 
+def render_pump_section(payload, backtest=None):
+    pumps = payload.get("pump") or []
+    pk = ((backtest or {}).get("pump") or {})
+    rows = "".join(
+        "<tr><td><b>%s</b><br><span class=sub>%s</span></td><td>%s</td><td>%.1f×</td>"
+        "<td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (
+            esc_html(x["symbol"]), esc_html(x["chain"]), fmt_pct(x["dd30"]), x["volx"],
+            fmt_pct(x["ret7"]), fmt_usd(x["mc"]), fmt_usd(x["liq"]),
+            "{:,}".format(x["holders"])) for x in pumps) or \
+        "<tr><td colspan=7 class=muted>오늘 조건 충족 종목 없음</td></tr>"
+
+    stat = ""
+    if pk:
+        srows = []
+        for h in ("7", "14", "21"):
+            v = pk.get(h) or {}
+            if v.get("status") != "집계":
+                continue
+            srows.append("<tr><td>%s일</td><td class=%s>%s</td><td>[%s, %s]</td><td>%s</td>"
+                         "<td>%d%%</td><td>%d%%</td><td>%d%%</td></tr>" % (
+                             h, "ok" if (v.get("ci_low") or 0) > 0 else "muted",
+                             _pct_cell(v["date_median"]), _pct_cell(v.get("ci_low")),
+                             _pct_cell(v.get("ci_high")), _pct_cell(v["pick_median"], 2),
+                             round(v["win_rate"] * 100), round(v["tail_gain"] * 100),
+                             round(v["tail_loss"] * 100)))
+        stat = ("<div class=wrap><table><tr><th>보유</th><th>일별중앙 초과</th><th>95%% 구간</th>"
+                "<th>픽 중앙</th><th>승률</th><th>+50%%↑</th><th>-30%%↓</th></tr>%s</table></div>"
+                "<p class=note>%s</p>" % ("".join(srows), esc_html(pk.get("note", ""))))
+
+    return """<h2 id=pump>저시총 축적 후보 <span class=badge>복권형</span></h2>
+<div class="verdict warn">평균이 아니라 <b>분포</b>를 보세요. 이 트랙은 적중률이 아니라 소수의 대형 상승(꼬리)으로 기대값이 만들어집니다.
+다섯 건 중 한 건꼴로 -30%% 이하가 나옵니다. 메인 점수와 섞지 않고 별도로 둔 이유입니다.</div>
+<div class=wrap><table>
+<tr><th>종목</th><th>30일고점比</th><th>거래대금</th><th>7일</th><th>시총</th><th>유동성</th><th>홀더</th></tr>
+%s</table></div>
+<p class=note>조건: 상장 90일 이상 · 시총 유니버스 중앙값 이하(≤$100M) · 홀더 3,000+ · 유동성 $500K+ ·
+회전/유동성 50 미만(워시 제외) · 유통비율 30%%+ · 30일 고점 대비 −15~−40%% 눌림 · 종가 &gt; EMA20 ·
+거래대금 5일/20일 1.2배 이상.</p>
+%s""" % (rows, stat)
+
+
 def render_dashboard(payload, backtest=None):
     p = payload
     rows = p["candidates"][:TOP_N_DASHBOARD]
@@ -828,7 +936,7 @@ ul{padding-left:18px;font-size:12px;line-height:1.8}
 <h1>🛰️ Binance Alpha Trend Radar</h1>
 <div class=meta>%(as_of)s KST · 유니버스 %(n)d · 커버리지 %(cov)d%% · 상태 <span class=badge>%(status)s</span> · 국면 %(regime)s</div>
 <div class="verdict %(bclass)s">🔬 검증 요약 — %(badge)s</div>
-<div class=tabs><a href="#today">오늘</a><a href="#verify">검증</a><a href="#live">라이브 추적</a></div>
+<div class=tabs><a href="#today">오늘</a><a href="#pump">저시총 축적</a><a href="#verify">검증</a><a href="#live">라이브 추적</a></div>
 
 <h2 id=today>추세 점수 상위</h2>%(svg)s
 <div class=wrap><table>
@@ -838,6 +946,7 @@ ul{padding-left:18px;font-size:12px;line-height:1.8}
 <div class=wrap><table><tr><th>테마</th><th>종목수</th><th>중앙 7일</th><th>중앙 점수</th><th>폭</th></tr>%(themes)s</table></div>
 <h3>변화 감지</h3><ul>%(events)s</ul>
 
+<div id=pumpsec>%(pump)s</div>
 <div id=verify>%(backtest)s</div>
 <div id=live>%(tracking)s</div>
 
@@ -854,6 +963,7 @@ ul{padding-left:18px;font-size:12px;line-height:1.8}
         "svg": bar_svg(rows[:12]), "rows": "".join(trs),
         "themes": theme_rows, "events": ev_rows,
         "badge": esc_html(badge), "bclass": bclass,
+        "pump": render_pump_section(p, backtest),
         "backtest": render_backtest_section(backtest),
         "tracking": render_tracking_section(p.get("tracking")),
     }
@@ -981,6 +1091,10 @@ def run(offline_payload=None):
          for k, v in theme_stat.items() if v["n"] >= 3 and k != "UNTAGGED"],
         key=lambda x: x["median_ret7"], reverse=True)
 
+    for r in rows:
+        r["theme_label"] = theme_label.get(r["theme"], r["theme"])
+    payload_pumps = pump_candidates(rows)
+
     payload = {
         "schema": "alpha-radar@1",
         "as_of_utc": t_now.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -998,6 +1112,7 @@ def run(offline_payload=None):
             "regime": regime_label(med_ret7, breadth, bnb_ret7),
         },
         "candidates": cands_out,
+        "pump": payload_pumps,
         "themes": themes_out,
         "events": events,
         "new_listings": sorted(
@@ -1014,6 +1129,13 @@ def run(offline_payload=None):
             "window": bt.get("window"),
         }
         payload["backtest_badge"] = BADGE.get(bt.get("verdict"), bt.get("verdict", ""))
+        pk = (bt.get("pump") or {}).get("14")
+        if pk:
+            payload["pump_stats"] = {"date_median": pk.get("date_median"),
+                                     "win_rate": pk.get("win_rate"),
+                                     "tail_gain": pk.get("tail_gain"),
+                                     "tail_loss": pk.get("tail_loss"),
+                                     "n": pk.get("n")}
         # 판정 변경은 7일간 브리프 상단에 경고로 띄운다(대시보드 배지만 조용히 바뀌는 것을 막음)
         chg_at = bt.get("verdict_changed_at")
         if bt.get("verdict_changed") and chg_at:

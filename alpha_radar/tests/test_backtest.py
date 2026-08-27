@@ -263,3 +263,61 @@ class TestVerdictChangeAlert(unittest.TestCase):
     def test_badge_line_always_present(self):
         msg = ar.render_telegram(self._payload(None))
         self.assertIn("검증", msg)
+
+
+class TestPumpTrack(unittest.TestCase):
+    """저시총 축적 트랙 — 품질 필터가 실제로 걸러내는지."""
+
+    def _row(self, **kw):
+        base = dict(bars=120, dd30=-0.25, above_ema20=True, volx=1.5)
+        base.update({k: v for k, v in kw.items() if k in base})
+        f = {"bars": base["bars"], "dd30": base["dd30"], "above_ema20": base["above_ema20"],
+             "volx": base["volx"], "ret7": 0.1, "ret30": 0.0}
+        s = {"mc": kw.get("mc", 2e7), "liq": kw.get("liq", 1e6), "holders": kw.get("holders", 10000),
+             "churn": kw.get("churn", 5.0), "float_ratio": kw.get("float_ratio", 0.8),
+             "turnover": 0.4, "price": 1.0}
+        return {"symbol": kw.get("symbol", "S"), "chain": "BSC", "alpha_id": "A",
+                "theme": "DEFI", "theme_label": "디파이", "rank": 5, "f": f, "s": s}
+
+    def _peers(self):
+        return [self._row(symbol="P%d" % i, mc=5e7) for i in range(4)]
+
+    def test_accepts_qualifying_row(self):
+        rows = [self._row(symbol="GOOD", mc=1e7)] + self._peers()
+        out = ar.pump_candidates(rows)
+        self.assertIn("GOOD", [x["symbol"] for x in out])
+
+    def test_rejects_new_listing(self):
+        rows = [self._row(symbol="NEW", mc=1e7, bars=40)] + self._peers()
+        self.assertNotIn("NEW", [x["symbol"] for x in ar.pump_candidates(rows)])
+
+    def test_rejects_wash_suspect(self):
+        rows = [self._row(symbol="WASH", mc=1e7, churn=200.0)] + self._peers()
+        self.assertNotIn("WASH", [x["symbol"] for x in ar.pump_candidates(rows)])
+
+    def test_rejects_low_float_and_thin_liquidity(self):
+        rows = [self._row(symbol="LOWF", mc=1e7, float_ratio=0.1),
+                self._row(symbol="THIN", mc=1e7, liq=100000)] + self._peers()
+        got = [x["symbol"] for x in ar.pump_candidates(rows)]
+        self.assertNotIn("LOWF", got)
+        self.assertNotIn("THIN", got)
+
+    def test_rejects_already_at_highs_and_deep_crash(self):
+        rows = [self._row(symbol="HIGH", mc=1e7, dd30=-0.02),
+                self._row(symbol="CRASH", mc=1e7, dd30=-0.7)] + self._peers()
+        got = [x["symbol"] for x in ar.pump_candidates(rows)]
+        self.assertNotIn("HIGH", got)
+        self.assertNotIn("CRASH", got)
+
+    def test_rejects_large_cap(self):
+        rows = [self._row(symbol="BIG", mc=5e8)] + self._peers()
+        self.assertNotIn("BIG", [x["symbol"] for x in ar.pump_candidates(rows)])
+
+    def test_caps_output_count(self):
+        rows = [self._row(symbol="S%d" % i, mc=1e7, volx=1.3 + i * 0.1) for i in range(8)] + self._peers()
+        self.assertLessEqual(len(ar.pump_candidates(rows)), ar.PUMP["max_show"])
+
+    def test_pump_section_warns_about_tail(self):
+        html = ar.render_pump_section({"pump": []}, None)
+        self.assertIn("복권형", html)
+        self.assertIn("-30%", html)

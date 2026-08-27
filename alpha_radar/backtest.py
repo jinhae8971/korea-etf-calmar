@@ -293,6 +293,87 @@ def run_backtest(series, start_idx_days=270, step=1):
     return dates, per_date, breakout, promoted, decay_out, monthly_out, scanned
 
 
+PUMP_RULE = {"min_bars": 90, "min_qv_median": 100000, "dd_low": -0.40, "dd_high": -0.15,
+             "min_volx": 1.2}
+
+
+def pump_backtest(series, start_idx_days=270):
+    """저시총 블루칩 '눌림 후 거래대금 확장' 규칙의 실제 성과 형태를 잰다.
+    핵심은 평균이 아니라 분포다 — 이 규칙은 꼬리로 버는 구조라서 평균만 보면 오해한다.
+    과거 시총은 존재하지 않으므로 '저시총'은 거래대금(ADV20) 하위 50%로 대용한다."""
+    dates = sorted({d for s in series.values() for d in s})
+    first = max(PUMP_RULE["min_bars"], len(dates) - start_idx_days)
+    last = len(dates) - max(HORIZONS) - 1
+    per_date = {h: [] for h in HORIZONS}
+    pool = {h: [] for h in HORIZONS}
+    picks = 0
+
+    for t_idx in range(first, last + 1):
+        rows = []
+        for aid, s in series.items():
+            if dates[t_idx] not in s:
+                continue
+            bars = bars_upto(s, dates, t_idx, lookback=140)
+            if len(bars) < PUMP_RULE["min_bars"]:
+                continue
+            f = ar.chart_features(bars)
+            if (f["adv20"] or 0) < MIN_ADV:
+                continue
+            if ar.median([b["qv"] for b in bars[-20:]]) < PUMP_RULE["min_qv_median"]:
+                continue
+            rows.append({"aid": aid, "f": f})
+        if len(rows) < 15:
+            continue
+        advs = sorted(r["f"]["adv20"] for r in rows)
+        med_adv = advs[len(advs) // 2]
+        sel = []
+        for r in rows:
+            f = r["f"]
+            dd = f["dd30"] or 0.0
+            if (f["adv20"] <= med_adv and PUMP_RULE["dd_low"] < dd < PUMP_RULE["dd_high"]
+                    and f["above_ema20"] and (f["volx"] or 0) >= PUMP_RULE["min_volx"]):
+                sel.append(r)
+        if not sel:
+            continue
+        picks += len(sel)
+        for h in HORIZONS:
+            fw = {}
+            for r in rows:
+                v = fwd_return(series[r["aid"]], dates, t_idx, h)
+                if v is not None:
+                    fw[r["aid"]] = v
+            if len(fw) < 15:
+                continue
+            uni = ar.median(list(fw.values()))
+            ex = [fw[r["aid"]] - uni for r in sel if r["aid"] in fw]
+            if not ex:
+                continue
+            per_date[h].append(ar.median(ex))
+            pool[h].extend(ex)
+
+    out = {}
+    for h in HORIZONS:
+        d, p = per_date[h], pool[h]
+        if len(d) < 20 or not p:
+            out[str(h)] = {"status": "표본 부족", "n": len(p)}
+            continue
+        lo, hi = block_bootstrap_ci(d)
+        out[str(h)] = {
+            "status": "집계", "n": len(p), "n_dates": len(d),
+            "date_median": sum(d) / len(d),
+            "ci_low": lo, "ci_high": hi,
+            "pick_median": ar.median(p),
+            "win_rate": sum(1 for v in p if v > 0) / len(p),
+            "tail_gain": sum(1 for v in p if v > 0.5) / len(p),
+            "tail_loss": sum(1 for v in p if v < -0.3) / len(p),
+        }
+    out["total_picks"] = picks
+    out["note"] = ("적중률이 아니라 꼬리로 버는 규칙이다. 평균 초과수익은 소수의 대형 상승이 만들고, "
+                   "다섯 건 중 한 건꼴로 -30% 이하가 나온다. 같은 규칙을 대형 코인 유니버스에 "
+                   "적용하면 효과가 사라진다(실측) — 알파 마켓의 두꺼운 꼬리에 의존하는 전략이다.")
+    return out
+
+
 def verdict(hz):
     """판정은 임계값으로 기계적으로 낸다. 결과가 나쁘면 나쁘다고 쓴다.
     핵심 구분: '유니버스 대비 상대우위'와 '절대수익 플러스'는 전혀 다른 이야기다."""
@@ -379,6 +460,9 @@ def main():
         out["breakout"][str(h)] = summarize(bo[h], "excess")
         out["promoted"][str(h)] = {"excess": summarize(promo[h], "excess"),
                                    "abs": summarize(promo[h], "abs")}
+    out["pump"] = pump_backtest(series)
+    print("[backtest] 펌핑 트랙 픽 %d건" % out["pump"].get("total_picks", 0))
+
     v, note, hz = verdict(out["horizons"])
     out["verdict"], out["verdict_note"], out["verdict_horizon"] = v, note, hz
 
