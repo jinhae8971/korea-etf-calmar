@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Radar">
+<meta name="theme-color" content="#111820">
+<title>Radar Console</title>
+<style>
+  :root{
+    --ink:#111820; --ink-2:#2b3947; --paper:#e7eaee; --paper-2:#f3f5f7;
+    --rule:#c3cad3; --dim:#6a7784;
+    --teal:#0f6f62; --mustard:#9a6f07; --brick:#9c3a2c;
+    --grid: #d7dce2;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;
+    padding:14px 14px calc(28px + env(safe-area-inset-bottom));
+    -webkit-text-size-adjust:100%;
+  }
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,"Roboto Mono",monospace;
+        font-variant-numeric:tabular-nums}
+  header{display:flex;align-items:baseline;justify-content:space-between;gap:8px;
+         border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
+  h1{font-size:17px;letter-spacing:.14em;text-transform:uppercase;margin:0;font-weight:700}
+  .stamp{font-size:11px;color:var(--dim);letter-spacing:.06em}
+  button.reload{appearance:none;border:1px solid var(--ink);background:transparent;color:var(--ink);
+    font:600 11px/1 ui-monospace,monospace;letter-spacing:.1em;padding:7px 10px;border-radius:2px}
+  button.reload:active{background:var(--ink);color:var(--paper)}
+  button.reload:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+
+  section.card{background:var(--paper-2);border:1px solid var(--rule);border-radius:3px;
+    padding:13px 13px 15px;margin:13px 0}
+  .eyebrow{font:600 10.5px/1 ui-monospace,monospace;letter-spacing:.18em;color:var(--dim);
+    text-transform:uppercase;margin-bottom:6px}
+  h2{font-size:16px;margin:0 0 3px;font-weight:700;letter-spacing:-.01em}
+  .regime{font-size:13px;color:var(--ink-2);margin:2px 0 10px}
+  .meta{font-size:11.5px;color:var(--dim);margin-top:2px}
+
+  /* 신뢰 눈금 — 이 앱의 중심 장치. 통계적 주장(95% 구간)을 자로 그려 0선과의 관계를 보게 한다. */
+  .gauge{margin:11px 0 4px}
+  .gauge .cap{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);
+    font-family:ui-monospace,monospace;margin-bottom:5px}
+  .rule-wrap{position:relative;height:34px}
+  .axis{position:absolute;left:0;right:0;top:17px;height:1px;background:var(--grid)}
+  .zero{position:absolute;top:4px;bottom:4px;width:1px;background:var(--ink)}
+  .zero::after{content:"0";position:absolute;top:-2px;left:3px;font:10px ui-monospace,monospace;color:var(--ink)}
+  .ci{position:absolute;top:13px;height:9px;border-radius:1px;opacity:.85}
+  .pt{position:absolute;top:8px;width:2px;height:19px;background:var(--ink)}
+  .verdict{font-size:12.5px;line-height:1.6;margin-top:6px;padding-left:9px;border-left:3px solid var(--rule)}
+  .v-teal{border-color:var(--teal)} .v-mustard{border-color:var(--mustard)} .v-brick{border-color:var(--brick)}
+
+  ul.list{list-style:none;margin:8px 0 0;padding:0}
+  ul.list li{padding:7px 0;border-top:1px solid var(--rule)}
+  ul.list li:first-child{border-top:none}
+  .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .name{font-weight:700}
+  .sub{font-size:11.5px;color:var(--dim);margin-top:2px}
+  .tag{font:600 10px/1 ui-monospace,monospace;letter-spacing:.08em;padding:3px 5px;border:1px solid var(--rule);
+    border-radius:2px;color:var(--ink-2);white-space:nowrap}
+  .warnbox{background:#fbf3df;border:1px solid #e3cd94;color:#6a4c05;
+    font-size:12px;padding:9px 10px;border-radius:2px;margin:9px 0}
+  .errbox{background:#f8e9e6;border:1px solid #dfb3aa;color:#7a2c1f;
+    font-size:12.5px;padding:10px;border-radius:2px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+  .stat{border:1px solid var(--rule);border-radius:2px;padding:7px 8px;background:var(--paper)}
+  .stat b{display:block;font-size:15px}
+  .stat span{font-size:10.5px;color:var(--dim);letter-spacing:.04em}
+  a.more{display:inline-block;margin-top:11px;font:600 11.5px/1 ui-monospace,monospace;
+    letter-spacing:.08em;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--teal);padding-bottom:2px}
+  .skel{height:12px;background:linear-gradient(90deg,#dde1e6,#eef0f3,#dde1e6);
+    border-radius:2px;margin:8px 0;animation:pulse 1.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.skel{animation:none}}
+  footer{font-size:11px;color:var(--dim);line-height:1.65;margin-top:16px;
+    border-top:1px solid var(--rule);padding-top:10px}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Radar Console</h1>
+    <div class="stamp mono" id="stamp">데이터 불러오는 중</div>
+  </div>
+  <button class="reload" id="reload" type="button">RELOAD</button>
+</header>
+
+<div id="app">
+  <section class="card"><div class="skel" style="width:40%"></div><div class="skel"></div><div class="skel" style="width:70%"></div></section>
+  <section class="card"><div class="skel" style="width:40%"></div><div class="skel"></div><div class="skel" style="width:70%"></div></section>
+</div>
+
+<footer>
+  두 시스템 모두 <b>관측기</b>입니다. 순위와 후보는 "지금 자금이 어디에 반응했는가"의 서술이며 미래 수익률을 주장하지 않습니다.
+  각 카드의 신뢰 눈금은 워크포워드 백테스트의 95% 신뢰구간이고, 구간이 0선을 걸치면 우위를 주장할 수 없다는 뜻입니다.
+  데이터는 GitHub에 커밋된 스냅샷을 직접 읽으며 최대 5분 캐시가 있습니다.
+</footer>
+
+<script>
+const RAW = "https://raw.githubusercontent.com/jinhae8971/korea-etf-calmar/main/";
+const SRC = {
+  alpha: {latest: RAW+"alpha_radar/data/latest.json", bt: RAW+"alpha_radar/data/backtest.json",
+          page: "https://jinhae8971.github.io/korea-etf-calmar/alpha-radar/"},
+  narr:  {latest: RAW+"narrative_radar/data/latest.json", bt: RAW+"narrative_radar/data/backtest.json",
+          page: "https://jinhae8971.github.io/korea-etf-calmar/narrative-radar/"}
+};
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct = (v, d=1) => v === null || v === undefined ? "n/a" : (v*100).toFixed(d).replace(/^(?=\d)/,"+")
+                        .replace(/^\+-/,"-") + "%";
+const usd = v => v >= 1e9 ? "$"+(v/1e9).toFixed(1)+"B" : v >= 1e6 ? "$"+(v/1e6).toFixed(1)+"M"
+                 : v >= 1e3 ? "$"+Math.round(v/1e3)+"K" : "$"+Math.round(v||0);
+const todayKST = () => new Date(Date.now()+9*36e5).toISOString().slice(0,10);
+
+async function grab(url){
+  const r = await fetch(url, {cache:"no-store"});
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  return r.json();
+}
+
+/* 신뢰 눈금: [lo, hi] 구간과 평균을 0선 기준으로 그린다. */
+function gauge(label, mean, lo, hi, unitNote){
+  if(mean === null || mean === undefined || lo === null || hi === null) return "";
+  const span = Math.max(Math.abs(lo), Math.abs(hi), Math.abs(mean)) * 1.25 || 1;
+  const x = v => (0.5 + v/(2*span)) * 100;
+  const crossesZero = lo <= 0 && hi >= 0;
+  const color = crossesZero ? "var(--mustard)" : (mean > 0 ? "var(--teal)" : "var(--brick)");
+  const left = Math.min(x(lo), x(hi)), width = Math.abs(x(hi)-x(lo));
+  return `<div class="gauge">
+    <div class="cap"><span>${esc(label)}</span><span>${pct(mean)} · 구간 ${pct(lo)}~${pct(hi)}</span></div>
+    <div class="rule-wrap">
+      <div class="axis"></div>
+      <div class="ci" style="left:${left}%;width:${width}%;background:${color}"></div>
+      <div class="pt" style="left:${x(mean)}%"></div>
+      <div class="zero" style="left:50%"></div>
+    </div>
+    <div class="meta">${esc(unitNote)}</div>
+  </div>`;
+}
+
+function verdictClass(v){
+  return v === "POSITIVE" ? "v-teal"
+       : v === "NEGATIVE" ? "v-brick" : "v-mustard";
+}
+
+function freshness(dateStr){
+  if(dateStr === todayKST()) return "";
+  return `<div class="warnbox">스냅샷이 오늘(${todayKST()}) 것이 아닙니다 — 기준 ${esc(dateStr||"?")}.
+    수집 워크플로우가 지연되었거나 멈췄을 수 있습니다.</div>`;
+}
+
+function alphaCard(p, bt){
+  const promoted = (p.candidates||[]).filter(c => c.streak >= 2).slice(0,5);
+  const pumps = p.pump || [];
+  const h = (bt && bt.horizons && bt.horizons["14"]) || null;
+  const ex = h && h.excess;
+  const pk = bt && bt.pump && bt.pump["14"];
+
+  const promoHtml = promoted.length ? promoted.map(c => `
+    <li><div class="row"><span class="name">${esc(c.symbol)}</span>
+      <span class="tag mono">${c.score.toFixed(2)} · ${c.streak}일차</span></div>
+      <div class="sub mono">7일 ${pct(c.ret7,0)} · 30일 ${pct(c.ret30,0)} · 고점比 ${Math.round(c.near_high*100)}%
+      · 시총 ${usd(c.mc)} · 유동성 ${usd(c.liq)}</div>
+      ${(c.flags||[]).length ? `<div class="sub">주의: ${esc(c.flags.join(", "))}</div>` : ""}
+    </li>`).join("")
+    : `<li class="sub">승격 조건(상위10 · 2일 유지)을 채운 종목이 없습니다.</li>`;
+
+  const pumpHtml = pumps.length ? pumps.map(x => `
+    <li><div class="row"><span class="name">${esc(x.symbol)}</span>
+      <span class="tag mono">거래대금 ${x.volx.toFixed(1)}×</span></div>
+      <div class="sub mono">30일 고점比 ${pct(x.dd30,0)} · 시총 ${usd(x.mc)} · 유동성 ${usd(x.liq)}
+      · 홀더 ${(x.holders||0).toLocaleString()}</div></li>`).join("")
+    : `<li class="sub">오늘 조건을 채운 저시총 종목이 없습니다.</li>`;
+
+  return `<section class="card">
+    ${freshness(p.date)}
+    <div class="eyebrow">Radar 01 · Binance Alpha</div>
+    <h2>알파 추세 레이더</h2>
+    <div class="regime">${esc((p.market||{}).regime||"")}</div>
+    <div class="split">
+      <div class="stat"><b class="mono">${p.universe_size||0}</b><span>유니버스 종목</span></div>
+      <div class="stat"><b class="mono">${Math.round((p.coverage||0)*100)}%</b><span>차트 커버리지</span></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:14px">승격 후보 · 2일 이상 유지</div>
+    <ul class="list">${promoHtml}</ul>
+
+    <div class="eyebrow" style="margin-top:14px">저시총 축적 · 복권형</div>
+    <ul class="list">${pumpHtml}</ul>
+    ${pk && pk.status === "집계" ? `<div class="warnbox">이 트랙은 적중률이 아니라 꼬리로 법니다 —
+      픽 승률 ${Math.round(pk.win_rate*100)}%, ${Math.round(pk.tail_gain*100)}%가 +50% 이상,
+      ${Math.round(pk.tail_loss*100)}%가 −30% 이하. 소액·분산 전제.</div>` : ""}
+
+    ${ex ? gauge("검증 · 14일 보유 초과수익", ex.mean, ex.ci_low, ex.ci_high,
+        `상위10 절대 ${pct(h.top_med.mean)} vs 유니버스 ${pct(h.uni_med.mean)} — 상대우위와 절대수익은 다릅니다.`) : ""}
+    ${bt ? `<div class="verdict ${verdictClass(bt.verdict)}"><b class="mono">${esc(bt.verdict)}</b><br>${esc(bt.verdict_note)}</div>` : ""}
+    <a class="more" href="${SRC.alpha.page}" target="_blank" rel="noopener">전체 대시보드 →</a>
+  </section>`;
+}
+
+function narrCard(p, bt){
+  const nars = (p.narratives||[]).slice(0,3);
+  const coins = (p.coins||[]).slice(0,5);
+  const div = (p.divergence||[]).slice(0,3);
+  const alerts = ((p.discovery||{}).alert)||[];
+  const c30 = bt && bt.coin && bt.coin["30"] && bt.coin["30"].excess;
+
+  return `<section class="card">
+    ${freshness((p.as_of||"").slice(0,10))}
+    <div class="eyebrow">Radar 02 · Narrative</div>
+    <h2>내러티브 레이더</h2>
+    <div class="regime">${esc((p.market||{}).regime||"")}</div>
+    <div class="split">
+      <div class="stat"><b class="mono">$${Math.round(((p.market||{}).btc_price||0)/1000)}K</b><span>BTC · ${pct(((p.market||{}).btc_r24||0)/100,1)} 24h</span></div>
+      <div class="stat"><b class="mono">${(((p.market||{}).btc_dominance)||0).toFixed(1)}%</b><span>BTC 도미넌스</span></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:14px">내러티브 상대강도 · BTC 대비 30일</div>
+    <ul class="list">${nars.map((n,i)=>`
+      <li><div class="row"><span class="name">${i+1}. ${esc(n.name)}</span>
+        <span class="tag mono">${(n.rs30>=0?"+":"")+Number(n.rs30).toFixed(1)}%</span></div>
+        <div class="sub mono">7일 ${(n.rs7>=0?"+":"")+Number(n.rs7).toFixed(1)}% · 종목 ${n.n}개</div></li>`).join("")}
+    </ul>
+
+    <div class="eyebrow" style="margin-top:14px">부합도 상위</div>
+    <ul class="list">${coins.map(c=>`
+      <li><div class="row"><span class="name">${esc(c.symbol)}</span>
+        <span class="tag mono">${Number(c.score).toFixed(2)}</span></div>
+        <div class="sub mono">${esc(c.narrative_name||"")} · 30일 ${(c.r30>=0?"+":"")+Number(c.r30??0).toFixed(1)}%
+        · 7일 ${(c.r7>=0?"+":"")+Number(c.r7??0).toFixed(1)}%</div></li>`).join("")}
+    </ul>
+
+    ${div.length ? `<div class="eyebrow" style="margin-top:14px">TVL 괴리 · 가격과 예치금의 간격</div>
+      <ul class="list">${div.map(d=>`
+        <li><div class="row"><span class="name">${esc(d.symbol)}</span>
+          <span class="tag mono">${d.div>=0?"+":""}${Number(d.div).toFixed(0)}%p ${esc(d.horizon)}</span></div>
+          <div class="sub mono">가격 ${d.price>=0?"+":""}${Number(d.price).toFixed(0)}% vs TVL ${d.tvl_chg>=0?"+":""}${Number(d.tvl_chg).toFixed(0)}% · MC/TVL ${d.mc_tvl}</div></li>`).join("")}
+      </ul>` : ""}
+
+    ${alerts.length ? `<div class="eyebrow" style="margin-top:14px">발굴 스캐너 · 2일 이상 유지</div>
+      <ul class="list">${alerts.slice(0,3).map(a=>`
+        <li><div class="row"><span class="name">${esc(a.symbol)}</span>
+          <span class="tag mono">괴리 ${Number(a.div).toFixed(0)}%p</span></div>
+          <div class="sub mono">TVL ${a.tvl_chg>=0?"+":""}${Number(a.tvl_chg).toFixed(0)}% vs 가격 ${a.price_chg>=0?"+":""}${Number(a.price_chg).toFixed(0)}% · MC/TVL ${a.mc_tvl}</div></li>`).join("")}
+      </ul>` : ""}
+
+    ${c30 ? gauge("검증 · 30일 보유 초과수익", c30.mean, c30.ci_low, c30.ci_high,
+        "부합도 상위5 vs 유니버스 중앙값. 사후 고정된 유니버스라 실제보다 유리하게 나온 수치입니다.") : ""}
+    ${bt ? `<div class="verdict ${verdictClass(bt.verdict)}"><b class="mono">${esc(bt.verdict)}</b><br>${esc(bt.verdict_note)}</div>` : ""}
+    <a class="more" href="${SRC.narr.page}" target="_blank" rel="noopener">전체 대시보드 →</a>
+  </section>`;
+}
+
+function errCard(title, err){
+  return `<section class="card"><div class="eyebrow">${esc(title)}</div>
+    <div class="errbox">데이터를 불러오지 못했습니다 (${esc(err.message||err)}).
+    네트워크를 확인한 뒤 RELOAD를 누르세요. 계속 실패하면 수집 워크플로우가 멈춘 것일 수 있습니다.</div></section>`;
+}
+
+async function load(){
+  const app = document.getElementById("app");
+  const stamp = document.getElementById("stamp");
+  stamp.textContent = "불러오는 중…";
+  const [a, ab, n, nb] = await Promise.all([
+    grab(SRC.alpha.latest).catch(e=>e), grab(SRC.alpha.bt).catch(()=>null),
+    grab(SRC.narr.latest).catch(e=>e), grab(SRC.narr.bt).catch(()=>null)
+  ]);
+  const parts = [];
+  parts.push(a instanceof Error ? errCard("Radar 01 · Binance Alpha", a) : alphaCard(a, ab));
+  parts.push(n instanceof Error ? errCard("Radar 02 · Narrative", n) : narrCard(n, nb));
+  app.innerHTML = parts.join("");
+  const t = new Date(Date.now()+9*36e5).toISOString().slice(0,16).replace("T"," ");
+  stamp.textContent = "확인 " + t + " KST";
+}
+
+document.getElementById("reload").addEventListener("click", load);
+load();
+</script>
+</body>
+</html>
