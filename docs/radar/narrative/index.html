@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Narrative">
+<meta name="theme-color" content="#111820">
+<title>Narrative Radar</title>
+<style>
+  :root{
+    --ink:#111820; --ink-2:#2b3947; --paper:#e7eaee; --paper-2:#f3f5f7;
+    --rule:#c3cad3; --dim:#6a7784;
+    --teal:#0f6f62; --mustard:#9a6f07; --brick:#9c3a2c;
+    --grid: #d7dce2;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;
+    padding:14px 14px calc(28px + env(safe-area-inset-bottom));
+    -webkit-text-size-adjust:100%;
+  }
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,"Roboto Mono",monospace;
+        font-variant-numeric:tabular-nums}
+  header{display:flex;align-items:baseline;justify-content:space-between;gap:8px;
+         border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
+  h1{font-size:17px;letter-spacing:.14em;text-transform:uppercase;margin:0;font-weight:700}
+  .stamp{font-size:11px;color:var(--dim);letter-spacing:.06em}
+  button.reload{appearance:none;border:1px solid var(--ink);background:transparent;color:var(--ink);
+    font:600 11px/1 ui-monospace,monospace;letter-spacing:.1em;padding:7px 10px;border-radius:2px}
+  button.reload:active{background:var(--ink);color:var(--paper)}
+  button.reload:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+
+  section.card{background:var(--paper-2);border:1px solid var(--rule);border-radius:3px;
+    padding:13px 13px 15px;margin:13px 0}
+  .eyebrow{font:600 10.5px/1 ui-monospace,monospace;letter-spacing:.18em;color:var(--dim);
+    text-transform:uppercase;margin-bottom:6px}
+  h2{font-size:16px;margin:0 0 3px;font-weight:700;letter-spacing:-.01em}
+  .regime{font-size:13px;color:var(--ink-2);margin:2px 0 10px}
+  .meta{font-size:11.5px;color:var(--dim);margin-top:2px}
+
+  /* 신뢰 눈금 — 이 앱의 중심 장치. 통계적 주장(95% 구간)을 자로 그려 0선과의 관계를 보게 한다. */
+  .gauge{margin:11px 0 4px}
+  .gauge .cap{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);
+    font-family:ui-monospace,monospace;margin-bottom:5px}
+  .rule-wrap{position:relative;height:34px}
+  .axis{position:absolute;left:0;right:0;top:17px;height:1px;background:var(--grid)}
+  .zero{position:absolute;top:4px;bottom:4px;width:1px;background:var(--ink)}
+  .zero::after{content:"0";position:absolute;top:-2px;left:3px;font:10px ui-monospace,monospace;color:var(--ink)}
+  .ci{position:absolute;top:13px;height:9px;border-radius:1px;opacity:.85}
+  .pt{position:absolute;top:8px;width:2px;height:19px;background:var(--ink)}
+  .verdict{font-size:12.5px;line-height:1.6;margin-top:6px;padding-left:9px;border-left:3px solid var(--rule)}
+  .v-teal{border-color:var(--teal)} .v-mustard{border-color:var(--mustard)} .v-brick{border-color:var(--brick)}
+
+  ul.list{list-style:none;margin:8px 0 0;padding:0}
+  ul.list li{padding:7px 0;border-top:1px solid var(--rule)}
+  ul.list li:first-child{border-top:none}
+  .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .name{font-weight:700}
+  .sub{font-size:11.5px;color:var(--dim);margin-top:2px}
+  .tag{font:600 10px/1 ui-monospace,monospace;letter-spacing:.08em;padding:3px 5px;border:1px solid var(--rule);
+    border-radius:2px;color:var(--ink-2);white-space:nowrap}
+  .warnbox{background:#fbf3df;border:1px solid #e3cd94;color:#6a4c05;
+    font-size:12px;padding:9px 10px;border-radius:2px;margin:9px 0}
+  .errbox{background:#f8e9e6;border:1px solid #dfb3aa;color:#7a2c1f;
+    font-size:12.5px;padding:10px;border-radius:2px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+  .stat{border:1px solid var(--rule);border-radius:2px;padding:7px 8px;background:var(--paper)}
+  .stat b{display:block;font-size:15px}
+  .stat span{font-size:10.5px;color:var(--dim);letter-spacing:.04em}
+  a.more{display:inline-block;margin-top:11px;font:600 11.5px/1 ui-monospace,monospace;
+    letter-spacing:.08em;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--teal);padding-bottom:2px}
+  .skel{height:12px;background:linear-gradient(90deg,#dde1e6,#eef0f3,#dde1e6);
+    border-radius:2px;margin:8px 0;animation:pulse 1.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.skel{animation:none}}
+  footer{font-size:11px;color:var(--dim);line-height:1.65;margin-top:16px;
+    border-top:1px solid var(--rule);padding-top:10px}
+
+  table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+  th,td{padding:6px 4px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
+  th:nth-child(2),td:nth-child(2){text-align:left;white-space:normal}
+  th{color:var(--dim);font-weight:600;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>내러티브 레이더</h1>
+    <div class="stamp mono" id="stamp">데이터 불러오는 중</div>
+  </div>
+  <button class="reload" id="reload" type="button">RELOAD</button>
+</header>
+<div id="app">
+  <section class="card"><div class="skel" style="width:45%"></div><div class="skel"></div><div class="skel" style="width:70%"></div></section>
+</div>
+<footer>8개 내러티브 44종목의 BTC 대비 상대강도와 TVL 괴리를 추적하는 <b>관측기</b>입니다. 구성종목은 2026-08-21에 고정됐고, 성과를 보고 갈아끼우지 않습니다. 백테스트 결과 부합도 순위에는 앞선 수익률을 설명하는 힘이 없었습니다 — 순위를 매수 근거로 쓰지 마세요. 데이터는 매일 08:13 KST 수집분입니다.</footer>
+<script>
+const LATEST="https://raw.githubusercontent.com/jinhae8971/korea-etf-calmar/main/narrative_radar/data/latest.json";
+const BT="https://raw.githubusercontent.com/jinhae8971/korea-etf-calmar/main/narrative_radar/data/backtest.json";
+const PAGE="https://jinhae8971.github.io/korea-etf-calmar/narrative-radar/";
+
+const RAW = "https://raw.githubusercontent.com/jinhae8971/korea-etf-calmar/main/";
+
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct = (v, d=1) => v === null || v === undefined ? "n/a" : (v*100).toFixed(d).replace(/^(?=\d)/,"+")
+                        .replace(/^\+-/,"-") + "%";
+const usd = v => v >= 1e9 ? "$"+(v/1e9).toFixed(1)+"B" : v >= 1e6 ? "$"+(v/1e6).toFixed(1)+"M"
+                 : v >= 1e3 ? "$"+Math.round(v/1e3)+"K" : "$"+Math.round(v||0);
+const todayKST = () => new Date(Date.now()+9*36e5).toISOString().slice(0,10);
+
+async function grab(url){
+  const r = await fetch(url, {cache:"no-store"});
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  return r.json();
+}
+
+/* 신뢰 눈금: [lo, hi] 구간과 평균을 0선 기준으로 그린다. */
+function gauge(label, mean, lo, hi, unitNote){
+  if(mean === null || mean === undefined || lo === null || hi === null) return "";
+  const span = Math.max(Math.abs(lo), Math.abs(hi), Math.abs(mean)) * 1.25 || 1;
+  const x = v => (0.5 + v/(2*span)) * 100;
+  const crossesZero = lo <= 0 && hi >= 0;
+  const color = crossesZero ? "var(--mustard)" : (mean > 0 ? "var(--teal)" : "var(--brick)");
+  const left = Math.min(x(lo), x(hi)), width = Math.abs(x(hi)-x(lo));
+  return `<div class="gauge">
+    <div class="cap"><span>${esc(label)}</span><span>${pct(mean)} · 구간 ${pct(lo)}~${pct(hi)}</span></div>
+    <div class="rule-wrap">
+      <div class="axis"></div>
+      <div class="ci" style="left:${left}%;width:${width}%;background:${color}"></div>
+      <div class="pt" style="left:${x(mean)}%"></div>
+      <div class="zero" style="left:50%"></div>
+    </div>
+    <div class="meta">${esc(unitNote)}</div>
+  </div>`;
+}
+
+function verdictClass(v){
+  return v === "POSITIVE" ? "v-teal"
+       : v === "NEGATIVE" ? "v-brick" : "v-mustard";
+}
+
+function freshness(dateStr){
+  if(dateStr === todayKST()) return "";
+  return `<div class="warnbox">스냅샷이 오늘(${todayKST()}) 것이 아닙니다 — 기준 ${esc(dateStr||"?")}.
+    수집 워크플로우가 지연되었거나 멈췄을 수 있습니다.</div>`;
+}
+
+
+
+function errCard(title, err){
+  return `<section class="card"><div class="eyebrow">${esc(title)}</div>
+    <div class="errbox">데이터를 불러오지 못했습니다 (${esc(err.message||err)}).
+    네트워크를 확인한 뒤 RELOAD를 누르세요. 계속 실패하면 수집 워크플로우가 멈춘 것일 수 있습니다.</div></section>`;
+}
+
+function card(p, bt){
+  const nars=(p.narratives||[]), coins=(p.coins||[]).slice(0,10),
+        div=(p.divergence||[]).slice(0,5),
+        alerts=((p.discovery||{}).alert)||[], lag=((p.discovery||{}).lagging)||[],
+        events=(p.events||[]), watch=(p.watch||[]);
+  const c30 = bt && bt.coin && bt.coin["30"] && bt.coin["30"].excess;
+  const rot = bt && bt.narrative_rotation && bt.narrative_rotation["30"];
+  const m = p.market||{};
+
+  return `${freshness((p.as_of||"").slice(0,10))}
+  <section class="card">
+    <div class="eyebrow">Radar 02 · Narrative</div>
+    <h2>오늘의 국면</h2>
+    <div class="regime">${esc(m.regime||"")}</div>
+    <div class="split">
+      <div class="stat"><b class="mono">$${Math.round((m.btc_price||0)/1000)}K</b><span>BTC · 24h ${(m.btc_r24>=0?"+":"")+Number(m.btc_r24||0).toFixed(1)}%</span></div>
+      <div class="stat"><b class="mono">${Number(m.btc_dominance||0).toFixed(1)}%</b><span>도미넌스 · 시총 ${Number(m.total_mcap_t||0).toFixed(2)}T</span></div>
+    </div>
+    <div class="eyebrow" style="margin-top:14px">내러티브 상대강도 · BTC 대비</div>
+    <div class="scroll"><table>
+      <tr><th>#</th><th>내러티브</th><th>30일</th><th>7일</th><th>종목</th></tr>
+      ${nars.map((n,i)=>`<tr><td class="mono">${i+1}</td><td>${esc(n.name)}</td>
+        <td class="mono">${(n.rs30>=0?"+":"")+Number(n.rs30).toFixed(1)}%</td>
+        <td class="mono">${(n.rs7>=0?"+":"")+Number(n.rs7).toFixed(1)}%</td>
+        <td class="mono">${n.n}</td></tr>`).join("")}
+    </table></div>
+  </section>
+
+  <section class="card">
+    <div class="eyebrow">부합도 상위 · 고정매핑 × 자금반응</div>
+    <ul class="list">${coins.map(c=>`
+      <li><div class="row"><span class="name">${esc(c.symbol)}</span>
+        <span class="tag mono">${Number(c.score).toFixed(2)}</span></div>
+        <div class="sub mono">${esc(c.narrative_name||"")} · 30일 ${(c.r30>=0?"+":"")+Number(c.r30??0).toFixed(1)}%
+          · 7일 ${(c.r7>=0?"+":"")+Number(c.r7??0).toFixed(1)}% · 회전z ${Number(c.zturn??0).toFixed(1)}
+          · 시총 ${usd(c.mcap||0)}</div></li>`).join("")}
+    </ul>
+  </section>
+
+  ${div.length?`<section class="card">
+    <div class="eyebrow">TVL 괴리 · 가격과 예치금의 간격</div>
+    <ul class="list">${div.map(d=>`
+      <li><div class="row"><span class="name">${esc(d.symbol)}</span>
+        <span class="tag mono">${d.div>=0?"+":""}${Number(d.div).toFixed(0)}%p · ${esc(d.horizon)}</span></div>
+        <div class="sub mono">가격 ${d.price>=0?"+":""}${Number(d.price).toFixed(0)}% vs TVL ${d.tvl_chg>=0?"+":""}${Number(d.tvl_chg).toFixed(0)}%
+          · MC/TVL ${d.mc_tvl} · ${esc(d.direction||"")}</div></li>`).join("")}
+    </ul>
+    <div class="meta">TVL은 펀더멘털이 아니라 예치금입니다(인센티브 파밍·중복계상 포함).</div>
+  </section>`:""}
+
+  ${(alerts.length||lag.length)?`<section class="card">
+    <div class="eyebrow">발굴 스캐너 · 유니버스 밖</div>
+    <ul class="list">${(alerts.length?alerts:lag).slice(0,4).map(a=>`
+      <li><div class="row"><span class="name">${esc(a.symbol)}</span>
+        <span class="tag mono">${a.streak||1}일 유지</span></div>
+        <div class="sub mono">괴리 ${Number(a.div).toFixed(0)}%p${a.tvl_chg!==undefined?` · TVL ${a.tvl_chg>=0?"+":""}${Number(a.tvl_chg).toFixed(0)}%`:""}${a.price_chg!==undefined?` vs 가격 ${a.price_chg>=0?"+":""}${Number(a.price_chg).toFixed(0)}%`:""} · MC/TVL ${a.mc_tvl}</div></li>`).join("")}
+    </ul>
+    <div class="meta">2일 이상 유지된 것만 알림으로 올라옵니다. 30일 TVL 기준은 이력이 30일 쌓인 뒤부터 적용됩니다.</div>
+  </section>`:""}
+
+  ${events.length?`<section class="card">
+    <div class="eyebrow">변화 감지</div>
+    <ul class="list">${events.slice(0,6).map(e=>`
+      <li><div class="sub" style="color:var(--ink-2)">${e.level==="high"?"🔴":"🟡"} ${esc(e.text)}</div></li>`).join("")}
+    </ul>
+    ${watch.length?`<div class="eyebrow" style="margin-top:12px">확인 대기</div>
+      <ul class="list">${watch.map(w=>`<li class="sub">${esc(w)}</li>`).join("")}</ul>`:""}
+  </section>`:""}
+
+  <section class="card">
+    <div class="eyebrow">검증</div>
+    ${c30?gauge("30일 보유 초과수익 · 부합도 상위5", c30.mean, c30.ci_low, c30.ci_high,
+      "유니버스가 사후에 고정된 목록이라 실제보다 유리하게 나온 수치입니다."):""}
+    ${rot?gauge("내러티브 로테이션 · 상위2 − 하위2", rot.mean, rot.ci_low, rot.ci_high,
+      "상위 내러티브가 이후에도 앞서는지(지속성). 구간이 0을 걸치면 지속성 근거가 없습니다."):""}
+    ${bt?`<div class="verdict ${verdictClass(bt.verdict)}"><b class="mono">${esc(bt.verdict)}</b><br>${esc(bt.verdict_note)}</div>`:""}
+    <a class="more" href="${PAGE}" target="_blank" rel="noopener">웹 대시보드 →</a>
+  </section>`;
+}
+
+async function load(){
+  const stamp=document.getElementById("stamp"), app=document.getElementById("app");
+  stamp.textContent="불러오는 중…";
+  try{
+    const [p,bt]=await Promise.all([grab(LATEST), grab(BT).catch(()=>null)]);
+    app.innerHTML=card(p,bt);
+    stamp.textContent="스냅샷 "+esc(p.as_of_kst||p.as_of||"");
+  }catch(e){
+    app.innerHTML=errCard("Narrative Radar", e);
+    stamp.textContent="불러오기 실패";
+  }
+}
+
+document.getElementById("reload").addEventListener("click", load);
+load();
+</script>
+</body>
+</html>
