@@ -27,7 +27,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import backfill          # noqa: E402
 import backtest          # noqa: E402
 import chainvol         # noqa: E402
-import crosscheck        # noqa: E402
+import crosscheck
+import protocol        # noqa: E402
 import security          # noqa: E402
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -407,7 +408,15 @@ def attach_crosscheck(rows, cross, tolerance):
     for row in rows:
         info = cross.get(row["address"])
         row["crosscheck"] = info
-        if info and abs(info["gap_pct"]) >= tolerance:
+        if not info:
+            continue
+        if info.get("ds_garbage"):
+            # 2차 소스가 비정상값을 준 경우 — 괴리가 아니라 대조 불가로 표시한다
+            row["flags"].append({
+                "code": "SRC_UNUSABLE",
+                "detail": "2차 소스가 비정상 시총을 반환 — 대조 불가(1차 소스만 사용)",
+            })
+        elif info.get("gap_pct") is not None and abs(info["gap_pct"]) >= tolerance:
             row["flags"].append({
                 "code": "SRC_DIVERGENCE",
                 "detail": "2차 소스 시총 괴리 %+.1f%%" % info["gap_pct"],
@@ -689,6 +698,11 @@ def render_telegram(payload, cfg, dash_url):
     lines.append("🔎 2차 소스 대조 %s(%d종, 최대 괴리 %.1f%%) · 보안 캐시 %d종" % (
         cc.get("status", "-"), cc.get("checked", 0), cc.get("worst_gap_pct", 0.0),
         meta.get("security_cached", 0)))
+    plines = protocol.render_telegram(payload.get("protocol"), payload.get("protocol_events") or [], cfg)
+    if plines:
+        lines.append("")
+        lines.extend(plines)
+
     lines.append('<a href="%s">대시보드 열기</a>' % dash_url)
     lines.append("")
     lines.append("<i>관측 시스템입니다. 순위·변동은 자금 반응의 서술이며 수익을 보장하지 않습니다. "
@@ -790,7 +804,11 @@ def render_dashboard(payload, cfg, out_path, history=None, chain_vol=None):
                    esc(cc.get("status", "-")), cc.get("checked", 0),
                    cc.get("median_gap_pct", 0.0), cc.get("worst_gap_pct", 0.0)))
 
+    proto_html = protocol.render_html(
+        payload.get("protocol"), payload.get("protocol_events") or [], cfg)
+
     html = DASH_TMPL.format(
+        protocard=proto_html,
         volchart=volume_chart(chain_vol or {}),
         protochart=protocol_chart(chain_vol or {}),
         volshare=volume_share_chart(payload["rows"]),
@@ -968,7 +986,9 @@ td.num{{text-align:right;white-space:nowrap}} td.rk{{color:var(--dim);width:26px
 .up{{color:var(--up)}} .down{{color:var(--down)}} .dim{{color:var(--dim)}} .ok{{color:#3a4553}}
 .flag{{display:inline-block;font-size:9.5px;padding:1px 5px;border-radius:20px;border:1px solid var(--line);color:var(--dim);margin:1px 1px 0 0;white-space:nowrap}}
 .f-LIQ_DRAIN,.f-DATA_WARN{{color:var(--down);border-color:#5a2226}}
-.f-LIQ_THIN,.f-COPYCAT,.f-OWNER_ACTIVE,.f-PROMOTED{{color:#d29922;border-color:#5a4a1e}}
+.f-LIQ_THIN,.f-COPYCAT,.f-OWNER_ACTIVE,.f-PROMOTED,.f-MICRO,.f-MULTICHAIN,.f-FEES_BASIS,.f-REV_FADING{{color:#d29922;border-color:#5a4a1e}}
+.f-VALUE_TRAP,.f-SRC_GAP{{color:var(--down);border-color:#5a2226}}
+.f-LINK_INFERRED,.f-SRC_UNUSABLE,.f-NO_MCAP{{color:#8b7cd6;border-color:#3d3466}}
 .f-HONEYPOT,.f-CANNOT_SELL_ALL,.f-MINTABLE,.f-PAUSABLE,.f-SRC_DIVERGENCE{{color:var(--down);border-color:#5a2226}}
 .f-UNVERIFIED,.f-HP_UNKNOWN{{color:#8b7cd6;border-color:#3d3466}}
 .secbits{{font-size:10px;line-height:1.7}} .ok2{{color:var(--up)}} .bad{{color:var(--down)}} .warn{{color:#d29922}}
@@ -1002,6 +1022,10 @@ ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:
 </div>
 <div class="card"><h2>순위 변동·이벤트</h2><ul>{events}</ul>
 <div class="note" style="margin-top:8px">임계 — 6시간 {th6}계단 / 24시간 {th24}계단 이상, 24h 시총 ±40%, 6시간 유동성 −40%.</div></div>
+<div class="card"><h2>🏭 플랫폼·프로토콜 트랙</h2>
+<div class="note" style="margin-bottom:10px">위 밈 트랙과 <b>측정 대상이 다릅니다.</b> 밈 트랙은 시총 순위(근거=가격),
+이 트랙은 프로토콜이 실제 벌어들인 수수료·매출을 분모로 놓은 밸류에이션입니다. 순위를 섞지 않습니다.</div>
+{protocard}</div>
 <div class="card"><h2>체인 전체 DEX 거래량 추이 (일별)</h2>{volchart}
 <div class="note" style="margin-top:8px">로빈후드 체인 <b>전체</b> DEX 일별 거래량입니다(DefiLlama, 메인넷 2026-07-01 가동일부터).
 아래 표의 종목별 거래대금은 우리가 스캔하는 상위 200풀 합계라 이 값보다 작습니다 — 측정 범위가 다릅니다.</div></div>
@@ -1195,6 +1219,27 @@ def main():
     except Exception as exc:
         print("[backtest] 실패: %s" % exc)
         payload["backtest"] = {"verdict": "INSUFFICIENT", "n_picks": 0}
+
+    # ---- 플랫폼/프로토콜 트랙 (별도 유니버스·별도 이력) ----
+    proto_hist_path = os.path.join(DATA_DIR, "protocol_history.json")
+    proto_hist = read_json(proto_hist_path, [])
+    if cfg.get("protocol_enabled", True):
+        try:
+            pdata = protocol.build(rows, cfg, deadline_sec=float(cfg.get("protocol_deadline_sec", 300)))
+            pev = protocol.detect(pdata, proto_hist, cfg, int(now.timestamp()))
+            psnap = protocol.snapshot(pdata, now.isoformat())
+            psnap["epoch"] = int(now.timestamp())
+            proto_hist.append(psnap)
+            proto_hist.sort(key=lambda x: x.get("epoch") or 0)
+            proto_hist = proto_hist[-int(cfg.get("protocol_history_max", 120)):]
+            write_json_if_changed(proto_hist_path, proto_hist)
+            payload["protocol"] = pdata
+            payload["protocol_events"] = pev
+        except Exception as exc:
+            # 보조 트랙이 본체를 인질로 잡지 않는다 — 밈 브리프는 그대로 나간다
+            print("[protocol] 트랙 실패(밈 트랙은 정상 진행): %s" % exc)
+            payload["protocol"] = None
+            payload["protocol_events"] = []
 
     spark = {}
     for row in rows[:8]:

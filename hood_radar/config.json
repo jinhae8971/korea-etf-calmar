@@ -132,7 +132,7 @@
     "HOOD"
   ],
   "rwa_rule_note": "RWA 제외는 name marker 또는 coingecko id 접미사로만 판정한다. 티커만 겹치는 경우(예: NET=NetNet 밈코인 vs Cloudflare)를 오제외하지 않기 위함 — 티커 목록은 검토 플래그 용도로만 쓴다.",
-  "version": "2.0",
+  "version": "2.1",
   "security_enabled": true,
   "security_refresh_per_run": 12,
   "security_ttl_hours": 18,
@@ -151,5 +151,21 @@
   "backfill_max_tokens": 24,
   "backtest_min_picks": 10,
   "backtest_forward_hours": 24,
-  "backfill_deadline_sec": 480
+  "backfill_deadline_sec": 480,
+  "protocol_enabled": true,
+  "protocol_top_n": 26,
+  "protocol_min_fee30_usd": 20000.0,
+  "protocol_min_liq_usd": 50000.0,
+  "protocol_src_tolerance_pct": 8.0,
+  "protocol_top_n_telegram": 6,
+  "protocol_external_n": 8,
+  "protocol_tokenless_n": 8,
+  "protocol_burst_up_pct": 120.0,
+  "protocol_burst_dn_pct": -60.0,
+  "protocol_pf_move_pct": 35.0,
+  "protocol_share_move_pp": 8.0,
+  "protocol_history_max": 120,
+  "protocol_deadline_sec": 300,
+  "protocol_micro_fdv_usd": 2000000.0,
+  "protocol_rh_share_min_pct": 90.0
 }

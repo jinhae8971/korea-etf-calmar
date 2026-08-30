@@ -55,14 +55,14 @@ def token_metrics(address, timeout=12):
 
 
 def compare(rows, top_n=8, tolerance_pct=8.0, sleep_sec=1.0, log=print,
-            deadline_sec=75.0, max_consecutive_fail=3):
+            deadline_sec=75.0, max_consecutive_fail=3, absurd_pct=500.0):
     """
     상위 top_n 종목의 시총을 두 소스로 대조한다.
 
     보조 검증이 본체를 붙잡으면 안 되므로 **전체 시간 상한**과 **연속 실패 중단**을 둔다.
     DexScreener는 이 체인에서 응답이 수십 초씩 늘어지는 구간이 실측됐다.
     """
-    out, diffs, checked, missing = {}, [], 0, 0
+    out, diffs, checked, missing, garbage = {}, [], 0, 0, 0
     started, consecutive = time.time(), 0
     for row in rows[:top_n]:
         if time.time() - started > deadline_sec:
@@ -88,6 +88,15 @@ def compare(rows, top_n=8, tolerance_pct=8.0, sleep_sec=1.0, log=print,
         if gt <= 0:
             continue
         gap = (ds["mcap"] - gt) / gt * 100.0
+        # DexScreener가 신생 풀에서 비정상 시총을 뱉는 구간이 실측된다
+        # (AI 토큰: GT $111M vs DS $8.35e47). 이런 값을 괴리 통계에 넣으면
+        # 최대 괴리가 무한대에 가까워져 브리프의 건전성 지표 자체가 무의미해진다.
+        if abs(gap) > absurd_pct:
+            garbage += 1
+            log("[crosscheck] %s DS 값 비정상 — 통계에서 제외 (GT $%.0f vs DS $%.3g)"
+                % (row["symbol"], gt, ds["mcap"]))
+            out[row["address"]] = {"ds_mcap": None, "gap_pct": None, "ds_garbage": True}
+            continue
         checked += 1
         diffs.append(abs(gap))
         out[row["address"]] = {"ds_mcap": ds["mcap"], "gap_pct": round(gap, 2),
@@ -99,13 +108,13 @@ def compare(rows, top_n=8, tolerance_pct=8.0, sleep_sec=1.0, log=print,
     worst = max(diffs) if diffs else 0.0
     median = sorted(diffs)[len(diffs) // 2] if diffs else 0.0
     summary = {
-        "checked": checked, "missing": missing,
+        "checked": checked, "missing": missing, "garbage": garbage,
         "median_gap_pct": round(median, 2), "worst_gap_pct": round(worst, 2),
         "status": "OK" if checked >= 3 and worst < tolerance_pct else
                   ("DIVERGENT" if checked >= 3 else "INSUFFICIENT"),
     }
-    log("[crosscheck] %d종 대조 · 중앙 괴리 %.2f%% · 최대 %.2f%% · 판정 %s"
-        % (checked, median, worst, summary["status"]))
+    log("[crosscheck] %d종 대조 · 중앙 괴리 %.2f%% · 최대 %.2f%% · DS 비정상 %d종 · 판정 %s"
+        % (checked, median, worst, garbage, summary["status"]))
     return out, summary
 
 
