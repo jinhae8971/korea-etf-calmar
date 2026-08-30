@@ -5,6 +5,13 @@ on:
     # KST 00:07 / 06:07 / 12:07 / 18:07 — 정각·30분 러너 혼잡 회피
     - cron: '7 15,21,3,9 * * *'
   workflow_dispatch:
+    inputs:
+      backfill:
+        description: 'OHLCV 소급 백필 (auto=필요시 1회, 1=강제, 0=생략)'
+        required: false
+        default: 'auto'
+        type: choice
+        options: ['auto', '1', '0']
 
 permissions:
   contents: write
@@ -16,7 +23,7 @@ concurrency:
 jobs:
   radar:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
 
@@ -32,6 +39,8 @@ jobs:
         working-directory: hood_radar
         env:
           HOOD_DASH_URL: https://jinhae8971.github.io/korea-etf-calmar/hood-radar/
+          # auto = 실측 스냅샷 4개 미만이면 1회만 소급 백필. 강제 실행은 workflow_dispatch 입력으로.
+          HOOD_BACKFILL: ${{ inputs.backfill || 'auto' }}
         run: python hood_radar.py
 
       - name: Commit snapshot
