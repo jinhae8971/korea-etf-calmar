@@ -1,0 +1,51 @@
+name: HOOD Radar (Robinhood Chain memecoin ranking)
+
+on:
+  schedule:
+    # KST 00:07 / 06:07 / 12:07 / 18:07 — 정각·30분 러너 혼잡 회피
+    - cron: '7 15,21,3,9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hood-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Test gate
+        working-directory: hood_radar
+        run: python -m unittest discover -s tests
+
+      - name: Collect and render
+        working-directory: hood_radar
+        env:
+          HOOD_DASH_URL: https://jinhae8971.github.io/korea-etf-calmar/hood-radar/
+        run: python hood_radar.py
+
+      - name: Commit snapshot
+        if: always()
+        run: |
+          git config user.name  "hood-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add hood_radar/data docs/hood-radar 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "chore(hood-radar): snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break
+              echo "push 재시도 $i"; sleep 5
+            done
+          fi
