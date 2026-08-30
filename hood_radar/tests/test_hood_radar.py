@@ -515,3 +515,53 @@ class TestCrosscheckAttach(unittest.TestCase):
         codes = [f["code"] for f in rows[0]["flags"]]
         self.assertIn("PROMOTED", codes)
         self.assertIn("보증 아님", rows[0]["flags"][0]["detail"])
+
+
+class TestVolumeCharts(unittest.TestCase):
+    def _snap(self, hours_ago, chain, tracked, source="live"):
+        return {"ts": (hr.now_kst() - timedelta(hours=hours_ago)).isoformat(),
+                "source": source, "chain_v24": chain, "tracked_v24": tracked,
+                "rank": {}, "mcap": {}, "liq": {}, "symbol": {}}
+
+    def test_single_point_shows_placeholder_not_fake_line(self):
+        out = hr.volume_chart([self._snap(0, 744_000_000, 300_000_000)])
+        self.assertIn("관측 스냅샷 1개", out)
+        self.assertNotIn("<polyline", out)
+
+    def test_empty_history(self):
+        self.assertIn("관측치 없음", hr.volume_chart([]))
+
+    def test_backfill_snapshots_excluded(self):
+        hist = [self._snap(24, 900_000_000, 1, source="ohlcv_backfill"),
+                self._snap(6, 700_000_000, 2),
+                self._snap(0, 744_000_000, 3)]
+        out = hr.volume_chart(hist)
+        self.assertIn("<polyline", out)
+        # 백필 값(900M)이 고점으로 잡히면 안 된다
+        self.assertNotIn("900.0M", out)
+
+    def test_chart_renders_with_multiple_points(self):
+        hist = [self._snap(18, 6e8, 2e8), self._snap(12, 7e8, 2.5e8),
+                self._snap(6, 6.5e8, 2.2e8), self._snap(0, 7.4e8, 3e8)]
+        out = hr.volume_chart(hist)
+        self.assertIn("<polyline", out)
+        self.assertIn("체인 전체", out)
+        self.assertIn("고 $", out)
+
+    def test_share_chart_escapes_and_totals(self):
+        rows = [{"symbol": "<b>x</b>", "address": "0x" + "a" * 40, "v24": 100.0, "flags": []},
+                {"symbol": "B", "address": "0x" + "b" * 40, "v24": 300.0, "flags": []}]
+        out = hr.volume_share_chart(rows)
+        self.assertNotIn("<b>x</b>", out)
+        self.assertIn("&lt;b&gt;x", out)
+        self.assertIn("75.0%", out)  # B가 400 중 300
+
+    def test_share_chart_empty(self):
+        self.assertIn("없습니다", hr.volume_share_chart([]))
+
+    def test_snapshot_records_volume(self):
+        rows = [{"address": "0xa", "symbol": "A", "rank": 1, "mcap": 10.0, "liq": 1.0, "v24": 5.0},
+                {"address": "0xb", "symbol": "B", "rank": 2, "mcap": 5.0, "liq": 1.0, "v24": 7.0}]
+        snap = hr.snapshot_of(rows, "2026-08-30T12:00:00+09:00", chain_v24=999.0)
+        self.assertEqual(snap["chain_v24"], 999.0)
+        self.assertEqual(snap["tracked_v24"], 12.0)
