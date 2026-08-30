@@ -153,74 +153,100 @@ class TestGate(unittest.TestCase):
 
 
 class TestChangeDetection(unittest.TestCase):
+    """유니버스는 12종으로 잡는다 — paired_ranks가 교집합 5종 이상을 요구한다."""
+
     def setUp(self):
         self.now = hr.now_kst()
+        self.addrs = ["0x%02d" % i for i in range(12)]
 
-    def _snap(self, hours_ago, ranks, mcaps=None, liqs=None):
+    def _snap(self, hours_ago, order, source="live", mcaps=None):
         ts = (self.now - timedelta(hours=hours_ago)).isoformat()
         return {
-            "ts": ts,
-            "rank": ranks,
-            "mcap": mcaps or {a: 1_000_000 for a in ranks},
-            "liq": liqs or {a: 500_000 for a in ranks},
-            "symbol": {a: a[:4].upper() for a in ranks},
+            "ts": ts, "source": source,
+            "rank": {a: i + 1 for i, a in enumerate(order)},
+            "mcap": mcaps or {a: 1_000_000 * (len(order) - i) for i, a in enumerate(order)},
+            "liq": {a: 500_000 for a in order},
+            "symbol": {a: a for a in order},
         }
 
-    def _rows(self, ranks):
-        out = []
-        for addr, rank in ranks.items():
-            out.append({
-                "address": addr, "symbol": addr[:4].upper(), "rank": rank,
-                "mcap": 1_000_000, "flags": [], "chg24": 1.0,
-            })
-        return sorted(out, key=lambda r: r["rank"])
+    def _rows(self, order):
+        """order 순서대로 시총 내림차순 행을 만든다."""
+        return [{"address": a, "symbol": a, "rank": i + 1,
+                 "mcap": 1_000_000 * (len(order) - i), "flags": [], "chg24": 1.0}
+                for i, a in enumerate(order)]
 
     def test_rank_surge_detected_24h(self):
-        hist = [self._snap(24, {"0xaa": 9, "0xbb": 1})]
-        rows = self._rows({"0xaa": 2, "0xbb": 1})
-        ev = hr.detect_changes(rows, hist, CFG, self.now)
-        codes = [e["code"] for e in ev]
-        self.assertIn("RANK_SURGE", codes)
+        past = self.addrs[:]
+        cur = [past[9]] + [a for a in past if a != past[9]]  # 10위 → 1위
+        ev = hr.detect_changes(self._rows(cur), [self._snap(24, past)], CFG, self.now)
+        surge = [e for e in ev if e["code"] == "RANK_SURGE"]
+        self.assertTrue(surge)
+        self.assertEqual(surge[0]["symbol"], past[9])
 
     def test_small_move_not_reported(self):
-        hist = [self._snap(24, {"0xaa": 3, "0xbb": 1})]
-        rows = self._rows({"0xaa": 2, "0xbb": 1})
-        ev = hr.detect_changes(rows, hist, CFG, self.now)
+        past = self.addrs[:]
+        cur = past[:]
+        cur[3], cur[4] = cur[4], cur[3]  # 1계단 교환
+        ev = hr.detect_changes(self._rows(cur), [self._snap(24, past)], CFG, self.now)
         self.assertEqual([e for e in ev if e["code"] in ("RANK_SURGE", "RANK_DROP")], [])
 
     def test_six_hour_move_detected(self):
-        hist = [self._snap(6, {"0xaa": 8, "0xbb": 1})]
-        rows = self._rows({"0xaa": 4, "0xbb": 1})
-        ev = hr.detect_changes(rows, hist, CFG, self.now)
+        past = self.addrs[:]
+        cur = [past[7]] + [a for a in past if a != past[7]]  # 8위 → 1위
+        ev = hr.detect_changes(self._rows(cur), [self._snap(6, past)], CFG, self.now)
         self.assertTrue(any(e["window"] == "6h" and e["code"] == "RANK_SURGE" for e in ev))
 
-    def test_new_entry_only_when_history_exists(self):
-        rows = self._rows({"0xnew": 3})
-        self.assertEqual([e for e in hr.detect_changes(rows, [], CFG, self.now)
-                          if e["code"] == "NEW_ENTRY"], [])
-        hist = [self._snap(6, {"0xold": 3})]
-        ev = hr.detect_changes(rows, hist, CFG, self.now)
-        self.assertTrue(any(e["code"] == "NEW_ENTRY" for e in ev))
+    def test_population_mismatch_does_not_fake_moves(self):
+        """
+        핵심 회귀 테스트 — 과거 스냅샷이 상위 6종만 담고 현재는 12종일 때,
+        하위 종목의 '순위 하락'은 모집단 차이일 뿐 실재하지 않는다.
+        """
+        past_small = self._snap(24, self.addrs[:6], source="ohlcv_backfill")
+        rows = self._rows(self.addrs)  # 순서 동일 = 실제 변동 없음
+        ev = hr.detect_changes(rows, [past_small], CFG, self.now)
+        self.assertEqual([e for e in ev if e["code"] in ("RANK_SURGE", "RANK_DROP")], [])
+
+    def test_paired_ranks_uses_intersection_only(self):
+        ref = {"rank": {a: i + 1 for i, a in enumerate(self.addrs[:6])}}
+        pairs = hr.paired_ranks(self._rows(self.addrs), ref)
+        self.assertEqual(set(pairs.keys()), set(self.addrs[:6]))
+        self.assertEqual(max(r for _, r in pairs.values()), 6)
+
+    def test_paired_ranks_bails_on_tiny_overlap(self):
+        ref = {"rank": {self.addrs[0]: 1, self.addrs[1]: 2}}
+        self.assertEqual(hr.paired_ranks(self._rows(self.addrs), ref), {})
+
+    def test_new_entry_only_from_live_history(self):
+        """백필 스냅샷에 없다는 이유로 NEW_ENTRY를 붙이면 안 된다."""
+        backfill_only = [self._snap(24, self.addrs[:6], source="ohlcv_backfill")]
+        rows = self._rows(self.addrs)
+        ev = hr.detect_changes(rows, backfill_only, CFG, self.now)
+        self.assertEqual([e for e in ev if e["code"] == "NEW_ENTRY"], [])
+
+        live = [self._snap(6, self.addrs[1:], source="live")]
+        ev2 = hr.detect_changes(rows, live, CFG, self.now)
+        self.assertTrue(any(e["code"] == "NEW_ENTRY" and e["symbol"] == self.addrs[0] for e in ev2))
 
     def test_dropped_out_detected(self):
-        hist = [self._snap(6, {"0xold": 4, "0xaa": 1})]
-        rows = self._rows({"0xaa": 1})
-        ev = hr.detect_changes(rows, hist, CFG, self.now)
-        self.assertTrue(any(e["code"] == "DROPPED_OUT" for e in ev))
+        live = [self._snap(6, self.addrs, source="live")]
+        rows = self._rows(self.addrs[:-1] )  # 마지막 종목 이탈
+        gone = self.addrs[-1]
+        ev = hr.detect_changes(rows, live, CFG, self.now)
+        self.assertTrue(any(e["code"] == "DROPPED_OUT" and e["symbol"] == gone for e in ev))
 
     def test_mcap_surge(self):
-        hist = [self._snap(24, {"0xaa": 1}, mcaps={"0xaa": 500_000})]
-        rows = self._rows({"0xaa": 1})
-        ev = hr.detect_changes(rows, hist, CFG, self.now)
+        past = self._snap(24, self.addrs)
+        past["mcap"] = {a: 100_000 for a in self.addrs}
+        ev = hr.detect_changes(self._rows(self.addrs), [past], CFG, self.now)
         self.assertTrue(any(e["code"] == "MCAP_SURGE" for e in ev))
 
     def test_reference_picks_oldest_beyond_window(self):
-        hist = [self._snap(30, {"0xaa": 1}), self._snap(3, {"0xaa": 1})]
+        hist = [self._snap(30, self.addrs), self._snap(3, self.addrs)]
         ref = hr.pick_reference(hist, 22, self.now)
         self.assertEqual(ref["ts"], hist[0]["ts"])
 
     def test_no_reference_returns_none(self):
-        self.assertIsNone(hr.pick_reference([self._snap(1, {"0xaa": 1})], 22, self.now))
+        self.assertIsNone(hr.pick_reference([self._snap(1, self.addrs)], 22, self.now))
 
 
 class TestRiskFlags(unittest.TestCase):
@@ -366,3 +392,126 @@ class TestTelegramEscaping(unittest.TestCase):
         self.assertNotIn("<b>evil", msg)
         self.assertNotIn("<script>", msg)
         self.assertIn("&lt;b&gt;evil", msg)
+
+
+import security as sec_mod  # noqa: E402
+import backtest as bt_mod   # noqa: E402
+import backfill as bf_mod   # noqa: E402
+
+
+class TestSecurity(unittest.TestCase):
+    def test_unindexed_is_flagged_not_treated_safe(self):
+        flags = sec_mod.flags_for({"indexed": False}, CFG)
+        self.assertEqual([f["code"] for f in flags], ["UNVERIFIED"])
+
+    def test_honeypot_flag(self):
+        flags = sec_mod.flags_for({"indexed": True, "honeypot": "1", "owner_renounced": True}, CFG)
+        self.assertIn("HONEYPOT", [f["code"] for f in flags])
+
+    def test_owner_active_flag(self):
+        flags = sec_mod.flags_for(
+            {"indexed": True, "honeypot": "0", "owner_renounced": False, "owner": "0xeb7c03"}, CFG)
+        self.assertIn("OWNER_ACTIVE", [f["code"] for f in flags])
+
+    def test_high_tax_flag(self):
+        flags = sec_mod.flags_for(
+            {"indexed": True, "honeypot": "0", "owner_renounced": True, "sell_tax": 0.25}, CFG)
+        self.assertIn("SELL_TAX", [f["code"] for f in flags])
+
+    def test_clean_token_only_gets_no_flags(self):
+        flags = sec_mod.flags_for(
+            {"indexed": True, "honeypot": "0", "owner_renounced": True, "mintable": "0",
+             "pausable": "0", "open_source": "1", "top10_pct": 1.9}, CFG)
+        self.assertEqual(flags, [])
+
+    def test_summarize_renounced_detection(self):
+        s = sec_mod.summarize({"owner_address": "0x0000000000000000000000000000000000000000",
+                               "holders": [], "lp_holders": []})
+        self.assertTrue(s["owner_renounced"])
+
+    def test_summarize_concentration(self):
+        s = sec_mod.summarize({"owner_address": "", "holders": [{"percent": "0.2"}, {"percent": "0.2"}],
+                               "lp_holders": []})
+        self.assertAlmostEqual(s["top10_pct"], 40.0, places=1)
+
+
+class TestBacktest(unittest.TestCase):
+    def _hist(self):
+        from datetime import timedelta
+        base = hr.now_kst() - timedelta(hours=96)
+        snaps = []
+        for i in range(17):  # 6시간 간격 4일
+            t = base + timedelta(hours=6 * i)
+            rank, mcap = {}, {}
+            for k in range(12):
+                addr = "0x%02d" % k
+                rank[addr] = k + 1
+                mcap[addr] = 1_000_000 * (12 - k) * (1 + 0.01 * i)
+            snaps.append({"ts": t.isoformat(), "rank": rank, "mcap": mcap,
+                          "symbol": {a: a for a in rank}, "liq": {}})
+        return snaps
+
+    def test_insufficient_sample_is_not_a_verdict(self):
+        r = bt_mod.run(self._hist(), rank_threshold=5)
+        self.assertEqual(r["verdict"], "INSUFFICIENT")
+        self.assertIn("유보", r["note"])
+
+    def test_render_line_handles_empty(self):
+        self.assertIn("유보", bt_mod.render_line({}))
+        self.assertIn("유보", bt_mod.render_line(None))
+
+    def test_no_edge_when_random(self):
+        import random
+        random.seed(3)
+        hist = self._hist()
+        for s in hist:
+            addrs = list(s["rank"].keys())
+            random.shuffle(addrs)
+            s["rank"] = {a: i + 1 for i, a in enumerate(addrs)}
+            s["mcap"] = {a: 1_000_000 * random.uniform(0.6, 1.6) for a in addrs}
+        r = bt_mod.run(hist, rank_threshold=3, min_picks=5)
+        self.assertIn(r["verdict"], ("NO_EDGE", "POSITIVE", "NEGATIVE"))
+        self.assertIn("n_picks", r)
+
+
+class TestBackfillMerge(unittest.TestCase):
+    def test_real_snapshot_wins_over_synthetic(self):
+        from datetime import timedelta
+        t = hr.now_kst() - timedelta(hours=12)
+        real = {"ts": t.isoformat(), "source": "live", "rank": {"0xa": 1}, "mcap": {"0xa": 5},
+                "symbol": {"0xa": "A"}, "liq": {}}
+        synth = [{"ts": (t + timedelta(hours=1)).isoformat(), "source": "ohlcv_backfill",
+                  "rank": {"0xa": 2}, "mcap": {"0xa": 4}, "symbol": {"0xa": "A"}, "liq": {}}]
+        merged = bf_mod.merge([real], synth)
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["source"], "live")
+
+    def test_synthetic_kept_when_no_real_nearby(self):
+        from datetime import timedelta
+        t = hr.now_kst()
+        real = {"ts": t.isoformat(), "source": "live", "rank": {"0xa": 1}, "mcap": {"0xa": 5},
+                "symbol": {"0xa": "A"}, "liq": {}}
+        synth = [{"ts": (t - timedelta(hours=30)).isoformat(), "source": "ohlcv_backfill",
+                  "rank": {"0xa": 3}, "mcap": {"0xa": 2}, "symbol": {"0xa": "A"}, "liq": {}}]
+        merged = bf_mod.merge([real], synth)
+        self.assertEqual(len(merged), 2)
+        self.assertEqual(merged[0]["source"], "ohlcv_backfill")
+
+
+class TestCrosscheckAttach(unittest.TestCase):
+    def test_divergence_flagged(self):
+        rows = [{"address": "0xa", "symbol": "A", "flags": []}]
+        hr.attach_crosscheck(rows, {"0xa": {"gap_pct": 15.0, "ds_mcap": 1}}, 8.0)
+        self.assertIn("SRC_DIVERGENCE", [f["code"] for f in rows[0]["flags"]])
+
+    def test_within_tolerance_not_flagged(self):
+        rows = [{"address": "0xa", "symbol": "A", "flags": []}]
+        hr.attach_crosscheck(rows, {"0xa": {"gap_pct": 1.0, "ds_mcap": 1}}, 8.0)
+        self.assertEqual(rows[0]["flags"], [])
+
+    def test_promotion_flagged_as_caution(self):
+        rows = [{"address": "0xa", "symbol": "A", "flags": []}]
+        hr.attach_promotion(rows, {"0xa": ["boost_top"]})
+        codes = [f["code"] for f in rows[0]["flags"]]
+        self.assertIn("PROMOTED", codes)
+        self.assertIn("보증 아님", rows[0]["flags"][0]["detail"])
