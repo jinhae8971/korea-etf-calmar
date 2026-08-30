@@ -415,13 +415,16 @@ def attach_crosscheck(rows, cross, tolerance):
 
 
 # ---------------------------------------------------------------- change detection
-def snapshot_of(rows, ts):
+def snapshot_of(rows, ts, chain_v24=None):
     return {
         "ts": ts,
         "rank": {r["address"]: r["rank"] for r in rows},
         "mcap": {r["address"]: round(r["mcap"], 2) for r in rows},
         "liq": {r["address"]: round(r["liq"], 2) for r in rows},
         "symbol": {r["address"]: r["symbol"] for r in rows},
+        # 거래대금 추세용 — 체인 전체(스캔 풀 합계)와 추적 종목 합계를 같이 남긴다.
+        "chain_v24": round(chain_v24, 2) if chain_v24 else None,
+        "tracked_v24": round(sum(r.get("v24") or 0.0 for r in rows), 2),
     }
 
 
@@ -693,7 +696,7 @@ def render_telegram(payload, cfg, dash_url):
     return msg
 
 
-def render_dashboard(payload, cfg, out_path):
+def render_dashboard(payload, cfg, out_path, history=None):
     rows = payload["rows"][: cfg["top_n_dashboard"]]
     ev = payload["events"]
 
@@ -779,6 +782,8 @@ def render_dashboard(payload, cfg, out_path):
                    cc.get("median_gap_pct", 0.0), cc.get("worst_gap_pct", 0.0)))
 
     html = DASH_TMPL.format(
+        volchart=volume_chart(history or []),
+        volshare=volume_share_chart(payload["rows"]),
         verdict=verdict_html,
         crosscheck=cc_html,
         promoted=payload["meta"].get("promoted", 0),
@@ -797,6 +802,102 @@ def render_dashboard(payload, cfg, out_path):
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as fh:
         fh.write(html)
+
+
+def volume_chart(history, w=680, h=190):
+    """
+    24h DEX 거래대금 추세 — 실측 스냅샷만 사용한다.
+    소급 백필 스냅샷에는 거래대금이 없으므로 섞지 않는다(있는 척하지 않는다).
+    """
+    pts = []
+    for snap in history:
+        if snap.get("source") == "ohlcv_backfill":
+            continue
+        cv = snap.get("chain_v24")
+        if not cv:
+            continue
+        try:
+            t = datetime.fromisoformat(snap["ts"])
+        except (KeyError, ValueError):
+            continue
+        pts.append((t, float(cv), float(snap.get("tracked_v24") or 0.0)))
+    pts.sort(key=lambda x: x[0])
+
+    if len(pts) < 2:
+        n = len(pts)
+        cur = ("현재 $%s" % human(pts[0][1])) if n else "관측치 없음"
+        return ("<div class='empty'>관측 스냅샷 %d개 — 추세선은 6시간마다 한 점씩 채워집니다. "
+                "(%s)</div>" % (n, cur))
+
+    pad_l, pad_r, pad_t, pad_b = 8, 8, 14, 22
+    iw, ih = w - pad_l - pad_r, h - pad_t - pad_b
+    vals = [p[1] for p in pts] + [p[2] for p in pts]
+    lo, hi = min(vals), max(vals)
+    span = (hi - lo) or (hi or 1.0)
+    lo = max(0.0, lo - span * 0.15)
+    hi = hi + span * 0.15
+    rng = (hi - lo) or 1.0
+    step = iw / (len(pts) - 1)
+
+    def xy(i, v):
+        return pad_l + i * step, pad_t + ih - (v - lo) / rng * ih
+
+    chain = " ".join("%.1f,%.1f" % xy(i, p[1]) for i, p in enumerate(pts))
+    track = " ".join("%.1f,%.1f" % xy(i, p[2]) for i, p in enumerate(pts))
+    x0, _ = xy(0, pts[0][1])
+    xn, _ = xy(len(pts) - 1, pts[-1][1])
+    area = "%s %.1f,%.1f %.1f,%.1f" % (chain, xn, pad_t + ih, x0, pad_t + ih)
+
+    ticks = []
+    for i, p in enumerate(pts):
+        if len(pts) <= 6 or i in (0, len(pts) - 1) or i % max(1, len(pts) // 5) == 0:
+            x, _ = xy(i, p[1])
+            ticks.append("<text x='%.1f' y='%d' class='ax' text-anchor='middle'>%s</text>"
+                         % (x, h - 6, p[0].strftime("%m/%d %H시")))
+
+    last_c, last_t = pts[-1][1], pts[-1][2]
+    delta = ""
+    if len(pts) >= 2 and pts[-2][1]:
+        d = (last_c - pts[-2][1]) / pts[-2][1] * 100.0
+        delta = "<tspan class='%s'>%+.1f%%</tspan>" % ("up" if d >= 0 else "down", d)
+
+    return ("""<svg viewBox="0 0 {w} {h}" class="chart" preserveAspectRatio="none" role="img">
+<defs><linearGradient id="vg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="var(--acc)" stop-opacity=".35"/>
+<stop offset="100%" stop-color="var(--acc)" stop-opacity="0"/></linearGradient></defs>
+<polygon points="{area}" fill="url(#vg)"/>
+<polyline points="{chain}" fill="none" stroke="var(--acc)" stroke-width="2"/>
+<polyline points="{track}" fill="none" stroke="var(--dim)" stroke-width="1.4" stroke-dasharray="4 3"/>
+{ticks}</svg>
+<div class="legend"><span><i class="sw acc"></i>체인 전체 ${cur} {delta}</span>
+<span><i class="sw dash"></i>추적 {n}종 합계 ${trk}</span>
+<span class="dim">고 ${hi} / 저 ${lo}</span></div>""").format(
+        w=w, h=h, area=area, chain=chain, track=track, ticks="".join(ticks),
+        cur=human(last_c), trk=human(last_t), delta=delta,
+        hi=human(max(p[1] for p in pts)), lo=human(min(p[1] for p in pts)),
+        n=len(pts))
+
+
+def volume_share_chart(rows, top=8):
+    """현재 스냅샷의 거래대금 구성 — 이력이 없어도 오늘 바로 읽히는 정보."""
+    ranked = sorted(rows, key=lambda r: -(r.get("v24") or 0.0))[:top]
+    total = sum(r.get("v24") or 0.0 for r in rows) or 1.0
+    if not ranked:
+        return "<div class='empty'>표시할 종목이 없습니다.</div>"
+    top_v = ranked[0].get("v24") or 1.0
+    bars = []
+    for row in ranked:
+        v = row.get("v24") or 0.0
+        bars.append(
+            "<div class='bar'><span class='bl'>%s</span>"
+            "<span class='bt'><i style='width:%.1f%%'></i></span>"
+            "<span class='bv'>$%s<em>%.1f%%</em></span></div>" % (
+                esc(label(row)), max(2.0, v / top_v * 100.0), human(v), v / total * 100.0))
+    head = ("<div class='note' style='margin-bottom:8px'>추적 종목 합계 $%s 중 상위 %d종이 "
+            "<b>%.0f%%</b>를 차지합니다.</div>" % (
+                human(total), len(ranked),
+                sum(r.get("v24") or 0.0 for r in ranked) / total * 100.0))
+    return head + "".join(bars)
 
 
 def esc(s):
@@ -849,6 +950,17 @@ ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:
 .sp{{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--dim)}} .sp span{{width:78px}}
 .note{{color:var(--dim);font-size:11px;line-height:1.6}}
 .tw{{overflow-x:auto}}
+.chart{{width:100%;height:190px;display:block}} .ax{{fill:var(--dim);font-size:9px}}
+.empty{{color:var(--dim);font-size:12px;padding:14px 4px;text-align:center;border:1px dashed var(--line);border-radius:8px}}
+.legend{{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--fg);margin-top:6px;align-items:center}}
+.sw{{display:inline-block;width:14px;height:0;border-top:2px solid var(--acc);margin-right:4px;vertical-align:middle}}
+.sw.dash{{border-top:2px dashed var(--dim)}}
+.bar{{display:flex;align-items:center;gap:7px;margin-bottom:6px;font-size:11.5px}}
+.bl{{width:88px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.bt{{flex:1;height:9px;background:rgba(78,161,255,.10);border-radius:5px;overflow:hidden}}
+.bt i{{display:block;height:100%;background:var(--acc);border-radius:5px}}
+.bv{{width:96px;flex:none;text-align:right;color:var(--dim);white-space:nowrap}}
+.bv em{{font-style:normal;color:#5b6470;margin-left:5px}}
 </style></head><body><div class="wrap">
 <h1>🏹 HOOD RADAR</h1>
 <div class="sub">로빈후드 체인(Arbitrum Orbit L2) 커뮤니티 토큰 시총 순위 · 6시간 주기 갱신 · 기준 {as_of} KST · 상태 {status}</div>
@@ -860,6 +972,10 @@ ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:
 </div>
 <div class="card"><h2>순위 변동·이벤트</h2><ul>{events}</ul>
 <div class="note" style="margin-top:8px">임계 — 6시간 {th6}계단 / 24시간 {th24}계단 이상, 24h 시총 ±40%, 6시간 유동성 −40%.</div></div>
+<div class="card"><h2>24h DEX 거래대금 추세</h2>{volchart}
+<div class="note" style="margin-top:8px">스냅샷마다 기록되는 <b>그 시점의 직전 24시간</b> 거래대금입니다(누적 아님).
+소급 이력 스냅샷에는 거래대금이 없어 실측 관측치만 그립니다 — 6시간마다 한 점씩 채워집니다.</div></div>
+<div class="card"><h2>거래대금 구성 (현재)</h2>{volshare}</div>
 <div class="card"><h2>시총 순위 TOP {top_n}</h2><div class="tw"><table>
 <tr><th>#</th><th>토큰</th><th>시총</th><th>6h</th><th>24h</th><th>가격24h</th><th>거래대금</th><th>유동성</th><th>플래그</th><th>컨트랙트 검증</th></tr>
 {rows}</table></div></div>
@@ -1025,7 +1141,7 @@ def main():
         "events": events,
     }
 
-    snap = snapshot_of(rows, now.isoformat())
+    snap = snapshot_of(rows, now.isoformat(), chain_v24=chain_vol)
     snap["source"] = "live"
     history.append(snap)
     history.sort(key=lambda s: s.get("ts") or "")
@@ -1068,7 +1184,7 @@ def main():
     write_json_if_changed(tracked_path, new_tracked)
 
     docs = os.path.abspath(os.path.join(BASE, "..", "docs", "hood-radar", "index.html"))
-    render_dashboard(payload, cfg, docs)
+    render_dashboard(payload, cfg, docs, history=history)
 
     print("[ok] %s · 추적 %d종 · 이벤트 %d건 · 풀 %d개 · 보안캐시 %d · 교차검증 %s (latest 갱신=%s)" % (
         payload["as_of_kst"], len(rows), len(events), len(pools),
