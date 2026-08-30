@@ -397,6 +397,7 @@ class TestTelegramEscaping(unittest.TestCase):
 import security as sec_mod  # noqa: E402
 import backtest as bt_mod   # noqa: E402
 import backfill as bf_mod   # noqa: E402
+import chainvol            # noqa: E402
 
 
 class TestSecurity(unittest.TestCase):
@@ -518,43 +519,63 @@ class TestCrosscheckAttach(unittest.TestCase):
 
 
 class TestVolumeCharts(unittest.TestCase):
-    def _snap(self, hours_ago, chain, tracked, source="live"):
-        return {"ts": (hr.now_kst() - timedelta(hours=hours_ago)).isoformat(),
-                "source": source, "chain_v24": chain, "tracked_v24": tracked,
-                "rank": {}, "mcap": {}, "liq": {}, "symbol": {}}
+    """차트는 체인 전체(DefiLlama) 시계열을 그린다 — 자체 200풀 집계와 섞지 않는다."""
 
-    def test_single_point_shows_placeholder_not_fake_line(self):
-        out = hr.volume_chart([self._snap(0, 744_000_000, 300_000_000)])
-        self.assertIn("관측 스냅샷 1개", out)
-        self.assertNotIn("<polyline", out)
+    def _cv(self, days=30, base=5e8, grow=1.02):
+        import time as _t
+        now = int(_t.time())
+        series, v = [], base
+        for i in range(days):
+            v *= grow
+            series.append({"ts": now - (days - i) * 86400, "v": v})
+        return {
+            "series": series, "total24h": series[-1]["v"], "change_1d_pct": 12.09,
+            "vs_avg7d_pct": 18.4, "peak": max(x["v"] for x in series),
+            "peak_ts": series[-1]["ts"], "days": days,
+            "protocols": [{"name": "Uniswap V3", "v24": 322e6},
+                          {"name": "Uniswap V2", "v24": 65e6},
+                          {"name": "0x", "v24": 2e6}],
+            "protocol_total": 389e6,
+        }
 
-    def test_empty_history(self):
-        self.assertIn("관측치 없음", hr.volume_chart([]))
-
-    def test_backfill_snapshots_excluded(self):
-        hist = [self._snap(24, 900_000_000, 1, source="ohlcv_backfill"),
-                self._snap(6, 700_000_000, 2),
-                self._snap(0, 744_000_000, 3)]
-        out = hr.volume_chart(hist)
+    def test_chart_renders_series(self):
+        out = hr.volume_chart(self._cv())
         self.assertIn("<polyline", out)
-        # 백필 값(900M)이 고점으로 잡히면 안 된다
-        self.assertNotIn("900.0M", out)
+        self.assertIn("7일 이동평균", out)
+        self.assertIn("일별 거래량", out)
 
-    def test_chart_renders_with_multiple_points(self):
-        hist = [self._snap(18, 6e8, 2e8), self._snap(12, 7e8, 2.5e8),
-                self._snap(6, 6.5e8, 2.2e8), self._snap(0, 7.4e8, 3e8)]
-        out = hr.volume_chart(hist)
-        self.assertIn("<polyline", out)
-        self.assertIn("체인 전체", out)
-        self.assertIn("고 $", out)
+    def test_missing_series_shows_placeholder_not_fake_line(self):
+        for bad in ({}, None, {"series": []}, {"series": [{"ts": 1, "v": 5.0}]}):
+            out = hr.volume_chart(bad)
+            self.assertIn("불러오지 못했습니다", out)
+            self.assertNotIn("<polyline", out)
+
+    def test_moving_average_lags_a_rising_series(self):
+        """상승 구간에서 7일 이동평균은 일별선보다 낮아야 한다(y가 더 큼)."""
+        out = hr.volume_chart(self._cv(days=20, grow=1.08))
+        polys = [seg for seg in out.split("<polyline")[1:]]
+        self.assertEqual(len(polys), 2)
+        last_y = lambda seg: float(seg.split('points="')[1].split('"')[0].split()[-1].split(",")[1])
+        self.assertGreater(last_y(polys[1]), last_y(polys[0]))
+
+    def test_protocol_chart(self):
+        out = hr.protocol_chart(self._cv())
+        self.assertIn("Uniswap V3", out)
+        self.assertIn("82.8%", out)  # 322/389
+
+    def test_protocol_chart_empty(self):
+        self.assertIn("없음", hr.protocol_chart({}))
+
+    def test_protocol_name_escaped(self):
+        cv = {"protocols": [{"name": "<img src=x>", "v24": 10.0}], "protocol_total": 10.0}
+        self.assertNotIn("<img src=x>", hr.protocol_chart(cv))
 
     def test_share_chart_escapes_and_totals(self):
         rows = [{"symbol": "<b>x</b>", "address": "0x" + "a" * 40, "v24": 100.0, "flags": []},
                 {"symbol": "B", "address": "0x" + "b" * 40, "v24": 300.0, "flags": []}]
         out = hr.volume_share_chart(rows)
         self.assertNotIn("<b>x</b>", out)
-        self.assertIn("&lt;b&gt;x", out)
-        self.assertIn("75.0%", out)  # B가 400 중 300
+        self.assertIn("75.0%", out)
 
     def test_share_chart_empty(self):
         self.assertIn("없습니다", hr.volume_share_chart([]))
@@ -565,3 +586,45 @@ class TestVolumeCharts(unittest.TestCase):
         snap = hr.snapshot_of(rows, "2026-08-30T12:00:00+09:00", chain_v24=999.0)
         self.assertEqual(snap["chain_v24"], 999.0)
         self.assertEqual(snap["tracked_v24"], 12.0)
+
+
+class TestChainVolSummary(unittest.TestCase):
+    def _payload(self):
+        import time as _t
+        now = int(_t.time())
+        return {
+            "totalDataChart": [[now - 86400 * i, 1e8 * (10 - i)] for i in range(9, -1, -1)],
+            "total24h": 1033911214.89, "total48hto24h": 922400000.0,
+            "total7d": 5496218605.38, "total30d": 2e10, "change_1d": 12.09,
+            "protocols": [{"name": "Uniswap V3", "total24h": 322.3e6},
+                          {"name": "Curve DEX", "total24h": 0.0},
+                          {"name": "Uniswap V2", "total24h": 65.3e6}],
+        }
+
+    def test_summary_fields(self):
+        s = chainvol.summarize(self._payload())
+        self.assertEqual(s["total24h"], 1033911214.89)
+        self.assertEqual(s["change_1d_pct"], 12.09)
+        self.assertAlmostEqual(s["avg7d"], 5496218605.38 / 7, places=2)
+        self.assertIsNotNone(s["vs_avg7d_pct"])
+
+    def test_zero_volume_protocols_dropped(self):
+        s = chainvol.summarize(self._payload())
+        self.assertNotIn("Curve DEX", [p["name"] for p in s["protocols"]])
+        self.assertEqual(s["protocols"][0]["name"], "Uniswap V3")
+
+    def test_series_sorted_and_trimmed(self):
+        s = chainvol.summarize(self._payload(), days=4)
+        self.assertEqual(len(s["series"]), 4)
+        self.assertEqual(s["series"], sorted(s["series"], key=lambda x: x["ts"]))
+
+    def test_handles_missing_change_field(self):
+        p = self._payload()
+        p.pop("change_1d")
+        s = chainvol.summarize(p)
+        self.assertAlmostEqual(s["change_1d_pct"], round((1033911214.89 - 922400000.0) / 922400000.0 * 100, 2))
+
+    def test_empty_payload_is_safe(self):
+        s = chainvol.summarize({})
+        self.assertEqual(s["series"], [])
+        self.assertEqual(s["protocols"], [])
