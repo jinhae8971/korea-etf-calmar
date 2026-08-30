@@ -23,6 +23,12 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import backfill          # noqa: E402
+import backtest          # noqa: E402
+import crosscheck        # noqa: E402
+import security          # noqa: E402
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE, "data")
 API = "https://api.geckoterminal.com/api/v2"
@@ -214,6 +220,7 @@ def build_universe(pools, tokens, cfg):
                 "sells24": 0,
                 "pools": 0,
                 "top_pool_liq": 0.0,
+                "top_pool_address": None,
                 "oldest_pool": None,
                 "data_warn": False,
             }
@@ -230,6 +237,7 @@ def build_universe(pools, tokens, cfg):
         # 가격·변동률은 유동성이 가장 깊은 풀 기준(얕은 풀의 노이즈 배제)
         if reserve >= ent["top_pool_liq"]:
             ent["top_pool_liq"] = reserve
+            ent["top_pool_address"] = attrs.get("address")
             ent["price"] = fnum(attrs.get("base_token_price_usd"))
             ent["chg24"] = fnum(chg.get("h24"), None) if chg.get("h24") is not None else None
             ent["chg6"] = fnum(chg.get("h6"), None) if chg.get("h6") is not None else None
@@ -247,6 +255,61 @@ def build_universe(pools, tokens, cfg):
     return agg
 
 
+def fetch_tokens_multi(addresses, cfg, log=print):
+    """거래대금 상위 풀 밖으로 밀려난 추적 대상을 주소로 직접 조회한다(최대 30개/콜)."""
+    out = {}
+    addrs = list(addresses)
+    for i in range(0, len(addrs), 30):
+        chunk = addrs[i:i + 30]
+        url = "%s/networks/%s/tokens/multi/%s" % (API, cfg["network"], ",".join(chunk))
+        try:
+            payload = http_get_json(url, tries=2)
+        except Exception as exc:
+            log("[sticky] 직접 조회 실패: %s" % exc)
+            continue
+        for tok in payload.get("data") or []:
+            attrs = tok.get("attributes") or {}
+            addr = (attrs.get("address") or "").lower()
+            if addr:
+                out[addr] = attrs
+        time.sleep(float(cfg["page_sleep_sec"]))
+    return out
+
+
+def apply_sticky(universe, tracked, cfg, log=print):
+    """
+    유니버스는 '24h 거래대금 상위 200풀'로 구성되므로, 시총이 큰데 거래가 식은 토큰은
+    통째로 사라져 DROPPED_OUT 오탐이 난다. 과거에 편입됐던 주소는 직접 조회로 되살린다.
+    """
+    missing = [a for a in tracked if a not in universe][: cfg["sticky_max"]]
+    if not missing:
+        return universe, 0
+    fetched = fetch_tokens_multi(missing, cfg, log)
+    added = 0
+    for addr, attrs in fetched.items():
+        mcap, basis, bridged = pick_mcap(fnum(attrs.get("market_cap_usd")),
+                                         fnum(attrs.get("fdv_usd")), cfg)
+        v24 = fnum((attrs.get("volume_usd") or {}).get("h24"))
+        liq = fnum(attrs.get("total_reserve_in_usd"))
+        universe[addr] = {
+            "address": addr, "symbol": (attrs.get("symbol") or "?").strip(),
+            "name": (attrs.get("name") or "").strip(),
+            "cg_id": attrs.get("coingecko_coin_id"),
+            "class": classify(attrs, cfg),
+            "mc_raw": fnum(attrs.get("market_cap_usd")), "fdv": fnum(attrs.get("fdv_usd")),
+            "price": fnum(attrs.get("price_usd")), "liq": liq, "v24": v24, "v6": 0.0,
+            "chg24": None, "chg6": None, "buys24": 0, "sells24": 0, "pools": 0,
+            "top_pool_liq": 0.0, "top_pool_address": None, "oldest_pool": None,
+            "data_warn": False, "mcap": mcap, "mcap_basis": basis, "bridged": bridged,
+            "turnover": (v24 / mcap) if mcap > 0 else 0.0,
+            "mc_liq": (mcap / liq) if liq > 0 else None,
+            "revived": True,
+        }
+        added += 1
+    log("[sticky] 상위 풀 밖 추적 대상 %d건 중 %d건 복원" % (len(missing), added))
+    return universe, added
+
+
 def gate(universe, cfg):
     """밈코인 랭킹 대상만 통과시킨다."""
     out = []
@@ -258,7 +321,7 @@ def gate(universe, cfg):
         if ent["class"] == "RWA":
             dropped["rwa"] += 1
             continue
-        if ent["liq"] < cfg["min_liquidity_usd"]:
+        if ent["liq"] < cfg["min_liquidity_usd"] and not ent.get("revived"):
             dropped["liq"] += 1
             continue
         if ent["v24"] < cfg["min_volume24_usd"]:
@@ -318,6 +381,39 @@ def tag_risks(rows, cfg, prev_snapshot):
     return rows
 
 
+def attach_security(rows, cache, cfg):
+    """GoPlus 요약을 행에 붙이고 보안 플래그를 병합한다."""
+    for row in rows:
+        summary = cache.get(row["address"])
+        row["security"] = summary
+        row["flags"].extend(security.flags_for(summary, cfg))
+    return rows
+
+
+def attach_promotion(rows, boosts):
+    for row in rows:
+        kinds = boosts.get(row["address"])
+        row["promoted"] = kinds or None
+        if kinds:
+            row["flags"].append({
+                "code": "PROMOTED",
+                "detail": "DexScreener 유료 프로모션 등재(%s) — 품질 보증 아님" % ",".join(kinds),
+            })
+    return rows
+
+
+def attach_crosscheck(rows, cross, tolerance):
+    for row in rows:
+        info = cross.get(row["address"])
+        row["crosscheck"] = info
+        if info and abs(info["gap_pct"]) >= tolerance:
+            row["flags"].append({
+                "code": "SRC_DIVERGENCE",
+                "detail": "2차 소스 시총 괴리 %+.1f%%" % info["gap_pct"],
+            })
+    return rows
+
+
 # ---------------------------------------------------------------- change detection
 def snapshot_of(rows, ts):
     return {
@@ -346,16 +442,37 @@ def pick_reference(history, hours, now_ts):
     return best
 
 
+def paired_ranks(rows, ref):
+    """
+    과거 스냅샷과 현재를 **같은 모집단**에서 비교한다.
+
+    유니버스 크기는 매 실행 달라지고(신규 편입·이탈), 소급 백필 스냅샷은 20종 안팎이다.
+    모집단이 다른 순위를 그대로 빼면 "13위 → 23위"처럼 실재하지 않는 하락이 만들어진다.
+    따라서 양쪽에 모두 존재하는 주소만 남겨 각각 다시 순위를 매긴 뒤 비교한다.
+
+    반환: {address: (과거순위, 현재순위)} — 교집합이 5종 미만이면 빈 dict(비교 포기).
+    """
+    if not ref:
+        return {}
+    ref_rank = ref.get("rank") or {}
+    common = [r for r in rows if r["address"] in ref_rank]
+    if len(common) < 5:
+        return {}
+    cur_sorted = sorted(common, key=lambda r: -r["mcap"])
+    cur = {r["address"]: i + 1 for i, r in enumerate(cur_sorted)}
+    past_sorted = sorted((r["address"] for r in common), key=lambda a: ref_rank[a])
+    past = {a: i + 1 for i, a in enumerate(past_sorted)}
+    return {a: (past[a], cur[a]) for a in cur}
+
+
 def detect_changes(rows, history, cfg, now_ts):
     ref6 = pick_reference(history, 5, now_ts)      # 6시간 주기 → 5시간 이상 경과분
     ref24 = pick_reference(history, 22, now_ts)    # 하루 전
     prev = history[-1] if history else None
     events = []
 
-    def rank_of(snap, addr):
-        if not snap:
-            return None
-        return (snap.get("rank") or {}).get(addr)
+    pair6 = paired_ranks(rows, ref6)
+    pair24 = paired_ranks(rows, ref24)
 
     def mcap_of(snap, addr):
         if not snap:
@@ -363,18 +480,21 @@ def detect_changes(rows, history, cfg, now_ts):
         v = (snap.get("mcap") or {}).get(addr)
         return v if v else None
 
+    # 신규 진입 판정은 **실측 스냅샷**만 근거로 한다.
+    # 백필은 상위 소수 종목만 담고 있어, 거기 없다는 사실이 "신규"를 뜻하지 않는다.
+    live_hist = [s for s in history if s.get("source") != "ohlcv_backfill"]
     known_before = set()
-    for snap in history[-8:]:
+    for snap in live_hist[-8:]:
         known_before |= set((snap.get("rank") or {}).keys())
 
     for row in rows:
         addr = row["address"]
-        r6 = rank_of(ref6, addr)
-        r24 = rank_of(ref24, addr)
-        row["rank_6h_ago"] = r6
-        row["rank_24h_ago"] = r24
-        row["d_rank_6h"] = (r6 - row["rank"]) if r6 else None   # 양수 = 순위 상승
-        row["d_rank_24h"] = (r24 - row["rank"]) if r24 else None
+        p6 = pair6.get(addr)
+        p24 = pair24.get(addr)
+        row["rank_6h_ago"] = p6[0] if p6 else None
+        row["rank_24h_ago"] = p24[0] if p24 else None
+        row["d_rank_6h"] = (p6[0] - p6[1]) if p6 else None   # 양수 = 순위 상승
+        row["d_rank_24h"] = (p24[0] - p24[1]) if p24 else None
         m24 = mcap_of(ref24, addr)
         row["d_mcap_24h_pct"] = round((row["mcap"] - m24) / m24 * 100.0, 1) if m24 else None
 
@@ -383,7 +503,8 @@ def detect_changes(rows, history, cfg, now_ts):
                 "code": "RANK_SURGE" if row["d_rank_24h"] > 0 else "RANK_DROP",
                 "window": "24h",
                 "symbol": label(row), "address": addr,
-                "detail": "%d위 → %d위 (%+d계단)" % (r24, row["rank"], row["d_rank_24h"]),
+                "detail": "%d위 → %d위 (%+d계단, 공통 %d종 기준)" % (
+                    p24[0], p24[1], row["d_rank_24h"], len(pair24)),
                 "mcap": row["mcap"], "severity": abs(row["d_rank_24h"]),
             })
         elif row["d_rank_6h"] is not None and abs(row["d_rank_6h"]) >= cfg["rank_move_6h_threshold"]:
@@ -391,7 +512,8 @@ def detect_changes(rows, history, cfg, now_ts):
                 "code": "RANK_SURGE" if row["d_rank_6h"] > 0 else "RANK_DROP",
                 "window": "6h",
                 "symbol": label(row), "address": addr,
-                "detail": "%d위 → %d위 (%+d계단, 6시간)" % (r6, row["rank"], row["d_rank_6h"]),
+                "detail": "%d위 → %d위 (%+d계단, 6시간, 공통 %d종 기준)" % (
+                    p6[0], p6[1], row["d_rank_6h"], len(pair6)),
                 "mcap": row["mcap"], "severity": abs(row["d_rank_6h"]),
             })
 
@@ -404,7 +526,7 @@ def detect_changes(rows, history, cfg, now_ts):
                 "mcap": row["mcap"], "severity": abs(row["d_mcap_24h_pct"]) / 10.0,
             })
 
-        if history and addr not in known_before and row["rank"] <= cfg["new_entry_rank"]:
+        if live_hist and addr not in known_before and row["rank"] <= cfg["new_entry_rank"]:
             events.append({
                 "code": "NEW_ENTRY", "window": "6h",
                 "symbol": label(row), "address": addr,
@@ -420,14 +542,15 @@ def detect_changes(rows, history, cfg, now_ts):
                     "detail": flag["detail"], "mcap": row["mcap"], "severity": 8.0,
                 })
 
-    # 순위권에서 사라진 토큰
-    if prev:
+    # 순위권에서 사라진 토큰 — 실측 직전 스냅샷 기준으로만 판정
+    prev_live = live_hist[-1] if live_hist else None
+    if prev_live:
         current = {r["address"] for r in rows}
-        for addr, rank in (prev.get("rank") or {}).items():
+        for addr, rank in (prev_live.get("rank") or {}).items():
             if addr not in current and rank <= cfg["new_entry_rank"]:
                 events.append({
                     "code": "DROPPED_OUT", "window": "6h",
-                    "symbol": (prev.get("symbol") or {}).get(addr, "?"), "address": addr,
+                    "symbol": (prev_live.get("symbol") or {}).get(addr, "?"), "address": addr,
                     "detail": "%d위에서 이탈 — 유동성/거래대금 임계 미달" % rank,
                     "mcap": 0.0, "severity": max(1.0, (cfg["new_entry_rank"] - rank) / 2.0),
                 })
@@ -527,9 +650,33 @@ def render_telegram(payload, cfg, dash_url):
         lines.extend(risky[:5])
         lines.append("")
 
+    sec_ev = [e for e in ev if e["code"] == "SECURITY"][:5]
+    if sec_ev:
+        lines.append("🔐 <b>컨트랙트 경보</b>")
+        for e in sec_ev:
+            lines.append("· %s — %s" % (esc(e["symbol"]), esc(e["detail"])))
+        lines.append("")
+
+    unver = [r for r in rows[:20] if has_flag(r, "UNVERIFIED")]
+    if unver:
+        lines.append("🕳 <b>보안 미색인</b> %s" % esc(", ".join(label(r) for r in unver[:6])))
+        lines.append("<i>스캐너에 잡히지 않는 신생·소형 토큰 — 안전이 아니라 검증 불가입니다.</i>")
+        lines.append("")
+
+    bt = payload.get("backtest") or {}
+    if bt:
+        lines.append("🧪 " + esc(backtest.render_line(bt)))
+        if bt.get("verdict") in ("NEGATIVE", "NO_EDGE"):
+            lines.append("<i>%s</i>" % esc(bt.get("note", "")))
+        lines.append("")
+
     meta = payload["meta"]
+    cc = meta.get("crosscheck") or {}
     lines.append("📊 추적 %d종 · 24h DEX 거래대금 $%s · 풀 %d개 스캔" % (
         len(rows), human(meta["chain_volume_24h"]), meta["pools_scanned"]))
+    lines.append("🔎 2차 소스 대조 %s(%d종, 최대 괴리 %.1f%%) · 보안 캐시 %d종" % (
+        cc.get("status", "-"), cc.get("checked", 0), cc.get("worst_gap_pct", 0.0),
+        meta.get("security_cached", 0)))
     lines.append('<a href="%s">대시보드 열기</a>' % dash_url)
     lines.append("")
     lines.append("<i>관측 시스템입니다. 순위·변동은 자금 반응의 서술이며 수익을 보장하지 않습니다. "
@@ -565,6 +712,27 @@ def render_dashboard(payload, cfg, out_path):
             return '<span class="down">▼%d</span>' % abs(d)
         return '<span class="dim">–</span>'
 
+    def sec_html(row):
+        sec = row.get("security")
+        if not sec:
+            return '<span class="dim">–</span>'
+        if not sec.get("indexed"):
+            return '<span class="flag f-UNVERIFIED">미색인</span>'
+        bits = []
+        hp = str(sec.get("honeypot"))
+        bits.append('<span class="ok2">허니팟 아님</span>' if hp == "0"
+                    else ('<span class="bad">허니팟</span>' if hp == "1"
+                          else '<span class="warn">판정불가</span>'))
+        bits.append('<span class="ok2">오너 소각</span>' if sec.get("owner_renounced")
+                    else '<span class="warn">오너 활성</span>')
+        if str(sec.get("mintable")) == "1":
+            bits.append('<span class="bad">발행가능</span>')
+        if sec.get("holder_count"):
+            bits.append('<span class="dim">홀더 %s</span>' % f"{sec['holder_count']:,}")
+        if sec.get("top10_pct") is not None:
+            bits.append('<span class="dim">상위10 %.1f%%</span>' % sec["top10_pct"])
+        return "<div class='secbits'>" + " · ".join(bits) + "</div>"
+
     trs = []
     for row in rows:
         raw, txt = chg_str(row)
@@ -580,11 +748,11 @@ def render_dashboard(payload, cfg, out_path):
             "<div class='addr'>%s</div></td>"
             "<td class='num'>$%s<div class='nm'>%s</div></td>"
             "<td class='num'>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
-            "<td class='num'>$%s</td><td class='num'>$%s</td><td>%s</td></tr>" % (
+            "<td class='num'>$%s</td><td class='num'>$%s</td><td>%s</td><td>%s</td></tr>" % (
                 row["rank"], esc(label(row)), esc(row["name"][:28]), row["address"][:10] + "…",
                 human(row["mcap"]), row["mcap_basis"],
                 darrow(row["d_rank_6h"]), darrow(row["d_rank_24h"]), chg_html,
-                human(row["v24"]), human(row["liq"]), flag_html(row),
+                human(row["v24"]), human(row["liq"]), flag_html(row), sec_html(row),
             )
         )
 
@@ -599,7 +767,21 @@ def render_dashboard(payload, cfg, out_path):
     for sym, series in list(hist.items())[:8]:
         spark_html += "<div class='sp'><span>%s</span>%s</div>" % (esc(sym), sparkline(series))
 
+    bt = payload.get("backtest") or {}
+    vcolor = {"POSITIVE": "var(--up)", "NEGATIVE": "var(--down)",
+              "NO_EDGE": "#d29922", "INSUFFICIENT": "var(--dim)"}.get(bt.get("verdict"), "var(--dim)")
+    verdict_html = ("<div class='verdict' style='color:%s'>%s</div><div class='note'>%s</div>" % (
+        vcolor, esc(backtest.render_line(bt)), esc(bt.get("note", "표본이 쌓이면 갱신됩니다."))))
+    cc = (payload["meta"].get("crosscheck") or {})
+    cc_html = ("<div class='note'>2차 소스(DexScreener) 대조 — 판정 <b>%s</b> · 대조 %d종 · "
+               "중앙 괴리 %.2f%% · 최대 괴리 %.2f%%. 8%% 초과 시 해당 종목에 SRC_DIVERGENCE를 답니다.</div>" % (
+                   esc(cc.get("status", "-")), cc.get("checked", 0),
+                   cc.get("median_gap_pct", 0.0), cc.get("worst_gap_pct", 0.0)))
+
     html = DASH_TMPL.format(
+        verdict=verdict_html,
+        crosscheck=cc_html,
+        promoted=payload["meta"].get("promoted", 0),
         as_of=esc(payload["as_of_kst"]),
         status=esc(payload["data_status"]),
         n=len(payload["rows"]),
@@ -657,7 +839,11 @@ td.num{{text-align:right;white-space:nowrap}} td.rk{{color:var(--dim);width:26px
 .up{{color:var(--up)}} .down{{color:var(--down)}} .dim{{color:var(--dim)}} .ok{{color:#3a4553}}
 .flag{{display:inline-block;font-size:9.5px;padding:1px 5px;border-radius:20px;border:1px solid var(--line);color:var(--dim);margin:1px 1px 0 0;white-space:nowrap}}
 .f-LIQ_DRAIN,.f-DATA_WARN{{color:var(--down);border-color:#5a2226}}
-.f-LIQ_THIN,.f-COPYCAT{{color:#d29922;border-color:#5a4a1e}}
+.f-LIQ_THIN,.f-COPYCAT,.f-OWNER_ACTIVE,.f-PROMOTED{{color:#d29922;border-color:#5a4a1e}}
+.f-HONEYPOT,.f-CANNOT_SELL_ALL,.f-MINTABLE,.f-PAUSABLE,.f-SRC_DIVERGENCE{{color:var(--down);border-color:#5a2226}}
+.f-UNVERIFIED,.f-HP_UNKNOWN{{color:#8b7cd6;border-color:#3d3466}}
+.secbits{{font-size:10px;line-height:1.7}} .ok2{{color:var(--up)}} .bad{{color:var(--down)}} .warn{{color:#d29922}}
+.verdict{{font-size:12.5px;padding:8px;border-radius:8px;border:1px solid var(--line);margin-bottom:8px}}
 ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:1px solid rgba(31,42,55,.6);font-size:12.5px}}
 .evi{{margin-right:4px}} .evc{{color:var(--dim);font-size:10.5px;margin-right:5px}}
 .sp{{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--dim)}} .sp span{{width:78px}}
@@ -675,9 +861,14 @@ ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:
 <div class="card"><h2>순위 변동·이벤트</h2><ul>{events}</ul>
 <div class="note" style="margin-top:8px">임계 — 6시간 {th6}계단 / 24시간 {th24}계단 이상, 24h 시총 ±40%, 6시간 유동성 −40%.</div></div>
 <div class="card"><h2>시총 순위 TOP {top_n}</h2><div class="tw"><table>
-<tr><th>#</th><th>토큰</th><th>시총</th><th>6h</th><th>24h</th><th>가격24h</th><th>거래대금</th><th>유동성</th><th>플래그</th></tr>
+<tr><th>#</th><th>토큰</th><th>시총</th><th>6h</th><th>24h</th><th>가격24h</th><th>거래대금</th><th>유동성</th><th>플래그</th><th>컨트랙트 검증</th></tr>
 {rows}</table></div></div>
 <div class="card"><h2>시총 추이 (최근 스냅샷)</h2>{sparks}</div>
+<div class="card"><h2>예측력 검증</h2>{verdict}
+<div class="note" style="margin-top:8px">순위 급등 종목의 이후 24시간 시총 변화에서 유니버스 중앙값을 뺀 초과수익을 측정합니다.
+결과가 음(-)이나 무의미로 나와도 그대로 표기합니다 — 이 시스템이 매수 신호로 오독되지 않게 하는 것이 이 측정의 목적입니다.</div></div>
+<div class="card"><h2>데이터 건전성</h2>{crosscheck}
+<div class="note" style="margin-top:6px">DexScreener 유료 프로모션 등재 <b>{promoted}종</b> — 홍보 집행 신호이며 품질 보증이 아닙니다.</div></div>
 <div class="card"><h2>읽는 법과 한계</h2><div class="note">
 · <b>관측기이지 예측기가 아닙니다.</b> 순위와 변동은 "지금 자금이 어디에 반응하는가"의 서술이며 미래 수익률을 주장하지 않습니다.<br>
 · <b>시총 기준</b> — MC는 유통시총, FDV는 완전희석시총. 교차체인 브릿지 토큰은 타 체인 시총이 섞여 들어오므로 FDV로 대체하고 BRIDGED_MC로 표시합니다.<br>
@@ -685,7 +876,11 @@ ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:
 · <b>제외 대상</b> — 스테이블·랩드 토큰, 토큰화 주식/ETF(<code>Robinhood Token</code> 표기 또는 CoinGecko id 접미사로 판별). 티커만 겹치는 코인을 오제외하지 않기 위해 티커 목록만으로는 제외하지 않습니다.<br>
 · <b>편입 규칙</b> — 유동성 ≥ $25K, 24h 거래대금 ≥ $50K, 시총 ≥ $300K를 모두 충족하면 자동 편입됩니다. 고정 목록이 아니므로 신규 상장분도 다음 실행에 잡힙니다.<br>
 · <b>LIQ_THIN / LIQ_DRAIN / YOUNG / SINGLE_POOL</b>은 러그풀·허니팟 개연성이 높은 조건입니다. 진입 전 컨트랙트와 유동성 락을 직접 확인하십시오.<br>
-· 데이터: GeckoTerminal 공개 API(온체인 DEX 집계). 수집 실패 시 "판정 불가"로 표기하며 정상 브리프를 발송하지 않습니다.
+· <b>컨트랙트 검증</b>은 GoPlus(chain 4663) 기준입니다. LP 락 비율은 이 체인에서 전 종목 0%로 관측되는데,
+락커 컨트랙트를 스캐너가 인식하지 못하는 것일 수 있어 "락 없음"이 아니라 <b>확인 불가</b>로 봅니다.<br>
+· <b>미색인</b>은 안전이 아니라 검증 불가입니다. 신생·소형일수록 색인되지 않습니다.<br>
+· <b>소급 이력</b>(source=ohlcv_backfill)은 현재 공급량을 과거에 그대로 적용해 재구성한 값이라, 추가발행·소각이 있었다면 왜곡됩니다. 실측 스냅샷이 우선합니다.<br>
+· 데이터: GeckoTerminal 공개 API(온체인 DEX 집계) + DexScreener 교차검증 + GoPlus 보안. 수집 실패 시 "판정 불가"로 표기하며 정상 브리프를 발송하지 않습니다.
 </div></div>
 </div></body></html>"""
 
@@ -696,8 +891,16 @@ def main():
     now = now_kst()
     hist_path = os.path.join(DATA_DIR, "history.json")
     latest_path = os.path.join(DATA_DIR, "latest.json")
+    sec_path = os.path.join(DATA_DIR, "security.json")
+    tracked_path = os.path.join(DATA_DIR, "tracked.json")
+    bf_marker = os.path.join(DATA_DIR, "backfill_done.json")
+
     history = read_json(hist_path, [])
-    prev = history[-1] if history else None
+    prev = None
+    for snap in reversed(history):
+        if snap.get("source") != "ohlcv_backfill":
+            prev = snap
+            break
 
     try:
         pools, tokens = fetch_pools(cfg)
@@ -713,6 +916,12 @@ def main():
         return 1
 
     universe = build_universe(pools, tokens, cfg)
+
+    tracked = read_json(tracked_path, {})
+    revived = 0
+    if cfg.get("sticky_universe") and tracked:
+        universe, revived = apply_sticky(universe, list(tracked.keys()), cfg)
+
     rows, dropped = gate(universe, cfg)
 
     if len(rows) < cfg["coverage_min_tokens"]:
@@ -727,55 +936,146 @@ def main():
         return 1
 
     rows = tag_risks(rows, cfg, prev)
+
+    # ---- 보안 검증 (GoPlus, 캐시·로테이션) ----
+    sec_cache = {}
+    if cfg.get("security_enabled"):
+        try:
+            sec_cache = security.refresh(
+                [r["address"] for r in rows[: cfg["security_top_n"]]], sec_path,
+                refresh_per_run=cfg["security_refresh_per_run"],
+                ttl_hours=cfg["security_ttl_hours"])
+        except Exception as exc:
+            print("[security] 전체 실패: %s" % exc)
+            sec_cache = security.load_cache(sec_path)
+    rows = attach_security(rows, sec_cache, cfg)
+
+    # ---- 프로모션(부스트) 신호 ----
+    boosts = {}
+    if cfg.get("boost_enabled"):
+        try:
+            boosts = crosscheck.boosted_addresses()
+        except Exception as exc:
+            print("[boost] 실패: %s" % exc)
+    rows = attach_promotion(rows, boosts)
+
+    # ---- 2차 소스 교차검증 ----
+    cross, cross_summary = {}, {"status": "SKIPPED", "checked": 0}
+    if cfg.get("crosscheck_enabled"):
+        try:
+            cross, cross_summary = crosscheck.compare(
+                rows, top_n=cfg["crosscheck_top_n"],
+                tolerance_pct=cfg["crosscheck_tolerance_pct"])
+        except Exception as exc:
+            print("[crosscheck] 실패: %s" % exc)
+            cross_summary = {"status": "FAILED", "checked": 0}
+    rows = attach_crosscheck(rows, cross, cfg["crosscheck_tolerance_pct"])
+
+    # ---- OHLCV 소급 백필 (1회) ----
+    real_snaps = [s for s in history if s.get("source") != "ohlcv_backfill"]
+    want_backfill = os.environ.get("HOOD_BACKFILL", "auto")
+    do_backfill = (want_backfill == "1") or (
+        want_backfill == "auto" and len(real_snaps) < 4 and not os.path.exists(bf_marker))
+    if do_backfill:
+        try:
+            synth = backfill.build_snapshots(
+                rows, hours_back=cfg["backfill_hours"], step_hours=cfg["backfill_step_hours"],
+                sleep_sec=float(cfg["page_sleep_sec"]), max_tokens=cfg["backfill_max_tokens"],
+                deadline_sec=float(cfg.get("backfill_deadline_sec", 480)))
+            if synth:
+                history = backfill.merge(history, synth)
+                with open(bf_marker, "w", encoding="utf-8") as fh:
+                    json.dump({"done_at": now.isoformat(), "snapshots": len(synth)}, fh)
+        except Exception as exc:
+            print("[backfill] 실패: %s" % exc)
+
     events = detect_changes(rows, history, cfg, now)
+
+    # 보안 경보를 이벤트로 승격 (상위권만)
+    for row in rows[:20]:
+        for flag in row["flags"]:
+            if flag["code"] in ("HONEYPOT", "CANNOT_SELL_ALL", "MINTABLE", "PAUSABLE",
+                                "SELL_TAX", "BUY_TAX", "CLOSED_SOURCE"):
+                events.append({
+                    "code": "SECURITY", "window": "now",
+                    "symbol": label(row), "address": row["address"],
+                    "detail": flag["detail"], "mcap": row["mcap"],
+                    "severity": 12.0 if flag["code"] in ("HONEYPOT", "CANNOT_SELL_ALL") else 7.0,
+                })
+    events.sort(key=lambda e: -e["severity"])
 
     chain_vol = sum(fnum((p.get("attributes") or {}).get("volume_usd", {}).get("h24")) for p in pools)
     payload = {
+        "version": cfg.get("version", "2.0"),
         "as_of_kst": now.strftime("%Y-%m-%d %H:%M"),
         "as_of_utc": now.astimezone(timezone.utc).isoformat(),
-        "data_status": "OK",
+        "data_status": "OK" if cross_summary.get("status") != "DIVERGENT" else "OK (소스 괴리 감지)",
         "meta": {
             "network": cfg["network_label"],
             "pools_scanned": len(pools),
             "tokens_seen": len(universe),
             "chain_volume_24h": chain_vol,
             "dropped": dropped,
+            "revived": revived,
+            "crosscheck": cross_summary,
+            "security_cached": len(sec_cache),
+            "promoted": sum(1 for r in rows if r.get("promoted")),
         },
         "rows": rows,
         "events": events,
     }
 
-    # 스냅샷 누적
     snap = snapshot_of(rows, now.isoformat())
+    snap["source"] = "live"
     history.append(snap)
+    history.sort(key=lambda s: s.get("ts") or "")
     history = history[-int(cfg["history_max_snapshots"]):]
 
-    # 스파크라인용 시총 시계열(상위 8종)
+    # ---- 예측력 검증 ----
+    try:
+        payload["backtest"] = backtest.run(
+            history, rank_threshold=cfg["rank_move_24h_threshold"],
+            forward_hours=cfg["backtest_forward_hours"],
+            min_picks=cfg["backtest_min_picks"])
+    except Exception as exc:
+        print("[backtest] 실패: %s" % exc)
+        payload["backtest"] = {"verdict": "INSUFFICIENT", "n_picks": 0}
+
     spark = {}
     for row in rows[:8]:
-        spark[row["symbol"]] = [
-            (s.get("mcap") or {}).get(row["address"]) for s in history[-24:]
-        ]
+        spark[row["symbol"]] = [(s.get("mcap") or {}).get(row["address"]) for s in history[-24:]]
     payload["spark"] = spark
 
     dash_url = os.environ.get(
-        "HOOD_DASH_URL",
-        "https://jinhae8971.github.io/korea-etf-calmar/hood-radar/",
-    )
+        "HOOD_DASH_URL", "https://jinhae8971.github.io/korea-etf-calmar/hood-radar/")
     payload["message"] = render_telegram(payload, cfg, dash_url)
     payload["dashboard_url"] = dash_url
 
-    changed_latest = write_json_if_changed(latest_path, payload)
+    changed = write_json_if_changed(latest_path, payload)
     with open(hist_path, "w", encoding="utf-8") as fh:
         json.dump(history, fh, ensure_ascii=False, separators=(",", ":"))
+
+    # 추적 목록 갱신
+    run_no = int(tracked.get("__run__", {}).get("n", 0)) + 1 if isinstance(tracked.get("__run__"), dict) else 1
+    new_tracked = {"__run__": {"n": run_no}}
+    for row in rows[: cfg["sticky_max"]]:
+        new_tracked[row["address"]] = {"symbol": row["symbol"], "run": run_no}
+    for addr, info in tracked.items():
+        if addr == "__run__" or addr in new_tracked:
+            continue
+        if run_no - int(info.get("run", 0)) < cfg["sticky_ttl_runs"]:
+            new_tracked[addr] = info
+    write_json_if_changed(tracked_path, new_tracked)
 
     docs = os.path.abspath(os.path.join(BASE, "..", "docs", "hood-radar", "index.html"))
     render_dashboard(payload, cfg, docs)
 
-    print("[ok] %s · 추적 %d종 · 이벤트 %d건 · 풀 %d개 (latest 갱신=%s)" % (
-        payload["as_of_kst"], len(rows), len(events), len(pools), changed_latest))
+    print("[ok] %s · 추적 %d종 · 이벤트 %d건 · 풀 %d개 · 보안캐시 %d · 교차검증 %s (latest 갱신=%s)" % (
+        payload["as_of_kst"], len(rows), len(events), len(pools),
+        len(sec_cache), cross_summary.get("status"), changed))
     for e in events[:8]:
-        print("   %s %-10s %s" % (e["code"], e["symbol"], e["detail"]))
+        print("   %-10s %-12s %s" % (e["code"], e["symbol"], e["detail"]))
+    print("   %s" % backtest.render_line(payload["backtest"]))
     return 0
 
 
