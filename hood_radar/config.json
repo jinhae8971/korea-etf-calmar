@@ -131,5 +131,25 @@
     "DELL",
     "HOOD"
   ],
-  "rwa_rule_note": "RWA 제외는 name marker 또는 coingecko id 접미사로만 판정한다. 티커만 겹치는 경우(예: NET=NetNet 밈코인 vs Cloudflare)를 오제외하지 않기 위함 — 티커 목록은 검토 플래그 용도로만 쓴다."
+  "rwa_rule_note": "RWA 제외는 name marker 또는 coingecko id 접미사로만 판정한다. 티커만 겹치는 경우(예: NET=NetNet 밈코인 vs Cloudflare)를 오제외하지 않기 위함 — 티커 목록은 검토 플래그 용도로만 쓴다.",
+  "version": "2.0",
+  "security_enabled": true,
+  "security_refresh_per_run": 12,
+  "security_ttl_hours": 18,
+  "security_top_n": 30,
+  "tax_alert_pct": 5.0,
+  "holder_concentration_pct": 30.0,
+  "crosscheck_enabled": true,
+  "crosscheck_top_n": 8,
+  "crosscheck_tolerance_pct": 8.0,
+  "boost_enabled": true,
+  "sticky_universe": true,
+  "sticky_max": 80,
+  "sticky_ttl_runs": 12,
+  "backfill_hours": 72,
+  "backfill_step_hours": 6,
+  "backfill_max_tokens": 24,
+  "backtest_min_picks": 10,
+  "backtest_forward_hours": 24,
+  "backfill_deadline_sec": 480
 }
