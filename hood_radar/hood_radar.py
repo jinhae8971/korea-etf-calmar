@@ -26,6 +26,7 @@ from datetime import datetime, timedelta, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import backfill          # noqa: E402
 import backtest          # noqa: E402
+import chainvol         # noqa: E402
 import crosscheck        # noqa: E402
 import security          # noqa: E402
 
@@ -675,7 +676,15 @@ def render_telegram(payload, cfg, dash_url):
 
     meta = payload["meta"]
     cc = meta.get("crosscheck") or {}
-    lines.append("📊 추적 %d종 · 24h DEX 거래대금 $%s · 풀 %d개 스캔" % (
+    if meta.get("chain_dex_24h"):
+        parts = ["📈 <b>체인 전체 DEX 거래량</b> $%s" % human(meta["chain_dex_24h"])]
+        if meta.get("chain_dex_change_1d_pct") is not None:
+            parts.append("전일 %+.1f%%" % meta["chain_dex_change_1d_pct"])
+        if meta.get("chain_dex_vs_avg7d_pct") is not None:
+            parts.append("7일평균 대비 %+.1f%%" % meta["chain_dex_vs_avg7d_pct"])
+        lines.append(" · ".join(parts))
+        lines.append("")
+    lines.append("📊 추적 %d종 · 상위 200풀 거래대금 $%s · 풀 %d개 스캔" % (
         len(rows), human(meta["chain_volume_24h"]), meta["pools_scanned"]))
     lines.append("🔎 2차 소스 대조 %s(%d종, 최대 괴리 %.1f%%) · 보안 캐시 %d종" % (
         cc.get("status", "-"), cc.get("checked", 0), cc.get("worst_gap_pct", 0.0),
@@ -696,7 +705,7 @@ def render_telegram(payload, cfg, dash_url):
     return msg
 
 
-def render_dashboard(payload, cfg, out_path, history=None):
+def render_dashboard(payload, cfg, out_path, history=None, chain_vol=None):
     rows = payload["rows"][: cfg["top_n_dashboard"]]
     ev = payload["events"]
 
@@ -782,11 +791,15 @@ def render_dashboard(payload, cfg, out_path, history=None):
                    cc.get("median_gap_pct", 0.0), cc.get("worst_gap_pct", 0.0)))
 
     html = DASH_TMPL.format(
-        volchart=volume_chart(history or []),
+        volchart=volume_chart(chain_vol or {}),
+        protochart=protocol_chart(chain_vol or {}),
         volshare=volume_share_chart(payload["rows"]),
         verdict=verdict_html,
         crosscheck=cc_html,
         promoted=payload["meta"].get("promoted", 0),
+        chainvol=human(payload["meta"].get("chain_dex_24h") or 0),
+        chainchg=("(%+.1f%%)" % payload["meta"]["chain_dex_change_1d_pct"]
+                  if payload["meta"].get("chain_dex_change_1d_pct") is not None else ""),
         as_of=esc(payload["as_of_kst"]),
         status=esc(payload["data_status"]),
         n=len(payload["rows"]),
@@ -804,78 +817,93 @@ def render_dashboard(payload, cfg, out_path, history=None):
         fh.write(html)
 
 
-def volume_chart(history, w=680, h=190):
+def volume_chart(cv, own_points=None, w=680, h=210):
     """
-    24h DEX 거래대금 추세 — 실측 스냅샷만 사용한다.
-    소급 백필 스냅샷에는 거래대금이 없으므로 섞지 않는다(있는 척하지 않는다).
+    로빈후드 체인 **전체** DEX 거래량 일별 추이 (DefiLlama, 메인넷 가동일부터).
+
+    우리 자체 집계(상위 200풀 합)와는 다른 측정치다 — 실측 대조에서
+    같은 시점 자체집계 $744.7M vs 체인 전체 $1,033.9M로 벌어진다.
+    따라서 체인 전체를 주(主) 시리즈로 그리고, 자체 집계는 섞지 않는다.
     """
-    pts = []
-    for snap in history:
-        if snap.get("source") == "ohlcv_backfill":
-            continue
-        cv = snap.get("chain_v24")
-        if not cv:
-            continue
-        try:
-            t = datetime.fromisoformat(snap["ts"])
-        except (KeyError, ValueError):
-            continue
-        pts.append((t, float(cv), float(snap.get("tracked_v24") or 0.0)))
-    pts.sort(key=lambda x: x[0])
+    series = (cv or {}).get("series") or []
+    if len(series) < 2:
+        return "<div class='empty'>체인 거래량 시계열을 불러오지 못했습니다.</div>"
 
-    if len(pts) < 2:
-        n = len(pts)
-        cur = ("현재 $%s" % human(pts[0][1])) if n else "관측치 없음"
-        return ("<div class='empty'>관측 스냅샷 %d개 — 추세선은 6시간마다 한 점씩 채워집니다. "
-                "(%s)</div>" % (n, cur))
-
-    pad_l, pad_r, pad_t, pad_b = 8, 8, 14, 22
+    pad_l, pad_r, pad_t, pad_b = 8, 8, 16, 24
     iw, ih = w - pad_l - pad_r, h - pad_t - pad_b
-    vals = [p[1] for p in pts] + [p[2] for p in pts]
-    lo, hi = min(vals), max(vals)
-    span = (hi - lo) or (hi or 1.0)
-    lo = max(0.0, lo - span * 0.15)
-    hi = hi + span * 0.15
-    rng = (hi - lo) or 1.0
-    step = iw / (len(pts) - 1)
+    vals = [s["v"] for s in series]
+    hi = max(vals) * 1.1
+    lo = 0.0
+    rng = hi - lo or 1.0
+    n = len(series)
+    step = iw / max(1, n - 1)
 
     def xy(i, v):
         return pad_l + i * step, pad_t + ih - (v - lo) / rng * ih
 
-    chain = " ".join("%.1f,%.1f" % xy(i, p[1]) for i, p in enumerate(pts))
-    track = " ".join("%.1f,%.1f" % xy(i, p[2]) for i, p in enumerate(pts))
-    x0, _ = xy(0, pts[0][1])
-    xn, _ = xy(len(pts) - 1, pts[-1][1])
-    area = "%s %.1f,%.1f %.1f,%.1f" % (chain, xn, pad_t + ih, x0, pad_t + ih)
+    line = " ".join("%.1f,%.1f" % xy(i, s["v"]) for i, s in enumerate(series))
+    area = "%s %.1f,%.1f %.1f,%.1f" % (line, pad_l + (n - 1) * step, pad_t + ih, pad_l, pad_t + ih)
+
+    # 7일 이동평균
+    ma, out_ma = [], []
+    for i in range(n):
+        window = vals[max(0, i - 6): i + 1]
+        ma.append(sum(window) / len(window))
+    for i, v in enumerate(ma):
+        out_ma.append("%.1f,%.1f" % xy(i, v))
+    ma_line = " ".join(out_ma)
+
+    grid = []
+    for frac in (0.25, 0.5, 0.75, 1.0):
+        y = pad_t + ih - frac * ih
+        grid.append("<line x1='%d' y1='%.1f' x2='%d' y2='%.1f' class='gl'/>" % (pad_l, y, w - pad_r, y))
+        grid.append("<text x='%d' y='%.1f' class='ax'>$%s</text>" % (pad_l + 2, y - 3, human(hi * frac)))
 
     ticks = []
-    for i, p in enumerate(pts):
-        if len(pts) <= 6 or i in (0, len(pts) - 1) or i % max(1, len(pts) // 5) == 0:
-            x, _ = xy(i, p[1])
+    every = max(1, n // 5)
+    for i, s in enumerate(series):
+        if i % every == 0 or i == n - 1:
+            x, _ = xy(i, s["v"])
             ticks.append("<text x='%.1f' y='%d' class='ax' text-anchor='middle'>%s</text>"
-                         % (x, h - 6, p[0].strftime("%m/%d %H시")))
+                         % (x, h - 7, time.strftime("%m/%d", time.gmtime(s["ts"]))))
 
-    last_c, last_t = pts[-1][1], pts[-1][2]
-    delta = ""
-    if len(pts) >= 2 and pts[-2][1]:
-        d = (last_c - pts[-2][1]) / pts[-2][1] * 100.0
-        delta = "<tspan class='%s'>%+.1f%%</tspan>" % ("up" if d >= 0 else "down", d)
+    chg = cv.get("change_1d_pct")
+    chg_html = ("<tspan class='%s'>%+.1f%%</tspan>" % ("up" if chg >= 0 else "down", chg)) if chg is not None else ""
+    vs7 = cv.get("vs_avg7d_pct")
+    vs7_html = ("<span class='%s'>7일평균 대비 %+.1f%%</span>" % ("up" if vs7 >= 0 else "down", vs7)) if vs7 is not None else ""
+    peak_day = time.strftime("%m/%d", time.gmtime(cv["peak_ts"])) if cv.get("peak_ts") else "-"
 
     return ("""<svg viewBox="0 0 {w} {h}" class="chart" preserveAspectRatio="none" role="img">
 <defs><linearGradient id="vg" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0%" stop-color="var(--acc)" stop-opacity=".35"/>
+<stop offset="0%" stop-color="var(--acc)" stop-opacity=".38"/>
 <stop offset="100%" stop-color="var(--acc)" stop-opacity="0"/></linearGradient></defs>
-<polygon points="{area}" fill="url(#vg)"/>
-<polyline points="{chain}" fill="none" stroke="var(--acc)" stroke-width="2"/>
-<polyline points="{track}" fill="none" stroke="var(--dim)" stroke-width="1.4" stroke-dasharray="4 3"/>
+{grid}<polygon points="{area}" fill="url(#vg)"/>
+<polyline points="{line}" fill="none" stroke="var(--acc)" stroke-width="2"/>
+<polyline points="{ma}" fill="none" stroke="#d29922" stroke-width="1.4" stroke-dasharray="4 3"/>
 {ticks}</svg>
-<div class="legend"><span><i class="sw acc"></i>체인 전체 ${cur} {delta}</span>
-<span><i class="sw dash"></i>추적 {n}종 합계 ${trk}</span>
-<span class="dim">고 ${hi} / 저 ${lo}</span></div>""").format(
-        w=w, h=h, area=area, chain=chain, track=track, ticks="".join(ticks),
-        cur=human(last_c), trk=human(last_t), delta=delta,
-        hi=human(max(p[1] for p in pts)), lo=human(min(p[1] for p in pts)),
-        n=len(pts))
+<div class="legend"><span><i class="sw acc"></i>일별 거래량 <b>${cur}</b> {chg}</span>
+<span><i class="sw ma"></i>7일 이동평균 ${avg}</span>{vs7}
+<span class="dim">최고 ${peak} ({peakday}) · 표시 {n}일</span></div>""").format(
+        w=w, h=h, grid="".join(grid), area=area, line=line, ma=ma_line, ticks="".join(ticks),
+        cur=human(cv.get("total24h") or vals[-1]), chg=chg_html, avg=human(ma[-1]),
+        vs7=vs7_html, peak=human(cv.get("peak") or max(vals)), peakday=peak_day, n=n)
+
+
+def protocol_chart(cv, ):
+    """체인 거래량의 프로토콜별 내역 — 어느 DEX가 체인을 돌리고 있는지."""
+    protos = (cv or {}).get("protocols") or []
+    total = (cv or {}).get("protocol_total") or 0.0
+    if not protos or total <= 0:
+        return "<div class='empty'>프로토콜 내역 없음</div>"
+    top = protos[0]["v24"]
+    bars = []
+    for p in protos:
+        bars.append("<div class='bar'><span class='bl'>%s</span>"
+                    "<span class='bt'><i style='width:%.1f%%'></i></span>"
+                    "<span class='bv'>$%s<em>%.1f%%</em></span></div>" % (
+                        esc(p["name"]), max(2.0, p["v24"] / top * 100.0),
+                        human(p["v24"]), p["v24"] / total * 100.0))
+    return "".join(bars)
 
 
 def volume_share_chart(rows, top=8):
@@ -950,11 +978,12 @@ ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:
 .sp{{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--dim)}} .sp span{{width:78px}}
 .note{{color:var(--dim);font-size:11px;line-height:1.6}}
 .tw{{overflow-x:auto}}
-.chart{{width:100%;height:190px;display:block}} .ax{{fill:var(--dim);font-size:9px}}
+.chart{{width:100%;height:210px;display:block}} .ax{{fill:var(--dim);font-size:9px}}
 .empty{{color:var(--dim);font-size:12px;padding:14px 4px;text-align:center;border:1px dashed var(--line);border-radius:8px}}
 .legend{{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--fg);margin-top:6px;align-items:center}}
 .sw{{display:inline-block;width:14px;height:0;border-top:2px solid var(--acc);margin-right:4px;vertical-align:middle}}
 .sw.dash{{border-top:2px dashed var(--dim)}}
+.sw.ma{{border-top:2px dashed #d29922}} .gl{{stroke:var(--line);stroke-width:1}}
 .bar{{display:flex;align-items:center;gap:7px;margin-bottom:6px;font-size:11.5px}}
 .bl{{width:88px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 .bt{{flex:1;height:9px;background:rgba(78,161,255,.10);border-radius:5px;overflow:hidden}}
@@ -966,16 +995,19 @@ ul{{margin:0;padding-left:2px;list-style:none}} li{{padding:5px 0;border-bottom:
 <div class="sub">로빈후드 체인(Arbitrum Orbit L2) 커뮤니티 토큰 시총 순위 · 6시간 주기 갱신 · 기준 {as_of} KST · 상태 {status}</div>
 <div class="kpis">
 <div class="kpi"><b>{n}</b><span>추적 종목</span></div>
-<div class="kpi"><b>${vol}</b><span>24h DEX 거래대금</span></div>
+<div class="kpi"><b>${chainvol}</b><span>체인 전체 24h DEX 거래량 {chainchg}</span></div>
+<div class="kpi"><b>${vol}</b><span>추적 200풀 거래대금</span></div>
 <div class="kpi"><b>{pools}</b><span>스캔 풀</span></div>
 <div class="kpi"><b>6h</b><span>탐지 주기</span></div>
 </div>
 <div class="card"><h2>순위 변동·이벤트</h2><ul>{events}</ul>
 <div class="note" style="margin-top:8px">임계 — 6시간 {th6}계단 / 24시간 {th24}계단 이상, 24h 시총 ±40%, 6시간 유동성 −40%.</div></div>
-<div class="card"><h2>24h DEX 거래대금 추세</h2>{volchart}
-<div class="note" style="margin-top:8px">스냅샷마다 기록되는 <b>그 시점의 직전 24시간</b> 거래대금입니다(누적 아님).
-소급 이력 스냅샷에는 거래대금이 없어 실측 관측치만 그립니다 — 6시간마다 한 점씩 채워집니다.</div></div>
-<div class="card"><h2>거래대금 구성 (현재)</h2>{volshare}</div>
+<div class="card"><h2>체인 전체 DEX 거래량 추이 (일별)</h2>{volchart}
+<div class="note" style="margin-top:8px">로빈후드 체인 <b>전체</b> DEX 일별 거래량입니다(DefiLlama, 메인넷 2026-07-01 가동일부터).
+아래 표의 종목별 거래대금은 우리가 스캔하는 상위 200풀 합계라 이 값보다 작습니다 — 측정 범위가 다릅니다.</div></div>
+<div class="card"><h2>프로토콜별 24h 거래량</h2>{protochart}
+<div class="note" style="margin-top:8px">체인 거래량을 실제로 돌리고 있는 DEX 내역입니다.</div></div>
+<div class="card"><h2>추적 종목 거래대금 구성 (현재)</h2>{volshare}</div>
 <div class="card"><h2>시총 순위 TOP {top_n}</h2><div class="tw"><table>
 <tr><th>#</th><th>토큰</th><th>시총</th><th>6h</th><th>24h</th><th>가격24h</th><th>거래대금</th><th>유동성</th><th>플래그</th><th>컨트랙트 검증</th></tr>
 {rows}</table></div></div>
@@ -1121,6 +1153,9 @@ def main():
     events.sort(key=lambda e: -e["severity"])
 
     chain_vol = sum(fnum((p.get("attributes") or {}).get("volume_usd", {}).get("h24")) for p in pools)
+
+    # 체인 전체 DEX 거래량 (DefiLlama) — 우리 집계와 측정 범위가 다르므로 별도로 둔다
+    cv = chainvol.load_or_fetch(os.path.join(DATA_DIR, "chain_volume.json"))
     payload = {
         "version": cfg.get("version", "2.0"),
         "as_of_kst": now.strftime("%Y-%m-%d %H:%M"),
@@ -1136,6 +1171,10 @@ def main():
             "crosscheck": cross_summary,
             "security_cached": len(sec_cache),
             "promoted": sum(1 for r in rows if r.get("promoted")),
+            "chain_dex_24h": (cv or {}).get("total24h"),
+            "chain_dex_change_1d_pct": (cv or {}).get("change_1d_pct"),
+            "chain_dex_vs_avg7d_pct": (cv or {}).get("vs_avg7d_pct"),
+            "chain_dex_days": (cv or {}).get("days"),
         },
         "rows": rows,
         "events": events,
@@ -1184,7 +1223,7 @@ def main():
     write_json_if_changed(tracked_path, new_tracked)
 
     docs = os.path.abspath(os.path.join(BASE, "..", "docs", "hood-radar", "index.html"))
-    render_dashboard(payload, cfg, docs, history=history)
+    render_dashboard(payload, cfg, docs, history=history, chain_vol=cv)
 
     print("[ok] %s · 추적 %d종 · 이벤트 %d건 · 풀 %d개 · 보안캐시 %d · 교차검증 %s (latest 갱신=%s)" % (
         payload["as_of_kst"], len(rows), len(events), len(pools),
