@@ -1,6 +1,6 @@
 {
- "date": "2026-08-24",
- "generated_at": "2026-08-24T08:25:56+09:00",
+ "date": "2026-08-31",
+ "generated_at": "2026-08-31T10:14:48+09:00",
  "summary": {
   "narrative": {
    "label": "서사",
@@ -31,7 +31,7 @@
    "label": "① 서사 점화",
    "rule": "로봇 용어 공시 언급 4분기 합이 2년 전 대비 3배 이상",
    "status": "PASS",
-   "current": 7.44,
+   "current": 7.92,
    "target": 3.0,
    "note": "2년 전 대비 언급 배수",
    "reference": "2023Q1"
@@ -86,7 +86,7 @@
    "label": "⑥ 가격 재평가",
    "rule": "순수 바스켓 12개월 초과수익 ≥ +20%",
    "status": "FAIL",
-   "current": -0.223,
+   "current": -0.252,
    "target": 0.2,
    "note": "2026Q3 12개월 초과수익",
    "reference": "2023Q2"
@@ -94,12 +94,12 @@
  ],
  "alert": {
   "level": "INFO",
-  "streak": 2,
+  "streak": 3,
   "limit": 6,
-  "text": "서사 선행 상태 2회 연속 (경고 기준 6회)"
+  "text": "서사 선행 상태 3회 연속 (경고 기준 6회)"
  },
  "decoupling": {
-  "corr": 0.19,
+  "corr": 0.202,
   "decoupled": true,
   "threshold": 0.35
  },
@@ -115,7 +115,7 @@
    "2025Q4": 0.8369156781636746,
    "2026Q1": 0.3631578398739881,
    "2026Q2": -0.03130524048649763,
-   "2026Q3": -0.22344937633690082
+   "2026Q3": -0.2519433251634553
   },
   "legacy": {
    "2024Q1": -0.30733137587208187,
@@ -128,7 +128,7 @@
    "2025Q4": -0.08023540069762058,
    "2026Q1": 0.13078647646272024,
    "2026Q2": 0.24268409724013784,
-   "2026Q3": 0.16638051749729899
+   "2026Q3": 0.11462075147270445
   },
   "aisemi": {
    "2024Q1": 0.6760805995506283,
@@ -141,7 +141,7 @@
    "2025Q4": 0.2959022594823797,
    "2026Q1": 0.7042845709257712,
    "2026Q2": 0.941736836807181,
-   "2026Q3": 0.39234603475426555
+   "2026Q3": 0.39182266957402656
   }
  },
  "narrative": {
@@ -278,11 +278,11 @@
    "sic_n": 28
   },
   "2026Q2": {
-   "hits": 439,
+   "hits": 440,
    "sic_n": 30
   },
   "2026Q3": {
-   "hits": 322,
+   "hits": 395,
    "sic_n": 30
   }
  },
@@ -367,14 +367,14 @@
    {
     "rank": 4,
     "ticker": "ZBRA",
-    "score": 66.7,
+    "score": 67.0,
     "coverage": 1.0,
     "detail": {
      "purity": 0.75,
      "realization": 0.619,
      "independence": 0.618,
      "resilience": 0.619,
-     "liquidity": 0.706
+     "liquidity": 0.735
     },
     "density": 0.1413,
     "persistence": 0.0,
@@ -383,12 +383,12 @@
    {
     "rank": 5,
     "ticker": "OUST",
-    "score": 65.9,
+    "score": 67.0,
     "coverage": 1.0,
     "detail": {
      "purity": 0.875,
      "realization": 1.0,
-     "independence": 0.294,
+     "independence": 0.353,
      "resilience": 0.19,
      "liquidity": 0.588
     },
@@ -399,13 +399,13 @@
    {
     "rank": 6,
     "ticker": "AVAV",
-    "score": 64.6,
+    "score": 64.3,
     "coverage": 0.75,
     "detail": {
      "purity": 0.833,
-     "independence": 0.794,
+     "independence": 0.765,
      "resilience": 0.095,
-     "liquidity": 0.618
+     "liquidity": 0.647
     },
     "density": 0.1569,
     "persistence": null,
@@ -430,14 +430,14 @@
    {
     "rank": 8,
     "ticker": "KTOS",
-    "score": 59.0,
+    "score": 57.8,
     "coverage": 1.0,
     "detail": {
      "purity": 0.292,
      "realization": 0.762,
-     "independence": 0.971,
+     "independence": 0.941,
      "resilience": 0.333,
-     "liquidity": 0.676
+     "liquidity": 0.618
     },
     "density": 0.0093,
     "persistence": 0.5,
@@ -479,51 +479,51 @@
   "etfs": [
    {
     "rank": 1,
-    "ticker": "ARKQ",
-    "score": 85.0,
+    "ticker": "ARKX",
+    "score": 89.4,
     "coverage": 1.0,
     "detail": {
      "pure_exposure": 1.0,
-     "independence": 0.667,
-     "liquidity": 0.556
-    },
-    "exposure": -0.08
-   },
-   {
-    "rank": 2,
-    "ticker": "ARKX",
-    "score": 82.8,
-    "coverage": 1.0,
-    "detail": {
-     "pure_exposure": 0.889,
      "independence": 0.778,
      "liquidity": 0.667
     },
-    "exposure": -0.08
+    "exposure": -0.088
+   },
+   {
+    "rank": 2,
+    "ticker": "ARKQ",
+    "score": 78.3,
+    "coverage": 1.0,
+    "detail": {
+     "pure_exposure": 0.889,
+     "independence": 0.667,
+     "liquidity": 0.556
+    },
+    "exposure": -0.09
    },
    {
     "rank": 3,
     "ticker": "XAR",
-    "score": 82.2,
+    "score": 75.6,
     "coverage": 1.0,
     "detail": {
-     "pure_exposure": 0.778,
+     "pure_exposure": 0.667,
      "independence": 0.889,
      "liquidity": 0.889
     },
-    "exposure": -0.2
+    "exposure": -0.215
    },
    {
     "rank": 4,
     "ticker": "KROP",
-    "score": 65.0,
+    "score": 71.7,
     "coverage": 1.0,
     "detail": {
-     "pure_exposure": 0.667,
+     "pure_exposure": 0.778,
      "independence": 1.0,
      "liquidity": 0.0
     },
-    "exposure": -0.209
+    "exposure": -0.201
    },
    {
     "rank": 5,
@@ -535,7 +535,7 @@
      "independence": 0.444,
      "liquidity": 0.222
     },
-    "exposure": -0.437
+    "exposure": -0.413
    }
   ],
   "weights": {
@@ -552,5 +552,5 @@
   },
   "note": "이 목록은 추천이 아니라 스크리닝 결과다. 흐름 적합도 점수가 높다는 것은 '이 테마의 순수 노출이 크다'는 뜻이지 '오를 것'이라는 뜻이 아니다. 현재 국면이 NARRATIVE_LED(서사 선행)이므로, 상위 종목일수록 실현이 오지 않을 때의 하방도 크다.\n"
  },
- "message": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-08-24</b>\n\n<b>서사</b> ●● 2/2   <b>실현</b> ○○○ 0/3   <b>가격</b> ○ 0/1\n축 간 격차 +1.00 — 서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간\n\n✅ ① 서사 점화  7.44배 / 기준 3.00배 · AI반도체 2023Q1\n     <i>2년 전 대비 언급 배수</i>\n✅ ② 산업 전반 확산  2.21배 / 기준 2.00배 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ③ 매출 가속 정착  +12% / 기준 +25% · AI반도체 2023Q4\n     <i>최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%</i>\n⚪ ④ 공급 병목 출현  +85% / 기준 +10% · AI반도체 2024Q1\n     <i>2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 +3% · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -22% / 기준 +20% · AI반도체 2023Q2\n     <i>2026Q3 12개월 초과수익</i>\n\nℹ️ 서사 선행 상태 2회 연속 (경고 기준 6회)\n\n<b>디커플링</b> 상관 +0.19 — 독립 사이클 조짐\n\n⚠️ 데이터 상태: purity\n\n<b>📋 흐름 적합도 상위 10 (미국 상장)</b>\n   1. TER   79점 · 반도체 동행형\n   2. TSLA  74점\n   3. NVDA  73점 · 순수형\n   4. ZBRA  67점 · 순수형\n   5. OUST  66점 · 반도체 동행형\n   6. AVAV  65점 · 순수형\n   7. SYM   62점\n   8. KTOS  59점 · 순수형\n   9. AMBA  58점 · 반도체 동행형\n  10. ISRG  57점 · 순수형\n\n<b>ETF</b> — 후보 전부 순수 노출이 음수입니다. 로봇 ETF 들이 순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.\n  (최상위 ARKQ 순수노출 -0.08)\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/"
+ "message": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-08-31</b>\n\n<b>서사</b> ●● 2/2   <b>실현</b> ○○○ 0/3   <b>가격</b> ○ 0/1\n축 간 격차 +1.00 — 서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간\n\n✅ ① 서사 점화  7.92배 / 기준 3.00배 · AI반도체 2023Q1\n     <i>2년 전 대비 언급 배수</i>\n✅ ② 산업 전반 확산  2.21배 / 기준 2.00배 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ③ 매출 가속 정착  +12% / 기준 +25% · AI반도체 2023Q4\n     <i>최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%</i>\n⚪ ④ 공급 병목 출현  +85% / 기준 +10% · AI반도체 2024Q1\n     <i>2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 +3% · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -25% / 기준 +20% · AI반도체 2023Q2\n     <i>2026Q3 12개월 초과수익</i>\n\nℹ️ 서사 선행 상태 3회 연속 (경고 기준 6회)\n\n<b>디커플링</b> 상관 +0.20 — 독립 사이클 조짐\n\n⚠️ 데이터 상태: purity\n\n<b>📋 흐름 적합도 상위 10 (미국 상장)</b>\n   1. TER   79점 · 반도체 동행형\n   2. TSLA  74점\n   3. NVDA  73점 · 순수형\n   4. ZBRA  67점 · 순수형\n   5. OUST  67점\n   6. AVAV  64점 · 순수형\n   7. SYM   62점\n   8. KTOS  58점 · 순수형\n   9. AMBA  58점 · 반도체 동행형\n  10. ISRG  57점 · 순수형\n\n<b>ETF</b> — 후보 전부 순수 노출이 음수입니다. 로봇 ETF 들이 순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.\n  (최상위 ARKX 순수노출 -0.09)\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/"
 }
