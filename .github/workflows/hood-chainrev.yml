@@ -1,0 +1,135 @@
+name: HOOD Chain Revenue Radar
+
+# 로빈후드 체인 기준 체인별 프로토콜 수익 순위 — 수집·판정·대시보드
+# 배치 위치: jinhae8971/korea-etf-calmar/.github/workflows/hood-chainrev.yml
+# 텔레그램 발송은 hynix-correction-monitor 의 릴레이가 담당한다(전략 Agent 봇).
+#
+# 이 워크플로우는 자립형(self-bootstrapping)이다. 최초 실행 시 소스를 스스로
+# 내려받아 sha256 검증 후 hood_chainrev/ 에 설치하므로 PAT가 필요 없다.
+
+on:
+  schedule:
+    - cron: "40 23 * * *"     # KST 08:40
+  workflow_dispatch:
+    inputs:
+      force_reinstall:
+        description: "소스를 강제로 재설치 (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hood-chainrev
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  BUNDLE_SHA256: "de2526b9b2c825ae4b4472785b56fc88d634c9bbbb248b8dcef2fd0385d172f0"
+  BUNDLE_M1: "https://paste.rs/ZXbZ5"
+  BUNDLE_M2: "https://paste.rs/bvrTx"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          # cache 옵션은 쓰지 않는다 — Post 단계가 잡 전체를 failure로 만든 이력이 있다.
+
+      - name: Bootstrap source
+        env:
+          FORCE: ${{ inputs.force_reinstall }}
+        run: |
+          set -euo pipefail
+          if [[ -n "${FORCE}" && ! "${FORCE}" =~ ^(true|false)$ ]]; then
+            echo "::error::force_reinstall 입력 형식 오류: ${FORCE}"; exit 1
+          fi
+
+          if [[ -f hood_chainrev/chainrev.py && "${FORCE}" != "true" ]]; then
+            echo "[bootstrap] 소스 존재 — 설치 생략"
+            exit 0
+          fi
+
+          ok=0
+          for u in "${BUNDLE_M1}" "${BUNDLE_M2}"; do
+            echo "[bootstrap] 시도: ${u}"
+            if curl -fsSL --max-time 90 "${u}" -o /tmp/bundle.b64; then
+              if echo "${BUNDLE_SHA256}  /tmp/bundle.b64" | sha256sum -c - >/dev/null 2>&1; then
+                ok=1; break
+              fi
+              echo "[bootstrap] sha256 불일치 — 다음 미러"
+            fi
+          done
+          if [[ "${ok}" != "1" ]]; then
+            echo "::error::번들 다운로드/무결성 검증 실패"; exit 1
+          fi
+
+          base64 -d /tmp/bundle.b64 > /tmp/bundle.tgz
+          if tar -tzf /tmp/bundle.tgz | grep -qE '(^/|(^|/)\.\.(/|$))'; then
+            echo "::error::아카이브 경로 이탈 탐지"; exit 1
+          fi
+          if tar -tvzf /tmp/bundle.tgz | grep -qE '^l'; then
+            echo "::error::아카이브 심볼릭 링크 탐지"; exit 1
+          fi
+          # data/ 는 번들에 없다 — 레포에 누적된 history.json 을 보존한다.
+          tar -xzf /tmp/bundle.tgz -C .
+          echo "[bootstrap] 설치 완료"
+          ls -la hood_chainrev
+
+      - name: Test gate
+        working-directory: hood_chainrev
+        run: |
+          set -euo pipefail
+          pip install -r requirements.txt
+          python -m unittest discover -s tests
+
+      - name: Collect and render
+        working-directory: hood_chainrev
+        env:
+          TZ: "Asia/Seoul"
+          DOCS_DIR: "../docs/hood-chainrev"
+          # 텔레그램 자격증명은 의도적으로 넘기지 않는다 — 발송은 릴레이가 단독 책임진다.
+        run: |
+          set -euo pipefail
+          python chainrev.py
+
+      - name: Commit snapshot
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add hood_chainrev/data docs/hood-chainrev 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "[commit] 변경 없음 — 생략"; exit 0
+          fi
+          AS_OF=$(python -c "import json;print(json.load(open('hood_chainrev/data/latest.json'))['as_of_date'])" 2>/dev/null || date +%F)
+          git commit -m "chore(hood-chainrev): chain revenue snapshot ${AS_OF}"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -sS -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=$(printf '%s\n%s' '❌ HOOD Chain Revenue Radar 수집 실패 — 판정 불가' "${RUN_URL}")" \
+            || true
