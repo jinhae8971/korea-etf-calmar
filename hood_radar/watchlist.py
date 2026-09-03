@@ -378,6 +378,91 @@ def _pct(cur, prev):
     return (cur - prev) / abs(prev) * 100.0
 
 
+# ------------------------------------------------------------------ 변화량
+def _prev_ref(history, now_epoch, max_hours=12.0):
+    """직전 관측 = now 이전 가장 최근 스냅샷. 너무 오래된 것은 '직전'이 아니다."""
+    best = None
+    for snap in history:
+        ts = snap.get("epoch")
+        if ts is None or ts >= now_epoch:
+            continue
+        if best is None or ts > best["epoch"]:
+            best = snap
+    if best is None or now_epoch - best["epoch"] > max_hours * 3600:
+        return None
+    return best
+
+
+def _snap_val(snap, key, sym):
+    if not snap:
+        return None
+    return (snap.get(key) or {}).get(sym)
+
+
+def _snap_ratio_pct(snap, num_key, den_key, sym):
+    n, d = _snap_val(snap, num_key, sym), _snap_val(snap, den_key, sym)
+    if n is None or not d:
+        return None
+    return _fnum(n) / _fnum(d) * 100.0
+
+
+def _pp(cur, prev):
+    if cur is None or prev is None:
+        return None
+    return float(cur) - float(prev)
+
+
+def _kst_hm(epoch):
+    return datetime.fromtimestamp(int(epoch), tz=timezone.utc).astimezone(timezone(timedelta(hours=9))).strftime("%m-%d %H:%M")
+
+
+def annotate_deltas(state, history, now_epoch=None):
+    """
+    각 종목에 delta 블록을 붙인다 — 직전 관측(prev) 및 전일(day, 24h±) 대비.
+    값이 없으면 None. 렌더러는 이 블록만 보고 화살표를 그린다.
+    """
+    if not state or not state.get("items"):
+        return state
+    now_epoch = int(now_epoch or state.get("as_of_epoch") or time.time())
+    prev = _prev_ref(history or [], now_epoch)
+    day = _ref(history or [], 24, now_epoch)
+    if day is not None and prev is not None and day["epoch"] == prev["epoch"]:
+        day = None                                   # 같은 스냅샷을 두 번 쓰지 않는다
+    state["delta_refs"] = {
+        "prev_epoch": prev["epoch"] if prev else None,
+        "prev_kst": _kst_hm(prev["epoch"]) if prev else None,
+        "day_epoch": day["epoch"] if day else None,
+        "day_kst": _kst_hm(day["epoch"]) if day else None,
+    }
+    for it in state["items"]:
+        if not it.get("resolved"):
+            continue
+        sym = it["symbol"]
+
+        def against(ref):
+            if ref is None:
+                return None
+            cur_turn = it.get("turnover_pct")
+            cur_liqm = it.get("liq_mcap_pct")
+            return {
+                "px": _pct(it.get("price"), _snap_val(ref, "px", sym)),
+                "mcap": _pct(it.get("mcap"), _snap_val(ref, "mcap", sym)),
+                "liq": _pct(it.get("liq"), _snap_val(ref, "liq", sym)),
+                "vol24": _pct(it.get("vol24"), _snap_val(ref, "vol24", sym)),
+                "turnover_pp": _pp(cur_turn, _snap_ratio_pct(ref, "vol24", "mcap", sym)),
+                "liq_mcap_pp": _pp(cur_liqm, _snap_ratio_pct(ref, "liq", "mcap", sym)),
+                "rev24": _pct(it.get("rev24"), _snap_val(ref, "rev24", sym)),
+                "pf_prev": _snap_val(ref, "pf", sym),
+                "lp_share_pp": _pp(it.get("lp_share"), _snap_val(ref, "lp_share", sym)),
+                "rival_pp": _pp(it.get("rival_share"), _snap_val(ref, "rival_share", sym)),
+                "issuance": _pct(it.get("issuance_rate"), _snap_val(ref, "issuance", sym)),
+                "attn_pp": _pp(it.get("attn_share_pct"), _snap_val(ref, "attn", sym)),
+                "rank_prev": _snap_val(ref, "rank", sym),
+            }
+        it["delta"] = {"prev": against(prev), "day": against(day)}
+    return state
+
+
 # ------------------------------------------------------------------ 판정
 def evaluate(state, history, cfg, now_epoch=None):
     """
@@ -385,6 +470,7 @@ def evaluate(state, history, cfg, now_epoch=None):
     기준 스냅샷이 없으면 그 항목은 조용히 건너뛴다.
     """
     now_epoch = int(now_epoch or state.get("as_of_epoch") or time.time())
+    annotate_deltas(state, history, now_epoch)       # 렌더·대시보드가 쓰는 변화량
     r6 = _ref(history, 6, now_epoch)
     r24 = _ref(history, 24, now_epoch)
     alerts = []
@@ -602,43 +688,156 @@ ICON = {"SECURITY": "🛑", "LIQ_DRAIN": "🩸", "LIQ_THIN": "🪣", "REV_COLLAP
 PROFILE_TAG = {"launchpad": "런치패드", "index": "인덱스", "meme": "밈", "protocol": "프로토콜"}
 
 
+def _arrow_pct(v, flat=0.5):
+    """▲4.2%  ▼3.1%  ─(보합)  ·  None → '' """
+    if v is None:
+        return ""
+    if abs(v) < flat:
+        return "─"
+    return ("▲%.1f%%" if v > 0 else "▼%.1f%%") % abs(v)
+
+
+def _arrow_pp(v, flat=0.3, digits=1):
+    if v is None:
+        return ""
+    fmt = "%%.%dfpp" % digits
+    if abs(v) < flat:
+        return "─"
+    return ("▲" if v > 0 else "▼") + fmt % abs(v)
+
+
+def _with(label, arrow):
+    """'유동성 $10.03M' + '▼1.2%' → '유동성 $10.03M ▼1.2%' (변화 없으면 값만)"""
+    return "%s %s" % (label, arrow) if arrow else label
+
+
+def _pick_basis(it):
+    """전일 기준이 있으면 전일, 없으면 직전. (기준명, 델타 블록)"""
+    d = it.get("delta") or {}
+    if d.get("day"):
+        return "day", d["day"]
+    if d.get("prev"):
+        return "prev", d["prev"]
+    return None, None
+
+
+def _movers(state, limit=3):
+    """종목·지표를 가로질러 절대 변화가 큰 순으로 — 한눈에 '무엇이 달라졌나'."""
+    rows = []
+    for it in state.get("items", []):
+        if not it.get("resolved"):
+            continue
+        basis, d = _pick_basis(it)
+        if not d:
+            continue
+        sym = it["symbol"]
+        cand = [
+            ("가격", d.get("px"), "%"), ("시총", d.get("mcap"), "%"),
+            ("유동성", d.get("liq"), "%"), ("거래대금", d.get("vol24"), "%"),
+            ("매출", d.get("rev24"), "%"), ("발행속도", d.get("issuance"), "%"),
+            ("점유율", d.get("lp_share_pp"), "pp"), ("회전", d.get("turnover_pp"), "pp"),
+            ("관심점유", d.get("attn_pp"), "pp"), ("2위점유", d.get("rival_pp"), "pp"),
+        ]
+        for name, v, unit in cand:
+            if v is None:
+                continue
+            # pp 는 %와 스케일이 달라 3배 가중해 같은 줄에서 겨루게 한다
+            score = abs(v) * (3.0 if unit == "pp" else 1.0)
+            if unit == "%" and abs(v) < 3.0:
+                continue
+            if unit == "pp" and abs(v) < 1.0:
+                continue
+            rows.append((score, sym, name, v, unit))
+    rows.sort(key=lambda r: -r[0])
+    out = []
+    for _, sym, name, v, unit in rows[:limit]:
+        arrow = _arrow_pct(v) if unit == "%" else _arrow_pp(v)
+        out.append("%s %s %s" % (sym, name, arrow))
+    return out
+
+
 def render_telegram(state, alerts, cfg):
-    """본 브리프에 붙는 상시 섹션 — 경보가 없어도 상태는 항상 보여준다."""
+    """
+    본 브리프에 붙는 상시 섹션 — 경보가 없어도 상태는 항상 보여준다.
+    수치 옆에 항상 변화 화살표를 단다: 전일(24h) 기준이 있으면 전일, 없으면 직전 관측.
+    """
     if not state or not state.get("items"):
         return []
-    lines = ["📌 <b>보유 종목 정밀 감시</b>"]
+    refs = state.get("delta_refs") or {}
+    basis_any = "day" if refs.get("day_kst") else ("prev" if refs.get("prev_kst") else None)
+    if basis_any == "day":
+        basis_note = "전일 %s 대비 · 가격은 직전 %s 병기" % (
+            refs["day_kst"], refs.get("prev_kst") or "—")
+    elif basis_any == "prev":
+        basis_note = "직전 %s 대비 (전일 기준은 이력 축적 중)" % refs["prev_kst"]
+    else:
+        basis_note = "첫 관측 — 비교 기준 없음"
+    lines = ["📌 <b>보유 종목 정밀 감시</b> <i>%s</i>" % _esc(basis_note)]
+
+    movers = _movers(state)
+    if movers:
+        lines.append("🔎 <b>주요 변화</b> " + _esc(" · ".join(movers)))
+
     for it in state["items"]:
         sym = _esc(it["symbol"])
         if not it.get("resolved"):
             lines.append("· <b>%s</b> ❓ 데이터 없음 — %s" % (sym, _esc(it.get("reason", ""))))
             continue
+        basis, d = _pick_basis(it)
+        d = d or {}
+        dp = (it.get("delta") or {}).get("prev") or {}
         tag = PROFILE_TAG.get(it.get("profile"))
-        head = "· <b>%s</b>%s $%s · 시총 $%s" % (
-            sym, " <i>[%s]</i>" % tag if tag else "",
-            _fmt_px(it.get("price")), _h(it.get("mcap")))
+
+        # 헤드: 가격은 직전·전일 둘 다, 시총·배수는 기준 하나
+        px = "$%s" % _fmt_px(it.get("price"))
+        px_bits = []
+        if basis == "day":
+            if dp.get("px") is not None:
+                px_bits.append("직전%s" % _arrow_pct(dp["px"]))
+            if d.get("px") is not None:
+                px_bits.append("전일%s" % _arrow_pct(d["px"]))
+        elif basis == "prev" and d.get("px") is not None:
+            px_bits.append("직전%s" % _arrow_pct(d["px"]))
+        if px_bits:
+            px += " (%s)" % " ".join(px_bits)
+        head = "· <b>%s</b>%s %s · %s" % (
+            sym, " <i>[%s]</i>" % tag if tag else "", px,
+            _with("시총 $%s" % _h(it.get("mcap")), _arrow_pct(d.get("mcap"))))
         if it.get("pf") is not None:
-            head += " · 배수 %.1f배" % it["pf"]
+            prev_pf = d.get("pf_prev")
+            if prev_pf and abs(prev_pf - it["pf"]) >= 0.05:
+                head += " · 배수 %.1f→%.1f배" % (prev_pf, it["pf"])
+            else:
+                head += " · 배수 %.1f배" % it["pf"]
         lines.append(head)
-        sub = ["유동성 $%s" % _h(it.get("liq"))]
+
+        sub = [_with("유동성 $%s" % _h(it.get("liq")), _arrow_pct(d.get("liq")))]
         if it.get("liq_mcap_pct") is not None:
-            sub.append("시총대비 %.1f%%" % it["liq_mcap_pct"])
+            sub.append(_with("시총대비 %.1f%%" % it["liq_mcap_pct"],
+                             _arrow_pp(d.get("liq_mcap_pp"))))
         if it.get("turnover_pct") is not None:
-            sub.append("회전 %.0f%%" % it["turnover_pct"])
+            sub.append(_with("회전 %.0f%%" % it["turnover_pct"], _arrow_pp(d.get("turnover_pp"), digits=0)))
         if it.get("rev24"):
-            sub.append("24h매출 $%s" % _h(it["rev24"]))
+            sub.append(_with("24h매출 $%s" % _h(it["rev24"]), _arrow_pct(d.get("rev24"))))
         if it.get("burst_pct") is not None:
             b = it["burst_pct"]
             sub.append("7일평균비 %s" % ("%+.0f%%" % b if abs(b) >= 1 else "보합"))
         if it.get("lp_share") is not None:
-            sub.append("점유율 %.0f%%" % it["lp_share"])
+            sub.append(_with("점유율 %.0f%%" % it["lp_share"], _arrow_pp(d.get("lp_share_pp"))))
         if it.get("rank"):
-            sub.append("시총 %d위" % it["rank"])
+            rp = d.get("rank_prev")
+            if rp and rp != it["rank"]:
+                sub.append("시총 %d위→%d위" % (rp, it["rank"]))
+            else:
+                sub.append("시총 %d위" % it["rank"])
         if it.get("rival_share") is not None:
-            sub.append("2위 %s %.0f%%" % (it.get("rival") or "?", it["rival_share"]))
+            sub.append(_with("2위 %s %.0f%%" % (it.get("rival") or "?", it["rival_share"]),
+                             _arrow_pp(d.get("rival_pp"))))
         if it.get("issuance_rate"):
-            sub.append("발행 %.1f개/분" % it["issuance_rate"])
+            sub.append(_with("발행 %.1f개/분" % it["issuance_rate"], _arrow_pct(d.get("issuance"))))
         if it.get("attn_share_pct") is not None:
-            sub.append("관심점유 %.2f%%" % it["attn_share_pct"])
+            sub.append(_with("관심점유 %.2f%%" % it["attn_share_pct"],
+                             _arrow_pp(d.get("attn_pp"), flat=0.1, digits=2)))
         if it.get("pf_premium_x"):
             sub.append("중앙값 대비 %.1f배" % it["pf_premium_x"])
         lines.append("  <i>%s</i>" % _esc(" · ".join(sub)))
@@ -716,6 +915,7 @@ def main():
         "alert_id": "%d-%d" % (now_epoch, len(fresh)),
         "message": render_alert(state, fresh, cfg, dash) if fresh else "",
         "items": state["items"],
+        "delta_refs": state.get("delta_refs"),
         "alerts": alerts,
     }
     write_json(out_path, out)

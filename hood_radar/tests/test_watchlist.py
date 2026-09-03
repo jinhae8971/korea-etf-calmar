@@ -268,3 +268,74 @@ class TestThresholdOverride(unittest.TestCase):
         self.assertNotIn("LIQ_THIN", [a["code"] for a in wl.evaluate(st, [], PCFG, NOW)])
         st2 = state(profile="meme", liq_mcap_pct=2.8, turnover_pct=27.0)
         self.assertIn("LIQ_THIN", [a["code"] for a in wl.evaluate(st2, [], PCFG, NOW)])
+
+
+class TestDeltas(unittest.TestCase):
+    """변화량 주석 — 직전(prev)·전일(day) 기준과 렌더 화살표."""
+
+    def _hist(self):
+        return [
+            hist(24, px={"PONS": 1.10}, mcap={"PONS": 110.0}, liq={"PONS": 25.0},
+                 vol24={"PONS": 11.0}, rev24={"PONS": 10.0}, pf={"PONS": 4.0},
+                 lp_share={"PONS": 88.0}, rank={"PONS": 3}),
+            hist(1, px={"PONS": 0.98}, mcap={"PONS": 98.0}, liq={"PONS": 20.0},
+                 vol24={"PONS": 10.0}, rev24={"PONS": 12.0}, pf={"PONS": 3.6},
+                 lp_share={"PONS": 82.0}, rank={"PONS": 2}),
+        ]
+
+    def test_no_history_means_no_delta_and_no_crash(self):
+        st = wl.annotate_deltas(state(), [], NOW)
+        self.assertEqual(st["items"][0]["delta"], {"prev": None, "day": None})
+        lines = wl.render_telegram(st, [], CFG)
+        self.assertIn("비교 기준 없음", lines[0])
+        self.assertFalse(any("▲" in ln or "▼" in ln for ln in lines))
+
+    def test_prev_and_day_are_distinct_references(self):
+        st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2, turnover_pct=10.0)
+        wl.annotate_deltas(st, self._hist(), NOW)
+        d = st["items"][0]["delta"]
+        self.assertAlmostEqual(d["prev"]["px"], (1.0 - 0.98) / 0.98 * 100, places=6)
+        self.assertAlmostEqual(d["day"]["px"], (1.0 - 1.10) / 1.10 * 100, places=6)
+        self.assertAlmostEqual(d["day"]["lp_share_pp"], -6.0)
+        self.assertEqual(d["day"]["rank_prev"], 3)
+        self.assertEqual(d["day"]["pf_prev"], 4.0)
+        # 회전율은 스냅샷에 없어도 vol24/mcap 로 복원된다
+        self.assertAlmostEqual(d["prev"]["turnover_pp"], 10.0 - 10.0 / 98.0 * 100, places=6)
+
+    def test_same_snapshot_is_not_used_twice(self):
+        st = wl.annotate_deltas(state(), [hist(24, px={"PONS": 1.1})], NOW)
+        refs = st["delta_refs"]
+        # 직전 기준은 12h 이내여야 하므로 24h 전 스냅샷은 '전일'로만 잡힌다
+        self.assertIsNone(refs["prev_epoch"])
+        self.assertIsNotNone(refs["day_epoch"])
+
+    def test_render_prefers_day_basis_and_shows_both_price_arrows(self):
+        st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
+        wl.annotate_deltas(st, self._hist(), NOW)
+        text = "\n".join(wl.render_telegram(st, [], CFG))
+        self.assertIn("전일", text)
+        self.assertIn("직전▲2.0%", text)
+        self.assertIn("전일▼9.1%", text)
+        self.assertIn("배수 4.0→3.6배", text)
+        self.assertIn("점유율 82% ▼6.0pp", text)
+        self.assertIn("시총 3위→2위", text)
+        self.assertIn("주요 변화", text)
+
+    def test_render_falls_back_to_prev_when_no_day(self):
+        st = state()
+        wl.annotate_deltas(st, [hist(1, px={"PONS": 0.98}, mcap={"PONS": 98.0},
+                                     liq={"PONS": 20.0}, vol24={"PONS": 10.0})], NOW)
+        text = "\n".join(wl.render_telegram(st, [], CFG))
+        self.assertIn("이력 축적 중", text)
+        self.assertIn("직전▲2.0%", text)
+        self.assertNotIn("전일▲", text)
+
+    def test_flat_is_a_dash_not_a_number(self):
+        self.assertEqual(wl._arrow_pct(0.2), "─")
+        self.assertEqual(wl._arrow_pp(0.1), "─")
+        self.assertEqual(wl._arrow_pct(None), "")
+
+    def test_evaluate_annotates_in_place(self):
+        st = state()
+        wl.evaluate(st, [hist(1, px={"PONS": 0.98})], CFG, NOW)
+        self.assertIn("delta", st["items"][0])

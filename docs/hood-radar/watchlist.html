@@ -18,6 +18,9 @@ h1{font-size:18px;margin:0 0 4px}
 .k{color:var(--dim);font-size:11px}
 .v{font-size:14px;font-weight:600;margin-top:2px}
 .thin{color:var(--warn)}
+.d{font-size:11px;margin-top:1px}.d.up{color:var(--up)}.d.dn{color:var(--dn)}.d.fl{color:var(--dim)}
+.basis{color:var(--dim);font-size:12px;margin:-10px 0 12px}
+.movers{font-size:13px;margin-bottom:12px}.movers b{color:var(--fg)}
 .tag{margin-left:6px;font-size:11px;color:var(--dim);border:1px solid var(--line);
      border-radius:6px;padding:1px 6px;vertical-align:2px}
 .alert{border-left:3px solid var(--dn);padding:8px 10px;margin-top:8px;
@@ -30,6 +33,8 @@ a{color:#58a6ff}
 </style></head><body>
 <h1>📌 보유 종목 정밀 감시</h1>
 <div class="sub" id="asof">불러오는 중…</div>
+<div class="basis" id="basis"></div>
+<div class="movers" id="movers"></div>
 <div id="cards"></div>
 <div class="note">
 종목 특성별로 다른 규칙을 적용합니다 — 런치패드는 점유율·신규 발행 속도, 인덱스는
@@ -43,25 +48,45 @@ const H=v=>{v=+v||0;const u=[["B",1e9],["M",1e6],["K",1e3]];
   for(const [s,d] of u) if(Math.abs(v)>=d) return (v/d).toFixed(2)+s; return v.toFixed(0);};
 const PX=p=>{p=+p||0;return p>=1?p.toFixed(3):p>=0.001?p.toFixed(4):p.toFixed(8);};
 const E=s=>String(s??"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+// 변화 화살표: unit "%"|"pp", flat 이하는 ─. digits 는 소수 자릿수
+const A=(v,unit,pre="",sep="",digits=1)=>{if(v==null)return "";const fl=unit==="pp"?0.3:0.5;
+  const s=Math.abs(v)<fl?"─":(v>0?"▲":"▼")+Math.abs(v).toFixed(digits)+unit;return pre+sep+s;};
+const MOVERS=items=>{const rows=[];for(const it of items){if(!it.resolved||!it.delta)continue;
+  const d=it.delta.day||it.delta.prev;if(!d)continue;
+  const c=[["가격",d.px,"%"],["시총",d.mcap,"%"],["유동성",d.liq,"%"],["거래대금",d.vol24,"%"],["매출",d.rev24,"%"],
+    ["발행속도",d.issuance,"%"],["점유율",d.lp_share_pp,"pp"],["회전",d.turnover_pp,"pp"],["관심점유",d.attn_pp,"pp"],["2위점유",d.rival_pp,"pp"]];
+  for(const [n,v,u] of c){if(v==null)continue;if(u==="%"&&Math.abs(v)<3)continue;if(u==="pp"&&Math.abs(v)<1)continue;
+    rows.push([Math.abs(v)*(u==="pp"?3:1),it.symbol,n,v,u]);}}
+  rows.sort((a,b)=>b[0]-a[0]);return rows.slice(0,3).map(([,s,n,v,u])=>`<b>${E(s)}</b> ${n} ${A(v,u)}`);};
 fetch("watchlist.json?cb="+Date.now()).then(r=>r.json()).then(d=>{
   document.getElementById("asof").textContent =
     (d.as_of_kst||"")+" KST · 매시 갱신 · 경보 "+((d.alerts||[]).length)+"건";
+  const R=d.delta_refs||{};
+  document.getElementById("basis").textContent =
+    R.day_kst?`변화량 기준: 전일 ${R.day_kst} 대비 · 가격은 직전 ${R.prev_kst||"—"} 병기`
+    :R.prev_kst?`변화량 기준: 직전 ${R.prev_kst} 대비 (전일 기준은 이력 축적 중)`:"첫 관측 — 비교 기준 없음";
+  const mv=MOVERS(d.items||[]);
+  document.getElementById("movers").innerHTML = mv.length?"🔎 주요 변화 · "+mv.join(" · "):"";
   const byS={}; (d.alerts||[]).forEach(a=>(byS[a.symbol]=byS[a.symbol]||[]).push(a));
   document.getElementById("cards").innerHTML=(d.items||[]).map(it=>{
     if(!it.resolved) return `<div class="card"><span class="sym">${E(it.symbol)}</span>
       <div class="alert"><b>데이터 없음</b> ${E(it.reason||"")}</div></div>`;
-    const cells=[["가격","$"+PX(it.price)],["시총","$"+H(it.mcap)],
-      ["유동성","$"+H(it.liq)],
-      ["유동성/시총",(it.liq_mcap_pct??"-")+"%"],
-      ["24h 회전",(it.turnover_pct??"-")+"%"]];
-    if(it.pf!=null) cells.push(["매출배수",it.pf+"배"]);
-    if(it.rev24!=null) cells.push(["24h 매출","$"+H(it.rev24)]);
-    if(it.burst_pct!=null) cells.push(["7일평균비",(it.burst_pct>0?"+":"")+it.burst_pct+"%"]);
-    if(it.lp_share!=null) cells.push(["런치패드 점유",it.lp_share+"%"]);
-    if(it.rank!=null) cells.push(["시총 순위",it.rank+"위"]);
-    if(it.rival_share!=null) cells.push(["2위 "+(it.rival||""),it.rival_share+"%"]);
-    if(it.issuance_rate!=null) cells.push(["신규 발행",it.issuance_rate+"개/분"]);
-    if(it.attn_share_pct!=null) cells.push(["관심 점유율",it.attn_share_pct+"%"]);
+    const dd=(it.delta&&(it.delta.day||it.delta.prev))||{};
+    const dp=(it.delta&&it.delta.prev)||{};
+    const cells=[["가격","$"+PX(it.price),
+        [it.delta&&it.delta.day?"직전"+A(dp.px,"%"):"",A(dd.px,"%",it.delta&&it.delta.day?"전일":"직전")].filter(Boolean).join(" ")],
+      ["시총","$"+H(it.mcap),A(dd.mcap,"%")],
+      ["유동성","$"+H(it.liq),A(dd.liq,"%")],
+      ["유동성/시총",(it.liq_mcap_pct??"-")+"%",A(dd.liq_mcap_pp,"pp")],
+      ["24h 회전",(it.turnover_pct??"-")+"%",A(dd.turnover_pp,"pp",""," ",0)]];
+    if(it.pf!=null) cells.push(["매출배수",it.pf+"배",dd.pf_prev&&Math.abs(dd.pf_prev-it.pf)>=0.05?dd.pf_prev+"→"+it.pf:""]);
+    if(it.rev24!=null) cells.push(["24h 매출","$"+H(it.rev24),A(dd.rev24,"%")]);
+    if(it.burst_pct!=null) cells.push(["7일평균비",(it.burst_pct>0?"+":"")+it.burst_pct+"%",""]);
+    if(it.lp_share!=null) cells.push(["런치패드 점유",it.lp_share+"%",A(dd.lp_share_pp,"pp")]);
+    if(it.rank!=null) cells.push(["시총 순위",it.rank+"위",dd.rank_prev&&dd.rank_prev!==it.rank?dd.rank_prev+"위→"+it.rank+"위":""]);
+    if(it.rival_share!=null) cells.push(["2위 "+(it.rival||""),it.rival_share+"%",A(dd.rival_pp,"pp")]);
+    if(it.issuance_rate!=null) cells.push(["신규 발행",it.issuance_rate+"개/분",A(dd.issuance,"%")]);
+    if(it.attn_share_pct!=null) cells.push(["관심 점유율",it.attn_share_pct+"%",A(dd.attn_pp,"pp","","",2)]);
     if(it.pf_premium_x!=null) cells.push(["중앙값 대비",it.pf_premium_x+"배"]);
     const al=(byS[it.symbol]||[]).map(a=>
       `<div class="alert"><b>${E(a.code)}</b> ${E(a.detail)}
@@ -71,9 +96,10 @@ fetch("watchlist.json?cb="+Date.now()).then(r=>r.json()).then(d=>{
     return `<div class="card"><span class="sym">${E(it.symbol)}</span>
       <span class="tag">${E(TAG[it.profile]||"")}</span>
       <span class="px">${E(it.name||"")}</span>
-      <div class="grid">${cells.map(([k,v])=>
+      <div class="grid">${cells.map(([k,v,dl])=>
         `<div><div class="k">${k}</div><div class="v${
-          k==="유동성/시총"&&+it.liq_mcap_pct<3?" thin":""}">${E(v)}</div></div>`).join("")}
+          k==="유동성/시총"&&+it.liq_mcap_pct<3?" thin":""}">${E(v)}</div>${
+          dl?`<div class="d ${dl.includes("▲")?"up":dl.includes("▼")?"dn":"fl"}">${E(dl)}</div>`:""}</div>`).join("")}
       </div>${al}</div>`;
   }).join("");
 }).catch(e=>{document.getElementById("asof").textContent="불러오기 실패: "+e;});
