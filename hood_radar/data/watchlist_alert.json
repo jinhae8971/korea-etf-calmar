@@ -1,9 +1,9 @@
 {
- "as_of_kst": "2026-09-03 09:17",
- "as_of_epoch": 1788394649,
- "send": true,
- "alert_id": "1788394649-1",
- "message": "🚨 <b>보유 종목 경보</b> — 2026-09-03 09:17 KST\n🎭 <b>PONS</b> 유사 심볼 신규 풀 PONSY / WETH (유사도 0.89)\n   <i>매수 시 컨트랙트 주소를 반드시 대조하세요</i>\n\n📌 <b>보유 종목 정밀 감시</b>\n· <b>INDEX</b> <i>[인덱스]</i> $0.0473 · 시총 $46.39M · 배수 11.5배\n  <i>유동성 $3.80M · 시총대비 8.2% · 회전 14% · 24h매출 $17.56K · 7일평균비 보합</i>\n· <b>PONS</b> <i>[런치패드]</i> $0.4845 · 시총 $343.47M · 배수 4.1배\n  <i>유동성 $9.71M · 시총대비 2.8% · 회전 23% · 24h매출 $1.13M · 7일평균비 +74% · 점유율 80% · 2위 o1-launchpad 17% · 발행 15.1개/분</i>\n· <b>CASHCAT</b> <i>[밈]</i> $0.2747 · 시총 $270.96M\n  <i>유동성 $8.73M · 시총대비 3.2% · 회전 27% · 관심점유 4.41%</i>\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/hood-radar/\">대시보드 열기</a>\n<i>관측 시스템입니다. 경보는 자금·매출 반응의 서술이며 매매 신호가 아닙니다.</i>",
+ "as_of_kst": "2026-09-03 09:19",
+ "as_of_epoch": 1788394743,
+ "send": false,
+ "alert_id": "1788394743-0",
+ "message": "",
  "items": [
   {
    "symbol": "INDEX",
@@ -67,15 +67,7 @@
    "lp_leader": "pons-v2",
    "rival": "o1-launchpad",
    "rival_share": 16.7,
-   "issuance_rate": 15.1,
-   "copycats": [
-    {
-     "target": "PONS",
-     "name": "PONSY / WETH",
-     "ratio": 0.89,
-     "created": "2026-09-03T00:08:24Z"
-    }
-   ]
+   "issuance_rate": 5.7
   },
   {
    "symbol": "CASHCAT",
@@ -101,13 +93,5 @@
    "attn_share_pct": 4.41
   }
  ],
- "alerts": [
-  {
-   "code": "COPYCAT",
-   "symbol": "PONS",
-   "detail": "유사 심볼 신규 풀 PONSY / WETH (유사도 0.89)",
-   "severity": 7.0,
-   "action": "매수 시 컨트랙트 주소를 반드시 대조하세요"
-  }
- ]
+ "alerts": []
 }
