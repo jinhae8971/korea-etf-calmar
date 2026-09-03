@@ -1,0 +1,89 @@
+{
+ "as_of_kst": "2026-09-03 09:09",
+ "as_of_epoch": 1788394185,
+ "send": true,
+ "alert_id": "1788394185-1",
+ "message": "🚨 <b>보유 종목 경보</b> — 2026-09-03 09:09 KST\n🪣 <b>PONS</b> 유동성/시총 2.86% — 시총 대비 풀이 얇습니다\n   <i>분할 매도 아니면 슬리피지 큽니다</i>\n\n📌 <b>보유 종목 정밀 감시</b>\n· <b>INDEX</b> $0.0479 · 시총 $45.95M · 배수 11.6배\n  <i>유동성 $3.86M · 시총대비 8.4% · 회전 14% · 24h매출 $17.56K · 7일평균비 보합</i>\n· <b>PONS</b> $0.4764 · 시총 $331.74M · 배수 4.0배\n  <i>유동성 $9.49M · 시총대비 2.9% · 회전 24% · 24h매출 $1.13M · 7일평균비 +74%</i>\n· <b>CASHCAT</b> $0.2758 · 시총 $273.67M\n  <i>유동성 $8.65M · 시총대비 3.2% · 회전 27%</i>\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/hood-radar/\">대시보드 열기</a>\n<i>관측 시스템입니다. 경보는 자금·매출 반응의 서술이며 매매 신호가 아닙니다.</i>",
+ "items": [
+  {
+   "symbol": "INDEX",
+   "address": "0x56910d4409f3a0c78c64dd8d0545ff0705389870",
+   "track": "protocol",
+   "slugs": [
+    "the-index"
+   ],
+   "note": "The Index",
+   "name": "The Index",
+   "resolved": true,
+   "price": 0.04786643134,
+   "fdv": 46934690.0495833,
+   "mcap": 45950498.9870583,
+   "liq": 3862510.4391301265,
+   "vol24": 6526305.97929301,
+   "rank": null,
+   "flags": [],
+   "liq_mcap_pct": 8.41,
+   "turnover_pct": 14.2,
+   "basis": "REV",
+   "rev24": 17556.0,
+   "rev30": 331404.0,
+   "pf": 11.64,
+   "burst_pct": -0.2,
+   "lp_share": null
+  },
+  {
+   "symbol": "PONS",
+   "address": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+   "track": "protocol",
+   "slugs": [
+    "pons-v1",
+    "pons-v2"
+   ],
+   "note": "Pons V1+V2 합산",
+   "name": "Pons",
+   "resolved": true,
+   "price": 0.476391003,
+   "fdv": 336663750.584421,
+   "mcap": 331744275.588715,
+   "liq": 9485847.734938415,
+   "vol24": 79838193.1065149,
+   "rank": null,
+   "flags": [],
+   "liq_mcap_pct": 2.86,
+   "turnover_pct": 24.1,
+   "basis": "REV",
+   "rev24": 1134458.0,
+   "rev30": 6903889.0,
+   "pf": 4.01,
+   "burst_pct": 73.5,
+   "lp_share": null
+  },
+  {
+   "symbol": "CASHCAT",
+   "address": "0x020bfc650a365f8bb26819deaabf3e21291018b4",
+   "track": "meme",
+   "slugs": [],
+   "note": "Cash Cat — 프로토콜 매출 없음",
+   "name": "Cash Cat",
+   "resolved": true,
+   "price": 0.2757835513,
+   "fdv": 272517817.800262,
+   "mcap": 273671731.732151,
+   "liq": 8647936.189848755,
+   "vol24": 73650688.5065195,
+   "rank": null,
+   "flags": [],
+   "liq_mcap_pct": 3.16,
+   "turnover_pct": 26.9
+  }
+ ],
+ "alerts": [
+  {
+   "code": "LIQ_THIN",
+   "symbol": "PONS",
+   "detail": "유동성/시총 2.86% — 시총 대비 풀이 얇습니다",
+   "severity": 8.0,
+   "action": "분할 매도 아니면 슬리피지 큽니다"
+  }
+ ]
+}

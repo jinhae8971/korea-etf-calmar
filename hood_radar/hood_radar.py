@@ -30,6 +30,7 @@ import chainvol         # noqa: E402
 import crosscheck
 import protocol        # noqa: E402
 import security          # noqa: E402
+import watchlist         # noqa: E402
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE, "data")
@@ -624,6 +625,12 @@ def render_telegram(payload, cfg, dash_url):
     lines.append("🏹 <b>로빈후드 체인 밈코인 레이더</b>")
     lines.append("%s KST · 6시간 주기 · %s" % (payload["as_of_kst"], payload["data_status"]))
     lines.append("")
+
+    wl_lines = watchlist.render_telegram(
+        payload.get("watchlist"), payload.get("watchlist_alerts") or [], cfg)
+    if wl_lines:
+        # 보유 섹션은 맨 위 — 길이 초과 시 잘려나가는 쪽은 순위표여야 한다
+        lines.extend(wl_lines)
 
     lines.append("<b>시총 TOP %d</b>" % min(cfg["top_n_telegram"], len(rows)))
     for row in rows[: cfg["top_n_telegram"]]:
@@ -1240,6 +1247,25 @@ def main():
             print("[protocol] 트랙 실패(밈 트랙은 정상 진행): %s" % exc)
             payload["protocol"] = None
             payload["protocol_events"] = []
+
+    # ---- 보유 종목 정밀 감시 (밈·프로토콜 두 트랙을 가로지른다) ----
+    wl_hist_path = os.path.join(DATA_DIR, "watchlist_history.json")
+    if cfg.get("watchlist_enabled", True):
+        try:
+            wl_hist = read_json(wl_hist_path, [])
+            wstate = watchlist.build(cfg, rows=rows, protocol_payload=payload.get("protocol"))
+            walerts = watchlist.evaluate(wstate, wl_hist, cfg, int(now.timestamp()))
+            wl_hist.append(watchlist.snapshot(wstate, int(now.timestamp())))
+            wl_hist.sort(key=lambda s: s.get("epoch") or 0)
+            wl_hist = wl_hist[-int(cfg.get("wl_history_max", 400)):]
+            write_json_if_changed(wl_hist_path, wl_hist)
+            payload["watchlist"] = wstate
+            payload["watchlist_alerts"] = walerts
+        except Exception as exc:
+            # 보유 섹션이 본 브리프를 인질로 잡지 않는다
+            print("[watchlist] 실패(본 브리프는 정상 진행): %s" % exc)
+            payload["watchlist"] = None
+            payload["watchlist_alerts"] = []
 
     spark = {}
     for row in rows[:8]:

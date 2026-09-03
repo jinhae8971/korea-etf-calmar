@@ -1,0 +1,51 @@
+name: HOOD Watchlist (보유 종목 정밀 감시)
+
+on:
+  schedule:
+    # 매시 KST 22분 — 본 브리프(:07)와 겹치지 않게 15분 뒤로 둔다
+    - cron: '22 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hood-watchlist
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Test gate
+        working-directory: hood_radar
+        run: python -m unittest discover -s tests -p 'test_watchlist*.py'
+
+      - name: Watch holdings
+        working-directory: hood_radar
+        env:
+          HOOD_DASH_URL: https://jinhae8971.github.io/korea-etf-calmar/hood-radar/
+        run: python watchlist.py
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name  "hood-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add hood_radar/data/watchlist_*.json docs/hood-radar/watchlist.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "chore(watchlist): $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break
+              echo "push 재시도 $i"; sleep 5
+            done
+          fi
