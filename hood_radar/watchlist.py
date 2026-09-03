@@ -864,8 +864,11 @@ def _fmt_px(p):
 
 
 def render_alert(state, alerts, cfg, dash_url=""):
-    """시간별 단독 실행에서 임계 위반이 있을 때만 나가는 메시지."""
-    head = ["🚨 <b>보유 종목 경보</b> — %s KST" % state.get("as_of_kst", "")]
+    """시간별 단독 실행에서 임계 위반이 있을 때 나가는 메시지. 경보 0건이면 점검용 본문."""
+    if alerts:
+        head = ["🚨 <b>보유 종목 경보</b> — %s KST" % state.get("as_of_kst", "")]
+    else:
+        head = ["🔭 <b>보유 종목 점검</b> — %s KST · 임계 초과 없음" % state.get("as_of_kst", "")]
     for a in alerts[:8]:
         tail = "\n   <i>%s</i>" % _esc(a["action"]) if a.get("action") else ""
         head.append("%s <b>%s</b> %s%s" % (ICON.get(a["code"], "•"),
@@ -913,7 +916,10 @@ def main():
         "as_of_epoch": now_epoch,
         "send": bool(fresh),
         "alert_id": "%d-%d" % (now_epoch, len(fresh)),
+        # 경보가 없어도 본문은 항상 렌더한다 — 릴레이의 강제 발송(점검)과
+        # 대시보드 미리보기가 같은 문장을 쓰게 하기 위함. 발송 여부는 send 가 정한다.
         "message": render_alert(state, fresh, cfg, dash) if fresh else "",
+        "preview": render_alert(state, [], cfg, dash),
         "items": state["items"],
         "delta_refs": state.get("delta_refs"),
         "alerts": alerts,
