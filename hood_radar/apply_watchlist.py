@@ -16,11 +16,17 @@ WATCHLIST_CFG = {
     "watchlist_enabled": True,
     "watchlist": [
         {"symbol": "INDEX", "address": "0x56910d4409f3a0c78c64dd8d0545ff0705389870",
-         "slugs": ["the-index"], "track": "protocol", "note": "The Index"},
+         "slugs": ["the-index"], "track": "protocol", "profile": "index",
+         "thresholds": {"wl_rev_noise_floor_usd": 5000.0},
+         "note": "The Index — 매출 소액, 절대금액 기준으로 본다"},
         {"symbol": "PONS", "address": "0x39dbed3a2bd333467115de45665cc57f813c4571",
-         "slugs": ["pons-v1", "pons-v2"], "track": "protocol", "note": "Pons V1+V2 합산"},
+         "slugs": ["pons-v1", "pons-v2"], "track": "protocol", "profile": "launchpad",
+         "thresholds": {"wl_liq_mcap_min_pct": 2.0},
+         "note": "Pons V1+V2 합산 — 회전율이 높아 유동성 비율 임계를 낮춘다"},
         {"symbol": "CASHCAT", "address": "0x020bfc650a365f8bb26819deaabf3e21291018b4",
-         "slugs": [], "track": "meme", "note": "Cash Cat — 프로토콜 매출 없음"},
+         "slugs": [], "track": "meme", "profile": "meme",
+         "thresholds": {"wl_liq_mcap_min_pct": 2.5},
+         "note": "Cash Cat — 매출 없음, 관심 점유율로 본다"},
     ],
     "wl_price_drop_6h_pct": -15.0,
     "wl_price_drop_24h_pct": -25.0,
@@ -33,6 +39,19 @@ WATCHLIST_CFG = {
     "wl_rank_move": 5,
     "wl_history_max": 400,
     "wl_cooldown_hours": 6.0,
+    # 런치패드(PONS)
+    "wl_share_drop_pp_6h": 10.0,
+    "wl_rival_rise_pp": 10.0,
+    "wl_issuance_drop_pct": -50.0,
+    "wl_issuance_surge_pct": 100.0,
+    # 소형 프로토콜(INDEX)
+    "wl_index_rev_floor_usd": 3000.0,
+    "wl_liq_floor_usd": 1500000.0,
+    "wl_pf_premium_x": 2.5,
+    "wl_rev_noise_floor_usd": 0.0,
+    # 밈(CASHCAT)
+    "wl_attn_drop_pct": -40.0,
+    "wl_meme_turnover_min_pct": 5.0,
 }
 
 IMPORT_OLD = "import security          # noqa: E402"
@@ -78,8 +97,8 @@ def patch_config():
         if k not in cfg:
             cfg[k] = v
             changed = True
-    if cfg.get("version") != "2.2":
-        cfg["version"] = "2.2"
+    if cfg.get("version") != "2.3":
+        cfg["version"] = "2.3"
         changed = True
     if changed:
         with io.open(CFG, "w", encoding="utf-8") as fh:

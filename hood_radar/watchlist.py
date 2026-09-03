@@ -27,6 +27,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+import chainctx
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE, "data")
 UA = {"User-Agent": "hood-radar-watchlist/2.2"}
@@ -88,6 +90,8 @@ def entries(cfg):
             "address": addr,
             "slugs": [s for s in (e.get("slugs") or []) if s],
             "track": e.get("track") or ("protocol" if e.get("slugs") else "meme"),
+            "profile": e.get("profile") or ("meme" if not e.get("slugs") else "protocol"),
+            "thresholds": e.get("thresholds") or {},
             "note": e.get("note") or "",
         })
     return out
@@ -184,6 +188,58 @@ def _from_protocol_payload(payload, address):
     return None
 
 
+def thr(cfg, item, key, default):
+    """종목별 임계 재정의를 허용한다 — 회전율 높은 런치패드 토큰과 밈에
+    같은 유동성 비율을 요구하면 경보가 상시 켜져 무시당한다."""
+    ov = (item.get("thresholds") or {}).get(key)
+    return _fnum(ov, _fnum(cfg.get(key), default)) if ov is not None \
+        else _fnum(cfg.get(key), default)
+
+
+def apply_profile(item, ctx):
+    """종목 특성별 관측치를 붙인다. 맥락이 없으면 조용히 건너뛴다."""
+    if not ctx:
+        return item
+    lp = ctx.get("launchpad") or {}
+    dex = ctx.get("dex") or {}
+    pulse = ctx.get("pulse") or {}
+
+    if item.get("profile") == "launchpad" and lp.get("shares"):
+        tot = sum(_fnum(v) for k, v in lp["shares"].items() if k in (item.get("slugs") or []))
+        item["lp_share"] = round(tot, 1)
+        item["lp_leader"] = lp.get("leader")
+        item["rival"] = lp.get("runner_up")
+        item["rival_share"] = lp.get("runner_up_share")
+        item["issuance_rate"] = pulse.get("rate_per_min")
+
+    if item.get("profile") == "meme" and _fnum(dex.get("total24h")) > 0:
+        item["attn_share_pct"] = round(
+            _fnum(item.get("vol24")) / _fnum(dex["total24h"]) * 100.0, 3)
+
+    hits = [c for c in (pulse.get("copycats") or [])
+            if c.get("target") == _norm_sym(item["symbol"])]
+    if hits:
+        item["copycats"] = hits
+    return item
+
+
+def _norm_sym(s):
+    import re as _re
+    return _re.sub(r"[^A-Z0-9]", "", (s or "").upper())
+
+
+def peer_pf_median(protocol_payload):
+    """동종 배수 분포 — 소형 프로토콜의 10배가 비싼 값인지 판단할 유일한 기준."""
+    if not protocol_payload:
+        return None
+    vals = sorted(_fnum(i.get("pf")) for i in (protocol_payload.get("native") or [])
+                  if _fnum(i.get("pf")) > 0)
+    if len(vals) < 4:
+        return None
+    mid = len(vals) // 2
+    return round(vals[mid] if len(vals) % 2 else (vals[mid - 1] + vals[mid]) / 2.0, 2)
+
+
 # ------------------------------------------------------------------ 상태 구성
 def build(cfg, rows=None, protocol_payload=None, log=print):
     """
@@ -197,6 +253,12 @@ def build(cfg, rows=None, protocol_payload=None, log=print):
 
     market = fetch_market([e["address"] for e in ents],
                           network=cfg.get("network", "robinhood"), log=log)
+    try:
+        ctx = chainctx.collect(cfg, symbols=[e["symbol"] for e in ents],
+                               addresses=[e["address"] for e in ents], log=log)
+    except Exception as exc:                       # noqa: BLE001
+        log("[watchlist] 체인 맥락 수집 실패(기본 규칙만 적용): %s" % exc)
+        ctx = None
 
     items, unresolved = [], []
     for e in ents:
@@ -205,6 +267,7 @@ def build(cfg, rows=None, protocol_payload=None, log=print):
         item = {
             "symbol": e["symbol"], "address": e["address"], "track": e["track"],
             "slugs": e["slugs"], "note": e["note"],
+            "profile": e["profile"], "thresholds": e["thresholds"],
             "name": (m or {}).get("name"), "resolved": bool(m),
             "price": (m or {}).get("price"), "fdv": (m or {}).get("fdv"),
             "mcap": (m or {}).get("mcap"), "liq": (m or {}).get("liq"),
@@ -246,9 +309,21 @@ def build(cfg, rows=None, protocol_payload=None, log=print):
                 d7 = (agg["fee7"] or agg["rev7"]) / 7.0
                 cur24 = agg["fee24"] or agg["rev24"]
                 item["burst_pct"] = round((cur24 - d7) / d7 * 100.0, 1) if d7 > 0 else None
-                item["lp_share"] = _shares_from_payload(protocol_payload, e["slugs"])
+                if protocol_payload:
+                    item["lp_share"] = _shares_from_payload(protocol_payload, e["slugs"])
+        item = apply_profile(item, ctx)
+        if item.get("profile") == "index" and item.get("pf"):
+            med = peer_pf_median(protocol_payload)
+            if med:
+                item["pf_peer_median"] = med
+                item["pf_premium_x"] = round(item["pf"] / med, 2)
         items.append(item)
 
+    ctx_summary = None
+    if ctx:
+        ctx_summary = {"launchpad_leader": (ctx.get("launchpad") or {}).get("leader"),
+                       "issuance_rate": (ctx.get("pulse") or {}).get("rate_per_min"),
+                       "chain_dex_24h": (ctx.get("dex") or {}).get("total24h")}
     order = {e["symbol"]: i for i, e in enumerate(ents)}
     items.sort(key=lambda x: order.get(x["symbol"], 99))
     return {
@@ -256,6 +331,7 @@ def build(cfg, rows=None, protocol_payload=None, log=print):
         "as_of_kst": now_kst().strftime("%Y-%m-%d %H:%M"),
         "items": items,
         "unresolved": unresolved,
+        "context": ctx_summary,
         "elapsed_sec": round(time.time() - started, 1),
     }
 
@@ -272,6 +348,12 @@ def snapshot(state, epoch=None):
         "pf": {i["symbol"]: i.get("pf") for i in state["items"] if i.get("pf")},
         "lp_share": {i["symbol"]: i.get("lp_share") for i in state["items"] if i.get("lp_share")},
         "rank": {i["symbol"]: i.get("rank") for i in state["items"] if i.get("rank")},
+        "rival_share": {i["symbol"]: i.get("rival_share")
+                        for i in state["items"] if i.get("rival_share") is not None},
+        "issuance": {i["symbol"]: i.get("issuance_rate")
+                     for i in state["items"] if i.get("issuance_rate")},
+        "attn": {i["symbol"]: i.get("attn_share_pct")
+                 for i in state["items"] if i.get("attn_share_pct") is not None},
     }
 
 
@@ -327,22 +409,23 @@ def evaluate(state, history, cfg, now_epoch=None):
 
         # 2) 유동성 — 나올 수 있는가
         if it.get("liq_mcap_pct") is not None and \
-                it["liq_mcap_pct"] < _fnum(cfg.get("wl_liq_mcap_min_pct"), 3.0):
+                it["liq_mcap_pct"] < thr(cfg, it, "wl_liq_mcap_min_pct", 3.0):
             add("LIQ_THIN", sym, "유동성/시총 %.2f%% — 시총 대비 풀이 얇습니다"
                 % it["liq_mcap_pct"], 8.0, "분할 매도 아니면 슬리피지 큽니다")
         if r6:
             dl = _pct(it.get("liq"), (r6.get("liq") or {}).get(sym))
-            if dl is not None and dl <= _fnum(cfg.get("wl_liq_drain_pct"), -25.0):
+            if dl is not None and dl <= thr(cfg, it, "wl_liq_drain_pct", -25.0):
                 add("LIQ_DRAIN", sym, "6h 유동성 %+.0f%% ($%s)" % (dl, _h(it.get("liq"))),
                     10.0, "가격보다 먼저 빠지는 자리입니다")
 
         # 3) 매출 — 근거가 살아 있는가 (프로토콜 연동 종목만)
-        if it.get("rev24") is not None and it.get("burst_pct") is not None:
-            if it["burst_pct"] <= _fnum(cfg.get("wl_rev_collapse_pct"), -50.0):
+        noisy = _fnum(it.get("rev24")) < thr(cfg, it, "wl_rev_noise_floor_usd", 0.0)
+        if it.get("rev24") is not None and it.get("burst_pct") is not None and not noisy:
+            if it["burst_pct"] <= thr(cfg, it, "wl_rev_collapse_pct", -50.0):
                 add("REV_COLLAPSE", sym, "24h 매출이 7일 평균 대비 %+.0f%% ($%s)"
                     % (it["burst_pct"], _h(it["rev24"])), 9.5,
                     "배수가 싸 보여도 분모가 무너지는 중입니다")
-            elif it["burst_pct"] >= _fnum(cfg.get("wl_rev_surge_pct"), 100.0):
+            elif it["burst_pct"] >= thr(cfg, it, "wl_rev_surge_pct", 100.0):
                 add("REV_SURGE", sym, "24h 매출이 7일 평균 대비 %+.0f%% ($%s)"
                     % (it["burst_pct"], _h(it["rev24"])), 6.0)
 
@@ -351,7 +434,7 @@ def evaluate(state, history, cfg, now_epoch=None):
             prev = (r24.get("lp_share") or {}).get(sym)
             if prev is not None:
                 dpp = it["lp_share"] - _fnum(prev)
-                if dpp <= -_fnum(cfg.get("wl_share_drop_pp"), 8.0):
+                if dpp <= -thr(cfg, it, "wl_share_drop_pp", 8.0):
                     add("SHARE_LOSS", sym, "런치패드 점유율 %.0f%%→%.0f%% (%+.0f%%p)"
                         % (_fnum(prev), it["lp_share"], dpp), 9.0,
                         "매출 하락보다 먼저 오는 신호입니다")
@@ -360,10 +443,88 @@ def evaluate(state, history, cfg, now_epoch=None):
         if r24 and it.get("pf") is not None:
             prev = (r24.get("pf") or {}).get(sym)
             dp = _pct(it["pf"], prev)
-            if dp is not None and abs(dp) >= _fnum(cfg.get("wl_pf_move_pct"), 25.0):
+            if dp is not None and abs(dp) >= thr(cfg, it, "wl_pf_move_pct", 25.0):
                 add("PF_MOVE", sym, "매출배수 %.1f→%.1f배 (%+.0f%%)"
                     % (_fnum(prev), it["pf"], dp), 6.5,
                     "분자(FDV)와 분모(매출) 중 무엇이 움직였는지 확인")
+
+
+        # ---------- 종목 특성별 규칙 ----------
+        prof = it.get("profile")
+
+        if prof == "launchpad":
+            # 런치패드의 매출은 밈 발행 활동의 파생물이다. 발행이 먼저, 점유율이 그다음,
+            # 매출은 마지막에 움직인다 — 앞의 둘을 본다.
+            if r6 and it.get("lp_share") is not None:
+                prev = (r6.get("lp_share") or {}).get(sym)
+                if prev is not None and it["lp_share"] - _fnum(prev) <= \
+                        -thr(cfg, it, "wl_share_drop_pp_6h", 10.0):
+                    add("SHARE_LOSS", sym, "6h 런치패드 점유율 %.0f%%→%.0f%% (%+.0f%%p)"
+                        % (_fnum(prev), it["lp_share"], it["lp_share"] - _fnum(prev)), 9.5,
+                        "매출 하락보다 먼저 오는 신호입니다")
+            if it.get("lp_leader") and it["lp_leader"] not in (it.get("slugs") or []):
+                add("LEAD_LOST", sym, "런치패드 1위가 %s (내 점유율 %.0f%%)"
+                    % (it["lp_leader"], _fnum(it.get("lp_share"))), 10.5,
+                    "카테고리 주도권이 넘어간 상태입니다")
+            if r24 and it.get("rival_share") is not None:
+                prev = (r24.get("rival_share") or {}).get(sym)
+                if prev is not None and it["rival_share"] - _fnum(prev) >= \
+                        thr(cfg, it, "wl_rival_rise_pp", 10.0):
+                    add("RIVAL_RISE", sym, "경쟁 런치패드 %s %.0f%%→%.0f%% (%+.0f%%p)"
+                        % (it.get("rival") or "?", _fnum(prev), it["rival_share"],
+                           it["rival_share"] - _fnum(prev)), 8.5,
+                        "점유율을 가져가는 쪽을 확인하세요")
+            if r24 and it.get("issuance_rate"):
+                prev = (r24.get("issuance") or {}).get(sym)
+                d = _pct(it["issuance_rate"], prev)
+                if d is not None and d <= thr(cfg, it, "wl_issuance_drop_pct", -50.0):
+                    add("ISSUANCE_SLOW", sym, "체인 신규 발행 %.1f→%.1f개/분 (%+.0f%%)"
+                        % (_fnum(prev), it["issuance_rate"], d), 8.0,
+                        "런치패드 매출의 선행 지표입니다")
+                elif d is not None and d >= thr(cfg, it, "wl_issuance_surge_pct", 100.0):
+                    add("ISSUANCE_SURGE", sym, "체인 신규 발행 %.1f→%.1f개/분 (%+.0f%%)"
+                        % (_fnum(prev), it["issuance_rate"], d), 5.5)
+
+        elif prof == "index":
+            # 매출이 작은 종목은 %가 아니라 절대금액으로 봐야 한다 — 몇 천 달러의
+            # 진폭이 ±200%를 만든다.
+            floor = thr(cfg, it, "wl_index_rev_floor_usd", 3000.0)
+            if it.get("rev24") is not None and 0 < _fnum(it["rev24"]) < floor:
+                add("REV_FLOOR", sym, "24h 매출 $%s — 바닥권($%s 미만)"
+                    % (_h(it["rev24"]), _h(floor)), 8.0,
+                    "배수의 분모가 얇습니다")
+            if it.get("rev24") is not None and _fnum(it["rev24"]) <= 0 < _fnum(it.get("rev30")):
+                add("REV_ZERO", sym, "24시간 매출 0 (30일 $%s) — 서비스·어댑터 중단 가능성"
+                    % _h(it.get("rev30")), 9.5, "이틀 연속이면 실질 중단으로 보세요")
+            lfloor = thr(cfg, it, "wl_liq_floor_usd", 1_500_000.0)
+            if _fnum(it.get("liq")) and _fnum(it["liq"]) < lfloor:
+                add("LIQ_FLOOR", sym, "유동성 $%s — 절대 하한($%s) 미만"
+                    % (_h(it["liq"]), _h(lfloor)), 9.0, "소형은 비율보다 절대금액입니다")
+            if it.get("pf_premium_x") and \
+                    it["pf_premium_x"] >= thr(cfg, it, "wl_pf_premium_x", 2.5):
+                add("PF_PREMIUM", sym, "배수 %.1f배 — 체인 중앙값 %.1f배의 %.1f배"
+                    % (it["pf"], it["pf_peer_median"], it["pf_premium_x"]), 7.0,
+                    "동종 대비 프리미엄 구간입니다")
+
+        elif prof == "meme":
+            # 밈에는 매출이 없다. 근거는 오직 '체인 전체 관심 중 내 몫'이다.
+            if r24 and it.get("attn_share_pct") is not None:
+                prev = (r24.get("attn") or {}).get(sym)
+                d = _pct(it["attn_share_pct"], prev)
+                if d is not None and d <= thr(cfg, it, "wl_attn_drop_pct", -40.0):
+                    add("ATTN_LOSS", sym, "체인 거래대금 점유율 %.2f%%→%.2f%% (%+.0f%%)"
+                        % (_fnum(prev), it["attn_share_pct"], d), 8.5,
+                        "밈의 가치는 상대적 관심입니다")
+            tmin = thr(cfg, it, "wl_meme_turnover_min_pct", 5.0)
+            if it.get("turnover_pct") is not None and it["turnover_pct"] < tmin:
+                add("TURNOVER_DRY", sym, "24h 회전율 %.1f%% — 거래가 마르는 중"
+                    % it["turnover_pct"], 7.5)
+
+        # 카피캣 — 이 체인에서 실제로 관측되는 위험(유사 심볼 신규 발행)
+        for c in (it.get("copycats") or [])[:3]:
+            add("COPYCAT", sym, "유사 심볼 신규 풀 %s (유사도 %.2f)"
+                % (c.get("name"), _fnum(c.get("ratio"))), 7.0,
+                "매수 시 컨트랙트 주소를 반드시 대조하세요")
 
         # 6) 가격·거래대금 — 마지막에 확인하는 것
         for ref, hours, key in ((r6, 6, "wl_price_drop_6h_pct"), (r24, 24, "wl_price_drop_24h_pct")):
@@ -372,10 +533,10 @@ def evaluate(state, history, cfg, now_epoch=None):
             dp = _pct(it.get("price"), (ref.get("px") or {}).get(sym))
             if dp is None:
                 continue
-            thr = _fnum(cfg.get(key), -15.0 if hours == 6 else -25.0)
-            if dp <= thr:
+            lim = thr(cfg, it, key, -15.0 if hours == 6 else -25.0)
+            if dp <= lim:
                 add("PRICE_DROP", sym, "%dh 가격 %+.1f%%" % (hours, dp), 7.5)
-            elif dp >= abs(thr) * 1.5:
+            elif dp >= abs(lim) * 1.5:
                 add("PRICE_SPIKE", sym, "%dh 가격 %+.1f%%" % (hours, dp), 5.0)
         if r24:
             dv = _pct(it.get("vol24"), (r24.get("vol24") or {}).get(sym))
@@ -387,7 +548,7 @@ def evaluate(state, history, cfg, now_epoch=None):
             prev = (r24.get("rank") or {}).get(sym)
             if prev:
                 d = int(prev) - int(it["rank"])
-                if abs(d) >= int(_fnum(cfg.get("wl_rank_move"), 5)):
+                if abs(d) >= int(thr(cfg, it, "wl_rank_move", 5)):
                     add("RANK_MOVE", sym, "시총 순위 %d위→%d위 (%+d)" % (prev, it["rank"], d),
                         6.5 if d < 0 else 5.5)
 
@@ -432,7 +593,13 @@ def _esc(s):
 
 ICON = {"SECURITY": "🛑", "LIQ_DRAIN": "🩸", "LIQ_THIN": "🪣", "REV_COLLAPSE": "🔻",
         "REV_SURGE": "🔺", "SHARE_LOSS": "📉", "PF_MOVE": "⚖️", "PRICE_DROP": "▼",
-        "PRICE_SPIKE": "▲", "VOL_DRY": "🌵", "RANK_MOVE": "🔀", "UNRESOLVED": "❓"}
+        "PRICE_SPIKE": "▲", "VOL_DRY": "🌵", "RANK_MOVE": "🔀", "UNRESOLVED": "❓",
+        "LEAD_LOST": "👑", "RIVAL_RISE": "⚔️", "ISSUANCE_SLOW": "🏭",
+        "ISSUANCE_SURGE": "🏭", "REV_FLOOR": "🪫", "REV_ZERO": "⛔",
+        "LIQ_FLOOR": "🕳️", "PF_PREMIUM": "💸", "ATTN_LOSS": "👀",
+        "TURNOVER_DRY": "🏜️", "COPYCAT": "🎭"}
+
+PROFILE_TAG = {"launchpad": "런치패드", "index": "인덱스", "meme": "밈", "protocol": "프로토콜"}
 
 
 def render_telegram(state, alerts, cfg):
@@ -445,7 +612,10 @@ def render_telegram(state, alerts, cfg):
         if not it.get("resolved"):
             lines.append("· <b>%s</b> ❓ 데이터 없음 — %s" % (sym, _esc(it.get("reason", ""))))
             continue
-        head = "· <b>%s</b> $%s · 시총 $%s" % (sym, _fmt_px(it.get("price")), _h(it.get("mcap")))
+        tag = PROFILE_TAG.get(it.get("profile"))
+        head = "· <b>%s</b>%s $%s · 시총 $%s" % (
+            sym, " <i>[%s]</i>" % tag if tag else "",
+            _fmt_px(it.get("price")), _h(it.get("mcap")))
         if it.get("pf") is not None:
             head += " · 배수 %.1f배" % it["pf"]
         lines.append(head)
@@ -463,6 +633,14 @@ def render_telegram(state, alerts, cfg):
             sub.append("점유율 %.0f%%" % it["lp_share"])
         if it.get("rank"):
             sub.append("시총 %d위" % it["rank"])
+        if it.get("rival_share") is not None:
+            sub.append("2위 %s %.0f%%" % (it.get("rival") or "?", it["rival_share"]))
+        if it.get("issuance_rate"):
+            sub.append("발행 %.1f개/분" % it["issuance_rate"])
+        if it.get("attn_share_pct") is not None:
+            sub.append("관심점유 %.2f%%" % it["attn_share_pct"])
+        if it.get("pf_premium_x"):
+            sub.append("중앙값 대비 %.1f배" % it["pf_premium_x"])
         lines.append("  <i>%s</i>" % _esc(" · ".join(sub)))
 
     hot = [a for a in (alerts or []) if a["severity"] >= 6.0][:6]

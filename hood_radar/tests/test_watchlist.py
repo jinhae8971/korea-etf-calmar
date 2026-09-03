@@ -141,3 +141,130 @@ class TestShares(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ---------------------------------------------------------------- 종목 특성별 규칙
+import chainctx  # noqa: E402
+
+PCFG = dict(CFG, wl_share_drop_pp_6h=10.0, wl_rival_rise_pp=10.0,
+            wl_issuance_drop_pct=-50.0, wl_issuance_surge_pct=100.0,
+            wl_index_rev_floor_usd=3000.0, wl_liq_floor_usd=1_500_000.0,
+            wl_pf_premium_x=2.5, wl_attn_drop_pct=-40.0,
+            wl_meme_turnover_min_pct=5.0, wl_rev_noise_floor_usd=0.0)
+
+
+def pstate(profile, **over):
+    st = state(profile=profile, **over)
+    return st
+
+
+class TestLaunchpadRules(unittest.TestCase):
+    def codes(self, st, history=()):
+        return [a["code"] for a in wl.evaluate(st, list(history), PCFG, NOW)]
+
+    def test_share_loss_6h_window(self):
+        h = [hist(6, lp_share={"PONS": 89.0})]
+        self.assertIn("SHARE_LOSS", self.codes(pstate("launchpad", lp_share=70.0), h))
+        self.assertNotIn("SHARE_LOSS", self.codes(pstate("launchpad", lp_share=85.0), h))
+
+    def test_leader_lost_to_rival(self):
+        st = pstate("launchpad", lp_share=30.0, lp_leader="o1-launchpad", slugs=["pons-v2"])
+        self.assertIn("LEAD_LOST", self.codes(st))
+        st2 = pstate("launchpad", lp_share=80.0, lp_leader="pons-v2", slugs=["pons-v2"])
+        self.assertNotIn("LEAD_LOST", self.codes(st2))
+
+    def test_rival_rise_in_pp(self):
+        h = [hist(24, rival_share={"PONS": 7.0})]
+        st = pstate("launchpad", rival_share=25.0, rival="o1-launchpad")
+        self.assertIn("RIVAL_RISE", self.codes(st, h))
+
+    def test_issuance_rate_is_leading_signal(self):
+        h = [hist(24, issuance={"PONS": 20.0})]
+        self.assertIn("ISSUANCE_SLOW", self.codes(pstate("launchpad", issuance_rate=6.0), h))
+        self.assertIn("ISSUANCE_SURGE", self.codes(pstate("launchpad", issuance_rate=45.0), h))
+
+
+class TestIndexRules(unittest.TestCase):
+    def codes(self, st, history=()):
+        return [a["code"] for a in wl.evaluate(st, list(history), PCFG, NOW)]
+
+    def test_absolute_revenue_floor(self):
+        self.assertIn("REV_FLOOR", self.codes(pstate("index", rev24=900.0, rev30=50000.0)))
+        self.assertNotIn("REV_FLOOR", self.codes(pstate("index", rev24=17000.0, rev30=331000.0)))
+
+    def test_revenue_zero_is_service_risk(self):
+        self.assertIn("REV_ZERO", self.codes(pstate("index", rev24=0.0, rev30=331000.0)))
+
+    def test_absolute_liquidity_floor(self):
+        self.assertIn("LIQ_FLOOR", self.codes(pstate("index", liq=900_000.0)))
+        self.assertNotIn("LIQ_FLOOR", self.codes(pstate("index", liq=3_400_000.0)))
+
+    def test_multiple_premium_vs_peer_median(self):
+        st = pstate("index", pf=10.2, pf_peer_median=3.0, pf_premium_x=3.4)
+        self.assertIn("PF_PREMIUM", self.codes(st))
+
+    def test_small_revenue_noise_is_suppressed(self):
+        """몇 천 달러 진폭이 만든 -70%로는 붕괴 경보를 내지 않는다."""
+        st = state(profile="index", rev24=1200.0, burst_pct=-70.0,
+                   thresholds={"wl_rev_noise_floor_usd": 5000.0})
+        self.assertNotIn("REV_COLLAPSE", self.codes(st))
+
+
+class TestMemeRules(unittest.TestCase):
+    def codes(self, st, history=()):
+        return [a["code"] for a in wl.evaluate(st, list(history), PCFG, NOW)]
+
+    def test_attention_share_loss(self):
+        h = [hist(24, attn={"PONS": 4.4})]
+        self.assertIn("ATTN_LOSS", self.codes(pstate("meme", attn_share_pct=2.0), h))
+        self.assertNotIn("ATTN_LOSS", self.codes(pstate("meme", attn_share_pct=4.0), h))
+
+    def test_turnover_dry(self):
+        self.assertIn("TURNOVER_DRY", self.codes(pstate("meme", turnover_pct=2.0)))
+        self.assertNotIn("TURNOVER_DRY", self.codes(pstate("meme", turnover_pct=27.0)))
+
+    def test_meme_never_gets_revenue_alerts(self):
+        codes = self.codes(pstate("meme", turnover_pct=27.0))
+        self.assertNotIn("REV_COLLAPSE", codes)
+        self.assertNotIn("REV_FLOOR", codes)
+
+
+class TestCopycat(unittest.TestCase):
+    def test_alert_raised_for_all_profiles(self):
+        st = state(profile="meme", turnover_pct=27.0,
+                   copycats=[{"name": "CASHCATS / WETH", "ratio": 0.93}])
+        self.assertIn("COPYCAT", [a["code"] for a in wl.evaluate(st, [], PCFG, NOW)])
+
+    def test_short_symbol_false_positive_rejected(self):
+        """PORN vs PONS = 0.75 — 짧은 심볼의 우연한 유사도는 걸러야 한다."""
+        pools = [{"name": "PORN / RDDT", "pool_created_at": "2026-09-03T00:00:00Z"},
+                 {"name": "PONSY / WETH", "pool_created_at": "2026-09-03T00:01:00Z"}]
+        hits = _copycats(pools, ["PONS"])
+        self.assertEqual([h["name"] for h in hits], ["PONSY / WETH"])
+
+
+def _copycats(pools, symbols):
+    """chainctx 의 매칭 규칙만 떼어 검증한다(네트워크 없이)."""
+    import difflib
+    watch = {chainctx._norm(s) for s in symbols}
+    out = []
+    for a in pools:
+        base = chainctx._norm((a.get("name") or "").split("/")[0])
+        if not base or len(base) < 4 or base in watch:
+            continue
+        for w in watch:
+            ratio = difflib.SequenceMatcher(None, base, w).ratio()
+            contains = (w in base or base in w) and abs(len(base) - len(w)) <= 3
+            if contains or ratio >= 0.85:
+                out.append({"target": w, "name": a["name"], "ratio": round(ratio, 2)})
+                break
+    return out
+
+
+class TestThresholdOverride(unittest.TestCase):
+    def test_per_symbol_override_wins(self):
+        st = state(profile="launchpad", liq_mcap_pct=2.8,
+                   thresholds={"wl_liq_mcap_min_pct": 2.0})
+        self.assertNotIn("LIQ_THIN", [a["code"] for a in wl.evaluate(st, [], PCFG, NOW)])
+        st2 = state(profile="meme", liq_mcap_pct=2.8, turnover_pct=27.0)
+        self.assertIn("LIQ_THIN", [a["code"] for a in wl.evaluate(st2, [], PCFG, NOW)])

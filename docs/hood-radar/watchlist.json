@@ -1,9 +1,9 @@
 {
- "as_of_kst": "2026-09-03 09:10",
- "as_of_epoch": 1788394245,
- "send": false,
- "alert_id": "1788394245-0",
- "message": "",
+ "as_of_kst": "2026-09-03 09:17",
+ "as_of_epoch": 1788394649,
+ "send": true,
+ "alert_id": "1788394649-1",
+ "message": "🚨 <b>보유 종목 경보</b> — 2026-09-03 09:17 KST\n🎭 <b>PONS</b> 유사 심볼 신규 풀 PONSY / WETH (유사도 0.89)\n   <i>매수 시 컨트랙트 주소를 반드시 대조하세요</i>\n\n📌 <b>보유 종목 정밀 감시</b>\n· <b>INDEX</b> <i>[인덱스]</i> $0.0473 · 시총 $46.39M · 배수 11.5배\n  <i>유동성 $3.80M · 시총대비 8.2% · 회전 14% · 24h매출 $17.56K · 7일평균비 보합</i>\n· <b>PONS</b> <i>[런치패드]</i> $0.4845 · 시총 $343.47M · 배수 4.1배\n  <i>유동성 $9.71M · 시총대비 2.8% · 회전 23% · 24h매출 $1.13M · 7일평균비 +74% · 점유율 80% · 2위 o1-launchpad 17% · 발행 15.1개/분</i>\n· <b>CASHCAT</b> <i>[밈]</i> $0.2747 · 시총 $270.96M\n  <i>유동성 $8.73M · 시총대비 3.2% · 회전 27% · 관심점유 4.41%</i>\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/hood-radar/\">대시보드 열기</a>\n<i>관측 시스템입니다. 경보는 자금·매출 반응의 서술이며 매매 신호가 아닙니다.</i>",
  "items": [
   {
    "symbol": "INDEX",
@@ -13,23 +13,26 @@
     "the-index"
    ],
    "note": "The Index",
+   "profile": "index",
+   "thresholds": {
+    "wl_rev_noise_floor_usd": 5000.0
+   },
    "name": "The Index",
    "resolved": true,
-   "price": 0.04694370249,
-   "fdv": 46029922.5259417,
-   "mcap": 45950498.9870583,
-   "liq": 3862510.4391301265,
-   "vol24": 6526305.97929301,
+   "price": 0.04729979333,
+   "fdv": 46379081.8931791,
+   "mcap": 46392943.5716237,
+   "liq": 3804248.11137013,
+   "vol24": 6532702.01809718,
    "rank": null,
    "flags": [],
-   "liq_mcap_pct": 8.41,
-   "turnover_pct": 14.2,
+   "liq_mcap_pct": 8.2,
+   "turnover_pct": 14.1,
    "basis": "REV",
    "rev24": 17556.0,
    "rev30": 331404.0,
-   "pf": 11.42,
-   "burst_pct": -0.2,
-   "lp_share": null
+   "pf": 11.5,
+   "burst_pct": -0.2
   },
   {
    "symbol": "PONS",
@@ -40,23 +43,39 @@
     "pons-v2"
    ],
    "note": "Pons V1+V2 합산",
+   "profile": "launchpad",
+   "thresholds": {
+    "wl_liq_mcap_min_pct": 2.0
+   },
    "name": "Pons",
    "resolved": true,
-   "price": 0.4777218362,
-   "fdv": 337604245.437329,
-   "mcap": 331744275.588715,
-   "liq": 9485847.734938415,
-   "vol24": 79838193.1065149,
+   "price": 0.484538492,
+   "fdv": 342421550.719302,
+   "mcap": 343470662.009522,
+   "liq": 9707338.130152728,
+   "vol24": 80081924.6644135,
    "rank": null,
    "flags": [],
-   "liq_mcap_pct": 2.86,
-   "turnover_pct": 24.1,
+   "liq_mcap_pct": 2.83,
+   "turnover_pct": 23.3,
    "basis": "REV",
    "rev24": 1134458.0,
    "rev30": 6903889.0,
-   "pf": 4.02,
+   "pf": 4.08,
    "burst_pct": 73.5,
-   "lp_share": null
+   "lp_share": 80.2,
+   "lp_leader": "pons-v2",
+   "rival": "o1-launchpad",
+   "rival_share": 16.7,
+   "issuance_rate": 15.1,
+   "copycats": [
+    {
+     "target": "PONS",
+     "name": "PONSY / WETH",
+     "ratio": 0.89,
+     "created": "2026-09-03T00:08:24Z"
+    }
+   ]
   },
   {
    "symbol": "CASHCAT",
@@ -64,26 +83,31 @@
    "track": "meme",
    "slugs": [],
    "note": "Cash Cat — 프로토콜 매출 없음",
+   "profile": "meme",
+   "thresholds": {
+    "wl_liq_mcap_min_pct": 2.5
+   },
    "name": "Cash Cat",
    "resolved": true,
-   "price": 0.2771494564,
-   "fdv": 273867548.309502,
-   "mcap": 273671731.732151,
-   "liq": 8647936.189848755,
-   "vol24": 73650688.5065195,
+   "price": 0.2747113352,
+   "fdv": 271458298.522261,
+   "mcap": 270961728.044232,
+   "liq": 8728432.1447601,
+   "vol24": 73623649.2832,
    "rank": null,
    "flags": [],
-   "liq_mcap_pct": 3.16,
-   "turnover_pct": 26.9
+   "liq_mcap_pct": 3.22,
+   "turnover_pct": 27.2,
+   "attn_share_pct": 4.41
   }
  ],
  "alerts": [
   {
-   "code": "LIQ_THIN",
+   "code": "COPYCAT",
    "symbol": "PONS",
-   "detail": "유동성/시총 2.86% — 시총 대비 풀이 얇습니다",
-   "severity": 8.0,
-   "action": "분할 매도 아니면 슬리피지 큽니다"
+   "detail": "유사 심볼 신규 풀 PONSY / WETH (유사도 0.89)",
+   "severity": 7.0,
+   "action": "매수 시 컨트랙트 주소를 반드시 대조하세요"
   }
  ]
 }

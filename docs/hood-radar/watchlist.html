@@ -18,6 +18,8 @@ h1{font-size:18px;margin:0 0 4px}
 .k{color:var(--dim);font-size:11px}
 .v{font-size:14px;font-weight:600;margin-top:2px}
 .thin{color:var(--warn)}
+.tag{margin-left:6px;font-size:11px;color:var(--dim);border:1px solid var(--line);
+     border-radius:6px;padding:1px 6px;vertical-align:2px}
 .alert{border-left:3px solid var(--dn);padding:8px 10px;margin-top:8px;
        background:#1b1113;border-radius:0 8px 8px 0;font-size:13px}
 .alert b{color:var(--dn)}
@@ -30,7 +32,8 @@ a{color:#58a6ff}
 <div class="sub" id="asof">불러오는 중…</div>
 <div id="cards"></div>
 <div class="note">
-유동성·매출을 가격보다 먼저 봅니다. 배수는 후행 지표이며 분모(매출)가 무너지면
+종목 특성별로 다른 규칙을 적용합니다 — 런치패드는 점유율·신규 발행 속도, 인덱스는
+매출 절대금액·동종 배수, 밈은 체인 전체 관심 중 내 몫. 유동성·매출을 가격보다 먼저 봅니다. 배수는 후행 지표이며 분모(매출)가 무너지면
 싸 보이는 값이 위험 신호가 됩니다.<br>
 관측 시스템입니다. 경보는 자금·매출 반응의 서술이며 매매 신호가 아닙니다.<br>
 <a href="./">← 메인 레이더</a>
@@ -56,11 +59,17 @@ fetch("watchlist.json?cb="+Date.now()).then(r=>r.json()).then(d=>{
     if(it.burst_pct!=null) cells.push(["7일평균비",(it.burst_pct>0?"+":"")+it.burst_pct+"%"]);
     if(it.lp_share!=null) cells.push(["런치패드 점유",it.lp_share+"%"]);
     if(it.rank!=null) cells.push(["시총 순위",it.rank+"위"]);
+    if(it.rival_share!=null) cells.push(["2위 "+(it.rival||""),it.rival_share+"%"]);
+    if(it.issuance_rate!=null) cells.push(["신규 발행",it.issuance_rate+"개/분"]);
+    if(it.attn_share_pct!=null) cells.push(["관심 점유율",it.attn_share_pct+"%"]);
+    if(it.pf_premium_x!=null) cells.push(["중앙값 대비",it.pf_premium_x+"배"]);
     const al=(byS[it.symbol]||[]).map(a=>
       `<div class="alert"><b>${E(a.code)}</b> ${E(a.detail)}
        ${a.action?`<span class="act">${E(a.action)}</span>`:""}</div>`).join("")
       || `<div class="calm">임계 초과 없음</div>`;
+    const TAG={launchpad:"런치패드",index:"인덱스",meme:"밈",protocol:"프로토콜"};
     return `<div class="card"><span class="sym">${E(it.symbol)}</span>
+      <span class="tag">${E(TAG[it.profile]||"")}</span>
       <span class="px">${E(it.name||"")}</span>
       <div class="grid">${cells.map(([k,v])=>
         `<div><div class="k">${k}</div><div class="v${
