@@ -3,7 +3,9 @@ name: HOOD Watchlist (보유 종목 정밀 감시)
 on:
   schedule:
     # 매시 KST 22분 — 본 브리프(:07)와 겹치지 않게 15분 뒤로 둔다
+    # GitHub 스케줄러가 혼잡 시 슬롯을 건너뛰어 하루 1~2회만 도는 일이 실측됨 → 이중 슬롯
     - cron: '22 * * * *'
+    - cron: '52 * * * *'
   workflow_dispatch:
 
 permissions:
