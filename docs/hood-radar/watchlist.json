@@ -1,9 +1,9 @@
 {
- "as_of_kst": "2026-09-03 09:19",
- "as_of_epoch": 1788394743,
- "send": false,
- "alert_id": "1788394743-0",
- "message": "",
+ "as_of_kst": "2026-09-03 13:39",
+ "as_of_epoch": 1788410367,
+ "send": true,
+ "alert_id": "1788410367-1",
+ "message": "🚨 <b>보유 종목 경보</b> — 2026-09-03 13:39 KST\n🎭 <b>CASHCAT</b> 유사 심볼 신규 풀 DASHCAT / WETH (유사도 0.86)\n   <i>매수 시 컨트랙트 주소를 반드시 대조하세요</i>\n\n📌 <b>보유 종목 정밀 감시</b>\n· <b>INDEX</b> <i>[인덱스]</i> $0.0528 · 시총 $53.11M · 배수 12.3배\n  <i>유동성 $4.38M · 시총대비 8.2% · 회전 17% · 24h매출 $14.65K · 7일평균비 -22%</i>\n· <b>PONS</b> <i>[런치패드]</i> $0.5013 · 시총 $353.81M · 배수 3.7배\n  <i>유동성 $10.03M · 시총대비 2.8% · 회전 25% · 24h매출 $1.11M · 7일평균비 +44% · 점유율 82% · 2위 o1-launchpad 15% · 발행 11.6개/분</i>\n· <b>CASHCAT</b> <i>[밈]</i> $0.2618 · 시총 $260.23M\n  <i>유동성 $9.34M · 시총대비 3.6% · 회전 24% · 관심점유 3.96%</i>\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/hood-radar/\">대시보드 열기</a>\n<i>관측 시스템입니다. 경보는 자금·매출 반응의 서술이며 매매 신호가 아닙니다.</i>",
  "items": [
   {
    "symbol": "INDEX",
@@ -19,20 +19,20 @@
    },
    "name": "The Index",
    "resolved": true,
-   "price": 0.04729979333,
-   "fdv": 46379081.8931791,
-   "mcap": 46392943.5716237,
-   "liq": 3804248.11137013,
-   "vol24": 6532702.01809718,
+   "price": 0.052789673,
+   "fdv": 51762098.6290257,
+   "mcap": 53112808.7330822,
+   "liq": 4378217.425766207,
+   "vol24": 8932825.98856438,
    "rank": null,
    "flags": [],
-   "liq_mcap_pct": 8.2,
-   "turnover_pct": 14.1,
+   "liq_mcap_pct": 8.24,
+   "turnover_pct": 16.8,
    "basis": "REV",
-   "rev24": 17556.0,
-   "rev30": 331404.0,
-   "pf": 11.5,
-   "burst_pct": -0.2
+   "rev24": 14649.0,
+   "rev30": 344687.0,
+   "pf": 12.34,
+   "burst_pct": -21.6
   },
   {
    "symbol": "PONS",
@@ -49,25 +49,39 @@
    },
    "name": "Pons",
    "resolved": true,
-   "price": 0.484538492,
-   "fdv": 342421550.719302,
-   "mcap": 343470662.009522,
-   "liq": 9707338.130152728,
-   "vol24": 80081924.6644135,
+   "price": 0.5012847453,
+   "fdv": 354246019.492571,
+   "mcap": 353807554.084568,
+   "liq": 10029635.315287044,
+   "vol24": 89275330.7134773,
    "rank": null,
    "flags": [],
    "liq_mcap_pct": 2.83,
-   "turnover_pct": 23.3,
+   "turnover_pct": 25.2,
    "basis": "REV",
-   "rev24": 1134458.0,
-   "rev30": 6903889.0,
-   "pf": 4.08,
-   "burst_pct": 73.5,
-   "lp_share": 80.2,
+   "rev24": 1113819.0,
+   "rev30": 7931995.0,
+   "pf": 3.67,
+   "burst_pct": 44.4,
+   "lp_share": 82.4,
    "lp_leader": "pons-v2",
    "rival": "o1-launchpad",
-   "rival_share": 16.7,
-   "issuance_rate": 5.7
+   "rival_share": 14.7,
+   "issuance_rate": 11.6,
+   "copycats": [
+    {
+     "target": "PONS",
+     "name": "wifPONS / USDG",
+     "ratio": 0.73,
+     "created": "2026-09-03T04:32:22Z"
+    },
+    {
+     "target": "PONS",
+     "name": "PONSON / USDG",
+     "ratio": 0.8,
+     "created": "2026-09-03T04:32:20Z"
+    }
+   ]
   },
   {
    "symbol": "CASHCAT",
@@ -81,17 +95,47 @@
    },
    "name": "Cash Cat",
    "resolved": true,
-   "price": 0.2747113352,
-   "fdv": 271458298.522261,
-   "mcap": 270961728.044232,
-   "liq": 8728432.1447601,
-   "vol24": 73623649.2832,
+   "price": 0.2618035209,
+   "fdv": 258703303.611113,
+   "mcap": 260225462.998952,
+   "liq": 9338206.776599348,
+   "vol24": 61445293.7792083,
    "rank": null,
    "flags": [],
-   "liq_mcap_pct": 3.22,
-   "turnover_pct": 27.2,
-   "attn_share_pct": 4.41
+   "liq_mcap_pct": 3.59,
+   "turnover_pct": 23.6,
+   "attn_share_pct": 3.956,
+   "copycats": [
+    {
+     "target": "CASHCAT",
+     "name": "DASHCAT / WETH",
+     "ratio": 0.86,
+     "created": "2026-09-03T04:32:28Z"
+    }
+   ]
   }
  ],
- "alerts": []
+ "alerts": [
+  {
+   "code": "COPYCAT",
+   "symbol": "PONS",
+   "detail": "유사 심볼 신규 풀 wifPONS / USDG (유사도 0.73)",
+   "severity": 7.0,
+   "action": "매수 시 컨트랙트 주소를 반드시 대조하세요"
+  },
+  {
+   "code": "COPYCAT",
+   "symbol": "PONS",
+   "detail": "유사 심볼 신규 풀 PONSON / USDG (유사도 0.80)",
+   "severity": 7.0,
+   "action": "매수 시 컨트랙트 주소를 반드시 대조하세요"
+  },
+  {
+   "code": "COPYCAT",
+   "symbol": "CASHCAT",
+   "detail": "유사 심볼 신규 풀 DASHCAT / WETH (유사도 0.86)",
+   "severity": 7.0,
+   "action": "매수 시 컨트랙트 주소를 반드시 대조하세요"
+  }
+ ]
 }
