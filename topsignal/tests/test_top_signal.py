@@ -128,5 +128,50 @@ class TestGuards(unittest.TestCase):
         self.assertRegex(ts.THRESHOLDS_FROZEN_AT, r"^\d{4}-\d{2}-\d{2}$")
 
 
+
+
+class TestDeltas(unittest.TestCase):
+    from datetime import date as _d
+    TODAY = _d(2026, 9, 5)
+
+    def test_own_history_takes_priority(self):
+        hist = [{"as_of": "2026-09-04", "signals": [{"key": "fng", "value": 60}]}]
+        out = ts.build_deltas("fng", 73, {"d1": 99}, hist, self.TODAY)
+        self.assertEqual(out["d1"]["delta"], 13)
+        self.assertEqual(out["d1"]["dir"], "up")
+
+    def test_external_fallback_when_no_history(self):
+        out = ts.build_deltas("kimchi", 1.34, {"d1": 2.0, "d30": 0.1}, [], self.TODAY)
+        self.assertEqual(out["d1"]["dir"], "down")
+        self.assertEqual(out["d30"]["dir"], "up")
+        self.assertIn("%p", out["d1"]["text"])
+
+    def test_missing_base_yields_none(self):
+        out = ts.build_deltas("mvrv", 1.51, {}, [], self.TODAY)
+        self.assertIsNone(out["d1"])
+        self.assertIsNone(out["d30"])
+
+    def test_flat_when_below_epsilon(self):
+        out = ts.build_deltas("mvrv", 1.51, {"d1": 1.505}, [], self.TODAY)
+        self.assertEqual(out["d1"]["dir"], "flat")
+
+    def test_delta_line_shows_dash_for_missing(self):
+        line = ts.render_delta_line(ts.build_deltas("mvrv", 1.5, {}, [], self.TODAY))
+        self.assertIn("1일 —", line)
+        self.assertIn("30일 —", line)
+
+    def test_dashboard_has_delta_columns(self):
+        sig = [{"key": "fng", "label": "공포탐욕지수", "level": 1, "value": 76,
+                "display": "76", "note": "탐욕 구간",
+                "deltas": ts.build_deltas("fng", 76, {"d1": 60, "d30": 80},
+                                          [], self.TODAY)}]
+        html = ts.render_dashboard({"as_of_kst": "2026-09-05 07:48",
+                                    "data_status": "OK", "signals": sig,
+                                    "phase": ts.compose(sig), "changes": []})
+        self.assertIn("1일", html)
+        self.assertIn("30일", html)
+        self.assertIn("#c62828", html)   # 상승 = 적색
+        self.assertIn("#1565c0", html)   # 하락 = 청색
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
