@@ -1,0 +1,104 @@
+name: XRS 5-Track Relative Strength
+
+on:
+  schedule:
+    - cron: "16 22 * * *"   # KST 07:16
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: xrs
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Bootstrap source (sha256 검증)
+        env:
+          BUNDLE_URLS: "https://paste.rs/96kb5 https://paste.rs/w05Yz"
+          BUNDLE_SHA: "edb9ec269a3e8e2d422a29e298cece9e690c113e456d295e34d59400c3a5d1b7"
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64, hashlib, io, os, tarfile, urllib.request
+
+          urls = os.environ["BUNDLE_URLS"].split()
+          want = os.environ["BUNDLE_SHA"]
+          raw = None
+          for u in urls:
+              try:
+                  req = urllib.request.Request(u, headers={"User-Agent": "xrs-bootstrap"})
+                  with urllib.request.urlopen(req, timeout=60) as r:
+                      body = r.read()
+                  got = hashlib.sha256(body).hexdigest()
+                  if got != want:
+                      print(f"[boot] sha 불일치 {u}: {got[:16]}")
+                      continue
+                  raw = body
+                  print(f"[boot] 검증 통과 {u}")
+                  break
+              except Exception as e:
+                  print(f"[boot] 실패 {u}: {e}")
+          if raw is None:
+              raise SystemExit("::error::번들을 받지 못했거나 sha256이 다름")
+
+          tgz = base64.b64decode(raw)
+          tf = tarfile.open(fileobj=io.BytesIO(tgz), mode="r:gz")
+          root = os.path.abspath(".")
+          members = []
+          for m in tf.getmembers():
+              if m.issym() or m.islnk():
+                  raise SystemExit(f"::error::심볼릭 링크 거부: {m.name}")
+              dest = os.path.abspath(os.path.join(root, m.name))
+              if not dest.startswith(root + os.sep):
+                  raise SystemExit(f"::error::경로 이탈 거부: {m.name}")
+              members.append(m)
+          tf.extractall(root, members=members)
+          print("[boot] 설치 완료:", sorted(os.listdir("xrs")))
+          PY
+
+      - name: Test gate
+        run: |
+          set -euo pipefail
+          cd xrs && python3 -m unittest discover -s tests
+
+      - name: Collect & render
+        env:
+          TZ: "Asia/Seoul"
+        run: |
+          set -euo pipefail
+          python3 xrs/xrs.py
+
+      - name: Commit snapshot
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add xrs/xrs.py xrs/README.md xrs/tests xrs/data docs/xrs 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+            exit 0
+          fi
+          STAMP="$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          git commit -m "chore(xrs): snapshot ${STAMP} KST"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
