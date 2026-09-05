@@ -2,7 +2,7 @@ name: Narrative Radar
 
 on:
   schedule:
-    - cron: "13 23 * * *"      # KST 매일 08:13 (비정각 분산)
+    - cron: "34 22 * * *"      # KST 매일 07:34 (UTC 자정 전 혼잡대 회피)
   workflow_dispatch:
     inputs:
       date:
