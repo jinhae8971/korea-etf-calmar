@@ -1,0 +1,51 @@
+name: Crypto Top Signal
+
+on:
+  schedule:
+    - cron: "48 22 * * *"      # KST 매일 07:48 (혼잡대 회피)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: top-signal
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test gate
+        run: python topsignal/tests/test_top_signal.py
+
+      - name: Run monitor
+        env:
+          TZ: "Asia/Seoul"
+        run: python topsignal/top_signal.py
+
+      - name: Commit
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add topsignal/data docs/top-signal || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            AS_OF=$(python -c "import json;print(json.load(open('topsignal/data/latest.json'))['as_of_kst'])")
+            git commit -m "top-signal: snapshot ${AS_OF} KST"
+            git pull --rebase --autostash origin main || true
+            git push
+          fi
