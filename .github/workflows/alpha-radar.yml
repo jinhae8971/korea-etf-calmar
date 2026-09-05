@@ -2,7 +2,7 @@ name: Alpha Trend Radar
 
 on:
   schedule:
-    - cron: '7 0 * * *'      # KST 09:07 — 알파 일봉 UTC 마감 직후
+    - cron: '47 21 * * *'      # KST 09:07 — 알파 일봉 UTC 마감 직후
   workflow_dispatch:
 
 permissions:
