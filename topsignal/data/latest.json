@@ -1,0 +1,87 @@
+{
+ "as_of": "2026-09-05",
+ "as_of_kst": "2026-09-05 13:25",
+ "data_status": "OK",
+ "failed": [],
+ "thresholds_frozen_at": "2026-09-05",
+ "signals": [
+  {
+   "key": "kimchi",
+   "label": "김치프리미엄",
+   "level": 0,
+   "value": 1.33,
+   "display": "+1.33%",
+   "note": "정상 범위",
+   "raw": {
+    "value": 1.33,
+    "krw": 108894000.0,
+    "usd": 79585.625,
+    "fx": 1350.35
+   },
+   "extra": ""
+  },
+  {
+   "key": "altseason",
+   "label": "알트시즌 지수",
+   "level": 0,
+   "value": 34,
+   "display": "34 / 100",
+   "note": "비트코인 우위",
+   "raw": {
+    "value": 34,
+    "sample": 50,
+    "btc_30d": 23.4,
+    "leaders": [
+     {
+      "sym": "ZEC",
+      "chg": 101.8
+     },
+     {
+      "sym": "ENA",
+      "chg": 80.9
+     },
+     {
+      "sym": "PUMP",
+      "chg": 80.5
+     }
+    ]
+   },
+   "extra": ""
+  },
+  {
+   "key": "fng",
+   "label": "공포탐욕지수",
+   "level": 0,
+   "value": 73,
+   "display": "73 (Greed)",
+   "note": "탐욕 임계 미만",
+   "raw": {
+    "value": 73,
+    "label": "Greed",
+    "prev": 74
+   },
+   "extra": ""
+  },
+  {
+   "key": "mvrv",
+   "label": "MVRV",
+   "level": 0,
+   "value": 1.51,
+   "display": "1.51 · Z 0.95",
+   "note": "평균 회귀 구간",
+   "raw": {
+    "value": 1.51,
+    "as_of": "2026-09-04",
+    "zscore": 0.95
+   },
+   "extra": ""
+  }
+ ],
+ "phase": {
+  "score": 0,
+  "max": 8,
+  "phase": "평온"
+ },
+ "changes": [],
+ "message": "🧭 <b>크립토 고점신호</b>  2026-09-05 13:25 KST\n국면: <b>평온</b>  (과열도 0/8)\n\n🟢 <b>김치프리미엄</b> +1.33%\n     정상 범위\n🟢 <b>알트시즌 지수</b> 34 / 100\n     비트코인 우위\n🟢 <b>공포탐욕지수</b> 73 (Greed)\n     탐욕 임계 미만\n🟢 <b>MVRV</b> 1.51 · Z 0.95\n     평균 회귀 구간\n\n<i>관측 리포트입니다. 각 지표는 현재 구간의 서술이며 고점 시점이나 수익률을 주장하지 않습니다.</i>"
+}
