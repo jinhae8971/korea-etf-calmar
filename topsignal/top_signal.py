@@ -105,7 +105,47 @@ def fetch_kimchi():
         raise RuntimeError("USD/KRW 확보 실패")
 
     premium = (krw / (usd * fx) - 1.0) * 100.0
-    return {"value": round(premium, 2), "krw": krw, "usd": usd, "fx": round(fx, 2)}
+    out = {"value": round(premium, 2), "krw": krw, "usd": usd, "fx": round(fx, 2)}
+    out["hist"] = _kimchi_history()
+    return out
+
+
+def _kimchi_history():
+    """1일 전·30일 전 김프를 외부 이력에서 역산한다.
+
+    자체 history.json 은 오늘 시작이라 30일치가 없다. 업비트 일봉 + 코인베이스
+    일자별 spot + 프랑크푸르터 일자별 환율로 과거 시점을 재구성한다.
+    실패하면 해당 항목만 None 으로 두고 나머지는 그대로 보고한다.
+    """
+    out = {}
+    try:
+        candles = http_json("https://api.upbit.com/v1/candles/days"
+                            "?market=KRW-BTC&count=32", tries=2)
+    except Exception as e:  # noqa: BLE001
+        print("[kimchi] 일봉 실패: %s" % e)
+        return out
+    by_date = {}
+    for c in candles:
+        by_date[c["candle_date_time_kst"][:10]] = float(c["trade_price"])
+
+    today = datetime.now(KST).date()
+    for tag, days in (("d1", 1), ("d30", 30)):
+        day = (today - timedelta(days=days)).strftime("%Y-%m-%d")
+        krw = by_date.get(day)
+        if krw is None:
+            continue
+        try:
+            usd = float(http_json(
+                "https://api.coinbase.com/v2/prices/BTC-USD/spot?date=%s" % day,
+                tries=2)["data"]["amount"])
+            fx = float(http_json(
+                "https://api.frankfurter.dev/v1/%s?base=USD&symbols=KRW" % day,
+                tries=2)["rates"]["KRW"])
+        except Exception as e:  # noqa: BLE001
+            print("[kimchi] %s 역산 실패: %s" % (tag, e))
+            continue
+        out[tag] = round((krw / (usd * fx) - 1.0) * 100.0, 2)
+    return out
 
 
 def fetch_altseason():
@@ -145,13 +185,17 @@ def fetch_altseason():
 
 
 def fetch_fng():
-    d = http_json("https://api.alternative.me/fng/?limit=2")
+    d = http_json("https://api.alternative.me/fng/?limit=31")
     rows = d.get("data") or []
     if not rows:
         raise RuntimeError("공포탐욕지수 응답 비어 있음")
     cur = int(rows[0]["value"])
-    prev = int(rows[1]["value"]) if len(rows) > 1 else None
-    return {"value": cur, "label": rows[0].get("value_classification"), "prev": prev}
+    hist = {}
+    if len(rows) > 1:
+        hist["d1"] = int(rows[1]["value"])
+    if len(rows) > 30:
+        hist["d30"] = int(rows[30]["value"])
+    return {"value": cur, "label": rows[0].get("value_classification"), "hist": hist}
 
 
 def fetch_mvrv():
@@ -164,6 +208,57 @@ def fetch_mvrv():
         print("[mvrv] z-score 실패(무시): %s" % e)
         out["zscore"] = None
     return out
+
+
+# ── 변동폭 ────────────────────────────────────────────────────────────
+# 네 지표 모두 "값이 오르면 과열 방향"이라 상승=🔺(적신호) / 하락=🔻 로 통일한다.
+ARROW = {"up": "🔺", "down": "🔻", "flat": "▬"}
+UNIT = {"kimchi": "%p", "altseason": "", "fng": "", "mvrv": ""}
+
+
+def _arrow(delta, eps):
+    if delta is None:
+        return None
+    if abs(delta) < eps:
+        return "flat"
+    return "up" if delta > 0 else "down"
+
+
+def build_deltas(key, cur_value, ext_hist, own_hist, today):
+    """1일·30일 변동폭. 자체 이력을 1순위, 외부 역산(kimchi·fng)을 폴백으로 둔다."""
+    eps = {"kimchi": 0.05, "altseason": 1, "fng": 1, "mvrv": 0.01}[key]
+    fmt = {"kimchi": "%+.2f", "altseason": "%+.0f", "fng": "%+.0f", "mvrv": "%+.2f"}[key]
+    by_date = {}
+    for row in own_hist or []:
+        for sig in row.get("signals", []):
+            if sig.get("key") == key and sig.get("value") is not None:
+                by_date[row.get("as_of")] = sig["value"]
+    out = {}
+    for tag, days in (("d1", 1), ("d30", 30)):
+        day = (today - timedelta(days=days)).strftime("%Y-%m-%d")
+        base = by_date.get(day)
+        if base is None:
+            base = (ext_hist or {}).get(tag)
+        if base is None or cur_value is None:
+            out[tag] = None
+            continue
+        d = cur_value - base
+        out[tag] = {"delta": round(d, 2), "dir": _arrow(d, eps),
+                    "text": fmt % d + UNIT[key]}
+    return out
+
+
+def render_delta_line(deltas):
+    if not deltas:
+        return ""
+    parts = []
+    for tag, label in (("d1", "1일"), ("d30", "30일")):
+        d = deltas.get(tag)
+        if not d:
+            parts.append("%s —" % label)
+        else:
+            parts.append("%s %s%s" % (label, ARROW[d["dir"]], d["text"]))
+    return "  ·  ".join(parts)
 
 
 # ── 판정 ──────────────────────────────────────────────────────────────
@@ -239,7 +334,10 @@ def render_message(payload):
             L.append("⚪ <b>%s</b> — 수집 실패" % s["label"])
             continue
         L.append("%s <b>%s</b> %s" % (DOT[s["level"]], s["label"], s["display"]))
-        L.append("     %s%s" % (s["note"], s.get("extra", "")))
+        line = render_delta_line(s.get("deltas"))
+        if line:
+            L.append("     %s" % line)
+        L.append("     <i>%s</i>%s" % (s["note"], s.get("extra", "")))
     if p.get("changes"):
         L.append("")
         L.append("⚡ <b>변화</b>")
@@ -254,14 +352,28 @@ def render_message(payload):
 
 
 def render_dashboard(payload):
-    rows = []
+    def cell(d):
+        if not d:
+            return '<td style="text-align:right;color:#aaa">—</td>'
+        c = {"up": "#c62828", "down": "#1565c0", "flat": "#777"}[d["dir"]]
+        a = {"up": "▲", "down": "▼", "flat": "▬"}[d["dir"]]
+        return ('<td style="text-align:right;color:%s;white-space:nowrap">%s %s</td>'
+                % (c, a, d["text"]))
+
+    rows = ['<tr><th style="text-align:left">지표</th><th></th>'
+            '<th style="text-align:right">현재</th>'
+            '<th style="text-align:right">1일</th>'
+            '<th style="text-align:right">30일</th>'
+            '<th style="text-align:left">판정</th></tr>']
     for s in payload["signals"]:
         lv = s.get("level")
         color = {0: "#2e7d32", 1: "#ef6c00", 2: "#c62828"}.get(lv, "#777")
+        dl = s.get("deltas") or {}
         rows.append(
             '<tr><td><b>%s</b></td><td style="color:%s">%s</td>'
-            '<td style="text-align:right">%s</td><td>%s</td></tr>'
-            % (s["label"], color, DOT.get(lv, "⚪"), s["display"], s["note"]))
+            '<td style="text-align:right"><b>%s</b></td>%s%s<td>%s</td></tr>'
+            % (s["label"], color, DOT.get(lv, "⚪"), s["display"],
+               cell(dl.get("d1")), cell(dl.get("d30")), s["note"]))
     return """<!doctype html><html lang="ko"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>크립토 고점신호</title>
@@ -316,8 +428,9 @@ def detect_changes(cur, prev):
 
 
 # ── 메인 ──────────────────────────────────────────────────────────────
-def collect():
+def collect(own_hist=None):
     signals, failed = [], []
+    today = datetime.now(KST).date()
 
     def add(key, label, fn, fmt, level_from):
         try:
@@ -331,6 +444,8 @@ def collect():
         lv, note = level_from(d)
         signals.append({"key": key, "label": label, "level": lv, "value": d["value"],
                         "display": fmt(d), "note": note, "raw": d,
+                        "deltas": build_deltas(key, d["value"], d.get("hist"),
+                                               own_hist, today),
                         "extra": d.get("_extra", "")})
 
     add("kimchi", "김치프리미엄", fetch_kimchi,
@@ -364,7 +479,15 @@ def collect():
 
 def main():
     now = datetime.now(KST)
-    signals, status, failed = collect()
+    os.makedirs(DATA, exist_ok=True)
+    hist_path = os.path.join(DATA, "history.json")
+    hist = []
+    if os.path.exists(hist_path):
+        try:
+            hist = json.load(open(hist_path, encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            hist = []
+    signals, status, failed = collect(own_hist=hist)
     payload = {
         "as_of": now.strftime("%Y-%m-%d"),
         "as_of_kst": now.strftime("%Y-%m-%d %H:%M"),
@@ -375,14 +498,6 @@ def main():
         "phase": compose(signals),
     }
 
-    os.makedirs(DATA, exist_ok=True)
-    hist_path = os.path.join(DATA, "history.json")
-    hist = []
-    if os.path.exists(hist_path):
-        try:
-            hist = json.load(open(hist_path, encoding="utf-8"))
-        except Exception:  # noqa: BLE001
-            hist = []
     prev = hist[-1] if hist else None
     payload["changes"] = detect_changes(payload, prev)
     payload["message"] = render_message(payload)
