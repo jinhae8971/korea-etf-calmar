@@ -756,102 +756,155 @@ def _movers(state, limit=3):
     return out
 
 
+# ------------------------------------------------------- 브리프 압축 규격 v1
+# ① 보합 지표는 행 자체를 삭제한다(─ 출력 금지)  ② 종목당 본문 2줄 상한
+# ③ 배지로 결론을 먼저 준다  ④ 경보에는 반증조건(↻)을 반드시 붙인다
+# ⑤ 정상 종목은 한 줄로 접는다  ⑥ 미해결은 '변화 없음'이 아니라 '판정 불가'
+BRIEF_FMT_FROZEN_AT = "2026-09-07"
+BADGE = {"alert": "\U0001F534", "warn": "\U0001F7E1",
+         "ok": "\u26AA", "unknown": "\u26AB"}
+_SEV_RANK = {"alert": 0, "warn": 1, "unknown": 2, "ok": 3}
+ALERT_SEV = 6.0
+MAX_BODY_LINES = 2          # 판정 1줄 + 지표 1줄
+MAX_METRICS_PER_LINE = 2
+NO_INVALIDATION = "반증조건 미정 — 규칙 보완 필요"
+
+# 규칙이 action 을 채우지 않는 경로용 기본 반증조건.
+# 조건을 적을 수 없는 코드는 여기 넣지 않는다 — 빈칸을 그럴듯하게 메우지 않기 위함.
+DEFAULT_INVALIDATION = {
+    "PRICE_DROP": "다음 관측에서 되돌림 또는 거래대금 회복 시 해제",
+    "PRICE_SPIKE": "다음 관측에서 되돌림 또는 회전율 하락 시 해제",
+    "VOL_DRY": "24h 거래대금이 7일 평균 수준으로 회복되면 해제",
+    "RANK_MOVE": "순위가 직전 구간으로 회복되면 해제",
+    "TURNOVER_DRY": "회전율이 밴드 하단 위로 복귀하면 해제",
+    "LIQ_THIN": "유동성/시총 비율이 임계 위로 복귀하면 해제",
+}
+
+
+def _metric_rows(it, d):
+    """보합·결측을 뺀 지표를 중요도 내림차순으로. pp는 %와 겨루도록 3배 가중."""
+    d = d or {}
+    rows = []
+
+    def push(delta, unit, label, flat=None, digits=1):
+        if delta is None:
+            return
+        lim = flat if flat is not None else (0.3 if unit == "pp" else 0.5)
+        if abs(delta) <= lim:
+            return
+        arrow = (_arrow_pct(delta, flat=lim) if unit == "%"
+                 else _arrow_pp(delta, flat=lim, digits=digits))
+        rows.append((abs(delta) * (3.0 if unit == "pp" else 1.0), _with(label, arrow)))
+
+    if it.get("issuance_rate"):
+        push(d.get("issuance"), "%", "발행 %.1f개/분" % it["issuance_rate"])
+    if it.get("lp_share") is not None:
+        push(d.get("lp_share_pp"), "pp", "점유율 %.0f%%" % it["lp_share"])
+    if it.get("turnover_pct") is not None:
+        push(d.get("turnover_pp"), "pp", "회전 %.0f%%" % it["turnover_pct"], digits=0)
+    if it.get("rev24"):
+        push(d.get("rev24"), "%", "24h매출 $%s" % _h(it["rev24"]))
+    if it.get("liq") is not None:
+        push(d.get("liq"), "%", "유동성 $%s" % _h(it.get("liq")))
+    if it.get("attn_share_pct") is not None:
+        push(d.get("attn_pp"), "pp", "관심점유 %.2f%%" % it["attn_share_pct"],
+             flat=0.1, digits=2)
+    if it.get("rival_share") is not None:
+        push(d.get("rival_pp"), "pp",
+             "2위 %s %.0f%%" % (it.get("rival") or "?", it["rival_share"]))
+    push(d.get("mcap"), "%", "시총 $%s" % _h(it.get("mcap")))
+
+    # 순위 변동과 배수 변화는 변화 자체가 사건이므로 항상 앞에 세운다
+    rp = d.get("rank_prev")
+    if it.get("rank") and rp and rp != it["rank"]:
+        rows.append((float("inf"), "시총 %d위→%d위" % (rp, it["rank"])))
+    pfp = d.get("pf_prev")
+    if it.get("pf") is not None and pfp:
+        a, b = "%.1f" % pfp, "%.1f" % it["pf"]
+        if a != b:   # 반올림 후 같으면 '11.2→11.2배' 같은 무의미한 행이 된다
+            rows.append((float("inf"), "배수 %s→%s배" % (a, b)))
+
+    rows.sort(key=lambda r: -r[0])
+    return [t for _, t in rows]
+
+
+def _headline(it):
+    """가격 + 기준 하나의 변화율. 직전·전일 병기를 없앤 게 압축의 절반이다."""
+    basis, d = _pick_basis(it)
+    px = "$%s" % _fmt_px(it.get("price"))
+    if d and d.get("px") is not None:
+        px += " (%s%s)" % ("전일" if basis == "day" else "직전", _arrow_pct(d["px"]))
+    return px
+
+
+def _severity_of(alerts_for_sym):
+    if not alerts_for_sym:
+        return "ok"
+    return "alert" if _fnum(alerts_for_sym[0].get("severity")) >= ALERT_SEV else "warn"
+
+
 def render_telegram(state, alerts, cfg):
-    """
-    본 브리프에 붙는 상시 섹션 — 경보가 없어도 상태는 항상 보여준다.
-    수치 옆에 항상 변화 화살표를 단다: 전일(24h) 기준이 있으면 전일, 없으면 직전 관측.
-    """
+    """보유 종목 블록 — 경보를 종목 안으로 흡수해 중복 나열을 없앤다."""
     if not state or not state.get("items"):
         return []
     refs = state.get("delta_refs") or {}
-    basis_any = "day" if refs.get("day_kst") else ("prev" if refs.get("prev_kst") else None)
-    if basis_any == "day":
-        basis_note = "전일 %s 대비 · 가격은 직전 %s 병기" % (
-            refs["day_kst"], refs.get("prev_kst") or "—")
-    elif basis_any == "prev":
+    if refs.get("day_kst"):
+        basis_note = "전일 %s 대비" % refs["day_kst"]
+    elif refs.get("prev_kst"):
         basis_note = "직전 %s 대비 (전일 기준은 이력 축적 중)" % refs["prev_kst"]
     else:
         basis_note = "첫 관측 — 비교 기준 없음"
-    lines = ["📌 <b>보유 종목 정밀 감시</b> <i>%s</i>" % _esc(basis_note)]
 
-    movers = _movers(state)
-    if movers:
-        lines.append("🔎 <b>주요 변화</b> " + _esc(" · ".join(movers)))
+    by_sym = {}
+    for a in (alerts or []):
+        by_sym.setdefault(a.get("symbol"), []).append(a)
+    for v in by_sym.values():
+        v.sort(key=lambda a: -_fnum(a.get("severity")))
 
+    blocks = []
     for it in state["items"]:
-        sym = _esc(it["symbol"])
+        sym = _esc(it.get("symbol", ""))
         if not it.get("resolved"):
-            lines.append("· <b>%s</b> ❓ 데이터 없음 — %s" % (sym, _esc(it.get("reason", ""))))
+            blocks.append((_SEV_RANK["unknown"], sym, [
+                "%s <b>%s</b> · 판정 불가 — %s" % (
+                    BADGE["unknown"], sym, _esc(it.get("reason", "사유 미기재")))]))
             continue
-        basis, d = _pick_basis(it)
-        d = d or {}
-        dp = (it.get("delta") or {}).get("prev") or {}
-        tag = PROFILE_TAG.get(it.get("profile"))
 
-        # 헤드: 가격은 직전·전일 둘 다, 시총·배수는 기준 하나
-        px = "$%s" % _fmt_px(it.get("price"))
-        px_bits = []
-        if basis == "day":
-            if dp.get("px") is not None:
-                px_bits.append("직전%s" % _arrow_pct(dp["px"]))
-            if d.get("px") is not None:
-                px_bits.append("전일%s" % _arrow_pct(d["px"]))
-        elif basis == "prev" and d.get("px") is not None:
-            px_bits.append("직전%s" % _arrow_pct(d["px"]))
-        if px_bits:
-            px += " (%s)" % " ".join(px_bits)
-        head = "· <b>%s</b>%s %s · %s" % (
-            sym, " <i>[%s]</i>" % tag if tag else "", px,
-            _with("시총 $%s" % _h(it.get("mcap")), _arrow_pct(d.get("mcap"))))
-        if it.get("pf") is not None:
-            prev_pf = d.get("pf_prev")
-            if prev_pf and abs(prev_pf - it["pf"]) >= 0.05:
-                head += " · 배수 %.1f→%.1f배" % (prev_pf, it["pf"])
-            else:
-                head += " · 배수 %.1f배" % it["pf"]
-        lines.append(head)
+        mine = by_sym.get(it.get("symbol"), [])
+        sev = _severity_of(mine)
+        d = _pick_basis(it)[1] or {}
+        metrics = _metric_rows(it, d)
+        head = "%s <b>%s</b>  %s" % (BADGE[sev], sym, _esc(_headline(it)))
 
-        sub = [_with("유동성 $%s" % _h(it.get("liq")), _arrow_pct(d.get("liq")))]
-        if it.get("liq_mcap_pct") is not None:
-            sub.append(_with("시총대비 %.1f%%" % it["liq_mcap_pct"],
-                             _arrow_pp(d.get("liq_mcap_pp"))))
-        if it.get("turnover_pct") is not None:
-            sub.append(_with("회전 %.0f%%" % it["turnover_pct"], _arrow_pp(d.get("turnover_pp"), digits=0)))
-        if it.get("rev24"):
-            sub.append(_with("24h매출 $%s" % _h(it["rev24"]), _arrow_pct(d.get("rev24"))))
-        if it.get("burst_pct") is not None:
-            b = it["burst_pct"]
-            sub.append("7일평균비 %s" % ("%+.0f%%" % b if abs(b) >= 1 else "보합"))
-        if it.get("lp_share") is not None:
-            sub.append(_with("점유율 %.0f%%" % it["lp_share"], _arrow_pp(d.get("lp_share_pp"))))
-        if it.get("rank"):
-            rp = d.get("rank_prev")
-            if rp and rp != it["rank"]:
-                sub.append("시총 %d위→%d위" % (rp, it["rank"]))
-            else:
-                sub.append("시총 %d위" % it["rank"])
-        if it.get("rival_share") is not None:
-            sub.append(_with("2위 %s %.0f%%" % (it.get("rival") or "?", it["rival_share"]),
-                             _arrow_pp(d.get("rival_pp"))))
-        if it.get("issuance_rate"):
-            sub.append(_with("발행 %.1f개/분" % it["issuance_rate"], _arrow_pct(d.get("issuance"))))
-        if it.get("attn_share_pct") is not None:
-            sub.append(_with("관심점유 %.2f%%" % it["attn_share_pct"],
-                             _arrow_pp(d.get("attn_pp"), flat=0.1, digits=2)))
-        if it.get("pf_premium_x"):
-            sub.append("중앙값 대비 %.1f배" % it["pf_premium_x"])
-        lines.append("  <i>%s</i>" % _esc(" · ".join(sub)))
+        if sev == "ok":
+            tail = (" · " + _esc(" · ".join(metrics[:MAX_METRICS_PER_LINE]))
+                    if metrics else " · 특이사항 없음")
+            blocks.append((_SEV_RANK[sev], sym, [head + tail]))
+            continue
 
-    hot = [a for a in (alerts or []) if a["severity"] >= 6.0][:6]
-    if hot:
-        lines.append("")
-        lines.append("🚨 <b>보유 경보</b>")
-        for a in hot:
-            tail = " — %s" % _esc(a["action"]) if a.get("action") else ""
-            lines.append("%s <b>%s</b> %s%s" % (ICON.get(a["code"], "•"),
-                                                _esc(a["symbol"]), _esc(a["detail"]), tail))
-    lines.append("")
-    return lines
+        top = mine[0]
+        lines = [head, "   <i>%s</i>" % _esc(top.get("detail", ""))]
+        budget = MAX_BODY_LINES - 1
+        i = 0
+        while budget > 0 and i < len(metrics):
+            lines.append("   <i>%s</i>"
+                         % _esc(" · ".join(metrics[i:i + MAX_METRICS_PER_LINE])))
+            i += MAX_METRICS_PER_LINE
+            budget -= 1
+        inval = (top.get("action")
+                 or DEFAULT_INVALIDATION.get(top.get("code"))
+                 or NO_INVALIDATION)
+        lines.append("   <i>\u21bb %s</i>" % _esc(inval))
+        if len(mine) > 1:
+            lines.append("   <i>외 경보 %d건 — 대시보드</i>" % (len(mine) - 1))
+        blocks.append((_SEV_RANK[sev], sym, lines))
+
+    blocks.sort(key=lambda b: (b[0], b[1]))
+    out = ["\U0001F4CC <b>보유 종목 정밀 감시</b> <i>%s</i>" % _esc(basis_note)]
+    for _, _, ls in blocks:
+        out.extend(ls)
+    out.append("")
+    return out
 
 
 def _fmt_px(p):
@@ -866,16 +919,13 @@ def _fmt_px(p):
 def render_alert(state, alerts, cfg, dash_url=""):
     """시간별 단독 실행에서 임계 위반이 있을 때 나가는 메시지. 경보 0건이면 점검용 본문."""
     if alerts:
-        head = ["🚨 <b>보유 종목 경보</b> — %s KST" % state.get("as_of_kst", "")]
+        head = ["\U0001F6A8 <b>보유 종목 경보</b> — %s KST" % state.get("as_of_kst", "")]
     else:
-        head = ["🔭 <b>보유 종목 점검</b> — %s KST · 임계 초과 없음" % state.get("as_of_kst", "")]
-    for a in alerts[:8]:
-        tail = "\n   <i>%s</i>" % _esc(a["action"]) if a.get("action") else ""
-        head.append("%s <b>%s</b> %s%s" % (ICON.get(a["code"], "•"),
-                                           _esc(a["symbol"]), _esc(a["detail"]), tail))
+        head = ["\U0001F52D <b>보유 종목 점검</b> — %s KST · 임계 초과 없음"
+                % state.get("as_of_kst", "")]
     head.append("")
-    body = [ln for ln in render_telegram(state, [], cfg) if ln.strip()]
-    head.extend(body)
+    # 경보는 종목 블록 안에서 판정 줄로 표현된다 — 위아래로 두 번 쓰지 않는다.
+    head.extend([ln for ln in render_telegram(state, alerts, cfg) if ln.strip()])
     if dash_url:
         head.append('<a href="%s">대시보드 열기</a>' % dash_url)
     head.append("<i>관측 시스템입니다. 경보는 자금·매출 반응의 서술이며 매매 신호가 아닙니다.</i>")

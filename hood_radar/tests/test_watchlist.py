@@ -309,17 +309,66 @@ class TestDeltas(unittest.TestCase):
         self.assertIsNone(refs["prev_epoch"])
         self.assertIsNotNone(refs["day_epoch"])
 
-    def test_render_prefers_day_basis_and_shows_both_price_arrows(self):
+    def test_render_prefers_day_basis_single_reference(self):
+        """압축 규격 v1: 가격은 기준 하나만. 직전·전일 병기는 폐지됐다."""
         st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
         wl.annotate_deltas(st, self._hist(), NOW)
         text = "\n".join(wl.render_telegram(st, [], CFG))
-        self.assertIn("전일", text)
-        self.assertIn("직전▲2.0%", text)
         self.assertIn("전일▼9.1%", text)
-        self.assertIn("배수 4.0→3.6배", text)
-        self.assertIn("점유율 82% ▼6.0pp", text)
+        self.assertNotIn("직전▲2.0%", text)
+        # 순위·배수 변화는 사건이므로 최상위로 올라온다
         self.assertIn("시총 3위→2위", text)
-        self.assertIn("주요 변화", text)
+        self.assertIn("배수 4.0→3.6배", text)
+
+    def test_ok_item_is_one_line(self):
+        st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
+        wl.annotate_deltas(st, self._hist(), NOW)
+        body = [ln for ln in wl.render_telegram(st, [], CFG) if ln.strip()][1:]
+        self.assertEqual(len(body), 1)
+        self.assertTrue(body[0].startswith("\u26aa"))
+
+    def test_alert_item_is_badged_and_has_invalidation(self):
+        st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
+        wl.annotate_deltas(st, self._hist(), NOW)
+        a = [{"code": "PF_PREMIUM", "symbol": "PONS", "detail": "배수 프리미엄",
+              "severity": 8.0, "action": "8배 하회 시 해제"}]
+        text = "\n".join(wl.render_telegram(st, a, CFG))
+        self.assertIn("\U0001f534", text)
+        self.assertIn("배수 프리미엄", text)
+        self.assertIn("\u21bb 8배 하회 시 해제", text)
+
+    def test_alert_without_action_says_invalidation_missing(self):
+        """반증조건을 조용히 비우지 않는다 — 규칙 결손을 본문에 드러낸다."""
+        st = state()
+        a = [{"code": "X", "symbol": "PONS", "detail": "d", "severity": 9.0}]
+        self.assertIn("반증조건 미정", "\n".join(wl.render_telegram(st, a, CFG)))
+
+    def test_body_lines_capped_per_item(self):
+        st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2, turnover_pct=30.0,
+                   attn_share_pct=2.0, issuance_rate=21.4)
+        wl.annotate_deltas(st, self._hist(), NOW)
+        a = [{"code": "X", "symbol": "PONS", "detail": "d", "severity": 9.0, "action": "i"}]
+        lines = [ln for ln in wl.render_telegram(st, a, CFG) if ln.strip()][1:]
+        self.assertLessEqual(len(lines), 4)   # 헤드 + 판정 + 지표1 + 반증
+
+    def test_flat_metric_row_is_dropped_not_dashed(self):
+        st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
+        wl.annotate_deltas(st, self._hist(), NOW)
+        rows = wl._metric_rows(st["items"][0], st["items"][0]["delta"]["day"])
+        self.assertFalse(any("\u2500" in r for r in rows))
+
+    def test_unresolved_item_says_not_judgeable(self):
+        st = {"items": [{"symbol": "ZZZ", "resolved": False, "reason": "no pool"}]}
+        self.assertIn("판정 불가", "\n".join(wl.render_telegram(st, [], CFG)))
+
+    def test_alerts_are_not_listed_twice_in_alert_message(self):
+        st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
+        wl.annotate_deltas(st, self._hist(), NOW)
+        st["as_of_kst"] = "09-07 08:07"
+        a = [{"code": "PF_PREMIUM", "symbol": "PONS", "detail": "배수 프리미엄",
+              "severity": 8.0, "action": "8배 하회 시 해제"}]
+        text = wl.render_alert(st, a, CFG, "")
+        self.assertEqual(text.count("배수 프리미엄"), 1)
 
     def test_render_falls_back_to_prev_when_no_day(self):
         st = state()
