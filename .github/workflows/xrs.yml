@@ -27,50 +27,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Bootstrap source (sha256 검증)
-        env:
-          BUNDLE_URLS: "https://paste.rs/96kb5 https://paste.rs/w05Yz"
-          BUNDLE_SHA: "edb9ec269a3e8e2d422a29e298cece9e690c113e456d295e34d59400c3a5d1b7"
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import base64, hashlib, io, os, tarfile, urllib.request
-
-          urls = os.environ["BUNDLE_URLS"].split()
-          want = os.environ["BUNDLE_SHA"]
-          raw = None
-          for u in urls:
-              try:
-                  req = urllib.request.Request(u, headers={"User-Agent": "xrs-bootstrap"})
-                  with urllib.request.urlopen(req, timeout=60) as r:
-                      body = r.read()
-                  got = hashlib.sha256(body).hexdigest()
-                  if got != want:
-                      print(f"[boot] sha 불일치 {u}: {got[:16]}")
-                      continue
-                  raw = body
-                  print(f"[boot] 검증 통과 {u}")
-                  break
-              except Exception as e:
-                  print(f"[boot] 실패 {u}: {e}")
-          if raw is None:
-              raise SystemExit("::error::번들을 받지 못했거나 sha256이 다름")
-
-          tgz = base64.b64decode(raw)
-          tf = tarfile.open(fileobj=io.BytesIO(tgz), mode="r:gz")
-          root = os.path.abspath(".")
-          members = []
-          for m in tf.getmembers():
-              if m.issym() or m.islnk():
-                  raise SystemExit(f"::error::심볼릭 링크 거부: {m.name}")
-              dest = os.path.abspath(os.path.join(root, m.name))
-              if not dest.startswith(root + os.sep):
-                  raise SystemExit(f"::error::경로 이탈 거부: {m.name}")
-              members.append(m)
-          tf.extractall(root, members=members)
-          print("[boot] 설치 완료:", sorted(os.listdir("xrs")))
-          PY
-
+      # 최초 설치용 부트스트랩 제거(2026-09-07). 이 스텝은 매 실행마다
+      # paste.rs 번들로 xrs/ 소스를 덮어써서, 레포에 직접 가한 수정이
+      # 조용히 되돌아갔다(압축 규격 v1 적용분이 실제로 유실됨).
+      # 소스는 이미 레포에 커밋돼 있으므로 checkout 이 정본이다.
       - name: Test gate
         run: |
           set -euo pipefail

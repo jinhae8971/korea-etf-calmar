@@ -488,10 +488,25 @@ def lens_matrix(tracks):
             n = t["lens_n"].get(L["key"])
             cells += pad(f"{r}/{n}" if r else "-", cw, True)
         lines.append(pad(L["label"], lw) + cells)
-    lines.append(bar)
-    cells = "".join(pad(str(t["overall_rank"]) if t["overall_rank"] else "-", cw, True) for t in tracks)
-    lines.append(pad("종합", lw) + cells)
+    # 종합 행은 바로 아래 메달 목록이 점수·변화까지 담아 다시 말한다 —
+    # 표에서는 관점별 순위만 남긴다(압축 규격 v1).
     return "\n".join(lines)
+
+
+BRIEF_FMT_FROZEN_AT = "2026-09-07"
+
+_REDUNDANT_NOTES = ("섹터 특성상 TVL·매출 관점 해당 없음",)
+
+
+def _is_redundant_note(note):
+    return any(r in str(note) for r in _REDUNDANT_NOTES)
+
+
+_DUP_HIGHLIGHT_KEYS = ("30일 가격", "매출 30일", "TVL 30일", "가격 30일", "시총 24시간")
+
+
+def _dup_highlight(text):
+    return any(k in str(text) for k in _DUP_HIGHLIGHT_KEYS)
 
 
 def render_telegram(payload):
@@ -522,38 +537,36 @@ def render_telegram(payload):
         if t.get("tvl") is not None:
             mc += f" · TVL {fmt_usd(t['tvl'])} {color_dot(t.get('tvl30'))}{fmt_pct(t.get('tvl30'))}"
         L.append("   " + mc)
+        mc_idx = len(L) - 1
 
         if t.get("rev30") is not None:
             line = (f"   매출 {fmt_usd(t['rev30'])}/30일 "
                     f"{color_dot(t.get('rev_chg30'), 30, 2)}{fmt_pct(t.get('rev_chg30'))}")
-            bits = []
+            # 압축 규격 v1 — 밸류에이션 배수는 P/S 하나만. MC/TVL·연수익은 대시보드.
             if t.get("ps"):
-                bits.append(f"P/S {t['ps']:.1f}")
-            if t.get("mc_tvl"):
-                bits.append(f"MC/TVL {t['mc_tvl']:.2f}")
-            if t.get("rev_yield"):
-                bits.append(f"TVL당 연수익 {t['rev_yield']:.0f}%")
-            if bits:
-                line += " · " + " · ".join(bits)
+                line += f" · P/S {t['ps']:.1f}"
             L.append(line)
-        elif t.get("mc_tvl"):
-            L.append(f"   MC/TVL {t['mc_tvl']:.2f}")
 
+        # 회전율·구성은 별도 줄을 쓸 만큼 무겁지 않다 — 시총 줄에 붙인다.
         extra = []
         if t.get("turn") is not None:
             extra.append(f"회전율 {t['turn']*100:.1f}%")
         if t.get("coverage"):
             extra.append(f"구성 {t['coverage']}")
         if extra:
-            L.append("   <i>" + " · ".join(extra) + "</i>")
-        for n in t.get("notes", [])[:2]:
+            L[mc_idx] += " · <i>" + " · ".join(extra) + "</i>"
+        # '섹터 특성상 TVL·매출 해당 없음'은 표의 '-' 설명과 같은 말이라 빼고,
+        # 해석을 바꾸는 주석(측정 방식·경고)만 남긴다.
+        for n in [x for x in t.get("notes", []) if not _is_redundant_note(x)][:1]:
             L.append(f"   <i>· {esc(n)}</i>")
         L.append("")
 
-    hi = payload.get("highlights") or []
+    # 트랙 블록이 이미 30일 가격·TVL·매출 변화를 전부 보여준다. 하이라이트는
+    # 그것과 겹치지 않는 것(순위 이동 등)만 남긴다 — 겹치면 같은 줄을 두 번 쓰는 셈이다.
+    hi = [h for h in (payload.get("highlights") or []) if not _dup_highlight(h)]
     if hi:
         L.append("🔎 <b>주요 변화</b>")
-        for h in hi:
+        for h in hi[:3]:
             L.append(f"• {esc(h)}")
         L.append("")
 

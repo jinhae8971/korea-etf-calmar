@@ -183,3 +183,20 @@ class TestIO(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestBriefCompression(unittest.TestCase):
+    """압축 규격 v1 — 같은 사실을 두 곳에 쓰지 않는다."""
+
+    def test_redundant_note_is_dropped(self):
+        self.assertTrue(xrs._is_redundant_note("섹터 특성상 TVL·매출 관점 해당 없음"))
+        self.assertFalse(xrs._is_redundant_note("매출은 채굴 수수료 기준 — 해석 주의"))
+
+    def test_highlight_duplicating_track_block_is_dropped(self):
+        self.assertTrue(xrs._dup_highlight("로빈후드체인 매출 30일 +566%"))
+        self.assertFalse(xrs._dup_highlight("비트코인 종합 2계단 하락 → 5위"))
+
+    def test_matrix_has_no_overall_row(self):
+        tracks = [{"label": "A", "key": "A", "lens_rank": {}, "lens_n": {},
+                   "overall_rank": 1}]
+        self.assertNotIn("종합", xrs.lens_matrix(tracks))
