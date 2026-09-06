@@ -833,7 +833,9 @@ def _headline(it):
     basis, d = _pick_basis(it)
     px = "$%s" % _fmt_px(it.get("price"))
     if d and d.get("px") is not None:
-        px += " (%s%s)" % ("전일" if basis == "day" else "직전", _arrow_pct(d["px"]))
+        arrow = _arrow_pct(d["px"])
+        if arrow and arrow != "\u2500":   # 보합이면 괄호 자체를 달지 않는다
+            px += " (%s%s)" % ("전일" if basis == "day" else "직전", arrow)
     return px
 
 

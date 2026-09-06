@@ -388,3 +388,11 @@ class TestDeltas(unittest.TestCase):
         st = state()
         wl.evaluate(st, [hist(1, px={"PONS": 0.98})], CFG, NOW)
         self.assertIn("delta", st["items"][0])
+
+
+class TestFlatHeadline(unittest.TestCase):
+    def test_flat_price_shows_no_parenthesis(self):
+        it = {"symbol": "X", "resolved": True, "price": 1.0,
+              "delta": {"day": {"px": 0.1}, "prev": None}}
+        self.assertNotIn("─", wl._headline(it))
+        self.assertNotIn("(", wl._headline(it))
