@@ -1,10 +1,10 @@
 {
- "as_of_kst": "2026-09-07 08:57",
- "as_of_epoch": 1788739056,
- "send": true,
- "alert_id": "1788739056-1",
- "message": "🚨 <b>보유 종목 경보</b> — 2026-09-07 08:57 KST\n\n📌 <b>보유 종목 정밀 감시</b> <i>전일 09-06 08:23 대비</i>\n🔴 <b>PONS</b>  $0.8380 (전일▼8.8%)\n   <i>유사 심볼 신규 풀 TPONS / WETH (유사도 0.89)</i>\n   <i>배수 4.9→4.5배 · 회전 29% ▲10pp</i>\n   <i>↻ 매수 시 컨트랙트 주소를 반드시 대조하세요</i>\n⚪ <b>CASHCAT</b>  $0.2248 (전일▼11.2%) · 시총 $223.97M ▼10.4% · 유동성 $9.80M ▼4.0%\n⚪ <b>INDEX</b>  $0.0485 (전일▼2.5%) · 배수 11.1→10.6배 · 24h매출 $26.46K ▲10.0%\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/hood-radar/\">대시보드 열기</a>\n<i>관측 서술 · 매매 신호가 아닙니다.</i>",
- "preview": "🔭 <b>보유 종목 점검</b> — 2026-09-07 08:57 KST · 임계 초과 없음\n\n📌 <b>보유 종목 정밀 감시</b> <i>전일 09-06 08:23 대비</i>\n⚪ <b>CASHCAT</b>  $0.2248 (전일▼11.2%) · 시총 $223.97M ▼10.4% · 유동성 $9.80M ▼4.0%\n⚪ <b>INDEX</b>  $0.0485 (전일▼2.5%) · 배수 11.1→10.6배 · 24h매출 $26.46K ▲10.0%\n⚪ <b>PONS</b>  $0.8380 (전일▼8.8%) · 배수 4.9→4.5배 · 회전 29% ▲10pp\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/hood-radar/\">대시보드 열기</a>\n<i>관측 서술 · 매매 신호가 아닙니다.</i>",
+ "as_of_kst": "2026-09-07 08:58",
+ "as_of_epoch": 1788739115,
+ "send": false,
+ "alert_id": "1788739115-0",
+ "message": "",
+ "preview": "🔭 <b>보유 종목 점검</b> — 2026-09-07 08:58 KST · 임계 초과 없음\n\n📌 <b>보유 종목 정밀 감시</b> <i>전일 09-06 08:23 대비</i>\n⚪ <b>CASHCAT</b>  $0.2248 (전일▼11.2%) · 시총 $223.97M ▼10.4% · 유동성 $9.80M ▼4.0%\n⚪ <b>INDEX</b>  $0.0485 (전일▼2.5%) · 배수 11.1→10.6배 · 24h매출 $26.46K ▲10.0%\n⚪ <b>PONS</b>  $0.8380 (전일▼8.8%) · 배수 4.9→4.5배 · 발행 14.6개/분 ▼39.2%\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/hood-radar/\">대시보드 열기</a>\n<i>관측 서술 · 매매 신호가 아닙니다.</i>",
  "items": [
   {
    "symbol": "INDEX",
@@ -36,19 +36,19 @@
    "burst_pct": 34.7,
    "delta": {
     "prev": {
-     "px": -1.2102508095145041,
-     "mcap": -2.590894224662276,
-     "liq": -0.6447228360004567,
-     "vol24": -0.1512317259654284,
-     "turnover_pp": 0.34006732321938493,
-     "liq_mcap_pp": 0.18959845808945275,
+     "px": 0.0,
+     "mcap": 0.0,
+     "liq": 0.0,
+     "vol24": 0.0,
+     "turnover_pp": 0.045533598570358436,
+     "liq_mcap_pp": 0.0037824069116645376,
      "rev24": 0.0,
-     "pf_prev": 10.77,
+     "pf_prev": 10.64,
      "lp_share_pp": null,
      "rival_pp": null,
      "issuance": null,
      "attn_pp": null,
-     "rank_prev": 14
+     "rank_prev": null
     },
     "day": {
      "px": -2.490832829179097,
@@ -100,30 +100,36 @@
    "lp_leader": "pons-v2",
    "rival": "o1-launchpad",
    "rival_share": 5.8,
-   "issuance_rate": 20.5,
+   "issuance_rate": 14.6,
    "copycats": [
     {
      "target": "PONS",
-     "name": "TPONS / WETH",
-     "ratio": 0.89,
-     "created": "2026-09-06T23:54:22Z"
+     "name": "PONSILK / WETH",
+     "ratio": 0.73,
+     "created": "2026-09-06T23:56:43Z"
+    },
+    {
+     "target": "PONS",
+     "name": "UNIPONS / USDG",
+     "ratio": 0.73,
+     "created": "2026-09-06T23:55:46Z"
     }
    ],
    "delta": {
     "prev": {
-     "px": 0.7908570309326031,
-     "mcap": 1.6944162729068908,
-     "liq": -1.1471524156324424,
-     "vol24": 0.09937584498636175,
-     "turnover_pp": -0.47815187391232783,
-     "liq_mcap_pp": -0.09794573932360606,
+     "px": 0.0,
+     "mcap": 0.0,
+     "liq": 0.0,
+     "vol24": 0.0,
+     "turnover_pp": -0.012660711272488356,
+     "liq_mcap_pp": -0.0027201383514228183,
      "rev24": 0.0,
-     "pf_prev": 4.45,
+     "pf_prev": 4.48,
      "lp_share_pp": 0.0,
      "rival_pp": 0.0,
-     "issuance": -7.657657657657654,
+     "issuance": -28.780487804878053,
      "attn_pp": null,
-     "rank_prev": 3
+     "rank_prev": null
     },
     "day": {
      "px": -8.792667058986947,
@@ -136,7 +142,7 @@
      "pf_prev": 4.9,
      "lp_share_pp": -0.6000000000000085,
      "rival_pp": -0.10000000000000053,
-     "issuance": -14.583333333333334,
+     "issuance": -39.166666666666664,
      "attn_pp": null,
      "rank_prev": null
     }
@@ -166,19 +172,19 @@
    "attn_share_pct": 2.066,
    "delta": {
     "prev": {
-     "px": -1.3722572086999685,
-     "mcap": -0.42247058802489273,
-     "liq": 0.0891061921036037,
-     "vol24": -0.3985392611064996,
-     "turnover_pp": 0.026546344759720952,
-     "liq_mcap_pp": 0.026242281185680838,
+     "px": 0.0,
+     "mcap": 0.0,
+     "liq": 0.0,
+     "vol24": 0.0,
+     "turnover_pp": 0.022971828662253557,
+     "liq_mcap_pp": 0.0038749723319346785,
      "rev24": null,
      "pf_prev": null,
      "lp_share_pp": null,
      "rival_pp": null,
      "issuance": null,
-     "attn_pp": -0.008000000000000007,
-     "rank_prev": 5
+     "attn_pp": 0.0,
+     "rank_prev": null
     },
     "day": {
      "px": -11.187866431715696,
@@ -199,8 +205,8 @@
   }
  ],
  "delta_refs": {
-  "prev_epoch": 1788737907,
-  "prev_kst": "09-07 08:38",
+  "prev_epoch": 1788739056,
+  "prev_kst": "09-07 08:57",
   "day_epoch": 1788650636,
   "day_kst": "09-06 08:23"
  },
@@ -208,7 +214,14 @@
   {
    "code": "COPYCAT",
    "symbol": "PONS",
-   "detail": "유사 심볼 신규 풀 TPONS / WETH (유사도 0.89)",
+   "detail": "유사 심볼 신규 풀 PONSILK / WETH (유사도 0.73)",
+   "severity": 7.0,
+   "action": "매수 시 컨트랙트 주소를 반드시 대조하세요"
+  },
+  {
+   "code": "COPYCAT",
+   "symbol": "PONS",
+   "detail": "유사 심볼 신규 풀 UNIPONS / USDG (유사도 0.73)",
    "severity": 7.0,
    "action": "매수 시 컨트랙트 주소를 반드시 대조하세요"
   }
