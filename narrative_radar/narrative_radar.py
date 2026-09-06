@@ -526,22 +526,21 @@ def render_telegram(payload: dict) -> str:
     _tl = "평소 대비" if _tm == "self" else "종목간 비교"
     L.append(f"\n<b>■ 부합도 상위 종목</b> <i>(고정매핑 부합도 × 자금반응)</i>")
     L.append(f"<i>회전 z = 그 종목 {_tl}</i>")
-    for r in payload["coins"][:8]:
+    for r in payload["coins"][:6]:
+        # 한 종목 = 한 줄. 시총은 대시보드에 그대로 있어 브리프에서 뺀다.
         L.append(f"{r['rank']}. <b>{esc(r['symbol'])}</b> "
-                 f"<code>{r['score']:+.2f}</code> · {esc(r['narrative_name'])}")
-        L.append(f"    30일 {fmt_pct(r['x30'])} · 7일 {fmt_pct(r['x7'])} · "
-                 f"회전 z{r['zturn']:+.1f} · 시총 ${r['mcap'] / 1e6:,.0f}M")
+                 f"<code>{r['score']:+.2f}</code> · {esc(r['narrative_name'])} · "
+                 f"30d {fmt_pct(r['x30'])} · 7d {fmt_pct(r['x7'])} · z{r['zturn']:+.1f}")
 
     dv = payload.get("divergence") or []
     if dv:
         L.append("\n<b>■ TVL 괴리</b> <i>(가격 변화 − 예치금 변화, %p)</i>")
         for d in dv[:5]:
             icon = "🔺" if d["div"] > 0 else "🔻"
-            L.append(f"{icon} <b>{esc(d['symbol'])}</b> <code>{d['div']:+.0f}%p</code> "
-                     f"({esc(d['horizon'])}) · {esc(d['direction'])}")
             mct = f" · MC/TVL {d['mc_tvl']:.2f}" if d.get("mc_tvl") else ""
-            L.append(f"    가격 {d['price']:+.0f}% vs TVL {d['tvl_chg']:+.0f}% "
-                     f"(${d['tvl_usd'] / 1e6:,.0f}M){mct}")
+            L.append(f"{icon} <b>{esc(d['symbol'])}</b> <code>{d['div']:+.0f}%p</code> "
+                     f"({esc(d['horizon'])}) · 가격 {d['price']:+.0f}% vs TVL "
+                     f"{d['tvl_chg']:+.0f}%{mct}")
     elif payload.get("tvl_covered") == 0:
         L.append("\n<b>■ TVL 괴리</b>")
         L.append("· 예치금 데이터를 받지 못했습니다 (괴리 산출 생략)")
@@ -549,12 +548,26 @@ def render_telegram(payload: dict) -> str:
     if payload.get("discovery"):
         L += disc.render(payload["discovery"])
 
+    # BRIEF_FMT_FROZEN_AT = 2026-09-07 — 압축 규격 v1
+    # 회전율 급증은 상위 종목표의 z 값에, TVL 괴리는 괴리표에 이미 나와 있다.
+    # 같은 사실을 두 번 쓰지 않고, 표로 드러나지 않는 구조 변화만 남긴다.
     ev = payload["events"]
+    shown_syms = {r["symbol"] for r in payload["coins"][:6]}
+    shown_syms |= {d["symbol"] for d in (payload.get("divergence") or [])[:5]}
+    fresh = []
+    for e in ev:
+        kind = e.get("kind") or e.get("code") or ""
+        # 이벤트는 symbol 필드가 없고 text 앞머리가 심볼이다
+        sym = e.get("symbol") or (e.get("text", "").split(" ", 1)[0])
+        if kind in ("TURNOVER_SPIKE", "TVL_DIVERGENCE") and sym in shown_syms:
+            continue
+        fresh.append(e)
     L.append("\n<b>■ 내러티브 변화</b>")
-    if not ev:
-        L.append("· 임계값을 넘는 변화 없음 (관측 정상)")
+    if not fresh:
+        dropped = len(ev) - len(fresh)
+        L.append("· 구조 변화 없음%s" % (" (급증·괴리는 위 표 참조)" if dropped else " (관측 정상)"))
     else:
-        for e in ev[:6]:
+        for e in fresh[:5]:
             icon = "🔴" if e["level"] == "high" else "🟡"
             L.append(f"{icon} {esc(e['text'])}")
 

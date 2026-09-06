@@ -15,6 +15,7 @@ HOOD RADAR — Robinhood Chain memecoin market-cap ranking & rank-change detecto
 """
 
 import json
+import re
 import os
 import random
 import sys
@@ -618,13 +619,53 @@ def chg_str(row):
     return chg, "%+.0f%%" % chg
 
 
+BRIEF_FMT_FROZEN_AT = "2026-09-07"
+
+
+def _risk_lines(rows, ev, cfg, limit=5):
+    """리스크 플래그·컨트랙트 경보·보안 미색인을 종목당 한 줄로 합친다.
+
+    셋을 따로 찍으면 BOOMER 같은 종목이 세 번 등장한다 — 읽는 쪽에서는
+    같은 종목의 같은 문제이므로 한 줄이 맞다.
+    """
+    bag = {}
+    order = []
+
+    def put(sym, text):
+        if sym not in bag:
+            bag[sym] = []
+            order.append(sym)
+        if text and text not in bag[sym]:
+            bag[sym].append(text)
+
+    for row in rows[: cfg["top_n_dashboard"]]:
+        fs = [f for f in row["flags"]
+              if f["code"] in ("LIQ_DRAIN", "LIQ_THIN", "COPYCAT", "DATA_WARN")]
+        for f in fs[:2]:
+            put(label(row), f["detail"])
+    for e in ev:
+        if e["code"] == "SECURITY":
+            put(e["symbol"], e["detail"])
+    unver = [label(r) for r in rows[:20] if has_flag(r, "UNVERIFIED")]
+    for sym in unver:
+        put(sym, "보안 미색인")
+
+    out = []
+    for sym in order[:limit]:
+        out.append("· <b>%s</b> — %s" % (esc(sym), esc("; ".join(bag[sym][:2]))))
+    more = len(order) - len(out)
+    if more > 0:
+        out.append("<i>외 %d종 — 대시보드</i>" % more)
+    return out
+
+
 def render_telegram(payload, cfg, dash_url):
     rows = payload["rows"]
     ev = payload["events"]
-    lines = []
-    lines.append("🏹 <b>로빈후드 체인 밈코인 레이더</b>")
-    lines.append("%s KST · 6시간 주기 · %s" % (payload["as_of_kst"], payload["data_status"]))
-    lines.append("")
+    meta = payload["meta"]
+    lines = ["🏹 <b>로빈후드 체인 밈코인 레이더</b>",
+             "%s KST · 6시간 주기 · %s" % (payload["as_of_kst"], payload["data_status"]),
+             ""]
 
     wl_lines = watchlist.render_telegram(
         payload.get("watchlist"), payload.get("watchlist_alerts") or [], cfg)
@@ -632,55 +673,56 @@ def render_telegram(payload, cfg, dash_url):
         # 보유 섹션은 맨 위 — 길이 초과 시 잘려나가는 쪽은 순위표여야 한다
         lines.extend(wl_lines)
 
-    lines.append("<b>시총 TOP %d</b>" % min(cfg["top_n_telegram"], len(rows)))
-    for row in rows[: cfg["top_n_telegram"]]:
+    top = rows[: cfg["top_n_telegram"]]
+    shown = set()
+    held = set()
+    wl_state = payload.get("watchlist") or {}
+    for it in (wl_state.get("items") or []):
+        if it.get("symbol"):
+            held.add(it["symbol"])
+
+    lines.append("<b>시총 TOP %d</b>" % len(top))
+    for row in top:
+        shown.add(row["symbol"])
         if row["d_rank_24h"]:
-            mark = "▲%d" % row["d_rank_24h"] if row["d_rank_24h"] > 0 else "▼%d" % abs(row["d_rank_24h"])
+            mark = ("▲%d" if row["d_rank_24h"] > 0 else "▼%d") % abs(row["d_rank_24h"])
         else:
             mark = "–"
         _, chg = chg_str(row)
-        lines.append("%2d. <b>%s</b> $%s %s <code>%s</code>" % (
-            row["rank"], esc(label(row)), human(row["mcap"]), chg, mark))
+        # 보유 종목은 위 블록에서 이미 상세히 다뤘다 — 점으로만 표시한다
+        dot = "●" if row["symbol"] in held else " "
+        lines.append("%s%2d. <b>%s</b> $%s %s <code>%s</code>" % (
+            dot, row["rank"], esc(label(row)), human(row["mcap"]), chg, mark))
     lines.append("")
 
-    big = [e for e in ev if e["code"] in ("RANK_SURGE", "RANK_DROP", "NEW_ENTRY", "DROPPED_OUT")][:6]
-    if big:
-        lines.append("🚨 <b>순위 급변</b>")
-        for e in big:
-            lines.append("%s %s — %s" % (ARROW.get(e["code"], "·"), esc(e["symbol"]), esc(e["detail"])))
+    # 순위 급변과 시총 급변을 하나로 — 둘 다 '무엇이 크게 움직였나'의 서술이고,
+    # TOP 표에 이미 변동폭이 찍힌 종목을 다시 쓰는 것은 중복이다.
+    moves = []
+    for e in ev:
+        if e["code"] in ("RANK_SURGE", "RANK_DROP", "NEW_ENTRY", "DROPPED_OUT",
+                         "MCAP_SURGE", "MCAP_COLLAPSE"):
+            if e["symbol"] in shown:
+                continue
+            moves.append(e)
+    if moves:
+        lines.append("🚨 <b>급변 (TOP 표 밖)</b>")
+        for e in moves[:6]:
+            # "(-82계단, 6시간, 공통 119종 기준)" 의 방법론 꼬리표는 매 줄 반복될
+            # 이유가 없다 — 아래 각주 한 줄로 옮긴다.
+            detail = re.sub(r",\s*공통 \d+종 기준", "", e["detail"])
+            lines.append("%s %s — %s" % (ARROW.get(e["code"], "·"),
+                                         esc(e["symbol"]), esc(detail)))
+        lines.append("<i>순위 비교는 두 시점의 공통 종목 기준입니다.</i>")
     else:
-        lines.append("🚨 <b>순위 급변</b>: 임계(6h %d계단 / 24h %d계단) 초과 없음" % (
-            cfg["rank_move_6h_threshold"], cfg["rank_move_24h_threshold"]))
+        lines.append("🚨 <b>급변</b>: 임계(6h %d계단 / 24h %d계단) 초과 없음"
+                     % (cfg["rank_move_6h_threshold"], cfg["rank_move_24h_threshold"]))
     lines.append("")
 
-    mc_ev = [e for e in ev if e["code"] in ("MCAP_SURGE", "MCAP_COLLAPSE")][:4]
-    if mc_ev:
-        lines.append("💥 <b>시총 급변(24h)</b>")
-        for e in mc_ev:
-            lines.append("%s %s — %s" % (ARROW.get(e["code"], "·"), esc(e["symbol"]), esc(e["detail"])))
-        lines.append("")
-
-    risky = []
-    for row in rows[: cfg["top_n_dashboard"]]:
-        codes = [f for f in row["flags"] if f["code"] in ("LIQ_DRAIN", "LIQ_THIN", "COPYCAT", "DATA_WARN")]
-        if codes:
-            risky.append("· %s — %s" % (esc(label(row)), esc("; ".join(f["detail"] for f in codes[:2]))))
+    risky = _risk_lines(rows, ev, cfg)
     if risky:
-        lines.append("⚠️ <b>리스크 플래그</b>")
-        lines.extend(risky[:5])
-        lines.append("")
-
-    sec_ev = [e for e in ev if e["code"] == "SECURITY"][:5]
-    if sec_ev:
-        lines.append("🔐 <b>컨트랙트 경보</b>")
-        for e in sec_ev:
-            lines.append("· %s — %s" % (esc(e["symbol"]), esc(e["detail"])))
-        lines.append("")
-
-    unver = [r for r in rows[:20] if has_flag(r, "UNVERIFIED")]
-    if unver:
-        lines.append("🕳 <b>보안 미색인</b> %s" % esc(", ".join(label(r) for r in unver[:6])))
-        lines.append("<i>스캐너에 잡히지 않는 신생·소형 토큰 — 안전이 아니라 검증 불가입니다.</i>")
+        lines.append("⚠️ <b>리스크·컨트랙트</b>")
+        lines.extend(risky)
+        lines.append("<i>미색인은 안전이 아니라 검증 불가입니다.</i>")
         lines.append("")
 
     bt = payload.get("backtest") or {}
@@ -688,39 +730,33 @@ def render_telegram(payload, cfg, dash_url):
         lines.append("🧪 " + esc(backtest.render_line(bt)))
         if bt.get("verdict") in ("NEGATIVE", "NO_EDGE"):
             lines.append("<i>%s</i>" % esc(bt.get("note", "")))
-        lines.append("")
 
-    meta = payload["meta"]
+    # 메타는 한 줄로 — 개별 수치는 대시보드에 그대로 있다
     cc = meta.get("crosscheck") or {}
-    if meta.get("chain_dex_24h"):
-        parts = ["📈 <b>체인 전체 DEX 거래량</b> $%s" % human(meta["chain_dex_24h"])]
-        if meta.get("chain_dex_change_1d_pct") is not None:
-            parts.append("전일 %+.1f%%" % meta["chain_dex_change_1d_pct"])
-        if meta.get("chain_dex_vs_avg7d_pct") is not None:
-            parts.append("7일평균 대비 %+.1f%%" % meta["chain_dex_vs_avg7d_pct"])
-        lines.append(" · ".join(parts))
-        lines.append("")
-    lines.append("📊 추적 %d종 · 상위 200풀 거래대금 $%s · 풀 %d개 스캔" % (
-        len(rows), human(meta["chain_volume_24h"]), meta["pools_scanned"]))
-    lines.append("🔎 2차 소스 대조 %s(%d종, 최대 괴리 %.1f%%) · 보안 캐시 %d종" % (
-        cc.get("status", "-"), cc.get("checked", 0), cc.get("worst_gap_pct", 0.0),
-        meta.get("security_cached", 0)))
-    plines = protocol.render_telegram(payload.get("protocol"), payload.get("protocol_events") or [], cfg)
+    metabits = ["추적 %d종" % len(rows),
+                "체인 거래대금 $%s" % human(meta["chain_volume_24h"])]
+    if meta.get("chain_dex_change_1d_pct") is not None:
+        metabits.append("전일 %+.1f%%" % meta["chain_dex_change_1d_pct"])
+    metabits.append("소스대조 %s" % cc.get("status", "-"))
+    lines.append("📊 " + esc(" · ".join(metabits)))
+
+    plines = protocol.render_telegram(payload.get("protocol"),
+                                      payload.get("protocol_events") or [], cfg)
     if plines:
         lines.append("")
         lines.extend(plines)
 
     lines.append('<a href="%s">대시보드 열기</a>' % dash_url)
-    lines.append("")
     lines.append("<i>관측 시스템입니다. 순위·변동은 자금 반응의 서술이며 수익을 보장하지 않습니다. "
-                 "이 체인은 허니팟·카피캣이 다수 보고된 구간이므로 컨트랙트 주소를 반드시 직접 확인하세요.</i>")
+                 "허니팟·카피캣이 다수 보고된 체인이므로 컨트랙트 주소를 반드시 직접 확인하세요.</i>")
     msg = "\n".join(lines)
     if len(msg) > 3900:  # 텔레그램 4096자 한도 — 태그가 끊기지 않도록 줄 단위로 자른다
         keep, total = [], 0
         for ln in lines:
             if total + len(ln) > 3700:
                 break
-            keep.append(ln); total += len(ln) + 1
+            keep.append(ln)
+            total += len(ln) + 1
         keep.append("… (이벤트가 많아 일부 생략 — 대시보드에서 전체 확인)")
         msg = "\n".join(keep)
     return msg

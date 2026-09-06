@@ -677,9 +677,9 @@ def render_telegram(payload, events, cfg):
         for it in rank[:top_n]:
             mom = ("%+.0f%%" % it["momentum_pct"]) if it.get("momentum_pct") is not None else "–"
             mark = "*" if it.get("basis") == "FEES" else ""
-            lines.append("%d. <b>%s</b> %.1f배%s · FDV $%s · 30d매출 $%s · 7d모멘텀 %s" % (
+            lines.append("%d. <b>%s</b> %.1f배%s · 30d매출 $%s · 모멘텀 %s" % (
                 it["value_rank"], _esc(it.get("symbol") or it["slug"]), it["pf"], mark,
-                _h(it.get("fdv")), _h(it.get("rev30") or it.get("fee30")), mom))
+                _h(it.get("rev30") or it.get("fee30")), mom))
         if any(i.get("basis") == "FEES" for i in rank[:top_n]):
             lines.append("<i>*매출 미집계 — 수수료 기준. 다른 종목과 직접 비교하지 마세요.</i>")
 
@@ -691,10 +691,13 @@ def render_telegram(payload, events, cfg):
         for e in big:
             lines.append("%s %s — %s" % (icon.get(e["code"], "·"), _esc(e["symbol"]), _esc(e["detail"])))
 
-    pfev = [e for e in events if e["code"] in ("PF_CHEAP", "PF_RERATE")][:3]
+    # PF_EVENT_MERGED: 배수 급변은 위 순위표에 이미 나온 종목이면 따로 쓰지 않는다.
+    ranked_syms = {(i.get("symbol") or i["slug"]) for i in rank[:top_n]}
+    pfev = [e for e in events
+            if e["code"] in ("PF_CHEAP", "PF_RERATE") and e["symbol"] not in ranked_syms][:3]
     if pfev:
         lines.append("")
-        lines.append("💱 <b>배수 급변</b>")
+        lines.append("💱 <b>배수 급변 (순위표 밖)</b>")
         for e in pfev:
             lines.append("· %s — %s" % (_esc(e["symbol"]), _esc(e["detail"])))
 
@@ -709,8 +712,8 @@ def render_telegram(payload, events, cfg):
     if tl:
         lines.append("")
         lines.append("🎁 <b>토큰 없는 네이티브</b> " +
-                     ", ".join(_esc(i["name"]) for i in tl[:5]))
-        lines.append("<i>매출은 나오는데 토큰이 없는 프로토콜입니다. 밸류에이션 대상이 아니라 관찰 대상입니다.</i>")
+                     ", ".join(_esc(i["name"]) for i in tl[:5]) +
+                     " <i>— 관찰 대상(밸류에이션 불가)</i>")
 
     lines.append("")
     lines.append("<i>배수는 후행 지표입니다. 이 체인의 런치패드 매출은 밈 발행 활동에 연동돼 "

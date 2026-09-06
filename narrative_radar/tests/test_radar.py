@@ -539,3 +539,46 @@ class TestTurnoverSelfZ(unittest.TestCase):
         for day, m in seed.items():
             self.assertRegex(day, r"^\d{4}-\d{2}-\d{2}$")
             self.assertTrue(all(isinstance(v, (int, float)) and v > 0 for v in m.values()))
+
+
+class TestBriefCompression(unittest.TestCase):
+    """압축 규격 v1 — 같은 사실을 두 섹션에 쓰지 않는다."""
+
+    def _payload(self):
+        return {
+            "data_status": "OK",
+            "pages_url": "",
+            "as_of_kst": "2026-09-07 08:00",
+            "market": {"btc_price": 80000.0, "btc_r24": 0.4, "btc_dominance": 59.2,
+                       "total_mcap_t": 2.7, "regime": "BTC 집중"},
+            "narratives": [{"rank": 1, "name": "N", "rs30": 1.0, "rs7": 0.5, "breadth": 50.0}],
+            "coins": [{"rank": 1, "symbol": "DASH", "score": 2.4, "narrative_name": "N",
+                       "x30": 118.0, "x7": 79.0, "zturn": 3.0, "mcap": 9.7e8,
+                       "zturn_mode": "self"}],
+            "divergence": [{"symbol": "BERA", "div": 49.0, "horizon": "30d",
+                            "direction": "가격 선행", "price": 20.0, "tvl_chg": -30.0,
+                            "tvl_usd": 3.5e7, "mc_tvl": 1.8}],
+            "events": [
+                {"kind": "TURNOVER_SPIKE", "level": "watch", "text": "DASH 회전율 급증"},
+                {"kind": "TVL_DIVERGENCE", "level": "watch", "text": "BERA TVL 괴리 +49%p"},
+                {"kind": "LEADER_SHIFT", "level": "high", "text": "리더 교체"},
+            ],
+            "watch": [], "tvl_covered": 1,
+        }
+
+    def test_events_already_shown_in_tables_are_dropped(self):
+        msg = nr.render_telegram(self._payload())
+        self.assertIn("리더 교체", msg)
+        self.assertNotIn("DASH 회전율 급증", msg)
+        self.assertNotIn("BERA TVL 괴리 +49%p", msg)
+
+    def test_coin_row_is_one_line(self):
+        msg = nr.render_telegram(self._payload())
+        rows = [ln for ln in msg.split("\n") if ln.startswith("1. ")]
+        self.assertEqual(len(rows), 1)
+        self.assertIn("30d", rows[0])
+
+    def test_no_structural_change_message_points_to_tables(self):
+        p = self._payload()
+        p["events"] = [e for e in p["events"] if e["kind"] != "LEADER_SHIFT"]
+        self.assertIn("위 표 참조", nr.render_telegram(p))

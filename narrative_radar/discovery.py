@@ -257,16 +257,12 @@ def render(result: dict) -> list:
                  + (f" · 주요 탈락: {top}" if top else "") + ")")
         return L
     for x in lag[:6]:
+        # 압축 규격 v1 — 한 종목 한 줄. FDV/TVL·절대 TVL은 대시보드에 그대로 있다.
         tag = "🆕" if x.get("streak", 1) == 1 else "📌"
+        mct = f" · MC/TVL {x['mc_tvl']}" if x["mc_tvl"] is not None else ""
         L.append(f"{tag} <b>{esc(x['symbol'])}</b> <code>{x['div']:+.0f}%p</code> "
-                 f"({esc(x['horizon'])}) · {esc(x.get('status', ''))}")
-        L.append(f"    TVL {x['tvl_chg']:+.0f}% vs 가격 {x['price_chg']:+.0f}% "
-                 f"· ${x['tvl'] / 1e6:,.0f}M")
-        ratios = f"MC/TVL {x['mc_tvl']}" if x["mc_tvl"] is not None else ""
-        if x.get("fdv_tvl"):
-            ratios += f" · FDV/TVL {x['fdv_tvl']}"
-        if ratios:
-            L.append(f"    {ratios}")
+                 f"({esc(x['horizon'])}) · TVL {x['tvl_chg']:+.0f}% vs 가격 "
+                 f"{x['price_chg']:+.0f}%{mct}")
     if result.get("dropped"):
         L.append(f"· 이탈: {esc(', '.join(result['dropped']))}")
     hot = result.get("hot") or []
