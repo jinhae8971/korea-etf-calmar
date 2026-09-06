@@ -32,6 +32,7 @@ HISTORY_PATH = os.path.join(DATA_DIR, "history.json")
 LATEST_PATH = os.path.join(DATA_DIR, "latest.json")
 DISCOVERY_PATH = os.path.join(DATA_DIR, "discovery_state.json")
 BACKTEST_PATH = os.path.join(DATA_DIR, "backtest.json")
+TURN_SEED_PATH = os.path.join(BASE_DIR, "turnover_seed.json")
 
 BT_BADGE = {
     "BIASED_POSITIVE": "과거검증 상한선에서만 약한 우위 — 사후선택 편향 포함, 매수신호 아님",
@@ -55,6 +56,20 @@ TH_BREADTH_JUMP = 25.0     # 폭 확대(%p, 7일 평균 대비)
 TH_TURNOVER_Z = 2.0        # 개별 종목 회전율 z
 TH_RANK_PERSIST = 3        # 순위 변화가 유효하려면 유지돼야 하는 일수
 TH_DOM_LOOKBACK = 20       # BTC 도미넌스 저점 갱신 확인 구간
+
+# 회전율 z 산출 방식 (v5)
+#   구방식(횡단면 z)은 "원래 회전율이 높은 코인"에 상시 가산점을 줬다. 회전율은
+#   종목 고유 성질이라 전일 대비 지속성이 0.93으로 z7(0.86)보다도 높았고,
+#   가중치 25%가 사실상 상수로 굳어 순위 갱신을 둔화시켰다.
+#   신방식(자기이력 z)은 "그 종목 평소 대비 지금 얼마나 이상한가"를 재므로
+#   조용하던 종목에 자금이 들어온 순간을 잡는다.
+TURN_LOOKBACK = 30         # 자기이력 기준선 구간(일). 오늘은 기준선에서 제외
+TURN_MIN_OBS = 8           # 종목별 최소 과거 관측 수 — 미만이면 판정 보류
+TURN_SELF_COVERAGE = 0.7   # 이 비율 이상 산출되면 전 종목을 자기이력 모드로
+TURN_Z_CAP = 3.0           # 단일 스파이크가 순위를 지배하지 않도록 상한
+#   (캡 민감도 실측: 2.5/3.0/4.0/5.0 → top5 전일유지 3.12/2.94/2.88/2.81.
+#    기준선이 아직 9~16일로 짧아 MAD가 불안정하므로 보수적으로 3.0을 택했다.
+#    회전 스파이크의 flow 기여 상한 = 0.25 × 3.0 = 0.75)
 
 
 # ────────────────────────────── 설정·유틸 ──────────────────────────────
@@ -123,6 +138,68 @@ def zscores(values: dict) -> dict:
 
 def clamp(x, lo, hi):
     return max(lo, min(hi, x))
+
+
+def _median(xs: list):
+    n = len(xs)
+    if n == 0:
+        return None
+    s = sorted(xs)
+    return s[n // 2] if n % 2 else (s[n // 2 - 1] + s[n // 2]) / 2
+
+
+def self_z(x, base: list):
+    """
+    중앙값·MAD 기반 로버스트 z. base는 과거 관측(오늘 제외)이다.
+    회전율은 꼬리가 두꺼워 평균·표준편차를 쓰면 과거의 스파이크 한 번이
+    기준선을 부풀려 이후 신호를 죽인다. 그래서 중앙값·MAD를 쓴다.
+    표본 부족·분산 0이면 None(판정 보류)을 돌려준다.
+    """
+    if x is None:
+        return None
+    xs = [v for v in base if v is not None and v > 0]
+    if len(xs) < TURN_MIN_OBS:
+        return None
+    med = _median(xs)
+    mad = _median([abs(v - med) for v in xs])
+    sd = 1.4826 * (mad or 0.0)
+    if sd <= 1e-12:  # 이력이 거의 일정 → 표준편차로 폴백
+        m = sum(xs) / len(xs)
+        sd = (sum((v - m) ** 2 for v in xs) / (len(xs) - 1)) ** 0.5
+        if sd <= 1e-12:
+            return None
+    return clamp((x - med) / sd, -TURN_Z_CAP, TURN_Z_CAP)
+
+
+def seed_turnover(history: list) -> list:
+    """
+    v5 이전 스냅샷에는 종목별 회전율이 없다. 배포 시 동봉한 시드
+    (과거 latest.json 스냅샷에서 역추출)로 비어 있는 날만 채운다.
+    이미 turn이 있는 날은 절대 덮어쓰지 않는다.
+    """
+    seed = load_json(TURN_SEED_PATH, {})
+    if not isinstance(seed, dict) or not seed:
+        return history
+    n = 0
+    for h in history:
+        d = h.get("as_of")
+        if d in seed and not h.get("turn"):
+            h["turn"] = {k: float(v) for k, v in seed[d].items()
+                         if isinstance(v, (int, float)) and v > 0}
+            n += 1
+    if n:
+        print(f"[seed] 회전율 이력 {n}일 시딩")
+    return history
+
+
+def turnover_baseline(history: list, lookback: int = TURN_LOOKBACK) -> dict:
+    """history 스냅샷에서 종목별 과거 회전율 시계열을 뽑는다. {coin_id: [...]}"""
+    out = {}
+    for h in history[-lookback:]:
+        for cid, v in (h.get("turn") or {}).items():
+            if isinstance(v, (int, float)) and v > 0:
+                out.setdefault(cid, []).append(float(v))
+    return out
 
 
 # ────────────────────────────── 수집 ──────────────────────────────
@@ -225,7 +302,7 @@ def excess(v, base):
     return v - base
 
 
-def score_coins(rows: list, btc: dict) -> list:
+def score_coins(rows: list, btc: dict, turn_base: dict | None = None) -> list:
     """내러티브 부합도(정성 고정) × 자금 반응(정량 관측). 예측 점수가 아니다."""
     b24 = btc.get("price_change_percentage_24h_in_currency") if btc else None
     b7 = btc.get("price_change_percentage_7d_in_currency") if btc else None
@@ -238,12 +315,31 @@ def score_coins(rows: list, btc: dict) -> list:
 
     z30 = zscores({r["id"]: r["x30"] for r in rows})
     z7 = zscores({r["id"]: r["x7"] for r in rows})
-    zt = zscores({r["id"]: r["turnover"] for r in rows})
+    zt_x = zscores({r["id"]: r["turnover"] for r in rows})   # 횡단면(구방식)
+
+    base = turn_base or {}
+    zt_s = {r["id"]: self_z(r["turnover"], base.get(r["id"], [])) for r in rows}
+    covered = sum(1 for v in zt_s.values() if v is not None)
+    # 시장 전체가 한산해지면 전 종목의 자기이력 z가 동시에 내려간다. z30·z7은
+    # 횡단면 정규화라 그 공통 이동이 없으므로, 중앙값을 빼 상대 척도로 맞춘다.
+    if covered:
+        shift = _median([v for v in zt_s.values() if v is not None]) or 0.0
+        zt_s = {k: (None if v is None else clamp(v - shift, -TURN_Z_CAP, TURN_Z_CAP))
+                for k, v in zt_s.items()}
+    # 두 방식은 스케일이 달라 섞으면 순위가 왜곡된다 → 전 종목 단일 모드로 간다
+    mode = "self" if rows and covered / len(rows) >= TURN_SELF_COVERAGE else "cross"
 
     for r in rows:
         r["z30"] = round(z30[r["id"]], 3)
         r["z7"] = round(z7[r["id"]], 3)
-        r["zturn"] = round(zt[r["id"]], 3)
+        r["zturn_x"] = round(zt_x[r["id"]], 3)
+        r["zturn_s"] = round(zt_s[r["id"]], 3) if zt_s[r["id"]] is not None else None
+        if mode == "self":
+            # 이력이 모자란 종목은 0(중립) — 횡단면 값을 끼워넣지 않는다
+            r["zturn"] = r["zturn_s"] if r["zturn_s"] is not None else 0.0
+        else:
+            r["zturn"] = r["zturn_x"]
+        r["zturn_mode"] = mode
         flow = 0.45 * r["z30"] + 0.30 * r["z7"] + 0.25 * r["zturn"]
         # fit은 곱이 아니라 가중 혼합 — fit이 낮다고 음수 점수를 뒤집지 않도록
         r["flow"] = round(flow, 3)
@@ -339,8 +435,9 @@ def detect_changes(narratives: list, rows: list, glob: dict, history: list) -> l
         ev.append({
             "kind": "TURNOVER_SPIKE",
             "level": "watch",
-            "text": f"{r['symbol']} 거래회전율 이상치 (z={r['zturn']:.1f}, "
-                    f"{_nm(r['narrative'], narratives)})",
+            "text": (f"{r['symbol']} 거래회전율 "
+                     f"{'평소 대비 급증' if r.get('zturn_mode') == 'self' else '이상치'}"
+                     f" (z={r['zturn']:.1f}, {_nm(r['narrative'], narratives)})"),
         })
 
     # [4] BTC 도미넌스 저점 갱신 — 알트 로테이션 개시 여부
@@ -425,7 +522,10 @@ def render_telegram(payload: dict) -> str:
         L.append(f"{badge} {esc(n['name'])}  <b>{fmt_pct(n['rs30'])}</b>  "
                  f"<i>폭 {bre} · 7일 {fmt_pct(n['rs7'])}</i>")
 
-    L.append("\n<b>■ 부합도 상위 종목</b> <i>(고정매핑 부합도 × 자금반응)</i>")
+    _tm = (payload["coins"][0].get("zturn_mode") if payload.get("coins") else "cross")
+    _tl = "평소 대비" if _tm == "self" else "종목간 비교"
+    L.append(f"\n<b>■ 부합도 상위 종목</b> <i>(고정매핑 부합도 × 자금반응)</i>")
+    L.append(f"<i>회전 z = 그 종목 {_tl}</i>")
     for r in payload["coins"][:8]:
         L.append(f"{r['rank']}. <b>{esc(r['symbol'])}</b> "
                  f"<code>{r['score']:+.2f}</code> · {esc(r['narrative_name'])}")
@@ -690,7 +790,7 @@ ul.ev li.none{{color:#7d86a0}}
 {''.join(nrow)}
 <h2>부합도 상위 종목 <small>고정 부합도 × 자금 반응 (관측치)</small></h2>
 <div class="tblwrap"><table>
-<tr><th></th><th>종목</th><th>내러티브</th><th>점수</th><th>30d</th><th>7d</th><th>회전z</th><th>시총</th></tr>
+<tr><th></th><th>종목</th><th>내러티브</th><th>점수</th><th>30d</th><th>7d</th><th title="회전율 z">회전z</th><th>시총</th></tr>
 {''.join(crow)}</table></div>
 {divsec}
 {discsec}
@@ -703,6 +803,9 @@ ul.ev li.none{{color:#7d86a0}}
 <b>하지 않는 일:</b> 미래 수익률 예측. 이 지표들은 사전 검증된 예측력이 없으며,
 "지금 자금이 어디에 반응하는가"에 대한 서술일 뿐입니다.<br>
 섹터 대표값은 평균이 아닌 중앙값입니다(소수 극단치 지배 방지). 구성종목은 성과를 보고 교체하지 않습니다(사후선택 편향 방지).<br>
+<b>회전z(v5부터):</b> 종목간 비교가 아니라 <b>그 종목의 과거 30일 대비</b> 회전율 이상치입니다(중앙값·MAD 로버스트 z, ±3 상한).
+구방식(횡단면 z)은 원래 거래가 활발한 종목에 상시 가산점을 주어 순위를 굳히는 문제가 있었습니다.
+이력이 8일 미만인 종목은 0(중립)으로 둡니다.<br>
 데이터: CoinGecko 공개 API · 투자 권유가 아닙니다.
 </div>
 </div></body></html>"""
@@ -759,8 +862,10 @@ def main(argv):
         send(cfg, payload["message"])
         return 1  # 워크플로우가 실패로 인지하도록
 
+    history = seed_turnover(history)
     rows, btc = build_coin_rows(universe, mk)
-    rows = score_coins(rows, btc)
+    rows = score_coins(rows, btc, turnover_baseline(history))
+    print(f"[turnover] z 산출 모드 = {rows[0]['zturn_mode'] if rows else 'n/a'}")
     narratives = aggregate_narratives(universe, rows)
     for r in rows:
         r["narrative_name"] = _nm(r["narrative"], narratives)
@@ -824,6 +929,8 @@ def main(argv):
         "btc_r30": btc.get("price_change_percentage_30d_in_currency"),
         "narratives": [{"code": n["code"], "rank": n["rank"], "rs30": n["rs30"],
                         "breadth": n["breadth"]} for n in narratives],
+        "turn": {r["id"]: round(r["turnover"], 6)
+                 for r in rows if r.get("turnover") is not None},
         "tvl": {cid: round(rec["tvl"], 2) for cid, rec in tvl_map.items()},
         "discovery_tvl": {g: round(r["tvl"], 2) for g, r in (cand or {}).items()},
     }

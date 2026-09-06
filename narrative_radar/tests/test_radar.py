@@ -433,3 +433,109 @@ class TestDiscoveryTracking(unittest.TestCase):
         ev = ds.events({"alert": [{"symbol": "A", "streak": 3, "tvl_chg": 30.0,
                                    "price_chg": 5.0, "mc_tvl": 0.4, "source": "chain:A"}]})
         self.assertEqual(ev[0]["kind"], "DISCOVERY_LAGGING")
+
+
+class TestTurnoverSelfZ(unittest.TestCase):
+    """v5 — 회전율 z를 횡단면에서 자기이력으로 전환한 부분."""
+
+    def test_self_z_needs_min_obs(self):
+        self.assertIsNone(nr.self_z(0.5, [0.1] * (nr.TURN_MIN_OBS - 1)))
+
+    def test_self_z_flat_history_returns_none(self):
+        # 이력이 완전히 일정하면 분산 0 → 판정 보류
+        self.assertIsNone(nr.self_z(0.1, [0.1] * 12))
+
+    def test_self_z_detects_spike(self):
+        base = [0.02, 0.021, 0.019, 0.022, 0.020, 0.018, 0.021, 0.020, 0.019, 0.020]
+        z = nr.self_z(0.20, base)
+        self.assertIsNotNone(z)
+        self.assertGreater(z, 2.0)
+
+    def test_self_z_is_capped(self):
+        base = [0.02, 0.021, 0.019, 0.022, 0.020, 0.018, 0.021, 0.020]
+        self.assertLessEqual(nr.self_z(99.0, base), nr.TURN_Z_CAP)
+        self.assertGreaterEqual(nr.self_z(0.0000001, base), -nr.TURN_Z_CAP)
+
+    def test_self_z_robust_to_past_spike(self):
+        # 과거 스파이크 1회가 기준선을 부풀려 이후 신호를 죽이면 안 된다(MAD 사용 근거)
+        base = [0.02] * 9 + [5.0]
+        base = [0.02, 0.021, 0.019, 0.022, 0.020, 0.018, 0.021, 0.020, 0.019, 5.0]
+        self.assertGreater(nr.self_z(0.10, base), 2.0)
+
+    def test_turnover_baseline_extracts_series(self):
+        hist = [{"as_of": "2026-01-01", "turn": {"a": 0.1, "b": 0.2}},
+                {"as_of": "2026-01-02", "turn": {"a": 0.3}},
+                {"as_of": "2026-01-03"}]
+        base = nr.turnover_baseline(hist)
+        self.assertEqual(base["a"], [0.1, 0.3])
+        self.assertEqual(base["b"], [0.2])
+
+    def test_turnover_baseline_ignores_bad_values(self):
+        hist = [{"as_of": "d", "turn": {"a": 0, "b": None, "c": "x", "d": 0.5}}]
+        base = nr.turnover_baseline(hist)
+        self.assertEqual(base, {"d": [0.5]})
+
+    def _rows(self, n=10):
+        return [{"id": f"c{i}", "symbol": f"S{i}", "narrative": "AI_AGENT", "fit": 1.0,
+                 "role": "", "price": 1, "mcap": 1e9, "vol": 1e8,
+                 "turnover": 0.02 + 0.001 * i, "r24": 1.0, "r7": 2.0 + i, "r30": 3.0 + i}
+                for i in range(n)]
+
+    def test_falls_back_to_cross_section_without_history(self):
+        rows = nr.score_coins(self._rows(), {"price_change_percentage_24h_in_currency": 0,
+                                             "price_change_percentage_7d_in_currency": 0,
+                                             "price_change_percentage_30d_in_currency": 0}, {})
+        self.assertEqual(rows[0]["zturn_mode"], "cross")
+        self.assertEqual(rows[0]["zturn"], rows[0]["zturn_x"])
+
+    def test_uses_self_mode_when_history_sufficient(self):
+        rows = self._rows()
+        base = {r["id"]: [r["turnover"] * (1 + 0.01 * k) for k in range(12)] for r in rows}
+        out = nr.score_coins(rows, {"price_change_percentage_24h_in_currency": 0,
+                                    "price_change_percentage_7d_in_currency": 0,
+                                    "price_change_percentage_30d_in_currency": 0}, base)
+        self.assertEqual(out[0]["zturn_mode"], "self")
+        self.assertTrue(all(r["zturn_s"] is not None for r in out))
+
+    def test_market_wide_shift_is_removed(self):
+        # 전 종목 회전율이 동시에 2배가 돼도 상대 순위는 바뀌지 않아야 한다
+        base = {f"c{i}": [0.02 + 0.001 * i + 0.0001 * k for k in range(12)] for i in range(10)}
+        btc = {"price_change_percentage_24h_in_currency": 0,
+               "price_change_percentage_7d_in_currency": 0,
+               "price_change_percentage_30d_in_currency": 0}
+        a = nr.score_coins(self._rows(), btc, base)
+        rank_a = [r["symbol"] for r in a]
+        rows_b = self._rows()
+        for r in rows_b:
+            r["turnover"] *= 2
+        b = nr.score_coins(rows_b, btc, base)
+        self.assertEqual(rank_a, [r["symbol"] for r in b])
+
+    def test_seed_does_not_overwrite_existing(self):
+        import tempfile
+        hist = [{"as_of": "2026-01-01", "turn": {"a": 9.9}}, {"as_of": "2026-01-02"}]
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False,
+                                         encoding="utf-8") as f:
+            json.dump({"2026-01-01": {"a": 0.1}, "2026-01-02": {"a": 0.2}}, f)
+            path = f.name
+        old = nr.TURN_SEED_PATH
+        try:
+            nr.TURN_SEED_PATH = path
+            out = nr.seed_turnover(hist)
+        finally:
+            nr.TURN_SEED_PATH = old
+            os.unlink(path)
+        self.assertEqual(out[0]["turn"]["a"], 9.9)   # 기존 값 보존
+        self.assertEqual(out[1]["turn"]["a"], 0.2)   # 빈 날만 채움
+
+    def test_snapshot_seed_file_is_valid(self):
+        path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "turnover_seed.json")
+        if not os.path.exists(path):
+            self.skipTest("시드 파일 없음")
+        with open(path, encoding="utf-8") as f:
+            seed = json.load(f)
+        self.assertGreaterEqual(len(seed), nr.TURN_MIN_OBS)
+        for day, m in seed.items():
+            self.assertRegex(day, r"^\d{4}-\d{2}-\d{2}$")
+            self.assertTrue(all(isinstance(v, (int, float)) and v > 0 for v in m.values()))
