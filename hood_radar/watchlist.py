@@ -20,6 +20,7 @@ WATCHLIST — 보유 종목 정밀 감시 트랙 (HOOD RADAR v2.2)
 """
 
 import json
+import re
 import os
 import time
 import urllib.error
@@ -768,6 +769,8 @@ ALERT_SEV = 6.0
 MAX_BODY_LINES = 2          # 판정 1줄 + 지표 1줄
 MAX_METRICS_PER_LINE = 2
 NO_INVALIDATION = "반증조건 미정 — 규칙 보완 필요"
+DIGEST_CAP = 500
+_TAGRE = re.compile(r"<[^>]+>")
 
 # 규칙이 action 을 채우지 않는 경로용 기본 반증조건.
 # 조건을 적을 수 없는 코드는 여기 넣지 않는다 — 빈칸을 그럴듯하게 메우지 않기 위함.
@@ -930,8 +933,20 @@ def render_alert(state, alerts, cfg, dash_url=""):
     head.extend([ln for ln in render_telegram(state, alerts, cfg) if ln.strip()])
     if dash_url:
         head.append('<a href="%s">대시보드 열기</a>' % dash_url)
-    head.append("<i>관측 시스템입니다. 경보는 자금·매출 반응의 서술이며 매매 신호가 아닙니다.</i>")
-    return "\n".join(head)
+    head.append("<i>관측 서술 · 매매 신호가 아닙니다.</i>")
+    # 500자 상한 — 넘치면 종목 블록 뒤쪽부터 버리고 링크·면책은 남긴다
+    out, used = [], 0
+    tail = head[-2:] if dash_url else head[-1:]
+    body = head[:-len(tail)]
+    budget = DIGEST_CAP - sum(len(_TAGRE.sub("", t)) + 1 for t in tail)
+    for ln in body:
+        n = len(_TAGRE.sub("", ln)) + 1
+        if used + n > budget:
+            out.append("… <i>이하 대시보드</i>")
+            break
+        out.append(ln)
+        used += n
+    return "\n".join(out + tail)
 
 
 # ------------------------------------------------------------------ 단독 실행

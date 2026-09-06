@@ -200,3 +200,23 @@ class TestBriefCompression(unittest.TestCase):
         tracks = [{"label": "A", "key": "A", "lens_rank": {}, "lens_n": {},
                    "overall_rank": 1}]
         self.assertNotIn("종합", xrs.lens_matrix(tracks))
+
+
+class TestDigestCap(unittest.TestCase):
+    def test_digest_never_exceeds_cap(self):
+        import io as _io, json as _json, os as _os, re as _re
+        p = _os.path.join(_os.path.dirname(__file__), "..", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        t = _re.sub(r"<[^>]+>", "", xrs.render_digest(d))
+        self.assertLessEqual(len(t), xrs.DIGEST_CAP)
+
+    def test_cap_keeps_tail(self):
+        tail = ["TAIL"]
+        out = xrs.cap_lines(["x" * 400, "y" * 400], tail, cap=100)
+        self.assertEqual(out[-1], "TAIL")
+
+    def test_flat_delta_has_no_symbol(self):
+        import re as _re, io as _io, json as _json, os as _os
+        p = _os.path.join(_os.path.dirname(__file__), "..", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        self.assertNotIn("─", _re.sub(r"<[^>]+>", "", xrs.render_digest(d)))

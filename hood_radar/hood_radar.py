@@ -762,6 +762,103 @@ def render_telegram(payload, cfg, dash_url):
     return msg
 
 
+
+# ------------------------------------------------------ 500자 다이제스트 v1
+# 텔레그램은 "무엇을 볼지" 정하는 층으로만 쓰고, 수치·근거는 대시보드에 둔다.
+# 전체 본문은 payload["message_full"] 에 그대로 남는다.
+DIGEST_CAP = 500              # HTML 태그를 뺀 순수 텍스트 기준
+DIGEST_FROZEN_AT = "2026-09-07"
+_TAGRE = re.compile(r"<[^>]+>")
+
+
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
+def cap_lines(lines, tail, cap=DIGEST_CAP):
+    """상한을 넘으면 뒤에서부터 버린다. tail(링크·면책)은 반드시 남긴다."""
+    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    out, used = [], 0
+    for ln in lines:
+        n = plain_len(ln) + 1
+        if used + n > budget:
+            out.append("…")
+            break
+        out.append(ln)
+        used += n
+    return out + tail
+
+
+def render_digest(payload, cfg, dash_url):
+    rows = payload["rows"]
+    ev = payload["events"]
+    L = ["🏹 <b>로빈후드 밈 레이더</b> · %s" % esc(payload["as_of_kst"][5:16])]
+
+    # 1) 보유 — 배지와 한 줄 판정만
+    wl = payload.get("watchlist") or {}
+    walerts = payload.get("watchlist_alerts") or []
+    by_sym = {}
+    for a in walerts:
+        by_sym.setdefault(a["symbol"], []).append(a)
+    for v in by_sym.values():
+        v.sort(key=lambda a: -fnum(a.get("severity")))
+    hot, calm = [], []
+    for it in (wl.get("items") or []):
+        sym = it.get("symbol")
+        mine = by_sym.get(sym) or []
+        d = ((it.get("delta") or {}).get("day") or (it.get("delta") or {}).get("prev") or {})
+        px = ("%+.1f%%" % d["px"]) if d.get("px") is not None else "–"
+        if mine:
+            badge = "🔴" if fnum(mine[0].get("severity")) >= 6.0 else "🟡"
+            hot.append("%s<b>%s</b> %s" % (badge, esc(sym), esc(mine[0]["detail"])))
+        else:
+            calm.append("%s %s" % (esc(sym), px))
+    if hot:
+        L.append("보유 " + " / ".join(hot[:2]))
+    if calm:
+        L.append("<i>정상 %s</i>" % esc(" · ".join(calm[:3])))
+
+    # 2) TOP 3 — 전체 순위는 대시보드
+    top = rows[: min(3, len(rows))]
+    if top:
+        L.append("TOP " + esc(" · ".join(
+            "%s $%s" % (label(r), human(r["mcap"])) for r in top)))
+
+    # 3) 급변 — TOP 표 밖 3건
+    shown = {r["symbol"] for r in top}
+    mv = [e for e in ev
+          if e["code"] in ("RANK_SURGE", "RANK_DROP", "NEW_ENTRY", "DROPPED_OUT",
+                           "MCAP_SURGE", "MCAP_COLLAPSE") and e["symbol"] not in shown]
+    if mv:
+        bits = []
+        for e in mv[:3]:
+            head = re.sub(r"\s*\(.*", "", e["detail"])
+            bits.append("%s %s" % (esc(e["symbol"]), esc(head)))
+        L.append("급변 " + " · ".join(bits))
+
+    # 4) 리스크 — 종목명만. 무엇이 문제인지는 대시보드
+    risky = []
+    for row in rows[: cfg["top_n_dashboard"]]:
+        if any(f["code"] in ("LIQ_DRAIN", "LIQ_THIN", "COPYCAT") for f in row["flags"]):
+            risky.append(label(row))
+    sec = [e["symbol"] for e in ev if e["code"] == "SECURITY"]
+    names = list(dict.fromkeys(risky + sec))
+    if names:
+        L.append("⚠️ 리스크 %s%s" % (esc(" · ".join(names[:4])),
+                                    " 외 %d종" % (len(names) - 4) if len(names) > 4 else ""))
+
+    # 5) 프로토콜 — 배수 최저 2종
+    pr = (payload.get("protocol") or {}).get("native") or []
+    rank = sorted([i for i in pr if i.get("value_rank")], key=lambda i: i["value_rank"])
+    if rank:
+        L.append("배수최저 " + esc(" · ".join(
+            "%s %.1f배" % (i.get("symbol") or i["slug"], i["pf"]) for i in rank[:2])))
+
+    tail = ['📊 전체 <a href="%s">대시보드</a>' % dash_url,
+            "<i>관측 서술 · 매매 신호 아님. 컨트랙트 주소 직접 확인.</i>"]
+    return "\n".join(cap_lines(L, tail))
+
+
 def render_dashboard(payload, cfg, out_path, history=None, chain_vol=None):
     rows = payload["rows"][: cfg["top_n_dashboard"]]
     ev = payload["events"]
@@ -1310,7 +1407,8 @@ def main():
 
     dash_url = os.environ.get(
         "HOOD_DASH_URL", "https://jinhae8971.github.io/korea-etf-calmar/hood-radar/")
-    payload["message"] = render_telegram(payload, cfg, dash_url)
+    payload["message_full"] = render_telegram(payload, cfg, dash_url)
+    payload["message"] = render_digest(payload, cfg, dash_url)
     payload["dashboard_url"] = dash_url
 
     changed = write_json_if_changed(latest_path, payload)

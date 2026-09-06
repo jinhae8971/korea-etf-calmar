@@ -582,3 +582,16 @@ class TestBriefCompression(unittest.TestCase):
         p = self._payload()
         p["events"] = [e for e in p["events"] if e["kind"] != "LEADER_SHIFT"]
         self.assertIn("위 표 참조", nr.render_telegram(p))
+
+
+class TestDigestCap(unittest.TestCase):
+    def test_digest_never_exceeds_cap(self):
+        import io as _io, json as _json, os as _os, re as _re
+        p = _os.path.join(_os.path.dirname(__file__), "..", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        t = _re.sub(r"<[^>]+>", "", nr.render_digest(d))
+        self.assertLessEqual(len(t), nr.DIGEST_CAP)
+
+    def test_cap_keeps_tail(self):
+        out = nr.cap_lines(["x" * 400], ["TAIL"], cap=50)
+        self.assertEqual(out[-1], "TAIL")

@@ -628,3 +628,17 @@ class TestChainVolSummary(unittest.TestCase):
         s = chainvol.summarize({})
         self.assertEqual(s["series"], [])
         self.assertEqual(s["protocols"], [])
+
+
+class TestDigestCap(unittest.TestCase):
+    def test_digest_never_exceeds_cap(self):
+        import io as _io, json as _json, os as _os, re as _re
+        base = _os.path.join(_os.path.dirname(__file__), "..")
+        d = _json.load(_io.open(_os.path.join(base, "data", "latest.json"), encoding="utf-8"))
+        c = _json.load(_io.open(_os.path.join(base, "config.json"), encoding="utf-8"))
+        t = _re.sub(r"<[^>]+>", "", hr.render_digest(d, c, "https://x/"))
+        self.assertLessEqual(len(t), hr.DIGEST_CAP)
+
+    def test_cap_keeps_tail(self):
+        out = hr.cap_lines(["x" * 400, "y" * 400], ["TAIL"], cap=100)
+        self.assertEqual(out[-1], "TAIL")

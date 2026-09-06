@@ -592,6 +592,74 @@ def render_telegram(payload: dict) -> str:
     return "\n".join(L)
 
 
+
+# ------------------------------------------------------ 500자 다이제스트 v1
+DIGEST_CAP = 500
+DIGEST_FROZEN_AT = "2026-09-07"
+_TAGRE = re.compile(r"<[^>]+>")
+
+
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
+def cap_lines(lines, tail, cap=DIGEST_CAP):
+    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    out, used = [], 0
+    for ln in lines:
+        n = plain_len(ln) + 1
+        if used + n > budget:
+            out.append("…")
+            break
+        out.append(ln)
+        used += n
+    return out + tail
+
+
+def render_digest(payload):
+    """텔레그램용 500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
+    if payload.get("data_status") != "OK":
+        return render_telegram(payload)
+    g = payload["market"]
+    L = ["🧭 <b>내러티브 레이더</b> · %s" % esc(payload["as_of_kst"][5:16]),
+         "BTC $%.1fK · 도미넌스 %.1f%% · %s"
+         % (g["btc_price"] / 1000.0, g["btc_dominance"], esc(g["regime"]))]
+
+    ns = payload["narratives"]
+    if ns:
+        up = ns[:2]
+        dn = ns[-2:]
+        L.append("강세 " + esc(" · ".join("%s %s" % (n["name"], fmt_pct(n["rs30"])) for n in up)))
+        L.append("약세 " + esc(" · ".join("%s %s" % (n["name"], fmt_pct(n["rs30"])) for n in dn)))
+
+    co = payload.get("coins") or []
+    if co:
+        L.append("종목 " + esc(" · ".join("%s %+.2f" % (c["symbol"], c["score"]) for c in co[:3])))
+
+    dv = payload.get("divergence") or []
+    if dv:
+        L.append("괴리 " + esc(" · ".join("%s %+.0f%%p" % (d["symbol"], d["div"]) for d in dv[:3])))
+
+    lag = ((payload.get("discovery") or {}).get("lagging") or [])
+    if lag:
+        L.append("발굴 " + esc(" · ".join("%s %+.0f%%p" % (x["symbol"], x["div"]) for x in lag[:2])))
+
+    # 표에 드러나지 않는 구조 변화만
+    shown = {c["symbol"] for c in co[:3]} | {d["symbol"] for d in dv[:3]}
+    fresh = [e for e in payload["events"]
+             if not ((e.get("kind") or "") in ("TURNOVER_SPIKE", "TVL_DIVERGENCE")
+                     and (e.get("text", "").split(" ", 1)[0]) in shown)]
+    if fresh:
+        L.append("변화 " + esc(fresh[0]["text"]))
+
+    bt = load_json(BACKTEST_PATH, None) or {}
+    tail = []
+    if bt.get("verdict") in ("NEGATIVE", "NO_EDGE"):
+        tail.append("⚠️ <i>과거검증 %s — 매매 근거로 쓰지 말 것</i>" % esc(bt["verdict"]))
+    tail.append("📊 전체 %s" % esc(payload.get("pages_url") or ""))
+    return "\n".join(cap_lines(L, tail))
+
+
 def classify_regime(glob: dict, narratives: list, btc: dict) -> str:
     dom = (glob.get("market_cap_percentage") or {}).get("btc")
     if dom is None:
@@ -869,7 +937,8 @@ def main(argv):
 
     if status == "UNAVAILABLE":
         payload.update({"narratives": [], "coins": [], "events": [], "market": {}, "n_coins": 0})
-        payload["message"] = render_telegram(payload)
+        payload["message_full"] = render_telegram(payload)
+        payload["message"] = render_digest(payload)
         save_json(LATEST_PATH, payload)
         write_dashboard(payload, history)
         send(cfg, payload["message"])
@@ -933,7 +1002,8 @@ def main(argv):
         "EU AMLR(2027.7) 관련 상장 공지 시 PRIVACY_PQ 하방",
         "BTC 도미넌스 55% 하향 이탈 시 로테이션 확인",
     ]
-    payload["message"] = render_telegram(payload)
+    payload["message_full"] = render_telegram(payload)
+    payload["message"] = render_digest(payload)
 
     # 이력 누적 — 같은 날짜는 덮어쓴다 (재실행 멱등)
     snap = {

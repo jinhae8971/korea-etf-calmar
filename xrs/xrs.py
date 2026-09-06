@@ -15,6 +15,7 @@ xrs.py — Cross-Track Relative Strength
 """
 
 import json
+import re
 import os
 import random
 import ssl
@@ -578,6 +579,68 @@ def render_telegram(payload):
     return "\n".join(L)
 
 
+
+# ------------------------------------------------------ 500자 다이제스트 v1
+DIGEST_CAP = 500
+DIGEST_FROZEN_AT = "2026-09-07"
+_TAGRE = re.compile(r"<[^>]+>")
+
+
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
+def cap_lines(lines, tail, cap=DIGEST_CAP):
+    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    out, used = [], 0
+    for ln in lines:
+        n = plain_len(ln) + 1
+        if used + n > budget:
+            out.append("…")
+            break
+        out.append(ln)
+        used += n
+    return out + tail
+
+
+def render_digest(payload):
+    """텔레그램용 500자 요약. 관점 매트릭스·트랙 상세는 대시보드에 남는다."""
+    tracks = sorted(payload["tracks"], key=lambda x: (x["overall_rank"] or 99))
+    L = ["📊 <b>5트랙 상대강도</b> · %s" % esc(payload["as_of_kst"][5:16])]
+
+    bits = []
+    for t in tracks:
+        d = t.get("delta") or {}
+        ds = arrow(d.get("score")) if d.get("score") is not None else ""
+        if ds == "─":       # 보합은 기호 없이 — 압축 규격 v1
+            ds = ""
+        sc = "%.0f" % t["score"] if t.get("score") is not None else "—"
+        bits.append("%s%s %s%s" % (MEDAL[t["overall_rank"] - 1] if t.get("overall_rank") else "▫️",
+                                   esc(t["label"]), sc, ds))
+    L.append(" · ".join(bits))
+
+    def row(key, fmt, pick):
+        vals = [(t["label"], pick(t)) for t in tracks if pick(t) is not None]
+        vals.sort(key=lambda x: -x[1])
+        if not vals:
+            return None
+        return key + " " + esc(" · ".join(fmt % (n, v) for n, v in vals[:3]))
+
+    for ln in (row("30일", "%s %+.0f%%", lambda t: t.get("px30")),
+               row("TVL30", "%s %+.0f%%", lambda t: t.get("tvl30")),
+               row("매출30", "%s %+.0f%%", lambda t: t.get("rev_chg30"))):
+        if ln:
+            L.append(ln)
+
+    hi = [h for h in (payload.get("highlights") or []) if not _dup_highlight(h)]
+    if hi:
+        L.append("변화 " + esc(hi[0]))
+
+    tail = ["<i>성격이 다른 대상의 비교 · 수익률 예측 아님</i>",
+            "📊 전체 %s" % DASHBOARD_URL]
+    return "\n".join(cap_lines(L, tail))
+
+
 def build_highlights(tracks):
     out = []
     for t in tracks:
@@ -763,7 +826,8 @@ def main():
         "dashboard_url": DASHBOARD_URL,
     }
     payload["highlights"] = build_highlights(tracks)
-    payload["message"] = render_telegram(payload)
+    payload["message_full"] = render_telegram(payload)
+    payload["message"] = render_digest(payload)
 
     save_json(os.path.join(DATA, "latest.json"), payload)
 
