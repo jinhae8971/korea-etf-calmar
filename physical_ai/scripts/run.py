@@ -72,6 +72,68 @@ def rolling_corr(a: dict[str, float], b: dict[str, float], window: int = 12) -> 
     return sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / (len(common) * sx * sy)
 
 
+
+# ------------------------------------------------------ 500자 다이제스트 v1
+# 텔레그램은 "무엇을 볼지" 정하는 층. 마일스톤 근거·종목 점수는 대시보드에 남는다.
+DIGEST_CAP = 500
+DIGEST_FROZEN_AT = "2026-09-07"
+_TAGRE = re.compile(r"<[^>]+>")
+
+
+def plain_len(s: str) -> int:
+    return len(_TAGRE.sub("", s or ""))
+
+
+def cap_lines(lines, tail, cap=DIGEST_CAP):
+    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    out, used = [], 0
+    for ln in lines:
+        n = plain_len(ln) + 1
+        if used + n > budget:
+            out.append("…")
+            break
+        out.append(ln)
+        used += n
+    return out + tail
+
+
+def render_digest(report: dict, dashboard: str = "") -> str:
+    """500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
+    su = report["summary"]
+    bar = lambda a: "●" * a["passed"] + "○" * (a["total"] - a["passed"])
+    L = [f"<b>🤖 피지컬 AI·로봇 사이클</b> · {report['date'][5:]}",
+         f"서사 {bar(su['narrative'])} · 실현 {bar(su['realization'])} · 가격 {bar(su['price'])}"]
+    if report.get("regime_text"):
+        L.append(html.escape(str(report["regime_text"]))[:80])
+
+    # 마일스톤은 상태만 한 줄로 — 근거·기준값은 대시보드
+    ms_ = report.get("milestones") or []
+    if ms_:
+        icon = {"PASS": "✅", "FAIL": "❌", "NA": "⚪", "PENDING": "⚪"}
+        L.append(" · ".join(
+            "%s%s" % (icon.get(m["status"], "⚪"),
+                      m["label"].split(" ", 1)[-1]) for m in ms_))
+
+    dc = report.get("decoupling") or {}
+    if dc.get("corr") is not None:
+        L.append("디커플링 상관 %+.2f%s" % (dc["corr"], " — 독립 사이클 조짐" if dc.get("decoupled") else ""))
+
+    al = report.get("alert") or {}
+    if al.get("text"):
+        L.append("ℹ️ " + html.escape(al["text"])[:70])
+
+    wl = (report.get("watchlist") or {}).get("stocks") or []
+    if wl:
+        L.append("적합도 " + html.escape(" · ".join(
+            "%s %.0f" % (r.get("ticker", "?"), r.get("score") or 0) for r in wl[:4])))
+
+    tail = []
+    if dashboard:
+        tail.append(f"📊 전체 {dashboard}")
+    tail.append("<i>관측 서술 · 매매 신호 아님</i>")
+    return "\n".join(cap_lines(L, tail))
+
+
 def render(report: dict, dashboard: str = "") -> str:
     summary = report["summary"]
     bar = lambda a: "●" * a["passed"] + "○" * (a["total"] - a["passed"])
@@ -220,7 +282,9 @@ def main() -> int:
     except Exception as exc:  # noqa: BLE001
         print(f"::warning::워치리스트 산출 실패: {type(exc).__name__}: {exc}")
         report["watchlist"] = None
-    report["message"] = render(report, os.environ.get("DASHBOARD_URL", ""))
+    _dash = os.environ.get("DASHBOARD_URL", "")
+    report["message_full"] = render(report, _dash)
+    report["message"] = render_digest(report, _dash)
 
     record = {"date": today, "regime": summary.get("regime"), "gap": summary.get("gap"),
               "narrative": summary["narrative"]["passed"],

@@ -606,6 +606,64 @@ def pump_candidates(rows):
     return out[:PUMP["max_show"]]
 
 
+
+# ------------------------------------------------------ 500자 다이제스트 v1
+# 텔레그램은 "무엇을 볼지" 정하는 층. 지표·구조·백테스트는 대시보드에 남는다.
+DIGEST_CAP = 500
+DIGEST_FROZEN_AT = "2026-09-07"
+_TAGRE = re.compile(r"<[^>]+>")
+
+
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
+def cap_lines(lines, tail, cap=DIGEST_CAP):
+    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    out, used = [], 0
+    for ln in lines:
+        n = plain_len(ln) + 1
+        if used + n > budget:
+            out.append("…")
+            break
+        out.append(ln)
+        used += n
+    return out + tail
+
+
+def render_digest(payload):
+    """텔레그램용 500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
+    L = ["🛰️ <b>알파 추세 레이더</b> · %s" % esc_html(str(payload.get("as_of_kst", ""))[5:16])]
+    mk = payload.get("market") or {}
+    if mk.get("regime"):
+        L.append(esc_html(mk["regime"]))
+
+    for c in (payload.get("candidates") or [])[:4]:
+        bits = ["%.2f점" % c["score"]] if c.get("score") is not None else []
+        if c.get("streak"):
+            bits.append("%d일차" % c["streak"])
+        if c.get("ret7") is not None:
+            bits.append("7d %+.0f%%" % (c["ret7"] * 100))
+        warn = " ⚠" if c.get("flags") else ""
+        L.append("· <b>%s</b> %s%s" % (esc_html(c.get("symbol") or c.get("name") or "?"),
+                                       esc_html(" · ".join(bits)), warn))
+
+    ev = payload.get("events") or []
+    if ev:
+        L.append("변화 " + esc_html(" · ".join(
+            "%s %s" % (e.get("symbol", ""), e.get("type", "")) for e in ev[:3])))
+
+    th = payload.get("themes") or []
+    if th:
+        L.append("테마 " + esc_html(" · ".join(
+            "%s %+.0f%%" % (t.get("label", "?"), (t.get("median_ret7") or 0) * 100)
+            for t in th[:3])))
+
+    tail = ["⚠️ <i>상대우위만 확인 · 절대수익 마이너스 · 매수신호 아님</i>",
+            "📊 전체 %s" % DASHBOARD_URL]
+    return "\n".join(cap_lines(L, tail))
+
+
 def render_telegram(payload):
     p = payload
     L = []
@@ -1159,7 +1217,8 @@ def run(offline_payload=None):
     write_json(track_path, track)
     payload["tracking"] = tracking.summarize(track)
 
-    payload["message"] = render_telegram(payload)
+    payload["message_full"] = render_telegram(payload)
+    payload["message"] = render_digest(payload)
 
     write_json(os.path.join(DATA_DIR, "latest.json"), payload)
     write_json(state_path, {"date": today, "tokens": new_state})

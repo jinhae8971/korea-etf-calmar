@@ -163,7 +163,8 @@ def write_outputs(report: dict, mode: str, cfg: dict) -> None:
         print(f"[watchlist] 발동 임박 {watch['armed_count']}개")
         return
 
-    report["message"] = render.render_brief(report, dashboard)
+    report["message_full"] = render.render_brief(report, dashboard)
+    report["message"] = render.render_digest(report, dashboard)
 
     # 세션 단위 스냅샷 — 같은 종가일에 대해서는 파일을 다시 쓰지 않는다.
     # 장중 재실행 시 시세가 미세하게 움직여 매번 새 커밋이 쌓이는 것을 막는다.

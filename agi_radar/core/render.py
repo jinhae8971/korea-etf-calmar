@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import html
+import re
 
 STATE_BADGE = {
     "THESIS_INTACT": "🟢 논지 유지",
@@ -21,6 +22,75 @@ def _pct(value) -> str:
     if value is None:
         return "n/a"
     return f"{value * 100:+.1f}%"
+
+
+
+# ------------------------------------------------------ 500자 다이제스트 v1
+# 텔레그램은 "무엇을 볼지" 정하는 층. 상세는 대시보드에 남는다.
+DIGEST_CAP = 500
+DIGEST_FROZEN_AT = "2026-09-07"
+_TAGRE = re.compile(r"<[^>]+>")
+
+
+def plain_len(s: str) -> int:
+    return len(_TAGRE.sub("", s or ""))
+
+
+def cap_lines(lines, tail, cap=DIGEST_CAP):
+    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    out, used = [], 0
+    for ln in lines:
+        n = plain_len(ln) + 1
+        if used + n > budget:
+            out.append("…")
+            break
+        out.append(ln)
+        used += n
+    return out + tail
+
+
+def render_digest(report: dict, dashboard_url: str = "") -> str:
+    """500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
+    verdict = report["verdict"]
+    hedge = report["hedge"]
+    crowding = report["crowding"]
+    nodes = report["nodes"]
+
+    L = [f"<b>🛰 AGI Thesis Radar</b> · {report['date'][5:]}",
+         f"{STATE_BADGE.get(verdict['final_state'], verdict['final_state'])} "
+         f"(확신 {verdict['confidence_score']}%)"]
+
+    L.append(f"헤지 {HEDGE_BADGE.get(hedge.get('status'), '⚪')} · "
+             f"스프레드 {_pct(hedge.get('spread_return'))} · "
+             f"혼잡 {LEVEL_BADGE.get(crowding.get('level'), '⚪')}{crowding.get('score')}")
+
+    longs = [n for n in nodes if n["role"] == "long"][:3]
+    if longs:
+        L.append("병목 " + " · ".join(
+            f"{html.escape(n['label'].split(' ')[0])} {_pct(n['rs20'])}" for n in longs))
+
+    shift = report.get("bottleneck_shift")
+    if shift and shift.get("shifted"):
+        L.append(f"↳ 이동 {html.escape(shift['previous'].split(' ')[0])} → "
+                 f"{html.escape(shift['current'].split(' ')[0])}")
+
+    # 종합(summary)과 인사이트(key_insights)는 같은 문장을 다르게 담은 것이라
+    # 브리프에 둘 다 실을 이유가 없다 — 인사이트만 남긴다.
+    for i in (verdict.get("key_insights") or [])[:2]:
+        L.append(f"· {html.escape(str(i))[:90]}")
+
+    # 경보는 병목 이동 줄과 겹치는 항목을 뺀다.
+    shifted = bool(shift and shift.get("shifted"))
+    alerts = [a for a in report["rule_verdict"]["alerts"]
+              if not (shifted and a.get("code") == "BOTTLENECK_SHIFT")]
+    if alerts:
+        L.append("⚠️ " + html.escape(alerts[0]["text"])[:90])
+
+    tail = []
+    if dashboard_url:
+        tail.append(f"📎 {dashboard_url}")
+    tail.append("<i>참고 정보 · 매매 권유 아님</i>")
+    return "\n".join(cap_lines(L, tail))
 
 
 def render_brief(report: dict, dashboard_url: str = "") -> str:

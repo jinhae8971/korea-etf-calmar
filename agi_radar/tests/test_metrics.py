@@ -184,3 +184,21 @@ class TestRender(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestDigestCap(unittest.TestCase):
+    def test_digest_never_exceeds_cap(self):
+        import io as _io, json as _json, os as _os, re as _re
+        p = _os.path.join(_os.path.dirname(__file__), "..", "..",
+                          "docs", "agi-radar", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        t = _re.sub(r"<[^>]+>", "", render.render_digest(d, "https://x/"))
+        self.assertLessEqual(len(t), render.DIGEST_CAP)
+
+    def test_summary_is_not_duplicated_with_insights(self):
+        import io as _io, json as _json, os as _os
+        p = _os.path.join(_os.path.dirname(__file__), "..", "..",
+                          "docs", "agi-radar", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        out = render.render_digest(d, "")
+        self.assertNotIn("종합", out)
