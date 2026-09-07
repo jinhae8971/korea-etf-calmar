@@ -1,0 +1,91 @@
+name: catalyst-radar
+
+on:
+  schedule:
+    # KST 06:52 = UTC 21:52 (전일). 정각·30분 슬롯은 러너 혼잡으로 지연되므로 비정각.
+    - cron: "52 21 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_news:
+        description: "뉴스 센서 건너뛰기 (1이면 생략)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalyst-radar
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests (게이트)
+        working-directory: catalyst_radar
+        run: python -m unittest discover -s tests -v
+
+  run:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          # cache: "pip" 금지 — --no-cache-dir 조합에서 Post 단계가 잡 전체를 실패시킨다
+
+      - name: Run radar
+        working-directory: catalyst_radar
+        env:
+          # GitHub API 미인증은 60회/시라 즉시 403. 기본 토큰으로 5,000회/시 확보.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_NEWS: ${{ inputs.skip_news }}
+          TZ: "Asia/Seoul"
+        run: |
+          set -euo pipefail
+          if [[ -n "${SKIP_NEWS}" && "${SKIP_NEWS}" != "1" ]]; then
+            echo "::error::skip_news 는 1 또는 빈 값만 허용: ${SKIP_NEWS}"
+            exit 1
+          fi
+          python catalyst_radar.py
+
+      - name: Commit snapshot
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalyst_radar/data docs/catalyst-radar || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"; exit 0
+          fi
+          AS_OF=$(python -c "import json;print(json.load(open('catalyst_radar/data/latest.json'))['as_of_kst'][:10])")
+          git commit -m "chore(catalyst-radar): snapshot ${AS_OF}"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.STRATEGY_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=$(printf '%s\n%s' '❌ catalyst-radar 수집 실패' "${RUN_URL}")" \
+            || true
