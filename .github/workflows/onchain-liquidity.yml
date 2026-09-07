@@ -1,0 +1,93 @@
+name: Onchain Liquidity Radar
+
+# 온체인 유동성 총량 관측 트랙 (OLQ)
+# 수집·판정·대시보드만 담당한다. 텔레그램 발송은 hynix-correction-monitor의
+# olq-relay.yml 이 latest.json 의 message 필드를 그대로 전달한다 (포매팅 이중관리 방지).
+#
+# 주의: 이 워크플로우는 소스를 외부에서 내려받아 덮어쓰지 않는다.
+#       (xrs.yml·btc-macro.yml 의 자립형 부트스트랩이 레포 직접 수정을 조용히
+#        되돌린 사고 이후, checkout 을 정본으로 고정)
+
+on:
+  schedule:
+    - cron: "46 22 * * *"      # KST 07:46 — 23:xx UTC 슬롯은 큐 혼잡으로 100분씩 밀림
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: onchain-liquidity
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests (게이트)
+        working-directory: onchain_liquidity
+        run: python -m unittest discover -s tests -v
+
+  collect:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          # cache: "pip" 사용 금지 — 의존성이 없어 캐시 폴더가 생기지 않고,
+          # Post 단계가 잡 전체를 failure 로 뒤집는다.
+
+      - name: Collect / judge / render
+        working-directory: onchain_liquidity
+        env:
+          TZ: "Asia/Seoul"
+          OLQ_DOCS_DIR: ${{ github.workspace }}/docs/onchain-liquidity
+        run: |
+          set -euo pipefail
+          python olq.py
+
+      - name: Commit snapshot
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add onchain_liquidity/data docs/onchain-liquidity || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+            exit 0
+          fi
+          AS_OF=$(python -c "import json;print(json.load(open('onchain_liquidity/data/latest.json'))['as_of'])" 2>/dev/null || date +%F)
+          git commit -m "chore(olq): snapshot ${AS_OF}"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
+
+      - name: Notify failure
+        if: failure()
+        env:
+          BOT: ${{ secrets.TELEGRAM_TOKEN }}   # korea-etf-calmar 보유 토큰 (STRATEGY_BOT_TOKEN 은 릴레이 레포에만 있음)
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ -n "${BOT:-}" ] || exit 0
+          curl -sS -X POST "https://api.telegram.org/bot${BOT}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT}" \
+            --data-urlencode "text=$(printf '%s\n%s' '❌ 온체인 유동성 수집 실패' "${RUN_URL}")" \
+            || true
