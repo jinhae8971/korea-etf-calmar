@@ -399,3 +399,15 @@ class TestFlatHeadline(unittest.TestCase):
               "delta": {"day": {"px": 0.1}, "prev": None}}
         self.assertIn("⚪", wl._headline(it))
         self.assertNotIn("─", wl._headline(it))
+
+
+class TestHeaderWidth(unittest.TestCase):
+    """헤더도 본문과 같은 폭 규칙을 지킨다 — 여기서 접히면 첫인상이 무너진다."""
+
+    def test_alert_and_check_headers_fit(self):
+        st = state()
+        st["as_of_kst"] = "2026-09-07 09:35"
+        for alerts in ([], [{"code": "X", "symbol": "PONS", "detail": "d",
+                             "severity": 9.0, "action": "i"}]):
+            for ln in wl.render_alert(st, alerts, CFG, "").split("\n"):
+                self.assertLessEqual(wl.vis_width(ln), wl.LINE_COLS, ln)

@@ -983,7 +983,7 @@ def render_alert(state, alerts, cfg, dash_url=""):
     if alerts:
         head = ["\U0001F6A8 <b>보유 종목 경보</b> · %s" % state.get("as_of_kst", "")[5:16]]
     else:
-        head = ["\U0001F52D <b>보유 점검</b> · %s · 임계 초과 없음"
+        head = ["\U0001F52D <b>보유 점검</b> · %s <i>· 이상 없음</i>"
                 % state.get("as_of_kst", "")[5:16]]
     head.append("")
     # 경보는 종목 블록 안에서 판정 줄로 표현된다 — 위아래로 두 번 쓰지 않는다.
