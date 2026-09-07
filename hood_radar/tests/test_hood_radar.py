@@ -642,3 +642,32 @@ class TestDigestCap(unittest.TestCase):
     def test_cap_keeps_tail(self):
         out = hr.cap_lines(["x" * 400, "y" * 400], ["TAIL"], cap=100)
         self.assertEqual(out[-1], "TAIL")
+
+
+class TestVisibility(unittest.TestCase):
+    """가시성 규격 v2 — 어떤 줄도 모바일 폭을 넘지 않는다."""
+
+    def _digest(self):
+        import io as _io, json as _json, os as _os
+        base = _os.path.join(_os.path.dirname(__file__), "..")
+        d = _json.load(_io.open(_os.path.join(base, "data", "latest.json"), encoding="utf-8"))
+        c = _json.load(_io.open(_os.path.join(base, "config.json"), encoding="utf-8"))
+        return hr.render_digest(d, c, "https://x/")
+
+    def test_no_line_exceeds_mobile_width(self):
+        import re as _re
+        for ln in _re.sub(r"<[^>]+>", "", self._digest()).split("\n"):
+            self.assertLessEqual(hr.vis_width(ln), hr.LINE_COLS, ln)
+
+    def test_changes_carry_color_dots(self):
+        import re as _re
+        t = _re.sub(r"<[^>]+>", "", self._digest())
+        self.assertTrue(any(d in t for d in ("🟩", "🟢", "⚪", "🔴", "🟥")))
+
+    def test_dot_thresholds(self):
+        self.assertEqual(hr.dot(25), "🟩")
+        self.assertEqual(hr.dot(5), "🟢")
+        self.assertEqual(hr.dot(0), "⚪")
+        self.assertEqual(hr.dot(-5), "🔴")
+        self.assertEqual(hr.dot(-25), "🟥")
+        self.assertEqual(hr.dot(2, "pp"), "🟢")   # pp 는 3배 가중

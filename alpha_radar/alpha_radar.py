@@ -607,60 +607,152 @@ def pump_candidates(rows):
 
 
 
-# ------------------------------------------------------ 500자 다이제스트 v1
-# 텔레그램은 "무엇을 볼지" 정하는 층. 지표·구조·백테스트는 대시보드에 남는다.
-DIGEST_CAP = 500
-DIGEST_FROZEN_AT = "2026-09-07"
+# ---------------------------------------------- 가시성 규격 v2 (2026-09-07)
+# 글자 수보다 "한눈에 읽히는가"가 기준. 상한은 안전장치이지 목표가 아니다.
+#   · 한 줄 폭 LINE_COLS(반각) 이하 — 넘치면 모바일에서 접히고 들여쓰기가
+#     사라져 항목 경계가 무너진다. 접느니 줄을 나눈다.
+#   · 모든 증감에 색 점을 붙인다(전 트랙 동일 임계).
+DIGEST_CAP = 900
+LINE_COLS = 40
+VIS_FROZEN_AT = "2026-09-07"
 _TAGRE = re.compile(r"<[^>]+>")
 
 
-def plain_len(s):
-    return len(_TAGRE.sub("", s or ""))
+def vis_width(s):
+    """한글·이모지는 2칸으로 세는 표시 폭."""
+    return sum(2 if ord(c) > 0x2000 else 1 for c in _TAGRE.sub("", s or ""))
+
+
+def dot(v, unit="%"):
+    """증감 색 점. pp 는 %와 겨루도록 3배 가중(압축 규격과 동일 기준)."""
+    if v is None:
+        return "\u26aa"
+    x = v * 3.0 if unit == "pp" else v
+    if x >= 20:
+        return "\U0001F7E9"
+    if x >= 3:
+        return "\U0001F7E2"
+    if x > -3:
+        return "\u26aa"
+    if x > -20:
+        return "\U0001F534"
+    return "\U0001F7E5"
+
+
+def sig(v, unit="%", digits=0):
+    """색 점 + 부호 있는 값. 예: 🟢+8% / 🔴-12%"""
+    if v is None:
+        return "\u26aa–"
+    return "%s%+.*f%s" % (dot(v, unit), digits, v, "pp" if unit == "pp" else "%")
+
+
+def rank_arrow(d):
+    if not d:
+        return ""
+    return " \u25b2%d" % d if d > 0 else " \u25bc%d" % abs(d)
+
+
+def wrap_items(label, items, cols=LINE_COLS, sep=" \u00b7 "):
+    """라벨 + 항목들을 폭 상한에 맞춰 여러 줄로. 이어지는 줄은 공백 들여쓰기."""
+    out, cur = [], "<b>%s</b> " % label
+    pad = " " * (len(label) + 1)
+    for it in items:
+        cand = cur + (sep if cur.strip() != ("<b>%s</b>" % label) and not cur.endswith(" ") else "") + it
+        if vis_width(cand) > cols and vis_width(cur) > vis_width("<b>%s</b> " % label):
+            out.append(cur.rstrip())
+            cur = pad + it
+        else:
+            cur = cand if cur.endswith(" ") else cur + sep + it
+    if cur.strip():
+        out.append(cur.rstrip())
+    return out
+
+
+def clip(s, budget=LINE_COLS):
+    """표시 폭 기준으로 자른다. 글자 수로 자르면 한글에서 여전히 넘친다."""
+    limit = budget
+    out, w = [], 0
+    for ch in str(s):
+        cw = 2 if ord(ch) > 0x2000 else 1
+        if w + cw > limit - 2:   # 말줄임표(…)도 폭 2
+            out.append("\u2026")
+            break
+        out.append(ch)
+        w += cw
+    return "".join(out)
 
 
 def cap_lines(lines, tail, cap=DIGEST_CAP):
-    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    budget = cap - sum(len(_TAGRE.sub("", t)) + 1 for t in tail)
     out, used = [], 0
     for ln in lines:
-        n = plain_len(ln) + 1
+        n = len(_TAGRE.sub("", ln)) + 1
         if used + n > budget:
-            out.append("…")
+            out.append("\u2026")
             break
         out.append(ln)
         used += n
     return out + tail
 
 
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
+FLAG_LABEL = {"OVERHEAT": "과열", "OVERHEATED": "과열", "THIN_LIQ": "유동성얕음",
+              "LOW_LIQ": "유동성얕음", "CHURN": "회전이상", "LOW_FLOAT": "유통량적음",
+              "LOW_HOLDERS": "홀더적음", "NEW": "신규", "YOUNG": "신규"}
+
+
 def render_digest(payload):
-    """텔레그램용 500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
-    L = ["🛰️ <b>알파 추세 레이더</b> · %s" % esc_html(str(payload.get("as_of_kst", ""))[5:16])]
+    """가시성 규격 v2 — 후보당 두 줄, 증감은 색 점으로."""
+    L = ["🛰️ <b>알파 추세 레이더</b> · %s"
+         % esc_html(str(payload.get("as_of_kst", ""))[5:16])]
     mk = payload.get("market") or {}
     if mk.get("regime"):
-        L.append(esc_html(mk["regime"]))
+        L.append(esc_html(clip(mk["regime"], LINE_COLS)))
+    L.append("")
 
-    for c in (payload.get("candidates") or [])[:4]:
-        bits = ["%.2f점" % c["score"]] if c.get("score") is not None else []
-        if c.get("streak"):
-            bits.append("%d일차" % c["streak"])
-        if c.get("ret7") is not None:
-            bits.append("7d %+.0f%%" % (c["ret7"] * 100))
-        warn = " ⚠" if c.get("flags") else ""
-        L.append("· <b>%s</b> %s%s" % (esc_html(c.get("symbol") or c.get("name") or "?"),
-                                       esc_html(" · ".join(bits)), warn))
+    cands = payload.get("candidates") or []
+    if cands:
+        L.append("<b>추세 후보</b> <i>(2일 이상 유지)</i>")
+    for c in cands[:5]:
+        r7 = (c.get("ret7") or 0) * 100
+        r30 = (c.get("ret30") or 0) * 100
+        head = "%s <b>%s</b> %.2f점 <i>· %d일차</i>" % (
+            dot(r7), esc_html(c.get("symbol") or c.get("name") or "?"),
+            c.get("score") or 0, c.get("streak") or 0)
+        L.append(head)
+        sub = "   7d %s · 30d %s" % (sig(r7), sig(r30))
+        flags = [FLAG_LABEL.get(f, f) for f in (c.get("flags") or [])][:2]
+        if flags:
+            sub2 = "   ⚠️ " + esc_html(" · ".join(flags))
+            L.append(sub)
+            L.append(sub2)
+        else:
+            L.append(sub)
 
     ev = payload.get("events") or []
     if ev:
-        L.append("변화 " + esc_html(" · ".join(
-            "%s %s" % (e.get("symbol", ""), e.get("type", "")) for e in ev[:3])))
+        L.append("")
+        L.append("<b>변화</b>")
+        for e in ev[:3]:
+            head = "· %s %s — " % (esc_html(e.get("symbol", "")), e.get("type", ""))
+            L.append(head + esc_html(clip(e.get("detail", ""),
+                                          LINE_COLS - vis_width(head))))
 
     th = payload.get("themes") or []
     if th:
-        L.append("테마 " + esc_html(" · ".join(
-            "%s %+.0f%%" % (t.get("label", "?"), (t.get("median_ret7") or 0) * 100)
-            for t in th[:3])))
+        L.append("")
+        L.append("<b>테마</b> <i>(중앙 7일)</i>")
+        for t in th[:3]:
+            v = (t.get("median_ret7") or 0) * 100
+            L.append("%s %s <i>· %d종</i>" % (
+                sig(v), esc_html(t.get("label", "?")), t.get("n") or 0))
 
-    tail = ["⚠️ <i>상대우위만 확인 · 절대수익 마이너스 · 매수신호 아님</i>",
-            "📊 전체 %s" % DASHBOARD_URL]
+    tail = ["", "⚠️ <i>상대우위만 확인 · 절대수익 마이너스</i>",
+            "<i>매수신호가 아닙니다</i>",
+            '📊 <a href="%s">전체 대시보드</a>' % DASHBOARD_URL]
     return "\n".join(cap_lines(L, tail))
 
 

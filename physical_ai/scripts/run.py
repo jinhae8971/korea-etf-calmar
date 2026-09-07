@@ -73,65 +73,166 @@ def rolling_corr(a: dict[str, float], b: dict[str, float], window: int = 12) -> 
 
 
 
-# ------------------------------------------------------ 500자 다이제스트 v1
-# 텔레그램은 "무엇을 볼지" 정하는 층. 마일스톤 근거·종목 점수는 대시보드에 남는다.
-DIGEST_CAP = 500
-DIGEST_FROZEN_AT = "2026-09-07"
+# ---------------------------------------------- 가시성 규격 v2 (2026-09-07)
+# 글자 수보다 "한눈에 읽히는가"가 기준. 상한은 안전장치이지 목표가 아니다.
+#   · 한 줄 폭 LINE_COLS(반각) 이하 — 넘치면 모바일에서 접히고 들여쓰기가
+#     사라져 항목 경계가 무너진다. 접느니 줄을 나눈다.
+#   · 모든 증감에 색 점을 붙인다(전 트랙 동일 임계).
+DIGEST_CAP = 900
+LINE_COLS = 40
+VIS_FROZEN_AT = "2026-09-07"
 _TAGRE = re.compile(r"<[^>]+>")
 
 
-def plain_len(s: str) -> int:
-    return len(_TAGRE.sub("", s or ""))
+def vis_width(s):
+    """한글·이모지는 2칸으로 세는 표시 폭."""
+    return sum(2 if ord(c) > 0x2000 else 1 for c in _TAGRE.sub("", s or ""))
+
+
+def dot(v, unit="%"):
+    """증감 색 점. pp 는 %와 겨루도록 3배 가중(압축 규격과 동일 기준)."""
+    if v is None:
+        return "\u26aa"
+    x = v * 3.0 if unit == "pp" else v
+    if x >= 20:
+        return "\U0001F7E9"
+    if x >= 3:
+        return "\U0001F7E2"
+    if x > -3:
+        return "\u26aa"
+    if x > -20:
+        return "\U0001F534"
+    return "\U0001F7E5"
+
+
+def sig(v, unit="%", digits=0):
+    """색 점 + 부호 있는 값. 예: 🟢+8% / 🔴-12%"""
+    if v is None:
+        return "\u26aa–"
+    return "%s%+.*f%s" % (dot(v, unit), digits, v, "pp" if unit == "pp" else "%")
+
+
+def rank_arrow(d):
+    if not d:
+        return ""
+    return " \u25b2%d" % d if d > 0 else " \u25bc%d" % abs(d)
+
+
+def wrap_items(label, items, cols=LINE_COLS, sep=" \u00b7 "):
+    """라벨 + 항목들을 폭 상한에 맞춰 여러 줄로. 이어지는 줄은 공백 들여쓰기."""
+    out, cur = [], "<b>%s</b> " % label
+    pad = " " * (len(label) + 1)
+    for it in items:
+        cand = cur + (sep if cur.strip() != ("<b>%s</b>" % label) and not cur.endswith(" ") else "") + it
+        if vis_width(cand) > cols and vis_width(cur) > vis_width("<b>%s</b> " % label):
+            out.append(cur.rstrip())
+            cur = pad + it
+        else:
+            cur = cand if cur.endswith(" ") else cur + sep + it
+    if cur.strip():
+        out.append(cur.rstrip())
+    return out
+
+
+def clip(s, budget=LINE_COLS):
+    """표시 폭 기준으로 자른다. 글자 수로 자르면 한글에서 여전히 넘친다."""
+    limit = budget
+    out, w = [], 0
+    for ch in str(s):
+        cw = 2 if ord(ch) > 0x2000 else 1
+        if w + cw > limit - 2:   # 말줄임표(…)도 폭 2
+            out.append("\u2026")
+            break
+        out.append(ch)
+        w += cw
+    return "".join(out)
 
 
 def cap_lines(lines, tail, cap=DIGEST_CAP):
-    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    budget = cap - sum(len(_TAGRE.sub("", t)) + 1 for t in tail)
     out, used = [], 0
     for ln in lines:
-        n = plain_len(ln) + 1
+        n = len(_TAGRE.sub("", ln)) + 1
         if used + n > budget:
-            out.append("…")
+            out.append("\u2026")
             break
         out.append(ln)
         used += n
     return out + tail
 
 
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
 def render_digest(report: dict, dashboard: str = "") -> str:
-    """500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
+    """가시성 규격 v2 — 마일스톤은 통과/미통과로 묶고, 증감은 색 점으로."""
     su = report["summary"]
     bar = lambda a: "●" * a["passed"] + "○" * (a["total"] - a["passed"])
-    L = [f"<b>🤖 피지컬 AI·로봇 사이클</b> · {report['date'][5:]}",
-         f"서사 {bar(su['narrative'])} · 실현 {bar(su['realization'])} · 가격 {bar(su['price'])}"]
+    L = [f"🤖 <b>피지컬 AI·로봇 사이클</b> · {report['date'][5:]}",
+         "서사 %s · 실현 %s · 가격 %s" % (bar(su["narrative"]), bar(su["realization"]),
+                                          bar(su["price"]))]
     if report.get("regime_text"):
-        L.append(html.escape(str(report["regime_text"]))[:80])
+        for chunk in _wrap_text(str(report["regime_text"]), LINE_COLS):
+            L.append("<i>%s</i>" % html.escape(chunk))
 
-    # 마일스톤은 상태만 한 줄로 — 근거·기준값은 대시보드
     ms_ = report.get("milestones") or []
     if ms_:
-        icon = {"PASS": "✅", "FAIL": "❌", "NA": "⚪", "PENDING": "⚪"}
-        L.append(" · ".join(
-            "%s%s" % (icon.get(m["status"], "⚪"),
-                      m["label"].split(" ", 1)[-1]) for m in ms_))
+        L.append("")
+        L.append("<b>마일스톤</b>")
+        icon = {"PASS": "✅", "FAIL": "❌"}
+        for m in ms_:
+            mark = icon.get(m["status"], "⚪")
+            name = m["label"].split(" ", 1)[-1]
+            cur, tgt = m.get("current"), m.get("target")
+            val = ""
+            if cur is not None and tgt is not None:
+                # 지표마다 단위가 달라(배수·%p) 임의로 붙이면 틀린다 — 원값 그대로.
+                val = " <i>%g / 기준 %g</i>" % (float(cur), float(tgt))
+            L.append("%s %s%s" % (mark, html.escape(clip(name, 18)), val))
 
     dc = report.get("decoupling") or {}
     if dc.get("corr") is not None:
-        L.append("디커플링 상관 %+.2f%s" % (dc["corr"], " — 독립 사이클 조짐" if dc.get("decoupled") else ""))
+        L.append("")
+        L.append("디커플링 상관 %s%+.2f%s" % (
+            dot(dc["corr"] * 100), dc["corr"],
+            " <i>· 독립 사이클</i>" if dc.get("decoupled") else ""))
 
     al = report.get("alert") or {}
     if al.get("text"):
-        L.append("ℹ️ " + html.escape(al["text"])[:70])
+        head = "ℹ️ "
+        L.append(head + "<i>%s</i>" % html.escape(
+            clip(al["text"], LINE_COLS - vis_width(head))))
 
     wl = (report.get("watchlist") or {}).get("stocks") or []
     if wl:
-        L.append("적합도 " + html.escape(" · ".join(
-            "%s %.0f" % (r.get("ticker", "?"), r.get("score") or 0) for r in wl[:4])))
+        L.append("")
+        L.append("<b>흐름 적합도</b>")
+        for r in wl[:5]:
+            L.append("%s %s <i>%.0f점</i>" % (
+                dot((r.get("score") or 0) - 50), html.escape(r.get("ticker", "?")),
+                r.get("score") or 0))
 
-    tail = []
+    tail = [""]
     if dashboard:
-        tail.append(f"📊 전체 {dashboard}")
+        tail.append(f'📊 <a href="{dashboard}">전체 대시보드</a>')
     tail.append("<i>관측 서술 · 매매 신호 아님</i>")
     return "\n".join(cap_lines(L, tail))
+
+
+def _wrap_text(text, cols):
+    """긴 문장을 폭 상한에 맞춰 단어 단위로 접는다."""
+    out, cur = [], ""
+    for word in str(text).split(" "):
+        cand = (cur + " " + word).strip()
+        if vis_width(cand) > cols and cur:
+            out.append(cur)
+            cur = word
+        else:
+            cur = cand
+    if cur:
+        out.append(cur)
+    return out
 
 
 def render(report: dict, dashboard: str = "") -> str:

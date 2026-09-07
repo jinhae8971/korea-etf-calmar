@@ -763,99 +763,179 @@ def render_telegram(payload, cfg, dash_url):
 
 
 
-# ------------------------------------------------------ 500자 다이제스트 v1
-# 텔레그램은 "무엇을 볼지" 정하는 층으로만 쓰고, 수치·근거는 대시보드에 둔다.
-# 전체 본문은 payload["message_full"] 에 그대로 남는다.
-DIGEST_CAP = 500              # HTML 태그를 뺀 순수 텍스트 기준
-DIGEST_FROZEN_AT = "2026-09-07"
+# ---------------------------------------------- 가시성 규격 v2 (2026-09-07)
+# 글자 수보다 "한눈에 읽히는가"가 기준. 상한은 안전장치이지 목표가 아니다.
+#   · 한 줄 폭 LINE_COLS(반각) 이하 — 넘치면 모바일에서 접히고 들여쓰기가
+#     사라져 항목 경계가 무너진다. 접느니 줄을 나눈다.
+#   · 모든 증감에 색 점을 붙인다(전 트랙 동일 임계).
+DIGEST_CAP = 900
+LINE_COLS = 40
+VIS_FROZEN_AT = "2026-09-07"
 _TAGRE = re.compile(r"<[^>]+>")
 
 
-def plain_len(s):
-    return len(_TAGRE.sub("", s or ""))
+def vis_width(s):
+    """한글·이모지는 2칸으로 세는 표시 폭."""
+    return sum(2 if ord(c) > 0x2000 else 1 for c in _TAGRE.sub("", s or ""))
+
+
+def dot(v, unit="%"):
+    """증감 색 점. pp 는 %와 겨루도록 3배 가중(압축 규격과 동일 기준)."""
+    if v is None:
+        return "\u26aa"
+    x = v * 3.0 if unit == "pp" else v
+    if x >= 20:
+        return "\U0001F7E9"
+    if x >= 3:
+        return "\U0001F7E2"
+    if x > -3:
+        return "\u26aa"
+    if x > -20:
+        return "\U0001F534"
+    return "\U0001F7E5"
+
+
+def sig(v, unit="%", digits=0):
+    """색 점 + 부호 있는 값. 예: 🟢+8% / 🔴-12%"""
+    if v is None:
+        return "\u26aa–"
+    return "%s%+.*f%s" % (dot(v, unit), digits, v, "pp" if unit == "pp" else "%")
+
+
+def rank_arrow(d):
+    if not d:
+        return ""
+    return " \u25b2%d" % d if d > 0 else " \u25bc%d" % abs(d)
+
+
+def wrap_items(label, items, cols=LINE_COLS, sep=" \u00b7 "):
+    """라벨 + 항목들을 폭 상한에 맞춰 여러 줄로. 이어지는 줄은 공백 들여쓰기."""
+    out, cur = [], "<b>%s</b> " % label
+    pad = " " * (len(label) + 1)
+    for it in items:
+        cand = cur + (sep if cur.strip() != ("<b>%s</b>" % label) and not cur.endswith(" ") else "") + it
+        if vis_width(cand) > cols and vis_width(cur) > vis_width("<b>%s</b> " % label):
+            out.append(cur.rstrip())
+            cur = pad + it
+        else:
+            cur = cand if cur.endswith(" ") else cur + sep + it
+    if cur.strip():
+        out.append(cur.rstrip())
+    return out
+
+
+def clip(s, budget=LINE_COLS):
+    """표시 폭 기준으로 자른다. 글자 수로 자르면 한글에서 여전히 넘친다."""
+    limit = budget
+    out, w = [], 0
+    for ch in str(s):
+        cw = 2 if ord(ch) > 0x2000 else 1
+        if w + cw > limit - 2:   # 말줄임표(…)도 폭 2
+            out.append("\u2026")
+            break
+        out.append(ch)
+        w += cw
+    return "".join(out)
 
 
 def cap_lines(lines, tail, cap=DIGEST_CAP):
-    """상한을 넘으면 뒤에서부터 버린다. tail(링크·면책)은 반드시 남긴다."""
-    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    budget = cap - sum(len(_TAGRE.sub("", t)) + 1 for t in tail)
     out, used = [], 0
     for ln in lines:
-        n = plain_len(ln) + 1
+        n = len(_TAGRE.sub("", ln)) + 1
         if used + n > budget:
-            out.append("…")
+            out.append("\u2026")
             break
         out.append(ln)
         used += n
     return out + tail
 
 
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
 def render_digest(payload, cfg, dash_url):
+    """가시성 규격 v2 — 한 항목 한 줄, 증감은 색 점으로."""
     rows = payload["rows"]
     ev = payload["events"]
-    L = ["🏹 <b>로빈후드 밈 레이더</b> · %s" % esc(payload["as_of_kst"][5:16])]
+    L = ["🏹 <b>로빈후드 밈 레이더</b> · %s" % esc(payload["as_of_kst"][5:16]), ""]
 
-    # 1) 보유 — 배지와 한 줄 판정만
+    # 보유 — 종목당 한 줄. 경보가 있으면 판정을 이어 붙인다.
     wl = payload.get("watchlist") or {}
-    walerts = payload.get("watchlist_alerts") or []
     by_sym = {}
-    for a in walerts:
-        by_sym.setdefault(a["symbol"], []).append(a)
+    for a_ in (payload.get("watchlist_alerts") or []):
+        by_sym.setdefault(a_["symbol"], []).append(a_)
     for v in by_sym.values():
-        v.sort(key=lambda a: -fnum(a.get("severity")))
-    hot, calm = [], []
+        v.sort(key=lambda x: -fnum(x.get("severity")))
+    if wl.get("items"):
+        L.append("<b>보유</b>")
     for it in (wl.get("items") or []):
         sym = it.get("symbol")
-        mine = by_sym.get(sym) or []
         d = ((it.get("delta") or {}).get("day") or (it.get("delta") or {}).get("prev") or {})
-        px = ("%+.1f%%" % d["px"]) if d.get("px") is not None else "–"
+        px = sig(d.get("px"), digits=1) if d.get("px") is not None else "⚪–"
+        mine = by_sym.get(sym) or []
+        badge = ("🔴" if fnum(mine[0].get("severity")) >= 6.0 else "🟡") if mine else "⚪"
+        L.append("%s <b>%s</b> %s" % (badge, esc(sym), px))
         if mine:
-            badge = "🔴" if fnum(mine[0].get("severity")) >= 6.0 else "🟡"
-            hot.append("%s<b>%s</b> %s" % (badge, esc(sym), esc(mine[0]["detail"])))
-        else:
-            calm.append("%s %s" % (esc(sym), px))
-    if hot:
-        L.append("보유 " + " / ".join(hot[:2]))
-    if calm:
-        L.append("<i>정상 %s</i>" % esc(" · ".join(calm[:3])))
+            head = "   "
+            L.append(head + "<i>%s</i>" % esc(
+                clip(mine[0]["detail"], LINE_COLS - vis_width(head))))
 
-    # 2) TOP 3 — 전체 순위는 대시보드
-    top = rows[: min(3, len(rows))]
+    # TOP — 순위 변동 화살표 + 24h 색 점
+    top = rows[: cfg["top_n_telegram"]][:5]
     if top:
-        L.append("TOP " + esc(" · ".join(
-            "%s $%s" % (label(r), human(r["mcap"])) for r in top)))
+        L.append("")
+        L.append("<b>시총 TOP</b>")
+        for r in top:
+            chg, chg_txt = chg_str(r)
+            L.append("%s <b>%s</b> $%s %s%s" % (
+                dot(chg), esc(label(r)), human(r["mcap"]),
+                esc(chg_txt), rank_arrow(r.get("d_rank_24h"))))
 
-    # 3) 급변 — TOP 표 밖 3건
     shown = {r["symbol"] for r in top}
     mv = [e for e in ev
           if e["code"] in ("RANK_SURGE", "RANK_DROP", "NEW_ENTRY", "DROPPED_OUT",
                            "MCAP_SURGE", "MCAP_COLLAPSE") and e["symbol"] not in shown]
     if mv:
-        bits = []
-        for e in mv[:3]:
-            head = re.sub(r"\s*\(.*", "", e["detail"])
-            bits.append("%s %s" % (esc(e["symbol"]), esc(head)))
-        L.append("급변 " + " · ".join(bits))
+        L.append("")
+        L.append("<b>급변</b> <i>(TOP 밖)</i>")
+        for e in mv[:4]:
+            detail = re.sub(r",\s*공통 \d+종 기준", "", e["detail"])
+            head = "%s %s — " % (ARROW.get(e["code"], "·"), esc(e["symbol"]))
+            L.append(head + esc(clip(detail, LINE_COLS - vis_width(head))))
 
-    # 4) 리스크 — 종목명만. 무엇이 문제인지는 대시보드
-    risky = []
+    # 리스크 — 유형별로 묶어 무엇이 문제인지 보이게
+    kinds = {"LIQ_THIN": "유동성얕음", "LIQ_DRAIN": "유동성이탈", "COPYCAT": "티커중복"}
+    buckets = {}
     for row in rows[: cfg["top_n_dashboard"]]:
-        if any(f["code"] in ("LIQ_DRAIN", "LIQ_THIN", "COPYCAT") for f in row["flags"]):
-            risky.append(label(row))
+        for f in row["flags"]:
+            if f["code"] in kinds:
+                buckets.setdefault(kinds[f["code"]], []).append(label(row))
     sec = [e["symbol"] for e in ev if e["code"] == "SECURITY"]
-    names = list(dict.fromkeys(risky + sec))
-    if names:
-        L.append("⚠️ 리스크 %s%s" % (esc(" · ".join(names[:4])),
-                                    " 외 %d종" % (len(names) - 4) if len(names) > 4 else ""))
+    if sec:
+        buckets["미검증"] = sec
+    if buckets:
+        L.append("")
+        L.append("<b>⚠️ 리스크</b>")
+        for k, v in sorted(buckets.items(), key=lambda x: -len(x[1]))[:3]:
+            names = " · ".join(dict.fromkeys(v))
+            head = "· %s %d종 — " % (k, len(set(v)))
+            L.append(head + esc(clip(names, LINE_COLS - vis_width(head))))
 
-    # 5) 프로토콜 — 배수 최저 2종
     pr = (payload.get("protocol") or {}).get("native") or []
     rank = sorted([i for i in pr if i.get("value_rank")], key=lambda i: i["value_rank"])
     if rank:
-        L.append("배수최저 " + esc(" · ".join(
-            "%s %.1f배" % (i.get("symbol") or i["slug"], i["pf"]) for i in rank[:2])))
+        L.append("")
+        L.append("<b>매출배수 저평가</b>")
+        for i in rank[:3]:
+            mom = i.get("momentum_pct")
+            L.append("%s %s %.1f배 · 모멘텀 %s" % (
+                dot(mom), esc(i.get("symbol") or i["slug"]), i["pf"],
+                sig(mom) if mom is not None else "–"))
 
-    tail = ['📊 전체 <a href="%s">대시보드</a>' % dash_url,
-            "<i>관측 서술 · 매매 신호 아님. 컨트랙트 주소 직접 확인.</i>"]
+    tail = ["", '📊 <a href="%s">전체 대시보드</a>' % dash_url,
+            "<i>관측 서술 · 매매 신호 아님</i>"]
     return "\n".join(cap_lines(L, tail))
 
 

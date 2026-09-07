@@ -25,70 +25,159 @@ def _pct(value) -> str:
 
 
 
-# ------------------------------------------------------ 500자 다이제스트 v1
-# 텔레그램은 "무엇을 볼지" 정하는 층. 상세는 대시보드에 남는다.
-DIGEST_CAP = 500
-DIGEST_FROZEN_AT = "2026-09-07"
+# ---------------------------------------------- 가시성 규격 v2 (2026-09-07)
+# 글자 수보다 "한눈에 읽히는가"가 기준. 상한은 안전장치이지 목표가 아니다.
+#   · 한 줄 폭 LINE_COLS(반각) 이하 — 넘치면 모바일에서 접히고 들여쓰기가
+#     사라져 항목 경계가 무너진다. 접느니 줄을 나눈다.
+#   · 모든 증감에 색 점을 붙인다(전 트랙 동일 임계).
+DIGEST_CAP = 900
+LINE_COLS = 40
+VIS_FROZEN_AT = "2026-09-07"
 _TAGRE = re.compile(r"<[^>]+>")
 
 
-def plain_len(s: str) -> int:
-    return len(_TAGRE.sub("", s or ""))
+def vis_width(s):
+    """한글·이모지는 2칸으로 세는 표시 폭."""
+    return sum(2 if ord(c) > 0x2000 else 1 for c in _TAGRE.sub("", s or ""))
+
+
+def dot(v, unit="%"):
+    """증감 색 점. pp 는 %와 겨루도록 3배 가중(압축 규격과 동일 기준)."""
+    if v is None:
+        return "\u26aa"
+    x = v * 3.0 if unit == "pp" else v
+    if x >= 20:
+        return "\U0001F7E9"
+    if x >= 3:
+        return "\U0001F7E2"
+    if x > -3:
+        return "\u26aa"
+    if x > -20:
+        return "\U0001F534"
+    return "\U0001F7E5"
+
+
+def sig(v, unit="%", digits=0):
+    """색 점 + 부호 있는 값. 예: 🟢+8% / 🔴-12%"""
+    if v is None:
+        return "\u26aa–"
+    return "%s%+.*f%s" % (dot(v, unit), digits, v, "pp" if unit == "pp" else "%")
+
+
+def rank_arrow(d):
+    if not d:
+        return ""
+    return " \u25b2%d" % d if d > 0 else " \u25bc%d" % abs(d)
+
+
+def wrap_items(label, items, cols=LINE_COLS, sep=" \u00b7 "):
+    """라벨 + 항목들을 폭 상한에 맞춰 여러 줄로. 이어지는 줄은 공백 들여쓰기."""
+    out, cur = [], "<b>%s</b> " % label
+    pad = " " * (len(label) + 1)
+    for it in items:
+        cand = cur + (sep if cur.strip() != ("<b>%s</b>" % label) and not cur.endswith(" ") else "") + it
+        if vis_width(cand) > cols and vis_width(cur) > vis_width("<b>%s</b> " % label):
+            out.append(cur.rstrip())
+            cur = pad + it
+        else:
+            cur = cand if cur.endswith(" ") else cur + sep + it
+    if cur.strip():
+        out.append(cur.rstrip())
+    return out
+
+
+def clip(s, budget=LINE_COLS):
+    """표시 폭 기준으로 자른다. 글자 수로 자르면 한글에서 여전히 넘친다."""
+    limit = budget
+    out, w = [], 0
+    for ch in str(s):
+        cw = 2 if ord(ch) > 0x2000 else 1
+        if w + cw > limit - 2:   # 말줄임표(…)도 폭 2
+            out.append("\u2026")
+            break
+        out.append(ch)
+        w += cw
+    return "".join(out)
 
 
 def cap_lines(lines, tail, cap=DIGEST_CAP):
-    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    budget = cap - sum(len(_TAGRE.sub("", t)) + 1 for t in tail)
     out, used = [], 0
     for ln in lines:
-        n = plain_len(ln) + 1
+        n = len(_TAGRE.sub("", ln)) + 1
         if used + n > budget:
-            out.append("…")
+            out.append("\u2026")
             break
         out.append(ln)
         used += n
     return out + tail
 
 
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
 def render_digest(report: dict, dashboard_url: str = "") -> str:
-    """500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
+    """가시성 규격 v2 — 한 항목 한 줄, 증감은 색 점으로."""
     verdict = report["verdict"]
     hedge = report["hedge"]
     crowding = report["crowding"]
     nodes = report["nodes"]
 
-    L = [f"<b>🛰 AGI Thesis Radar</b> · {report['date'][5:]}",
+    L = [f"🛰 <b>AGI Thesis Radar</b> · {report['date'][5:]}",
          f"{STATE_BADGE.get(verdict['final_state'], verdict['final_state'])} "
-         f"(확신 {verdict['confidence_score']}%)"]
+         f"<i>(확신 {verdict['confidence_score']}%)</i>",
+         ""]
 
-    L.append(f"헤지 {HEDGE_BADGE.get(hedge.get('status'), '⚪')} · "
-             f"스프레드 {_pct(hedge.get('spread_return'))} · "
-             f"혼잡 {LEVEL_BADGE.get(crowding.get('level'), '⚪')}{crowding.get('score')}")
+    L.append("<b>지표</b>")
+    sp = hedge.get("spread_return")
+    L.append("· 헤지 %s <i>· 스프레드 %s</i>" % (
+        HEDGE_BADGE.get(hedge.get("status"), "⚪"),
+        sig(sp * 100 if sp is not None else None, digits=1)))
+    L.append("· 혼잡 %s %s <i>(%s)</i>" % (
+        LEVEL_BADGE.get(crowding.get("level"), "⚪"), crowding.get("score"),
+        crowding.get("level")))
+    vr = hedge.get("spread_vol_ratio")
+    if vr is not None:
+        L.append("· 변동성비 %.2f" % float(vr))
 
-    longs = [n for n in nodes if n["role"] == "long"][:3]
+    longs = [n for n in nodes if n["role"] == "long"][:4]
     if longs:
-        L.append("병목 " + " · ".join(
-            f"{html.escape(n['label'].split(' ')[0])} {_pct(n['rs20'])}" for n in longs))
+        L.append("")
+        L.append("<b>병목 순위</b> <i>(20일 초과수익)</i>")
+        for n in longs:
+            r = n.get("rs20")
+            L.append("%s %s%s" % (
+                sig(r * 100 if r is not None else None, digits=1),
+                html.escape(clip(n["label"], 26)),
+                rank_arrow(n.get("rank_delta"))))
 
     shift = report.get("bottleneck_shift")
     if shift and shift.get("shifted"):
-        L.append(f"↳ 이동 {html.escape(shift['previous'].split(' ')[0])} → "
-                 f"{html.escape(shift['current'].split(' ')[0])}")
+        L.append("↳ <i>이동 %s → %s</i>" % (
+            html.escape(clip(shift["previous"], 12)),
+            html.escape(clip(shift["current"], 12))))
 
-    # 종합(summary)과 인사이트(key_insights)는 같은 문장을 다르게 담은 것이라
-    # 브리프에 둘 다 실을 이유가 없다 — 인사이트만 남긴다.
-    for i in (verdict.get("key_insights") or [])[:2]:
-        L.append(f"· {html.escape(str(i))[:90]}")
+    # 종합(summary)과 인사이트(key_insights)는 같은 문장이라 인사이트만 남긴다.
+    ins = (verdict.get("key_insights") or [])[:3]
+    if ins:
+        L.append("")
+        L.append("<b>판정 근거</b>")
+        for i in ins:
+            L.append("· " + html.escape(clip(str(i), LINE_COLS - 2)))
 
-    # 경보는 병목 이동 줄과 겹치는 항목을 뺀다.
     shifted = bool(shift and shift.get("shifted"))
     alerts = [a for a in report["rule_verdict"]["alerts"]
               if not (shifted and a.get("code") == "BOTTLENECK_SHIFT")]
     if alerts:
-        L.append("⚠️ " + html.escape(alerts[0]["text"])[:90])
+        L.append("")
+        for a in alerts[:2]:
+            mark = "🔴" if a["severity"] == "HIGH" else "ℹ️"
+            L.append("%s %s" % (mark, html.escape(clip(a["text"], LINE_COLS - 3))))
 
-    tail = []
+    tail = [""]
     if dashboard_url:
-        tail.append(f"📎 {dashboard_url}")
+        tail.append(f'📎 <a href="{dashboard_url}">전체 대시보드</a>')
     tail.append("<i>참고 정보 · 매매 권유 아님</i>")
     return "\n".join(cap_lines(L, tail))
 

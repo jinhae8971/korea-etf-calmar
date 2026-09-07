@@ -580,64 +580,134 @@ def render_telegram(payload):
 
 
 
-# ------------------------------------------------------ 500자 다이제스트 v1
-DIGEST_CAP = 500
-DIGEST_FROZEN_AT = "2026-09-07"
+# ---------------------------------------------- 가시성 규격 v2 (2026-09-07)
+# 글자 수보다 "한눈에 읽히는가"가 기준. 상한은 안전장치이지 목표가 아니다.
+#   · 한 줄 폭 LINE_COLS(반각) 이하 — 넘치면 모바일에서 접히고 들여쓰기가
+#     사라져 항목 경계가 무너진다. 접느니 줄을 나눈다.
+#   · 모든 증감에 색 점을 붙인다(전 트랙 동일 임계).
+DIGEST_CAP = 900
+LINE_COLS = 40
+VIS_FROZEN_AT = "2026-09-07"
 _TAGRE = re.compile(r"<[^>]+>")
 
 
-def plain_len(s):
-    return len(_TAGRE.sub("", s or ""))
+def vis_width(s):
+    """한글·이모지는 2칸으로 세는 표시 폭."""
+    return sum(2 if ord(c) > 0x2000 else 1 for c in _TAGRE.sub("", s or ""))
+
+
+def dot(v, unit="%"):
+    """증감 색 점. pp 는 %와 겨루도록 3배 가중(압축 규격과 동일 기준)."""
+    if v is None:
+        return "\u26aa"
+    x = v * 3.0 if unit == "pp" else v
+    if x >= 20:
+        return "\U0001F7E9"
+    if x >= 3:
+        return "\U0001F7E2"
+    if x > -3:
+        return "\u26aa"
+    if x > -20:
+        return "\U0001F534"
+    return "\U0001F7E5"
+
+
+def sig(v, unit="%", digits=0):
+    """색 점 + 부호 있는 값. 예: 🟢+8% / 🔴-12%"""
+    if v is None:
+        return "\u26aa–"
+    return "%s%+.*f%s" % (dot(v, unit), digits, v, "pp" if unit == "pp" else "%")
+
+
+def rank_arrow(d):
+    if not d:
+        return ""
+    return " \u25b2%d" % d if d > 0 else " \u25bc%d" % abs(d)
+
+
+def wrap_items(label, items, cols=LINE_COLS, sep=" \u00b7 "):
+    """라벨 + 항목들을 폭 상한에 맞춰 여러 줄로. 이어지는 줄은 공백 들여쓰기."""
+    out, cur = [], "<b>%s</b> " % label
+    pad = " " * (len(label) + 1)
+    for it in items:
+        cand = cur + (sep if cur.strip() != ("<b>%s</b>" % label) and not cur.endswith(" ") else "") + it
+        if vis_width(cand) > cols and vis_width(cur) > vis_width("<b>%s</b> " % label):
+            out.append(cur.rstrip())
+            cur = pad + it
+        else:
+            cur = cand if cur.endswith(" ") else cur + sep + it
+    if cur.strip():
+        out.append(cur.rstrip())
+    return out
+
+
+def clip(s, budget=LINE_COLS):
+    """표시 폭 기준으로 자른다. 글자 수로 자르면 한글에서 여전히 넘친다."""
+    limit = budget
+    out, w = [], 0
+    for ch in str(s):
+        cw = 2 if ord(ch) > 0x2000 else 1
+        if w + cw > limit - 2:   # 말줄임표(…)도 폭 2
+            out.append("\u2026")
+            break
+        out.append(ch)
+        w += cw
+    return "".join(out)
 
 
 def cap_lines(lines, tail, cap=DIGEST_CAP):
-    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    budget = cap - sum(len(_TAGRE.sub("", t)) + 1 for t in tail)
     out, used = [], 0
     for ln in lines:
-        n = plain_len(ln) + 1
+        n = len(_TAGRE.sub("", ln)) + 1
         if used + n > budget:
-            out.append("…")
+            out.append("\u2026")
             break
         out.append(ln)
         used += n
     return out + tail
 
 
-def render_digest(payload):
-    """텔레그램용 500자 요약. 관점 매트릭스·트랙 상세는 대시보드에 남는다."""
-    tracks = sorted(payload["tracks"], key=lambda x: (x["overall_rank"] or 99))
-    L = ["📊 <b>5트랙 상대강도</b> · %s" % esc(payload["as_of_kst"][5:16])]
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
 
-    bits = []
+
+def render_digest(payload):
+    """가시성 규격 v2 — 트랙당 한 블록, 증감은 색 점으로."""
+    tracks = sorted(payload["tracks"], key=lambda x: (x["overall_rank"] or 99))
+    L = ["📊 <b>5트랙 상대강도</b> · %s" % esc(payload["as_of_kst"][5:16]), ""]
+
     for t in tracks:
         d = t.get("delta") or {}
         ds = arrow(d.get("score")) if d.get("score") is not None else ""
-        if ds == "─":       # 보합은 기호 없이 — 압축 규격 v1
+        if ds == "─":
             ds = ""
+        medal = MEDAL[t["overall_rank"] - 1] if t.get("overall_rank") else "▫️"
         sc = "%.0f" % t["score"] if t.get("score") is not None else "—"
-        bits.append("%s%s %s%s" % (MEDAL[t["overall_rank"] - 1] if t.get("overall_rank") else "▫️",
-                                   esc(t["label"]), sc, ds))
-    L.append(" · ".join(bits))
-
-    def row(key, fmt, pick):
-        vals = [(t["label"], pick(t)) for t in tracks if pick(t) is not None]
-        vals.sort(key=lambda x: -x[1])
-        if not vals:
-            return None
-        return key + " " + esc(" · ".join(fmt % (n, v) for n, v in vals[:3]))
-
-    for ln in (row("30일", "%s %+.0f%%", lambda t: t.get("px30")),
-               row("TVL30", "%s %+.0f%%", lambda t: t.get("tvl30")),
-               row("매출30", "%s %+.0f%%", lambda t: t.get("rev_chg30"))):
-        if ln:
-            L.append(ln)
+        L.append("%s <b>%s</b> %s점%s" % (medal, esc(t["label"]), sc, ds))
+        bits = ["30d %s" % sig(t.get("px30") if t.get("px30") is not None else None)]
+        if t.get("tvl30") is not None:
+            bits.append("TVL %s" % sig(t["tvl30"]))
+        if t.get("rev_chg30") is not None:
+            bits.append("매출 %s" % sig(t["rev_chg30"]))
+        line = "   " + " · ".join(bits)
+        if vis_width(line) > LINE_COLS:
+            L.append("   " + " · ".join(bits[:2]))
+            if len(bits) > 2:
+                L.append("   " + " · ".join(bits[2:]))
+        else:
+            L.append(line)
+    L.append("")
 
     hi = [h for h in (payload.get("highlights") or []) if not _dup_highlight(h)]
     if hi:
-        L.append("변화 " + esc(hi[0]))
+        L.append("<b>변화</b>")
+        for h in hi[:2]:
+            L.append("· " + esc(clip(h, LINE_COLS - 2)))
+        L.append("")
 
-    tail = ["<i>성격이 다른 대상의 비교 · 수익률 예측 아님</i>",
-            "📊 전체 %s" % DASHBOARD_URL]
+    tail = ["<i>성격이 다른 대상의 비교 · 예측 아님</i>",
+            '📊 <a href="%s">전체 대시보드</a>' % DASHBOARD_URL]
     return "\n".join(cap_lines(L, tail))
 
 

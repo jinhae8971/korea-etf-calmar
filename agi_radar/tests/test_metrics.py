@@ -202,3 +202,18 @@ class TestDigestCap(unittest.TestCase):
         d = _json.load(_io.open(p, encoding="utf-8"))
         out = render.render_digest(d, "")
         self.assertNotIn("종합", out)
+
+
+class TestVisibility(unittest.TestCase):
+    """가시성 규격 v2 — 어떤 줄도 모바일 폭을 넘지 않고, 증감엔 색 점이 붙는다."""
+
+    def _t(self):
+        import io as _io, json as _json, os as _os, re as _re
+        return _re.sub(r"<[^>]+>", "", render.render_digest(_json.load(_io.open(_os.path.join(_os.path.dirname(__file__),'..','..','docs','agi-radar','data','latest.json'),encoding='utf-8')),'https://x/'))
+
+    def test_no_line_exceeds_mobile_width(self):
+        for ln in self._t().split("\n"):
+            self.assertLessEqual(render.vis_width(ln), render.LINE_COLS, ln)
+
+    def test_changes_carry_color_dots(self):
+        self.assertTrue(any(d in self._t() for d in ("🟩", "🟢", "⚪", "🔴", "🟥")))

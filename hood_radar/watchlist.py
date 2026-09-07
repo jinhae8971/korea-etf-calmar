@@ -769,7 +769,8 @@ ALERT_SEV = 6.0
 MAX_BODY_LINES = 2          # 판정 1줄 + 지표 1줄
 MAX_METRICS_PER_LINE = 2
 NO_INVALIDATION = "반증조건 미정 — 규칙 보완 필요"
-DIGEST_CAP = 500
+DIGEST_CAP = 900
+LINE_COLS = 40
 _TAGRE = re.compile(r"<[^>]+>")
 
 # 규칙이 action 을 채우지 않는 경로용 기본 반증조건.
@@ -933,7 +934,7 @@ def render_alert(state, alerts, cfg, dash_url=""):
     head.extend([ln for ln in render_telegram(state, alerts, cfg) if ln.strip()])
     if dash_url:
         head.append('<a href="%s">대시보드 열기</a>' % dash_url)
-    head.append("<i>관측 서술 · 매매 신호가 아닙니다.</i>")
+    head.append("<i>관측 서술 · 매매 신호 아님</i>")
     # 500자 상한 — 넘치면 종목 블록 뒤쪽부터 버리고 링크·면책은 남긴다
     out, used = [], 0
     tail = head[-2:] if dash_url else head[-1:]

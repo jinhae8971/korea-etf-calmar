@@ -593,70 +593,167 @@ def render_telegram(payload: dict) -> str:
 
 
 
-# ------------------------------------------------------ 500자 다이제스트 v1
-DIGEST_CAP = 500
-DIGEST_FROZEN_AT = "2026-09-07"
+# ---------------------------------------------- 가시성 규격 v2 (2026-09-07)
+# 글자 수보다 "한눈에 읽히는가"가 기준. 상한은 안전장치이지 목표가 아니다.
+#   · 한 줄 폭 LINE_COLS(반각) 이하 — 넘치면 모바일에서 접히고 들여쓰기가
+#     사라져 항목 경계가 무너진다. 접느니 줄을 나눈다.
+#   · 모든 증감에 색 점을 붙인다(전 트랙 동일 임계).
+DIGEST_CAP = 900
+LINE_COLS = 40
+VIS_FROZEN_AT = "2026-09-07"
 _TAGRE = re.compile(r"<[^>]+>")
 
 
-def plain_len(s):
-    return len(_TAGRE.sub("", s or ""))
+def vis_width(s):
+    """한글·이모지는 2칸으로 세는 표시 폭."""
+    return sum(2 if ord(c) > 0x2000 else 1 for c in _TAGRE.sub("", s or ""))
+
+
+def dot(v, unit="%"):
+    """증감 색 점. pp 는 %와 겨루도록 3배 가중(압축 규격과 동일 기준)."""
+    if v is None:
+        return "\u26aa"
+    x = v * 3.0 if unit == "pp" else v
+    if x >= 20:
+        return "\U0001F7E9"
+    if x >= 3:
+        return "\U0001F7E2"
+    if x > -3:
+        return "\u26aa"
+    if x > -20:
+        return "\U0001F534"
+    return "\U0001F7E5"
+
+
+def sig(v, unit="%", digits=0):
+    """색 점 + 부호 있는 값. 예: 🟢+8% / 🔴-12%"""
+    if v is None:
+        return "\u26aa–"
+    return "%s%+.*f%s" % (dot(v, unit), digits, v, "pp" if unit == "pp" else "%")
+
+
+def rank_arrow(d):
+    if not d:
+        return ""
+    return " \u25b2%d" % d if d > 0 else " \u25bc%d" % abs(d)
+
+
+def wrap_items(label, items, cols=LINE_COLS, sep=" \u00b7 "):
+    """라벨 + 항목들을 폭 상한에 맞춰 여러 줄로. 이어지는 줄은 공백 들여쓰기."""
+    out, cur = [], "<b>%s</b> " % label
+    pad = " " * (len(label) + 1)
+    for it in items:
+        cand = cur + (sep if cur.strip() != ("<b>%s</b>" % label) and not cur.endswith(" ") else "") + it
+        if vis_width(cand) > cols and vis_width(cur) > vis_width("<b>%s</b> " % label):
+            out.append(cur.rstrip())
+            cur = pad + it
+        else:
+            cur = cand if cur.endswith(" ") else cur + sep + it
+    if cur.strip():
+        out.append(cur.rstrip())
+    return out
+
+
+def clip(s, budget=LINE_COLS):
+    """표시 폭 기준으로 자른다. 글자 수로 자르면 한글에서 여전히 넘친다."""
+    limit = budget
+    out, w = [], 0
+    for ch in str(s):
+        cw = 2 if ord(ch) > 0x2000 else 1
+        if w + cw > limit - 2:   # 말줄임표(…)도 폭 2
+            out.append("\u2026")
+            break
+        out.append(ch)
+        w += cw
+    return "".join(out)
 
 
 def cap_lines(lines, tail, cap=DIGEST_CAP):
-    budget = cap - sum(plain_len(t) + 1 for t in tail)
+    budget = cap - sum(len(_TAGRE.sub("", t)) + 1 for t in tail)
     out, used = [], 0
     for ln in lines:
-        n = plain_len(ln) + 1
+        n = len(_TAGRE.sub("", ln)) + 1
         if used + n > budget:
-            out.append("…")
+            out.append("\u2026")
             break
         out.append(ln)
         used += n
     return out + tail
 
 
+def plain_len(s):
+    return len(_TAGRE.sub("", s or ""))
+
+
+SHORT_NARR = {
+    "프라이버시·포스트퀀텀": "프라이버시", "토큰화 주식·RWA 담보": "RWA",
+    "ZK 인프라 (프라이버시 파생)": "ZK", "스테이블 결제 레일": "스테이블",
+    "예측시장·페르프 융합": "예측·퍼프", "DePIN·분산 컴퓨트": "DePIN",
+    "신흥 체인 (2024년 이후)": "신흥체인", "AI 에이전트": "AI에이전트",
+}
+
+
 def render_digest(payload):
-    """텔레그램용 500자 요약. 전체 본문은 message_full·대시보드에 남는다."""
+    """가시성 규격 v2 — 한 항목 한 줄, 증감은 색 점으로."""
     if payload.get("data_status") != "OK":
         return render_telegram(payload)
     g = payload["market"]
     L = ["🧭 <b>내러티브 레이더</b> · %s" % esc(payload["as_of_kst"][5:16]),
-         "BTC $%.1fK · 도미넌스 %.1f%% · %s"
-         % (g["btc_price"] / 1000.0, g["btc_dominance"], esc(g["regime"]))]
+         "BTC $%.1fK %s · 도미넌스 %.1f%%"
+         % (g["btc_price"] / 1000.0, sig(g.get("btc_r24"), digits=1), g["btc_dominance"]),
+         "국면 <b>%s</b>" % esc(clip(g["regime"], LINE_COLS - 6))]
 
     ns = payload["narratives"]
     if ns:
-        up = ns[:2]
-        dn = ns[-2:]
-        L.append("강세 " + esc(" · ".join("%s %s" % (n["name"], fmt_pct(n["rs30"])) for n in up)))
-        L.append("약세 " + esc(" · ".join("%s %s" % (n["name"], fmt_pct(n["rs30"])) for n in dn)))
+        L.append("")
+        L.append("<b>내러티브</b> <i>(30일 BTC 대비)</i>")
+        for n in ns[:3] + ns[-2:]:
+            nm = SHORT_NARR.get(n["name"], n["name"])
+            L.append("%s %s <i>· 폭 %s</i>" % (
+                esc(nm), sig(n["rs30"], digits=1),
+                ("%.0f%%" % n["breadth"]) if n.get("breadth") is not None else "–"))
 
     co = payload.get("coins") or []
     if co:
-        L.append("종목 " + esc(" · ".join("%s %+.2f" % (c["symbol"], c["score"]) for c in co[:3])))
+        L.append("")
+        L.append("<b>부합도 상위</b>")
+        for c in co[:4]:
+            L.append("%s %+.2f <i>· 30d %s</i>" % (
+                esc(c["symbol"]), c["score"], sig(c["x30"])))
 
     dv = payload.get("divergence") or []
     if dv:
-        L.append("괴리 " + esc(" · ".join("%s %+.0f%%p" % (d["symbol"], d["div"]) for d in dv[:3])))
+        L.append("")
+        L.append("<b>TVL 괴리</b> <i>(가격−예치금)</i>")
+        for d in dv[:3]:
+            L.append("%s %s <i>· 가격%s TVL%s</i>" % (
+                esc(d["symbol"]), sig(d["div"], "pp"),
+                sig(d["price"]), sig(d["tvl_chg"])))
 
     lag = ((payload.get("discovery") or {}).get("lagging") or [])
     if lag:
-        L.append("발굴 " + esc(" · ".join("%s %+.0f%%p" % (x["symbol"], x["div"]) for x in lag[:2])))
+        L.append("")
+        L.append("<b>발굴</b> <i>(예치금↑ 가격↓)</i>")
+        for x in lag[:2]:
+            L.append("🆕 %s %s <i>· TVL %s</i>" % (
+                esc(x["symbol"]), sig(x["div"], "pp"), sig(x["tvl_chg"])))
 
-    # 표에 드러나지 않는 구조 변화만
-    shown = {c["symbol"] for c in co[:3]} | {d["symbol"] for d in dv[:3]}
+    shown = {c["symbol"] for c in co[:4]} | {d["symbol"] for d in dv[:3]}
     fresh = [e for e in payload["events"]
              if not ((e.get("kind") or "") in ("TURNOVER_SPIKE", "TVL_DIVERGENCE")
                      and (e.get("text", "").split(" ", 1)[0]) in shown)]
     if fresh:
-        L.append("변화 " + esc(fresh[0]["text"]))
+        L.append("")
+        L.append("<b>변화</b>")
+        for e in fresh[:2]:
+            icon = "🔴" if e["level"] == "high" else "🟡"
+            L.append("%s %s" % (icon, esc(clip(e["text"], LINE_COLS - 3))))
 
     bt = load_json(BACKTEST_PATH, None) or {}
-    tail = []
+    tail = [""]
     if bt.get("verdict") in ("NEGATIVE", "NO_EDGE"):
-        tail.append("⚠️ <i>과거검증 %s — 매매 근거로 쓰지 말 것</i>" % esc(bt["verdict"]))
-    tail.append("📊 전체 %s" % esc(payload.get("pages_url") or ""))
+        tail.append("⚠️ <i>과거검증 %s — 매매 근거 아님</i>" % esc(bt["verdict"]))
+    tail.append('📊 <a href="%s">전체 대시보드</a>' % esc(payload.get("pages_url") or ""))
     return "\n".join(cap_lines(L, tail))
 
 
