@@ -771,6 +771,45 @@ MAX_METRICS_PER_LINE = 2
 NO_INVALIDATION = "반증조건 미정 — 규칙 보완 필요"
 DIGEST_CAP = 900
 LINE_COLS = 40
+VIS_FROZEN_AT = "2026-09-07"
+
+
+def vis_width(x):
+    return sum(2 if ord(c) > 0x2000 else 1 for c in _TAGRE.sub("", x or ""))
+
+
+def clip(x, budget=LINE_COLS):
+    out, w = [], 0
+    for ch in str(x):
+        cw = 2 if ord(ch) > 0x2000 else 1
+        if w + cw > budget - 2:
+            out.append("\u2026")
+            break
+        out.append(ch)
+        w += cw
+    return "".join(out)
+
+
+def dot(v, unit="%"):
+    """증감 색 점 — 전 트랙 동일 임계(pp 는 3배 가중)."""
+    if v is None:
+        return "\u26aa"
+    x = v * 3.0 if unit == "pp" else v
+    if x >= 20:
+        return "\U0001F7E9"
+    if x >= 3:
+        return "\U0001F7E2"
+    if x > -3:
+        return "\u26aa"
+    if x > -20:
+        return "\U0001F534"
+    return "\U0001F7E5"
+
+
+def sig(v, unit="%", digits=1):
+    if v is None:
+        return "\u26aa–"
+    return "%s%+.*f%s" % (dot(v, unit), digits, v, "pp" if unit == "pp" else "%")
 _TAGRE = re.compile(r"<[^>]+>")
 
 # 규칙이 action 을 채우지 않는 경로용 기본 반증조건.
@@ -796,9 +835,8 @@ def _metric_rows(it, d):
         lim = flat if flat is not None else (0.3 if unit == "pp" else 0.5)
         if abs(delta) <= lim:
             return
-        arrow = (_arrow_pct(delta, flat=lim) if unit == "%"
-                 else _arrow_pp(delta, flat=lim, digits=digits))
-        rows.append((abs(delta) * (3.0 if unit == "pp" else 1.0), _with(label, arrow)))
+        rows.append((abs(delta) * (3.0 if unit == "pp" else 1.0),
+                     "%s %s" % (label, sig(delta, unit, digits))))
 
     if it.get("issuance_rate"):
         push(d.get("issuance"), "%", "발행 %.1f개/분" % it["issuance_rate"])
@@ -837,9 +875,7 @@ def _headline(it):
     basis, d = _pick_basis(it)
     px = "$%s" % _fmt_px(it.get("price"))
     if d and d.get("px") is not None:
-        arrow = _arrow_pct(d["px"])
-        if arrow and arrow != "\u2500":   # 보합이면 괄호 자체를 달지 않는다
-            px += " (%s%s)" % ("전일" if basis == "day" else "직전", arrow)
+        px += " " + sig(d["px"])
     return px
 
 
@@ -855,9 +891,9 @@ def render_telegram(state, alerts, cfg):
         return []
     refs = state.get("delta_refs") or {}
     if refs.get("day_kst"):
-        basis_note = "전일 %s 대비" % refs["day_kst"]
+        basis_note = "전일 %s 대비" % refs["day_kst"][:5]
     elif refs.get("prev_kst"):
-        basis_note = "직전 %s 대비 (전일 기준은 이력 축적 중)" % refs["prev_kst"]
+        basis_note = "직전 %s 대비 (이력 축적 중)" % refs["prev_kst"][:5]
     else:
         basis_note = "첫 관측 — 비교 기준 없음"
 
@@ -883,30 +919,50 @@ def render_telegram(state, alerts, cfg):
         head = "%s <b>%s</b>  %s" % (BADGE[sev], sym, _esc(_headline(it)))
 
         if sev == "ok":
-            tail = (" · " + _esc(" · ".join(metrics[:MAX_METRICS_PER_LINE]))
-                    if metrics else " · 특이사항 없음")
-            blocks.append((_SEV_RANK[sev], sym, [head + tail]))
+            # 폭이 허락하는 만큼만 같은 줄에 붙이고, 넘치면 다음 줄로 내린다.
+            if not metrics:
+                blocks.append((_SEV_RANK[sev], sym, [head + " · 특이사항 없음"]))
+                continue
+            lines, cur = [], head
+            for mtext in metrics[:MAX_METRICS_PER_LINE]:
+                cand = cur + " · " + _esc(mtext)
+                if vis_width(cand) > LINE_COLS:
+                    lines.append(cur)
+                    cur = "   <i>%s</i>" % _esc(mtext)
+                else:
+                    cur = cand
+            lines.append(cur)
+            blocks.append((_SEV_RANK[sev], sym, lines))
             continue
 
         top = mine[0]
-        lines = [head, "   <i>%s</i>" % _esc(top.get("detail", ""))]
+        lines = [head, "   <i>%s</i>" % _esc(clip(top.get("detail", ""), LINE_COLS - 3))]
         budget = MAX_BODY_LINES - 1
         i = 0
         while budget > 0 and i < len(metrics):
-            lines.append("   <i>%s</i>"
-                         % _esc(" · ".join(metrics[i:i + MAX_METRICS_PER_LINE])))
-            i += MAX_METRICS_PER_LINE
+            cur = "   <i>"
+            taken = 0
+            for mtext in metrics[i:i + MAX_METRICS_PER_LINE]:
+                cand = cur + ("" if taken == 0 else " · ") + _esc(mtext)
+                if taken and vis_width(cand) > LINE_COLS:
+                    break
+                cur = cand
+                taken += 1
+            lines.append(cur + "</i>")
+            i += max(taken, 1)
             budget -= 1
         inval = (top.get("action")
                  or DEFAULT_INVALIDATION.get(top.get("code"))
                  or NO_INVALIDATION)
-        lines.append("   <i>\u21bb %s</i>" % _esc(inval))
+        head_inval = "   \u21bb "
+        lines.append("   <i>\u21bb %s</i>"
+                     % _esc(clip(inval, LINE_COLS - vis_width(head_inval))))
         if len(mine) > 1:
             lines.append("   <i>외 경보 %d건 — 대시보드</i>" % (len(mine) - 1))
         blocks.append((_SEV_RANK[sev], sym, lines))
 
     blocks.sort(key=lambda b: (b[0], b[1]))
-    out = ["\U0001F4CC <b>보유 종목 정밀 감시</b> <i>%s</i>" % _esc(basis_note)]
+    out = ["\U0001F4CC <b>보유 감시</b> <i>%s</i>" % _esc(basis_note)]
     for _, _, ls in blocks:
         out.extend(ls)
     out.append("")
@@ -925,10 +981,10 @@ def _fmt_px(p):
 def render_alert(state, alerts, cfg, dash_url=""):
     """시간별 단독 실행에서 임계 위반이 있을 때 나가는 메시지. 경보 0건이면 점검용 본문."""
     if alerts:
-        head = ["\U0001F6A8 <b>보유 종목 경보</b> — %s KST" % state.get("as_of_kst", "")]
+        head = ["\U0001F6A8 <b>보유 종목 경보</b> · %s" % state.get("as_of_kst", "")[5:16]]
     else:
-        head = ["\U0001F52D <b>보유 종목 점검</b> — %s KST · 임계 초과 없음"
-                % state.get("as_of_kst", "")]
+        head = ["\U0001F52D <b>보유 점검</b> · %s · 임계 초과 없음"
+                % state.get("as_of_kst", "")[5:16]]
     head.append("")
     # 경보는 종목 블록 안에서 판정 줄로 표현된다 — 위아래로 두 번 쓰지 않는다.
     head.extend([ln for ln in render_telegram(state, alerts, cfg) if ln.strip()])

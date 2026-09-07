@@ -121,7 +121,7 @@ class TestCooldown(unittest.TestCase):
 class TestRender(unittest.TestCase):
     def test_section_renders_without_alerts(self):
         lines = wl.render_telegram(state(), [], CFG)
-        self.assertTrue(any("보유 종목 정밀 감시" in ln for ln in lines))
+        self.assertTrue(any("보유 감시" in ln for ln in lines))
 
     def test_html_is_escaped(self):
         lines = wl.render_telegram(state(symbol="<b>X"), [], CFG)
@@ -314,18 +314,22 @@ class TestDeltas(unittest.TestCase):
         st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
         wl.annotate_deltas(st, self._hist(), NOW)
         text = "\n".join(wl.render_telegram(st, [], CFG))
-        self.assertIn("전일▼9.1%", text)
-        self.assertNotIn("직전▲2.0%", text)
+        # 가시성 규격 v2 — 화살표 대신 색 점 + 부호값, 기준은 여전히 하나만
+        self.assertIn("🔴-9.1%", text)
+        self.assertNotIn("+2.0%", text)
         # 순위·배수 변화는 사건이므로 최상위로 올라온다
         self.assertIn("시총 3위→2위", text)
         self.assertIn("배수 4.0→3.6배", text)
 
-    def test_ok_item_is_one_line(self):
+    def test_ok_item_stays_compact_and_within_width(self):
+        """정상 종목은 최대 2줄, 어떤 줄도 모바일 폭을 넘지 않는다."""
         st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
         wl.annotate_deltas(st, self._hist(), NOW)
         body = [ln for ln in wl.render_telegram(st, [], CFG) if ln.strip()][1:]
-        self.assertEqual(len(body), 1)
+        self.assertLessEqual(len(body), 2)
         self.assertTrue(body[0].startswith("\u26aa"))
+        for ln in body:
+            self.assertLessEqual(wl.vis_width(ln), wl.LINE_COLS, ln)
 
     def test_alert_item_is_badged_and_has_invalidation(self):
         st = state(rev24=12.0, pf=3.6, lp_share=82.0, rank=2)
@@ -376,8 +380,7 @@ class TestDeltas(unittest.TestCase):
                                      liq={"PONS": 20.0}, vol24={"PONS": 10.0})], NOW)
         text = "\n".join(wl.render_telegram(st, [], CFG))
         self.assertIn("이력 축적 중", text)
-        self.assertIn("직전▲2.0%", text)
-        self.assertNotIn("전일▲", text)
+        self.assertIn("⚪+2.0%", text)  # 2.0%는 보합 임계(3%) 안
 
     def test_flat_is_a_dash_not_a_number(self):
         self.assertEqual(wl._arrow_pct(0.2), "─")
@@ -391,8 +394,8 @@ class TestDeltas(unittest.TestCase):
 
 
 class TestFlatHeadline(unittest.TestCase):
-    def test_flat_price_shows_no_parenthesis(self):
+    def test_flat_price_shows_neutral_dot(self):
         it = {"symbol": "X", "resolved": True, "price": 1.0,
               "delta": {"day": {"px": 0.1}, "prev": None}}
+        self.assertIn("⚪", wl._headline(it))
         self.assertNotIn("─", wl._headline(it))
-        self.assertNotIn("(", wl._headline(it))
