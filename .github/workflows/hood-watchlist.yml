@@ -47,7 +47,10 @@ jobs:
           else
             git commit -m "chore(watchlist): $(date -u +%Y-%m-%dT%H:%MZ)"
             for i in 1 2 3; do
-              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break
-              echo "push 재시도 $i"; sleep 5
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+              git rebase --abort 2>/dev/null || true
+              echo "push 재시도 $i"; sleep $((i * 5))
             done
+            echo "::error::3회 시도 후에도 푸시 실패 — 스냅샷이 반영되지 않았습니다"
+            exit 1
           fi

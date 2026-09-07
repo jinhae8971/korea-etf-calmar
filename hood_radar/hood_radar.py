@@ -1388,10 +1388,10 @@ def main():
             wl_hist = read_json(wl_hist_path, [])
             wstate = watchlist.build(cfg, rows=rows, protocol_payload=payload.get("protocol"))
             walerts = watchlist.evaluate(wstate, wl_hist, cfg, int(now.timestamp()))
-            wl_hist.append(watchlist.snapshot(wstate, int(now.timestamp())))
-            wl_hist.sort(key=lambda s: s.get("epoch") or 0)
-            wl_hist = wl_hist[-int(cfg.get("wl_history_max", 400)):]
-            write_json_if_changed(wl_hist_path, wl_hist)
+            # watchlist_history.json 의 소유자는 매시 도는 hood-watchlist.yml 이다.
+            # 6h 런이 같은 파일에 함께 쓰면 두 워크플로우가 겹칠 때 rebase 충돌이
+            # 나고, 커밋 스텝이 조용히 실패해 스냅샷이 통째로 유실된다(실제 발생).
+            # 여기서는 읽어서 델타만 계산하고 쓰지 않는다.
             payload["watchlist"] = wstate
             payload["watchlist_alerts"] = walerts
         except Exception as exc:
