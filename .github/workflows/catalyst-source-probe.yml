@@ -1,0 +1,74 @@
+name: catalyst-source-probe
+
+# 수동 전용. 컨테이너와 러너의 IP 제약이 다르다는 것을 반복해서 겪었다
+# (바이낸스 451 / Yahoo 429 / GitHub 미인증 403). 원천을 바꾸거나 수집이
+# 이상할 때 이걸 먼저 돌려 러너 기준 응답을 확정한다.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Probe sources (runner IP)
+        working-directory: catalyst_radar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, sys, time
+          sys.path.insert(0, ".")
+          from net import fetch, get_json, gh_json, post_json, FetchError
+
+          CASES = [
+              ("coingecko markets", lambda: get_json(
+                  "https://api.coingecko.com/api/v3/coins/markets"
+                  "?vs_currency=usd&order=market_cap_desc&per_page=100&page=1"),
+               lambda d: "%d종목" % len(d)),
+              ("defillama chains", lambda: get_json("https://api.llama.fi/v2/chains"),
+               lambda d: "%d체인 / gecko_id %d" % (len(d), sum(1 for c in d if c.get("gecko_id")))),
+              ("defillama protocols", lambda: get_json("https://api.llama.fi/protocols"),
+               lambda d: "%d개 / gecko_id %d" % (len(d), sum(1 for p in d if p.get("gecko_id")))),
+              ("github api (인증)", lambda: gh_json("/repos/anza-xyz/agave/releases?per_page=3"),
+               lambda d: "최신 %s" % (d[0]["tag_name"] if d else "없음")),
+              ("github atom (폴백)", lambda: fetch("https://github.com/anza-xyz/agave/releases.atom"),
+               lambda d: "entries=%d" % d.count(b"<entry>")),
+              ("snapshot graphql", lambda: post_json(
+                  "https://hub.snapshot.org/graphql",
+                  {"query": '{proposals(first:3,where:{space:"aave.eth"}){id state}}'}),
+               lambda d: "%d건" % len(((d or {}).get("data") or {}).get("proposals") or [])),
+              ("cosmos lcd", lambda: get_json(
+                  "https://rest.cosmos.directory/cosmoshub/cosmos/gov/v1/proposals"
+                  "?pagination.limit=3&pagination.reverse=true"),
+               lambda d: "%d건" % len((d or {}).get("proposals") or [])),
+              ("google news rss", lambda: fetch(
+                  "https://news.google.com/rss/search?q=solana&hl=en-US&gl=US&ceid=US:en"),
+               lambda d: "items=%d" % d.count(b"<item>")),
+          ]
+
+          fails = []
+          for name, call, fmt in CASES:
+              t0 = time.time()
+              try:
+                  out = fmt(call())
+                  print("[OK  ] %-22s %5.1fs  %s" % (name, time.time() - t0, out))
+              except Exception as e:
+                  fails.append(name)
+                  print("[FAIL] %-22s %5.1fs  %s: %s" % (
+                      name, time.time() - t0, type(e).__name__, str(e)[:120]))
+              time.sleep(2)
+
+          print("\n요약: %d/%d 정상" % (len(CASES) - len(fails), len(CASES)))
+          if fails:
+              print("::warning::러너에서 실패한 원천: %s" % ", ".join(fails))
+          PY
