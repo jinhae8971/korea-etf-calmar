@@ -31,7 +31,6 @@ import chainvol         # noqa: E402
 import crosscheck
 import protocol        # noqa: E402
 import security          # noqa: E402
-import watchlist         # noqa: E402
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE, "data")
@@ -667,19 +666,8 @@ def render_telegram(payload, cfg, dash_url):
              "%s KST · 6시간 주기 · %s" % (payload["as_of_kst"], payload["data_status"]),
              ""]
 
-    wl_lines = watchlist.render_telegram(
-        payload.get("watchlist"), payload.get("watchlist_alerts") or [], cfg)
-    if wl_lines:
-        # 보유 섹션은 맨 위 — 길이 초과 시 잘려나가는 쪽은 순위표여야 한다
-        lines.extend(wl_lines)
-
     top = rows[: cfg["top_n_telegram"]]
     shown = set()
-    held = set()
-    wl_state = payload.get("watchlist") or {}
-    for it in (wl_state.get("items") or []):
-        if it.get("symbol"):
-            held.add(it["symbol"])
 
     lines.append("<b>시총 TOP %d</b>" % len(top))
     for row in top:
@@ -689,10 +677,8 @@ def render_telegram(payload, cfg, dash_url):
         else:
             mark = "–"
         _, chg = chg_str(row)
-        # 보유 종목은 위 블록에서 이미 상세히 다뤘다 — 점으로만 표시한다
-        dot = "●" if row["symbol"] in held else " "
-        lines.append("%s%2d. <b>%s</b> $%s %s <code>%s</code>" % (
-            dot, row["rank"], esc(label(row)), human(row["mcap"]), chg, mark))
+        lines.append(" %2d. <b>%s</b> $%s %s <code>%s</code>" % (
+            row["rank"], esc(label(row)), human(row["mcap"]), chg, mark))
     lines.append("")
 
     # 순위 급변과 시총 급변을 하나로 — 둘 다 '무엇이 크게 움직였나'의 서술이고,
@@ -860,27 +846,6 @@ def render_digest(payload, cfg, dash_url):
     rows = payload["rows"]
     ev = payload["events"]
     L = ["🏹 <b>로빈후드 밈 레이더</b> · %s" % esc(payload["as_of_kst"][5:16]), ""]
-
-    # 보유 — 종목당 한 줄. 경보가 있으면 판정을 이어 붙인다.
-    wl = payload.get("watchlist") or {}
-    by_sym = {}
-    for a_ in (payload.get("watchlist_alerts") or []):
-        by_sym.setdefault(a_["symbol"], []).append(a_)
-    for v in by_sym.values():
-        v.sort(key=lambda x: -fnum(x.get("severity")))
-    if wl.get("items"):
-        L.append("<b>보유</b>")
-    for it in (wl.get("items") or []):
-        sym = it.get("symbol")
-        d = ((it.get("delta") or {}).get("day") or (it.get("delta") or {}).get("prev") or {})
-        px = sig(d.get("px"), digits=1) if d.get("px") is not None else "⚪–"
-        mine = by_sym.get(sym) or []
-        badge = ("🔴" if fnum(mine[0].get("severity")) >= 6.0 else "🟡") if mine else "⚪"
-        L.append("%s <b>%s</b> %s" % (badge, esc(sym), px))
-        if mine:
-            head = "   "
-            L.append(head + "<i>%s</i>" % esc(
-                clip(mine[0]["detail"], LINE_COLS - vis_width(head))))
 
     # TOP — 순위 변동 화살표 + 24h 색 점
     top = rows[: cfg["top_n_telegram"]][:5]
@@ -1461,24 +1426,6 @@ def main():
             payload["protocol"] = None
             payload["protocol_events"] = []
 
-    # ---- 보유 종목 정밀 감시 (밈·프로토콜 두 트랙을 가로지른다) ----
-    wl_hist_path = os.path.join(DATA_DIR, "watchlist_history.json")
-    if cfg.get("watchlist_enabled", True):
-        try:
-            wl_hist = read_json(wl_hist_path, [])
-            wstate = watchlist.build(cfg, rows=rows, protocol_payload=payload.get("protocol"))
-            walerts = watchlist.evaluate(wstate, wl_hist, cfg, int(now.timestamp()))
-            # watchlist_history.json 의 소유자는 매시 도는 hood-watchlist.yml 이다.
-            # 6h 런이 같은 파일에 함께 쓰면 두 워크플로우가 겹칠 때 rebase 충돌이
-            # 나고, 커밋 스텝이 조용히 실패해 스냅샷이 통째로 유실된다(실제 발생).
-            # 여기서는 읽어서 델타만 계산하고 쓰지 않는다.
-            payload["watchlist"] = wstate
-            payload["watchlist_alerts"] = walerts
-        except Exception as exc:
-            # 보유 섹션이 본 브리프를 인질로 잡지 않는다
-            print("[watchlist] 실패(본 브리프는 정상 진행): %s" % exc)
-            payload["watchlist"] = None
-            payload["watchlist_alerts"] = []
 
     spark = {}
     for row in rows[:8]:
