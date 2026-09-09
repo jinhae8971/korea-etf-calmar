@@ -2,8 +2,8 @@ name: HOOD Radar (Robinhood Chain memecoin ranking)
 
 on:
   schedule:
-    # KST 00:07 / 06:07 / 12:07 / 18:07 — 정각·30분 러너 혼잡 회피
-    - cron: '43 15,21,3,9 * * *'
+    # KST 06:43 / 12:43 / 18:43 — 정각·30분 러너 혼잡 회피. 자정 슬롯은 폐지(야간 발송 금지)
+    - cron: '43 21,3,9 * * *'
   workflow_dispatch:
     inputs:
       backfill:
