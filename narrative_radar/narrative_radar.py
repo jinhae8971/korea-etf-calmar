@@ -707,7 +707,9 @@ def render_digest(payload):
     if ns:
         L.append("")
         L.append("<b>내러티브</b> <i>(30일 BTC 대비)</i>")
-        for n in ns[:3] + ns[-2:]:
+        # 8개 내러티브 전부 표시 — 상위3+하위2만 보이면 중간(RWA 등)이 사라져
+        # 섹터 비교가 안 된다. 2026-09-12 요청: RWA도 항상 보이게.
+        for n in ns:
             nm = SHORT_NARR.get(n["name"], n["name"])
             L.append("%s %s <i>· 폭 %s</i>" % (
                 esc(nm), sig(n["rs30"], digits=1),

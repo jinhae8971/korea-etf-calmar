@@ -597,6 +597,19 @@ class TestDigestCap(unittest.TestCase):
         self.assertEqual(out[-1], "TAIL")
 
 
+class TestDigestAllNarratives(unittest.TestCase):
+    def test_every_narrative_including_rwa_is_listed(self):
+        import io as _io, json as _json, os as _os, re as _re
+        p = _os.path.join(_os.path.dirname(__file__), "..", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        if d.get("data_status") != "OK":
+            self.skipTest("no OK snapshot")
+        t = _re.sub(r"<[^>]+>", "", nr.render_digest(d))
+        for n in d["narratives"]:
+            self.assertIn(nr.SHORT_NARR.get(n["name"], n["name"]), t)
+        self.assertIn("RWA", t)
+
+
 class TestVisibility(unittest.TestCase):
     """가시성 규격 v2 — 어떤 줄도 모바일 폭을 넘지 않고, 증감엔 색 점이 붙는다."""
 
