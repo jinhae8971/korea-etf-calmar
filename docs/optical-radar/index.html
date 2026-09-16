@@ -70,7 +70,7 @@ async function load(){
   const bust='?t='+Math.floor(Date.now()/300000);
   const [L,Hh]=await Promise.all([fetch('data/latest.json'+bust).then(r=>r.json()),fetch('data/history.json'+bust).then(r=>r.json()).catch(()=>[])]);
   $('#sub').textContent=`${L.as_of} 美 종가 기준 · 생성 ${L.generated_kst} KST · 광통신 ${L.optical.members.length}종목 / 메모리 ${L.memory.members.length}종목 동일가중`;
-  if(L.data_status!=='OK'){$('#warn').innerHTML=`<div class="warn">⚠️ 데이터 ${L.data_status}: ${Object.entries(L.fetch_status).filter(([k,v])=>v!=='fresh').map(([k,v])=>k+'='+v).join(', ')}</div>`}
+  if(L.data_status!=='OK'){$('#warn').innerHTML=`<div class="warn">⚠️ 데이터 ${L.data_status}: ${Object.entries(L.fetch_status).filter(([k,v])=>!String(v).startsWith('fresh')).map(([k,v])=>k+'='+v).join(', ')}</div>`}
   const sb=L.scoreboard,om=L.optical_vs_memory;
   $('#score').innerHTML='<table><tr><th>구분</th><th>1D</th><th>1W</th><th>1M</th><th>3M</th><th>YTD</th><th>RS 1M</th><th>RS 3M</th><th>RS 추세</th><th>RS 1Y백분위</th><th>거래량배수</th><th>상승거래량</th><th>MFI</th><th>OBV기울기</th></tr>'+
     sb.map(r=>`<tr><td><b>${r.label}</b> <span class="mut">${r.n}</span></td>${td(r.r1d)}${td(r.r1w)}${td(r.r1m)}${td(r.r3m)}${td(r.ytd,0)}${td(r.rs_1m)}${td(r.rs_3m)}<td>${arrow(r.rs_slope20)}</td><td>${f(r.rs_pct_1y,0,false,'')}</td><td>${f(r.flow.vol_ratio,2,false,'x')}</td><td>${f(r.flow.upvol,0,false)}</td><td>${f(r.flow.mfi,0,false,'')}</td><td>${f(r.flow.obv_slope,1,true,'')}</td></tr>`).join('')+
