@@ -82,13 +82,13 @@ class Pipeline(unittest.TestCase):
         import random
         random.seed(7)
         bars = {}
-        for s in list(uni["optical"]["symbols"]) + list(uni["memory"]["symbols"]) + ["^IXIC", "QQQ"]:
+        for s in list(uni["optical"]["symbols"]) + list(uni.get("optical_ext",{}).get("symbols",{})) + list(uni["memory"]["symbols"]) + ["^IXIC", "QQQ"]:
             c, seq = 100.0, []
             for _ in range(300):
                 c *= 1 + random.uniform(-0.03, 0.035); seq.append(c)
             bars[s] = mk(seq, vol=random.uniform(500, 5000))
         snap = R.build_snapshot(uni, bars, {s: "fresh" for s in bars}, "2026-09-17")
-        self.assertEqual(len(snap["optical"]["top5"]), 5)
+        self.assertEqual(len(snap["optical"]["top5"]), min(5, len(uni["optical"]["symbols"])))
         self.assertEqual(snap["data_status"], "OK")
         msgs = R.build_messages(snap, "https://x")
         self.assertEqual(len(msgs), 2)
