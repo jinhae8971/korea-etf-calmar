@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optical Radar — 광통신 · 메모리 · 나스닥</title>
+<style>
+:root{--bg:#0e1116;--card:#161b24;--line:#232b38;--fg:#e6e9ef;--mut:#8b95a7;--opt:#5ad1ff;--mem:#ffb454;--ndq:#9aa4b5;--up:#43d18c;--dn:#ff5c6c;--hot:#ff8c42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:18px 14px 60px}
+h1{font-size:20px;margin:0 0 4px}h2{font-size:15px;margin:0 0 10px;color:var(--fg)}
+.sub{color:var(--mut);font-size:12px;margin-bottom:16px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;white-space:nowrap}
+th,td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--line)}th{color:var(--mut);font-weight:500;font-size:12px}
+td:first-child,th:first-child{text-align:left}
+.up{color:var(--up)}.dn{color:var(--dn)}.mut{color:var(--mut)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;background:#222a37}
+.gauge{font-size:34px;font-weight:700}
+.bar{height:10px;border-radius:5px;background:linear-gradient(90deg,#3a9bff,#ffd166,#ff5c6c);position:relative;margin:8px 0 14px}
+.bar i{position:absolute;top:-4px;width:4px;height:18px;background:#fff;border-radius:2px;transform:translateX(-2px)}
+.comp{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:12px}
+.comp b{font-weight:500;color:var(--mut)}
+.pat{font-size:12px;margin-top:8px}.pat span{display:inline-block;background:#2b2230;color:var(--hot);border-radius:6px;padding:1px 6px;margin:2px 4px 2px 0}
+svg{width:100%;height:auto;display:block}
+.legend{font-size:12px;color:var(--mut)}.legend i{display:inline-block;width:10px;height:3px;margin:0 4px 3px 0}
+.warn{background:#3a2a1a;border:1px solid #6b4a1e;border-radius:8px;padding:8px 12px;font-size:12px;margin-bottom:14px}
+@media (prefers-color-scheme: light){:root{--bg:#f5f7fa;--card:#fff;--line:#e3e7ee;--fg:#16202e;--mut:#5f6b7e}.badge{background:#eef1f6}.pat span{background:#fff0e6}}
+</style>
+</head>
+<body><div class="wrap">
+<h1>📡 Optical Radar</h1>
+<div class="sub" id="sub">불러오는 중…</div>
+<div id="warn"></div>
+<div class="grid">
+  <div class="card" style="grid-column:1/-1"><h2>① 상대 퍼포먼스 · 나스닥 대비 RS · 수급 프록시</h2><div id="score"></div></div>
+  <div class="card"><h2>② 바스켓 지수 (6개월, 100 기준)</h2><div id="idxchart"></div><div class="legend"><i style="background:var(--opt)"></i>광통신 <i style="background:var(--mem)"></i>메모리 <i style="background:var(--ndq)"></i>나스닥</div></div>
+  <div class="card"><h2>③ 나스닥 대비 상대강도 (6개월, 100 기준)</h2><div id="rschart"></div><div class="legend"><i style="background:var(--opt)"></i>광통신÷나스닥 <i style="background:var(--mem)"></i>메모리÷나스닥</div></div>
+  <div class="card"><h2>④ 광통신 과열 게이지</h2><div id="gauge"></div></div>
+  <div class="card"><h2>⑤ 게이지 추이 (90일)</h2><div id="gchart"></div></div>
+  <div class="card" style="grid-column:1/-1"><h2>⑥ 광통신 종목 상세</h2><div id="members"></div></div>
+  <div class="card" style="grid-column:1/-1"><h2>⑦ 메모리 종목</h2><div id="memmembers"></div></div>
+</div>
+<p class="sub" style="margin-top:18px">게이지는 위치 보고이지 천정 예측이 아닙니다. 수급 프록시는 거래량 기반(펀드 플로우 데이터 아님). 원천: Yahoo Finance 일봉. Samsung Display AX Team 개인 자동화.</p>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const f=(v,d=1,sign=true,suf='%')=>v==null?'—':(sign&&v>0?'+':'')+v.toFixed(d)+suf;
+const cls=v=>v==null?'mut':v>0?'up':v<0?'dn':'';
+const td=(v,d=1,sign=true,suf='%')=>`<td class="${cls(sign?v:null)}">${f(v,d,sign,suf)}</td>`;
+const arrow=s=>s==null?'·':s>1?'↗':s<-1?'↘':'→';
+function line(series,colors,h=200,base=true){
+  const all=series.filter(s=>s.length);if(!all.length)return'<div class="mut">데이터 없음</div>';
+  const W=640,H=h,p=28;const n=Math.max(...all.map(s=>s.length));
+  const norm=all.map(s=>{const b=base?s[0][1]:1;return s.map(([d,v])=>[d,v/b*(base?100:1)])});
+  const ys=norm.flat().map(x=>x[1]);const lo=Math.min(...ys),hi=Math.max(...ys);
+  const X=i=>p+(i/(n-1))*(W-2*p),Y=v=>H-p-((v-lo)/((hi-lo)||1))*(H-2*p);
+  let g='';const ticks=4;for(let t=0;t<=ticks;t++){const v=lo+(hi-lo)*t/ticks;g+=`<line x1="${p}" x2="${W-p}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${p-4}" y="${Y(v)+4}" font-size="10" fill="var(--mut)" text-anchor="end">${v.toFixed(0)}</text>`}
+  if(base){g+=`<line x1="${p}" x2="${W-p}" y1="${Y(100)}" y2="${Y(100)}" stroke="var(--mut)" stroke-dasharray="3 3"/>`}
+  norm.forEach((s,k)=>{g+=`<polyline fill="none" stroke="${colors[k]}" stroke-width="2" points="${s.map((x,i)=>X(i)+','+Y(x[1])).join(' ')}"/>`;
+    const last=s[s.length-1];g+=`<text x="${X(s.length-1)+3}" y="${Y(last[1])+4}" font-size="10" fill="${colors[k]}">${last[1].toFixed(0)}</text>`});
+  const first=all[0][0][0],lastd=all[0][all[0].length-1][0];
+  g+=`<text x="${p}" y="${H-6}" font-size="10" fill="var(--mut)">${first}</text><text x="${W-p}" y="${H-6}" font-size="10" fill="var(--mut)" text-anchor="end">${lastd}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}</svg>`}
+function memberTable(ms,top5){
+  const h='<tr><th>종목</th><th>종가</th><th>1D</th><th>1W</th><th>1M</th><th>3M</th><th>YTD</th><th>RSI</th><th>50MA</th><th>200MA</th><th>52w고점</th><th>거래량배수</th><th>상승거래량</th><th>MFI</th><th>패턴</th></tr>';
+  return '<table>'+h+ms.map(m=>`<tr><td>${top5&&top5.includes(m.symbol)?'⭐ ':''}<b>${m.symbol}</b> <span class="mut">${m.name||''}</span></td><td>${m.close.toLocaleString()}</td>${td(m.r1d)}${td(m.r1w)}${td(m.r1m)}${td(m.r3m)}${td(m.ytd,0)}<td class="${m.rsi>=70?'dn':m.rsi<=30?'up':''}">${f(m.rsi,0,false,'')}</td>${td(m.d50,0)}${td(m.d200,0)}${td(m.from_52w_high,0)}<td>${f(m.vol_ratio,2,false,'x')}</td><td>${f(m.upvol,0,false)}</td><td>${f(m.mfi,0,false,'')}</td><td style="text-align:left">${(m.patterns||[]).map(p=>`<span class="badge">${p}</span>`).join(' ')||'<span class="mut">—</span>'}</td></tr>`).join('')+'</table>'}
+async function load(){
+  const bust='?t='+Math.floor(Date.now()/300000);
+  const [L,Hh]=await Promise.all([fetch('data/latest.json'+bust).then(r=>r.json()),fetch('data/history.json'+bust).then(r=>r.json()).catch(()=>[])]);
+  $('#sub').textContent=`${L.as_of} 美 종가 기준 · 생성 ${L.generated_kst} KST · 광통신 ${L.optical.members.length}종목 / 메모리 ${L.memory.members.length}종목 동일가중`;
+  if(L.data_status!=='OK'){$('#warn').innerHTML=`<div class="warn">⚠️ 데이터 ${L.data_status}: ${Object.entries(L.fetch_status).filter(([k,v])=>v!=='fresh').map(([k,v])=>k+'='+v).join(', ')}</div>`}
+  const sb=L.scoreboard,om=L.optical_vs_memory;
+  $('#score').innerHTML='<table><tr><th>구분</th><th>1D</th><th>1W</th><th>1M</th><th>3M</th><th>YTD</th><th>RS 1M</th><th>RS 3M</th><th>RS 추세</th><th>RS 1Y백분위</th><th>거래량배수</th><th>상승거래량</th><th>MFI</th><th>OBV기울기</th></tr>'+
+    sb.map(r=>`<tr><td><b>${r.label}</b> <span class="mut">${r.n}</span></td>${td(r.r1d)}${td(r.r1w)}${td(r.r1m)}${td(r.r3m)}${td(r.ytd,0)}${td(r.rs_1m)}${td(r.rs_3m)}<td>${arrow(r.rs_slope20)}</td><td>${f(r.rs_pct_1y,0,false,'')}</td><td>${f(r.flow.vol_ratio,2,false,'x')}</td><td>${f(r.flow.upvol,0,false)}</td><td>${f(r.flow.mfi,0,false,'')}</td><td>${f(r.flow.obv_slope,1,true,'')}</td></tr>`).join('')+
+    `<tr><td><b>광통신 ÷ 메모리</b></td><td colspan="5" class="mut">페어 상대강도</td>${td(om.rs_1m)}${td(om.rs_3m)}<td>${arrow(om.rs_slope20)}</td><td>${f(om.rs_pct_1y,0,false,'')}</td><td colspan="4"></td></tr></table>`;
+  const S=L.series;
+  $('#idxchart').innerHTML=line([S.optical_idx,S.memory_idx,S.nasdaq_idx],['var(--opt)','var(--mem)','var(--ndq)']);
+  $('#rschart').innerHTML=line([S.rs_opt_ndq,S.rs_mem_ndq],['var(--opt)','var(--mem)']);
+  const g=L.gauge,c=g.components||{};const emo={극단과열:'🔴',과열:'🟠',중립:'🟡',냉각:'🔵'}[g.regime]||'⚪';
+  const names={rsi:'바스켓 평균 RSI14',d50_pct:'50MA 이격 1Y 백분위(평균)',d200_pct:'200MA 이격 1Y 백분위(평균)',breadth_near_high:'52주 고점 5% 이내 비율 %',breadth_rsi70:'RSI≥70 비율 %',vol_climax:'거래량 배수 5/60일',rs_extreme:'RS(vs 나스닥) 1Y 백분위',pattern_ratio:'과열형 패턴 보유 비율 %',vol20:'실현변동성 20일 %',breadth_divergence:'브레드스 다이버전스(지수 고점권+소수 주도)'};
+  $('#gauge').innerHTML=`<div class="gauge">${emo} ${g.regime} <span class="mut" style="font-size:16px">${g.score}/100</span></div><div class="bar"><i style="left:${g.score}%"></i></div><div class="mut" style="font-size:12px;margin-bottom:8px">바스켓 52주 고점 대비 ${f(g.basket_from_52w_high)} · 60일 고점 대비 ${f(g.basket_from_60d_high)}</div><div class="comp">`+
+    Object.entries(c).map(([k,v])=>`<b>${names[k]||k} <span class="mut">(w ${v.w})</span></b><span>${v.v==null?'—':v.v} → <b style="color:var(--fg)">${(v.s*100).toFixed(0)}</b></span>`).join('')+'</div>'+
+    `<div class="pat">${L.optical.members.filter(m=>m.patterns.length).map(m=>`<span>${m.symbol}: ${m.patterns.join(', ')}</span>`).join('')||'<span class="mut">과열형 패턴 관측 없음</span>'}</div>`;
+  const gs=(Hh||[]).slice(-90).filter(h=>h.gauge!=null).map(h=>[h.as_of,h.gauge]);
+  $('#gchart').innerHTML=gs.length>1?line([gs],['var(--hot)'],180,false):'<div class="mut">누적 중 (2일차부터 표시)</div>';
+  $('#members').innerHTML=memberTable([...L.optical.members].sort((a,b)=>(b.r1m??-1e9)-(a.r1m??-1e9)),L.optical.top5);
+  $('#memmembers').innerHTML=memberTable(L.memory.members);
+}
+load().catch(e=>{$('#sub').textContent='데이터 로드 실패: '+e});
+</script>
+</body></html>
