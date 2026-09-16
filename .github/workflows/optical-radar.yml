@@ -1,0 +1,108 @@
+name: Optical Radar
+
+on:
+  schedule:
+    # 평일 KST 07:07 (UTC 일~목 22:07) — 美 종가 확정 후, 스톡봇 오전 발송 창(06~08시). 비정각 분으로 러너 혼잡 회피.
+    - cron: "7 22 * * 0-4"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "실행 라벨 일자 (YYYY-MM-DD, 비우면 오늘)"
+        required: false
+        default: ""
+      force:
+        description: "같은 as_of 라도 텔레그램 재발송"
+        type: boolean
+        default: false
+      dry_run:
+        description: "발송·커밋 없이 산출만"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: optical-radar
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 스톡봇은 밤에 울리면 안 된다 — 스케줄 지연으로 KST 야간에 실행되면 스킵
+      - name: Night guard (KST 22:00~05:59 스킵)
+        id: guard
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          h=$(TZ=Asia/Seoul date +%H)
+          if [[ "${EVENT}" == "schedule" && ( "$h" -ge 22 || "$h" -lt 6 ) ]]; then
+            echo "KST ${h}시 — 야간 창이므로 스킵"; echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Test gate
+        if: steps.guard.outputs.skip != 'true'
+        working-directory: optical_radar
+        run: python -m unittest discover -s tests -v
+
+      - name: Run radar
+        if: steps.guard.outputs.skip != 'true'
+        working-directory: optical_radar
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.STOCK_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TARGET_DATE: ${{ inputs.date }}
+          FORCE: ${{ inputs.force }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          PAGES_URL: "https://jinhae8971.github.io/korea-etf-calmar/optical-radar/"
+          DASHBOARD_DIR: ${{ github.workspace }}/docs/optical-radar
+          TZ: "Asia/Seoul"
+        run: |
+          set -euo pipefail
+          if [[ -n "${TARGET_DATE}" && ! "${TARGET_DATE}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::date 입력 형식 오류 (YYYY-MM-DD): ${TARGET_DATE}"; exit 1
+          fi
+          args=()
+          [[ "${FORCE}" == "true" ]] && args+=(--force)
+          [[ "${DRY_RUN}" == "true" ]] && args+=(--dry-run)
+          python optical_radar.py "${TARGET_DATE}" "${args[@]}"
+
+      - name: Commit
+        if: always() && steps.guard.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add optical_radar/data docs/optical-radar 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음 — 커밋 생략"; exit 0; fi
+          git commit -m "chore(optical-radar): $(python -c 'import json;print(json.load(open("optical_radar/data/latest.json"))["as_of"])' 2>/dev/null || date -u +%Y-%m-%d) 스냅샷"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
+
+      - name: Notify failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.STOCK_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=$(printf '%s\n%s' '❌ 옵티컬 레이더 실행 실패' "${RUN_URL}")" || true
