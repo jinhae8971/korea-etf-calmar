@@ -39,8 +39,9 @@ svg{width:100%;height:auto;display:block}
   <div class="card"><h2>③ 나스닥 대비 상대강도 (6개월, 100 기준)</h2><div id="rschart"></div><div class="legend"><i style="background:var(--opt)"></i>광통신÷나스닥 <i style="background:var(--mem)"></i>메모리÷나스닥</div></div>
   <div class="card"><h2>④ 광통신 과열 게이지</h2><div id="gauge"></div></div>
   <div class="card"><h2>⑤ 게이지 추이 (90일)</h2><div id="gchart"></div></div>
-  <div class="card" style="grid-column:1/-1"><h2>⑥ 광통신 종목 상세</h2><div id="members"></div></div>
-  <div class="card" style="grid-column:1/-1"><h2>⑦ 메모리 종목</h2><div id="memmembers"></div></div>
+  <div class="card" style="grid-column:1/-1"><h2>⑥ 순수 광통신 종목 상세</h2><div class="mut" id="criteria" style="font-size:12px;margin-bottom:8px"></div><div id="members"></div></div>
+  <div class="card" style="grid-column:1/-1"><h2>⑦ 광통신 확장 참고 (바스켓·게이지 제외)</h2><div id="extmembers"></div></div>
+  <div class="card" style="grid-column:1/-1"><h2>⑧ 메모리 종목</h2><div id="memmembers"></div></div>
 </div>
 <p class="sub" style="margin-top:18px">게이지는 위치 보고이지 천정 예측이 아닙니다. 수급 프록시는 거래량 기반(펀드 플로우 데이터 아님). 원천: Yahoo Finance 일봉. Samsung Display AX Team 개인 자동화.</p>
 </div>
@@ -79,13 +80,15 @@ async function load(){
   $('#idxchart').innerHTML=line([S.optical_idx,S.memory_idx,S.nasdaq_idx],['var(--opt)','var(--mem)','var(--ndq)']);
   $('#rschart').innerHTML=line([S.rs_opt_ndq,S.rs_mem_ndq],['var(--opt)','var(--mem)']);
   const g=L.gauge,c=g.components||{};const emo={극단과열:'🔴',과열:'🟠',중립:'🟡',냉각:'🔵'}[g.regime]||'⚪';
-  const names={rsi:'바스켓 평균 RSI14',d50_pct:'50MA 이격 1Y 백분위(평균)',d200_pct:'200MA 이격 1Y 백분위(평균)',breadth_near_high:'52주 고점 5% 이내 비율 %',breadth_rsi70:'RSI≥70 비율 %',vol_climax:'거래량 배수 5/60일',rs_extreme:'RS(vs 나스닥) 1Y 백분위',pattern_ratio:'과열형 패턴 보유 비율 %',vol20:'실현변동성 20일 %',breadth_divergence:'브레드스 다이버전스(지수 고점권+소수 주도)'};
+  const names={rsi:'바스켓 평균 RSI14',d50_pct:'50MA 이격 1Y 백분위(평균)',d200_pct:'200MA 이격 1Y 백분위(평균)',breadth_near_high:'52주 고점 5% 이내 비율 %',breadth_rsi70:'RSI≥70 비율 %',vol_climax:'거래량 배수 5/60일',rs_extreme:'RS(vs 나스닥) 1Y 백분위',pattern_ratio:'과열형 패턴 보유 비율 %',vol20:'실현변동성 20일 %',breadth_divergence:'브레드스 다이버전스(지수 고점권+소수 주도)',ext_6m:'바스켓 6M 수익률 % (장기 확장)'};
   $('#gauge').innerHTML=`<div class="gauge">${emo} ${g.regime} <span class="mut" style="font-size:16px">${g.score}/100</span></div><div class="bar"><i style="left:${g.score}%"></i></div><div class="mut" style="font-size:12px;margin-bottom:8px">바스켓 52주 고점 대비 ${f(g.basket_from_52w_high)} · 60일 고점 대비 ${f(g.basket_from_60d_high)}</div><div class="comp">`+
     Object.entries(c).map(([k,v])=>`<b>${names[k]||k} <span class="mut">(w ${v.w})</span></b><span>${v.v==null?'—':v.v} → <b style="color:var(--fg)">${(v.s*100).toFixed(0)}</b></span>`).join('')+'</div>'+
     `<div class="pat">${L.optical.members.filter(m=>m.patterns.length).map(m=>`<span>${m.symbol}: ${m.patterns.join(', ')}</span>`).join('')||'<span class="mut">과열형 패턴 관측 없음</span>'}</div>`;
   const gs=(Hh||[]).slice(-90).filter(h=>h.gauge!=null).map(h=>[h.as_of,h.gauge]);
   $('#gchart').innerHTML=gs.length>1?line([gs],['var(--hot)'],180,false):'<div class="mut">누적 중 (2일차부터 표시)</div>';
   $('#members').innerHTML=memberTable([...L.optical.members].sort((a,b)=>(b.r1m??-1e9)-(a.r1m??-1e9)),L.optical.top5);
+  $('#criteria').textContent=L.optical.criteria||'';
+  $('#extmembers').innerHTML=memberTable([...((L.optical_ext||{}).members||[])].sort((a,b)=>(b.r1m??-1e9)-(a.r1m??-1e9)));
   $('#memmembers').innerHTML=memberTable(L.memory.members);
 }
 load().catch(e=>{$('#sub').textContent='데이터 로드 실패: '+e});
