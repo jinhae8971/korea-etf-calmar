@@ -1,0 +1,31 @@
+{
+  "optical": {
+    "label": "광통신",
+    "symbols": {
+      "LITE": "루멘텀",
+      "COHR": "코히어런트",
+      "AAOI": "어플라이드옵토",
+      "CIEN": "시에나",
+      "FN":   "패브리넷",
+      "CRDO": "크레도",
+      "GLW":  "코닝",
+      "MRVL": "마벨",
+      "POET": "POET",
+      "LWLG": "라이트웨이브로직"
+    }
+  },
+  "memory": {
+    "label": "메모리",
+    "symbols": {
+      "MU":        "마이크론",
+      "SNDK":      "샌디스크",
+      "000660.KS": "SK하이닉스",
+      "005930.KS": "삼성전자"
+    }
+  },
+  "benchmark": {
+    "label": "나스닥",
+    "price": "^IXIC",
+    "volume_proxy": "QQQ"
+  }
+}
