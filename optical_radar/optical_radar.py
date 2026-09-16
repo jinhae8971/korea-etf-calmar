@@ -576,6 +576,9 @@ def overheat_gauge(metrics: list[dict], rs: dict, flow: dict, basket_idx: list |
         near_top = bvals[-1] >= max(bvals[-60:]) * 0.98
         bd = clamp01(1 - near_hi / 0.6) if near_top else 0.0
     comps["breadth_divergence"] = {"v": round(bd * 100, 1), "s": bd, "w": 0.10}
+    # J. 장기 확장(extension): 바스켓 6M 수익률 (50%→0, 200%→1) — 모멘텀이 식어도 '많이 오른 상태'는 과열로 본다
+    r6 = pct(bvals[-1], bvals[-127]) if len(bvals) > 127 else None
+    comps["ext_6m"] = {"v": r6, "s": clamp01((r6 - 50) / 150) if r6 is not None else 0.0, "w": 0.10}
     # H. 실현변동성 평균 (40%→0, 90%→1) — 변동성 팽창은 말기 신호
     vv = [m["vol20"] for m in metrics if m["vol20"] is not None]
     v = sum(vv) / len(vv) if vv else None
@@ -605,8 +608,13 @@ def build_snapshot(uni: dict, bars_by: dict, status: dict, run_label: str) -> di
     bench = uni["benchmark"]["price"]
     vproxy = uni["benchmark"]["volume_proxy"]
 
+    ext_syms = uni.get("optical_ext", {}).get("symbols", {})
+    ext = [s for s in ext_syms if s in bars_by and status.get(s) != "stale"]
     opt_m = [symbol_metrics(s, bars_by[s]) for s in opt]
     mem_m = [symbol_metrics(s, bars_by[s]) for s in mem]
+    ext_m = [symbol_metrics(s, bars_by[s]) for s in ext]
+    for m in ext_m:
+        m["name"] = ext_syms[m["symbol"]]
     for m in opt_m:
         m["name"] = uni["optical"]["symbols"][m["symbol"]]
     for m in mem_m:
@@ -656,7 +664,9 @@ def build_snapshot(uni: dict, bars_by: dict, status: dict, run_label: str) -> di
         "scoreboard": [basket_row("광통신", opt_idx, opt_m, opt_rs, opt_flow),
                        basket_row("메모리", mem_idx, mem_m, mem_rs, mem_flow), ndq_row],
         "optical_vs_memory": om_rs,
-        "optical": {"members": opt_m, "top5": [m["symbol"] for m in top5]},
+        "optical": {"members": opt_m, "top5": [m["symbol"] for m in top5],
+                    "criteria": uni.get("_criteria", "")},
+        "optical_ext": {"members": ext_m},
         "memory": {"members": mem_m},
         "gauge": gauge,
         "series": {
@@ -722,15 +732,17 @@ def build_messages(snap: dict, pages_url: str) -> list[str]:
     # ---- 2) 광통신 상세 + 과열 게이지
     opt = snap["optical"]["members"]
     by = {m["symbol"]: m for m in opt}
-    lines = [f"<b>🔦 광통신 상세</b> ({len(opt)}종목)", "",
-             "<b>TOP5 (1M 수익률)</b>",
+    lines = [f"<b>🔦 광통신 상세</b> (순수 광통신 {len(opt)}종목 — 광부품 매출 50%↑·실적 有·시총 50억$↑)", "",
+             "<b>순위 (1M 수익률)</b>",
              "<pre>종목       1D     1W     1M  RSI  50MA</pre>"]
     for s in snap["optical"]["top5"]:
         m = by[s]
         lines.append("<pre>" + f"{s:<5}" + f"{fmt(m['r1d']):>7}{fmt(m['r1w']):>7}{fmt(m['r1m']):>7}"
                      f"{fmt(m['rsi'], 0, False, ''):>5}{fmt(m['d50'], 0):>6}" + "</pre>")
-    laggards = sorted(opt, key=lambda m: (m["r1m"] if m["r1m"] is not None else 1e9))[:2]
-    lines.append("· 후미: " + ", ".join(f"{m['symbol']} {fmt(m['r1m'])}" for m in laggards))
+    ext = snap.get("optical_ext", {}).get("members", [])
+    if ext:
+        lines.append("· 확장 참고(바스켓·게이지 제외): " + ", ".join(
+            f"{m['symbol']} {fmt(m['r1m'])}" for m in sorted(ext, key=lambda m: -(m["r1m"] or -1e9))))
 
     emo = regime_emoji(g["regime"])
     lines += ["", f"<b>④ 과열 게이지</b> {emo} <b>{g['regime']}</b> {g['score']}/100",
@@ -744,7 +756,7 @@ def build_messages(snap: dict, pages_url: str) -> list[str]:
     lines += [f"· RSI평균 {cv('rsi')} · 50MA이격 백분위 {cv('d50_pct')} · 200MA {cv('d200_pct')}",
               f"· 52주고점 5%내 {cv('breadth_near_high')}% · RSI70↑ {cv('breadth_rsi70')}%",
               f"· 거래량배수 {cv('vol_climax', 2, 'x')} · 실현변동성 {cv('vol20')}% · RS극단 {cv('rs_extreme')}",
-              f"· 브레드스 다이버전스 {cv('breadth_divergence')}/100 (지수 고점권+소수 주도)"]
+              f"· 브레드스 다이버전스 {cv('breadth_divergence')}/100 · 바스켓 6M {cv('ext_6m', 0, '%')} (장기 확장)"]
     pats = [(m["symbol"], m["patterns"]) for m in opt if m["patterns"]]
     if pats:
         lines += ["", "<b>패턴 관측</b>"]
