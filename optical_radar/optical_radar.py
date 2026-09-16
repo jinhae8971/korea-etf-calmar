@@ -29,7 +29,7 @@ KST = timezone(timedelta(hours=9))
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-MAX_BARS = 620
+MAX_BARS = 520
 CACHE_STALE_DAYS = 6          # 캐시가 이보다 오래되면 해당 종목 degraded
 
 
@@ -71,7 +71,8 @@ def load_config() -> dict:
 
 
 # ------------------------------------------------------------------- fetching
-def http_json(url: str, timeout: int = 20, retries: int = 3) -> dict:
+def http_json(url: str, timeout: int = 20, retries: int = 2) -> dict:
+    """러너 IP는 Yahoo 429가 잦다 — 재시도 예산을 짧게 잡고(최대 ~8s) 캐시 폴백에 맡긴다."""
     last = None
     for i in range(retries):
         try:
@@ -80,13 +81,8 @@ def http_json(url: str, timeout: int = 20, retries: int = 3) -> dict:
                 return json.load(r)
         except Exception as e:  # noqa: BLE001
             last = e
-            wait = 3 * (i + 1)
-            if hasattr(e, "headers") and e.headers and e.headers.get("Retry-After"):
-                try:
-                    wait = max(wait, int(e.headers["Retry-After"]))
-                except ValueError:
-                    pass
-            time.sleep(min(wait, 30))
+            if i < retries - 1:
+                time.sleep(2 + 3 * i)
     raise RuntimeError(f"http {url}: {last}")
 
 
@@ -112,12 +108,45 @@ def yahoo_daily(symbol: str, rng: str = "2y") -> list[dict]:
                     "l": float(q["low"][i]), "c": float(c),
                     "v": float(q["volume"][i] or 0),
                 })
-            if len(out) < 60:
+            if len(out) < 40:
                 raise RuntimeError(f"too few bars ({len(out)})")
             return out
         except Exception as e:  # noqa: BLE001
             last = e
     raise RuntimeError(f"yahoo {symbol}: {last}")
+
+
+def yahoo_spark_closes(symbols: list[str], rng: str = "1mo") -> dict[str, list[tuple[str, float]]]:
+    """종가만 주는 배치 엔드포인트 — 요청 1회로 전 종목. chart v8 이 막혔을 때 최신 종가 보강용."""
+    out = {}
+    if not symbols:
+        return out
+    q = urllib.parse.quote(",".join(symbols))
+    for host in ("query1", "query2"):
+        try:
+            j = http_json(f"https://{host}.finance.yahoo.com/v7/finance/spark?symbols={q}&range={rng}&interval=1d")
+            for r in j["spark"]["result"]:
+                resp = r["response"][0]
+                ts, cl = resp["timestamp"], resp["indicators"]["quote"][0]["close"]
+                out[r["symbol"]] = [(datetime.fromtimestamp(t, tz=timezone.utc).strftime("%Y-%m-%d"), float(c))
+                                    for t, c in zip(ts, cl) if c is not None]
+            return out
+        except Exception as e:  # noqa: BLE001
+            log(f"[spark] {host} 실패: {e}")
+    return out
+
+
+def patch_with_closes(bars: list[dict], closes: list[tuple[str, float]]) -> tuple[list[dict], int]:
+    """캐시에 없는 날짜만 종가 봉으로 보강. o=h=l=c, 거래량은 최근 20일 중앙값(근사, synthetic 표시)."""
+    have = {b["d"] for b in bars}
+    vols = sorted(b["v"] for b in bars[-20:]) or [0.0]
+    v_med = vols[len(vols) // 2]
+    added = 0
+    for d, c in closes:
+        if d not in have and d > bars[-1]["d"]:
+            bars.append({"d": d, "o": c, "h": c, "l": c, "c": c, "v": v_med, "synthetic": True})
+            added += 1
+    return bars[-MAX_BARS:], added
 
 
 def merge_bars(old: list[dict], new: list[dict]) -> list[dict]:
@@ -130,22 +159,39 @@ def merge_bars(old: list[dict], new: list[dict]) -> list[dict]:
 def fetch_universe(symbols: list[str], cache: dict, today: str) -> tuple[dict, dict]:
     """returns (bars_by_symbol, status_by_symbol). status: fresh / cache / missing"""
     bars, status = {}, {}
-    for s in symbols:
-        try:
-            fresh = yahoo_daily(s)
-            bars[s] = merge_bars(cache.get(s, []), fresh)
-            status[s] = "fresh"
-        except Exception as e:  # noqa: BLE001
-            log(f"[fetch] {s} 실패 → 캐시 폴백: {e}")
-            cached = cache.get(s, [])
-            if cached:
-                age = (datetime.strptime(today, "%Y-%m-%d") -
-                       datetime.strptime(cached[-1]["d"], "%Y-%m-%d")).days
-                bars[s] = cached
-                status[s] = "cache" if age <= CACHE_STALE_DAYS else "stale"
-            else:
-                status[s] = "missing"
-        time.sleep(0.4)
+    # 캐시가 있으면 짧은 구간만 요청(응답 작음), 없으면 2y 전체
+    pending = list(symbols)
+    for attempt in range(2):
+        failed = []
+        for s in pending:
+            rng = "3mo" if cache.get(s) else "2y"
+            try:
+                fresh = yahoo_daily(s, rng)
+                bars[s] = merge_bars(cache.get(s, []), fresh)
+                status[s] = "fresh"
+            except Exception as e:  # noqa: BLE001
+                log(f"[fetch] {s} 실패({attempt + 1}차): {e}")
+                failed.append(s)
+            time.sleep(1.2)
+        pending = failed
+        if not pending:
+            break
+        log(f"[fetch] {len(pending)}종목 재시도 전 25s 대기")
+        time.sleep(25)
+    # 실패분: 캐시 + spark 종가 보강
+    spark = yahoo_spark_closes(pending) if pending else {}
+    for s in pending:
+        cached = [dict(b) for b in cache.get(s, [])]
+        if not cached:
+            status[s] = "missing"
+            continue
+        added = 0
+        if s in spark:
+            cached, added = patch_with_closes(cached, spark[s])
+        bars[s] = cached
+        age = (datetime.strptime(today, "%Y-%m-%d") -
+               datetime.strptime(cached[-1]["d"], "%Y-%m-%d")).days
+        status[s] = ("spark" if added else "cache") if age <= CACHE_STALE_DAYS else "stale"
     return bars, status
 
 
@@ -585,7 +631,8 @@ def build_messages(snap: dict, pages_url: str) -> list[str]:
     g = snap["gauge"]
     st = snap["data_status"]
     warn = "" if st == "OK" else f"\n⚠️ 데이터 {st}: " + ", ".join(
-        f"{k}={v}" for k, v in snap["fetch_status"].items() if v != "fresh")
+        f"{k}={v}" for k, v in snap["fetch_status"].items() if v != "fresh") + \
+        ("\n(spark=종가만 보강, 당일 거래량·진폭은 근사)" if "spark" in snap["fetch_status"].values() else "")
 
     # ---- 1) 상대강도 스코어보드
     lines = [f"<b>📡 옵티컬 레이더</b> · {snap['as_of']} 美 종가{warn}", "",
@@ -720,8 +767,8 @@ def main(argv: list[str]) -> int:
     unchanged = prev.get("as_of") == snap["as_of"] and prev.get("data_status") == snap["data_status"]
 
     if not dry:
-        if any(v == "fresh" for v in status.values()):
-            save_json(cache_path, bars)
+        if any(v in ("fresh", "spark") for v in status.values()):
+            save_json(cache_path, {k: v for k, v in bars.items()})
         if not unchanged:
             save_json(latest_path, snap)
             hist_path = os.path.join(DATA_DIR, "history.json")
