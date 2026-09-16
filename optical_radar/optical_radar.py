@@ -149,6 +149,71 @@ def patch_with_closes(bars: list[dict], closes: list[tuple[str, float]]) -> tupl
     return bars[-MAX_BARS:], added
 
 
+NASDAQ_MAP = {"^IXIC": ("COMP", "index"), "QQQ": ("QQQ", "etf")}
+
+
+def nasdaq_daily(symbol: str, days: int = 70) -> list[dict]:
+    """api.nasdaq.com 히스토리(미국 주식·ETF·지수). Yahoo 429 시 폴백."""
+    if symbol.endswith(".KS"):
+        raise RuntimeError("nasdaq: KR 미지원")
+    sym, cls = NASDAQ_MAP.get(symbol, (symbol, "stocks"))
+    to = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    frm = (datetime.now(timezone.utc) - timedelta(days=int(days * 1.6))).strftime("%Y-%m-%d")
+    url = (f"https://api.nasdaq.com/api/quote/{sym}/historical?assetclass={cls}"
+           f"&fromdate={frm}&todate={to}&limit={days}")
+    j = http_json(url)
+    rows = (j.get("data") or {}).get("tradesTable", {}).get("rows") or []
+    def num(x):
+        x = str(x).replace("$", "").replace(",", "").strip()
+        return float(x) if x not in ("", "N/A", "--") else None
+    out = []
+    for r in rows:
+        try:
+            d = datetime.strptime(r["date"], "%m/%d/%Y").strftime("%Y-%m-%d")
+            c, o, h, l = num(r["close"]), num(r["open"]), num(r["high"]), num(r["low"])
+            if None in (c, o, h, l):
+                continue
+            out.append({"d": d, "o": o, "h": h, "l": l, "c": c, "v": num(r.get("volume")) or 0.0})
+        except (KeyError, ValueError):
+            continue
+    out.sort(key=lambda b: b["d"])
+    if len(out) < 10:
+        raise RuntimeError(f"nasdaq {symbol}: rows={len(out)}")
+    return out
+
+
+def naver_daily(symbol: str, count: int = 70) -> list[dict]:
+    """네이버 fchart XML (국내 종목). <item data="YYYYMMDD|o|h|l|c|v"/>"""
+    if not symbol.endswith(".KS"):
+        raise RuntimeError("naver: KR 전용")
+    code = symbol.split(".")[0]
+    url = f"https://fchart.stock.naver.com/sise.nhn?symbol={code}&timeframe=day&count={count}&requestType=0"
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        xml = r.read().decode("euc-kr", "replace")
+    out = []
+    for m in re.finditer(r'data="(\d{8})\|([\d.]+)\|([\d.]+)\|([\d.]+)\|([\d.]+)\|(\d+)"', xml):
+        d, o, h, l, c, v = m.groups()
+        out.append({"d": f"{d[:4]}-{d[4:6]}-{d[6:]}", "o": float(o), "h": float(h), "l": float(l),
+                    "c": float(c), "v": float(v)})
+    if len(out) < 10:
+        raise RuntimeError(f"naver {symbol}: rows={len(out)}")
+    return out
+
+
+def fetch_symbol(symbol: str, rng: str) -> tuple[list[dict], str]:
+    """소스 체인: yahoo → nasdaq(미국) / naver(국내). 성공한 소스명을 함께 반환."""
+    errs = []
+    for name, fn in (("yahoo", lambda: yahoo_daily(symbol, rng)),
+                     ("nasdaq", lambda: nasdaq_daily(symbol)),
+                     ("naver", lambda: naver_daily(symbol))):
+        try:
+            return fn(), name
+        except Exception as e:  # noqa: BLE001
+            errs.append(f"{name}:{str(e)[-60:]}")
+    raise RuntimeError(" / ".join(errs))
+
+
 def merge_bars(old: list[dict], new: list[dict]) -> list[dict]:
     by = {b["d"]: b for b in old}
     by.update({b["d"]: b for b in new})
@@ -166,9 +231,9 @@ def fetch_universe(symbols: list[str], cache: dict, today: str) -> tuple[dict, d
         for s in pending:
             rng = "3mo" if cache.get(s) else "2y"
             try:
-                fresh = yahoo_daily(s, rng)
+                fresh, src = fetch_symbol(s, rng)
                 bars[s] = merge_bars(cache.get(s, []), fresh)
-                status[s] = "fresh"
+                status[s] = "fresh" if src == "yahoo" else f"fresh:{src}"
             except Exception as e:  # noqa: BLE001
                 log(f"[fetch] {s} 실패({attempt + 1}차): {e}")
                 failed.append(s)
@@ -581,7 +646,7 @@ def build_snapshot(uni: dict, bars_by: dict, status: dict, run_label: str) -> di
     om_rs = rs_stats(rs_line(opt_idx, mem_idx))
 
     as_of = max(b["d"] for s in (opt + [bench]) for b in bars_by[s][-1:]) if opt else run_label
-    fresh_n = sum(1 for s in status if status[s] == "fresh")
+    fresh_n = sum(1 for s in status if status[s].startswith("fresh"))
     data_status = "OK" if fresh_n == len(status) else ("DEGRADED" if opt_m and ndq_m else "FAIL")
 
     top5 = sorted(opt_m, key=lambda m: (m["r1m"] if m["r1m"] is not None else -1e9), reverse=True)[:5]
@@ -631,7 +696,7 @@ def build_messages(snap: dict, pages_url: str) -> list[str]:
     g = snap["gauge"]
     st = snap["data_status"]
     warn = "" if st == "OK" else f"\n⚠️ 데이터 {st}: " + ", ".join(
-        f"{k}={v}" for k, v in snap["fetch_status"].items() if v != "fresh") + \
+        f"{k}={v}" for k, v in snap["fetch_status"].items() if not v.startswith("fresh")) + \
         ("\n(spark=종가만 보강, 당일 거래량·진폭은 근사)" if "spark" in snap["fetch_status"].values() else "")
 
     # ---- 1) 상대강도 스코어보드
@@ -767,7 +832,7 @@ def main(argv: list[str]) -> int:
     unchanged = prev.get("as_of") == snap["as_of"] and prev.get("data_status") == snap["data_status"]
 
     if not dry:
-        if any(v in ("fresh", "spark") for v in status.values()):
+        if any(v.startswith("fresh") or v == "spark" for v in status.values()):
             save_json(cache_path, {k: v for k, v in bars.items()})
         if not unchanged:
             save_json(latest_path, snap)
