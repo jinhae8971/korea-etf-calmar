@@ -87,7 +87,7 @@ class TestScoring(unittest.TestCase):
 class TestDelta(unittest.TestCase):
     def test_rank_improvement_is_positive(self):
         ts = [mk("A", score=80, overall_rank=1, px30=10)]
-        hist = [{"as_of_kst": "2026-09-04 07:18",
+        hist = [{"as_of_kst": "2026-09-04 07:18", "ver": xrs.VERSION,
                  "tracks": {"A": {"score": 60, "overall_rank": 3, "px30": 4}}}]
         xrs.attach_delta(ts, hist)
         self.assertEqual(ts[0]["delta"]["rank"], 2)
@@ -98,6 +98,45 @@ class TestDelta(unittest.TestCase):
         ts = [mk("A", score=80, overall_rank=1)]
         xrs.attach_delta(ts, [])
         self.assertEqual(ts[0]["delta"], {})
+
+
+class TestV2Horizons(unittest.TestCase):
+    """v2 — 30일 단일 창 의존 제거, 국면 신호."""
+
+    def test_formula_change_resets_score_delta(self):
+        ts = [mk("A", score=80, overall_rank=1, px30=10)]
+        hist = [{"as_of_kst": "x", "ver": "1.0", "tracks": {"A": {"score": 60, "overall_rank": 3, "px30": 4}}}]
+        xrs.attach_delta(ts, hist)
+        self.assertNotIn("score", ts[0]["delta"])
+        self.assertNotIn("rank", ts[0]["delta"])
+        self.assertTrue(ts[0]["delta"]["_reset"])
+
+    def test_30d_window_no_longer_dominates(self):
+        weight30 = sum(h["w"] * L["w"] for h in xrs.HORIZONS for L in xrs.LENSES
+                       if L["hz"] == h["key"] and L["key"].endswith("30"))
+        self.assertLessEqual(weight30, 0.31)
+
+    def test_short_term_reversal_changes_leader(self):
+        # A: 30일 급등 후 7일·1일 하락 / B: 30일 약하지만 최근 급반등
+        a = mk("A", px30=300, tvl30=60, rev_chg30=200, px7=-12, px14=-5, tvl7=-10, mcap_chg24=-4)
+        b = mk("B", px30=5, tvl30=2, rev_chg30=5, px7=25, px14=20, tvl7=15, mcap_chg24=6)
+        c = mk("C", px30=10, px7=1, px14=2, mcap_chg24=0)
+        ts = [a, b, c]
+        xrs.rank_and_score(ts)
+        self.assertLess(b["overall_rank"], a["overall_rank"])
+        xrs.detect_signals(ts, [])
+        self.assertIn("꺾임", [g["name"] for g in a["signals"]])
+        self.assertTrue({"가속", "부상"} & {g["name"] for g in b["signals"]})
+
+    def test_magnitude_matters_not_only_rank(self):
+        ts = [mk("A", px7=100), mk("B", px7=2), mk("C", px7=1)]
+        xrs.rank_and_score(ts)
+        # 순위만이면 B는 50점, 크기를 섞으면 1위와의 격차가 반영돼 50보다 낮아야 한다
+        self.assertLess(ts[1]["score"], 50)
+
+    def test_runrate(self):
+        self.assertAlmostEqual(xrs._runrate({"d24": 20.0, "d30": 300.0}), 100.0)
+        self.assertIsNone(xrs._runrate({"d24": None, "d30": 300.0}))
 
 
 class TestBuildTrack(unittest.TestCase):
