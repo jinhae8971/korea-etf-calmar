@@ -1,6 +1,34 @@
 {
- "as_of": "2026-09-17 08:54",
+ "as_of": "2026-09-18 08:45",
  "events": [
+  {
+   "event_date": "2026-09-20",
+   "first_seen": "2026-09-18",
+   "grade": "A",
+   "impact": "INFRA",
+   "key": "cosmoshub:gov:1055",
+   "last_seen": "2026-09-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-18",
+    "price_at_detect": 1.59,
+    "score_at_detect": 45.5
+   },
+   "score": 45.5,
+   "source": "cosmos",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-09-18",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "ATOM",
+   "title": "Gaia v28.2.0 upgrade",
+   "trust": 1.0,
+   "url": "https://www.mintscan.io/cosmoshub/proposals/1055",
+   "when": "2026-09-20"
+  },
   {
    "event_date": "2026-10-05",
    "first_seen": "2026-09-07",
@@ -67,7 +95,7 @@
    "grade": "B",
    "impact": "SUPPLY",
    "key": "anza-xyz/agave@v4.3.0-rc.1",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -130,7 +158,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:ethereum-s-glamsterdam-upgrade-slipped-again-sepolia-now-tar",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-12",
@@ -147,7 +175,7 @@
     }
    ],
    "symbol": "ETH",
-   "title": "Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targets October 6 - 24/7 Wall St.",
+   "title": "Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targets October 6 - 247wallst.com",
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOMHNtclpCdDM2TkZuTmNwZFZNNkp4VGw1RnJQanJCSVJjRWJpeTNyWjRsZFp0aHlBNHNJYUR5YVZfUVMteklsVWtIV084QTV5TTFiaktka3FIT3cxZmRMY1hza2RCSmV0TDI2eW5LOGIyRFZ6dXo1M0IzZU40dG5yU1M0UXkyeTBJeDNsemJzVngzYTUzYTVHLUhQZGR5U3JZSXR2NGp2ZWlzRmdJNWdqdWp0TFJCMkxBTldYQllSd09iS3RuNTRieEFnbFQ?oc=5",
    "when": "Fri, 11 Sep 2026"
@@ -275,42 +303,11 @@
   },
   {
    "event_date": null,
-   "first_seen": "2026-09-07",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "vechain/thor@v2.5.0",
-   "last_seen": "2026-09-17",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-07",
-    "price_at_detect": 0.0072353,
-    "score_at_detect": 29.9,
-    "t7": 0.0,
-    "t7_at": "2026-09-14"
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-09-07",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "VET",
-   "title": "thor v2.5.0 — > [!IMPORTANT]",
-   "trust": 0.95,
-   "url": "https://github.com/vechain/thor/releases/tag/v2.5.0",
-   "when": "2026-09-03"
-  },
-  {
-   "event_date": null,
    "first_seen": "2026-09-09",
    "grade": "B",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.2",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -341,7 +338,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "ava-labs/avalanchego@v1.15.0",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -434,7 +431,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.77.1",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -463,7 +460,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@v1.36.3",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -492,7 +489,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "litecoin-project/litecoin@v0.21.5.8",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -521,7 +518,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "IntersectMBO/cardano-node@11.1.1",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -556,7 +553,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.77.2",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -585,7 +582,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@testnet-v1.80.0",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -614,7 +611,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.2-stable",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -643,7 +640,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.2-beta",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -667,118 +664,32 @@
    "when": "2026-09-15"
   },
   {
-   "event_date": "2026-09-17",
-   "first_seen": "2026-09-11",
+   "event_date": null,
+   "first_seen": "2026-09-18",
    "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x472fb3b40d3df9b1a65de03b85e4867a76f7b1ec014e2d69f347256b0d08184c",
-   "last_seen": "2026-09-17",
+   "impact": "INFRA",
+   "key": "XRPLF/rippled@3.4.0",
+   "last_seen": "2026-09-18",
+   "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-11",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2
+    "detected_at": "2026-09-18",
+    "price_at_detect": 1.41,
+    "score_at_detect": 29.9
    },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-09-11",
-     "stage": "VOTING"
+     "at": "2026-09-18",
+     "stage": "ACTIVATED"
     }
    ],
-   "symbol": "ARB",
-   "title": "Banning projects identified in the high-severity Watchdog Program cases - Good Entry",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x472fb3b40d3df9b1a65de03b85e4867a76f7b1ec014e2d69f347256b0d08184c",
-   "vote_state": "active",
-   "when": "2026-09-17"
-  },
-  {
-   "event_date": "2026-09-17",
-   "first_seen": "2026-09-11",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x57e83d4df2139ff67626852cf2693146318492cc973ba5084a2a2625e78578a9",
-   "last_seen": "2026-09-17",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-11",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-09-11",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "ARB",
-   "title": "Banning projects identified in the high-severity Watchdog Program cases - Limitless",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x57e83d4df2139ff67626852cf2693146318492cc973ba5084a2a2625e78578a9",
-   "vote_state": "active",
-   "when": "2026-09-17"
-  },
-  {
-   "event_date": "2026-09-17",
-   "first_seen": "2026-09-11",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0xddcea6a783aaabce1d616508999078e45ca95932b2b536c0620a9f5e57fa1899",
-   "last_seen": "2026-09-17",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-11",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-09-11",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "ARB",
-   "title": "Banning projects identified in the high-severity Watchdog Program cases - APX Finance",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0xddcea6a783aaabce1d616508999078e45ca95932b2b536c0620a9f5e57fa1899",
-   "vote_state": "active",
-   "when": "2026-09-17"
-  },
-  {
-   "event_date": "2026-09-17",
-   "first_seen": "2026-09-11",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "cosmoshub:gov:1054",
-   "last_seen": "2026-09-17",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-11",
-    "price_at_detect": 1.59,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "cosmos",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-09-11",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "ATOM Integration & Listing on Paxos’ Regulated Brokerage Infrastructure",
-   "trust": 1.0,
-   "url": "https://www.mintscan.io/cosmoshub/proposals/1054",
+   "symbol": "XRP",
+   "title": "rippled 3.4.0 — Version 3.4.0 of `xrpld`, the reference server implementation of the XRP Ledger protocol, is now available.",
+   "trust": 0.95,
+   "url": "https://github.com/XRPLF/rippled/releases/tag/3.4.0",
    "when": "2026-09-17"
   },
   {
@@ -787,7 +698,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x512fc18e31800cf9bd329e03696ed26e558b4ccac979ed1340f0d2be3a3e6664",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-16",
@@ -816,13 +727,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "anza-xyz/agave@v4.4.0-alpha.4",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-11",
     "price_at_detect": 105.14,
-    "score_at_detect": 17.3
+    "score_at_detect": 17.3,
+    "t7": 0.0,
+    "t7_at": "2026-09-18"
    },
    "score": 26.9,
    "source": "release",
@@ -845,7 +758,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@devnet-v1.80.0",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -874,7 +787,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "near/nearcore@2.14.0-rc.1",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -899,11 +812,40 @@
   },
   {
    "event_date": null,
+   "first_seen": "2026-09-18",
+   "grade": "C",
+   "impact": "SUPPLY",
+   "key": "ethereum/EIPs#11627",
+   "last_seen": "2026-09-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-18",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 24.8
+   },
+   "score": 24.8,
+   "source": "proposal",
+   "stage": "REVIEW",
+   "stage_history": [
+    {
+     "at": "2026-09-18",
+     "stage": "REVIEW"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Update EIP-7708: Add gas costs for system-emitted transfer and burn logs",
+   "trust": 1.0,
+   "updated_at": "2026-09-17T19:00:55Z",
+   "url": "https://github.com/ethereum/EIPs/pull/11627",
+   "when": null
+  },
+  {
+   "event_date": null,
    "first_seen": "2026-09-17",
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.11.4",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -928,11 +870,208 @@
   },
   {
    "event_date": null,
+   "first_seen": "2026-09-18",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "IntersectMBO/cardano-node@11.1.2",
+   "last_seen": "2026-09-18",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-18",
+    "price_at_detect": 0.218904,
+    "score_at_detect": 19.2
+   },
+   "score": 19.2,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-09-18",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "ADA",
+   "title": "cardano-node 11.1.2 — Release Notes",
+   "trust": 0.95,
+   "url": "https://github.com/IntersectMBO/cardano-node/releases/tag/11.1.2",
+   "when": "2026-09-17"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-09-18",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "near/nearcore@2.14.0-rc.2",
+   "last_seen": "2026-09-18",
+   "prerelease": true,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-18",
+    "price_at_detect": 2.42,
+    "score_at_detect": 17.3
+   },
+   "score": 17.3,
+   "source": "release",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-18",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "NEAR",
+   "title": "nearcore 2.14.0-rc.2 — CODE_COLOR: CODE_GREEN_TESTNET",
+   "trust": 0.95,
+   "url": "https://github.com/near/nearcore/releases/tag/2.14.0-rc.2",
+   "when": "2026-09-17"
+  },
+  {
+   "event_date": "2026-09-17",
+   "first_seen": "2026-09-11",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "snapshot:0x472fb3b40d3df9b1a65de03b85e4867a76f7b1ec014e2d69f347256b0d08184c",
+   "last_seen": "2026-09-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-11",
+    "price_at_detect": 0.175026,
+    "score_at_detect": 29.2,
+    "t7": 0.0,
+    "t7_at": "2026-09-18"
+   },
+   "score": 17.2,
+   "source": "snapshot",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-09-11",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-09-18",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ARB",
+   "title": "Banning projects identified in the high-severity Watchdog Program cases - Good Entry",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x472fb3b40d3df9b1a65de03b85e4867a76f7b1ec014e2d69f347256b0d08184c",
+   "vote_state": "closed",
+   "when": "2026-09-17"
+  },
+  {
+   "event_date": "2026-09-17",
+   "first_seen": "2026-09-11",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "snapshot:0x57e83d4df2139ff67626852cf2693146318492cc973ba5084a2a2625e78578a9",
+   "last_seen": "2026-09-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-11",
+    "price_at_detect": 0.175026,
+    "score_at_detect": 29.2,
+    "t7": 0.0,
+    "t7_at": "2026-09-18"
+   },
+   "score": 17.2,
+   "source": "snapshot",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-09-11",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-09-18",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ARB",
+   "title": "Banning projects identified in the high-severity Watchdog Program cases - Limitless",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x57e83d4df2139ff67626852cf2693146318492cc973ba5084a2a2625e78578a9",
+   "vote_state": "closed",
+   "when": "2026-09-17"
+  },
+  {
+   "event_date": "2026-09-17",
+   "first_seen": "2026-09-11",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "snapshot:0xddcea6a783aaabce1d616508999078e45ca95932b2b536c0620a9f5e57fa1899",
+   "last_seen": "2026-09-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-11",
+    "price_at_detect": 0.175026,
+    "score_at_detect": 29.2,
+    "t7": 0.0,
+    "t7_at": "2026-09-18"
+   },
+   "score": 17.2,
+   "source": "snapshot",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-09-11",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-09-18",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ARB",
+   "title": "Banning projects identified in the high-severity Watchdog Program cases - APX Finance",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0xddcea6a783aaabce1d616508999078e45ca95932b2b536c0620a9f5e57fa1899",
+   "vote_state": "closed",
+   "when": "2026-09-17"
+  },
+  {
+   "event_date": "2026-09-17",
+   "first_seen": "2026-09-11",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "cosmoshub:gov:1054",
+   "last_seen": "2026-09-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-11",
+    "price_at_detect": 1.59,
+    "score_at_detect": 29.2,
+    "t7": 0.0,
+    "t7_at": "2026-09-18"
+   },
+   "score": 17.2,
+   "source": "cosmos",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-09-11",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-09-18",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ATOM",
+   "title": "ATOM Integration & Listing on Paxos’ Regulated Brokerage Infrastructure",
+   "trust": 1.0,
+   "url": "https://www.mintscan.io/cosmoshub/proposals/1054",
+   "when": "2026-09-17"
+  },
+  {
+   "event_date": null,
    "first_seen": "2026-09-07",
    "grade": "C",
    "impact": "SUPPLY",
    "key": "zcash/zips#1354",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
@@ -991,7 +1130,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:vechain-interstellar-on-september-16-what-vet-holders-should",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-13",
@@ -1008,40 +1147,10 @@
     }
    ],
    "symbol": "VET",
-   "title": "VeChain Interstellar on September 16: What VET Holders Should Check Before the Hardfork - CryptoTicker",
+   "title": "VeChain Interstellar on September 16: What VET Holders Should Check Before the Hardfork - Cryptonews.net",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5rQkNvZ3ZHamR0RW1wQzZITmVFdVJIbzNOUFk2ZEVpUE95WGZQR2VYQzFERFJWazd4UURvREVxbGc0UVBxNXluU3A4cV8weWZZdkFTdkVnXzA2Ny1kNXRWV0R4Z2J5elVpQUdabWN3MkM?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5aYThXSjdONTVvQTJDUUZPbFlqSWZ0QnNUVzJROU53ODNZcTVsdmNUZFBKak9OSzJCeW5YMmNId0FrX0pqWE9FdUwxbmxyS1JDbnR4dmtFM3Vidw?oc=5",
    "when": "Sat, 12 Sep 2026"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-09-07",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "news:solana-upgrade-sept-9-new-transaction-format-v1-cryptoticker",
-   "last_seen": "2026-09-12",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-07",
-    "price_at_detect": 105.14,
-    "score_at_detect": 35.3,
-    "t7": 0.0,
-    "t7_at": "2026-09-14"
-   },
-   "score": 12.1,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-07",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "SOL",
-   "title": "Solana Upgrade Sept 9: New Transaction Format v1 - cryptoticker.io",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5XbkdSRFZjV0ducG52a291MHlRamg0eTZkMzQtdDg1cEpkc3R0MXMxR0tFQXZrYU1CWWExa1pIemVOMFZYeWtoeVhUTkd4R3Q5eEtuWEV3bkJERXVlRnliZnNRVXpiUTZBYnY5NDZJMEZ1VzRLQ1pJdEpiTHNqY2s?oc=5",
-   "when": "Wed, 02 Sep 2026"
   },
   {
    "event_date": null,
@@ -1077,7 +1186,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:justin-sun-targets-q3-2026-launch-of-quantum-resistant-tron-",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-13",
@@ -1105,7 +1214,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "solana-foundation/solana-improvement-documents#638",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-15",
@@ -1127,6 +1236,37 @@
    "updated_at": "2026-09-14T12:56:32Z",
    "url": "https://github.com/solana-foundation/solana-improvement-documents/pull/638",
    "when": null
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-09-07",
+   "grade": "C",
+   "impact": "INFRA",
+   "key": "vechain/thor@v2.5.0",
+   "last_seen": "2026-09-18",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-07",
+    "price_at_detect": 0.0072353,
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-09-14"
+   },
+   "score": 6.6,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-09-07",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "VET",
+   "title": "thor v2.5.0 — > [!IMPORTANT]",
+   "trust": 0.95,
+   "url": "https://github.com/vechain/thor/releases/tag/v2.5.0",
+   "when": "2026-09-03"
   },
   {
    "event_date": null,
@@ -1165,7 +1305,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.0-alpha",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1196,7 +1336,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.7.8",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1289,7 +1429,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmos/gaia@v28.0.0",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1320,7 +1460,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1052",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
@@ -1381,7 +1521,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmos/gaia@v28.0.0-rc0",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1412,7 +1552,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1049",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
@@ -1442,7 +1582,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v28.0.1",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1473,7 +1613,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "XRPLF/rippled@3.3.0",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1535,7 +1675,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v28.0.0",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1597,7 +1737,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "etclabscore/core-geth@v1.12.23",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1628,7 +1768,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.11.3",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1659,7 +1799,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "vechain/thor@v2.5.0-rc.1",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1690,7 +1830,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1053",
-   "last_seen": "2026-09-17",
+   "last_seen": "2026-09-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
