@@ -1,42 +1,13 @@
 {
- "as_of_kst": "2026-09-18 08:45",
+ "as_of_kst": "2026-09-19 08:39",
  "calendar": [
-  {
-   "event_date": "2026-09-18",
-   "first_seen": "2026-09-16",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x512fc18e31800cf9bd329e03696ed26e558b4ccac979ed1340f0d2be3a3e6664",
-   "last_seen": "2026-09-18",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-16",
-    "price_at_detect": 2.6,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-09-16",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MORPHO",
-   "title": "MIP 134 - Incentives Distribution on Arc",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/morpho.eth/proposal/0x512fc18e31800cf9bd329e03696ed26e558b4ccac979ed1340f0d2be3a3e6664",
-   "vote_state": "active",
-   "when": "2026-09-18"
-  },
   {
    "event_date": "2026-09-20",
    "first_seen": "2026-09-18",
    "grade": "A",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1055",
-   "last_seen": "2026-09-18",
+   "last_seen": "2026-09-19",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-18",
@@ -57,6 +28,64 @@
    "trust": 1.0,
    "url": "https://www.mintscan.io/cosmoshub/proposals/1055",
    "when": "2026-09-20"
+  },
+  {
+   "event_date": "2026-09-23",
+   "first_seen": "2026-09-19",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
+   "last_seen": "2026-09-19",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-19",
+    "price_at_detect": 6.96,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-09-19",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "UNI",
+   "title": "Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vaults",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
+   "vote_state": "active",
+   "when": "2026-09-23"
+  },
+  {
+   "event_date": "2026-09-23",
+   "first_seen": "2026-09-19",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
+   "last_seen": "2026-09-19",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-19",
+    "price_at_detect": 6.96,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-09-19",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "UNI",
+   "title": "Protocol Fee Expansion: Arc",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
+   "vote_state": "active",
+   "when": "2026-09-23"
   },
   {
    "event_date": "2026-10-05",
@@ -94,12 +123,14 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:ethereum-s-glamsterdam-upgrade-slipped-again-sepolia-now-tar",
-   "last_seen": "2026-09-18",
+   "last_seen": "2026-09-19",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-12",
     "price_at_detect": 2497.06,
-    "score_at_detect": 30.0
+    "score_at_detect": 30.0,
+    "t7": 0.0,
+    "t7_at": "2026-09-19"
    },
    "score": 30.0,
    "source": "news",
@@ -111,37 +142,9 @@
     }
    ],
    "symbol": "ETH",
-   "title": "Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targets October 6 - 247wallst.com",
+   "title": "Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targets October 6 - 24/7 Wall St.",
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOMHNtclpCdDM2TkZuTmNwZFZNNkp4VGw1RnJQanJCSVJjRWJpeTNyWjRsZFp0aHlBNHNJYUR5YVZfUVMteklsVWtIV084QTV5TTFiaktka3FIT3cxZmRMY1hza2RCSmV0TDI2eW5LOGIyRFZ6dXo1M0IzZU40dG5yU1M0UXkyeTBJeDNsemJzVngzYTUzYTVHLUhQZGR5U3JZSXR2NGp2ZWlzRmdJNWdqdWp0TFJCMkxBTldYQllSd09iS3RuNTRieEFnbFQ?oc=5",
-   "when": "Fri, 11 Sep 2026"
-  },
-  {
-   "event_date": "2026-10-06",
-   "first_seen": "2026-09-12",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:ethereum-glamsterdam-upgrade-set-for-sepolia-on-october-6-cr",
-   "last_seen": "2026-09-13",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-12",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 30.0
-   },
-   "score": 30.0,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-12",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ETH",
-   "title": "Ethereum Glamsterdam Upgrade Set for Sepolia on October 6 - Cryptonews.net",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAxd3F0c0RDdDFFYVVKekg1NmdRVnBYNWlIOHJJblZSQmxlQmtXQnJkdHlXbXF0dnlqejIzNmVHdE5tejc0Q0JXenFRWnVlaG9Rc2xsWDJ2OGo4dw?oc=5",
    "when": "Fri, 11 Sep 2026"
   },
   {
@@ -208,7 +211,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 61,
+ "event_count": 68,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -232,64 +235,65 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-18 08:45\n감시 52종목(체인 34·프로토콜 18) · 이벤트 61건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>ATOM</b> [인프라·신규] Gaia v28.2.0 upgrade\n🟠 <b>XRP</b> [인프라·신규] rippled 3.4.0 — Version 3.4.0 of `xrpld`, the reference server implementation \n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MORPHO <b>투표중</b> · MIP 134 - Incentives Distribution on Arc\n🔴 <code>D-2   </code> ATOM <b>투표중</b> · Gaia v28.2.0 upgrade\n🟠 <code>D-17  </code> ENA <b>일정확정</b> · ENA Unlock on October 5: What Ethena Is Actually Releasing All\n🟠 <code>D-18  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n🟠 <code>D-18  </code> ETH <b>일정확정</b> · Ethereum Glamsterdam Upgrade Set for Sepolia on October 6 - Cr\n🟠 <code>D-27  </code> FIL <b>일정확정</b> · Filecoin Vesting Ends on October 15: What Really Changes for F\n🟠 <code>D-27  </code> FIL <b>일정확정</b> · Filecoin Says New FIL Supply to Drop 75% After Vesting Ends Oc\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-19 08:39\n감시 52종목(체인 34·프로토콜 18) · 이벤트 68건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>UNI</b> [기능·신규] Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vaults\n🟠 <b>UNI</b> [기능·신규] Protocol Fee Expansion: Arc\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-1   </code> ATOM <b>투표중</b> · Gaia v28.2.0 upgrade\n🟠 <code>D-4   </code> UNI <b>투표중</b> · Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vault\n🟠 <code>D-4   </code> UNI <b>투표중</b> · Protocol Fee Expansion: Arc\n🟠 <code>D-16  </code> ENA <b>일정확정</b> · ENA Unlock on October 5: What Ethena Is Actually Releasing All\n🟠 <code>D-17  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n🟠 <code>D-26  </code> FIL <b>일정확정</b> · Filecoin Vesting Ends on October 15: What Really Changes for F\n🟠 <code>D-26  </code> FIL <b>일정확정</b> · Filecoin Says New FIL Supply to Drop 75% After Vesting Ends Oc\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-09-20",
-   "first_seen": "2026-09-18",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "cosmoshub:gov:1055",
+   "event_date": "2026-09-23",
+   "first_seen": "2026-09-19",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-18",
-    "price_at_detect": 1.59,
-    "score_at_detect": 45.5
+    "detected_at": "2026-09-19",
+    "price_at_detect": 6.96,
+    "score_at_detect": 29.2
    },
-   "score": 45.5,
-   "source": "cosmos",
+   "score": 29.2,
+   "source": "snapshot",
    "stage": "VOTING",
    "stage_history": [
     {
-     "at": "2026-09-18",
+     "at": "2026-09-19",
      "stage": "VOTING"
     }
    ],
-   "symbol": "ATOM",
-   "title": "Gaia v28.2.0 upgrade",
+   "symbol": "UNI",
+   "title": "Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vaults",
    "transition": "NEW",
    "trust": 1.0,
-   "url": "https://www.mintscan.io/cosmoshub/proposals/1055",
-   "when": "2026-09-20"
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
+   "vote_state": "active",
+   "when": "2026-09-23"
   },
   {
-   "event_date": null,
-   "first_seen": "2026-09-18",
+   "event_date": "2026-09-23",
+   "first_seen": "2026-09-19",
    "grade": "B",
-   "impact": "INFRA",
-   "key": "XRPLF/rippled@3.4.0",
-   "prerelease": false,
+   "impact": "FEATURE",
+   "key": "snapshot:0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-18",
-    "price_at_detect": 1.41,
-    "score_at_detect": 29.9
+    "detected_at": "2026-09-19",
+    "price_at_detect": 6.96,
+    "score_at_detect": 29.2
    },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
    "stage_history": [
     {
-     "at": "2026-09-18",
-     "stage": "ACTIVATED"
+     "at": "2026-09-19",
+     "stage": "VOTING"
     }
    ],
-   "symbol": "XRP",
-   "title": "rippled 3.4.0 — Version 3.4.0 of `xrpld`, the reference server implementation of the XRP Ledger protocol, is now available.",
+   "symbol": "UNI",
+   "title": "Protocol Fee Expansion: Arc",
    "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/XRPLF/rippled/releases/tag/3.4.0",
-   "when": "2026-09-17"
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
+   "vote_state": "active",
+   "when": "2026-09-23"
   }
  ],
  "universe": {
@@ -389,7 +393,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 37,
+   "n": 42,
    "status": "OK"
   },
   {
@@ -413,13 +417,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 20,
+   "n": 24,
    "status": "OK"
   },
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
@@ -431,7 +435,7 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 3,
+   "n": 5,
    "status": "표본 부족"
   },
   {
@@ -449,7 +453,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 26,
+   "n": 29,
    "status": "OK"
   },
   {
