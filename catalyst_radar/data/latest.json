@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-09-19 08:39",
+ "as_of_kst": "2026-09-20 08:39",
  "calendar": [
   {
    "event_date": "2026-09-20",
@@ -7,7 +7,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1055",
-   "last_seen": "2026-09-19",
+   "last_seen": "2026-09-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-18",
@@ -35,7 +35,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
-   "last_seen": "2026-09-19",
+   "last_seen": "2026-09-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -64,7 +64,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
-   "last_seen": "2026-09-19",
+   "last_seen": "2026-09-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -123,7 +123,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:ethereum-s-glamsterdam-upgrade-slipped-again-sepolia-now-tar",
-   "last_seen": "2026-09-19",
+   "last_seen": "2026-09-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-12",
@@ -176,42 +176,12 @@
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1YdU1yWUNjWENqbEU5OWdMUHFQZldiY1pxajJoZ3JTaVBlWUJZdmpGWThpVjR3VEdsaEZaX2RqMUlheUZYUXI0clI5S3lzUWZFYnNtZ1VWU18zZw?oc=5",
    "when": "Mon, 07 Sep 2026"
-  },
-  {
-   "event_date": "2026-10-15",
-   "first_seen": "2026-09-07",
-   "grade": "B",
-   "impact": "SUPPLY",
-   "key": "news:filecoin-says-new-fil-supply-to-drop-75-after-vesting-ends-o",
-   "last_seen": "2026-09-14",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-07",
-    "price_at_detect": 0.799444,
-    "score_at_detect": 30.2,
-    "t7": 0.0,
-    "t7_at": "2026-09-14"
-   },
-   "score": 30.2,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-07",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "FIL",
-   "title": "Filecoin Says New FIL Supply to Drop 75% After Vesting Ends Oct. 15 - en.bloomingbit.io",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBtaUtZWjhOSjZmcG4telp6Y2JmMzlabEM4VldKaGFjamxwbWxLbm1sOWxmWEMwMmN5UGVyZGZxbzVmMWlVQlFIM2Q2TmpPVXJVUU9kQw?oc=5",
-   "when": "Fri, 04 Sep 2026"
   }
  ],
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 68,
+ "event_count": 66,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -235,67 +205,8 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-19 08:39\n감시 52종목(체인 34·프로토콜 18) · 이벤트 68건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>UNI</b> [기능·신규] Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vaults\n🟠 <b>UNI</b> [기능·신규] Protocol Fee Expansion: Arc\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-1   </code> ATOM <b>투표중</b> · Gaia v28.2.0 upgrade\n🟠 <code>D-4   </code> UNI <b>투표중</b> · Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vault\n🟠 <code>D-4   </code> UNI <b>투표중</b> · Protocol Fee Expansion: Arc\n🟠 <code>D-16  </code> ENA <b>일정확정</b> · ENA Unlock on October 5: What Ethena Is Actually Releasing All\n🟠 <code>D-17  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n🟠 <code>D-26  </code> FIL <b>일정확정</b> · Filecoin Vesting Ends on October 15: What Really Changes for F\n🟠 <code>D-26  </code> FIL <b>일정확정</b> · Filecoin Says New FIL Supply to Drop 75% After Vesting Ends Oc\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
- "transitions": [
-  {
-   "event_date": "2026-09-23",
-   "first_seen": "2026-09-19",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-19",
-    "price_at_detect": 6.96,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-09-19",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "UNI",
-   "title": "Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vaults",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
-   "vote_state": "active",
-   "when": "2026-09-23"
-  },
-  {
-   "event_date": "2026-09-23",
-   "first_seen": "2026-09-19",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-19",
-    "price_at_detect": 6.96,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-09-19",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "UNI",
-   "title": "Protocol Fee Expansion: Arc",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
-   "vote_state": "active",
-   "when": "2026-09-23"
-  }
- ],
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-20 08:39\n감시 52종목(체인 34·프로토콜 18) · 이벤트 66건\n\n<b>■ 오늘의 상태 전이</b>\n· 신규 승격 없음\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> ATOM <b>투표중</b> · Gaia v28.2.0 upgrade\n🟠 <code>D-3   </code> UNI <b>투표중</b> · Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vault\n🟠 <code>D-3   </code> UNI <b>투표중</b> · Protocol Fee Expansion: Arc\n🟠 <code>D-15  </code> ENA <b>일정확정</b> · ENA Unlock on October 5: What Ethena Is Actually Releasing All\n🟠 <code>D-16  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n🟠 <code>D-25  </code> FIL <b>일정확정</b> · Filecoin Vesting Ends on October 15: What Really Changes for F\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "transitions": [],
  "universe": {
   "chain": 34,
   "protocol": 18,
@@ -393,7 +304,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 42,
+   "n": 41,
    "status": "OK"
   },
   {
@@ -405,7 +316,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 13,
+   "n": 12,
    "status": "OK"
   },
   {
@@ -417,13 +328,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 24,
+   "n": 25,
    "status": "OK"
   },
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -435,7 +346,7 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 5,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -453,7 +364,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 29,
+   "n": 27,
    "status": "OK"
   },
   {
