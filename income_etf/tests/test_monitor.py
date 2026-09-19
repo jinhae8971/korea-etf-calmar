@@ -167,3 +167,22 @@ class TestConfig(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestColorMarks(unittest.TestCase):
+    def test_mark_direction(self):
+        self.assertEqual(m.mark(0.012), m.UP)
+        self.assertEqual(m.mark(-0.003), m.DOWN)
+        self.assertEqual(m.mark(0.0), m.FLAT)
+        self.assertEqual(m.mark(0.0004), m.FLAT)   # +0.04% → 표시상 +0.0% 이므로 보합
+        self.assertEqual(m.mark(None), "")
+
+    def test_mark_pp_scale(self):
+        self.assertEqual(m.mark(1.17, 2, 1.0), m.UP)
+        self.assertEqual(m.mark(-0.05, 2, 1.0), m.DOWN)
+        self.assertEqual(m.mark(0.001, 2, 1.0), m.FLAT)
+
+    def test_cpct(self):
+        self.assertEqual(m.cpct(0.0123), "🔴+1.2%")
+        self.assertEqual(m.cpct(-0.0123), "🔵-1.2%")
+        self.assertEqual(m.cpct(None), "–")

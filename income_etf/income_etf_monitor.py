@@ -329,6 +329,30 @@ def pct(v, digits=1, sign=True):
     return s
 
 
+# 증감 색 표기 — 텔레그램은 글자색을 지원하지 않으므로 색 원형 이모지로 대체.
+# 국내 관례: 상승=빨강, 하락=파랑, 보합(표시 자릿수 기준 0)=흰색
+UP, DOWN, FLAT = "🔴", "🔵", "⚪"
+
+
+def mark(v, digits=1, scale=100.0):
+    """표시 자릿수로 반올림한 값의 부호에 따라 색 마커를 돌려준다."""
+    if v is None or (isinstance(v, float) and math.isnan(v)):
+        return ""
+    r = round(v * scale, digits)
+    if r > 0:
+        return UP
+    if r < 0:
+        return DOWN
+    return FLAT
+
+
+def cpct(v, digits=1):
+    """색 마커 + 부호 퍼센트 (수익률·증감률용)."""
+    if v is None or (isinstance(v, float) and math.isnan(v)):
+        return "–"
+    return f"{mark(v, digits)}{pct(v, digits)}"
+
+
 def money(v):
     if v is None:
         return "–"
@@ -351,6 +375,7 @@ def build_message(rows: list, prev_snap: dict, asof: str, vol_ctx: dict = None) 
     lines = [
         "📊 <b>인컴 ETF 주간 브리프</b>",
         f"기준일 {asof} · 종가 기준",
+        f"{UP} 상승  {DOWN} 하락  {FLAT} 보합",
         "",
     ]
     for r in rows:
@@ -365,29 +390,29 @@ def build_message(rows: list, prev_snap: dict, asof: str, vol_ctx: dict = None) 
             r["ttm_yield"] * 100 if r["ttm_yield"] is not None else None,
             p.get("ttm_yield") * 100 if p.get("ttm_yield") is not None else None,
         )
-        dy_txt = f" ({dy:+.2f}%p)" if dy is not None else ""
+        dy_txt = f" ({mark(dy, 2, 1.0)}{dy:+.2f}%p)" if dy is not None else ""
 
         # AUM 증감
         aum_txt = money(r["aum"])
         if r["aum"] and p.get("aum"):
             wow = r["aum"] / p["aum"] - 1.0
-            aum_txt += f" ({wow * 100:+.1f}%, {'+' if r['aum'] >= p['aum'] else '-'}{money(abs(r['aum'] - p['aum']))})"
+            aum_txt += f" ({cpct(wow)}, {'+' if r['aum'] >= p['aum'] else '-'}{money(abs(r['aum'] - p['aum']))})"
 
         # 분배금 증감
         if r["last_div"] is not None:
             dv = f"${r['last_div']:.4f}"
             if r["div_chg"] is not None:
-                dv += f" (직전비 {r['div_chg'] * 100:+.1f}%"
+                dv += f" (직전비 {cpct(r['div_chg'])}"
                 if r.get("div_vs_avg") is not None:
-                    dv += f", 6회평균비 {r['div_vs_avg'] * 100:+.1f}%"
+                    dv += f", 6회평균비 {cpct(r['div_vs_avg'])}"
                 dv += ")"
         else:
             dv = "–"
 
         lines.append(f"<b>{r['ticker']}</b> ${r['price']} · {r['name']}")
         lines.append(
-            f"  수익 주간 {pct(r['r_1w'])} | 1M {pct(r['r_1m'])} | "
-            f"YTD {pct(r['r_ytd'])} | 1Y {pct(r['r_1y'])}"
+            f"  수익 주간 {cpct(r['r_1w'])} | 1M {cpct(r['r_1m'])} | "
+            f"YTD {cpct(r['r_ytd'])} | 1Y {cpct(r['r_1y'])}"
         )
         lines.append(
             f"  배당률 {pct(r['ttm_yield'], 2, sign=False)}{dy_txt} · 최근분배 {dv}"
@@ -404,8 +429,8 @@ def build_message(rows: list, prev_snap: dict, asof: str, vol_ctx: dict = None) 
     if wk:
         best = max(wk, key=lambda x: x["r_1w"])
         worst = min(wk, key=lambda x: x["r_1w"])
-        lines.append(f"🏆 주간 최고 {best['ticker']} {pct(best['r_1w'])}")
-        lines.append(f"🔻 주간 최저 {worst['ticker']} {pct(worst['r_1w'])}")
+        lines.append(f"🏆 주간 최고 {best['ticker']} {cpct(best['r_1w'])}")
+        lines.append(f"🔻 주간 최저 {worst['ticker']} {cpct(worst['r_1w'])}")
 
     # 분배금 추세 감액 경보 (최근 6회 평균 대비 -15% 미만)
     cuts = [
