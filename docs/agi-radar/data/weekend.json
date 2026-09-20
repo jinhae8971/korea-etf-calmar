@@ -1,24 +1,8 @@
 {
- "date": "2026-09-19",
- "generated_at": "2026-09-19T10:47:05+09:00",
+ "date": "2026-09-20",
+ "generated_at": "2026-09-20T12:12:21+09:00",
  "as_of_close": "2026-09-18",
  "nodes": [
-  {
-   "id": "hyperscaler",
-   "label": "수요측 하이퍼스케일러",
-   "role": "demand",
-   "stage": 0,
-   "coverage": 4,
-   "universe": 4,
-   "rs20": 0.0672,
-   "rs60": 0.1331,
-   "rs20_prev": 0.0521,
-   "ret20": 0.066,
-   "ret60": 0.1719,
-   "rank": 1,
-   "rank_prev": 2,
-   "rank_delta": 1
-  },
   {
    "id": "compute",
    "label": "연산 (GPU/ASIC)",
@@ -31,10 +15,26 @@
    "rs20_prev": -0.0719,
    "ret20": 0.0608,
    "ret60": 0.0366,
-   "rank": 2,
+   "rank": 1,
    "rank_prev": 6,
-   "rank_delta": 4,
+   "rank_delta": 5,
    "long_rank": 1
+  },
+  {
+   "id": "hyperscaler",
+   "label": "수요측 하이퍼스케일러",
+   "role": "demand",
+   "stage": 0,
+   "coverage": 4,
+   "universe": 4,
+   "rs20": 0.0607,
+   "rs60": 0.126,
+   "rs20_prev": 0.0521,
+   "ret20": 0.0595,
+   "ret60": 0.1648,
+   "rank": 2,
+   "rank_prev": 2,
+   "rank_delta": 0
   },
   {
    "id": "memory",
@@ -43,11 +43,11 @@
    "stage": 2,
    "coverage": 4,
    "universe": 4,
-   "rs20": 0.0326,
-   "rs60": -0.1617,
+   "rs20": 0.06,
+   "rs60": -0.1384,
    "rs20_prev": -0.0363,
-   "ret20": 0.0315,
-   "ret60": -0.1229,
+   "ret20": 0.0589,
+   "ret60": -0.0996,
    "rank": 3,
    "rank_prev": 4,
    "rank_delta": 1,
@@ -60,11 +60,11 @@
    "stage": 4,
    "coverage": 6,
    "universe": 6,
-   "rs20": 0.028,
-   "rs60": -0.1158,
+   "rs20": 0.022,
+   "rs60": -0.1211,
    "rs20_prev": -0.0677,
-   "ret20": 0.0268,
-   "ret60": -0.077,
+   "ret20": 0.0208,
+   "ret60": -0.0823,
    "rank": 4,
    "rank_prev": 5,
    "rank_delta": 1,
@@ -77,11 +77,11 @@
    "stage": 9,
    "coverage": 7,
    "universe": 7,
-   "rs20": 0.0112,
-   "rs60": 0.396,
+   "rs20": -0.0077,
+   "rs60": 0.3692,
    "rs20_prev": 0.3163,
-   "ret20": 0.01,
-   "ret60": 0.4348,
+   "ret20": -0.0089,
+   "ret60": 0.408,
    "rank": 5,
    "rank_prev": 1,
    "rank_delta": -4
@@ -93,11 +93,11 @@
    "stage": 5,
    "coverage": 5,
    "universe": 5,
-   "rs20": -0.0388,
-   "rs60": -0.1253,
+   "rs20": -0.0161,
+   "rs60": -0.1038,
    "rs20_prev": 0.0499,
-   "ret20": -0.04,
-   "ret60": -0.0865,
+   "ret20": -0.0173,
+   "ret60": -0.065,
    "rank": 6,
    "rank_prev": 3,
    "rank_delta": -3,
@@ -133,13 +133,13 @@
  },
  "hedge": {
   "status": "WATCH",
-  "corr20": -0.4458,
-  "spread_vol_ratio": 1.9133,
-  "ratio_z": 0.99,
+  "corr20": -0.4722,
+  "spread_vol_ratio": 1.9328,
+  "ratio_z": 1.04,
   "both_legs_lose": false,
-  "spread_return": -0.0065,
-  "long_return_20d": 0.0036,
-  "short_return_20d": 0.01,
+  "spread_return": 0.0206,
+  "long_return_20d": 0.0118,
+  "short_return_20d": -0.0089,
   "base_rate_broken_1y": 0.107,
   "history": [
    {
@@ -739,19 +739,19 @@
    },
    {
     "i": 419,
-    "corr": -0.4458,
-    "ratio": 1.9133
+    "corr": -0.4722,
+    "ratio": 1.9328
    }
   ]
  },
  "crowding": {
-  "score": 48.9,
+  "score": 49.0,
   "level": "NORMAL",
   "components": {
-   "intra_correlation": 52.2,
+   "intra_correlation": 52.0,
    "momentum_extension": 0.0,
    "beta_to_market": 100.0,
-   "unwind_progress": 70.9
+   "unwind_progress": 72.3
   },
   "cutoffs": {
    "watch": 64.3,
@@ -759,11 +759,11 @@
    "basis": "자기 1년 이력 70/90 분위수"
   },
   "raw": {
-   "mom60": -0.0786,
-   "mom_z": -1.73,
-   "beta60": 2.791,
-   "drawdown_1y": -0.1456,
-   "intra_corr20": 0.5612
+   "mom60": -0.071,
+   "mom_z": -1.69,
+   "beta60": 2.786,
+   "drawdown_1y": -0.1386,
+   "intra_corr20": 0.5598
   }
  },
  "funding": {
@@ -776,14 +776,14 @@
   "score": 0.0,
   "reasons": [
    "논지 폭 붕괴 — 롱 노드 0/5개만 초과수익",
-   "헤지 약화 — 스프레드 변동성비 1.9133",
-   "포지셔닝 혼잡도 정상 (48.9)"
+   "헤지 약화 — 스프레드 변동성비 1.9328",
+   "포지셔닝 혼잡도 정상 (49.0)"
   ],
   "alerts": [
    {
     "code": "BOTTLENECK_SHIFT",
     "severity": "INFO",
-    "text": "병목 선두가 '연산 (GPU/ASIC)'로 이동했습니다 (순위 4단계 상승)."
+    "text": "병목 선두가 '연산 (GPU/ASIC)'로 이동했습니다 (순위 5단계 상승)."
    }
   ]
  },
@@ -792,14 +792,14 @@
   "rule_state": "THESIS_BROKEN",
   "debate_state": null,
   "confidence_score": 40,
-  "summary": "논지 폭 붕괴 — 롱 노드 0/5개만 초과수익 / 헤지 약화 — 스프레드 변동성비 1.9133 / 포지셔닝 혼잡도 정상 (48.9)",
+  "summary": "논지 폭 붕괴 — 롱 노드 0/5개만 초과수익 / 헤지 약화 — 스프레드 변동성비 1.9328 / 포지셔닝 혼잡도 정상 (49.0)",
   "key_insights": [
    "논지 폭 붕괴 — 롱 노드 0/5개만 초과수익",
-   "헤지 약화 — 스프레드 변동성비 1.9133",
-   "포지셔닝 혼잡도 정상 (48.9)"
+   "헤지 약화 — 스프레드 변동성비 1.9328",
+   "포지셔닝 혼잡도 정상 (49.0)"
   ],
   "risk_factors": [
-   "병목 선두가 '연산 (GPU/ASIC)'로 이동했습니다 (순위 4단계 상승)."
+   "병목 선두가 '연산 (GPU/ASIC)'로 이동했습니다 (순위 5단계 상승)."
   ],
   "action_items": [],
   "stance_votes": {},
@@ -816,126 +816,41 @@
    "yahoo": 38
   }
  },
- "brief_mode": "weekly",
- "weekly_review": {
-  "available": true,
-  "span": {
-   "from": "2026-09-10",
-   "to": "2026-09-18",
-   "sessions": 5
-  },
-  "state": {
-   "from": "THESIS_BROKEN",
-   "to": "THESIS_BROKEN",
-   "changed": null
-  },
-  "score_delta": 0.0,
-  "hedge": {
-   "from": "WATCH",
-   "to": "WATCH",
-   "broken_days": 3,
-   "watch_days": 2,
-   "corr_delta": -0.1817,
-   "spread_now": -0.0065
-  },
-  "crowding": {
-   "from": 43.7,
-   "to": 48.9,
-   "delta": 5.2,
-   "level": "NORMAL"
-  },
-  "breadth": {
-   "from": 0.0,
-   "to": 0.0,
-   "delta": 0.0
-  },
-  "bottleneck": {
-   "from": "메모리 (HBM/NAND)",
-   "to": "연산 (GPU/ASIC)",
-   "changed": true
-  },
-  "alerts": [
-   [
-    "BOTTLENECK_SHIFT",
-    3
-   ],
-   [
-    "HEDGE_BROKEN",
-    3
-   ]
-  ],
-  "movers_up": [
+ "brief_mode": "watchlist",
+ "watchlist": {
+  "items": [
    {
-    "id": "compute",
-    "label": "연산 (GPU/ASIC)",
-    "role": "long",
-    "stage": 1,
-    "coverage": 4,
-    "universe": 4,
-    "rs20": 0.062,
-    "rs60": -0.0022,
-    "rs20_prev": -0.0719,
-    "ret20": 0.0608,
-    "ret60": 0.0366,
-    "rank": 2,
-    "rank_prev": 6,
-    "rank_delta": 4,
-    "long_rank": 1
+    "name": "롱·숏 20일 상관",
+    "current": -0.4722,
+    "trigger": -0.4,
+    "distance": -0.0722,
+    "breached": true,
+    "condition": "-0.4 이하 + 동시손실이면 헤지 BROKEN",
+    "armed": true,
+    "note": "동시손실만 발생하면 즉시 BROKEN"
    },
    {
-    "id": "memory",
-    "label": "메모리 (HBM/NAND)",
-    "role": "long",
-    "stage": 2,
-    "coverage": 4,
-    "universe": 4,
-    "rs20": 0.0326,
-    "rs60": -0.1617,
-    "rs20_prev": -0.0363,
-    "ret20": 0.0315,
-    "ret60": -0.1229,
-    "rank": 3,
-    "rank_prev": 4,
-    "rank_delta": 1,
-    "long_rank": 2
+    "name": "혼잡도",
+    "current": 49.0,
+    "trigger": 64.3,
+    "distance": 15.3,
+    "breached": false,
+    "condition": "64.3 이상이면 WATCH",
+    "armed": false,
+    "note": null
    },
    {
-    "id": "power",
-    "label": "전력/발전/열관리",
-    "role": "long",
-    "stage": 4,
-    "coverage": 6,
-    "universe": 6,
-    "rs20": 0.028,
-    "rs60": -0.1158,
-    "rs20_prev": -0.0677,
-    "ret20": 0.0268,
-    "ret60": -0.077,
-    "rank": 4,
-    "rank_prev": 5,
-    "rank_delta": 1,
-    "long_rank": 3
+    "name": "논지 폭 (초과수익 노드 비율)",
+    "current": 0.0,
+    "trigger": 0.25,
+    "distance": -0.25,
+    "breached": true,
+    "condition": "0.25 이하면 논지 폭 붕괴 판정",
+    "armed": true,
+    "note": null
    }
   ],
-  "movers_down": [
-   {
-    "id": "neocloud",
-    "label": "네오클라우드/데이터센터",
-    "role": "long",
-    "stage": 5,
-    "coverage": 5,
-    "universe": 5,
-    "rs20": -0.0388,
-    "rs60": -0.1253,
-    "rs20_prev": 0.0499,
-    "ret20": -0.04,
-    "ret60": -0.0865,
-    "rank": 6,
-    "rank_prev": 3,
-    "rank_delta": -3,
-    "long_rank": 4
-   }
-  ]
+  "armed_count": 2
  },
- "message": "<b>📅 AGI Thesis Radar — 주간 리뷰 (2026-09-19)</b>\n\n기간 2026-09-10 → 2026-09-18 (5거래일)\n\n<b>판정</b>  논지 훼손 유지 (점수 –)\n\n<b>① 헤지</b>  WATCH → WATCH\n  BROKEN 3일 / WATCH 2일 (총 5일 중)\n  20일 상관 변화 ▼0.1817 · 주간 스프레드 -0.7%\n\n<b>② 혼잡도</b>  43.7 → 48.9 (▲5.2) · 현재 NORMAL\n<b>③ 논지 폭</b>  0.0 → 0.0 (–)\n\n<b>④ 병목 이동</b>  메모리 (HBM/NAND) → <b>연산 (GPU/ASIC)</b>\n\n  ▲ 연산 (GPU/ASIC) 4단계 상승 (+6.2%)\n  ▲ 메모리 (HBM/NAND) 1단계 상승 (+3.3%)\n  ▲ 전력/발전/열관리 1단계 상승 (+2.8%)\n  ▼ 네오클라우드/데이터센터 3단계 하락 (-3.9%)\n\n<b>⚠️ 이번 주 경보 발생</b>\n  · 병목 이동 — 3일\n  · 헤지 붕괴 — 3일\n\n<i>기준 종가 2026-09-18 · 미국장 휴장 중</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/agi-radar/\n\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>"
+ "message": "<b>🎯 AGI Thesis Radar — 다음 주 워치리스트 (2026-09-20)</b>\n\n현재 판정: 논지 훼손 · 발동 임박 지표 2개\n\n<b>임계선까지 남은 거리</b>\n🔴 <b>롱·숏 20일 상관</b>\n    현재 -0.4722 → 발동 -0.4 (<b>이미 통과</b>)\n    <i>-0.4 이하 + 동시손실이면 헤지 BROKEN</i>\n    ⚠️ 동시손실만 발생하면 즉시 BROKEN\n🟢 <b>혼잡도</b>\n    현재 49.0 → 발동 64.3 (여유 +15.3)\n    <i>64.3 이상이면 WATCH</i>\n🔴 <b>논지 폭 (초과수익 노드 비율)</b>\n    현재 0.0 → 발동 0.25 (<b>이미 통과</b>)\n    <i>0.25 이하면 논지 폭 붕괴 판정</i>\n\n<b>병목 상위 노드 (다음 주 관찰 대상)</b>\n  1. 연산 (GPU/ASIC) +6.2%\n  2. 메모리 (HBM/NAND) +6.0%\n  3. 전력/발전/열관리 +2.2%\n\n<i>기준 종가 2026-09-18</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/agi-radar/\n\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>"
 }
