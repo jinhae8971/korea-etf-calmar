@@ -9007,5 +9007,434 @@
     "mom": 2.125
    }
   }
+ },
+ {
+  "as_of_date": "2026-09-22",
+  "universe_size": 161,
+  "total_on_chain_30d": 641999846.4,
+  "hood_share_30d": 0.17962568755530478,
+  "hood_top_protocol": "Robinhood Chain",
+  "chains": {
+   "solana": {
+    "name": "Solana",
+    "rank30": 1,
+    "rev30": 192636993.42,
+    "rev24": 7943047.45,
+    "mom": 1.237
+   },
+   "robinhood": {
+    "name": "Robinhood Chain",
+    "rank30": 2,
+    "rev30": 115319663.82,
+    "rev24": 1484046.14,
+    "mom": 0.386
+   },
+   "hyperliquid": {
+    "name": "Hyperliquid L1",
+    "rank30": 3,
+    "rev30": 73532754.34,
+    "rev24": 2297389.67,
+    "mom": 0.937
+   },
+   "ethereum": {
+    "name": "Ethereum",
+    "rank30": 4,
+    "rev30": 60029170.84,
+    "rev24": 2250330.48,
+    "mom": 1.125
+   },
+   "canton": {
+    "name": "Canton",
+    "rank30": 5,
+    "rev30": 48438668.57,
+    "rev24": 1492164.0,
+    "mom": 0.924
+   },
+   "bsc": {
+    "name": "BSC",
+    "rank30": 6,
+    "rev30": 38527576.37,
+    "rev24": 1123835.15,
+    "mom": 0.875
+   },
+   "base": {
+    "name": "Base",
+    "rank30": 7,
+    "rev30": 32430513.13,
+    "rev24": 715479.53,
+    "mom": 0.662
+   },
+   "tron": {
+    "name": "Tron",
+    "rank30": 8,
+    "rev30": 24716313.69,
+    "rev24": 704413.5,
+    "mom": 0.855
+   },
+   "polygon": {
+    "name": "Polygon",
+    "rank30": 9,
+    "rev30": 21005023.96,
+    "rev24": 286205.57,
+    "mom": 0.409
+   },
+   "arbitrum": {
+    "name": "Arbitrum",
+    "rank30": 10,
+    "rev30": 4970652.9,
+    "rev24": 155864.06,
+    "mom": 0.941
+   },
+   "zklighter": {
+    "name": "zkLighter",
+    "rank30": 11,
+    "rev30": 3475817.09,
+    "rev24": 79920.0,
+    "mom": 0.69
+   },
+   "edgex": {
+    "name": "edgeX L1",
+    "rank30": 12,
+    "rev30": 3416524.0,
+    "rev24": 86439.0,
+    "mom": 0.759
+   },
+   "avax": {
+    "name": "Avalanche",
+    "rank30": 13,
+    "rev30": 3035637.66,
+    "rev24": 208937.81,
+    "mom": 2.065
+   },
+   "optimism": {
+    "name": "OP Mainnet",
+    "rank30": 14,
+    "rev30": 2404369.24,
+    "rev24": 101779.67,
+    "mom": 1.27
+   },
+   "ink": {
+    "name": "Ink",
+    "rank30": 15,
+    "rev30": 2207886.23,
+    "rev24": 74966.73,
+    "mom": 1.019
+   },
+   "era": {
+    "name": "ZKsync Era",
+    "rank30": 16,
+    "rev30": 1929069.7,
+    "rev24": 67005.33,
+    "mom": 1.042
+   },
+   "near": {
+    "name": "Near",
+    "rank30": 17,
+    "rev30": 1415753.95,
+    "rev24": 62350.0,
+    "mom": 1.321
+   },
+   "adi": {
+    "name": "ADI",
+    "rank30": 18,
+    "rev30": 1232727.38,
+    "rev24": 98524.0,
+    "mom": 2.398
+   },
+   "monad": {
+    "name": "Monad",
+    "rank30": 19,
+    "rev30": 1225518.36,
+    "rev24": 45767.43,
+    "mom": 1.12
+   },
+   "sui": {
+    "name": "Sui",
+    "rank30": 20,
+    "rev30": 1213319.24,
+    "rev24": 65390.37,
+    "mom": 1.617
+   },
+   "abstract": {
+    "name": "Abstract",
+    "rank30": 21,
+    "rev30": 1147136.65,
+    "rev24": 27294.36,
+    "mom": 0.714
+   },
+   "native_core": {
+    "name": "Native Core",
+    "rank30": 22,
+    "rev30": 743208.0,
+    "rev24": 58605.0,
+    "mom": 2.366
+   },
+   "txflow": {
+    "name": "TxFlow",
+    "rank30": 23,
+    "rev30": 710752.0,
+    "rev24": 19902.0,
+    "mom": 0.84
+   },
+   "aptos": {
+    "name": "Aptos",
+    "rank30": 24,
+    "rev30": 687980.72,
+    "rev24": 36635.63,
+    "mom": 1.598
+   },
+   "lyra": {
+    "name": "Derive Chain",
+    "rank30": 25,
+    "rev30": 474705.55,
+    "rev24": 23685.0,
+    "mom": 1.497
+   },
+   "stellar": {
+    "name": "Stellar",
+    "rank30": 26,
+    "rev30": 436186.51,
+    "rev24": 15793.62,
+    "mom": 1.086
+   },
+   "pulse": {
+    "name": "PulseChain",
+    "rank30": 27,
+    "rev30": 342180.85,
+    "rev24": 7563.28,
+    "mom": 0.663
+   },
+   "plasma": {
+    "name": "Plasma",
+    "rank30": 28,
+    "rev30": 303653.31,
+    "rev24": 9649.46,
+    "mom": 0.953
+   },
+   "arc": {
+    "name": "Arc",
+    "rank30": 29,
+    "rev30": 291262.03,
+    "rev24": 21126.58,
+    "mom": 2.176
+   },
+   "mantle": {
+    "name": "Mantle",
+    "rank30": 30,
+    "rev30": 280608.77,
+    "rev24": 10366.93,
+    "mom": 1.108
+   },
+   "quai": {
+    "name": "Quai",
+    "rank30": 31,
+    "rev30": 252292.47,
+    "rev24": 34064.0,
+    "mom": 4.051
+   },
+   "chainflip": {
+    "name": "Chainflip",
+    "rank30": 32,
+    "rev30": 244093.0,
+    "rev24": 17720.0,
+    "mom": 2.178
+   },
+   "starknet": {
+    "name": "Starknet",
+    "rank30": 33,
+    "rev30": 235596.3,
+    "rev24": 8254.64,
+    "mom": 1.051
+   },
+   "valuechain": {
+    "name": "ValueChain",
+    "rank30": 34,
+    "rev30": 230316.03,
+    "rev24": 7876.0,
+    "mom": 1.026
+   },
+   "dydx": {
+    "name": "dYdX",
+    "rank30": 35,
+    "rev30": 225767.57,
+    "rev24": 7033.24,
+    "mom": 0.935
+   },
+   "cardano": {
+    "name": "Cardano",
+    "rank30": 36,
+    "rev30": 202228.49,
+    "rev24": 8718.42,
+    "mom": 1.293
+   },
+   "injective": {
+    "name": "Injective",
+    "rank30": 37,
+    "rev30": 201723.92,
+    "rev24": 7327.18,
+    "mom": 1.09
+   },
+   "bittensor": {
+    "name": "Bittensor",
+    "rank30": 38,
+    "rev30": 189255.0,
+    "rev24": 0.0,
+    "mom": 0.0
+   },
+   "xlayer": {
+    "name": "X Layer",
+    "rank30": 39,
+    "rev30": 178070.28,
+    "rev24": 3910.73,
+    "mom": 0.659
+   },
+   "icp": {
+    "name": "ICP",
+    "rank30": 40,
+    "rev30": 177141.32,
+    "rev24": 6317.55,
+    "mom": 1.07
+   },
+   "imx": {
+    "name": "Immutable zkEVM",
+    "rank30": 41,
+    "rev30": 158244.31,
+    "rev24": 6060.54,
+    "mom": 1.149
+   },
+   "sei": {
+    "name": "Sei",
+    "rank30": 42,
+    "rev30": 150567.72,
+    "rev24": 7968.69,
+    "mom": 1.588
+   },
+   "bitcoin": {
+    "name": "Bitcoin",
+    "rank30": 43,
+    "rev30": 130653.63,
+    "rev24": 6115.0,
+    "mom": 1.404
+   },
+   "alphasec": {
+    "name": "AlphaSec",
+    "rank30": 44,
+    "rev30": 125960.0,
+    "rev24": 4715.0,
+    "mom": 1.123
+   },
+   "ronin": {
+    "name": "Ronin",
+    "rank30": 45,
+    "rev30": 112989.75,
+    "rev24": 5624.0,
+    "mom": 1.493
+   },
+   "linea": {
+    "name": "Linea",
+    "rank30": 46,
+    "rev30": 110471.81,
+    "rev24": 2708.42,
+    "mom": 0.736
+   },
+   "cronos": {
+    "name": "Cronos",
+    "rank30": 47,
+    "rev30": 108069.35,
+    "rev24": 4908.42,
+    "mom": 1.363
+   },
+   "stacks": {
+    "name": "Stacks",
+    "rank30": 48,
+    "rev30": 107147.92,
+    "rev24": 3243.0,
+    "mom": 0.908
+   },
+   "flare": {
+    "name": "Flare",
+    "rank30": 49,
+    "rev30": 97825.47,
+    "rev24": 2816.42,
+    "mom": 0.864
+   },
+   "sis": {
+    "name": "Sis",
+    "rank30": 50,
+    "rev30": 90672.0,
+    "rev24": 2293.0,
+    "mom": 0.759
+   },
+   "megaeth": {
+    "name": "MegaETH",
+    "rank30": 51,
+    "rev30": 88466.53,
+    "rev24": 12958.14,
+    "mom": 4.394
+   },
+   "gatelayer": {
+    "name": "GateLayer",
+    "rank30": 52,
+    "rev30": 88409.3,
+    "rev24": 3947.21,
+    "mom": 1.339
+   },
+   "bulk": {
+    "name": "Bulk",
+    "rank30": 53,
+    "rev30": 82526.23,
+    "rev24": 8266.0,
+    "mom": 3.005
+   },
+   "sonic": {
+    "name": "Sonic",
+    "rank30": 54,
+    "rev30": 80323.92,
+    "rev24": 5700.64,
+    "mom": 2.129
+   },
+   "filecoin": {
+    "name": "Filecoin",
+    "rank30": 55,
+    "rev30": 78860.0,
+    "rev24": 2047.0,
+    "mom": 0.779
+   },
+   "manta": {
+    "name": "Manta",
+    "rank30": 56,
+    "rev30": 77234.2,
+    "rev24": 38563.85,
+    "mom": 14.979
+   },
+   "hydradx": {
+    "name": "Hydration",
+    "rank30": 57,
+    "rev30": 73354.0,
+    "rev24": 2530.0,
+    "mom": 1.035
+   },
+   "apechain": {
+    "name": "ApeChain",
+    "rank30": 58,
+    "rev30": 67668.07,
+    "rev24": 1945.84,
+    "mom": 0.863
+   },
+   "eos": {
+    "name": "Vaulta",
+    "rank30": 59,
+    "rev30": 59841.56,
+    "rev24": 17.0,
+    "mom": 0.009
+   },
+   "sxr": {
+    "name": "SX Rollup",
+    "rank30": 60,
+    "rev30": 55941.91,
+    "rev24": 6225.0,
+    "mom": 3.338
+   }
+  }
  }
 ]
