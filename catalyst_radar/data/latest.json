@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-09-22 09:19",
+ "as_of_kst": "2026-09-23 08:52",
  "calendar": [
   {
    "event_date": "2026-09-23",
@@ -7,7 +7,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -36,7 +36,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -65,7 +65,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-meridian-upgrade-vote-targets-september-24-mainnet",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-22",
@@ -118,42 +118,12 @@
    "when": "Fri, 11 Sep 2026"
   },
   {
-   "event_date": "2026-10-15",
-   "first_seen": "2026-09-08",
-   "grade": "B",
-   "impact": "SUPPLY",
-   "key": "news:filecoin-vesting-ends-on-october-15-what-really-changes-for-",
-   "last_seen": "2026-09-17",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-08",
-    "price_at_detect": 0.799444,
-    "score_at_detect": 30.2,
-    "t7": 0.0,
-    "t7_at": "2026-09-15"
-   },
-   "score": 42.8,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-08",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "FIL",
-   "title": "Filecoin Vesting Ends on October 15: What Really Changes for FIL Supply - Cryptonews.net",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1YdU1yWUNjWENqbEU5OWdMUHFQZldiY1pxajJoZ3JTaVBlWUJZdmpGWThpVjR3VEdsaEZaX2RqMUlheUZYUXI0clI5S3lzUWZFYnNtZ1VWU18zZw?oc=5",
-   "when": "Mon, 07 Sep 2026"
-  },
-  {
    "event_date": "2026-11-05",
    "first_seen": "2026-09-19",
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-nu7-upgrade-on-november-5-2026-what-you-must-do-with-y",
-   "last_seen": "2026-09-19",
+   "last_seen": "2026-09-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -237,7 +207,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-crypto-developers-agree-on-nov-5-nu7-mainnet-upgrade-c",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
@@ -293,7 +263,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-price-surges-toward-1-500-as-nu7-upgrade-targets-nov-5",
-   "last_seen": "2026-09-22",
+   "last_seen": "2026-09-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
@@ -316,10 +286,10 @@
    "when": "Fri, 18 Sep 2026"
   }
  ],
- "coverage": 1.0,
+ "coverage": 0.99,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 60,
+ "event_count": 57,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -336,76 +306,79 @@
     "ok": 52
    },
    "rest.cosmos.directory": {
-    "fail": 0,
-    "ok": 1
+    "fail": 1,
+    "ok": 0
    }
   },
   "calls": 101,
-  "fail": 0
+  "fail": 1
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-22 09:19\n감시 52종목(체인 34·프로토콜 18) · 이벤트 60건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>INJ</b> [인프라·신규] Injective Meridian Upgrade Vote Targets September 24 Mainnet Activation - Cryp\n🟠 <b>SOL</b> [인프라·일정확정→활성화] agave v4.3.0 — This a stable release suitable for Testnet, Devnet and Mainnet \n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> UNI <b>투표중</b> · Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vault\n🟠 <code>D-1   </code> UNI <b>투표중</b> · Protocol Fee Expansion: Arc\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective Meridian Upgrade Vote Targets September 24 Mainnet A\n🟠 <code>D-14  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n🟠 <code>D-23  </code> FIL <b>일정확정</b> · Filecoin Vesting Ends on October 15: What Really Changes for F\n⚪ <code>D-44  </code> ZEC <b>일정확정</b> · Zcash NU7 Upgrade on November 5, 2026: What You Must Do With Y\n⚪ <code>D-44  </code> ZEC <b>일정확정</b> · Zcash Crypto Developers Agree on Nov. 5 NU7 Mainnet Upgrade - \n⚪ <code>D-44  </code> ZEC <b>일정확정</b> · Zcash Targets Nov. 5 for NU7 Upgrade to Triple Block Speed - t\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-23 08:52\n감시 52종목(체인 34·프로토콜 18) · 이벤트 57건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>ZEC</b> [공급·제안→가결] [ZIP 237] Add draft-judah-nsm-halving-preserving-issuance: Halving-preserving \n🟠 <b>SUI</b> [인프라·신규] sui testnet-v1.80.1 — Sui Protocol Version in this release: `137`\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> UNI <b>투표중</b> · Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vault\n🟠 <code>D-DAY </code> UNI <b>투표중</b> · Protocol Fee Expansion: Arc\n🟠 <code>D-1   </code> INJ <b>일정확정</b> · Injective Meridian Upgrade Vote Targets September 24 Mainnet A\n🟠 <code>D-13  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n⚪ <code>D-43  </code> ZEC <b>일정확정</b> · Zcash NU7 Upgrade on November 5, 2026: What You Must Do With Y\n⚪ <code>D-43  </code> ZEC <b>일정확정</b> · Zcash Crypto Developers Agree on Nov. 5 NU7 Mainnet Upgrade - \n⚪ <code>D-43  </code> ZEC <b>일정확정</b> · Zcash Targets Nov. 5 for NU7 Upgrade to Triple Block Speed - t\n⚪ <code>D-43  </code> ZEC <b>일정확정</b> · Zcash Crypto Developers Agree on Nov. 5 NU7 Mainnet Upgrade - \n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-09-24",
-   "first_seen": "2026-09-22",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:injective-meridian-upgrade-vote-targets-september-24-mainnet",
+   "event_date": null,
+   "first_seen": "2026-09-07",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "zcash/zips#1354",
+   "prev_stage": "PROPOSED",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-22",
-    "price_at_detect": 5.55,
-    "score_at_detect": 35.3
+    "detected_at": "2026-09-07",
+    "price_at_detect": 1192.89,
+    "score_at_detect": 16.5,
+    "t7": 0.0,
+    "t7_at": "2026-09-14"
    },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
+   "score": 46.8,
+   "source": "proposal",
+   "stage": "PASSED",
    "stage_history": [
     {
-     "at": "2026-09-22",
-     "stage": "SCHEDULED"
+     "at": "2026-09-07",
+     "stage": "PROPOSED"
+    },
+    {
+     "at": "2026-09-23",
+     "stage": "PASSED"
     }
    ],
-   "symbol": "INJ",
-   "title": "Injective Meridian Upgrade Vote Targets September 24 Mainnet Activation - CryptoRank",
-   "transition": "NEW",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE03WGdCWTdxYmNYc2Vod24wMDJBV0JVYUtPNDhTaE1YM1k1Zl9ibi1MQ1hFMXV0UFF0WldaT3NXMGhjalcxQ3o2TjJnNzVxZUZDSHdNWFJpTUZzdV8zckU5VE9DNDBBblkySW5TLW1Id1Zka3hydDNCMw?oc=5",
-   "when": "Mon, 21 Sep 2026"
+   "symbol": "ZEC",
+   "title": "[ZIP 237] Add draft-judah-nsm-halving-preserving-issuance: Halving-preserving variant of ZIP 234",
+   "transition": "STAGE_UP",
+   "trust": 1.0,
+   "updated_at": "2026-09-22T21:38:19Z",
+   "url": "https://github.com/zcash/zips/pull/1354",
+   "when": null
   },
   {
    "event_date": null,
-   "first_seen": "2026-09-19",
+   "first_seen": "2026-09-23",
    "grade": "B",
    "impact": "INFRA",
-   "key": "anza-xyz/agave@v4.3.0",
+   "key": "MystenLabs/sui@testnet-v1.80.1",
    "prerelease": false,
-   "prev_stage": "SCHEDULED",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-19",
-    "price_at_detect": 105.14,
-    "score_at_detect": 17.3
+    "detected_at": "2026-09-23",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 29.9
    },
    "score": 29.9,
    "source": "release",
    "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-09-19",
-     "stage": "SCHEDULED"
-    },
-    {
-     "at": "2026-09-22",
+     "at": "2026-09-23",
      "stage": "ACTIVATED"
     }
    ],
-   "symbol": "SOL",
-   "title": "agave v4.3.0 — This a stable release suitable for Testnet, Devnet and Mainnet Beta.",
-   "transition": "STAGE_UP",
+   "symbol": "SUI",
+   "title": "sui testnet-v1.80.1 — Sui Protocol Version in this release: `137`",
+   "transition": "NEW",
    "trust": 0.95,
-   "url": "https://github.com/anza-xyz/agave/releases/tag/v4.3.0",
-   "when": "2026-09-18"
+   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.80.1",
+   "when": "2026-09-22"
   }
  ],
  "universe": {
@@ -505,7 +478,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 36,
+   "n": 37,
    "status": "OK"
   },
   {
@@ -517,7 +490,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 11,
+   "n": 12,
    "status": "OK"
   },
   {
@@ -529,13 +502,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 22,
+   "n": 23,
    "status": "OK"
   },
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 3,
+   "n": 2,
    "status": "표본 부족"
   },
   {
@@ -547,7 +520,7 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 5,
+   "n": 3,
    "status": "표본 부족"
   },
   {
@@ -565,13 +538,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 22,
+   "n": 24,
    "status": "OK"
   },
   {
    "bucket": "source:snapshot",
    "horizon": 7,
-   "n": 3,
+   "n": 4,
    "status": "표본 부족"
   }
  ],
