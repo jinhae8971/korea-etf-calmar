@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-09-21 08:36",
+ "as_of_kst": "2026-09-22 09:19",
  "calendar": [
   {
    "event_date": "2026-09-23",
@@ -7,7 +7,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
-   "last_seen": "2026-09-21",
+   "last_seen": "2026-09-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -36,7 +36,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
-   "last_seen": "2026-09-21",
+   "last_seen": "2026-09-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -60,34 +60,32 @@
    "when": "2026-09-23"
   },
   {
-   "event_date": "2026-10-05",
-   "first_seen": "2026-09-07",
+   "event_date": "2026-09-24",
+   "first_seen": "2026-09-22",
    "grade": "B",
-   "impact": "SUPPLY",
-   "key": "news:ena-unlock-on-october-5-what-ethena-is-actually-releasing-al",
-   "last_seen": "2026-09-16",
+   "impact": "INFRA",
+   "key": "news:injective-meridian-upgrade-vote-targets-september-24-mainnet",
+   "last_seen": "2026-09-22",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-07",
-    "price_at_detect": 0.174712,
-    "score_at_detect": 42.8,
-    "t7": 0.0,
-    "t7_at": "2026-09-14"
+    "detected_at": "2026-09-22",
+    "price_at_detect": 5.55,
+    "score_at_detect": 35.3
    },
-   "score": 42.8,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-07",
+     "at": "2026-09-22",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ENA",
-   "title": "ENA Unlock on October 5: What Ethena Is Actually Releasing All at Once - CryptoTicker",
+   "symbol": "INJ",
+   "title": "Injective Meridian Upgrade Vote Targets September 24 Mainnet Activation - Cryptonews.net",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBTdm9RVllVOXRPOEdFd0lwNjlxQ094bGl5MXJJSEZ2cDJnRjlzTTE5b3gyUDRKV2dHVXA4UDh1N0N3QnRxQ0tiUWpyLWFnYV9xWDhveFU3RE40bEZTMTZYUDRsRm4?oc=5",
-   "when": "Sun, 06 Sep 2026"
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5GRmxJX0ZtbW5GVjRKekl1Q2poVXhYZDB3ZkFsMTBJN2Fka3BlS281NWc5OThPZC1iN1JabjNWNm42WW14SXFYZGdQSTZUdWVkalNVRXB0N3pnUQ?oc=5",
+   "when": "Mon, 21 Sep 2026"
   },
   {
    "event_date": "2026-10-06",
@@ -239,7 +237,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-crypto-developers-agree-on-nov-5-nu7-mainnet-upgrade-c",
-   "last_seen": "2026-09-20",
+   "last_seen": "2026-09-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
@@ -267,7 +265,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-developers-target-nov-5-nu7-mainnet-upgrade-with-25-se",
-   "last_seen": "2026-09-20",
+   "last_seen": "2026-09-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
@@ -295,7 +293,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-price-surges-toward-1-500-as-nu7-upgrade-targets-nov-5",
-   "last_seen": "2026-09-20",
+   "last_seen": "2026-09-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
@@ -318,10 +316,10 @@
    "when": "Fri, 18 Sep 2026"
   }
  ],
- "coverage": 0.485,
+ "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
- "data_status": "DEGRADED",
- "event_count": 62,
+ "data_status": "OK",
+ "event_count": 60,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -334,8 +332,8 @@
     "ok": 6
    },
    "news.google.com": {
-    "fail": 52,
-    "ok": 0
+    "fail": 0,
+    "ok": 52
    },
    "rest.cosmos.directory": {
     "fail": 0,
@@ -343,42 +341,71 @@
    }
   },
   "calls": 101,
-  "fail": 52
+  "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-21 08:36\n감시 52종목(체인 34·프로토콜 18) · 이벤트 62건\n⚠️ <b>DEGRADED</b> — 수집 48%. 아래는 부분 관측입니다.\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>ATOM</b> [인프라·투표중→가결] Gaia v28.2.0 upgrade\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-2   </code> UNI <b>투표중</b> · Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vault\n🟠 <code>D-2   </code> UNI <b>투표중</b> · Protocol Fee Expansion: Arc\n🟠 <code>D-14  </code> ENA <b>일정확정</b> · ENA Unlock on October 5: What Ethena Is Actually Releasing All\n🟠 <code>D-15  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n🟠 <code>D-24  </code> FIL <b>일정확정</b> · Filecoin Vesting Ends on October 15: What Really Changes for F\n⚪ <code>D-45  </code> ZEC <b>일정확정</b> · Zcash NU7 Upgrade on November 5, 2026: What You Must Do With Y\n⚪ <code>D-45  </code> ZEC <b>일정확정</b> · Zcash Crypto Developers Agree on Nov. 5 NU7 Mainnet Upgrade - \n⚪ <code>D-45  </code> ZEC <b>일정확정</b> · Zcash Targets Nov. 5 for NU7 Upgrade to Triple Block Speed - t\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-22 09:19\n감시 52종목(체인 34·프로토콜 18) · 이벤트 60건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>INJ</b> [인프라·신규] Injective Meridian Upgrade Vote Targets September 24 Mainnet Activation - Cryp\n🟠 <b>SOL</b> [인프라·일정확정→활성화] agave v4.3.0 — This a stable release suitable for Testnet, Devnet and Mainnet \n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> UNI <b>투표중</b> · Rotate Sentinel Addresses on the DUNI-Owned Uniswap Earn Vault\n🟠 <code>D-1   </code> UNI <b>투표중</b> · Protocol Fee Expansion: Arc\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective Meridian Upgrade Vote Targets September 24 Mainnet A\n🟠 <code>D-14  </code> ETH <b>일정확정</b> · Ethereum’s Glamsterdam Upgrade Slipped Again. Sepolia Now Targ\n🟠 <code>D-23  </code> FIL <b>일정확정</b> · Filecoin Vesting Ends on October 15: What Really Changes for F\n⚪ <code>D-44  </code> ZEC <b>일정확정</b> · Zcash NU7 Upgrade on November 5, 2026: What You Must Do With Y\n⚪ <code>D-44  </code> ZEC <b>일정확정</b> · Zcash Crypto Developers Agree on Nov. 5 NU7 Mainnet Upgrade - \n⚪ <code>D-44  </code> ZEC <b>일정확정</b> · Zcash Targets Nov. 5 for NU7 Upgrade to Triple Block Speed - t\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-09-20",
-   "first_seen": "2026-09-18",
+   "event_date": "2026-09-24",
+   "first_seen": "2026-09-22",
    "grade": "B",
    "impact": "INFRA",
-   "key": "cosmoshub:gov:1055",
-   "prev_stage": "VOTING",
+   "key": "news:injective-meridian-upgrade-vote-targets-september-24-mainnet",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-18",
-    "price_at_detect": 1.59,
-    "score_at_detect": 45.5
+    "detected_at": "2026-09-22",
+    "price_at_detect": 5.55,
+    "score_at_detect": 35.3
    },
-   "score": 26.8,
-   "source": "cosmos",
-   "stage": "PASSED",
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-18",
-     "stage": "VOTING"
-    },
-    {
-     "at": "2026-09-21",
-     "stage": "PASSED"
+     "at": "2026-09-22",
+     "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ATOM",
-   "title": "Gaia v28.2.0 upgrade",
+   "symbol": "INJ",
+   "title": "Injective Meridian Upgrade Vote Targets September 24 Mainnet Activation - CryptoRank",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE03WGdCWTdxYmNYc2Vod24wMDJBV0JVYUtPNDhTaE1YM1k1Zl9ibi1MQ1hFMXV0UFF0WldaT3NXMGhjalcxQ3o2TjJnNzVxZUZDSHdNWFJpTUZzdV8zckU5VE9DNDBBblkySW5TLW1Id1Zka3hydDNCMw?oc=5",
+   "when": "Mon, 21 Sep 2026"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-09-19",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "anza-xyz/agave@v4.3.0",
+   "prerelease": false,
+   "prev_stage": "SCHEDULED",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-19",
+    "price_at_detect": 105.14,
+    "score_at_detect": 17.3
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-09-19",
+     "stage": "SCHEDULED"
+    },
+    {
+     "at": "2026-09-22",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "SOL",
+   "title": "agave v4.3.0 — This a stable release suitable for Testnet, Devnet and Mainnet Beta.",
    "transition": "STAGE_UP",
-   "trust": 1.0,
-   "url": "https://www.mintscan.io/cosmoshub/proposals/1055",
-   "when": "2026-09-20"
+   "trust": 0.95,
+   "url": "https://github.com/anza-xyz/agave/releases/tag/v4.3.0",
+   "when": "2026-09-18"
   }
  ],
  "universe": {
@@ -478,7 +505,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 37,
+   "n": 36,
    "status": "OK"
   },
   {
@@ -490,7 +517,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 12,
+   "n": 11,
    "status": "OK"
   },
   {
@@ -502,13 +529,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 21,
+   "n": 22,
    "status": "OK"
   },
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 4,
+   "n": 3,
    "status": "표본 부족"
   },
   {
@@ -520,13 +547,13 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 6,
+   "n": 5,
    "status": "표본 부족"
   },
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 1,
+   "n": 2,
    "status": "표본 부족"
   },
   {
@@ -538,7 +565,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 23,
+   "n": 22,
    "status": "OK"
   },
   {
