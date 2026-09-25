@@ -693,69 +693,98 @@ SHORT_NARR = {
 }
 
 
+# 브리프 v3 (2026-09-25) — 차분한 표기
+#   · 장식 이모지(🧭 🆕 ⚠️ 📊, 변화 앞 색 원) 제거
+#   · 색은 중요한 것에만: 선두 내러티브(30일 BTC 대비 +50%↑)·약세(−20%↓),
+#     가격만 오르고 예치금이 빠지는 괴리(TVL −30%↓), 발굴 후보의 TVL 급증(+100%↑)
+#   · '변화'는 가장 먼저 읽어야 하므로 국면 바로 아래로 올리고, 말줄임 대신
+#     짧은 정형 문장으로 바꾼다(폭 확대·순위 이동만 — 회전율·괴리는 아래 목록과 중복)
+DIGEST_VER = "v3 (2026-09-25)"
+G, R = "\U0001F7E2", "\U0001F534"
+C_NARR_UP, C_NARR_DN = 50.0, -20.0
+C_TVL_FLEE = -30.0
+C_DISC_TVL = 100.0
+_BREADTH_RE = re.compile(r"^(.+?) 폭 확대: (\d+)% → (\d+)%")
+_RANK_RE = re.compile(r"^(.+?) 순위 ([▲▼]) (\d+)위 → (\d+)위")
+
+
+def _p(v, digits=0, unit="%"):
+    if v is None:
+        return "-"
+    return "%+.*f%s" % (digits, v, unit)
+
+
+def _short(name):
+    return SHORT_NARR.get(name, name)
+
+
+def _event_line(e):
+    t = e.get("text", "")
+    m = _BREADTH_RE.match(t)
+    if m:
+        return "%s BTC 초과 종목 %s→%s%%" % (_short(m.group(1)), m.group(2), m.group(3))
+    m = _RANK_RE.match(t)
+    if m:
+        return "%s 순위 %s→%s위" % (_short(m.group(1)), m.group(3), m.group(4))
+    return None
+
+
 def render_digest(payload):
-    """가시성 규격 v2 — 한 항목 한 줄, 증감은 색 점으로."""
+    """브리프 v3 — 차분한 표기, 색은 중요 신호에만."""
     if payload.get("data_status") != "OK":
         return render_telegram(payload)
     g = payload["market"]
-    L = ["🧭 <b>내러티브 레이더</b> · %s" % esc(payload["as_of_kst"][5:16]),
+    L = ["<b>내러티브 레이더</b> · %s" % esc(payload["as_of_kst"][5:16]),
          "BTC $%.1fK %s · 도미넌스 %.1f%%"
-         % (g["btc_price"] / 1000.0, sig(g.get("btc_r24"), digits=1), g["btc_dominance"]),
-         "국면 <b>%s</b>" % esc(clip(g["regime"], LINE_COLS - 6))]
+         % (g["btc_price"] / 1000.0, _p(g.get("btc_r24"), 1), g["btc_dominance"]),
+         "국면: %s" % esc(clip(g["regime"], LINE_COLS - 6))]
+
+    ev = [x for x in (_event_line(e) for e in payload.get("events") or []
+                      if e.get("kind") in ("BREADTH_EXPANSION", "RANK_MOVE")) if x]
+    if ev:
+        L += ["", "<b>변화</b>"]
+        for x in ev[:4]:
+            L.append("· " + esc(clip(x, LINE_COLS)))
 
     ns = payload["narratives"]
     if ns:
-        L.append("")
-        L.append("<b>내러티브</b> <i>(30일 BTC 대비)</i>")
-        # 8개 내러티브 전부 표시 — 상위3+하위2만 보이면 중간(RWA 등)이 사라져
-        # 섹터 비교가 안 된다. 2026-09-12 요청: RWA도 항상 보이게.
+        L += ["", "<b>내러티브</b> <i>30일 BTC 대비 · 초과 종목 비율</i>"]
         for n in ns:
-            nm = SHORT_NARR.get(n["name"], n["name"])
-            L.append("%s %s <i>· 폭 %s</i>" % (
-                esc(nm), sig(n["rs30"], digits=1),
-                ("%.0f%%" % n["breadth"]) if n.get("breadth") is not None else "–"))
+            v = n.get("rs30")
+            c = G if (v is not None and v >= C_NARR_UP) else R if (v is not None and v <= C_NARR_DN) else ""
+            L.append("%s %s%s · %s" % (
+                esc(_short(n["name"])), c, _p(v),
+                ("%.0f%%" % n["breadth"]) if n.get("breadth") is not None else "-"))
 
     co = payload.get("coins") or []
     if co:
-        L.append("")
-        L.append("<b>부합도 상위</b>")
+        L += ["", "<b>부합도 상위</b> <i>점수 · 30일 BTC 대비</i>"]
         for c in co[:4]:
-            L.append("%s %+.2f <i>· 30d %s</i>" % (
-                esc(c["symbol"]), c["score"], sig(c["x30"])))
+            L.append("%s %.2f · %s" % (esc(c["symbol"]), c["score"], _p(c["x30"])))
 
     dv = payload.get("divergence") or []
     if dv:
-        L.append("")
-        L.append("<b>TVL 괴리</b> <i>(가격−예치금)</i>")
+        L += ["", "<b>TVL 괴리</b> <i>가격 − 예치금</i>"]
         for d in dv[:3]:
-            L.append("%s %s <i>· 가격%s TVL%s</i>" % (
-                esc(d["symbol"]), sig(d["div"], "pp"),
-                sig(d["price"]), sig(d["tvl_chg"])))
+            tv = d.get("tvl_chg")
+            c = R if (tv is not None and tv <= C_TVL_FLEE) else ""
+            L.append("%s %s · 가격 %s TVL %s%s" % (
+                esc(d["symbol"]), _p(d["div"], unit="pp"), _p(d["price"]), c, _p(tv)))
 
     lag = ((payload.get("discovery") or {}).get("lagging") or [])
     if lag:
-        L.append("")
-        L.append("<b>발굴</b> <i>(예치금↑ 가격↓)</i>")
+        L += ["", "<b>발굴</b> <i>예치금 증가 · 가격 정체</i>"]
         for x in lag[:2]:
-            L.append("🆕 %s %s <i>· TVL %s</i>" % (
-                esc(x["symbol"]), sig(x["div"], "pp"), sig(x["tvl_chg"])))
-
-    shown = {c["symbol"] for c in co[:4]} | {d["symbol"] for d in dv[:3]}
-    fresh = [e for e in payload["events"]
-             if not ((e.get("kind") or "") in ("TURNOVER_SPIKE", "TVL_DIVERGENCE")
-                     and (e.get("text", "").split(" ", 1)[0]) in shown)]
-    if fresh:
-        L.append("")
-        L.append("<b>변화</b>")
-        for e in fresh[:2]:
-            icon = "🔴" if e["level"] == "high" else "🟡"
-            L.append("%s %s" % (icon, esc(clip(e["text"], LINE_COLS - 3))))
+            tv = x.get("tvl_chg")
+            c = G if (tv is not None and tv >= C_DISC_TVL) else ""
+            L.append("%s TVL %s%s · 괴리 %s" % (
+                esc(x["symbol"]), c, _p(tv), _p(x["div"], unit="pp")))
 
     bt = load_json(BACKTEST_PATH, None) or {}
     tail = [""]
     if bt.get("verdict") in ("NEGATIVE", "NO_EDGE"):
-        tail.append("⚠️ <i>과거검증 %s — 매매 근거 아님</i>" % esc(bt["verdict"]))
-    tail.append('📊 <a href="%s">전체 대시보드</a>' % esc(payload.get("pages_url") or ""))
+        tail.append("<i>과거검증 %s — 매매 근거 아님</i>" % esc(bt["verdict"]))
+    tail.append('<a href="%s">전체 대시보드</a>' % esc(payload.get("pages_url") or ""))
     return "\n".join(cap_lines(L, tail))
 
 
