@@ -317,3 +317,20 @@ class TestBriefV4(unittest.TestCase):
                ("p", {"symbol": "PONS", "mcap": 4e8, "price": 0.4, "p7": -7.0, "p30": 500.0})]
         lead, _ = xrs.pick_leaders(xrs.member_movers({"kind": "basket"}, got, None))
         self.assertEqual(lead["sym"], "PONS")
+
+
+class TestBriefV5(unittest.TestCase):
+    """브리프 v5 — 장식 이모지 없음, 색은 강한 움직임에만."""
+
+    def test_color_only_on_strong_moves(self):
+        self.assertEqual(xrs.calm(5.2, "7d"), "+5%")
+        self.assertTrue(xrs.calm(16, "7d").startswith("\U0001F7E2"))
+        self.assertTrue(xrs.calm(-31, "30d").startswith("\U0001F534"))
+        self.assertEqual(xrs.calm(25, "30d"), "+25%")
+
+    def test_no_decorative_emoji(self):
+        import io as _io, json as _json, os as _os
+        p = _os.path.join(_os.path.dirname(__file__), "..", "data", "latest.json")
+        msg = xrs.render_digest(_json.load(_io.open(p, encoding="utf-8")))
+        for e in ("🥇", "🥈", "👑", "⚡", "🚀", "🧊", "📊", "🔄", "🟩", "🟥", "⚪"):
+            self.assertNotIn(e, msg)
