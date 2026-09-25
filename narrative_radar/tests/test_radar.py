@@ -623,3 +623,17 @@ class TestVisibility(unittest.TestCase):
 
     def test_changes_carry_color_dots(self):
         self.assertTrue(any(d in self._t() for d in ("🟩", "🟢", "⚪", "🔴", "🟥")))
+
+
+class TestDigestV3Calm(unittest.TestCase):
+    def test_no_decorative_emoji_and_sparse_color(self):
+        import io as _io, json as _json, os as _os
+        p = _os.path.join(_os.path.dirname(__file__), "..", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        msg = nr.render_digest(d)
+        for e in ("🧭", "🆕", "⚠️", "📊", "🟩", "🟥", "⚪", "🟡"):
+            self.assertNotIn(e, msg)
+        colored = msg.count("\U0001F7E2") + msg.count("\U0001F534")
+        self.assertLessEqual(colored, 6, "색은 중요 신호에만")
+        for ln in msg.splitlines():
+            self.assertLessEqual(nr.vis_width(ln), nr.LINE_COLS + 2, ln)
