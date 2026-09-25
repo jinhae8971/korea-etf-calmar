@@ -341,6 +341,7 @@ def build_track(t, members, mkt, hood_rows, chain_tvl, chain_fee, btc_fee):
     if not got:
         r["notes"].append("시세 수집 실패")
         return r
+    r["movers"] = member_movers(t, got, hood_rows)
 
     # 가격: 바스켓은 중앙값(평균은 극단치가 지배한다)
     age = {}
@@ -431,6 +432,51 @@ def build_track(t, members, mkt, hood_rows, chain_tvl, chain_fee, btc_fee):
     r["mc_tvl"] = (r["mcap"] / r["tvl"]) if (r.get("tvl") and r.get("mcap")) else None
     r["rev_yield"] = (ann / r["tvl"] * 100.0) if (ann and r.get("tvl")) else None
     return r
+
+
+# ── 구성종목 (브리프 v4, 2026-09-25) ─────────────────────────────────────────
+# 바스켓 중앙값만으로는 "무엇이 올랐나"를 알 수 없다 → 대장(시총 1위)과
+# 7일 상위 수익 종목을 함께 보인다. 생태계 트랙은 관측 기간 미달 종목의
+# 해당 창 수익률을 버린다(신규 상장 착시 방지 — 중앙값 산출과 같은 규칙).
+TOP_MOVERS = 2
+
+
+def member_movers(t, got, hood_rows):
+    if t["kind"] == "asset":
+        return []
+    age = {x.get("cg_id"): x.get("age_hours") for x in (hood_rows or []) if x.get("cg_id")}
+    out = []
+    for cid, c in got:
+        p7, p30 = c.get("p7"), c.get("p30")
+        if _is_stable(c):
+            continue   # 스테이블(U·USDB 등)이 '대장'으로 뜨면 정보가 없다
+        if t["kind"] == "ecosystem":
+            a = age.get(cid)
+            if a is None or a < MIN_AGE_H["px7"]:
+                p7 = None
+            if a is None or a < MIN_AGE_H["px30"]:
+                p30 = None
+        out.append({"id": cid, "sym": c.get("symbol") or cid.upper(), "mcap": c.get("mcap"),
+                    "p7": p7 if isinstance(p7, (int, float)) else None,
+                    "p30": p30 if isinstance(p30, (int, float)) else None})
+    out.sort(key=lambda m: -(m["mcap"] or 0))
+    return out
+
+
+def _is_stable(c):
+    px, p7, p30 = c.get("price"), c.get("p7"), c.get("p30")
+    if not isinstance(px, (int, float)) or not 0.97 <= px <= 1.03:
+        return False
+    return all(v is None or abs(v) < 1.5 for v in (p7, p30))
+
+
+def pick_leaders(movers, n=TOP_MOVERS):
+    """(대장, 7일 상위 n종) — 대장은 시총 1위, 상위 목록에서는 대장을 뺀다."""
+    if not movers:
+        return None, []
+    lead = movers[0]
+    rest = sorted([m for m in movers[1:] if m["p7"] is not None], key=lambda m: -m["p7"])
+    return lead, rest[:n]
 
 
 def _slog(v):
@@ -820,11 +866,26 @@ def cell_h(v, span):
     return "%s%s%%" % (dot_h(v, span), "0" if r == 0 else "%+d" % r)
 
 
+BRIEF_VER = "v4 (2026-09-25)"
+# v4: 매출 행 제외 · 기간은 7d / 30d 두 칸 · 섹터별 대장·7일 상위 종목 추가.
+#     매출은 점수 산식에는 그대로 남고(v2 산식 유지) 대시보드에서 본다.
+_MSG_SIG_EXCLUDE = ("매출",)
+
+
+def _msg_signals(t):
+    return [g for g in (t.get("signals") or [])
+            if not any(x in g.get("why", "") for x in _MSG_SIG_EXCLUDE)]
+
+
+def _mv(m):
+    return "%s%s" % (esc(m["sym"]), cell_h(m["p7"], "7d"))
+
+
 def render_digest(payload):
-    """가시성 규격 v3 (2026-09-17) — 30일 한 칸 → 1d/7d/30d 세 칸 + 국면 신호."""
+    """브리프 v4 — 가격·TVL을 7d / 30d로, 바스켓·생태계는 대장·상위 종목 병기."""
     tracks = sorted(payload["tracks"], key=lambda x: (x["overall_rank"] or 99))
     L = ["📊 <b>5트랙 상대강도</b> · %s" % esc(payload["as_of_kst"][5:16]),
-         "<i>1d / 7d / 30d · 추세30 모멘텀40 즉시30</i>", ""]
+         "<i>7d / 30d · 종목 수익률은 7d</i>", ""]
 
     for t in tracks:
         d = t.get("delta") or {}
@@ -833,27 +894,31 @@ def render_digest(payload):
             ds = ""
         medal = MEDAL[t["overall_rank"] - 1] if t.get("overall_rank") else "▫️"
         sc = "%.0f" % t["score"] if t.get("score") is not None else "—"
-        tag = ""
-        if t.get("signals"):
-            g = t["signals"][0]
-            tag = " %s%s" % (g["icon"], g["name"])
+        sg = _msg_signals(t)
+        tag = " %s%s" % (sg[0]["icon"], sg[0]["name"]) if sg else ""
         L.append("%s <b>%s</b> %s점%s%s" % (medal, esc(t["label"]), sc, ds, tag))
-        rows = [("가격", t.get("mcap_chg24") if t.get("px24") is None else t.get("px24"), t.get("px7"), t.get("px30"))]
+        L.append("   가격 %s / %s" % (cell_h(t.get("px7"), "7d"), cell_h(t.get("px30"), "30d")))
         if t.get("tvl30") is not None or t.get("tvl7") is not None:
-            rows.append(("TVL", t.get("tvl1"), t.get("tvl7"), t.get("tvl30")))
-        if t.get("rev_chg30") is not None or t.get("rev_chg7") is not None:
-            rows.append(("매출", t.get("rev_rr"), t.get("rev_chg7"), t.get("rev_chg30")))
-        for lab, a1, a7, a30 in rows:
-            L.append("   %s %s / %s / %s" % (lab, cell_h(a1, "1d"), cell_h(a7, "7d"), cell_h(a30, "30d")))
+            L.append("   TVL %s / %s" % (cell_h(t.get("tvl7"), "7d"), cell_h(t.get("tvl30"), "30d")))
+        lead, tops = pick_leaders(t.get("movers"))
+        if lead:
+            one = "   👑%s · %s" % (_mv(lead), " ".join(_mv(m) for m in tops)) if tops else "   👑%s" % _mv(lead)
+            if vis_width(one) <= LINE_COLS:
+                L.append(one)
+            else:
+                L.append("   👑대장 %s" % _mv(lead))
+                if tops:
+                    L.append("   🔥상위 %s" % " · ".join(_mv(m) for m in tops))
     L.append("")
 
-    sigs = [t for t in tracks if t.get("signals")]
+    sigs = [(t, _msg_signals(t)) for t in tracks]
+    sigs = [(t, g) for t, g in sigs if g]
     if sigs:
         L.append("🔄 <b>국면 신호</b>")
-        for t in sigs:
+        for t, gs in sigs:
             head = "· %s " % t["label"]
             cur = head
-            for g in t["signals"]:
+            for g in gs:
                 cand = cur + ("" if cur == head else " ") + g.get("short", g["icon"] + g["name"])
                 if vis_width(cand) > LINE_COLS and cur != head:
                     L.append(esc(cur))
@@ -867,7 +932,7 @@ def render_digest(payload):
     base = (tracks[0].get("delta") or {}) if tracks else {}
     if base.get("_reset"):
         tail.append("<i>산식 v2 첫 회차 — 점수 변화는 다음부터</i>")
-    tail += ["<i>성격이 다른 대상의 비교 · 예측 아님</i>",
+    tail += ["<i>👑시총1위 · 뒤는 7d 상위 · 예측 아님</i>",
              '📊 <a href="%s">전체 대시보드</a>' % DASHBOARD_URL]
     return "\n".join(cap_lines(L, tail))
 
@@ -925,6 +990,11 @@ def render_dashboard(payload):
         score_td += "".join(f'<td>{sb.get(h["key"]):.0f}</td>' if sb.get(h["key"]) is not None else "<td>—</td>" for h in HORIZONS)
         sg = " ".join(f'{g["icon"]}{g["name"]}' for g in (t.get("signals") or [])) or "—"
         score_td += f'<td style="text-align:left">{esc(sg)}</td>'
+        lead, tops = pick_leaders(t.get("movers"))
+        mv = "—"
+        if lead:
+            mv = " · ".join(f'{esc(m["sym"])} {fmt_pct(m["p7"], 0)}' for m in [lead] + tops)
+        score_td += f'<td style="text-align:left">{mv}</td>'
         score_td += cell(t.get("px24"), strong=7, mild=1) + cell(t.get("px14"), strong=15, mild=3)
         rows.append(
             "<tr>"
@@ -974,7 +1044,7 @@ ul{{margin:6px 0 0 18px;padding:0;color:var(--muted);font-size:12px;line-height:
 <div class="sub">{esc(payload['as_of_kst'])} KST · {esc(payload['status'])} · 임계값 고정 {THRESHOLDS_FROZEN_AT}</div>
 
 <div class="card"><table>
-<tr><th>순위</th><th>트랙</th><th>종합</th><th>추세</th><th>모멘텀</th><th>즉시</th><th>신호</th><th>가격1d</th><th>가격14d</th><th>가격30d</th><th>가격7d</th><th>시총</th><th>24h</th>
+<tr><th>순위</th><th>트랙</th><th>종합</th><th>추세</th><th>모멘텀</th><th>즉시</th><th>신호</th><th>대장·7d상위</th><th>가격1d</th><th>가격14d</th><th>가격30d</th><th>가격7d</th><th>시총</th><th>24h</th>
 <th>TVL</th><th>TVL30d</th><th>매출30d</th><th>증감</th><th>P/S</th><th>MC/TVL</th><th>회전율</th></tr>
 {''.join(rows)}
 </table></div>
