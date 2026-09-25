@@ -274,3 +274,46 @@ class TestVisibility(unittest.TestCase):
 
     def test_changes_carry_color_dots(self):
         self.assertTrue(any(d in self._t() for d in ("🟩", "🟢", "⚪", "🔴", "🟥")))
+
+
+class TestBriefV4(unittest.TestCase):
+    """브리프 v4 — 매출 제외 · 7d/30d · 대장·상위 종목."""
+
+    def _got(self):
+        mk_ = lambda sym, mc, p7, p30: {"symbol": sym, "mcap": mc, "p7": p7, "p30": p30}
+        return [("a", mk_("AAA", 900, 2.0, 10.0)), ("b", mk_("BBB", 500, 40.0, 5.0)),
+                ("c", mk_("CCC", 300, 12.0, 1.0)), ("d", mk_("DDD", 100, None, 3.0))]
+
+    def test_leader_is_mcap_top_and_excluded_from_tops(self):
+        t = {"kind": "basket"}
+        lead, tops = xrs.pick_leaders(xrs.member_movers(t, self._got(), None))
+        self.assertEqual(lead["sym"], "AAA")
+        self.assertEqual([m["sym"] for m in tops], ["BBB", "CCC"])
+
+    def test_single_asset_has_no_movers(self):
+        self.assertEqual(xrs.member_movers({"kind": "asset"}, self._got(), None), [])
+
+    def test_ecosystem_new_listing_7d_dropped(self):
+        rows = [{"cg_id": "a", "age_hours": 900}, {"cg_id": "b", "age_hours": 50},
+                {"cg_id": "c", "age_hours": 200}, {"cg_id": "d", "age_hours": 900}]
+        mv = xrs.member_movers({"kind": "ecosystem"}, self._got(), rows)
+        b = next(m for m in mv if m["sym"] == "BBB")
+        self.assertIsNone(b["p7"], "상장 7일 미만 종목의 7일 수익률은 순위에 쓰면 안 된다")
+        c = next(m for m in mv if m["sym"] == "CCC")
+        self.assertIsNone(c["p30"])
+
+    def test_digest_has_no_revenue_and_no_1d(self):
+        import io as _io, json as _json, os as _os, re as _re
+        p = _os.path.join(_os.path.dirname(__file__), "..", "data", "latest.json")
+        d = _json.load(_io.open(p, encoding="utf-8"))
+        msg = _re.sub(r"<[^>]+>", "", xrs.render_digest(d))
+        self.assertNotIn("매출", msg)
+        self.assertNotIn("1d", msg)
+        for ln in msg.splitlines():
+            self.assertLessEqual(xrs.vis_width(ln), xrs.LINE_COLS + 2, ln)
+
+    def test_stablecoin_never_leader(self):
+        got = [("u", {"symbol": "U", "mcap": 9e9, "price": 1.0, "p7": -0.03, "p30": None}),
+               ("p", {"symbol": "PONS", "mcap": 4e8, "price": 0.4, "p7": -7.0, "p30": 500.0})]
+        lead, _ = xrs.pick_leaders(xrs.member_movers({"kind": "basket"}, got, None))
+        self.assertEqual(lead["sym"], "PONS")
