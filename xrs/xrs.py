@@ -866,74 +866,100 @@ def cell_h(v, span):
     return "%s%s%%" % (dot_h(v, span), "0" if r == 0 else "%+d" % r)
 
 
-BRIEF_VER = "v4 (2026-09-25)"
-# v4: 매출 행 제외 · 기간은 7d / 30d 두 칸 · 섹터별 대장·7일 상위 종목 추가.
-#     매출은 점수 산식에는 그대로 남고(v2 산식 유지) 대시보드에서 본다.
+BRIEF_VER = "v5 (2026-09-25)"
+# v5: 차분한 표기. 장식 이모지(메달·왕관·신호 아이콘) 제거, 색은 '중요한 것'에만.
+#   · 색 점은 강한 움직임에만: 7d ±15% 이상, 30d ±30% 이상 (나머지는 숫자만)
+#   · 국면 신호는 중요도 순으로 꺾임 > 가속 > 급변만 싣는다. 부상/둔화는
+#     순위 괴리에서 파생된 보조 신호라 대시보드로만 보낸다.
+#   · 꺾임(추세 이탈 위험)만 트랙 머리에 🔴 표식.
+#   · 점수 변화는 ±5점 이상일 때만 표기.
+#   매출·1d는 v4와 같이 메시지에서 제외(점수 산식 v2 유지).
 _MSG_SIG_EXCLUDE = ("매출",)
+_SIG_PRIORITY = {"꺾임": 0, "가속": 1, "급변": 2}
+STRONG = {"7d": 15.0, "30d": 30.0}
+SCORE_MOVE_SHOW = 5.0
 
 
 def _msg_signals(t):
-    return [g for g in (t.get("signals") or [])
-            if not any(x in g.get("why", "") for x in _MSG_SIG_EXCLUDE)]
+    gs = [g for g in (t.get("signals") or [])
+          if g.get("name") in _SIG_PRIORITY
+          and not any(x in g.get("why", "") for x in _MSG_SIG_EXCLUDE)]
+    return sorted(gs, key=lambda g: _SIG_PRIORITY[g["name"]])
+
+
+def calm(v, span):
+    """숫자는 항상, 색은 강한 움직임에만."""
+    if v is None:
+        return "-"
+    r = round(v)
+    txt = "0%" if r == 0 else "%+d%%" % r
+    lim = STRONG[span]
+    if v >= lim:
+        return "\U0001F7E2" + txt
+    if v <= -lim:
+        return "\U0001F534" + txt
+    return txt
 
 
 def _mv(m):
-    return "%s%s" % (esc(m["sym"]), cell_h(m["p7"], "7d"))
+    return "%s %s" % (esc(m["sym"]), calm(m["p7"], "7d"))
+
+
+def _sig_text(g):
+    """신호 설명을 아이콘 없이 짧게."""
+    sh = g.get("short", "")
+    for ic in ("🔻", "⚡", "📈", "📉", "🚀", "🧊"):
+        sh = sh.replace(ic, "")
+    if g["name"] == "꺾임":
+        return "꺾임 " + sh.strip()
+    if g["name"] == "급변":
+        return "점수 3일간 " + sh.replace("3회차", "").strip()
+    return sh.strip()
 
 
 def render_digest(payload):
-    """브리프 v4 — 가격·TVL을 7d / 30d로, 바스켓·생태계는 대장·상위 종목 병기."""
+    """브리프 v5 — 차분한 표기, 색은 강한 움직임·꺾임에만."""
     tracks = sorted(payload["tracks"], key=lambda x: (x["overall_rank"] or 99))
-    L = ["📊 <b>5트랙 상대강도</b> · %s" % esc(payload["as_of_kst"][5:16]),
-         "<i>7d / 30d · 종목 수익률은 7d</i>", ""]
+    L = ["<b>5트랙 상대강도</b> · %s" % esc(payload["as_of_kst"][5:16]),
+         "<i>가격·TVL 7d / 30d · 종목은 7d</i>", ""]
 
     for t in tracks:
         d = t.get("delta") or {}
-        ds = arrow(d.get("score")) if d.get("score") is not None else ""
-        if ds == "─":
-            ds = ""
-        medal = MEDAL[t["overall_rank"] - 1] if t.get("overall_rank") else "▫️"
+        rk = "%d." % t["overall_rank"] if t.get("overall_rank") else "-"
         sc = "%.0f" % t["score"] if t.get("score") is not None else "—"
+        mv = d.get("score")
+        ds = " (%+.0f)" % mv if isinstance(mv, (int, float)) and abs(mv) >= SCORE_MOVE_SHOW else ""
         sg = _msg_signals(t)
-        tag = " %s%s" % (sg[0]["icon"], sg[0]["name"]) if sg else ""
-        L.append("%s <b>%s</b> %s점%s%s" % (medal, esc(t["label"]), sc, ds, tag))
-        L.append("   가격 %s / %s" % (cell_h(t.get("px7"), "7d"), cell_h(t.get("px30"), "30d")))
+        flag = "\U0001F534 " if sg and sg[0]["name"] == "꺾임" else ""
+        tag = " · %s" % sg[0]["name"] if sg else ""
+        L.append("%s<b>%s %s</b> %s점%s%s" % (flag, rk, esc(t["label"]), sc, ds, tag))
+        L.append("   가격 %s / %s" % (calm(t.get("px7"), "7d"), calm(t.get("px30"), "30d")))
         if t.get("tvl30") is not None or t.get("tvl7") is not None:
-            L.append("   TVL %s / %s" % (cell_h(t.get("tvl7"), "7d"), cell_h(t.get("tvl30"), "30d")))
+            L.append("   TVL %s / %s" % (calm(t.get("tvl7"), "7d"), calm(t.get("tvl30"), "30d")))
         lead, tops = pick_leaders(t.get("movers"))
         if lead:
-            one = "   👑%s · %s" % (_mv(lead), " ".join(_mv(m) for m in tops)) if tops else "   👑%s" % _mv(lead)
-            if vis_width(one) <= LINE_COLS:
-                L.append(one)
-            else:
-                L.append("   👑대장 %s" % _mv(lead))
-                if tops:
-                    L.append("   🔥상위 %s" % " · ".join(_mv(m) for m in tops))
-    L.append("")
+            L.append("   대장 %s" % _mv(lead))
+            if tops:
+                L.append("   상위 %s" % ", ".join(_mv(m) for m in tops))
+        L.append("")
 
     sigs = [(t, _msg_signals(t)) for t in tracks]
     sigs = [(t, g) for t, g in sigs if g]
     if sigs:
-        L.append("🔄 <b>국면 신호</b>")
-        for t, gs in sigs:
-            head = "· %s " % t["label"]
-            cur = head
-            for g in gs:
-                cand = cur + ("" if cur == head else " ") + g.get("short", g["icon"] + g["name"])
-                if vis_width(cand) > LINE_COLS and cur != head:
-                    L.append(esc(cur))
-                    cur = " " * len(head) + g.get("short", g["icon"] + g["name"])
-                else:
-                    cur = cand
-            L.append(esc(clip(cur, LINE_COLS + 1) if vis_width(cur) > LINE_COLS else cur))
+        L.append("<b>국면 신호</b> <i>(중요도순)</i>")
+        flat = sorted(((_SIG_PRIORITY[g["name"]], t["overall_rank"] or 99, t, g)
+                       for t, gs in sigs for g in gs), key=lambda x: (x[0], x[1]))
+        for _, _, t, g in flat:
+            line = "· %s %s" % (t["label"], _sig_text(g))
+            L.append(esc(clip(line, LINE_COLS + 1) if vis_width(line) > LINE_COLS else line))
         L.append("")
 
     tail = []
     base = (tracks[0].get("delta") or {}) if tracks else {}
     if base.get("_reset"):
         tail.append("<i>산식 v2 첫 회차 — 점수 변화는 다음부터</i>")
-    tail += ["<i>👑시총1위 · 뒤는 7d 상위 · 예측 아님</i>",
-             '📊 <a href="%s">전체 대시보드</a>' % DASHBOARD_URL]
+    tail += ["<i>색: 7d ±15%·30d ±30% 이상 · 예측 아님</i>",
+             '<a href="%s">전체 대시보드</a>' % DASHBOARD_URL]
     return "\n".join(cap_lines(L, tail))
 
 
