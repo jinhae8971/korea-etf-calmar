@@ -1,13 +1,41 @@
 {
- "as_of_kst": "2026-09-26 09:11",
+ "as_of_kst": "2026-09-27 08:56",
  "calendar": [
+  {
+   "event_date": "2026-09-29",
+   "first_seen": "2026-09-27",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:batch-upgrade-xrp-ledger-vote-nears-september-29-cryptonews",
+   "last_seen": "2026-09-27",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-27",
+    "price_at_detect": 1.41,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-27",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Batch Upgrade: XRP Ledger Vote Nears September 29 - Cryptonews",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE40QTFfU2VCY1RoNmxUMW5RdlBZdkRsdzA2cDBhWGgwdlUtTnFJTmVJT3QtaHpZbDZ2OFBmbUhWTnpOYnV6eVlRT1VESWxya0p4SXRNTU1XdTNCcXdRWmJmMGJ5VQ?oc=5",
+   "when": "Wed, 23 Sep 2026"
+  },
   {
    "event_date": "2026-09-30",
    "first_seen": "2026-09-24",
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1056",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-24",
@@ -35,7 +63,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:cardano-s-realfi-targets-oct-1-mainnet-launch-a-pluang",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -63,7 +91,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1057",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -119,7 +147,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:xrp-ledger-delegation-upgrade-could-go-live-oct-5-will-xrp-b",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-24",
@@ -136,7 +164,7 @@
     }
    ],
    "symbol": "XRP",
-   "title": "XRP Ledger delegation upgrade could go live Oct. 5, will XRP benefit? - crypto.news",
+   "title": "XRP Ledger delegation upgrade could go live Oct. 5, will XRP benefit? - Crypto News",
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV0ZPZzRzWmlCazZHWXJ0bGVXRHFUa0s2U212cWtMazBuMEZQemF0Tk55OWNwWEpkRjFYVEk1RHlNcGNpSl9uRzBraTRKbVpDMTluSVpMc1FuQXBNNDZCTG9HVURzdmlucmdzTVlhdmw3V0xkLW90cFNoMkhmckpFRjdfckR4UHVvWTVyNWM2Nkw?oc=5",
    "when": "Wed, 23 Sep 2026"
@@ -147,7 +175,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "ethereum/go-ethereum@v1.17.6",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -206,12 +234,14 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-crypto-developers-agree-on-nov-5-nu7-mainnet-upgrade-c",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
     "price_at_detect": 1192.89,
-    "score_at_detect": 21.2
+    "score_at_detect": 21.2,
+    "t7": 0.0,
+    "t7_at": "2026-09-27"
    },
    "score": 21.2,
    "source": "news",
@@ -239,7 +269,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
     "price_at_detect": 1192.89,
-    "score_at_detect": 21.2
+    "score_at_detect": 21.2,
+    "t7": 0.0,
+    "t7_at": "2026-09-27"
    },
    "score": 21.2,
    "source": "news",
@@ -262,12 +294,14 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-price-surges-toward-1-500-as-nu7-upgrade-targets-nov-5",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-20",
     "price_at_detect": 1192.89,
-    "score_at_detect": 21.2
+    "score_at_detect": 21.2,
+    "t7": 0.0,
+    "t7_at": "2026-09-27"
    },
    "score": 21.2,
    "source": "news",
@@ -290,7 +324,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:zcash-sets-november-5-target-for-nu7-mainnet-upgrade-and-fas",
-   "last_seen": "2026-09-26",
+   "last_seen": "2026-09-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-24",
@@ -340,8 +374,37 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-26 09:11\n감시 52종목(체인 34·프로토콜 18) · 이벤트 62건\n\n<b>■ 오늘의 상태 전이</b>\n· 신규 승격 없음\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-4   </code> ATOM <b>투표중</b> · ATOM Refund &amp; Justice Bounty\n🟠 <code>D-5   </code> ADA <b>일정확정</b> · Cardano's RealFi targets Oct 1 mainnet launch a... - Pluang\n🟠 <code>D-5   </code> ATOM <b>투표중</b> · Recover IBC light client for Realio Network (07-tendermint-115\n🟠 <code>D-9   </code> XRP <b>일정확정</b> · XRP Ledger upgrade enters 14-day countdown — What happens on O\n🟠 <code>D-9   </code> XRP <b>일정확정</b> · XRP Ledger delegation upgrade could go live Oct. 5, will XRP b\n🔴 <code>D-10  </code> ETH <b>활성화</b> · go-ethereum v1.17.6 — &lt;!-- Inorganic Lubricant (v1.17.6) --&gt;\n⚪ <code>D-40  </code> ZEC <b>일정확정</b> · Zcash NU7 Upgrade on November 5, 2026: What You Must Do With Y\n⚪ <code>D-40  </code> ZEC <b>일정확정</b> · Zcash Crypto Developers Agree on Nov. 5 NU7 Mainnet Upgrade - \n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
- "transitions": [],
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-27 08:56\n감시 52종목(체인 34·프로토콜 18) · 이벤트 62건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>XRP</b> [인프라·신규] Batch Upgrade: XRP Ledger Vote Nears September 29 - Cryptonews\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-2   </code> XRP <b>일정확정</b> · Batch Upgrade: XRP Ledger Vote Nears September 29 - Cryptonews\n🟠 <code>D-3   </code> ATOM <b>투표중</b> · ATOM Refund &amp; Justice Bounty\n🟠 <code>D-4   </code> ADA <b>일정확정</b> · Cardano's RealFi targets Oct 1 mainnet launch a... - Pluang\n🟠 <code>D-4   </code> ATOM <b>투표중</b> · Recover IBC light client for Realio Network (07-tendermint-115\n🟠 <code>D-8   </code> XRP <b>일정확정</b> · XRP Ledger upgrade enters 14-day countdown — What happens on O\n🟠 <code>D-8   </code> XRP <b>일정확정</b> · XRP Ledger delegation upgrade could go live Oct. 5, will XRP b\n🔴 <code>D-9   </code> ETH <b>활성화</b> · go-ethereum v1.17.6 — &lt;!-- Inorganic Lubricant (v1.17.6) --&gt;\n⚪ <code>D-39  </code> ZEC <b>일정확정</b> · Zcash NU7 Upgrade on November 5, 2026: What You Must Do With Y\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "transitions": [
+  {
+   "event_date": "2026-09-29",
+   "first_seen": "2026-09-27",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:batch-upgrade-xrp-ledger-vote-nears-september-29-cryptonews",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-27",
+    "price_at_detect": 1.41,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-27",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Batch Upgrade: XRP Ledger Vote Nears September 29 - Cryptonews",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE40QTFfU2VCY1RoNmxUMW5RdlBZdkRsdzA2cDBhWGgwdlUtTnFJTmVJT3QtaHpZbDZ2OFBmbUhWTnpOYnV6eVlRT1VESWxya0p4SXRNTU1XdTNCcXdRWmJmMGJ5VQ?oc=5",
+   "when": "Wed, 23 Sep 2026"
+  }
+ ],
  "universe": {
   "chain": 34,
   "protocol": 18,
@@ -439,7 +502,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 45,
+   "n": 47,
    "status": "OK"
   },
   {
@@ -463,7 +526,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 27,
+   "n": 29,
    "status": "OK"
   },
   {
@@ -481,7 +544,7 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 3,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -499,7 +562,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 28,
+   "n": 27,
    "status": "OK"
   },
   {
