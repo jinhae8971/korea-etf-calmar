@@ -1,0 +1,21 @@
+# Lighter RH 스택의 docker-compose.yml `services:` 아래에 붙여넣는다.
+# 스택 .env를 그대로 물려받는다. 변수명이 다르면 아래 *_ENV 로 가리킨다.
+  lit-rh-probe:
+    build: ./lit_rh_probe
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      LIGHTER_API_URL: https://api.rh.lighter.xyz
+      PROBE_INTERVAL_MIN: "30"
+      PROBE_STATE: /data/lit_rh_probe_state.json
+      # 스택 .env의 실제 변수명으로 바꿔 주세요 (예시)
+      LIGHTER_L1_ADDRESS_ENV: LIGHTER_L1_ADDRESS
+      LIGHTER_ACCOUNT_INDEX_ENV: LIGHTER_ACCOUNT_INDEX
+      LIGHTER_API_KEY_INDEX_ENV: LIGHTER_API_KEY_INDEX
+      LIGHTER_API_PRIVATE_KEY_ENV: LIGHTER_API_PRIVATE_KEY
+      PROBE_TG_TOKEN_ENV: TELEGRAM_BOT_TOKEN
+      PROBE_TG_CHAT_ID_ENV: TELEGRAM_CHAT_ID
+    volumes:
+      - lit_rh_probe_data:/data
+# 최상위 volumes: 에 추가
+#  lit_rh_probe_data:

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>라이터 RH 전환 감시</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#EEF1F4; --paper:#FFFFFF; --ink:#1C2430; --steel:#5B6B7F; --rule:#D5DCE4;
+  --ok:#2F7F79; --watch:#6A7C93; --alert:#C98A12; --imm:#B83227;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#141A22;--paper:#1B232D;--ink:#E4E9EF;--steel:#8FA0B4;--rule:#2C3743;--ok:#4FB3AA;--watch:#8FA0B4;--alert:#E3AA3A;--imm:#E0604F}
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 "IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-variant-numeric:tabular-nums}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:20px;font-weight:700;margin:0 0 2px;letter-spacing:-.01em}
+.sub{color:var(--steel);font-size:13px;margin:0 0 20px}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:0 0 6px}
+.rung{height:44px;border-radius:3px;background:var(--rule);display:flex;align-items:flex-end;
+  padding:6px 8px;font-size:12px;color:var(--steel);font-weight:500}
+.rung.on{color:#fff}
+.rung.on.NONE{background:var(--ok)} .rung.on.WATCH{background:var(--watch)}
+.rung.on.ALERT{background:var(--alert)} .rung.on.IMMINENT{background:var(--imm)}
+.verdict{font-size:26px;font-weight:700;margin:14px 0 4px}
+.note{color:var(--imm);font-weight:500;margin:4px 0}
+section{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;margin:16px 0}
+h2{font-size:15px;margin:0 0 10px}
+.ev{display:grid;grid-template-columns:62px 1fr;gap:2px 10px;padding:8px 0;border-top:1px solid var(--rule)}
+.ev:first-of-type{border-top:0}
+.tag{font-size:12px;font-weight:700;align-self:start;padding-top:1px}
+.tag.ALERT{color:var(--alert)} .tag.IMMINENT{color:var(--imm)} .tag.WATCH{color:var(--watch)}
+.ev .t{font-weight:500} .ev .d,.ev .r{grid-column:2;color:var(--steel);font-size:13px;overflow-wrap:anywhere}
+.ev.off{opacity:.45} .ev.off .t{text-decoration:line-through}
+.empty{color:var(--steel);margin:0}
+.src{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:13px}
+.src .k{color:var(--steel)} .src .bad{color:var(--imm)} .src .good{color:var(--ok)}
+svg{display:block;width:100%;height:auto}
+.chart-cap{font-size:13px;color:var(--steel);margin:6px 0 0}
+details summary{cursor:pointer;color:var(--steel);font-size:13px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--alert);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+  <h1>라이터 RH 포인트 → LIT 전환 감시</h1>
+  <p class="sub" id="asof">불러오는 중</p>
+
+  <div class="ladder" id="ladder" aria-label="현재 등급"></div>
+  <div class="verdict" id="verdict"></div>
+  <p class="note" id="note" hidden></p>
+
+  <section>
+    <h2>최근 7일 신호</h2>
+    <div id="events"></div>
+  </section>
+
+  <section>
+    <h2>RH체인 LIT 총공급</h2>
+    <div id="supply"></div>
+    <p class="chart-cap">1,100만 풀이 RH체인으로 넘어오면 이 선이 계단처럼 뛴다.</p>
+  </section>
+
+  <section>
+    <h2>포인트 상위 10명 합계</h2>
+    <div id="lb"></div>
+    <p class="chart-cap">평평해지면 적립 정지, 꺾여 내려가면 시빌 정리 신호.</p>
+  </section>
+
+  <section>
+    <h2>원천 상태</h2>
+    <div class="src" id="src"></div>
+  </section>
+
+  <section>
+    <details><summary>30일 전체 기록</summary><div id="all" style="margin-top:8px"></div></details>
+  </section>
+</main>
+<script>
+const LEVELS=["NONE","WATCH","ALERT","IMMINENT"];
+const LABEL={NONE:"조용함",WATCH:"관찰",ALERT:"경보",IMMINENT:"임박"};
+const FAM={S1:"온체인",S2:"공식",S3:"UI·API",S4:"보조"};
+const SRC={eth_transfers:"ETH 대량 이동",rh_supply:"RH 총공급",rh_transfers:"RH 대량 이동",docs:"공식 문서",
+  announcements:"앱 공지",leaderboard:"리더보드",frontend:"프론트 번들",news:"뉴스",x:"X",polymarket:"Polymarket"};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const kst=t=>new Date(t*1000).toLocaleString("ko-KR",{timeZone:"Asia/Seoul",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false});
+function fmt(n){return n>=1e6?(n/1e6).toFixed(2)+"M":n>=1e3?(n/1e3).toFixed(1)+"K":n.toFixed(0)}
+function spark(el,pts,col){
+  if(!pts||pts.length<2){el.innerHTML='<p class="empty">이력이 쌓이는 중입니다. 두 번째 수집 후 표시됩니다.</p>';return}
+  const W=700,H=150,P=8,xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);
+  const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys),dy=(y1-y0)||1;
+  const X=x=>P+(x-x0)/((x1-x0)||1)*(W-2*P),Y=y=>H-P-(y-y0)/dy*(H-2*P);
+  const d=pts.map((p,i)=>(i?"L":"M")+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)).join("");
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="추이"><path d="${d}" fill="none" stroke="${col}" stroke-width="2.2"/></svg>
+  <p class="chart-cap">최저 ${fmt(y0)} · 최고 ${fmt(y1)} · 현재 ${fmt(ys[ys.length-1])}</p>`;
+}
+function evRow(e){
+  return `<div class="ev${e.refuted?" off":""}"><span class="tag ${e.grade}">${LABEL[e.grade]}</span>
+  <span class="t">${esc(FAM[e.family])} · ${esc(e.title)}</span>
+  <span class="d">${kst(e.ts)}${e.detail?" · "+esc(e.detail):""}</span>
+  ${e.refute?`<span class="r">반증: ${esc(e.refute)}</span>`:""}</div>`;
+}
+fetch("data.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
+  document.getElementById("asof").textContent=`${kst(d.generated_at)} KST 기준 · 2시간마다 갱신`;
+  const li=LEVELS.indexOf(d.level);
+  document.getElementById("ladder").innerHTML=LEVELS.map((l,i)=>`<div class="rung ${i<=li?"on "+d.level:""}">${LABEL[l]}</div>`).join("");
+  document.getElementById("verdict").textContent=d.level==="NONE"?"전환 신호 없음":
+    `${LABEL[d.level]}${d.families&&d.families.length?" — "+d.families.map(f=>FAM[f]).join(", "):""}`;
+  if(d.note){const n=document.getElementById("note");n.hidden=false;n.textContent=d.note}
+  const ev=(d.events||[]);
+  document.getElementById("events").innerHTML=ev.length?ev.map(evRow).join(""):'<p class="empty">최근 7일 신호가 없습니다.</p>';
+  document.getElementById("all").innerHTML=(d.recent_all||[]).map(evRow).join("")||'<p class="empty">기록 없음</p>';
+  const css=getComputedStyle(document.documentElement);
+  spark(document.getElementById("supply"),d.rh_supply_hist,css.getPropertyValue("--alert"));
+  spark(document.getElementById("lb"),(d.lb_hist||[]).map(h=>[h[0],h[1]]),css.getPropertyValue("--ok"));
+  document.getElementById("src").innerHTML=Object.entries(d.status||{}).map(([k,v])=>
+    `<span class="k">${esc(SRC[k]||k)}</span><span class="${v.ok?"good":"bad"}">${v.ok?"정상":"실패"}${v.note?" · "+esc(v.note):v.err?" · "+esc(v.err).slice(0,40):""}</span>`).join("");
+}).catch(()=>{document.getElementById("asof").textContent="데이터를 읽지 못했습니다. 다음 수집(2시간 주기) 후 다시 열어 주세요."});
+</script>
+</body>
+</html>

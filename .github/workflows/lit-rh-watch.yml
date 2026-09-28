@@ -1,0 +1,62 @@
+name: lit-rh-watch
+
+# 라이터 로빈후드 포인트 → LIT 전환 신호 수집·판정·대시보드 (발송은 hynix-correction-monitor의 lit-rh-relay)
+on:
+  schedule:
+    - cron: "17 */2 * * *"     # KST 홀수시 :17 (야간에도 수집, 발송 판단은 낮에만)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lit-rh-watch
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests (외부 의존성 없음)
+        working-directory: lit_rh_watch
+        run: python -m unittest discover -s tests -v
+
+  run:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Collect & judge
+        working-directory: lit_rh_watch
+        env:
+          TZ: Asia/Seoul
+        run: python watch.py
+
+      - name: Commit snapshot
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name "lit-rh-watch[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lit_rh_watch/data docs/lit-rh-watch
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "data(lit-rh-watch): $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST')"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
