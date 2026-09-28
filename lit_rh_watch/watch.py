@@ -271,9 +271,9 @@ def is_day(now: int, cfg: dict) -> bool:
 
 def main(argv):
     seed_flag, dry = "--seed" in argv, "--dry" in argv
-    cfg = load_json(os.path.join(HERE, "config.json"), None)
+    cfg = load_json(os.path.join(HERE, "watch_config.json"), None)
     if cfg is None:
-        print("config.json 없음")
+        print("watch_config.json 없음")
         return 2
     now = int(os.environ.get("LITRH_NOW") or time.time())
     st_path = os.path.join(DATA, "state.json")

@@ -13,7 +13,7 @@ sys.path.insert(0, ROOT)
 
 import judge as J  # noqa: E402
 
-CFG = json.load(open(os.path.join(ROOT, "config.json"), encoding="utf-8"))
+CFG = json.load(open(os.path.join(ROOT, "watch_config.json"), encoding="utf-8"))
 KST = J.KST
 
 
