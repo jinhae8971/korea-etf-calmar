@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26092350,
-  "rh": 76762563
+  "eth": 26093692,
+  "rh": 76923759
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -22,6 +22,24 @@
   }
  },
  "events": [
+  {
+   "detail": "0xac1ee1f2→0x1157a207",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "24a76545f5f2",
+   "ref": {
+    "amount": 1600000.0,
+    "chain": "eth",
+    "from": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+    "to": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+    "tx": "0xe4f7de161a4c3446118f393b11e3b0fe0eee639e3c75c3a5314425ef6900f550"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.60M 대량 이동",
+   "ts": 1790796731
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMjdFSi1CQVgtUHVpSWkxWEkyRHNTemhYaVNzUnVXWWk3MDZoNF9MckhCVW5uWW5NclZHR0VNQXBoSEQwZWVweHJ",
    "family": "S4",
@@ -226,7 +244,7 @@
   }
  ],
  "families": [],
- "generated_at": 1790796106,
+ "generated_at": 1790812305,
  "lb_hist": [
   [
    1790638034,
@@ -267,11 +285,34 @@
    1790796106,
    134690.696,
    32887.67
+  ],
+  [
+   1790812305,
+   134909.197,
+   32934.758
   ]
  ],
  "level": "WATCH",
  "note": "",
  "recent_all": [
+  {
+   "detail": "0xac1ee1f2→0x1157a207",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "24a76545f5f2",
+   "ref": {
+    "amount": 1600000.0,
+    "chain": "eth",
+    "from": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+    "to": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+    "tx": "0xe4f7de161a4c3446118f393b11e3b0fe0eee639e3c75c3a5314425ef6900f550"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.60M 대량 이동",
+   "ts": 1790796731
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMjdFSi1CQVgtUHVpSWkxWEkyRHNTemhYaVNzUnVXWWk3MDZoNF9MckhCVW5uWW5NclZHR0VNQXBoSEQwZWVweHJ",
    "family": "S4",
@@ -507,57 +548,61 @@
   [
    1790796106,
    411299.26
+  ],
+  [
+   1790812305,
+   411299.26
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1790796106,
+   "at": 1790812305,
    "note": "10건",
    "ok": true
   },
   "docs": {
-   "at": 1790796106,
+   "at": 1790812305,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1790796106,
-   "note": "2016블록 · 대량 5건",
+   "at": 1790812305,
+   "note": "1342블록 · 대량 1건",
    "ok": true
   },
   "frontend": {
-   "at": 1790796106,
+   "at": 1790812305,
    "note": "모듈 116 · API 117",
    "ok": true
   },
   "leaderboard": {
-   "at": 1790796106,
-   "note": "상위10 합계 134,691",
+   "at": 1790812305,
+   "note": "상위10 합계 134,909",
    "ok": true
   },
   "news": {
-   "at": 1790796106,
-   "note": "116건",
+   "at": 1790812305,
+   "note": "113건",
    "ok": true
   },
   "polymarket": {
-   "at": 1790796106,
+   "at": 1790812305,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1790796106,
+   "at": 1790812305,
    "note": "411,299 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1790796106,
+   "at": 1790812305,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1790796106,
-   "note": "39건",
+   "at": 1790812305,
+   "note": "19건",
    "ok": true
   }
  }
