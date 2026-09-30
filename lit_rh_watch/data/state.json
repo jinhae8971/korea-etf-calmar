@@ -1,5 +1,54 @@
 {
- "addr_cache": {},
+ "addr_cache": {
+  "0x1157a2076b9bb22a85cc2c162f20fab3898f4101": {
+   "_at": 1790796106,
+   "addr": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
+  },
+  "0x1a51016fad47de690d1f48adf2f6407f3cdc160d": {
+   "_at": 1790796106,
+   "addr": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
+  },
+  "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe": {
+   "_at": 1790796106,
+   "addr": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
+  },
+  "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48": {
+   "_at": 1790796106,
+   "addr": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
+  },
+  "0xac1ee1f2c8e35cb99a7823d09595db103e67b719": {
+   "_at": 1790796106,
+   "addr": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
+  },
+  "0xcd531ae9efcce479654c4926dec5f6209531ca7b": {
+   "_at": 1790796106,
+   "addr": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
+  }
+ },
  "ann_seen": [
   "1788547830:New RWA Perp Listings",
   "1788467194:Network Upgrade",
@@ -14,8 +63,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26090334,
-  "rh": 76520270
+  "eth": 26092350,
+  "rh": 76762563
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -137,6 +186,110 @@
    "signal": "news",
    "title": "뉴스: Lighter Launches LIT Token With 25% Supply Distributed via A",
    "ts": 1790771802
+  },
+  {
+   "detail": "0x1a51016f→0xab00e8f5",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "b97818351be3",
+   "ref": {
+    "amount": 1500000.0,
+    "chain": "eth",
+    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+    "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+    "tx": "0x4d58ca290982434ad067a735bddbdd3262864732d602d6a9f74b30608e97a848"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.50M 대량 이동",
+   "ts": 1790778431
+  },
+  {
+   "detail": "0xab00e8f5→0xcd531ae9",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "caecb7a0e9e2",
+   "ref": {
+    "amount": 1500000.0,
+    "chain": "eth",
+    "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+    "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+    "tx": "0x318bea14af7ec1c0fc2c05522a1101d1c673ae0f4ac253bfa4174d84f5dbaed5"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.50M 대량 이동",
+   "ts": 1790778647
+  },
+  {
+   "detail": "0x91d40e48→0xac1ee1f2",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "23be114d392c",
+   "ref": {
+    "amount": 1000000.0,
+    "chain": "eth",
+    "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "to": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+    "tx": "0x26e7aab10d9199bed3ee28670c411b54620aa5e6f836d53da4fef106932092db"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.00M 대량 이동",
+   "ts": 1790793251
+  },
+  {
+   "detail": "0x91d40e48→0xac1ee1f2",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "1a073d42cdbe",
+   "ref": {
+    "amount": 1000000.0,
+    "chain": "eth",
+    "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "to": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+    "tx": "0x661266935ebd031bfc34baa8dc332cce9ee309cb2d1ae85815475a62749bd088"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.00M 대량 이동",
+   "ts": 1790793611
+  },
+  {
+   "detail": "0xac1ee1f2→0x1157a207",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "c266deefbb29",
+   "ref": {
+    "amount": 1000000.0,
+    "chain": "eth",
+    "from": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+    "to": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+    "tx": "0xb42355178bb2f51e921b48a6bb82c653547db756fa2231e5368d3d18180adb91"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.00M 대량 이동",
+   "ts": 1790795003
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMjdFSi1CQVgtUHVpSWkxWEkyRHNTemhYaVNzUnVXWWk3MDZoNF9MckhCVW5uWW5NclZHR0VNQXBoSEQwZWVweHJ",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "69bd3685c50c",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMjdFSi1CQVgtUHVpSWkxWEkyRHNTemhYaVNzUnVXWWk3MDZoNF9MckhCVW5uWW5NclZHR0VNQXBoSEQwZWVweHJHRGpha2RpM1RfRzJHTWF3blVxUWNwM05hWFlueHlsUEo0SEZDbGM0cGxqZEg2REZRd2xpYXJCVEdCdS1iVS1CSHo0M0JTNEh0alNG?oc=5"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: Lighter’s LIT Tokenomics Spark Debate as Team Takes 50% Allo",
+   "ts": 1790796106
   }
  ],
  "fail_streak": 0,
@@ -381,7 +534,48 @@
   ]
  },
  "heartbeat": "2026-09",
- "large_hist": [],
+ "large_hist": [
+  {
+   "amount": 1500000.0,
+   "block": 26090888,
+   "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+   "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+   "ts": 1790778431,
+   "tx": "0x4d58ca290982434ad067a735bddbdd3262864732d602d6a9f74b30608e97a848"
+  },
+  {
+   "amount": 1500000.0,
+   "block": 26090906,
+   "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+   "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+   "ts": 1790778647,
+   "tx": "0x318bea14af7ec1c0fc2c05522a1101d1c673ae0f4ac253bfa4174d84f5dbaed5"
+  },
+  {
+   "amount": 1000000.0,
+   "block": 26092118,
+   "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+   "to": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+   "ts": 1790793251,
+   "tx": "0x26e7aab10d9199bed3ee28670c411b54620aa5e6f836d53da4fef106932092db"
+  },
+  {
+   "amount": 1000000.0,
+   "block": 26092147,
+   "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+   "to": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+   "ts": 1790793611,
+   "tx": "0x661266935ebd031bfc34baa8dc332cce9ee309cb2d1ae85815475a62749bd088"
+  },
+  {
+   "amount": 1000000.0,
+   "block": 26092263,
+   "from": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
+   "to": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+   "ts": 1790795003,
+   "tx": "0xb42355178bb2f51e921b48a6bb82c653547db756fa2231e5368d3d18180adb91"
+  }
+ ],
  "lb_hist": [
   [
    1790638034,
@@ -417,10 +611,16 @@
    1790771802,
    134298.261,
    32843.605
+  ],
+  [
+   1790796106,
+   134690.696,
+   32887.67
   ]
  ],
  "level": "WATCH",
  "news_seen": [
+  "0029209d8878",
   "013c2e26b1ea",
   "06f3a6ef9d39",
   "0a0456bae660",
@@ -466,6 +666,7 @@
   "4552ea32c94e",
   "45eb0dc221ca",
   "46f3ad1ada23",
+  "48937e1ea08b",
   "491e744e97c7",
   "4bdcbda357fb",
   "4e4bd6256753",
@@ -476,6 +677,7 @@
   "5b501af9e573",
   "5d3e9c0b8cdb",
   "5fd8af4defc1",
+  "60d70e04584b",
   "6204ea17b302",
   "63b0be8d244c",
   "63fd2ee72661",
@@ -489,6 +691,7 @@
   "7207bd2272a5",
   "721e857c2885",
   "7392a508f961",
+  "7433f3acad7a",
   "743e5aa42da2",
   "757cf4749e39",
   "783844ebd4a9",
@@ -497,6 +700,8 @@
   "7c1fe3f132e1",
   "7f8cf597b281",
   "813ecc30136b",
+  "824f3cd88566",
+  "826cb014b48f",
   "83716c7acf5f",
   "86714c42734c",
   "87da0d7c9bf1",
@@ -535,6 +740,7 @@
   "c5cd6e128e49",
   "c8678fcff7c9",
   "c86893d8ab2a",
+  "ca89d0dc3461",
   "cee11b1a46a6",
   "cf4011a4ce08",
   "d4a2b8a8266c",
@@ -599,57 +805,61 @@
   [
    1790771802,
    411299.26
+  ],
+  [
+   1790796106,
+   411299.26
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1790771802,
+   "at": 1790796106,
    "note": "10건",
    "ok": true
   },
   "docs": {
-   "at": 1790771802,
+   "at": 1790796106,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1790771802,
-   "note": "2104블록 · 대량 0건",
+   "at": 1790796106,
+   "note": "2016블록 · 대량 5건",
    "ok": true
   },
   "frontend": {
-   "at": 1790771802,
+   "at": 1790796106,
    "note": "모듈 116 · API 117",
    "ok": true
   },
   "leaderboard": {
-   "at": 1790771802,
-   "note": "상위10 합계 134,298",
+   "at": 1790796106,
+   "note": "상위10 합계 134,691",
    "ok": true
   },
   "news": {
-   "at": 1790771802,
-   "note": "119건",
+   "at": 1790796106,
+   "note": "116건",
    "ok": true
   },
   "polymarket": {
-   "at": 1790771802,
+   "at": 1790796106,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1790771802,
+   "at": 1790796106,
    "note": "411,299 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1790771802,
+   "at": 1790796106,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1790771802,
+   "at": 1790796106,
    "note": "39건",
    "ok": true
   }
