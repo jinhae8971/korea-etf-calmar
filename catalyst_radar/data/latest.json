@@ -1,41 +1,13 @@
 {
- "as_of_kst": "2026-09-29 10:18",
+ "as_of_kst": "2026-09-30 09:47",
  "calendar": [
-  {
-   "event_date": "2026-09-29",
-   "first_seen": "2026-09-27",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:batch-upgrade-xrp-ledger-vote-nears-september-29-cryptonews",
-   "last_seen": "2026-09-27",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-27",
-    "price_at_detect": 1.41,
-    "score_at_detect": 35.3
-   },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-27",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "XRP",
-   "title": "Batch Upgrade: XRP Ledger Vote Nears September 29 - Cryptonews",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE40QTFfU2VCY1RoNmxUMW5RdlBZdkRsdzA2cDBhWGgwdlUtTnFJTmVJT3QtaHpZbDZ2OFBmbUhWTnpOYnV6eVlRT1VESWxya0p4SXRNTU1XdTNCcXdRWmJmMGJ5VQ?oc=5",
-   "when": "Wed, 23 Sep 2026"
-  },
   {
    "event_date": "2026-09-30",
    "first_seen": "2026-09-24",
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1056",
-   "last_seen": "2026-09-29",
+   "last_seen": "2026-09-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-24",
@@ -56,6 +28,34 @@
    "trust": 1.0,
    "url": "https://www.mintscan.io/cosmoshub/proposals/1056",
    "when": "2026-09-30"
+  },
+  {
+   "event_date": "2026-10-01",
+   "first_seen": "2026-09-30",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:xrp-price-prediction-escrow-unlock-on-october-1-cryptoticker",
+   "last_seen": "2026-09-30",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 1.41,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-30",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "XRP Price Prediction: Escrow Unlock on October 1 - CryptoTicker",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVWR4elZGaUFsZGhHS2tHN0VuN0JqQVA3aHN2UFBFOHlIZFJDQUpnUHpnMFQ2VVF1dlh5elFLbWZ2OU1XMXp3RW14Z1hfYmhwMExGVWZhUnF2Y0Fod21acl9JbWVKdXdRSFVrY3UxVzRFZm1jQlBMaXRwa25UN1RiVUJBbw?oc=5",
+   "when": "Tue, 29 Sep 2026"
   },
   {
    "event_date": "2026-10-01",
@@ -91,7 +91,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:cardano-s-realfi-targets-oct-1-mainnet-launch-a-pluang-com",
-   "last_seen": "2026-09-29",
+   "last_seen": "2026-09-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-29",
@@ -119,7 +119,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1057",
-   "last_seen": "2026-09-29",
+   "last_seen": "2026-09-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -147,7 +147,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:ethena-ends-usde-incentives-as-investor-ena-unlock-moves-to-",
-   "last_seen": "2026-09-29",
+   "last_seen": "2026-09-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-29",
@@ -175,7 +175,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:xrp-ledger-delegation-upgrade-could-go-live-oct-5-will-xrp-b",
-   "last_seen": "2026-09-29",
+   "last_seen": "2026-09-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-24",
@@ -231,7 +231,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "ethereum/go-ethereum@v1.17.6",
-   "last_seen": "2026-09-29",
+   "last_seen": "2026-09-30",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -255,12 +255,96 @@
    "when": "2026-09-23"
   },
   {
+   "event_date": "2026-10-06",
+   "first_seen": "2026-09-30",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-network-to-undergo-major-speed-upgrade-test-on-octo",
+   "last_seen": "2026-09-30",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-30",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum Network to Undergo Major Speed Upgrade Test on October 6 - Gadgets 360",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPMHh5ZVNpSkIzTGlqQWY4RjNnbHhSa1JsTnV2WXZ1REl5OXU5RmhBS0tyOFFvRTI3R092RGJSRTlrSmtESTB1ckNEX0ItVUhranNUYWtEUk1PLWliUGtXTGhFM0w0ZmZQWjZmWnU1a2VqVXNIRUZCeUNaSTdhc1Q4UUswUzRmdEFUWW83WWJDZGtEajhVMVZwOGl2MElmbzVSVHB4UlBHWmNXUncwSW01dHQtNVBhVzdmbE1Jc21mYy03R28xZi1NQkhKNTUyTnh5TG9nUWdSbTdTV3J2UDJ3S2dFV3JrUXZFLUlyNnZMM0VqY0R1Z2h1dtIB_gFBVV95cUxPNmhkeDVVSmpkX0hEUzJLYkJKYjY3MWExUC1TSXc2QzN4eUJzNmVDM2RKOFlXMmZWd1p3STVjMlZmV1U5UXBaS3Yyc1NmX0NTWXR0akJqdGROYTFOMXd3TDVqVGhmU05JQzZsbzRDejVNWGhrWEdVZm5FcWxQbGRUQkt6blpicmlqY3ZjV0RLVURxcEZxemQtX3RpQzZib3JZSEFoR0tabnkzZlZrOGRQcHktbE52REFrdGZSekk3VkkyZElOODg5ZTNXSF90ZWxoOUpIVFV6WVZVcll3U3d6N0FUR0xidTdiYXZYX1RpV2xRQVp2aGQzdGVYTThXZw?oc=5",
+   "when": "Tue, 29 Sep 2026"
+  },
+  {
+   "event_date": "2026-10-06",
+   "first_seen": "2026-09-30",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-to-test-glamsterdam-upgrade-on-oct-6-yahoo-tech",
+   "last_seen": "2026-09-30",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-30",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum To Test Glamsterdam Upgrade On Oct. 6 - Yahoo Tech",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUFJ2RGFzNmF6MnJWM2lYdXI1U0NPaFhZSFNxS0RhQXhOVzBpYWVLcDA1dlRNYXdIMkhmUjhhRjVtR2Ixb0VGc19DWHgtdWptTFVWOGY4dDVTYnRKY1I0RkZuaGR2S2J6cTVSVVdFeXd2YkdMVGRrVGNMQVRnWkZLdGlhWXZPdXdobDJqZkFfSzByMXo4OVB3?oc=5",
+   "when": "Tue, 29 Sep 2026"
+  },
+  {
+   "event_date": "2026-10-06",
+   "first_seen": "2026-09-30",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-schedules-glamsterdam-upgrade-on-sepolia-for-oct-6-",
+   "last_seen": "2026-09-30",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-30",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum schedules Glamsterdam upgrade on Sepolia for Oct. 6 - Cryptonews.net",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1oaUc1ZndRR2xPdXFqX3czTmNGVmwwUXRDNkNpbTQyV1o3cXZWdE1lRzlxdDJCSnpFRFhRR2lnaWxseHhxX1FpcThiUUEtUzdmMnpMM0lrZWdaZw?oc=5",
+   "when": "Tue, 29 Sep 2026"
+  },
+  {
    "event_date": "2026-10-08",
    "first_seen": "2026-09-29",
    "grade": "B",
    "impact": "INFRA",
    "key": "news:latest-crypto-news-xrp-s-october-8-upgrade-could-shake-the-m",
-   "last_seen": "2026-09-29",
+   "last_seen": "2026-09-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-29",
@@ -402,7 +486,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 63,
+ "event_count": 71,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -426,18 +510,18 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-29 10:18\n감시 52종목(체인 34·프로토콜 18) · 이벤트 63건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>ENA</b> [공급·신규] Ethena Ends USDe Incentives as Investor ENA Unlock Moves to Oct. 5 - tokenpost\n🟠 <b>ADA</b> [인프라·신규] Cardano's RealFi targets Oct 1 mainnet launch a... - pluang.com\n🟠 <b>XRP</b> [인프라·신규] Latest Crypto News: XRP’s October 8 Upgrade Could Shake the Market, While Apei\n🟠 <b>XRP</b> [인프라·신규] XRP Ledger Issues Emergency Security Release Ahead of Oct. 9 Upgrade - CryptoR\n🟠 <b>SUI</b> [인프라·신규] sui devnet-v1.81.0 — Sui Protocol Version in this release: `138`\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> XRP <b>일정확정</b> · Batch Upgrade: XRP Ledger Vote Nears September 29 - Cryptonews\n🟠 <code>D-1   </code> ATOM <b>투표중</b> · ATOM Refund &amp; Justice Bounty\n🟠 <code>D-2   </code> ADA <b>일정확정</b> · Cardano's RealFi targets Oct 1 mainnet launch a... - Pluang\n🟠 <code>D-2   </code> ADA <b>일정확정</b> · Cardano's RealFi targets Oct 1 mainnet launch a... - pluang.co\n🟠 <code>D-2   </code> ATOM <b>투표중</b> · Recover IBC light client for Realio Network (07-tendermint-115\n🔴 <code>D-6   </code> ENA <b>일정확정</b> · Ethena Ends USDe Incentives as Investor ENA Unlock Moves to Oc\n🟠 <code>D-6   </code> XRP <b>일정확정</b> · XRP Ledger delegation upgrade could go live Oct. 5, will XRP b\n🟠 <code>D-6   </code> XRP <b>일정확정</b> · XRP Ledger upgrade enters 14-day countdown — What happens on O\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-09-30 09:47\n감시 52종목(체인 34·프로토콜 18) · 이벤트 71건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>XRP</b> [공급·신규] XRP Price Prediction: Escrow Unlock on October 1 - CryptoTicker\n🟠 <b>ETH</b> [인프라·신규] Ethereum Network to Undergo Major Speed Upgrade Test on October 6 - Gadgets 36\n🟠 <b>ETH</b> [인프라·신규] Ethereum To Test Glamsterdam Upgrade On Oct. 6 - Yahoo Tech\n🟠 <b>ETH</b> [인프라·신규] Ethereum schedules Glamsterdam upgrade on Sepolia for Oct. 6 - Cryptonews.net\n🟠 <b>SUI</b> [인프라·신규] sui testnet-v1.81.0 — Sui Protocol Version in this release: `138`\n🟠 <b>FIL</b> [인프라·신규] lotus v1.37.0-rc2 — This is the second release candidate of the upcoming manda\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> ATOM <b>투표중</b> · ATOM Refund &amp; Justice Bounty\n🔴 <code>D-1   </code> XRP <b>일정확정</b> · XRP Price Prediction: Escrow Unlock on October 1 - CryptoTicke\n🟠 <code>D-1   </code> ADA <b>일정확정</b> · Cardano's RealFi targets Oct 1 mainnet launch a... - Pluang\n🟠 <code>D-1   </code> ADA <b>일정확정</b> · Cardano's RealFi targets Oct 1 mainnet launch a... - pluang.co\n🟠 <code>D-1   </code> ATOM <b>투표중</b> · Recover IBC light client for Realio Network (07-tendermint-115\n🔴 <code>D-5   </code> ENA <b>일정확정</b> · Ethena Ends USDe Incentives as Investor ENA Unlock Moves to Oc\n🟠 <code>D-5   </code> XRP <b>일정확정</b> · XRP Ledger delegation upgrade could go live Oct. 5, will XRP b\n🟠 <code>D-5   </code> XRP <b>일정확정</b> · XRP Ledger upgrade enters 14-day countdown — What happens on O\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 누적 중 (아직 지평 도달 이벤트 없음)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-10-05",
-   "first_seen": "2026-09-29",
+   "event_date": "2026-10-01",
+   "first_seen": "2026-09-30",
    "grade": "A",
    "impact": "SUPPLY",
-   "key": "news:ethena-ends-usde-incentives-as-investor-ena-unlock-moves-to-",
+   "key": "news:xrp-price-prediction-escrow-unlock-on-october-1-cryptoticker",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-29",
-    "price_at_detect": 0.174712,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 1.41,
     "score_at_detect": 50.4
    },
    "score": 50.4,
@@ -445,27 +529,27 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-29",
+     "at": "2026-09-30",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ENA",
-   "title": "Ethena Ends USDe Incentives as Investor ENA Unlock Moves to Oct. 5 - tokenpost.com",
+   "symbol": "XRP",
+   "title": "XRP Price Prediction: Escrow Unlock on October 1 - CryptoTicker",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE84enQzUldmcnJZWWhXWGNFTzZYVGlRVXppcjI0NkdMaFJJOW4tOGZ0UlZOUmtseERxQmNpT2tnZUJvRW05bnY0NG5rb1BIUHY5ekE0c3FXd2w?oc=5",
-   "when": "Mon, 28 Sep 2026"
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVWR4elZGaUFsZGhHS2tHN0VuN0JqQVA3aHN2UFBFOHlIZFJDQUpnUHpnMFQ2VVF1dlh5elFLbWZ2OU1XMXp3RW14Z1hfYmhwMExGVWZhUnF2Y0Fod21acl9JbWVKdXdRSFVrY3UxVzRFZm1jQlBMaXRwa25UN1RiVUJBbw?oc=5",
+   "when": "Tue, 29 Sep 2026"
   },
   {
-   "event_date": "2026-10-01",
-   "first_seen": "2026-09-29",
+   "event_date": "2026-10-06",
+   "first_seen": "2026-09-30",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:cardano-s-realfi-targets-oct-1-mainnet-launch-a-pluang-com",
+   "key": "news:ethereum-network-to-undergo-major-speed-upgrade-test-on-octo",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-29",
-    "price_at_detect": 0.218904,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 2497.06,
     "score_at_detect": 35.3
    },
    "score": 35.3,
@@ -473,84 +557,113 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-29",
+     "at": "2026-09-30",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ADA",
-   "title": "Cardano's RealFi targets Oct 1 mainnet launch a... - pluang.com",
+   "symbol": "ETH",
+   "title": "Ethereum Network to Undergo Major Speed Upgrade Test on October 6 - Gadgets 360",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRjZOcEtIdlprNWc4UlN4VmRIb1JzamVFSnFZUXZ4MlJRR2RZU181MDB5dzU3OHVMMXE3dTJaR0ZwSkF0NVVtQ2xKSDktRUg2cmxub2N5VjlYUm9GeDJFanVHTlFPbnNCOXFxSTJzNHpvLUFQX1A3QVpLTHJ1c0FRZmYtUHhtMnU4YWJIR2hjajJTa3FOUFNFcEZ2ZWZ5TW1fVEJHVzM2UQ?oc=5",
-   "when": "Thu, 24 Sep 2026"
+   "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPMHh5ZVNpSkIzTGlqQWY4RjNnbHhSa1JsTnV2WXZ1REl5OXU5RmhBS0tyOFFvRTI3R092RGJSRTlrSmtESTB1ckNEX0ItVUhranNUYWtEUk1PLWliUGtXTGhFM0w0ZmZQWjZmWnU1a2VqVXNIRUZCeUNaSTdhc1Q4UUswUzRmdEFUWW83WWJDZGtEajhVMVZwOGl2MElmbzVSVHB4UlBHWmNXUncwSW01dHQtNVBhVzdmbE1Jc21mYy03R28xZi1NQkhKNTUyTnh5TG9nUWdSbTdTV3J2UDJ3S2dFV3JrUXZFLUlyNnZMM0VqY0R1Z2h1dtIB_gFBVV95cUxPNmhkeDVVSmpkX0hEUzJLYkJKYjY3MWExUC1TSXc2QzN4eUJzNmVDM2RKOFlXMmZWd1p3STVjMlZmV1U5UXBaS3Yyc1NmX0NTWXR0akJqdGROYTFOMXd3TDVqVGhmU05JQzZsbzRDejVNWGhrWEdVZm5FcWxQbGRUQkt6blpicmlqY3ZjV0RLVURxcEZxemQtX3RpQzZib3JZSEFoR0tabnkzZlZrOGRQcHktbE52REFrdGZSekk3VkkyZElOODg5ZTNXSF90ZWxoOUpIVFV6WVZVcll3U3d6N0FUR0xidTdiYXZYX1RpV2xRQVp2aGQzdGVYTThXZw?oc=5",
+   "when": "Tue, 29 Sep 2026"
   },
   {
-   "event_date": "2026-10-08",
-   "first_seen": "2026-09-29",
+   "event_date": "2026-10-06",
+   "first_seen": "2026-09-30",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:latest-crypto-news-xrp-s-october-8-upgrade-could-shake-the-m",
+   "key": "news:ethereum-to-test-glamsterdam-upgrade-on-oct-6-yahoo-tech",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-29",
-    "price_at_detect": 1.41,
-    "score_at_detect": 30.0
+    "detected_at": "2026-09-30",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 35.3
    },
-   "score": 30.0,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-29",
+     "at": "2026-09-30",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "XRP",
-   "title": "Latest Crypto News: XRP’s October 8 Upgrade Could Shake the Market, While Apeing Burns 281.5M – $5K to $90K Window Closing - streetinsider.com",
+   "symbol": "ETH",
+   "title": "Ethereum To Test Glamsterdam Upgrade On Oct. 6 - Yahoo Tech",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxPeWRqbUZBQ0xSQmo2SlB2czFTdEpHV2d6RzZ6VWYxNnRTUUFEdVB4N0VMYUlQMGVxMFhYaVBZRGVZQkFsLV81Z3V0ekhqdkt3aUctazlaZ3M3TEs3Yy1sYXVoWWlwMnF2WHdaemRoak83ZzF3X1BxNkk5M3RJRWk2TTMzeDdxRk9aNHlNTVdzQnAzd0JsZnFoclRxQ2ZxRHhVaW9GUHp4anlacjUtUDFnT0JlWjYyVVUzS21EMkkyLWgyVW5PMWVxRlU1bGMtZkhEcUt5YmE2bzN2Y0RMRzl5bmJUR2x6Z3pmY2tBYXJiMkRvOXV1WTY2Z2owMUlWRnR1Y093QTJYTWkwN1pnN09wWVBaMlExVWpHaG90bXVNZDFtRFpnQm03N0hxUG9EcExfREgtZkE5VQ?oc=5",
-   "when": "Mon, 28 Sep 2026"
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUFJ2RGFzNmF6MnJWM2lYdXI1U0NPaFhZSFNxS0RhQXhOVzBpYWVLcDA1dlRNYXdIMkhmUjhhRjVtR2Ixb0VGc19DWHgtdWptTFVWOGY4dDVTYnRKY1I0RkZuaGR2S2J6cTVSVVdFeXd2YkdMVGRrVGNMQVRnWkZLdGlhWXZPdXdobDJqZkFfSzByMXo4OVB3?oc=5",
+   "when": "Tue, 29 Sep 2026"
   },
   {
-   "event_date": "2026-10-09",
-   "first_seen": "2026-09-29",
+   "event_date": "2026-10-06",
+   "first_seen": "2026-09-30",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:xrp-ledger-issues-emergency-security-release-ahead-of-oct-9-",
+   "key": "news:ethereum-schedules-glamsterdam-upgrade-on-sepolia-for-oct-6-",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-29",
-    "price_at_detect": 1.41,
-    "score_at_detect": 30.0
+    "detected_at": "2026-09-30",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 35.3
    },
-   "score": 30.0,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-29",
+     "at": "2026-09-30",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "XRP",
-   "title": "XRP Ledger Issues Emergency Security Release Ahead of Oct. 9 Upgrade - CryptoRank",
+   "symbol": "ETH",
+   "title": "Ethereum schedules Glamsterdam upgrade on Sepolia for Oct. 6 - Cryptonews.net",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUzZtMHF4WTJTMnBncDAxdjktTnJ2TmViOS0tVXBkM2J1aUdmZEh0RlBBSGxTajNzVzZvM1Y0Y2hMY1dQU2ZiUkFEeVZwVm5oZjJrcDNhSm90cnVndHJlY2ZuSFZJalQ3d0l5ZWRCMHN4bzlpTDFSdFhBRE02Xy1ZbzNveWFpNkZVN2puM3pRbzlJcFREZnJjWlZKTVphLTBhdkdYOWNIcjk?oc=5",
-   "when": "Mon, 28 Sep 2026"
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1oaUc1ZndRR2xPdXFqX3czTmNGVmwwUXRDNkNpbTQyV1o3cXZWdE1lRzlxdDJCSnpFRFhRR2lnaWxseHhxX1FpcThiUUEtUzdmMnpMM0lrZWdaZw?oc=5",
+   "when": "Tue, 29 Sep 2026"
   },
   {
    "event_date": null,
-   "first_seen": "2026-09-29",
+   "first_seen": "2026-09-30",
    "grade": "B",
    "impact": "INFRA",
-   "key": "MystenLabs/sui@devnet-v1.81.0",
+   "key": "MystenLabs/sui@testnet-v1.81.0",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-09-30",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "SUI",
+   "title": "sui testnet-v1.81.0 — Sui Protocol Version in this release: `138`",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.81.0",
+   "when": "2026-09-29"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-09-30",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "filecoin-project/lotus@v1.37.0-rc2",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-29",
-    "price_at_detect": 0.796873,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 0.799444,
     "score_at_detect": 26.9
    },
    "score": 26.9,
@@ -558,16 +671,45 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-29",
+     "at": "2026-09-30",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "SUI",
-   "title": "sui devnet-v1.81.0 — Sui Protocol Version in this release: `138`",
+   "symbol": "FIL",
+   "title": "lotus v1.37.0-rc2 — This is the second release candidate of the upcoming mandatory Lotus v1.37.0 release for [Filecoin network ver",
    "transition": "NEW",
    "trust": 0.95,
-   "url": "https://github.com/MystenLabs/sui/releases/tag/devnet-v1.81.0",
-   "when": "2026-09-28"
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/v1.37.0-rc2",
+   "when": "2026-09-29"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-09-30",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "filecoin-project/lotus@miner/v1.37.0-rc2",
+   "prerelease": true,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-30",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 26.9
+   },
+   "score": 26.9,
+   "source": "release",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-09-30",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "lotus miner/v1.37.0-rc2 — This is the second release candidate of the upcoming mandatory Lotus v1.37.0 release for [Filecoin network ver",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/miner/v1.37.0-rc2",
+   "when": "2026-09-29"
   }
  ],
  "universe": {
@@ -667,7 +809,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 40,
+   "n": 39,
    "status": "OK"
   },
   {
@@ -691,7 +833,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 23,
+   "n": 22,
    "status": "OK"
   },
   {
@@ -703,7 +845,7 @@
   {
    "bucket": "source:cosmos",
    "horizon": 7,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
