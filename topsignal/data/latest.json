@@ -1,39 +1,37 @@
 {
- "as_of": "2026-09-30",
- "as_of_kst": "2026-09-30 10:34",
- "data_status": "DEGRADED",
- "failed": [
-  "altseason"
- ],
+ "as_of": "2026-10-01",
+ "as_of_kst": "2026-10-01 10:35",
+ "data_status": "OK",
+ "failed": [],
  "thresholds_frozen_at": "2026-09-05",
  "signals": [
   {
    "key": "kimchi",
    "label": "김치프리미엄",
    "level": 0,
-   "value": 0.4,
-   "display": "+0.40%",
+   "value": 0.38,
+   "display": "+0.38%",
    "note": "정상 범위",
    "raw": {
-    "value": 0.4,
-    "krw": 113225000.0,
-    "usd": 83332.71,
-    "fx": 1353.36,
+    "value": 0.38,
+    "krw": 113619000.0,
+    "usd": 83512.225,
+    "fx": 1355.4,
     "hist": {
-     "d1": 0.56,
-     "d30": 1.95
+     "d1": 0.33,
+     "d30": -0.91
     }
    },
    "deltas": {
     "d1": {
-     "delta": 0.19,
-     "dir": "up",
-     "text": "+0.19%p"
+     "delta": -0.02,
+     "dir": "flat",
+     "text": "-0.02%p"
     },
     "d30": {
-     "delta": -1.55,
-     "dir": "down",
-     "text": "-1.55%p"
+     "delta": 1.29,
+     "dir": "up",
+     "text": "+1.29%p"
     }
    },
    "extra": ""
@@ -41,36 +39,60 @@
   {
    "key": "altseason",
    "label": "알트시즌 지수",
-   "level": null,
-   "value": null,
-   "display": "—",
-   "note": "수집 실패"
+   "level": 1,
+   "value": 72,
+   "display": "72 / 100",
+   "note": "알트 우위 확대",
+   "raw": {
+    "value": 72,
+    "sample": 50,
+    "btc_30d": 6.3,
+    "leaders": [
+     {
+      "sym": "QNT",
+      "chg": 380.6
+     },
+     {
+      "sym": "BTW",
+      "chg": 226.6
+     },
+     {
+      "sym": "NEAR",
+      "chg": 175.6
+     }
+    ]
+   },
+   "deltas": {
+    "d1": null,
+    "d30": null
+   },
+   "extra": ""
   },
   {
    "key": "fng",
    "label": "공포탐욕지수",
    "level": 0,
-   "value": 71,
-   "display": "71 (Greed)",
+   "value": 74,
+   "display": "74 (Greed)",
    "note": "탐욕 임계 미만",
    "raw": {
-    "value": 71,
+    "value": 74,
     "label": "Greed",
     "hist": {
-     "d1": 73,
-     "d30": 62
+     "d1": 71,
+     "d30": 69
     }
    },
    "deltas": {
     "d1": {
-     "delta": -2,
-     "dir": "down",
-     "text": "-2"
+     "delta": 3,
+     "dir": "up",
+     "text": "+3"
     },
     "d30": {
-     "delta": 9,
+     "delta": 5,
      "dir": "up",
-     "text": "+9"
+     "text": "+5"
     }
    },
    "extra": ""
@@ -80,18 +102,18 @@
    "label": "MVRV",
    "level": 0,
    "value": 1.59,
-   "display": "1.59 · Z 1.09",
+   "display": "1.59 · Z 1.03",
    "note": "평균 회귀 구간",
    "raw": {
     "value": 1.59,
-    "as_of": "2026-09-23",
-    "zscore": 1.09
+    "as_of": "2026-09-24",
+    "zscore": 1.03
    },
    "deltas": {
     "d1": {
-     "delta": -0.04,
-     "dir": "down",
-     "text": "-0.04"
+     "delta": 0.0,
+     "dir": "flat",
+     "text": "+0.00"
     },
     "d30": null
    },
@@ -99,10 +121,10 @@
   }
  ],
  "phase": {
-  "score": 0,
-  "max": 6,
+  "score": 1,
+  "max": 8,
   "phase": "평온"
  },
  "changes": [],
- "message": "🧭 <b>크립토 고점신호</b>  2026-09-30 10:34 KST\n국면: <b>평온</b>  (과열도 0/6)\n\n🟢 <b>김치프리미엄</b> +0.40%\n     1일 🔺+0.19%p  ·  30일 🔻-1.55%p\n     <i>정상 범위</i>\n⚪ <b>알트시즌 지수</b> — 수집 실패\n🟢 <b>공포탐욕지수</b> 71 (Greed)\n     1일 🔻-2  ·  30일 🔺+9\n     <i>탐욕 임계 미만</i>\n🟢 <b>MVRV</b> 1.59 · Z 1.09\n     1일 🔻-0.04  ·  30일 —\n     <i>평균 회귀 구간</i>\n\n⚠️ 데이터 상태 <b>DEGRADED</b> — 일부 지표가 빠졌습니다.\n<i>관측 리포트입니다. 각 지표는 현재 구간의 서술이며 고점 시점이나 수익률을 주장하지 않습니다.</i>"
+ "message": "🧭 <b>크립토 고점신호</b>  2026-10-01 10:35 KST\n국면: <b>평온</b>  (과열도 1/8)\n\n🟢 <b>김치프리미엄</b> +0.38%\n     1일 ▬-0.02%p  ·  30일 🔺+1.29%p\n     <i>정상 범위</i>\n🟠 <b>알트시즌 지수</b> 72 / 100\n     1일 —  ·  30일 —\n     <i>알트 우위 확대</i>\n🟢 <b>공포탐욕지수</b> 74 (Greed)\n     1일 🔺+3  ·  30일 🔺+5\n     <i>탐욕 임계 미만</i>\n🟢 <b>MVRV</b> 1.59 · Z 1.03\n     1일 ▬+0.00  ·  30일 —\n     <i>평균 회귀 구간</i>\n\n<i>관측 리포트입니다. 각 지표는 현재 구간의 서술이며 고점 시점이나 수익률을 주장하지 않습니다.</i>"
 }
