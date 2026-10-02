@@ -40,6 +40,14 @@
    "name": "",
    "tags": []
   },
+  "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613": {
+   "_at": 1790968826,
+   "addr": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
+  },
   "0xcd531ae9efcce479654c4926dec5f6209531ca7b": {
    "_at": 1790796106,
    "addr": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
@@ -59,12 +67,14 @@
   "1787770092:New RWA Perp Listing",
   "1787597239:New RWA Perp Listings",
   "1787089252:Network Upgrade",
-  "1786729940:New Perp Listing"
+  "1786729940:New Perp Listing",
+  "1790956575:Network Upgrade",
+  "1790953145:New Perp Listing"
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26104682,
-  "rh": 78236300
+  "eth": 26106685,
+  "rh": 78476655
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -308,6 +318,78 @@
    "signal": "eth_large",
    "title": "ETH LIT 1.60M 대량 이동",
    "ts": 1790796731
+  },
+  {
+   "detail": "0x1157a207→0xbb9fcefe",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "e9750be5033b",
+   "ref": {
+    "amount": 1000000.0,
+    "chain": "eth",
+    "from": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+    "to": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+    "tx": "0xa92ad084c04af0aa8f7535decd17e01e25efd774eb58068966a2a5d0285de857"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.00M 대량 이동",
+   "ts": 1790957807
+  },
+  {
+   "detail": "0xbb9fcefe→0x91d40e48",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "c0435dfe9e15",
+   "ref": {
+    "amount": 1000000.0,
+    "chain": "eth",
+    "from": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+    "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "tx": "0x0629608904a766b6bdddc2c95cee9c05f5400b1d539d5482d1634b06ad4791c6"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.00M 대량 이동",
+   "ts": 1790957891
+  },
+  {
+   "detail": "0x1157a207→0xbb9fcefe",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "f9fa8c62848a",
+   "ref": {
+    "amount": 1771380.0,
+    "chain": "eth",
+    "from": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+    "to": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+    "tx": "0xa63293dd058e3eb516a80ed447e21a2dc6b0922d8996968759397e5653a28083"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.77M 대량 이동",
+   "ts": 1790962187
+  },
+  {
+   "detail": "0xbb9fcefe→0x91d40e48",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "ff64edfc04d2",
+   "ref": {
+    "amount": 1771380.0,
+    "chain": "eth",
+    "from": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+    "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "tx": "0x6e39aaf62722dd032244a828a8c259591d05a29bb99981050bed3a1475474da5"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 1.77M 대량 이동",
+   "ts": 1790962379
   }
  ],
  "fail_streak": 0,
@@ -600,6 +682,38 @@
    "to": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
    "ts": 1790796731,
    "tx": "0xe4f7de161a4c3446118f393b11e3b0fe0eee639e3c75c3a5314425ef6900f550"
+  },
+  {
+   "amount": 1000000.0,
+   "block": 26105775,
+   "from": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+   "to": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+   "ts": 1790957807,
+   "tx": "0xa92ad084c04af0aa8f7535decd17e01e25efd774eb58068966a2a5d0285de857"
+  },
+  {
+   "amount": 1000000.0,
+   "block": 26105782,
+   "from": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+   "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+   "ts": 1790957891,
+   "tx": "0x0629608904a766b6bdddc2c95cee9c05f5400b1d539d5482d1634b06ad4791c6"
+  },
+  {
+   "amount": 1771380.0,
+   "block": 26106138,
+   "from": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
+   "to": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+   "ts": 1790962187,
+   "tx": "0xa63293dd058e3eb516a80ed447e21a2dc6b0922d8996968759397e5653a28083"
+  },
+  {
+   "amount": 1771380.0,
+   "block": 26106154,
+   "from": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
+   "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+   "ts": 1790962379,
+   "tx": "0x6e39aaf62722dd032244a828a8c259591d05a29bb99981050bed3a1475474da5"
   }
  ],
  "lb_hist": [
@@ -677,6 +791,11 @@
    1790944642,
    136529.039,
    33621.445
+  ],
+  [
+   1790968826,
+   149739.864,
+   36143.133
   ]
  ],
  "level": "WATCH",
@@ -724,6 +843,7 @@
   "3c1d534f8acf",
   "3e7a8fc8e1fc",
   "42e4009c3731",
+  "43b4216baa8c",
   "441bd2b1570a",
   "4552ea32c94e",
   "45eb0dc221ca",
@@ -907,59 +1027,63 @@
   [
    1790944642,
    414598.56
+  ],
+  [
+   1790968826,
+   420412.87
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1790944642,
-   "note": "10건",
+   "at": 1790968826,
+   "note": "12건",
    "ok": true
   },
   "docs": {
-   "at": 1790944642,
+   "at": 1790968826,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1790944642,
-   "note": "2082블록 · 대량 0건",
+   "at": 1790968826,
+   "note": "2003블록 · 대량 4건",
    "ok": true
   },
   "frontend": {
-   "at": 1790944642,
+   "at": 1790968826,
    "note": "모듈 116 · API 117",
    "ok": true
   },
   "leaderboard": {
-   "at": 1790944642,
-   "note": "상위10 합계 136,529",
+   "at": 1790968826,
+   "note": "상위10 합계 149,740",
    "ok": true
   },
   "news": {
-   "at": 1790944642,
-   "note": "112건",
+   "at": 1790968826,
+   "note": "108건",
    "ok": true
   },
   "polymarket": {
-   "at": 1790944642,
+   "at": 1790968826,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1790944642,
-   "note": "414,599 LIT",
+   "at": 1790968826,
+   "note": "420,413 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1790944642,
+   "at": 1790968826,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1790944642,
-   "note": "39건",
-   "ok": true
+   "at": 1790968826,
+   "err": "수집 불가(보조 원천)",
+   "ok": false
   }
  },
  "version": 1
