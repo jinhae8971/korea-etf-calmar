@@ -73,8 +73,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26124144,
-  "rh": 80548190
+  "eth": 26126828,
+  "rh": 80863996
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -418,6 +418,48 @@
    "signal": "news",
    "title": "뉴스: Lighter (LIT) Goes Live, Price Slides 30% as Project Airdrop",
    "ts": 1791044365
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "3a399787a396",
+   "ref": {
+    "name": "/api/v1/pushnotif/register"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/pushnotif/register",
+   "ts": 1791211343
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "76fae01428ff",
+   "ref": {
+    "name": "/api/v1/pushnotif/settings"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/pushnotif/settings",
+   "ts": 1791211343
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "9e2a638ae84c",
+   "ref": {
+    "name": "/api/v1/pushnotif/unregister"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/pushnotif/unregister",
+   "ts": 1791211343
   }
  ],
  "fail_streak": 0,
@@ -506,6 +548,9 @@
    "/api/v1/pnlLeaderboard",
    "/api/v1/positionFunding",
    "/api/v1/publicPoolsMetadata",
+   "/api/v1/pushnotif/register",
+   "/api/v1/pushnotif/settings",
+   "/api/v1/pushnotif/unregister",
    "/api/v1/recentTrades",
    "/api/v1/referral/create",
    "/api/v1/referral/get",
@@ -879,6 +924,11 @@
    1791178948,
    151169.556,
    36841.67
+  ],
+  [
+   1791211343,
+   151629.828,
+   37084.836
   ]
  ],
  "level": "WATCH",
@@ -942,6 +992,7 @@
   "4e4bd6256753",
   "4e78812fca95",
   "553462a8ca79",
+  "567b2609af02",
   "585742375056",
   "5aa332c193aa",
   "5acfe7c25b96",
@@ -1170,57 +1221,61 @@
   [
    1791178948,
    424378.83
+  ],
+  [
+   1791211343,
+   424378.83
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1791178948,
+   "at": 1791211343,
    "note": "12건",
    "ok": true
   },
   "docs": {
-   "at": 1791178948,
+   "at": 1791211343,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791178948,
-   "note": "1949블록 · 대량 0건",
+   "at": 1791211343,
+   "note": "2684블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1791178948,
-   "note": "모듈 116 · API 117",
+   "at": 1791211343,
+   "note": "모듈 115 · API 120",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791178948,
-   "note": "상위10 합계 151,170",
+   "at": 1791211343,
+   "note": "상위10 합계 151,630",
    "ok": true
   },
   "news": {
-   "at": 1791178948,
+   "at": 1791211343,
    "note": "114건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791178948,
+   "at": 1791211343,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791178948,
+   "at": 1791211343,
    "note": "424,379 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791178948,
+   "at": 1791211343,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791178948,
+   "at": 1791211343,
    "note": "39건",
    "ok": true
   }
