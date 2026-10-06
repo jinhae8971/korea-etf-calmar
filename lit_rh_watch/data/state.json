@@ -69,12 +69,13 @@
   "1787089252:Network Upgrade",
   "1786729940:New Perp Listing",
   "1790956575:Network Upgrade",
-  "1790953145:New Perp Listing"
+  "1790953145:New Perp Listing",
+  "1791310722:Network Upgrade"
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26134149,
-  "rh": 81727294
+  "eth": 26135879,
+  "rh": 81930902
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -474,6 +475,34 @@
    "signal": "news",
    "title": "뉴스: Lighter CEO Addresses “FUD” Claims As LIT Price Dips 8% in 2",
    "ts": 1791267762
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f900c7500687",
+   "ref": {
+    "name": "useLinkAccess"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: useLinkAccess",
+   "ts": 1791320379
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "88ef03326abc",
+   "ref": {
+    "name": "/api/v1/priceOracleInfo"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/priceOracleInfo",
+   "ts": 1791320379
   }
  ],
  "fail_streak": 0,
@@ -561,6 +590,7 @@
    "/api/v1/pnl",
    "/api/v1/pnlLeaderboard",
    "/api/v1/positionFunding",
+   "/api/v1/priceOracleInfo",
    "/api/v1/publicPoolsMetadata",
    "/api/v1/pushnotif/register",
    "/api/v1/pushnotif/settings",
@@ -706,6 +736,7 @@
    "useGuildQueries",
    "useHorizontalScroll",
    "useLayoutPreferencesState",
+   "useLinkAccess",
    "useMaxVisibleRows",
    "usePnlLeaderboardQueries",
    "useSafeSorting",
@@ -958,6 +989,11 @@
    1791299600,
    152623.22,
    37626.992
+  ],
+  [
+   1791320379,
+   152914.362,
+   37791.277
   ]
  ],
  "level": "WATCH",
@@ -1269,58 +1305,62 @@
   [
    1791299600,
    421878.83
+  ],
+  [
+   1791320379,
+   421878.83
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1791299600,
-   "note": "12건",
+   "at": 1791320379,
+   "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1791299600,
+   "at": 1791320379,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791299600,
-   "note": "2634블록 · 대량 0건",
+   "at": 1791320379,
+   "note": "1730블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1791299600,
-   "note": "모듈 115 · API 120",
+   "at": 1791320379,
+   "note": "모듈 116 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791299600,
-   "note": "상위10 합계 152,623",
+   "at": 1791320379,
+   "note": "상위10 합계 152,914",
    "ok": true
   },
   "news": {
-   "at": 1791299600,
+   "at": 1791320379,
    "note": "113건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791299600,
+   "at": 1791320379,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791299600,
+   "at": 1791320379,
    "note": "421,879 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791299600,
+   "at": 1791320379,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791299600,
-   "note": "39건",
+   "at": 1791320379,
+   "note": "19건",
    "ok": true
   }
  },
