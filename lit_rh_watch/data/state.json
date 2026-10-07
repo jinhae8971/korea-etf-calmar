@@ -74,8 +74,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26139372,
-  "rh": 82339154
+  "eth": 26141991,
+  "rh": 82647788
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -768,22 +768,6 @@
  "heartbeat": "2026-10",
  "large_hist": [
   {
-   "amount": 1500000.0,
-   "block": 26090888,
-   "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-   "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-   "ts": 1790778431,
-   "tx": "0x4d58ca290982434ad067a735bddbdd3262864732d602d6a9f74b30608e97a848"
-  },
-  {
-   "amount": 1500000.0,
-   "block": 26090906,
-   "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-   "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-   "ts": 1790778647,
-   "tx": "0x318bea14af7ec1c0fc2c05522a1101d1c673ae0f4ac253bfa4174d84f5dbaed5"
-  },
-  {
    "amount": 1000000.0,
    "block": 26092118,
    "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
@@ -1018,6 +1002,11 @@
    1791362447,
    153335.361,
    38002.184
+  ],
+  [
+   1791394002,
+   154023.667,
+   38306.152
   ]
  ],
  "level": "WATCH",
@@ -1182,6 +1171,7 @@
   "e53d56fed5df",
   "e5e56a443e9e",
   "e5f96b9009f9",
+  "e7731688ebdb",
   "e8884c639c76",
   "eacb753778d7",
   "eaff9ca771a5",
@@ -1342,57 +1332,61 @@
   [
    1791362447,
    421878.83
+  ],
+  [
+   1791394002,
+   421878.83
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791362447,
-   "note": "2128블록 · 대량 0건",
+   "at": 1791394002,
+   "note": "2619블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "모듈 116 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791362447,
-   "note": "상위10 합계 153,335",
+   "at": 1791394002,
+   "note": "상위10 합계 154,024",
    "ok": true
   },
   "news": {
-   "at": 1791362447,
-   "note": "113건",
+   "at": 1791394002,
+   "note": "109건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "421,879 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "39건",
    "ok": true
   }

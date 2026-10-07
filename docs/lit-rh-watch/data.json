@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26139372,
-  "rh": 82339154
+  "eth": 26141991,
+  "rh": 82647788
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -305,60 +305,10 @@
    "signal": "eth_large",
    "title": "ETH LIT 1.00M 대량 이동",
    "ts": 1790793251
-  },
-  {
-   "detail": "0xab00e8f5→0xcd531ae9",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "caecb7a0e9e2",
-   "ref": {
-    "amount": 1500000.0,
-    "chain": "eth",
-    "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-    "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-    "tx": "0x318bea14af7ec1c0fc2c05522a1101d1c673ae0f4ac253bfa4174d84f5dbaed5"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 1.50M 대량 이동",
-   "ts": 1790778647
-  },
-  {
-   "detail": "0x1a51016f→0xab00e8f5",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "b97818351be3",
-   "ref": {
-    "amount": 1500000.0,
-    "chain": "eth",
-    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-    "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-    "tx": "0x4d58ca290982434ad067a735bddbdd3262864732d602d6a9f74b30608e97a848"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 1.50M 대량 이동",
-   "ts": 1790778431
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB2Q3NvMU91NmpVdkt4d3lTMFhjX3hjeHhEaGpHWHBmUGtvQUR2V3JoT2R6TFJJVEtKYzI0bk1kS0RiVmpkX2d5bHV",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "e133387329a2",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB2Q3NvMU91NmpVdkt4d3lTMFhjX3hjeHhEaGpHWHBmUGtvQUR2V3JoT2R6TFJJVEtKYzI0bk1kS0RiVmpkX2d5bHVlVFBVZV9fUXhLMlFhUmJNTnY1dzBNdXpWVmlrRms2M0xqZGU1Q1p0UENyWDR4TDhn?oc=5"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: Lighter Launches LIT Token With 25% Supply Distributed via A",
-   "ts": 1790771802
   }
  ],
  "families": [],
- "generated_at": 1791362447,
+ "generated_at": 1791394002,
  "lb_hist": [
   [
    1790638034,
@@ -529,6 +479,11 @@
    1791362447,
    153335.361,
    38002.184
+  ],
+  [
+   1791394002,
+   154023.667,
+   38306.152
   ]
  ],
  "level": "WATCH",
@@ -1089,56 +1044,60 @@
   [
    1791362447,
    421878.83
+  ],
+  [
+   1791394002,
+   421878.83
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791362447,
-   "note": "2128블록 · 대량 0건",
+   "at": 1791394002,
+   "note": "2619블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "모듈 116 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791362447,
-   "note": "상위10 합계 153,335",
+   "at": 1791394002,
+   "note": "상위10 합계 154,024",
    "ok": true
   },
   "news": {
-   "at": 1791362447,
-   "note": "113건",
+   "at": 1791394002,
+   "note": "109건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "421,879 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791362447,
+   "at": 1791394002,
    "note": "39건",
    "ok": true
   }
