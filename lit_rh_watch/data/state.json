@@ -74,8 +74,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26135879,
-  "rh": 81930902
+  "eth": 26137244,
+  "rh": 82090842
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -503,6 +503,20 @@
    "signal": "fe_path",
    "title": "API 경로 추가: /api/v1/priceOracleInfo",
    "ts": 1791320379
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOTGpXd09HT0VmeGlHUVBET2x1R2pCRWZfMHJiUVNadjBqaHEyOXA3OFZRdzgxa29kSzIxQnhUTU9wMlMzQnhDUjk",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "707a6a0bb450",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOTGpXd09HT0VmeGlHUVBET2x1R2pCRWZfMHJiUVNadjBqaHEyOXA3OFZRdzgxa29kSzIxQnhUTU9wMlMzQnhDUjkwVWk3LXRyZ0R4Y3JBZ3hTRXloSmtFTTBKXzdTdWpKUFBmalFUcDdhSnpuN3hUbExpVnF5cEZzTVZoV1o?oc=5"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: Lighter Publishes Operations Code Ahead of TGE - The Defiant",
+   "ts": 1791336806
   }
  ],
  "fail_streak": 0,
@@ -994,12 +1008,18 @@
    1791320379,
    152914.362,
    37791.277
+  ],
+  [
+   1791336806,
+   153040.834,
+   37858.867
   ]
  ],
  "level": "WATCH",
  "news_seen": [
   "0029209d8878",
   "013c2e26b1ea",
+  "02bd63390e8e",
   "05daa98f485b",
   "06f3a6ef9d39",
   "0a0456bae660",
@@ -1309,58 +1329,62 @@
   [
    1791320379,
    421878.83
+  ],
+  [
+   1791336806,
+   421878.83
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1791320379,
+   "at": 1791336806,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1791320379,
+   "at": 1791336806,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791320379,
-   "note": "1730블록 · 대량 0건",
+   "at": 1791336806,
+   "note": "1365블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1791320379,
+   "at": 1791336806,
    "note": "모듈 116 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791320379,
-   "note": "상위10 합계 152,914",
+   "at": 1791336806,
+   "note": "상위10 합계 153,041",
    "ok": true
   },
   "news": {
-   "at": 1791320379,
-   "note": "113건",
+   "at": 1791336806,
+   "note": "114건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791320379,
+   "at": 1791336806,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791320379,
+   "at": 1791336806,
    "note": "421,879 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791320379,
+   "at": 1791336806,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791320379,
-   "note": "19건",
+   "at": 1791336806,
+   "note": "39건",
    "ok": true
   }
  },
