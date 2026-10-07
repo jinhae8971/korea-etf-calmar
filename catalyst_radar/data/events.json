@@ -1,65 +1,63 @@
 {
- "as_of": "2026-10-06 10:56",
+ "as_of": "2026-10-07 10:03",
  "events": [
   {
-   "event_date": "2026-10-06",
-   "first_seen": "2026-09-24",
+   "event_date": "2026-10-19",
+   "first_seen": "2026-10-07",
    "grade": "A",
    "impact": "INFRA",
-   "key": "ethereum/go-ethereum@v1.17.6",
-   "last_seen": "2026-10-06",
+   "key": "filecoin-project/lotus@v1.37.0",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-24",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 59.5,
-    "t7": 0.0,
-    "t7_at": "2026-10-01"
+    "detected_at": "2026-10-07",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 59.5
    },
-   "score": 70.0,
+   "score": 59.5,
    "source": "release",
    "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-09-24",
+     "at": "2026-10-07",
      "stage": "ACTIVATED"
     }
    ],
-   "symbol": "ETH",
-   "title": "go-ethereum v1.17.6 — <!-- Inorganic Lubricant (v1.17.6) -->",
+   "symbol": "FIL",
+   "title": "lotus v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.37.0 release**, which delivers [Filecoin network versio",
    "trust": 0.95,
-   "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.6",
-   "when": "2026-09-23"
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/v1.37.0",
+   "when": "2026-10-06"
   },
   {
-   "event_date": "2026-10-06",
-   "first_seen": "2026-10-01",
+   "event_date": "2026-10-19",
+   "first_seen": "2026-10-07",
    "grade": "A",
    "impact": "INFRA",
-   "key": "ethereum/go-ethereum@v1.17.7",
-   "last_seen": "2026-10-06",
+   "key": "filecoin-project/lotus@miner/v1.37.0",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-01",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 70.0
+    "detected_at": "2026-10-07",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 59.5
    },
-   "score": 70.0,
+   "score": 59.5,
    "source": "release",
    "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-10-01",
+     "at": "2026-10-07",
      "stage": "ACTIVATED"
     }
    ],
-   "symbol": "ETH",
-   "title": "go-ethereum v1.17.7 — <!-- Intact Neuro-Coil (v1.17.7) -->",
+   "symbol": "FIL",
+   "title": "lotus miner/v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.37.0 release**, which delivers [Filecoin network versio",
    "trust": 0.95,
-   "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.7",
-   "when": "2026-09-30"
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/miner/v1.37.0",
+   "when": "2026-10-06"
   },
   {
    "event_date": "2026-10-05",
@@ -90,34 +88,6 @@
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE84enQzUldmcnJZWWhXWGNFTzZYVGlRVXppcjI0NkdMaFJJOW4tOGZ0UlZOUmtseERxQmNpT2tnZUJvRW05bnY0NG5rb1BIUHY5ekE0c3FXd2w?oc=5",
    "when": "Mon, 28 Sep 2026"
-  },
-  {
-   "event_date": "2026-10-01",
-   "first_seen": "2026-09-30",
-   "grade": "A",
-   "impact": "SUPPLY",
-   "key": "news:xrp-price-prediction-escrow-unlock-on-october-1-cryptoticker",
-   "last_seen": "2026-10-01",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-30",
-    "price_at_detect": 1.41,
-    "score_at_detect": 50.4
-   },
-   "score": 50.4,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-30",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "XRP",
-   "title": "XRP Price Prediction: Escrow Unlock on October 1 - CryptoTicker",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVWR4elZGaUFsZGhHS2tHN0VuN0JqQVA3aHN2UFBFOHlIZFJDQUpnUHpnMFQ2VVF1dlh5elFLbWZ2OU1XMXp3RW14Z1hfYmhwMExGVWZhUnF2Y0Fod21acl9JbWVKdXdRSFVrY3UxVzRFZm1jQlBMaXRwa25UN1RiVUJBbw?oc=5",
-   "when": "Tue, 29 Sep 2026"
   },
   {
    "event_date": "2026-10-06",
@@ -153,12 +123,14 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "zcash/zips#1354",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
     "price_at_detect": 1192.89,
     "score_at_detect": 16.5,
+    "t30": 0.0,
+    "t30_at": "2026-10-07",
     "t7": 0.0,
     "t7_at": "2026-09-14"
    },
@@ -181,64 +153,6 @@
    "updated_at": "2026-09-22T21:38:19Z",
    "url": "https://github.com/zcash/zips/pull/1354",
    "when": null
-  },
-  {
-   "event_date": "2026-10-05",
-   "first_seen": "2026-09-24",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:xrp-ledger-delegation-upgrade-could-go-live-oct-5-will-xrp-b",
-   "last_seen": "2026-10-01",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-24",
-    "price_at_detect": 1.41,
-    "score_at_detect": 30.0,
-    "t7": 0.0,
-    "t7_at": "2026-10-01"
-   },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-24",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "XRP",
-   "title": "XRP Ledger delegation upgrade could go live Oct. 5, will XRP benefit? - Crypto News",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV0ZPZzRzWmlCazZHWXJ0bGVXRHFUa0s2U212cWtMazBuMEZQemF0Tk55OWNwWEpkRjFYVEk1RHlNcGNpSl9uRzBraTRKbVpDMTluSVpMc1FuQXBNNDZCTG9HVURzdmlucmdzTVlhdmw3V0xkLW90cFNoMkhmckpFRjdfckR4UHVvWTVyNWM2Nkw?oc=5",
-   "when": "Wed, 23 Sep 2026"
-  },
-  {
-   "event_date": "2026-10-06",
-   "first_seen": "2026-09-30",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:ethereum-to-test-glamsterdam-upgrade-on-oct-6-yahoo-tech",
-   "last_seen": "2026-10-01",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-30",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 35.3
-   },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-30",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ETH",
-   "title": "Ethereum To Test Glamsterdam Upgrade On Oct. 6 - Yahoo Tech",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUFJ2RGFzNmF6MnJWM2lYdXI1U0NPaFhZSFNxS0RhQXhOVzBpYWVLcDA1dlRNYXdIMkhmUjhhRjVtR2Ixb0VGc19DWHgtdWptTFVWOGY4dDVTYnRKY1I0RkZuaGR2S2J6cTVSVVdFeXd2YkdMVGRrVGNMQVRnWkZLdGlhWXZPdXdobDJqZkFfSzByMXo4OVB3?oc=5",
-   "when": "Tue, 29 Sep 2026"
   },
   {
    "event_date": "2026-10-08",
@@ -271,16 +185,16 @@
    "when": "Mon, 28 Sep 2026"
   },
   {
-   "event_date": "2026-10-06",
-   "first_seen": "2026-10-01",
+   "event_date": "2026-10-09",
+   "first_seen": "2026-10-07",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:ethereum-sets-oct-6-glamsterdam-upgrade-as-vitalik-signals-e",
-   "last_seen": "2026-10-01",
+   "key": "news:what-is-xrp-ledger-batch-v1-1-oct-9-upgrade-brings-atomic-mu",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-01",
-    "price_at_detect": 2497.06,
+    "detected_at": "2026-10-07",
+    "price_at_detect": 1.41,
     "score_at_detect": 35.3
    },
    "score": 35.3,
@@ -288,43 +202,15 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-01",
+     "at": "2026-10-07",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ETH",
-   "title": "Ethereum Sets Oct. 6 Glamsterdam Upgrade as Vitalik Signals End of ‘Normal’ Forks - CCN.com",
+   "symbol": "XRP",
+   "title": "What Is XRP Ledger Batch V1.1? Oct. 9 Upgrade Brings Atomic Multi Account Transactions - CCN.com",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNY2JpbnphcjlCM1UzaGdYR0dzMHc2c3h5UW9nU0NXZFZJYV9wRVYwOUlqU1BEUktJOWFTdUkySk9ENmo5WHpCVnNfU1duQ3EzX01rTFo3NEY4NE9ZamdHdi1VWFhWUlV0dFU0em1ad1NCckw1REdMck5fbnRNT05RaVZleEc1NjZQaW1j?oc=5",
-   "when": "Wed, 30 Sep 2026"
-  },
-  {
-   "event_date": "2026-10-06",
-   "first_seen": "2026-10-02",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:ethereum-s-glamsterdam-upgrade-hits-testnet-october-6-will-i",
-   "last_seen": "2026-10-06",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-02",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 35.3
-   },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-02",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ETH",
-   "title": "Ethereum’s Glamsterdam Upgrade Hits Testnet October 6: Will It Influence ETH Price? - 24/7 Wall St.",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQS0cyWjVMQm1YaHVRS1Q2LVAxUmlVQ1hjVGhxS29ncVBQTzE2STF3b0ZmbnZvUzFTUTdENFFxc0tKQ3VpNEFJQ1dpVEd1Y1FnVE5wb25NQTdVS2IyMklwYVFucnRPYlM2S3ppTHZDdEZyZENjMHVTQVlSQzBoSlFNNTEwbFZwUWo2R1gzeDVOeDItVW16MHlDak1aOG5jaVRoRzhTYnNTNWk4eVhwQ24yS0d6TVJSZUZNRlk2WkRhd09UQnlkWDAtd1ByeE5iWVJiV2dsSWJR?oc=5",
-   "when": "Thu, 01 Oct 2026"
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVnNMVUw1bE80bU04Q0pTcm10UXhNdVNTSmtIVVUxblpxTDNGYm84SE9BZDlYejh6bzdRWThsSzZla25YVUNaaUE1QU1EaThWQjVaZXNISmFGQjV1ZVVHMHdFRk1GdXRsZnlMZm9KcldhOUdrNjZSLUd6NEFSeHRCa3lWN3FrbkZzdTNxTG1BUU5JcmE2UWV0VA?oc=5",
+   "when": "Tue, 06 Oct 2026"
   },
   {
    "event_date": null,
@@ -332,7 +218,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "zcash/zips#1384",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-01",
@@ -443,11 +329,71 @@
   },
   {
    "event_date": null,
+   "first_seen": "2026-09-24",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "ethereum/go-ethereum@v1.17.6",
+   "last_seen": "2026-10-07",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-09-24",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 59.5,
+    "t7": 0.0,
+    "t7_at": "2026-10-01"
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-09-24",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "go-ethereum v1.17.6 — <!-- Inorganic Lubricant (v1.17.6) -->",
+   "trust": 0.95,
+   "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.6",
+   "when": "2026-09-23"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-01",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "ethereum/go-ethereum@v1.17.7",
+   "last_seen": "2026-10-07",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-01",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 70.0
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-01",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "go-ethereum v1.17.7 — <!-- Intact Neuro-Coil (v1.17.7) -->",
+   "trust": 0.95,
+   "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.7",
+   "when": "2026-09-30"
+  },
+  {
+   "event_date": null,
    "first_seen": "2026-10-02",
    "grade": "B",
    "impact": "INFRA",
    "key": "bitcoin-cash-node/bitcoin-cash-node@v29.2.0",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -476,13 +422,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@testnet-v1.81.0",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-30",
     "price_at_detect": 0.796873,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-10-07"
    },
    "score": 29.9,
    "source": "release",
@@ -505,7 +453,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.3",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -534,7 +482,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "OffchainLabs/nitro@v3.11.5",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -558,12 +506,74 @@
    "when": "2026-10-02"
   },
   {
+   "event_date": null,
+   "first_seen": "2026-10-02",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "cosmos/gaia@v28.2.1",
+   "last_seen": "2026-10-07",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-02",
+    "price_at_detect": 1.59,
+    "score_at_detect": 26.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-02",
+     "stage": "SCHEDULED"
+    },
+    {
+     "at": "2026-10-07",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "ATOM",
+   "title": "gaia v28.2.1 — A release notes template that should be adapted for every release",
+   "trust": 0.95,
+   "url": "https://github.com/cosmos/gaia/releases/tag/v28.2.1",
+   "when": "2026-10-01"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-07",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "MystenLabs/sui@testnet-v1.81.1",
+   "last_seen": "2026-10-07",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-07",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-07",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "SUI",
+   "title": "sui testnet-v1.81.1 — Sui Protocol Version in this release: `138`",
+   "trust": 0.95,
+   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.81.1",
+   "when": "2026-10-06"
+  },
+  {
    "event_date": "2026-10-12",
    "first_seen": "2026-10-06",
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-06",
@@ -628,7 +638,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-09-30",
     "price_at_detect": 0.799444,
-    "score_at_detect": 26.9
+    "score_at_detect": 26.9,
+    "t7": 0.0,
+    "t7_at": "2026-10-07"
    },
    "score": 26.9,
    "source": "release",
@@ -657,7 +669,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-09-30",
     "price_at_detect": 0.799444,
-    "score_at_detect": 26.9
+    "score_at_detect": 26.9,
+    "t7": 0.0,
+    "t7_at": "2026-10-07"
    },
    "score": 26.9,
    "source": "release",
@@ -676,69 +690,11 @@
   },
   {
    "event_date": null,
-   "first_seen": "2026-10-01",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "cosmos/gaia@v28.1.1",
-   "last_seen": "2026-10-01",
-   "prerelease": true,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-01",
-    "price_at_detect": 1.59,
-    "score_at_detect": 26.9
-   },
-   "score": 26.9,
-   "source": "release",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-01",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "gaia v28.1.1 — A release notes template that should be adapted for every release",
-   "trust": 0.95,
-   "url": "https://github.com/cosmos/gaia/releases/tag/v28.1.1",
-   "when": "2026-09-30"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-02",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "cosmos/gaia@v28.2.1",
-   "last_seen": "2026-10-06",
-   "prerelease": true,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-02",
-    "price_at_detect": 1.59,
-    "score_at_detect": 26.9
-   },
-   "score": 26.9,
-   "source": "release",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-02",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "gaia v28.2.1 — A release notes template that should be adapted for every release",
-   "trust": 0.95,
-   "url": "https://github.com/cosmos/gaia/releases/tag/v28.2.1",
-   "when": "2026-10-01"
-  },
-  {
-   "event_date": null,
    "first_seen": "2026-10-04",
    "grade": "B",
    "impact": "INFRA",
    "key": "anza-xyz/agave@v4.5.0-alpha.1",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -767,7 +723,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:bittensor-v461-upgrade-adds-a-fresh-tao-story-as-remittix-co",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-03",
@@ -795,13 +751,15 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "IntersectMBO/cardano-node@11.1.3",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-30",
     "price_at_detect": 0.218904,
-    "score_at_detect": 19.2
+    "score_at_detect": 19.2,
+    "t7": 0.0,
+    "t7_at": "2026-10-07"
    },
    "score": 19.2,
    "source": "release",
@@ -824,7 +782,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v29.0.0-internal",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -853,7 +811,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ava-labs/avalanchego@v1.15.1",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -882,7 +840,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.1",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -911,7 +869,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v29.0.0",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -971,7 +929,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "anza-xyz/agave@v4.4.0-beta.0",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1002,7 +960,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "near/nearcore@2.14.0-rc.3",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1062,7 +1020,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmos/gaia@v28.3.1",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1120,7 +1078,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1057",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -1154,7 +1112,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0xa11332c5c326f34fd4d252853378f0041c4baf6a92094a2dbe91ac5c6ad855d9",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -1189,7 +1147,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0xe1ac3254ff43d5d780fc6ae1f13a0c027c2ef138fadb316198d3ed814a154b7e",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-19",
@@ -1254,109 +1212,32 @@
    "when": "2026-09-18"
   },
   {
-   "event_date": "2026-09-17",
-   "first_seen": "2026-09-11",
+   "event_date": null,
+   "first_seen": "2026-10-02",
    "grade": "C",
-   "impact": "FEATURE",
-   "key": "snapshot:0x472fb3b40d3df9b1a65de03b85e4867a76f7b1ec014e2d69f347256b0d08184c",
-   "last_seen": "2026-10-01",
+   "impact": "INFRA",
+   "key": "news:ethereum-s-glamsterdam-upgrade-hits-testnet-october-6-will-i",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-09-11",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2,
-    "t7": 0.0,
-    "t7_at": "2026-09-18"
+    "detected_at": "2026-10-02",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 35.3
    },
-   "score": 17.2,
-   "source": "snapshot",
-   "stage": "PASSED",
+   "score": 12.1,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-09-11",
-     "stage": "VOTING"
-    },
-    {
-     "at": "2026-09-18",
-     "stage": "PASSED"
+     "at": "2026-10-02",
+     "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ARB",
-   "title": "Banning projects identified in the high-severity Watchdog Program cases - Good Entry",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x472fb3b40d3df9b1a65de03b85e4867a76f7b1ec014e2d69f347256b0d08184c",
-   "vote_state": "closed",
-   "when": "2026-09-17"
-  },
-  {
-   "event_date": "2026-09-17",
-   "first_seen": "2026-09-11",
-   "grade": "C",
-   "impact": "FEATURE",
-   "key": "snapshot:0x57e83d4df2139ff67626852cf2693146318492cc973ba5084a2a2625e78578a9",
-   "last_seen": "2026-10-01",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-11",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2,
-    "t7": 0.0,
-    "t7_at": "2026-09-18"
-   },
-   "score": 17.2,
-   "source": "snapshot",
-   "stage": "PASSED",
-   "stage_history": [
-    {
-     "at": "2026-09-11",
-     "stage": "VOTING"
-    },
-    {
-     "at": "2026-09-18",
-     "stage": "PASSED"
-    }
-   ],
-   "symbol": "ARB",
-   "title": "Banning projects identified in the high-severity Watchdog Program cases - Limitless",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x57e83d4df2139ff67626852cf2693146318492cc973ba5084a2a2625e78578a9",
-   "vote_state": "closed",
-   "when": "2026-09-17"
-  },
-  {
-   "event_date": "2026-09-17",
-   "first_seen": "2026-09-11",
-   "grade": "C",
-   "impact": "FEATURE",
-   "key": "snapshot:0xddcea6a783aaabce1d616508999078e45ca95932b2b536c0620a9f5e57fa1899",
-   "last_seen": "2026-10-01",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-11",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2,
-    "t7": 0.0,
-    "t7_at": "2026-09-18"
-   },
-   "score": 17.2,
-   "source": "snapshot",
-   "stage": "PASSED",
-   "stage_history": [
-    {
-     "at": "2026-09-11",
-     "stage": "VOTING"
-    },
-    {
-     "at": "2026-09-18",
-     "stage": "PASSED"
-    }
-   ],
-   "symbol": "ARB",
-   "title": "Banning projects identified in the high-severity Watchdog Program cases - APX Finance",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0xddcea6a783aaabce1d616508999078e45ca95932b2b536c0620a9f5e57fa1899",
-   "vote_state": "closed",
-   "when": "2026-09-17"
+   "symbol": "ETH",
+   "title": "Ethereum’s Glamsterdam Upgrade Hits Testnet October 6: Will It Influence ETH Price? - 24/7 Wall St.",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQS0cyWjVMQm1YaHVRS1Q2LVAxUmlVQ1hjVGhxS29ncVBQTzE2STF3b0ZmbnZvUzFTUTdENFFxc0tKQ3VpNEFJQ1dpVEd1Y1FnVE5wb25NQTdVS2IyMklwYVFucnRPYlM2S3ppTHZDdEZyZENjMHVTQVlSQzBoSlFNNTEwbFZwUWo2R1gzeDVOeDItVW16MHlDak1aOG5jaVRoRzhTYnNTNWk4eVhwQ24yS0d6TVJSZUZNRlk2WkRhd09UQnlkWDAtd1ByeE5iWVJiV2dsSWJR?oc=5",
+   "when": "Thu, 01 Oct 2026"
   },
   {
    "event_date": null,
@@ -1420,36 +1301,6 @@
   },
   {
    "event_date": null,
-   "first_seen": "2026-09-25",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "news:binance-will-support-the-injective-inj-network-upgrade-hard-",
-   "last_seen": "2026-10-01",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-25",
-    "price_at_detect": 5.55,
-    "score_at_detect": 12.1,
-    "t7": 0.0,
-    "t7_at": "2026-10-02"
-   },
-   "score": 12.1,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-09-25",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "INJ",
-   "title": "Binance Will Support the Injective (INJ) Network Upgrade & Hard Fork - 2026-09-24 - Binance",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQYnlaQ1hBWFRzR28zNlpIREtQWUN4MEpFRnN4NmFFdGFGM2hWeFQ1azZHdlRBNGRrRG8zSTJpTlNXNmJ1Q3FlbTNHUzdkWl9FQUpFV1ZWLWRMVTFHeXluaVQzWHBFNEZYUVdtRnVJbkVmdGdKeFdZdmRUejJ3SDJMM1lRRnVjZjNBQlZFZW5GaVA?oc=5",
-   "when": "Thu, 24 Sep 2026"
-  },
-  {
-   "event_date": null,
    "first_seen": "2026-09-15",
    "grade": "C",
    "impact": "INFRA",
@@ -1485,12 +1336,14 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "zcash/zips#614",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-30",
     "price_at_detect": 1192.89,
-    "score_at_detect": 11.6
+    "score_at_detect": 11.6,
+    "t7": 0.0,
+    "t7_at": "2026-10-07"
    },
    "score": 11.6,
    "source": "proposal",
@@ -1514,12 +1367,14 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "sui-foundation/sips#75",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-30",
     "price_at_detect": 0.796873,
-    "score_at_detect": 11.6
+    "score_at_detect": 11.6,
+    "t7": 0.0,
+    "t7_at": "2026-10-07"
    },
    "score": 11.6,
    "source": "proposal",
@@ -1543,7 +1398,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "XRPLF/rippled@3.4.0",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1574,7 +1429,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.77.2",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1605,7 +1460,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.2-stable",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1636,7 +1491,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.2-beta",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1667,7 +1522,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "litecoin-project/litecoin@v0.21.5.8",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1698,7 +1553,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.77.1",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1729,7 +1584,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.2",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1760,7 +1615,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "ava-labs/avalanchego@v1.15.0",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1791,13 +1646,15 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "vechain/thor@v2.5.0",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
     "price_at_detect": 0.0072353,
     "score_at_detect": 29.9,
+    "t30": 0.0,
+    "t30_at": "2026-10-07",
     "t7": 0.0,
     "t7_at": "2026-09-14"
    },
@@ -1817,43 +1674,12 @@
    "when": "2026-09-03"
   },
   {
-   "event_date": null,
-   "first_seen": "2026-09-07",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "cosmos/gaia@v28.0.0",
-   "last_seen": "2026-10-01",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-09-07",
-    "price_at_detect": 1.59,
-    "score_at_detect": 6.6,
-    "t7": 0.0,
-    "t7_at": "2026-09-14"
-   },
-   "score": 6.6,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-09-07",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "gaia v28.0.0 — A release notes template that should be adapted for every release",
-   "trust": 0.95,
-   "url": "https://github.com/cosmos/gaia/releases/tag/v28.0.0",
-   "when": "2026-08-21"
-  },
-  {
    "event_date": "2026-09-20",
    "first_seen": "2026-09-18",
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1055",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-18",
@@ -1918,12 +1744,14 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1052",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
     "price_at_detect": 1.59,
     "score_at_detect": 26.8,
+    "t30": 0.0,
+    "t30_at": "2026-10-07",
     "t7": 0.0,
     "t7_at": "2026-09-14"
    },
@@ -1948,7 +1776,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "IntersectMBO/cardano-node@11.1.2",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2017,6 +1845,8 @@
     "detected_at": "2026-09-07",
     "price_at_detect": 0.192579,
     "score_at_detect": 19.2,
+    "t30": 0.0,
+    "t30_at": "2026-10-07",
     "t7": 0.0,
     "t7_at": "2026-09-14"
    },
@@ -2041,7 +1871,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "near/nearcore@2.14.0-rc.2",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -2072,7 +1902,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1054",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-11",
@@ -2106,13 +1936,15 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "vechain/thor@v2.5.0-rc.1",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
     "price_at_detect": 0.0072353,
     "score_at_detect": 17.3,
+    "t30": 0.0,
+    "t30_at": "2026-10-07",
     "t7": 0.0,
     "t7_at": "2026-09-14"
    },
@@ -2137,12 +1969,14 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1053",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-07",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
     "price_at_detect": 1.59,
     "score_at_detect": 17.2,
+    "t30": 0.0,
+    "t30_at": "2026-10-07",
     "t7": 0.0,
     "t7_at": "2026-09-14"
    },
