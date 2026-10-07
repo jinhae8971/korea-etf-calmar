@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T10:57:11+09:00",
+ "generated_at": "2026-10-07T10:04:00+09:00",
  "window": "롤링 6M (182일)",
  "metric": "칼마비율 = 연율화 수익률 ÷ |MDD|",
  "universes": [
@@ -11,15 +11,15 @@
    "display": "name_code_family",
    "status": "ok",
    "error": null,
-   "base_date": "20260406",
-   "last_date": "20261006",
+   "base_date": "20260407",
+   "last_date": "20261007",
    "diff": {
-    "ref_date": "20260929",
+    "ref_date": "20260930",
     "entered": [
-     "RISE 미국반도체NYSE(H)"
+     "PLUS 글로벌MSCI(합성 H)"
     ],
     "exited": [
-     "KODEX 200롱코스닥150숏선물"
+     "ACE 라이프자산주주가치액티브"
     ]
    },
    "rows": [
@@ -28,8 +28,8 @@
      "code": "418670",
      "name": "TIGER 글로벌AI사이버보안",
      "family": "미래에셋자산운용",
-     "calmar": 11.78,
-     "ret": 0.6837,
+     "calmar": 11.93,
+     "ret": 0.6909,
      "mdd": -0.1551
     },
     {
@@ -37,8 +37,8 @@
      "code": "453330",
      "name": "RISE 미국S&P500(H)",
      "family": "KB자산운용",
-     "calmar": 9.94,
-     "ret": 0.1816,
+     "calmar": 10.4,
+     "ret": 0.1893,
      "mdd": -0.0397
     },
     {
@@ -46,8 +46,8 @@
      "code": "449180",
      "name": "KODEX 미국S&P500(H)",
      "family": "삼성자산운용",
-     "calmar": 9.56,
-     "ret": 0.1783,
+     "calmar": 9.89,
+     "ret": 0.1841,
      "mdd": -0.0405
     },
     {
@@ -55,35 +55,35 @@
      "code": "448290",
      "name": "TIGER 미국S&P500(H)",
      "family": "미래에셋자산운용",
-     "calmar": 9.55,
-     "ret": 0.1752,
+     "calmar": 9.83,
+     "ret": 0.1801,
      "mdd": -0.0398
     },
     {
      "rank": 5,
-     "code": "449780",
-     "name": "KIWOOM 미국S&P500(H)",
-     "family": "키움투자자산운용",
-     "calmar": 9.26,
-     "ret": 0.172,
-     "mdd": -0.0402
-    },
-    {
-     "rank": 6,
      "code": "219480",
      "name": "KODEX 미국S&P500선물(H)",
      "family": "삼성자산운용",
-     "calmar": 9.18,
-     "ret": 0.1726,
+     "calmar": 9.54,
+     "ret": 0.1788,
      "mdd": -0.0407
+    },
+    {
+     "rank": 6,
+     "code": "449780",
+     "name": "KIWOOM 미국S&P500(H)",
+     "family": "키움투자자산운용",
+     "calmar": 9.51,
+     "ret": 0.1763,
+     "mdd": -0.0402
     },
     {
      "rank": 7,
      "code": "143850",
      "name": "TIGER 미국S&P500선물(H)",
      "family": "미래에셋자산운용",
-     "calmar": 8.53,
-     "ret": 0.1622,
+     "calmar": 8.83,
+     "ret": 0.1674,
      "mdd": -0.041
     },
     {
@@ -91,27 +91,27 @@
      "code": "269540",
      "name": "PLUS 미국S&P500(H)",
      "family": "한화자산운용",
-     "calmar": 7.68,
-     "ret": 0.1571,
+     "calmar": 8.07,
+     "ret": 0.1644,
      "mdd": -0.044
     },
     {
      "rank": 9,
-     "code": "189400",
-     "name": "PLUS 글로벌MSCI(합성 H)",
-     "family": "한화자산운용",
-     "calmar": 7.57,
-     "ret": 0.1576,
-     "mdd": -0.0448
-    },
-    {
-     "rank": 10,
      "code": "469050",
      "name": "RISE 미국반도체NYSE(H)",
      "family": "KB자산운용",
-     "calmar": 7.11,
-     "ret": 0.716,
+     "calmar": 7.06,
+     "ret": 0.7119,
      "mdd": -0.2722
+    },
+    {
+     "rank": 10,
+     "code": "189400",
+     "name": "PLUS 글로벌MSCI(합성 H)",
+     "family": "한화자산운용",
+     "calmar": 6.91,
+     "ret": 0.1448,
+     "mdd": -0.0448
     }
    ]
   },
@@ -136,107 +136,109 @@
    "display": "name_code",
    "status": "ok",
    "error": null,
-   "base_date": "20260406",
-   "last_date": "20261005",
+   "base_date": "20260407",
+   "last_date": "20261006",
    "diff": {
-    "ref_date": "20260929",
+    "ref_date": "20260930",
     "entered": [
-     "NetApp"
+     "NetApp",
+     "Hewlett Packard Enterprise"
     ],
     "exited": [
+     "Micron Technology",
      "Centene Corporation"
     ]
    },
    "rows": [
     {
      "rank": 1,
-     "code": "MRNA",
-     "name": "Moderna",
-     "family": "",
-     "calmar": 48.3,
-     "ret": 3.1667,
-     "mdd": -0.3416
-    },
-    {
-     "rank": 2,
      "code": "DELL",
      "name": "Dell Technologies",
      "family": "",
-     "calmar": 44.68,
-     "ret": 2.1891,
+     "calmar": 45.97,
+     "ret": 2.2303,
      "mdd": -0.2067
     },
     {
-     "rank": 3,
+     "rank": 2,
      "code": "FTNT",
      "name": "Fortinet",
      "family": "",
-     "calmar": 38.16,
-     "ret": 1.2376,
+     "calmar": 40.2,
+     "ret": 1.2846,
      "mdd": -0.1056
     },
     {
-     "rank": 4,
-     "code": "ILMN",
-     "name": "Illumina, Inc.",
+     "rank": 3,
+     "code": "MRNA",
+     "name": "Moderna",
      "family": "",
-     "calmar": 37.15,
-     "ret": 1.2991,
-     "mdd": -0.116
+     "calmar": 38.34,
+     "ret": 2.741,
+     "mdd": -0.3416
     },
     {
-     "rank": 5,
+     "rank": 4,
      "code": "CRWD",
      "name": "CrowdStrike",
      "family": "",
-     "calmar": 36.67,
-     "ret": 1.7362,
+     "calmar": 33.61,
+     "ret": 1.6355,
      "mdd": -0.178
     },
     {
-     "rank": 6,
-     "code": "HUM",
-     "name": "Humana",
+     "rank": 5,
+     "code": "ILMN",
+     "name": "Illumina, Inc.",
      "family": "",
-     "calmar": 33.92,
-     "ret": 1.2123,
-     "mdd": -0.1154
+     "calmar": 31.89,
+     "ret": 1.1634,
+     "mdd": -0.116
     },
     {
-     "rank": 7,
+     "rank": 6,
      "code": "PANW",
      "name": "Palo Alto Networks",
      "family": "",
-     "calmar": 31.32,
-     "ret": 1.5116,
+     "calmar": 30.15,
+     "ret": 1.4719,
      "mdd": -0.1705
     },
     {
-     "rank": 8,
+     "rank": 7,
      "code": "AMD",
      "name": "Advanced Micro Devices",
      "family": "",
-     "calmar": 27.94,
-     "ret": 1.8692,
+     "calmar": 29.34,
+     "ret": 1.9315,
      "mdd": -0.2605
     },
     {
-     "rank": 9,
-     "code": "HPE",
-     "name": "Hewlett Packard Enterprise",
-     "family": "",
-     "calmar": 25.51,
-     "ret": 1.7811,
-     "mdd": -0.2657
-    },
-    {
-     "rank": 10,
+     "rank": 8,
      "code": "NTAP",
      "name": "NetApp",
      "family": "",
-     "calmar": 24.92,
-     "ret": 1.2177,
+     "calmar": 28.48,
+     "ret": 1.3404,
      "mdd": -0.1581
+    },
+    {
+     "rank": 9,
+     "code": "HUM",
+     "name": "Humana",
+     "family": "",
+     "calmar": 27.91,
+     "ret": 1.0506,
+     "mdd": -0.1154
+    },
+    {
+     "rank": 10,
+     "code": "HPE",
+     "name": "Hewlett Packard Enterprise",
+     "family": "",
+     "calmar": 27.23,
+     "ret": 1.8616,
+     "mdd": -0.2657
     }
    ]
   },
@@ -248,74 +250,72 @@
    "display": "code_name",
    "status": "ok",
    "error": null,
-   "base_date": "20260406",
-   "last_date": "20261005",
+   "base_date": "20260407",
+   "last_date": "20261006",
    "diff": {
-    "ref_date": "20260929",
+    "ref_date": "20260930",
     "entered": [
-     "Ishares Msci Taiwan ETF",
-     "State Street SPDR S&P 500 ETF Trust",
+     "iShares Ethereum Trust ETF",
      "Schwab US Large-Cap ETF"
     ],
     "exited": [
      "iShares Russell 1000 Value ETF",
-     "Schwab Fundamental US Large Company ETF",
      "Vanguard Morningstar Total Stock Mkt ETF"
     ]
    },
    "rows": [
     {
      "rank": 1,
-     "code": "ARKG",
-     "name": "ARK Genomic Revolution ETF",
+     "code": "ETHA",
+     "name": "iShares Ethereum Trust ETF",
      "family": "",
-     "calmar": 24.08,
-     "ret": 1.0825,
-     "mdd": -0.1393
+     "calmar": 37.87,
+     "ret": 2.8176,
+     "mdd": -0.3613
     },
     {
      "rank": 2,
-     "code": "BUG",
-     "name": "Global X Cybersecurity ETF",
+     "code": "ARKG",
+     "name": "ARK Genomic Revolution ETF",
      "family": "",
-     "calmar": 17.83,
-     "ret": 0.8471,
-     "mdd": -0.1359
+     "calmar": 18.97,
+     "ret": 0.9054,
+     "mdd": -0.1393
     },
     {
      "rank": 3,
-     "code": "CIBR",
-     "name": "First Trust NASDAQ Cybersecurity ETF",
+     "code": "BUG",
+     "name": "Global X Cybersecurity ETF",
      "family": "",
-     "calmar": 14.8,
-     "ret": 0.6523,
-     "mdd": -0.1174
+     "calmar": 18.46,
+     "ret": 0.8699,
+     "mdd": -0.1359
     },
     {
      "rank": 4,
-     "code": "VLUE",
-     "name": "iShares MSCI USA Value Factor ETF",
+     "code": "CIBR",
+     "name": "First Trust NASDAQ Cybersecurity ETF",
      "family": "",
-     "calmar": 10.83,
-     "ret": 0.3659,
-     "mdd": -0.0803
+     "calmar": 14.94,
+     "ret": 0.6572,
+     "mdd": -0.1174
     },
     {
      "rank": 5,
-     "code": "EWT",
-     "name": "Ishares Msci Taiwan ETF",
+     "code": "VLUE",
+     "name": "iShares MSCI USA Value Factor ETF",
      "family": "",
-     "calmar": 8.81,
-     "ret": 0.6552,
-     "mdd": -0.1983
+     "calmar": 10.91,
+     "ret": 0.3685,
+     "mdd": -0.0803
     },
     {
      "rank": 6,
      "code": "IWB",
      "name": "iShares Russell 1000 ETF",
      "family": "",
-     "calmar": 8.6,
-     "ret": 0.1712,
+     "calmar": 8.94,
+     "ret": 0.1775,
      "mdd": -0.0433
     },
     {
@@ -323,8 +323,8 @@
      "code": "VOO",
      "name": "Vanguard S&P 500 ETF",
      "family": "",
-     "calmar": 8.6,
-     "ret": 0.1761,
+     "calmar": 8.9,
+     "ret": 0.1818,
      "mdd": -0.0447
     },
     {
@@ -332,8 +332,8 @@
      "code": "IVV",
      "name": "iShares Core S&P 500 ETF",
      "family": "",
-     "calmar": 8.58,
-     "ret": 0.1759,
+     "calmar": 8.87,
+     "ret": 0.1814,
      "mdd": -0.0447
     },
     {
@@ -341,8 +341,8 @@
      "code": "SPY",
      "name": "State Street SPDR S&P 500 ETF Trust",
      "family": "",
-     "calmar": 8.54,
-     "ret": 0.1759,
+     "calmar": 8.86,
+     "ret": 0.1818,
      "mdd": -0.0449
     },
     {
@@ -350,8 +350,8 @@
      "code": "SCHX",
      "name": "Schwab US Large-Cap ETF",
      "family": "",
-     "calmar": 8.53,
-     "ret": 0.1751,
+     "calmar": 8.83,
+     "ret": 0.1808,
      "mdd": -0.0448
     }
    ]
