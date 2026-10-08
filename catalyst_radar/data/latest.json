@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-10-07 10:03",
+ "as_of_kst": "2026-10-08 10:21",
  "calendar": [
   {
    "event_date": "2026-10-08",
@@ -37,7 +37,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:what-is-xrp-ledger-batch-v1-1-oct-9-upgrade-brings-atomic-mu",
-   "last_seen": "2026-10-07",
+   "last_seen": "2026-10-08",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-07",
@@ -65,7 +65,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-10-07",
+   "last_seen": "2026-10-08",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-06",
@@ -88,12 +88,40 @@
    "when": "2026-10-12"
   },
   {
+   "event_date": "2026-10-15",
+   "first_seen": "2026-10-08",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:filecoin-news-new-fil-issuance-set-to-drop-75-on-oct-15-coin",
+   "last_seen": "2026-10-08",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-08",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-08",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - CoinDCX",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVncxTVpybmczVVhSc0dISnFSbzdkR0k1dEl6TFJYWThfRE9CRENFZEVaMkoydVNOeGdPSmNZZ1V1Ulc0a2RBRmVHU25uNllUbE5LaEVBaVNSaE9oT1ZJNWliN29BbkZ2a1dLWWZRQVhWaGpGSFhTeHFxbHFWYzNsY3FkTmpYTFZQcHp2dDhuYXRzNm5CNW9IT3Z2d3h2dWc?oc=5",
+   "when": "Tue, 06 Oct 2026"
+  },
+  {
    "event_date": "2026-10-19",
    "first_seen": "2026-10-07",
    "grade": "A",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@v1.37.0",
-   "last_seen": "2026-10-07",
+   "last_seen": "2026-10-08",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -122,7 +150,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@miner/v1.37.0",
-   "last_seen": "2026-10-07",
+   "last_seen": "2026-10-08",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -173,104 +201,46 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-07 10:03\n감시 52종목(체인 34·프로토콜 18) · 이벤트 65건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>FIL</b> [인프라·신규] lotus v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.37.0 re\n🔴 <b>FIL</b> [인프라·신규] lotus miner/v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.3\n🟠 <b>XRP</b> [인프라·신규] What Is XRP Ledger Batch V1.1? Oct. 9 Upgrade Brings Atomic Multi Account Tran\n🟠 <b>SUI</b> [인프라·신규] sui testnet-v1.81.1 — Sui Protocol Version in this release: `138`\n🟠 <b>ATOM</b> [인프라·일정확정→활성화] gaia v28.2.1 — A release notes template that should be adapted for every relea\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> XRP <b>일정확정</b> · Latest Crypto News: XRP’s October 8 Upgrade Could Shake the Ma\n🟠 <code>D-2   </code> XRP <b>일정확정</b> · What Is XRP Ledger Batch V1.1? Oct. 9 Upgrade Brings Atomic Mu\n🟠 <code>D-5   </code> ATOM <b>투표중</b> · Move the 1,227,121 ATOM recovered after the Neutron exploit to\n🔴 <code>D-12  </code> FIL <b>활성화</b> · lotus v1.37.0 — This is the stable release of the **MANDATORY \n🔴 <code>D-12  </code> FIL <b>활성화</b> · lotus miner/v1.37.0 — This is the stable release of the **MAND\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 6건 누적 — 표본 부족(기준 8건), 수치 판단 보류</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-08 10:21\n감시 52종목(체인 34·프로토콜 18) · 이벤트 65건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>FIL</b> [공급·신규] Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - CoinDCX\n🟠 <b>SUI</b> [인프라·신규] sui mainnet-v1.81.1 — Sui Protocol Version in this release: `138`\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> XRP <b>일정확정</b> · Latest Crypto News: XRP’s October 8 Upgrade Could Shake the Ma\n🟠 <code>D-1   </code> XRP <b>일정확정</b> · What Is XRP Ledger Batch V1.1? Oct. 9 Upgrade Brings Atomic Mu\n🟠 <code>D-4   </code> ATOM <b>투표중</b> · Move the 1,227,121 ATOM recovered after the Neutron exploit to\n🔴 <code>D-7   </code> FIL <b>일정확정</b> · Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - Co\n🔴 <code>D-11  </code> FIL <b>활성화</b> · lotus v1.37.0 — This is the stable release of the **MANDATORY \n🔴 <code>D-11  </code> FIL <b>활성화</b> · lotus miner/v1.37.0 — This is the stable release of the **MAND\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: 사전등록 6건 누적 — 표본 부족(기준 8건), 수치 판단 보류</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-10-19",
-   "first_seen": "2026-10-07",
+   "event_date": "2026-10-15",
+   "first_seen": "2026-10-08",
    "grade": "A",
-   "impact": "INFRA",
-   "key": "filecoin-project/lotus@v1.37.0",
-   "prerelease": false,
+   "impact": "SUPPLY",
+   "key": "news:filecoin-news-new-fil-issuance-set-to-drop-75-on-oct-15-coin",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-07",
+    "detected_at": "2026-10-08",
     "price_at_detect": 0.799444,
-    "score_at_detect": 59.5
+    "score_at_detect": 50.4
    },
-   "score": 59.5,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-07",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "FIL",
-   "title": "lotus v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.37.0 release**, which delivers [Filecoin network versio",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/filecoin-project/lotus/releases/tag/v1.37.0",
-   "when": "2026-10-06"
-  },
-  {
-   "event_date": "2026-10-19",
-   "first_seen": "2026-10-07",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "filecoin-project/lotus@miner/v1.37.0",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-07",
-    "price_at_detect": 0.799444,
-    "score_at_detect": 59.5
-   },
-   "score": 59.5,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-07",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "FIL",
-   "title": "lotus miner/v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.37.0 release**, which delivers [Filecoin network versio",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/filecoin-project/lotus/releases/tag/miner/v1.37.0",
-   "when": "2026-10-06"
-  },
-  {
-   "event_date": "2026-10-09",
-   "first_seen": "2026-10-07",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:what-is-xrp-ledger-batch-v1-1-oct-9-upgrade-brings-atomic-mu",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-07",
-    "price_at_detect": 1.41,
-    "score_at_detect": 35.3
-   },
-   "score": 35.3,
+   "score": 50.4,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-07",
+     "at": "2026-10-08",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "XRP",
-   "title": "What Is XRP Ledger Batch V1.1? Oct. 9 Upgrade Brings Atomic Multi Account Transactions - CCN.com",
+   "symbol": "FIL",
+   "title": "Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - CoinDCX",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVnNMVUw1bE80bU04Q0pTcm10UXhNdVNTSmtIVVUxblpxTDNGYm84SE9BZDlYejh6bzdRWThsSzZla25YVUNaaUE1QU1EaThWQjVaZXNISmFGQjV1ZVVHMHdFRk1GdXRsZnlMZm9KcldhOUdrNjZSLUd6NEFSeHRCa3lWN3FrbkZzdTNxTG1BUU5JcmE2UWV0VA?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVncxTVpybmczVVhSc0dISnFSbzdkR0k1dEl6TFJYWThfRE9CRENFZEVaMkoydVNOeGdPSmNZZ1V1Ulc0a2RBRmVHU25uNllUbE5LaEVBaVNSaE9oT1ZJNWliN29BbkZ2a1dLWWZRQVhWaGpGSFhTeHFxbHFWYzNsY3FkTmpYTFZQcHp2dDhuYXRzNm5CNW9IT3Z2d3h2dWc?oc=5",
    "when": "Tue, 06 Oct 2026"
   },
   {
    "event_date": null,
-   "first_seen": "2026-10-07",
+   "first_seen": "2026-10-08",
    "grade": "B",
    "impact": "INFRA",
-   "key": "MystenLabs/sui@testnet-v1.81.1",
+   "key": "MystenLabs/sui@mainnet-v1.81.1",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-07",
+    "detected_at": "2026-10-08",
     "price_at_detect": 0.796873,
     "score_at_detect": 29.9
    },
@@ -279,50 +249,16 @@
    "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-10-07",
+     "at": "2026-10-08",
      "stage": "ACTIVATED"
     }
    ],
    "symbol": "SUI",
-   "title": "sui testnet-v1.81.1 — Sui Protocol Version in this release: `138`",
+   "title": "sui mainnet-v1.81.1 — Sui Protocol Version in this release: `138`",
    "transition": "NEW",
    "trust": 0.95,
-   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.81.1",
-   "when": "2026-10-06"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-02",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "cosmos/gaia@v28.2.1",
-   "prerelease": false,
-   "prev_stage": "SCHEDULED",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-02",
-    "price_at_detect": 1.59,
-    "score_at_detect": 26.9
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-02",
-     "stage": "SCHEDULED"
-    },
-    {
-     "at": "2026-10-07",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "gaia v28.2.1 — A release notes template that should be adapted for every release",
-   "transition": "STAGE_UP",
-   "trust": 0.95,
-   "url": "https://github.com/cosmos/gaia/releases/tag/v28.2.1",
-   "when": "2026-10-01"
+   "url": "https://github.com/MystenLabs/sui/releases/tag/mainnet-v1.81.1",
+   "when": "2026-10-07"
   }
  ],
  "universe": {
@@ -422,7 +358,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 40,
+   "n": 42,
    "status": "OK"
   },
   {
@@ -440,7 +376,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 14,
+   "n": 12,
    "status": "OK"
   },
   {
@@ -458,7 +394,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 24,
+   "n": 27,
    "status": "OK"
   },
   {
@@ -470,7 +406,7 @@
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 2,
+   "n": 3,
    "status": "표본 부족"
   },
   {
@@ -500,7 +436,7 @@
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 5,
+   "n": 7,
    "status": "표본 부족"
   },
   {
@@ -518,7 +454,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 23,
+   "n": 24,
    "status": "OK"
   },
   {
@@ -530,7 +466,7 @@
   {
    "bucket": "source:snapshot",
    "horizon": 7,
-   "n": 3,
+   "n": 2,
    "status": "표본 부족"
   }
  ],
