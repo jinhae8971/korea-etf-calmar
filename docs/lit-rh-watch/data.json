@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26156205,
-  "rh": 84316512
+  "eth": 26157896,
+  "rh": 84515353
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -22,6 +22,42 @@
   }
  },
  "events": [
+  {
+   "detail": "0x3dd7c834→0x1a51016f",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "0bffcb4bff01",
+   "ref": {
+    "amount": 2452016.0,
+    "chain": "eth",
+    "from": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
+    "to": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+    "tx": "0xaacbe0a243c26a56c413c1d43b862df7956030768a7db111881c8a208e931a0f"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 2.45M 대량 이동",
+   "ts": 1791579647
+  },
+  {
+   "detail": "0xe554dcb0→0x3dd7c834",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "42c70cb6d14b",
+   "ref": {
+    "amount": 2452017.0,
+    "chain": "eth",
+    "from": "0xe554dcb002e4f3546d67e6deed84323eed989d62",
+    "to": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
+    "tx": "0xd02bdd3fe61f0b15ff357be66e399c16bf898bb1f9a72ca08dc4850322c03516"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 2.45M 대량 이동",
+   "ts": 1791571331
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMicEFVX3lxTE10dTN4VUdXSkFienBNNU1hdFdMYTEwUlV0WDlIZzlPY3FwQlEtOVl3cXktcTEzQ3pjSkRWTG5qTHNjMG5QQ1Nub3B",
    "family": "S4",
@@ -161,46 +197,10 @@
    "signal": "news",
    "title": "뉴스: Lighter (LIT) Surges 7.5%: CFTC Event, Airdrop Drive Rally -",
    "ts": 1791027665
-  },
-  {
-   "detail": "0xbb9fcefe→0x91d40e48",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "ff64edfc04d2",
-   "ref": {
-    "amount": 1771380.0,
-    "chain": "eth",
-    "from": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
-    "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-    "tx": "0x6e39aaf62722dd032244a828a8c259591d05a29bb99981050bed3a1475474da5"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 1.77M 대량 이동",
-   "ts": 1790962379
-  },
-  {
-   "detail": "0x1157a207→0xbb9fcefe",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "f9fa8c62848a",
-   "ref": {
-    "amount": 1771380.0,
-    "chain": "eth",
-    "from": "0x1157a2076b9bb22a85cc2c162f20fab3898f4101",
-    "to": "0xbb9fcefe1269d13c0dc13bdf9bf696f91e11c613",
-    "tx": "0xa63293dd058e3eb516a80ed447e21a2dc6b0922d8996968759397e5653a28083"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 1.77M 대량 이동",
-   "ts": 1790962187
   }
  ],
  "families": [],
- "generated_at": 1791565228,
+ "generated_at": 1791585582,
  "lb_hist": [
   [
    1790638034,
@@ -411,11 +411,52 @@
    1791565228,
    169091.397,
    41070.23
+  ],
+  [
+   1791585582,
+   169283.805,
+   41125.953
   ]
  ],
  "level": "WATCH",
  "note": "",
  "recent_all": [
+  {
+   "detail": "0x3dd7c834→0x1a51016f",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "0bffcb4bff01",
+   "ref": {
+    "amount": 2452016.0,
+    "chain": "eth",
+    "from": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
+    "to": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+    "tx": "0xaacbe0a243c26a56c413c1d43b862df7956030768a7db111881c8a208e931a0f"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 2.45M 대량 이동",
+   "ts": 1791579647
+  },
+  {
+   "detail": "0xe554dcb0→0x3dd7c834",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "42c70cb6d14b",
+   "ref": {
+    "amount": 2452017.0,
+    "chain": "eth",
+    "from": "0xe554dcb002e4f3546d67e6deed84323eed989d62",
+    "to": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
+    "tx": "0xd02bdd3fe61f0b15ff357be66e399c16bf898bb1f9a72ca08dc4850322c03516"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 2.45M 대량 이동",
+   "ts": 1791571331
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMicEFVX3lxTE10dTN4VUdXSkFienBNNU1hdFdMYTEwUlV0WDlIZzlPY3FwQlEtOVl3cXktcTEzQ3pjSkRWTG5qTHNjMG5QQ1Nub3B",
    "family": "S4",
@@ -1017,57 +1058,61 @@
   [
    1791565228,
    421878.83
+  ],
+  [
+   1791585582,
+   421878.83
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1791565228,
+   "at": 1791585582,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1791565228,
+   "at": 1791585582,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791565228,
-   "note": "2364블록 · 대량 0건",
+   "at": 1791585582,
+   "note": "1691블록 · 대량 4건",
    "ok": true
   },
   "frontend": {
-   "at": 1791565228,
+   "at": 1791585582,
    "note": "모듈 116 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791565228,
-   "note": "상위10 합계 169,091",
+   "at": 1791585582,
+   "note": "상위10 합계 169,284",
    "ok": true
   },
   "news": {
-   "at": 1791565228,
-   "note": "109건",
+   "at": 1791585582,
+   "note": "111건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791565228,
+   "at": 1791585582,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791565228,
+   "at": 1791585582,
    "note": "421,879 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791565228,
+   "at": 1791585582,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791565228,
-   "note": "19건",
+   "at": 1791585582,
+   "note": "39건",
    "ok": true
   }
  }
