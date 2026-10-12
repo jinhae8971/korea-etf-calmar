@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-10-11 09:32",
+ "as_of_kst": "2026-10-12 09:46",
  "calendar": [
   {
    "event_date": "2026-10-12",
@@ -7,7 +7,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-10-11",
+   "last_seen": "2026-10-12",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-06",
@@ -63,7 +63,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@v1.37.0",
-   "last_seen": "2026-10-11",
+   "last_seen": "2026-10-12",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -71,7 +71,7 @@
     "price_at_detect": 0.799444,
     "score_at_detect": 59.5
    },
-   "score": 59.5,
+   "score": 70.0,
    "source": "release",
    "stage": "ACTIVATED",
    "stage_history": [
@@ -92,7 +92,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@miner/v1.37.0",
-   "last_seen": "2026-10-11",
+   "last_seen": "2026-10-12",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -100,7 +100,7 @@
     "price_at_detect": 0.799444,
     "score_at_detect": 59.5
    },
-   "score": 59.5,
+   "score": 70.0,
    "source": "release",
    "stage": "ACTIVATED",
    "stage_history": [
@@ -146,40 +146,10 @@
   {
    "event_date": "2026-11-24",
    "first_seen": "2026-10-03",
-   "grade": "B",
-   "impact": "SUPPLY",
-   "key": "news:official-trump-coin-price-prediction-meets-october-unlock-as",
-   "last_seen": "2026-10-06",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-03",
-    "price_at_detect": 2.24,
-    "score_at_detect": 30.2,
-    "t7": 0.0,
-    "t7_at": "2026-10-10"
-   },
-   "score": 30.2,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-03",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "TRUMP",
-   "title": "Official Trump Coin Price Prediction Meets October Unlock as Remittix Confirms Its November 24 Launch - streetinsider.com",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQbHNFcldqMGtMVXNoUDhUTDhmbDhXaC1Iei1sWmNPclFsOF9vRGl6RUhRaE1FVHFmTzVRSGNPWlJJUks0MnU2VzdHSFVrU0xaSkFvbzhDc0JYUkpJQTM1cDR1Q1RXdGg1Z1FKUUhWNHJPaTh5T3FjM2s1dlJYRXRMclRhWU9iSGNhRWpWQUZyUXBOb3JxRWFSajdLSVJCZ05ub1J2UmxScDFobWpGdmNGeFZXTW90N1N5OEhIWkJnNXpyUHhrbVQ2TlNiWkhiSlY5ZTA5UHBzZUtWc05iSnZzVGVPd0IzTy1HTFVyTHMyZkNTNVk?oc=5",
-   "when": "Fri, 02 Oct 2026"
-  },
-  {
-   "event_date": "2026-11-24",
-   "first_seen": "2026-10-03",
    "grade": "C",
    "impact": "INFRA",
    "key": "news:bittensor-v461-upgrade-adds-a-fresh-tao-story-as-remittix-co",
-   "last_seen": "2026-10-11",
+   "last_seen": "2026-10-12",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-03",
@@ -209,7 +179,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:new-crypto-remittix-confirms-its-november-24-rtx-launch-as-e",
-   "last_seen": "2026-10-11",
+   "last_seen": "2026-10-12",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-10",
@@ -235,7 +205,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 63,
+ "event_count": 56,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -259,8 +229,38 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-11 09:32\n감시 52종목(체인 34·프로토콜 18) · 이벤트 63건\n\n<b>■ 오늘의 상태 전이</b>\n· 신규 승격 없음\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> ATOM <b>투표중</b> · Move the 1,227,121 ATOM recovered after the Neutron exploit to\n🔴 <code>D-4   </code> FIL <b>일정확정</b> · Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - Co\n🔴 <code>D-8   </code> FIL <b>활성화</b> · lotus v1.37.0 — This is the stable release of the **MANDATORY \n🔴 <code>D-8   </code> FIL <b>활성화</b> · lotus miner/v1.37.0 — This is the stable release of the **MAND\n🟠 <code>D-22  </code> ZEC <b>일정확정</b> · Winklevoss Capital Files for Spot Zcash ETF WINK on Nasdaq As \n🟠 <code>D-44  </code> TRUMP <b>일정확정</b> · Official Trump Coin Price Prediction Meets October Unlock as R\n⚪ <code>D-44  </code> TAO <b>일정확정</b> · Bittensor V461 Upgrade Adds a Fresh TAO Story as Remittix Conf\n⚪ <code>D-44  </code> ETH <b>일정확정</b> · New Crypto: Remittix Confirms Its November 24 RTX Launch as Et\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=8, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
- "transitions": [],
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-12 09:46\n감시 52종목(체인 34·프로토콜 18) · 이벤트 56건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>ALGO</b> [인프라·신규] go-algorand v5.0.3-stable — ![GitHub Logo](https://raw.githubusercontent.com/a\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> ATOM <b>투표중</b> · Move the 1,227,121 ATOM recovered after the Neutron exploit to\n🔴 <code>D-3   </code> FIL <b>일정확정</b> · Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - Co\n🔴 <code>D-7   </code> FIL <b>활성화</b> · lotus v1.37.0 — This is the stable release of the **MANDATORY \n🔴 <code>D-7   </code> FIL <b>활성화</b> · lotus miner/v1.37.0 — This is the stable release of the **MAND\n🟠 <code>D-21  </code> ZEC <b>일정확정</b> · Winklevoss Capital Files for Spot Zcash ETF WINK on Nasdaq As \n⚪ <code>D-43  </code> TAO <b>일정확정</b> · Bittensor V461 Upgrade Adds a Fresh TAO Story as Remittix Conf\n⚪ <code>D-43  </code> ETH <b>일정확정</b> · New Crypto: Remittix Confirms Its November 24 RTX Launch as Et\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=9, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "transitions": [
+  {
+   "event_date": null,
+   "first_seen": "2026-10-12",
+   "grade": "A",
+   "impact": "INFRA",
+   "key": "algorand/go-algorand@v5.0.3-stable",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-12",
+    "price_at_detect": 0.094562,
+    "score_at_detect": 66.5
+   },
+   "score": 66.5,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-12",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "ALGO",
+   "title": "go-algorand v5.0.3-stable — ![GitHub Logo](https://raw.githubusercontent.com/algorand/go-algorand/master/release/release-banner.jpg)",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/algorand/go-algorand/releases/tag/v5.0.3-stable",
+   "when": "2026-10-12"
+  }
+ ],
  "universe": {
   "chain": 34,
   "protocol": 18,
@@ -358,7 +358,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 47,
+   "n": 40,
    "status": "OK"
   },
   {
@@ -370,7 +370,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 8,
+   "n": 9,
    "status": "OK"
   },
   {
@@ -400,19 +400,19 @@
     0.0
    ],
    "median": 0.0,
-   "n": 29,
+   "n": 24,
    "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 3,
+   "n": 1,
    "status": "표본 부족"
   },
   {
@@ -436,13 +436,13 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 5,
+   "n": 2,
    "status": "표본 부족"
   },
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -460,13 +460,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 30,
+   "n": 27,
    "status": "OK"
   },
   {
    "bucket": "source:release",
    "horizon": 30,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
@@ -476,5 +476,5 @@
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=8, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=9, BTC 대비)"
 }
