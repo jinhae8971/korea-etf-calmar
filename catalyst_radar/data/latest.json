@@ -1,34 +1,6 @@
 {
- "as_of_kst": "2026-10-12 09:46",
+ "as_of_kst": "2026-10-13 11:44",
  "calendar": [
-  {
-   "event_date": "2026-10-12",
-   "first_seen": "2026-10-06",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-10-12",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-06",
-    "price_at_detect": 1.59,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "cosmos",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-10-06",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "Move the 1,227,121 ATOM recovered after the Neutron exploit to the Neutron recovery multisig",
-   "trust": 1.0,
-   "url": "https://www.mintscan.io/cosmoshub/proposals/1058",
-   "when": "2026-10-12"
-  },
   {
    "event_date": "2026-10-15",
    "first_seen": "2026-10-08",
@@ -114,6 +86,34 @@
    "trust": 0.95,
    "url": "https://github.com/filecoin-project/lotus/releases/tag/miner/v1.37.0",
    "when": "2026-10-06"
+  },
+  {
+   "event_date": "2026-10-19",
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:filecoin-fil-jumps-13-7-ahead-of-its-solstice-network-upgrad",
+   "last_seen": "2026-10-13",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "Filecoin (FIL) jumps 13.7% ahead of its Solstice network upgrade on Oct. 19 - Pluang",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSnB6a1oxZ0RrQmdyX0NjejBDVkJTZ3NWRnBablQ5dVhKeXd1ZDJnbFN4dEZxWnJoUVk0SzlxbkU5V2tQU0gxNEktRXk5eF9HS19VdExzakdpUUJhX3ZWMGh1Q1hrdkwtY0xZX0wyNlJBekE0b1djNDd0VXVTRDB0OEU3SE1iT0swLVE?oc=5",
+   "when": "Mon, 12 Oct 2026"
   },
   {
    "event_date": "2026-11-02",
@@ -205,7 +205,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 56,
+ "event_count": 62,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -229,35 +229,271 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-12 09:46\n감시 52종목(체인 34·프로토콜 18) · 이벤트 56건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>ALGO</b> [인프라·신규] go-algorand v5.0.3-stable — ![GitHub Logo](https://raw.githubusercontent.com/a\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> ATOM <b>투표중</b> · Move the 1,227,121 ATOM recovered after the Neutron exploit to\n🔴 <code>D-3   </code> FIL <b>일정확정</b> · Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - Co\n🔴 <code>D-7   </code> FIL <b>활성화</b> · lotus v1.37.0 — This is the stable release of the **MANDATORY \n🔴 <code>D-7   </code> FIL <b>활성화</b> · lotus miner/v1.37.0 — This is the stable release of the **MAND\n🟠 <code>D-21  </code> ZEC <b>일정확정</b> · Winklevoss Capital Files for Spot Zcash ETF WINK on Nasdaq As \n⚪ <code>D-43  </code> TAO <b>일정확정</b> · Bittensor V461 Upgrade Adds a Fresh TAO Story as Remittix Conf\n⚪ <code>D-43  </code> ETH <b>일정확정</b> · New Crypto: Remittix Confirms Its November 24 RTX Launch as Et\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=9, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-13 11:44\n감시 52종목(체인 34·프로토콜 18) · 이벤트 62건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>FIL</b> [인프라·신규] Filecoin (FIL) jumps 13.7% ahead of its Solstice network upgrade on Oct. 19 - \n🟠 <b>ETH</b> [인프라·신규] Update EIP-8253: Add Mainnet prestate values + genesis/devnet alloc\n🟠 <b>ETH</b> [인프라·제안→가결] Update EIP-8253: explicitly define Mainnet/testnet chain configs\n🟠 <b>HBAR</b> [인프라·신규] hiero-consensus-node v0.77.3 — Release notes\n🟠 <b>HBAR</b> [인프라·신규] hiero-consensus-node v0.77.5 — Release notes\n🟠 <b>ALGO</b> [인프라·신규] go-algorand v5.0.3-beta — ![GitHub Logo](https://raw.githubusercontent.com/alg\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-2   </code> FIL <b>일정확정</b> · Filecoin News: New FIL Issuance Set to Drop 75% on Oct 15 - Co\n🔴 <code>D-6   </code> FIL <b>활성화</b> · lotus v1.37.0 — This is the stable release of the **MANDATORY \n🔴 <code>D-6   </code> FIL <b>활성화</b> · lotus miner/v1.37.0 — This is the stable release of the **MAND\n🟠 <code>D-6   </code> FIL <b>일정확정</b> · Filecoin (FIL) jumps 13.7% ahead of its Solstice network upgra\n🟠 <code>D-20  </code> ZEC <b>일정확정</b> · Winklevoss Capital Files for Spot Zcash ETF WINK on Nasdaq As \n⚪ <code>D-42  </code> TAO <b>일정확정</b> · Bittensor V461 Upgrade Adds a Fresh TAO Story as Remittix Conf\n⚪ <code>D-42  </code> ETH <b>일정확정</b> · New Crypto: Remittix Confirms Its November 24 RTX Launch as Et\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=10, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": null,
-   "first_seen": "2026-10-12",
-   "grade": "A",
+   "event_date": "2026-10-19",
+   "first_seen": "2026-10-13",
+   "grade": "B",
    "impact": "INFRA",
-   "key": "algorand/go-algorand@v5.0.3-stable",
+   "key": "news:filecoin-fil-jumps-13-7-ahead-of-its-solstice-network-upgrad",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "Filecoin (FIL) jumps 13.7% ahead of its Solstice network upgrade on Oct. 19 - Pluang",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSnB6a1oxZ0RrQmdyX0NjejBDVkJTZ3NWRnBablQ5dVhKeXd1ZDJnbFN4dEZxWnJoUVk0SzlxbkU5V2tQU0gxNEktRXk5eF9HS19VdExzakdpUUJhX3ZWMGh1Q1hrdkwtY0xZX0wyNlJBekE0b1djNDd0VXVTRDB0OEU3SE1iT0swLVE?oc=5",
+   "when": "Mon, 12 Oct 2026"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "ethereum/EIPs#12495",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 32.7
+   },
+   "score": 32.7,
+   "source": "proposal",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Update EIP-8253: Add Mainnet prestate values + genesis/devnet alloc",
+   "transition": "NEW",
+   "trust": 1.0,
+   "updated_at": "2026-10-12T21:30:22Z",
+   "url": "https://github.com/ethereum/EIPs/pull/12495",
+   "when": null
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-08",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "ethereum/EIPs#12456",
+   "prev_stage": "PROPOSED",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-08",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 11.6
+   },
+   "score": 32.7,
+   "source": "proposal",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-10-08",
+     "stage": "PROPOSED"
+    },
+    {
+     "at": "2026-10-13",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Update EIP-8253: explicitly define Mainnet/testnet chain configs",
+   "transition": "STAGE_UP",
+   "trust": 1.0,
+   "updated_at": "2026-10-12T18:37:13Z",
+   "url": "https://github.com/ethereum/EIPs/pull/12456",
+   "when": null
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "hiero-ledger/hiero-consensus-node@v0.77.3",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-12",
-    "price_at_detect": 0.094562,
-    "score_at_detect": 66.5
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.080914,
+    "score_at_detect": 29.9
    },
-   "score": 66.5,
+   "score": 29.9,
    "source": "release",
    "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-10-12",
+     "at": "2026-10-13",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "HBAR",
+   "title": "hiero-consensus-node v0.77.3 — Release notes",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/hiero-ledger/hiero-consensus-node/releases/tag/v0.77.3",
+   "when": "2026-10-12"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "hiero-ledger/hiero-consensus-node@v0.77.5",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.080914,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "HBAR",
+   "title": "hiero-consensus-node v0.77.5 — Release notes",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/hiero-ledger/hiero-consensus-node/releases/tag/v0.77.5",
+   "when": "2026-10-12"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "algorand/go-algorand@v5.0.3-beta",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.094562,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
      "stage": "ACTIVATED"
     }
    ],
    "symbol": "ALGO",
-   "title": "go-algorand v5.0.3-stable — ![GitHub Logo](https://raw.githubusercontent.com/algorand/go-algorand/master/release/release-banner.jpg)",
+   "title": "go-algorand v5.0.3-beta — ![GitHub Logo](https://raw.githubusercontent.com/algorand/go-algorand/master/release/release-banner.jpg)",
    "transition": "NEW",
    "trust": 0.95,
-   "url": "https://github.com/algorand/go-algorand/releases/tag/v5.0.3-stable",
+   "url": "https://github.com/algorand/go-algorand/releases/tag/v5.0.3-beta",
+   "when": "2026-10-12"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "filecoin-project/lotus@v1.38.0",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "lotus v1.38.0 — This is the **recommended** Lotus release for the nv29 (Solstice) network upgrade at epoch `6470279` (`2026-10",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/v1.38.0",
+   "when": "2026-10-12"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "filecoin-project/lotus@miner/v1.38.0",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "lotus miner/v1.38.0 — This is the **recommended** Lotus release for the nv29 (Solstice) network upgrade at epoch `6470279` (`2026-10",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/miner/v1.38.0",
+   "when": "2026-10-12"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "MystenLabs/sui@devnet-v1.82.0",
+   "prerelease": true,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-13",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 26.9
+   },
+   "score": 26.9,
+   "source": "release",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-13",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "SUI",
+   "title": "sui devnet-v1.82.0 — Sui Protocol Version in this release: `139`",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/MystenLabs/sui/releases/tag/devnet-v1.82.0",
    "when": "2026-10-12"
   }
  ],
@@ -358,7 +594,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 40,
+   "n": 39,
    "status": "OK"
   },
   {
@@ -370,7 +606,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 9,
+   "n": 10,
    "status": "OK"
   },
   {
@@ -400,13 +636,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 24,
+   "n": 23,
    "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 5,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -424,7 +660,7 @@
   {
    "bucket": "source:cosmos",
    "horizon": 7,
-   "n": 5,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -466,15 +702,9 @@
   {
    "bucket": "source:release",
    "horizon": 30,
-   "n": 5,
-   "status": "표본 부족"
-  },
-  {
-   "bucket": "source:snapshot",
-   "horizon": 7,
-   "n": 2,
+   "n": 6,
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=9, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=10, BTC 대비)"
 }
