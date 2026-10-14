@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26189296,
-  "rh": 88194390
+  "eth": 26191115,
+  "rh": 88412114
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -9,8 +9,8 @@
    "hash": "2d4d502a36ea3ea5"
   },
   "https://docs.lighter.xyz/llms.txt": {
-   "changed": 1790638034,
-   "hash": "3597cf2ee6e2a3e9"
+   "changed": 1791985475,
+   "hash": "248163be9676a6e4"
   },
   "https://docs.lighter.xyz/points-program.md": {
    "changed": 1790638034,
@@ -22,6 +22,39 @@
   }
  },
  "events": [
+  {
+   "detail": "삭제·서식 변경",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "313e5479bfec",
+   "ref": {
+    "added": [],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: llms.txt",
+   "ts": 1791985475
+  },
+  {
+   "detail": "0xfa2d7c37→0xa9d1e08c",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "248d6a734452",
+   "ref": {
+    "amount": 4163975.13,
+    "chain": "eth",
+    "from": "0xfa2d7c3767b08087db725fee6661ef0c114fea2c",
+    "to": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+    "tx": "0x227107fde2075bfa3decb320b188185cdddcf448e8333739ce1f43733751223d"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 4.16M 대량 이동",
+   "ts": 1791976271
+  },
   {
    "detail": "",
    "family": "S3",
@@ -256,7 +289,7 @@
   }
  ],
  "families": [],
- "generated_at": 1791963575,
+ "generated_at": 1791985475,
  "lb_hist": [
   [
    1790638034,
@@ -552,11 +585,49 @@
    1791963575,
    172147.632,
    42068.715
+  ],
+  [
+   1791985475,
+   172453.034,
+   42210.035
   ]
  ],
  "level": "WATCH",
  "note": "",
  "recent_all": [
+  {
+   "detail": "삭제·서식 변경",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "313e5479bfec",
+   "ref": {
+    "added": [],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: llms.txt",
+   "ts": 1791985475
+  },
+  {
+   "detail": "0xfa2d7c37→0xa9d1e08c",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "248d6a734452",
+   "ref": {
+    "amount": 4163975.13,
+    "chain": "eth",
+    "from": "0xfa2d7c3767b08087db725fee6661ef0c114fea2c",
+    "to": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+    "tx": "0x227107fde2075bfa3decb320b188185cdddcf448e8333739ce1f43733751223d"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 4.16M 대량 이동",
+   "ts": 1791976271
+  },
   {
    "detail": "",
    "family": "S3",
@@ -1210,10 +1281,6 @@
  ],
  "rh_supply_hist": [
   [
-   1790771802,
-   411299.26
-  ],
-  [
    1790796106,
    411299.26
   ],
@@ -1420,56 +1487,60 @@
   [
    1791963575,
    437821.27
+  ],
+  [
+   1791985475,
+   439794.66
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791963575,
-   "note": "1917블록 · 대량 0건",
+   "at": 1791985475,
+   "note": "1819블록 · 대량 1건",
    "ok": true
   },
   "frontend": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "모듈 127 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791963575,
-   "note": "상위10 합계 172,148",
+   "at": 1791985475,
+   "note": "상위10 합계 172,453",
    "ok": true
   },
   "news": {
-   "at": 1791963575,
-   "note": "108건",
+   "at": 1791985475,
+   "note": "110건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791963575,
-   "note": "437,821 LIT",
+   "at": 1791985475,
+   "note": "439,795 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "39건",
    "ok": true
   }

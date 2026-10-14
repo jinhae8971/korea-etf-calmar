@@ -32,6 +32,14 @@
    "name": "",
    "tags": []
   },
+  "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43": {
+   "_at": 1791985475,
+   "addr": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+   "created_ts": 1657910008,
+   "is_contract": true,
+   "name": "",
+   "tags": []
+  },
   "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48": {
    "_at": 1790796106,
    "addr": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
@@ -71,6 +79,14 @@
    "is_contract": false,
    "name": "",
    "tags": []
+  },
+  "0xfa2d7c3767b08087db725fee6661ef0c114fea2c": {
+   "_at": 1791985475,
+   "addr": "0xfa2d7c3767b08087db725fee6661ef0c114fea2c",
+   "created_ts": null,
+   "is_contract": false,
+   "name": "",
+   "tags": []
   }
  },
  "ann_seen": [
@@ -90,8 +106,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26189296,
-  "rh": 88194390
+  "eth": 26191115,
+  "rh": 88412114
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -100,9 +116,9 @@
    "text": "# LIT Utility\n\nLighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n\n### Staking\n\nThe **LIT Staking Pool** (<https://app.lighter.xyz/staking>) is designed to align long-term participants with the core economics of the protocol. By staking LIT, participants gain access to platform benefits aligned with how they interact with the exchange. Unstaking is subject to a 3-day lockup period.\n\nActive Staking Programs:\n\n* LLP Access\n* Staking APR\n\n#### LLP Access\n\nAs part of our approach to offering access to niche financial products, the Lighter Liquidity Pool (LLP) is now exclusively accessible to LIT stakers. For every 1 LIT staked, participants may deposit up to 10 USDC into the LLP.\n\n#### Staking APR\n\nStaking participants currently earn a fixed 6% APR through staking rewards. LIT is bought from `0xADbE1265C0df1B623A56d324De494Bcb8e8914Ff` for these rewards.\n\n### Buybacks\n\nLIT is bought back by the protocol using trading fee revenue. Buybacks are executed via daily 24-hour TWAPs, with the flexibility to use shorter timeframes depending on market conditions.\n\nThe treasury account that conducts these is `0x0000000000000000000000000000000000000000`"
   },
   "https://docs.lighter.xyz/llms.txt": {
-   "changed": 1790638034,
-   "hash": "3597cf2ee6e2a3e9",
-   "text": "# Lighter Docs\n\n## Lighter Docs\n\n- [Introduction](https://docs.lighter.xyz/about-lighter/introduction.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md): Lighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md): Available to be enabled only on web for now.\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [RWA Pricing Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/rwa-pricing-mechanism.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [perpRFQ](https://docs.lighter.xyz/trading/perprfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Collateral Supply Limits](https://docs.lighter.xyz/trading/multi-asset-margin/collateral-supply-limits.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Referral Program](https://docs.lighter.xyz/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/liquidity-partner-program.md)\n- [Points Program](https://docs.lighter.xyz/points-program.md)\n- [Market Makers](https://docs.lighter.xyz/points-program/market-makers.md): Points Season 2 ended on December 26th 2025.\n- [Retail](https://docs.lighter.xyz/points-program/retail.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md)\n- [Partner Attribution](https://docs.lighter.xyz/integrations/partner-attribution.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)"
+   "changed": 1791985475,
+   "hash": "248163be9676a6e4",
+   "text": "# Lighter Docs\n\n## Lighter Docs\n\n- [Introduction](https://docs.lighter.xyz/about-lighter/introduction.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md): Lighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md): Available to be enabled only on web for now.\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [RWA Pricing Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/rwa-pricing-mechanism.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [perpRFQ](https://docs.lighter.xyz/trading/perprfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Referral Program](https://docs.lighter.xyz/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/liquidity-partner-program.md)\n- [Points Program](https://docs.lighter.xyz/points-program.md)\n- [Market Makers](https://docs.lighter.xyz/points-program/market-makers.md): Points Season 2 ended on December 26th 2025.\n- [Retail](https://docs.lighter.xyz/points-program/retail.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md)\n- [Partner Attribution](https://docs.lighter.xyz/integrations/partner-attribution.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)"
   },
   "https://docs.lighter.xyz/points-program.md": {
    "changed": 1790638034,
@@ -765,6 +781,39 @@
    "signal": "fe_chunk",
    "title": "화면 모듈 추가: usePriceOracle",
    "ts": 1791907236
+  },
+  {
+   "detail": "0xfa2d7c37→0xa9d1e08c",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "248d6a734452",
+   "ref": {
+    "amount": 4163975.13,
+    "chain": "eth",
+    "from": "0xfa2d7c3767b08087db725fee6661ef0c114fea2c",
+    "to": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+    "tx": "0x227107fde2075bfa3decb320b188185cdddcf448e8333739ce1f43733751223d"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 4.16M 대량 이동",
+   "ts": 1791976271
+  },
+  {
+   "detail": "삭제·서식 변경",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "313e5479bfec",
+   "ref": {
+    "added": [],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: llms.txt",
+   "ts": 1791985475
   }
  ],
  "fail_streak": 0,
@@ -1057,6 +1106,14 @@
    "to": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
    "ts": 1791579647,
    "tx": "0xaacbe0a243c26a56c413c1d43b862df7956030768a7db111881c8a208e931a0f"
+  },
+  {
+   "amount": 4163975.13,
+   "block": 26190355,
+   "from": "0xfa2d7c3767b08087db725fee6661ef0c114fea2c",
+   "to": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+   "ts": 1791976271,
+   "tx": "0x227107fde2075bfa3decb320b188185cdddcf448e8333739ce1f43733751223d"
   }
  ],
  "lb_hist": [
@@ -1354,6 +1411,11 @@
    1791963575,
    172147.632,
    42068.715
+  ],
+  [
+   1791985475,
+   172453.034,
+   42210.035
   ]
  ],
  "level": "WATCH",
@@ -1557,10 +1619,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1790771802,
-   411299.26
-  ],
   [
    1790796106,
    411299.26
@@ -1768,57 +1826,61 @@
   [
    1791963575,
    437821.27
+  ],
+  [
+   1791985475,
+   439794.66
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1791963575,
-   "note": "1917블록 · 대량 0건",
+   "at": 1791985475,
+   "note": "1819블록 · 대량 1건",
    "ok": true
   },
   "frontend": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "모듈 127 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1791963575,
-   "note": "상위10 합계 172,148",
+   "at": 1791985475,
+   "note": "상위10 합계 172,453",
    "ok": true
   },
   "news": {
-   "at": 1791963575,
-   "note": "108건",
+   "at": 1791985475,
+   "note": "110건",
    "ok": true
   },
   "polymarket": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1791963575,
-   "note": "437,821 LIT",
+   "at": 1791985475,
+   "note": "439,795 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1791963575,
+   "at": 1791985475,
    "note": "39건",
    "ok": true
   }
