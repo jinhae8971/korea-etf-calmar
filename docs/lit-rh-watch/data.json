@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26205331,
-  "rh": 90106583
+  "eth": 26206770,
+  "rh": 90278148
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -22,6 +22,20 @@
   }
  },
  "events": [
+  {
+   "detail": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "c70004afcadd",
+   "ref": {
+    "link": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "x",
+   "title": "X: RT by @vnovakovski: Lighter EVM devnet is live! An EVM-equiv",
+   "ts": 1792173865
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNko1WkhLSmN1TW9fZnQ2LXQ5WG1ZazVRRkVLYjEyWElfWko4VzlTUUtkdzhGdTdXWTR1Zmd3MER2eVQ1VDBCemN",
    "family": "S4",
@@ -289,7 +303,7 @@
   }
  ],
  "families": [],
- "generated_at": 1792156575,
+ "generated_at": 1792173865,
  "lb_hist": [
   [
    1790638034,
@@ -635,11 +649,30 @@
    1792156575,
    189497.55,
    44685.65
+  ],
+  [
+   1792173865,
+   189810.075,
+   44827.3
   ]
  ],
  "level": "WATCH",
  "note": "",
  "recent_all": [
+  {
+   "detail": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "c70004afcadd",
+   "ref": {
+    "link": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "x",
+   "title": "X: RT by @vnovakovski: Lighter EVM devnet is live! An EVM-equiv",
+   "ts": 1792173865
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNko1WkhLSmN1TW9fZnQ2LXQ5WG1ZazVRRkVLYjEyWElfWko4VzlTUUtkdzhGdTdXWTR1Zmd3MER2eVQ1VDBCemN",
    "family": "S4",
@@ -1554,57 +1587,61 @@
   [
    1792156575,
    449115.11
+  ],
+  [
+   1792173865,
+   449115.11
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792156575,
+   "at": 1792173865,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792156575,
+   "at": 1792173865,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792156575,
-   "note": "1820블록 · 대량 0건",
+   "at": 1792173865,
+   "note": "1439블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792156575,
+   "at": 1792173865,
    "note": "모듈 127 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792156575,
-   "note": "상위10 합계 189,498",
+   "at": 1792173865,
+   "note": "상위10 합계 189,810",
    "ok": true
   },
   "news": {
-   "at": 1792156575,
+   "at": 1792173865,
    "note": "108건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792156575,
+   "at": 1792173865,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792156575,
+   "at": 1792173865,
    "note": "449,115 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792156575,
+   "at": 1792173865,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792156575,
-   "note": "19건",
+   "at": 1792173865,
+   "note": "39건",
    "ok": true
   }
  }
