@@ -106,8 +106,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26206770,
-  "rh": 90278148
+  "eth": 26207697,
+  "rh": 90388698
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -1104,38 +1104,6 @@
  "heartbeat": "2026-10",
  "large_hist": [
   {
-   "amount": 2452017.0,
-   "block": 26156715,
-   "from": "0xe554dcb002e4f3546d67e6deed84323eed989d62",
-   "to": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
-   "ts": 1791571331,
-   "tx": "0xd02bdd3fe61f0b15ff357be66e399c16bf898bb1f9a72ca08dc4850322c03516"
-  },
-  {
-   "amount": 2452017.0,
-   "block": 26156993,
-   "from": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
-   "to": "0x000000000000000000000000000000000000dead",
-   "ts": 1791574679,
-   "tx": "0x208df37eb2d09474fc01347b7f5dc153b5dbae93effd516249685f5515dedb4a"
-  },
-  {
-   "amount": 2452017.0,
-   "block": 26157266,
-   "from": "0x3b4d794a66304f130a4db8f2551b0070dfcf5ca7",
-   "to": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
-   "ts": 1791577955,
-   "tx": "0x09b411d5da90cd42498de14cb335966857c3de91ef304d56c9c789ccc5775071"
-  },
-  {
-   "amount": 2452016.0,
-   "block": 26157406,
-   "from": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
-   "to": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-   "ts": 1791579647,
-   "tx": "0xaacbe0a243c26a56c413c1d43b862df7956030768a7db111881c8a208e931a0f"
-  },
-  {
    "amount": 4163975.13,
    "block": 26190355,
    "from": "0xfa2d7c3767b08087db725fee6661ef0c114fea2c",
@@ -1494,6 +1462,11 @@
    1792173865,
    189810.075,
    44827.3
+  ],
+  [
+   1792185024,
+   189974.694,
+   44885.66
   ]
  ],
  "level": "WATCH",
@@ -1587,6 +1560,7 @@
   "654fd5d0099e",
   "656eeb36a76f",
   "664471988737",
+  "66fdd7c71cb7",
   "6b517f08f9b7",
   "6bf5dcf6b6e9",
   "6c0817f2d2f8",
@@ -1616,6 +1590,7 @@
   "87de28e656b5",
   "8a02eb8c12ac",
   "8a3546be5eb4",
+  "8de518f2f8ab",
   "8dfd323c1ffa",
   "92a5dc8d1fef",
   "92e6072d3a7a",
@@ -1702,10 +1677,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1790968826,
-   420412.87
-  ],
   [
    1790984846,
    424376.06
@@ -1921,57 +1892,61 @@
   [
    1792173865,
    449115.11
+  ],
+  [
+   1792185024,
+   449115.11
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792173865,
+   "at": 1792185024,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792173865,
+   "at": 1792185024,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792173865,
-   "note": "1439블록 · 대량 0건",
+   "at": 1792185024,
+   "note": "927블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792173865,
+   "at": 1792185024,
    "note": "모듈 127 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792173865,
-   "note": "상위10 합계 189,810",
+   "at": 1792185024,
+   "note": "상위10 합계 189,975",
    "ok": true
   },
   "news": {
-   "at": 1792173865,
-   "note": "108건",
+   "at": 1792185024,
+   "note": "107건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792173865,
+   "at": 1792185024,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792173865,
+   "at": 1792185024,
    "note": "449,115 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792173865,
+   "at": 1792185024,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792173865,
+   "at": 1792185024,
    "note": "39건",
    "ok": true
   }
