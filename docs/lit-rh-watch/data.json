@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26207697,
-  "rh": 90388698
+  "eth": 26208693,
+  "rh": 90506922
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -22,6 +22,24 @@
   }
  },
  "events": [
+  {
+   "detail": "0x1a51016f→0xde1b4e9c",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "1470c58c891c",
+   "ref": {
+    "amount": 2199990.0,
+    "chain": "eth",
+    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+    "to": "0xde1b4e9c757e819da0c34c3eb0305d96a46ccdbf",
+    "tx": "0x5d594e852b9518c71c019d524fd591814a495dcebe7e6478c99e59694873da3c"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 2.20M 대량 이동",
+   "ts": 1792190171
+  },
   {
    "detail": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m",
    "family": "S4",
@@ -267,7 +285,7 @@
   }
  ],
  "families": [],
- "generated_at": 1792185024,
+ "generated_at": 1792197007,
  "lb_hist": [
   [
    1790638034,
@@ -623,11 +641,34 @@
    1792185024,
    189974.694,
    44885.66
+  ],
+  [
+   1792197007,
+   190221.838,
+   44921.15
   ]
  ],
  "level": "WATCH",
  "note": "",
  "recent_all": [
+  {
+   "detail": "0x1a51016f→0xde1b4e9c",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "1470c58c891c",
+   "ref": {
+    "amount": 2199990.0,
+    "chain": "eth",
+    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+    "to": "0xde1b4e9c757e819da0c34c3eb0305d96a46ccdbf",
+    "tx": "0x5d594e852b9518c71c019d524fd591814a495dcebe7e6478c99e59694873da3c"
+   },
+   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "ETH LIT 2.20M 대량 이동",
+   "ts": 1792190171
+  },
   {
    "detail": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m",
    "family": "S4",
@@ -1342,10 +1383,6 @@
  ],
  "rh_supply_hist": [
   [
-   1790984846,
-   424376.06
-  ],
-  [
    1791004824,
    424376.06
   ],
@@ -1560,57 +1597,61 @@
   [
    1792185024,
    449115.11
+  ],
+  [
+   1792197007,
+   449115.11
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792185024,
+   "at": 1792197007,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792185024,
+   "at": 1792197007,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792185024,
-   "note": "927블록 · 대량 0건",
+   "at": 1792197007,
+   "note": "996블록 · 대량 1건",
    "ok": true
   },
   "frontend": {
-   "at": 1792185024,
+   "at": 1792197007,
    "note": "모듈 127 · API 121",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792185024,
-   "note": "상위10 합계 189,975",
+   "at": 1792197007,
+   "note": "상위10 합계 190,222",
    "ok": true
   },
   "news": {
-   "at": 1792185024,
+   "at": 1792197007,
    "note": "107건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792185024,
+   "at": 1792197007,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792185024,
+   "at": 1792197007,
    "note": "449,115 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792185024,
+   "at": 1792197007,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792185024,
-   "note": "39건",
+   "at": 1792197007,
+   "note": "19건",
    "ok": true
   }
  }
