@@ -1,75 +1,13 @@
 {
- "as_of_kst": "2026-10-17 08:58",
+ "as_of_kst": "2026-10-18 08:31",
  "calendar": [
-  {
-   "event_date": "2026-10-19",
-   "first_seen": "2026-10-07",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "filecoin-project/lotus@v1.37.0",
-   "last_seen": "2026-10-12",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-07",
-    "price_at_detect": 0.799444,
-    "score_at_detect": 59.5,
-    "t7": 0.0,
-    "t7_at": "2026-10-14"
-   },
-   "score": 70.0,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-07",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "FIL",
-   "title": "lotus v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.37.0 release**, which delivers [Filecoin network versio",
-   "trust": 0.95,
-   "url": "https://github.com/filecoin-project/lotus/releases/tag/v1.37.0",
-   "when": "2026-10-06"
-  },
-  {
-   "event_date": "2026-10-19",
-   "first_seen": "2026-10-07",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "filecoin-project/lotus@miner/v1.37.0",
-   "last_seen": "2026-10-12",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-07",
-    "price_at_detect": 0.799444,
-    "score_at_detect": 59.5,
-    "t7": 0.0,
-    "t7_at": "2026-10-14"
-   },
-   "score": 70.0,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-07",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "FIL",
-   "title": "lotus miner/v1.37.0 — This is the stable release of the **MANDATORY Lotus v1.37.0 release**, which delivers [Filecoin network versio",
-   "trust": 0.95,
-   "url": "https://github.com/filecoin-project/lotus/releases/tag/miner/v1.37.0",
-   "when": "2026-10-06"
-  },
   {
    "event_date": "2026-10-19",
    "first_seen": "2026-10-13",
    "grade": "B",
    "impact": "INFRA",
    "key": "news:filecoin-fil-jumps-13-7-ahead-of-its-solstice-network-upgrad",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-13",
@@ -181,7 +119,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:sol-news-solana-sets-oct-21-for-alpenglow-upgrade-targeting-",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-15",
@@ -237,7 +175,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:next-crypto-to-explode-solana-s-october-21-upgrade-and-a-zca",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -293,7 +231,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:solana-to-deploy-alpenglow-upgrade-on-october-21-cointribune",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-17",
@@ -321,7 +259,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:best-crypto-presale-2026-hunt-solana-s-october-21-upgrade-an",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-17",
@@ -344,12 +282,40 @@
    "when": "Fri, 16 Oct 2026"
   },
   {
+   "event_date": "2026-10-21",
+   "first_seen": "2026-10-18",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:best-crypto-to-buy-in-october-solana-s-october-21-upgrade-or",
+   "last_seen": "2026-10-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-18",
+    "price_at_detect": 105.14,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-18",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "SOL",
+   "title": "Best Crypto to Buy in October: Solana's October 21 Upgrade or Remittix Before Its First Public Trading Cycle? - TechBullion",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQc1hwTTBLM25Xc0dtZ3lIMkNTRzJYZFhxNU9OSjhsUTJHaXRIcVZ3OGpWQ2NhNXJNNmlSMmJ6TGZCWkc3enFxYUpYNE9JN1hmcFpETXlPZ2s4RWE1cV9HLV9ZMmg5eXJLUWlpeVdtNHNOZ0pEdHQwalNFalVtdXhiYzBPNFFTOTg3TDJHU1BWSWlBRVNxeFg5eDhiMlJUTzRLcGtTQWdmRjd6RlRMcFZWX3RsbHlIczl1Ynhkb0p2ajVBV2lZZmdVZS00MA?oc=5",
+   "when": "Sat, 17 Oct 2026"
+  },
+  {
    "event_date": "2026-10-22",
    "first_seen": "2026-10-16",
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x2281f0e25992b203f0318542f74cd4ebd4d61625383c09e11839807834857906",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -378,7 +344,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xe4e1011484f2c499a39d0ebce83ae2d402e8e8d61a56c336e3ceb09ecc1e5776",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -407,7 +373,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x8b670b4e3d960905dcd91be58e9588c3aa2449822cc761e2324fe7a70e5a7fdc",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -436,7 +402,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x6bb55945d25b6a5ffe8469533b6c4953d27e0fd79e74ce1b5711eea9a3c47f4c",
-   "last_seen": "2026-10-17",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -460,70 +426,94 @@
    "when": "2026-10-22"
   },
   {
-   "event_date": "2026-11-24",
-   "first_seen": "2026-10-03",
-   "grade": "C",
+   "event_date": "2026-10-23",
+   "first_seen": "2026-10-18",
+   "grade": "B",
    "impact": "INFRA",
-   "key": "news:bittensor-v461-upgrade-adds-a-fresh-tao-story-as-remittix-co",
-   "last_seen": "2026-10-12",
+   "key": "news:xrp-ledger-nears-oct-23-upgrade-as-lending-votes-fall-short-",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-03",
-    "price_at_detect": 272.23,
-    "score_at_detect": 21.2,
-    "t7": 0.0,
-    "t7_at": "2026-10-10"
+    "detected_at": "2026-10-18",
+    "price_at_detect": 1.41,
+    "score_at_detect": 35.3
    },
-   "score": 21.2,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-03",
+     "at": "2026-10-18",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "TAO",
-   "title": "Bittensor V461 Upgrade Adds a Fresh TAO Story as Remittix Confirms November 24 RTX Launch - TechBullion",
+   "symbol": "XRP",
+   "title": "XRP Ledger Nears Oct. 23 Upgrade as Lending Votes Fall Short - Cryptonews.net",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPLXJxV1lPRTBobS1hSC1sRUlvTE5IdFN3bnpEWk5BdXE5WWRwR1dmcUpnN0dPa3YtbzU5S0tzM1hzZnRrYnhNMEkyUnhTUFZfQjEzWk9WZEJCRzhTYlFtblkyellSWEJZbHpzZjBkbks2MEg3YXpzQWpXazN0WG54SXFCdWt6eFR1QjJVbFFiLWhPUDJTNUVzZDFaLUNGUFhtbVh6QUdUeEJsSGRnOVpYcFhVaHc?oc=5",
-   "when": "Sat, 03 Oct 2026"
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5pdGViSWg3S1ZiZDRkSUZLUmpWQV90OG9XVHZpdGRrYnhfekp0MzVWcXctblVOeWhlMlBEUWFBakJ3YlZhNkx2eExfU0UtaHRTR0pUODRUS0gwUQ?oc=5",
+   "when": "Sat, 17 Oct 2026"
   },
   {
-   "event_date": "2026-11-24",
-   "first_seen": "2026-10-10",
-   "grade": "C",
+   "event_date": "2026-10-26",
+   "first_seen": "2026-10-18",
+   "grade": "B",
    "impact": "INFRA",
-   "key": "news:new-crypto-remittix-confirms-its-november-24-rtx-launch-as-e",
-   "last_seen": "2026-10-12",
+   "key": "news:ethereum-sets-october-26-for-hoodi-s-200-million-gas-test-cr",
+   "last_seen": "2026-10-18",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-10",
+    "detected_at": "2026-10-18",
     "price_at_detect": 2497.06,
-    "score_at_detect": 21.2,
-    "t7": 0.0,
-    "t7_at": "2026-10-17"
+    "score_at_detect": 30.0
    },
-   "score": 21.2,
+   "score": 30.0,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-10",
+     "at": "2026-10-18",
      "stage": "SCHEDULED"
     }
    ],
    "symbol": "ETH",
-   "title": "New Crypto: Remittix Confirms Its November 24 RTX Launch as Ethereum Price Prediction Eyes $8,000 and Solana’s Alpenglow Upgrade Fuels a $250 Target - The Manila Times",
+   "title": "Ethereum sets October 26 for Hoodi’s 200 million gas test - CryptoSlate",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMivgJBVV95cUxQTmNfMF9MdlVCZFZObHhCUXZ5VkItTXR3YzV6NHNtekUwWV83TWNmaXlMZEsySFNyUEVZTDdtMW84VktDcldOal9SWUFBblBhZDJzUXdWaUVJSFBhVG9WOHM3d0hfR1hKSWhOc1F4TUttWWM4QkpnckxXbWhtYzhERUdVT09QNEMzbkt3ZE1lclpST0dKbEM1SDhoRnlYdW1FZjJjMVM4R2FuMEwwNDlfTUU4eHlESVR6SjIxX0VSMmtYdGN0ZHgydXFJQmZaUkxHM0JqU2NqbTg1Nm9PVVRXVEFNUk9hVkhldXVtb2h6VGt1UkRpZE9QVGd1a3hGd1FMckhsUjRFdUJZRFBBdW93cFNEbTA1cG5RSllyN042OUwyMmlSVUU4TncxbHJITlN1WG9yRXVPMVMxR1FibUHSAcMCQVVfeXFMTVBvLVU2T0NibmlIaWk4YmlKUjJhdmRHWWNxNGZ1QXdIUGp4czhpd0ZSLTh0UFdudHYzb3lGUlVuaFBwNjlLQ2ZnXzQ5NW0zel9tYVc2b01yVkFfZHFHaEtXWkg2bWpUU0xaZ2p1RU5kbzRkYWMxSmR0Und5Q3hEYU1zODlPbTN3UFpaeldDQnpMUE9SeFRnbEdwaE0wRmswWnhMNk1fcFlaekVTQUdqbEF3ZXFZZXJ5N29GdWR1eUZHeVIyZGdSak90S3JFdzVJZDVUX041bzZXeG5RWVhjeUJxZlh3ekNrNUI0OW9MUDZGZHZ3cHo0NWpma0RXcUpxbTZiTmVVWmtZTWtDeXo3Wm1Yel9Lc2FoelhYUXFSY2FocnhlcXhYOGJXai05YktaQjhLT3VGSVV0UzNtdWU2LXBYeHc?oc=5",
-   "when": "Fri, 09 Oct 2026"
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTk1sdlJ0QzN0bkNMQUdvMy1iR1prcnRXR3UwaUtJaG91TElIa0hBTEZwbFpzcmlDQV9rTmszNGgwVnhDeW40Y2FqRjg1Smg2RXR2bjNrOTR6RjFvWTFzclRJQS1DWVYxaVVQYXU5QWdqRGZrVVJDdk00aFhXMHo3VDctaGJFQjlHWmpRYWZpTlAtcVROVWFlV3B5M2k?oc=5",
+   "when": "Sat, 17 Oct 2026"
+  },
+  {
+   "event_date": "2026-10-26",
+   "first_seen": "2026-10-18",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-schedules-hoodi-s-oct-26-fork-with-a-200-million-ga",
+   "last_seen": "2026-10-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-18",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-18",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum Schedules Hoodi’s Oct. 26 Fork With a 200 Million-Gas Limit - www.tokenpost.com",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE05anhlSHJZUTNLdUZTN2lUYUNycHBpM3Q3ajJwN2Jrd0lCTWY2T1VIaEI5ZTJZUlI3Sm9RaUxUYWpCQ1BSczNWUEVfQlBKdFBTeUM4amF2Q0l5cUE?oc=5",
+   "when": "Sat, 17 Oct 2026"
   }
  ],
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 80,
+ "event_count": 78,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -547,46 +537,45 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-17 08:58\n감시 52종목(체인 34·프로토콜 18) · 이벤트 80건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>BNB</b> [공급·신규] bsc v1.8.1 — Mandatory Update Required: Yes\n🟠 <b>SOL</b> [인프라·신규] Solana to Deploy Alpenglow Upgrade on October 21 - Cointribune\n🟠 <b>ZEC</b> [인프라·신규] Best Crypto Presale 2026 Hunt: Solana's October 21 Upgrade and Zcash's ETF Fil\n🟠 <b>SOL</b> [인프라·일정확정→활성화] agave v4.3.2 — This a stable release suitable for Testnet, Devnet and Mainnet \n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-2   </code> FIL <b>활성화</b> · lotus v1.37.0 — This is the stable release of the **MANDATORY \n🔴 <code>D-2   </code> FIL <b>활성화</b> · lotus miner/v1.37.0 — This is the stable release of the **MAND\n🟠 <code>D-2   </code> FIL <b>일정확정</b> · Filecoin (FIL) jumps 13.7% ahead of its Solstice network upgra\n🟠 <code>D-2   </code> FIL <b>일정확정</b> · Binance Will Support the Filecoin (FIL) Network Upgrade &amp; Hard\n🟠 <code>D-4   </code> SOL <b>일정확정</b> · Solana Alpenglow Upgrade Set for October 21, Here’s Why It Mat\n🟠 <code>D-4   </code> SOL <b>일정확정</b> · Solana sets October 21 for massive Alpenglow upgrade that coul\n🟠 <code>D-4   </code> SOL <b>일정확정</b> · SOL news: Solana sets Oct. 21 for Alpenglow upgrade targeting \n🟠 <code>D-4   </code> SOL <b>일정확정</b> · Solana price falls 9% ahead of major October 21 upgrade - Cryp\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-18 08:31\n감시 52종목(체인 34·프로토콜 18) · 이벤트 78건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>XRP</b> [인프라·신규] XRP Ledger Nears Oct. 23 Upgrade as Lending Votes Fall Short - Cryptonews.net\n🟠 <b>SOL</b> [인프라·신규] Best Crypto to Buy in October: Solana's October 21 Upgrade or Remittix Before \n🟠 <b>ETH</b> [인프라·신규] Ethereum sets October 26 for Hoodi’s 200 million gas test - CryptoSlate\n🟠 <b>ETH</b> [인프라·신규] Ethereum Schedules Hoodi’s Oct. 26 Fork With a 200 Million-Gas Limit - www.tok\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> FIL <b>일정확정</b> · Filecoin (FIL) jumps 13.7% ahead of its Solstice network upgra\n🟠 <code>D-1   </code> FIL <b>일정확정</b> · Binance Will Support the Filecoin (FIL) Network Upgrade &amp; Hard\n🟠 <code>D-3   </code> SOL <b>일정확정</b> · Solana Alpenglow Upgrade Set for October 21, Here’s Why It Mat\n🟠 <code>D-3   </code> SOL <b>일정확정</b> · Solana sets October 21 for massive Alpenglow upgrade that coul\n🟠 <code>D-3   </code> SOL <b>일정확정</b> · SOL news: Solana sets Oct. 21 for Alpenglow upgrade targeting \n🟠 <code>D-3   </code> SOL <b>일정확정</b> · Solana price falls 9% ahead of major October 21 upgrade - Cryp\n🟠 <code>D-3   </code> ZEC <b>일정확정</b> · Next Crypto to Explode: Solana’s October 21 Upgrade and a Zcas\n🟠 <code>D-3   </code> SOL <b>일정확정</b> · Solana’s Oct. 21 Alpenglow Upgrade Targets 98.8% Cut in Finali\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": null,
-   "first_seen": "2026-10-17",
+   "event_date": "2026-10-23",
+   "first_seen": "2026-10-18",
    "grade": "B",
-   "impact": "SUPPLY",
-   "key": "bnb-chain/bsc@v1.8.1",
-   "prerelease": false,
+   "impact": "INFRA",
+   "key": "news:xrp-ledger-nears-oct-23-upgrade-as-lending-votes-fall-short-",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-17",
-    "price_at_detect": 746.55,
-    "score_at_detect": 42.8
+    "detected_at": "2026-10-18",
+    "price_at_detect": 1.41,
+    "score_at_detect": 35.3
    },
-   "score": 42.8,
-   "source": "release",
-   "stage": "ACTIVATED",
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-17",
-     "stage": "ACTIVATED"
+     "at": "2026-10-18",
+     "stage": "SCHEDULED"
     }
    ],
-   "symbol": "BNB",
-   "title": "bsc v1.8.1 — Mandatory Update Required: Yes",
+   "symbol": "XRP",
+   "title": "XRP Ledger Nears Oct. 23 Upgrade as Lending Votes Fall Short - Cryptonews.net",
    "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.1",
-   "when": "2026-10-16"
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5pdGViSWg3S1ZiZDRkSUZLUmpWQV90OG9XVHZpdGRrYnhfekp0MzVWcXctblVOeWhlMlBEUWFBakJ3YlZhNkx2eExfU0UtaHRTR0pUODRUS0gwUQ?oc=5",
+   "when": "Sat, 17 Oct 2026"
   },
   {
    "event_date": "2026-10-21",
-   "first_seen": "2026-10-17",
+   "first_seen": "2026-10-18",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:solana-to-deploy-alpenglow-upgrade-on-october-21-cointribune",
+   "key": "news:best-crypto-to-buy-in-october-solana-s-october-21-upgrade-or",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-17",
+    "detected_at": "2026-10-18",
     "price_at_detect": 105.14,
     "score_at_detect": 35.3
    },
@@ -595,78 +584,72 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-17",
+     "at": "2026-10-18",
      "stage": "SCHEDULED"
     }
    ],
    "symbol": "SOL",
-   "title": "Solana to Deploy Alpenglow Upgrade on October 21 - Cointribune",
+   "title": "Best Crypto to Buy in October: Solana's October 21 Upgrade or Remittix Before Its First Public Trading Cycle? - TechBullion",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNdWlkemNvZHVRcHhTS25hcHZPamVXVHA4VXF2VEp1YVFocWgtTUxxX1pRV0xZbDdDdC1TQnVjQW1EOUQ2dXlZcS1YdHBzNXpIMXI0QmV6ZjBybFB6M3M2d3lHSU1ad2JZU3ZaLVpzTUQ1ZWZqTTlTNWxTR2xhUHFkWHdKcHk2WU0?oc=5",
-   "when": "Thu, 15 Oct 2026"
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQc1hwTTBLM25Xc0dtZ3lIMkNTRzJYZFhxNU9OSjhsUTJHaXRIcVZ3OGpWQ2NhNXJNNmlSMmJ6TGZCWkc3enFxYUpYNE9JN1hmcFpETXlPZ2s4RWE1cV9HLV9ZMmg5eXJLUWlpeVdtNHNOZ0pEdHQwalNFalVtdXhiYzBPNFFTOTg3TDJHU1BWSWlBRVNxeFg5eDhiMlJUTzRLcGtTQWdmRjd6RlRMcFZWX3RsbHlIczl1Ynhkb0p2ajVBV2lZZmdVZS00MA?oc=5",
+   "when": "Sat, 17 Oct 2026"
   },
   {
-   "event_date": "2026-10-21",
-   "first_seen": "2026-10-17",
+   "event_date": "2026-10-26",
+   "first_seen": "2026-10-18",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:best-crypto-presale-2026-hunt-solana-s-october-21-upgrade-an",
+   "key": "news:ethereum-sets-october-26-for-hoodi-s-200-million-gas-test-cr",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-17",
-    "price_at_detect": 1192.89,
-    "score_at_detect": 35.3
+    "detected_at": "2026-10-18",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
    },
-   "score": 35.3,
+   "score": 30.0,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-17",
+     "at": "2026-10-18",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ZEC",
-   "title": "Best Crypto Presale 2026 Hunt: Solana's October 21 Upgrade and Zcash's ETF Filing Meet Remittix's $0.28 Entry - TechBullion",
+   "symbol": "ETH",
+   "title": "Ethereum sets October 26 for Hoodi’s 200 million gas test - CryptoSlate",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOZEpaUktuLXdoT3huVUVCV1FwLXhfaF9LTm50SVNQcDZEUEo1anBUbW9Bc0tvZDdZc2NScGw0ZzlVbnI1MTdlNGNqT09vRXVZNkc2Tlhpd2Z0dXdJN2lnXzE0aG9SY0FYajY2bmhOZ0JCNkM4WV8tODhTLUlZTmozMDFlbmJNNmJQLXlGcWk0X2MzV2l5ZXVlMU5mbnBSNGNvYnlGcEZNRGFfbURVN3lVUERkdUh2eWRYSHZJQ2VQQzVWVE1jYk5jTw?oc=5",
-   "when": "Fri, 16 Oct 2026"
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTk1sdlJ0QzN0bkNMQUdvMy1iR1prcnRXR3UwaUtJaG91TElIa0hBTEZwbFpzcmlDQV9rTmszNGgwVnhDeW40Y2FqRjg1Smg2RXR2bjNrOTR6RjFvWTFzclRJQS1DWVYxaVVQYXU5QWdqRGZrVVJDdk00aFhXMHo3VDctaGJFQjlHWmpRYWZpTlAtcVROVWFlV3B5M2k?oc=5",
+   "when": "Sat, 17 Oct 2026"
   },
   {
-   "event_date": null,
-   "first_seen": "2026-10-16",
+   "event_date": "2026-10-26",
+   "first_seen": "2026-10-18",
    "grade": "B",
    "impact": "INFRA",
-   "key": "anza-xyz/agave@v4.3.2",
-   "prerelease": false,
-   "prev_stage": "SCHEDULED",
+   "key": "news:ethereum-schedules-hoodi-s-oct-26-fork-with-a-200-million-ga",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-16",
-    "price_at_detect": 105.14,
-    "score_at_detect": 17.3
+    "detected_at": "2026-10-18",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
    },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-16",
+     "at": "2026-10-18",
      "stage": "SCHEDULED"
-    },
-    {
-     "at": "2026-10-17",
-     "stage": "ACTIVATED"
     }
    ],
-   "symbol": "SOL",
-   "title": "agave v4.3.2 — This a stable release suitable for Testnet, Devnet and Mainnet Beta.",
-   "transition": "STAGE_UP",
-   "trust": 0.95,
-   "url": "https://github.com/anza-xyz/agave/releases/tag/v4.3.2",
-   "when": "2026-10-15"
+   "symbol": "ETH",
+   "title": "Ethereum Schedules Hoodi’s Oct. 26 Fork With a 200 Million-Gas Limit - www.tokenpost.com",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE05anhlSHJZUTNLdUZTN2lUYUNycHBpM3Q3ajJwN2Jrd0lCTWY2T1VIaEI5ZTJZUlI3Sm9RaUxUYWpCQ1BSczNWUEVfQlBKdFBTeUM4amF2Q0l5cUE?oc=5",
+   "when": "Sat, 17 Oct 2026"
   }
  ],
  "universe": {
@@ -766,7 +749,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 43,
+   "n": 35,
    "status": "OK"
   },
   {
@@ -778,7 +761,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 11,
+   "n": 12,
    "status": "OK"
   },
   {
@@ -796,7 +779,7 @@
   {
    "bucket": "impact:FEATURE",
    "horizon": 30,
-   "n": 3,
+   "n": 5,
    "status": "표본 부족"
   },
   {
@@ -808,20 +791,14 @@
     0.0
    ],
    "median": 0.0,
-   "n": 29,
+   "n": 21,
    "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
-   "hit_rate": 0.0,
    "horizon": 30,
-   "iqr": [
-    0.0,
-    0.0
-   ],
-   "median": 0.0,
-   "n": 8,
-   "status": "OK"
+   "n": 7,
+   "status": "표본 부족"
   },
   {
    "bucket": "source:cosmos",
@@ -832,13 +809,7 @@
   {
    "bucket": "source:cosmos",
    "horizon": 30,
-   "n": 3,
-   "status": "표본 부족"
-  },
-  {
-   "bucket": "source:news",
-   "horizon": 7,
-   "n": 2,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -856,7 +827,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 31,
+   "n": 25,
    "status": "OK"
   },
   {
@@ -872,5 +843,5 @@
    "status": "OK"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)"
 }
