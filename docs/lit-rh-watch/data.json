@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26217092,
-  "rh": 91495250
+  "eth": 26219042,
+  "rh": 91722235
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -22,6 +22,104 @@
   }
  },
  "events": [
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "a19b93d45bdf",
+   "ref": {
+    "name": "/api/v1/event/create"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/create",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "90af2fef00a4",
+   "ref": {
+    "name": "/api/v1/event/registerOrderBook"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/registerOrderBook",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "8c32e024c51d",
+   "ref": {
+    "name": "/api/v1/event/update"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/update",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "6e619e1e5909",
+   "ref": {
+    "name": "/api/v1/events"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/events",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f8bf8231b1b9",
+   "ref": {
+    "name": "/api/v1/feeTiers"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/feeTiers",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "30880151b084",
+   "ref": {
+    "name": "/api/v1/portfolio/boPnl"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/portfolio/boPnl",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "102915a2a76a",
+   "ref": {
+    "name": "/api/v1/upDownCandles"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/upDownCandles",
+   "ts": 1792321666
+  },
   {
    "detail": "0x1a51016f→0xde1b4e9c",
    "family": "S1",
@@ -268,24 +366,10 @@
    "signal": "news",
    "title": "뉴스: Lighter.xyz Cracks Down on Sybil Activity as $LIT Airdrop Ec",
    "ts": 1791818891
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQWnVPTUNMa3FvVzBkSVVUWW8xRUo3b1NfQW9Va21JN1h5b2YwVjRPZkY2YlJhRVVfUFFTRDg1eE9yR054VnNrdlp",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "699b38e9674a",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQWnVPTUNMa3FvVzBkSVVUWW8xRUo3b1NfQW9Va21JN1h5b2YwVjRPZkY2YlJhRVVfUFFTRDg1eE9yR054VnNrdlpBSHNpQ2ZPT1dYLU5wa3VyTldaVm5PRk1jeDNNeFlETjhZa2ttdF9wQXphdmZ0ZmRUSnp4ZkFwNXhvV21PYW5ETWFobzN2a25vV3cyZ0xGTzRmbk85cEsycmtZRjNFMA?oc=5"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: Lighter Airdrop Allocation Explained: How LIT Tokens Were Di",
-   "ts": 1791697749
   }
  ],
  "families": [],
- "generated_at": 1792298160,
+ "generated_at": 1792321666,
  "lb_hist": [
   [
    1790638034,
@@ -676,11 +760,114 @@
    1792298160,
    190946.374,
    45130.977
+  ],
+  [
+   1792321666,
+   191057.901,
+   45171.324
   ]
  ],
  "level": "WATCH",
  "note": "",
  "recent_all": [
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "a19b93d45bdf",
+   "ref": {
+    "name": "/api/v1/event/create"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/create",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "90af2fef00a4",
+   "ref": {
+    "name": "/api/v1/event/registerOrderBook"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/registerOrderBook",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "8c32e024c51d",
+   "ref": {
+    "name": "/api/v1/event/update"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/update",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "6e619e1e5909",
+   "ref": {
+    "name": "/api/v1/events"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/events",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f8bf8231b1b9",
+   "ref": {
+    "name": "/api/v1/feeTiers"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/feeTiers",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "30880151b084",
+   "ref": {
+    "name": "/api/v1/portfolio/boPnl"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/portfolio/boPnl",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "102915a2a76a",
+   "ref": {
+    "name": "/api/v1/upDownCandles"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/upDownCandles",
+   "ts": 1792321666
+  },
   {
    "detail": "0x1a51016f→0xde1b4e9c",
    "family": "S1",
@@ -1413,10 +1600,6 @@
  ],
  "rh_supply_hist": [
   [
-   1791102473,
-   424376.06
-  ],
-  [
    1791127382,
    424376.06
   ],
@@ -1635,56 +1818,60 @@
   [
    1792298160,
    449116.64
+  ],
+  [
+   1792321666,
+   449116.64
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792298160,
-   "note": "1872블록 · 대량 0건",
+   "at": 1792321666,
+   "note": "1950블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792298160,
-   "note": "모듈 127 · API 121",
+   "at": 1792321666,
+   "note": "모듈 127 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792298160,
-   "note": "상위10 합계 190,946",
+   "at": 1792321666,
+   "note": "상위10 합계 191,058",
    "ok": true
   },
   "news": {
-   "at": 1792298160,
-   "note": "118건",
+   "at": 1792321666,
+   "note": "116건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "449,117 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "39건",
    "ok": true
   }

@@ -114,8 +114,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26217092,
-  "rh": 91495250
+  "eth": 26219042,
+  "rh": 91722235
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -868,6 +868,104 @@
    "signal": "eth_large",
    "title": "ETH LIT 2.20M 대량 이동",
    "ts": 1792190171
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "a19b93d45bdf",
+   "ref": {
+    "name": "/api/v1/event/create"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/create",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "90af2fef00a4",
+   "ref": {
+    "name": "/api/v1/event/registerOrderBook"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/registerOrderBook",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "8c32e024c51d",
+   "ref": {
+    "name": "/api/v1/event/update"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/event/update",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "6e619e1e5909",
+   "ref": {
+    "name": "/api/v1/events"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/events",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f8bf8231b1b9",
+   "ref": {
+    "name": "/api/v1/feeTiers"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/feeTiers",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "30880151b084",
+   "ref": {
+    "name": "/api/v1/portfolio/boPnl"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/portfolio/boPnl",
+   "ts": 1792321666
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "102915a2a76a",
+   "ref": {
+    "name": "/api/v1/upDownCandles"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "API 경로 추가: /api/v1/upDownCandles",
+   "ts": 1792321666
   }
  ],
  "fail_streak": 0,
@@ -899,6 +997,10 @@
    "/api/v1/deposit/latest",
    "/api/v1/deposit/networks",
    "/api/v1/equity_history/pnl",
+   "/api/v1/event/create",
+   "/api/v1/event/registerOrderBook",
+   "/api/v1/event/update",
+   "/api/v1/events",
    "/api/v1/exchangeMetrics",
    "/api/v1/exchangeStats",
    "/api/v1/executeStats",
@@ -908,6 +1010,7 @@
    "/api/v1/fastwithdraw",
    "/api/v1/fastwithdraw/info",
    "/api/v1/faucet",
+   "/api/v1/feeTiers",
    "/api/v1/funding",
    "/api/v1/fundings",
    "/api/v1/gaslessDeposit",
@@ -954,6 +1057,7 @@
    "/api/v1/partnerStats",
    "/api/v1/pnl",
    "/api/v1/pnlLeaderboard",
+   "/api/v1/portfolio/boPnl",
    "/api/v1/positionFunding",
    "/api/v1/priceOracleInfo",
    "/api/v1/publicPoolsMetadata",
@@ -992,6 +1096,7 @@
    "/api/v1/tx",
    "/api/v1/txFromL",
    "/api/v1/txs",
+   "/api/v1/upDownCandles",
    "/api/v1/upcomingEarnings",
    "/api/v1/withdraw/history",
    "/api/v1/withdrawalDelay"
@@ -1536,6 +1641,11 @@
    1792298160,
    190946.374,
    45130.977
+  ],
+  [
+   1792321666,
+   191057.901,
+   45171.324
   ]
  ],
  "level": "WATCH",
@@ -1750,10 +1860,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1791102473,
-   424376.06
-  ],
   [
    1791127382,
    424376.06
@@ -1973,57 +2079,61 @@
   [
    1792298160,
    449116.64
+  ],
+  [
+   1792321666,
+   449116.64
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792298160,
-   "note": "1872블록 · 대량 0건",
+   "at": 1792321666,
+   "note": "1950블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792298160,
-   "note": "모듈 127 · API 121",
+   "at": 1792321666,
+   "note": "모듈 127 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792298160,
-   "note": "상위10 합계 190,946",
+   "at": 1792321666,
+   "note": "상위10 합계 191,058",
    "ok": true
   },
   "news": {
-   "at": 1792298160,
-   "note": "118건",
+   "at": 1792321666,
+   "note": "116건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "449,117 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792298160,
+   "at": 1792321666,
    "note": "39건",
    "ok": true
   }
