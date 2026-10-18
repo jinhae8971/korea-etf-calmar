@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T08:55:29+09:00",
+ "generated_at": "2026-10-19T08:43:52+09:00",
  "window": "롤링 6M (182일)",
  "metric": "칼마비율 = 연율화 수익률 ÷ |MDD|",
  "universes": [
@@ -11,19 +11,17 @@
    "display": "name_code_family",
    "status": "ok",
    "error": null,
-   "base_date": "20260416",
-   "last_date": "20261015",
+   "base_date": "20260417",
+   "last_date": "20261016",
    "diff": {
-    "ref_date": "20261009",
+    "ref_date": "20261012",
     "entered": [
-     "SOL 유럽탄소배출권선물S&P(H)",
      "1Q 현대차그룹채권(A+이상)&국고통안",
-     "TIGER 글로벌클라우드컴퓨팅INDXX"
+     "KODEX 유럽탄소배출권선물ICE(H)"
     ],
     "exited": [
-     "TIGER 미국S&P500선물(H)",
-     "PLUS 미국S&P500(H)",
-     "KODEX 미국빅테크10(H)"
+     "SOL 미국AI소프트웨어",
+     "PLUS 미국S&P500(H)"
     ]
    },
    "rows": [
@@ -32,90 +30,90 @@
      "code": "418670",
      "name": "TIGER 글로벌AI사이버보안",
      "family": "미래에셋자산운용",
-     "calmar": 10.88,
-     "ret": 0.6373,
+     "calmar": 10.32,
+     "ret": 0.6108,
      "mdd": -0.1551
     },
     {
      "rank": 2,
-     "code": "400580",
-     "name": "SOL 유럽탄소배출권선물S&P(H)",
-     "family": "신한자산운용",
-     "calmar": 5.36,
-     "ret": 0.157,
-     "mdd": -0.0634
-    },
-    {
-     "rank": 3,
      "code": "453330",
      "name": "RISE 미국S&P500(H)",
      "family": "KB자산운용",
-     "calmar": 5.0,
-     "ret": 0.0944,
+     "calmar": 5.41,
+     "ret": 0.1019,
      "mdd": -0.0397
     },
     {
-     "rank": 4,
-     "code": "400570",
-     "name": "KODEX 유럽탄소배출권선물ICE(H)",
-     "family": "삼성자산운용",
-     "calmar": 4.99,
-     "ret": 0.1559,
-     "mdd": -0.0676
-    },
-    {
-     "rank": 5,
+     "rank": 3,
      "code": "449180",
      "name": "KODEX 미국S&P500(H)",
      "family": "삼성자산운용",
-     "calmar": 4.67,
-     "ret": 0.0903,
+     "calmar": 5.05,
+     "ret": 0.0972,
      "mdd": -0.0405
     },
     {
-     "rank": 6,
+     "rank": 4,
      "code": "448290",
      "name": "TIGER 미국S&P500(H)",
      "family": "미래에셋자산운용",
-     "calmar": 4.63,
-     "ret": 0.088,
+     "calmar": 5.01,
+     "ret": 0.0949,
      "mdd": -0.0398
     },
     {
-     "rank": 7,
-     "code": "492500",
-     "name": "1Q 현대차그룹채권(A+이상)&국고통안",
-     "family": "-",
-     "calmar": 4.53,
-     "ret": 0.0099,
-     "mdd": -0.0044
-    },
-    {
-     "rank": 8,
-     "code": "219480",
-     "name": "KODEX 미국S&P500선물(H)",
-     "family": "삼성자산운용",
-     "calmar": 4.38,
-     "ret": 0.0852,
-     "mdd": -0.0407
-    },
-    {
-     "rank": 9,
+     "rank": 5,
      "code": "449780",
      "name": "KIWOOM 미국S&P500(H)",
      "family": "키움투자자산운용",
-     "calmar": 4.38,
-     "ret": 0.0842,
+     "calmar": 4.78,
+     "ret": 0.0916,
      "mdd": -0.0402
     },
     {
+     "rank": 6,
+     "code": "219480",
+     "name": "KODEX 미국S&P500선물(H)",
+     "family": "삼성자산운용",
+     "calmar": 4.76,
+     "ret": 0.0923,
+     "mdd": -0.0407
+    },
+    {
+     "rank": 7,
+     "code": "400580",
+     "name": "SOL 유럽탄소배출권선물S&P(H)",
+     "family": "신한자산운용",
+     "calmar": 4.49,
+     "ret": 0.133,
+     "mdd": -0.0634
+    },
+    {
+     "rank": 8,
+     "code": "492500",
+     "name": "1Q 현대차그룹채권(A+이상)&국고통안",
+     "family": "-",
+     "calmar": 4.44,
+     "ret": 0.0097,
+     "mdd": -0.0044
+    },
+    {
+     "rank": 9,
+     "code": "400570",
+     "name": "KODEX 유럽탄소배출권선물ICE(H)",
+     "family": "삼성자산운용",
+     "calmar": 4.23,
+     "ret": 0.1336,
+     "mdd": -0.0676
+    },
+    {
      "rank": 10,
-     "code": "371450",
-     "name": "TIGER 글로벌클라우드컴퓨팅INDXX",
+     "code": "143850",
+     "name": "TIGER 미국S&P500선물(H)",
      "family": "미래에셋자산운용",
-     "calmar": 4.25,
-     "ret": 0.3482,
-     "mdd": -0.1933
+     "calmar": 4.17,
+     "ret": 0.0818,
+     "mdd": -0.041
     }
    ]
   },
@@ -140,15 +138,17 @@
    "display": "name_code",
    "status": "ok",
    "error": null,
-   "base_date": "20260416",
-   "last_date": "20261015",
+   "base_date": "20260417",
+   "last_date": "20261016",
    "diff": {
-    "ref_date": "20261009",
+    "ref_date": "20261012",
     "entered": [
-     "Humana",
-     "Phillips 66"
+     "Valero Energy",
+     "Phillips 66",
+     "Centene Corporation"
     ],
     "exited": [
+     "Palo Alto Networks",
      "NetApp",
      "Hewlett Packard Enterprise"
     ]
@@ -159,8 +159,8 @@
      "code": "MRNA",
      "name": "Moderna",
      "family": "",
-     "calmar": 52.28,
-     "ret": 3.3252,
+     "calmar": 45.66,
+     "ret": 3.0583,
      "mdd": -0.3416
     },
     {
@@ -168,81 +168,81 @@
      "code": "MPC",
      "name": "Marathon Petroleum",
      "family": "",
-     "calmar": 38.07,
-     "ret": 1.108,
+     "calmar": 44.29,
+     "ret": 1.2372,
      "mdd": -0.0909
     },
     {
      "rank": 3,
-     "code": "FTNT",
-     "name": "Fortinet",
+     "code": "VLO",
+     "name": "Valero Energy",
      "family": "",
-     "calmar": 36.9,
-     "ret": 1.2076,
-     "mdd": -0.1056
+     "calmar": 29.62,
+     "ret": 0.9884,
+     "mdd": -0.1002
     },
     {
      "rank": 4,
      "code": "HUM",
      "name": "Humana",
      "family": "",
-     "calmar": 31.66,
-     "ret": 1.1528,
+     "calmar": 26.61,
+     "ret": 1.014,
      "mdd": -0.1154
     },
     {
      "rank": 5,
-     "code": "ILMN",
-     "name": "Illumina, Inc.",
-     "family": "",
-     "calmar": 26.64,
-     "ret": 1.0188,
-     "mdd": -0.116
-    },
-    {
-     "rank": 6,
-     "code": "CRWD",
-     "name": "CrowdStrike",
-     "family": "",
-     "calmar": 25.26,
-     "ret": 1.3393,
-     "mdd": -0.178
-    },
-    {
-     "rank": 7,
-     "code": "DELL",
-     "name": "Dell Technologies",
-     "family": "",
-     "calmar": 24.38,
-     "ret": 1.4517,
-     "mdd": -0.2067
-    },
-    {
-     "rank": 8,
-     "code": "VLO",
-     "name": "Valero Energy",
-     "family": "",
-     "calmar": 23.8,
-     "ret": 0.8369,
-     "mdd": -0.1002
-    },
-    {
-     "rank": 9,
-     "code": "PANW",
-     "name": "Palo Alto Networks",
-     "family": "",
-     "calmar": 23.1,
-     "ret": 1.2176,
-     "mdd": -0.1705
-    },
-    {
-     "rank": 10,
      "code": "PSX",
      "name": "Phillips 66",
      "family": "",
-     "calmar": 21.37,
-     "ret": 0.7706,
+     "calmar": 25.17,
+     "ret": 0.8748,
      "mdd": -0.1004
+    },
+    {
+     "rank": 6,
+     "code": "FTNT",
+     "name": "Fortinet",
+     "family": "",
+     "calmar": 24.99,
+     "ret": 1.0666,
+     "mdd": -0.1316
+    },
+    {
+     "rank": 7,
+     "code": "ILMN",
+     "name": "Illumina, Inc.",
+     "family": "",
+     "calmar": 24.34,
+     "ret": 0.952,
+     "mdd": -0.116
+    },
+    {
+     "rank": 8,
+     "code": "CRWD",
+     "name": "CrowdStrike",
+     "family": "",
+     "calmar": 19.63,
+     "ret": 1.1454,
+     "mdd": -0.1846
+    },
+    {
+     "rank": 9,
+     "code": "CNC",
+     "name": "Centene Corporation",
+     "family": "",
+     "calmar": 18.91,
+     "ret": 0.8119,
+     "mdd": -0.1213
+    },
+    {
+     "rank": 10,
+     "code": "DELL",
+     "name": "Dell Technologies",
+     "family": "",
+     "calmar": 18.54,
+     "ret": 1.2982,
+     "mdd": -0.2323
     }
    ]
   },
@@ -254,21 +254,21 @@
    "display": "code_name",
    "status": "ok",
    "error": null,
-   "base_date": "20260416",
-   "last_date": "20261015",
+   "base_date": "20260417",
+   "last_date": "20261016",
    "diff": {
-    "ref_date": "20261009",
+    "ref_date": "20261012",
     "entered": [
      "State Street Health Care Select Sector SPDR ETF",
      "Vanguard Health Care ETF",
      "iShares Russell 1000 Value ETF",
      "Schwab Fundamental US Large Company ETF",
-     "iShares Biotechnology ETF"
+     "Vanguard Morningstar Mega Cap Value ETF"
     ],
     "exited": [
+     "iShares Russell 1000 ETF",
      "Vanguard S&P 500 ETF",
      "iShares Core S&P 500 ETF",
-     "iShares Russell 1000 ETF",
      "State Street SPDR S&P 500 ETF Trust",
      "Schwab US Large-Cap ETF"
     ]
@@ -279,8 +279,8 @@
      "code": "BUG",
      "name": "Global X Cybersecurity ETF",
      "family": "",
-     "calmar": 16.69,
-     "ret": 0.8049,
+     "calmar": 13.86,
+     "ret": 0.6956,
      "mdd": -0.1359
     },
     {
@@ -288,8 +288,8 @@
      "code": "CIBR",
      "name": "First Trust NASDAQ Cybersecurity ETF",
      "family": "",
-     "calmar": 12.55,
-     "ret": 0.5705,
+     "calmar": 10.35,
+     "ret": 0.4865,
      "mdd": -0.1174
     },
     {
@@ -297,17 +297,17 @@
      "code": "ARKG",
      "name": "ARK Genomic Revolution ETF",
      "family": "",
-     "calmar": 11.57,
-     "ret": 0.6501,
-     "mdd": -0.1496
+     "calmar": 7.36,
+     "ret": 0.5167,
+     "mdd": -0.1774
     },
     {
      "rank": 4,
      "code": "XLV",
      "name": "State Street Health Care Select Sector SPDR ETF",
      "family": "",
-     "calmar": 7.87,
-     "ret": 0.2086,
+     "calmar": 7.01,
+     "ret": 0.1876,
      "mdd": -0.0587
     },
     {
@@ -315,54 +315,54 @@
      "code": "VHT",
      "name": "Vanguard Health Care ETF",
      "family": "",
-     "calmar": 7.76,
-     "ret": 0.2,
+     "calmar": 6.71,
+     "ret": 0.1749,
      "mdd": -0.0569
     },
     {
      "rank": 6,
-     "code": "VLUE",
-     "name": "iShares MSCI USA Value Factor ETF",
-     "family": "",
-     "calmar": 7.06,
-     "ret": 0.251,
-     "mdd": -0.0803
-    },
-    {
-     "rank": 7,
      "code": "IWD",
      "name": "iShares Russell 1000 Value ETF",
      "family": "",
-     "calmar": 6.74,
-     "ret": 0.1386,
+     "calmar": 6.09,
+     "ret": 0.126,
      "mdd": -0.0441
+    },
+    {
+     "rank": 7,
+     "code": "VLUE",
+     "name": "iShares MSCI USA Value Factor ETF",
+     "family": "",
+     "calmar": 5.96,
+     "ret": 0.2151,
+     "mdd": -0.0803
     },
     {
      "rank": 8,
      "code": "FNDX",
      "name": "Schwab Fundamental US Large Company ETF",
      "family": "",
-     "calmar": 6.14,
-     "ret": 0.1165,
+     "calmar": 5.53,
+     "ret": 0.1054,
      "mdd": -0.0403
     },
     {
      "rank": 9,
-     "code": "SKYY",
-     "name": "First Trust Cloud Computing ETF",
+     "code": "MGV",
+     "name": "Vanguard Morningstar Mega Cap Value ETF",
      "family": "",
-     "calmar": 5.66,
-     "ret": 0.4286,
-     "mdd": -0.1846
+     "calmar": 4.58,
+     "ret": 0.0999,
+     "mdd": -0.0459
     },
     {
      "rank": 10,
-     "code": "IBB",
-     "name": "iShares Biotechnology ETF",
+     "code": "SKYY",
+     "name": "First Trust Cloud Computing ETF",
      "family": "",
-     "calmar": 5.38,
-     "ret": 0.1912,
-     "mdd": -0.0781
+     "calmar": 4.51,
+     "ret": 0.3528,
+     "mdd": -0.1846
     }
    ]
   }
