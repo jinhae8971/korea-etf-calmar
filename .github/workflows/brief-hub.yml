@@ -1,0 +1,355 @@
+name: Brief Hub
+
+# 흩어진 브리프를 새 봇(@spytltgld_strategy_bot) 하나로 모아 기능별 별도 메시지로 발송.
+# 단일 파일 구성 — 이 파일 하나만 korea-etf-calmar/.github/workflows/brief-hub.yml 로 만들면 끝.
+# 매시 :17 실행(KST 07~21시). 기능별 발송 요일·시각·조건은 아래 schedule.json 이 판정.
+on:
+  schedule:
+    - cron: "17 22,23,0-12 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "발송 없이 판정만"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: brief-hub
+  cancel-in-progress: false
+
+jobs:
+  hub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Write hub
+        run: |
+          mkdir -p brief_hub/data
+          cat > brief_hub/schedule.json <<'JSON_EOF'
+          {
+            "_comment": "브리프 허브 발송 규칙. 시간은 KST. earliest 이후 첫 실행에서 데이터가 신선하면 보낸다. days: 0=월 … 6=일",
+            "night_guard": {"start": 7, "end": 22},
+            "stale_alert_after_hours": 4,
+            "sources": [
+              {
+                "id": "lit_rh_watch",
+                "name": "라이터RH 전환감시",
+                "path": "lit_rh_watch/data/latest.json",
+                "mode": "outbox",
+                "why": "에어드랍 전환 신호는 시간 민감 — 낮 시간 즉시 발송"
+              },
+              {
+                "id": "topsignal",
+                "name": "크립토 고점신호",
+                "path": "topsignal/data/latest.json",
+                "mode": "daily",
+                "earliest": "08:30",
+                "days": [0, 1, 2, 3, 4, 5, 6],
+                "fresh_key": "as_of_kst",
+                "why": "24시간 시장 · 매일 아침 첫 브리프 (수집 07:48)"
+              },
+              {
+                "id": "btc_macro",
+                "name": "BTC 매크로 레이더",
+                "path": "btc_macro/data/latest.json",
+                "mode": "daily",
+                "earliest": "08:40",
+                "days": [1, 2, 3, 4, 5],
+                "fresh_key": "as_of_kst",
+                "why": "미국 거래일 종가 기반 · 화~토 아침 (수집 07:36)"
+              },
+              {
+                "id": "alpha_radar",
+                "name": "알파 추세 레이더",
+                "path": "alpha_radar/data/latest.json",
+                "mode": "daily",
+                "earliest": "09:30",
+                "days": [0, 1, 2, 3, 4, 5, 6],
+                "fresh_key": "as_of_kst",
+                "why": "UTC 일봉 마감(09:00 KST) 직후 · 매일 (수집 09:07)"
+              },
+              {
+                "id": "onchain_liquidity",
+                "name": "온체인 유동성",
+                "path": "onchain_liquidity/data/latest.json",
+                "mode": "on_change",
+                "earliest": "08:50",
+                "weekly_day": 0,
+                "fresh_key": "as_of",
+                "change_key": "state",
+                "alert_key": "alert",
+                "why": "느린 지표 · 국면 변화·경보 시 즉시, 평소엔 월요일 정기 1회"
+              },
+              {
+                "id": "hood_chainrev",
+                "name": "체인 수익 순위",
+                "path": "hood_chainrev/data/latest.json",
+                "mode": "weekly_or_event",
+                "earliest": "10:00",
+                "weekly_day": 0,
+                "fresh_key": "as_of_date",
+                "event_levels": ["high"],
+                "why": "30일 누적 순위라 변화가 느림 · 월요일 정기 + 큰 변화(high) 시"
+              },
+              {
+                "id": "physical_ai",
+                "name": "피지컬 AI·로봇 사이클",
+                "path": "docs/physical-ai/data/latest.json",
+                "mode": "weekly_or_event",
+                "earliest": "10:30",
+                "weekly_day": 0,
+                "fresh_key": "generated_at",
+                "alert_levels": ["WARN", "ALERT", "HIGH"],
+                "why": "월 1회 수준으로 변하는 사이클 · 월요일 수집(08:00) 후 주 1회"
+              }
+            ]
+          }
+          JSON_EOF
+          cat > brief_hub/hub.py <<'PY_EOF'
+          """브리프 허브 — 흩어진 브리프를 봇 하나(@spytltgld_strategy_bot)로 모아 기능별 별도 메시지로 보낸다.
+
+          각 수집기가 커밋한 latest.json의 완성된 본문(message/message_full/outbox)을 읽어
+          schedule.json의 규칙(기능별 최적 요일·시각·조건)에 맞춰 발송한다. 포매팅은 원본이 담당한다.
+
+          사용:  python brief_hub/hub.py [--dry-run] [--now 2026-10-19T09:40]
+          환경:  HUB_BOT_TOKEN, TELEGRAM_CHAT_ID  (dry-run이면 불필요)
+          """
+          from __future__ import annotations
+
+          import argparse, json, os, re, sys, urllib.error, urllib.parse, urllib.request
+          from datetime import datetime, timedelta, timezone
+
+          KST = timezone(timedelta(hours=9))
+          HERE = os.path.dirname(os.path.abspath(__file__))
+          ROOT = os.path.dirname(HERE)                       # 레포 루트 (수집기 데이터 위치)
+          STATE_PATH = os.path.join(HERE, "data", "sent.json")
+          LIMIT = 3900                                       # 텔레그램 4096자 여유분
+
+
+          # ---------- 데이터 읽기 ----------
+          def load_json(path: str):
+              with open(path, encoding="utf-8") as f:
+                  return json.load(f)
+
+
+          def data_date(d: dict, key: str) -> str | None:
+              """fresh_key 값을 KST 날짜(YYYY-MM-DD)로 정규화."""
+              v = d.get(key)
+              if v is None:
+                  return None
+              if isinstance(v, (int, float)):
+                  return datetime.fromtimestamp(v, KST).strftime("%Y-%m-%d")
+              m = re.match(r"(\d{4}-\d{2}-\d{2})", str(v))
+              if not m:
+                  return None
+              s = str(v)
+              if "T" in s and ("+" in s[10:] or s.endswith("Z")):      # 시각대가 있는 ISO → KST로 환산
+                  try:
+                      return datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(KST).strftime("%Y-%m-%d")
+                  except ValueError:
+                      pass
+              return m.group(1)
+
+
+          def body_of(d: dict) -> str | None:
+              for k in ("message", "message_full"):
+                  if isinstance(d.get(k), str) and d[k].strip():
+                      return d[k]
+              return None
+
+
+          def hm(s: str) -> tuple[int, int]:
+              h, m = s.split(":")
+              return int(h), int(m)
+
+
+          # ---------- 판정 ----------
+          def decide(src: dict, d: dict | None, st: dict, now: datetime, stale_hours: int) -> tuple[str | None, dict, str]:
+              """(보낼 본문 | None, 갱신할 상태, 사유) 를 돌려준다."""
+              today = now.strftime("%Y-%m-%d")
+              wd = now.weekday()
+              new = dict(st)
+              mode = src["mode"]
+
+              if d is None:
+                  return None, new, "데이터 파일 없음"
+
+              if mode == "outbox":
+                  ob = d.get("outbox")
+                  if ob and ob.get("text") and ob.get("id") != st.get("last_key"):
+                      new["last_key"] = ob["id"]
+                      return ob["text"], new, f"outbox {ob.get('kind')}"
+                  return None, new, "새 outbox 없음"
+
+              eh, em = hm(src["earliest"])
+              if (now.hour, now.minute) < (eh, em):
+                  return None, new, "발송 시각 전"
+
+              ddate = data_date(d, src["fresh_key"])
+              fresh = ddate == today
+              body = body_of(d)
+              already = st.get("last_key") == ddate
+
+              due_today = (mode == "daily" and wd in src["days"]) or \
+                          (mode in ("on_change", "weekly_or_event") and wd == src.get("weekly_day"))
+
+              if not fresh:
+                  # 정기 발송일인데 데이터가 안 들어오면 하루 한 번만 지연 알림
+                  limit = now.replace(hour=eh, minute=em) + timedelta(hours=stale_hours)
+                  if due_today and now >= limit and st.get("stale_alerted") != today:
+                      new["stale_alerted"] = today
+                      return (f"⚠️ <b>{src['name']}</b> 오늘 데이터가 아직 없습니다 (마지막 {ddate or '?'}). "
+                              f"수집 워크플로우를 확인해 주세요."), new, "지연 알림"
+                  return None, new, f"데이터 미갱신 (as_of {ddate})"
+
+              if already or not body:
+                  return None, new, "이미 발송" if already else "본문 없음"
+
+              send, why = False, ""
+              if mode == "daily":
+                  send, why = wd in src["days"], "정기"
+              elif mode == "on_change":
+                  state, alert = d.get(src["change_key"]), bool(d.get(src["alert_key"]))
+                  if st.get("last_state") is not None and state != st.get("last_state"):
+                      send, why = True, f"국면 변화 {st.get('last_state')}→{state}"
+                  elif alert and not st.get("last_alert"):
+                      send, why = True, "경보 발생"
+                  elif wd == src["weekly_day"]:
+                      send, why = True, "주간 정기"
+                  new["last_state"], new["last_alert"] = state, alert
+              elif mode == "weekly_or_event":
+                  if wd == src["weekly_day"]:
+                      send, why = True, "주간 정기"
+                  lv = set(src.get("event_levels", []))
+                  sigs = sorted(f"{e.get('code')}:{e.get('chain') or e.get('symbol') or ''}"
+                                for e in (d.get("events") or []) if isinstance(e, dict) and e.get("level") in lv)
+                  al = d.get("alert") if isinstance(d.get("alert"), dict) else {}
+                  if al.get("level") in set(src.get("alert_levels", [])):
+                      sigs.append(f"alert:{al.get('level')}")
+                  sig = "|".join(sigs)
+                  if sig and sig != st.get("last_event_sig"):
+                      send, why = True, why or "주요 변화"
+                  if sig:
+                      new["last_event_sig"] = sig
+
+              if not send:
+                  return None, new, "조건 미충족 (변화 없음)"
+              new["last_key"] = ddate
+              return body, new, why
+
+
+          # ---------- 발송 ----------
+          def split(text: str) -> list[str]:
+              if len(text) <= LIMIT:
+                  return [text]
+              parts, cur = [], ""
+              for line in text.split("\n"):
+                  if len(cur) + len(line) + 1 > LIMIT and cur:
+                      parts.append(cur)
+                      cur = ""
+                  cur += (("\n" if cur else "") + line)
+              if cur:
+                  parts.append(cur)
+              return parts
+
+
+          def tg_send(token: str, chat: str, text: str) -> None:
+              def post(payload: dict) -> None:
+                  req = urllib.request.Request(
+                      f"https://api.telegram.org/bot{token}/sendMessage",
+                      data=urllib.parse.urlencode(payload).encode(), method="POST")
+                  with urllib.request.urlopen(req, timeout=20) as r:
+                      r.read()
+
+              for part in split(text):
+                  base = {"chat_id": chat, "text": part, "disable_web_page_preview": "true"}
+                  try:
+                      post({**base, "parse_mode": "HTML"})
+                  except urllib.error.HTTPError as e:
+                      if e.code != 400:
+                          raise
+                      post({**base, "text": re.sub(r"<[^>]+>", "", part)})    # 태그 오류 시 평문 재시도
+
+
+          # ---------- 메인 ----------
+          def run(now: datetime, dry: bool, root: str = ROOT, state_path: str = STATE_PATH) -> list[tuple[str, str, bool]]:
+              cfg = load_json(os.path.join(HERE, "schedule.json"))
+              ng = cfg["night_guard"]
+              if not (ng["start"] <= now.hour < ng["end"]):
+                  print(f"[night] {now:%H:%M} KST — 야간 발송 금지 창, 종료")
+                  return []
+              state = load_json(state_path) if os.path.exists(state_path) else {}
+              token, chat = os.environ.get("HUB_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+              if not dry and not (token and chat):
+                  sys.exit("HUB_BOT_TOKEN / TELEGRAM_CHAT_ID 가 없습니다")
+
+              log, failed = [], False
+              for src in cfg["sources"]:
+                  p = os.path.join(root, src["path"])
+                  try:
+                      d = load_json(p) if os.path.exists(p) else None
+                  except (OSError, json.JSONDecodeError):
+                      d = None
+                  st = state.get(src["id"], {})
+                  text, new, why = decide(src, d, st, now, cfg["stale_alert_after_hours"])
+                  sent = False
+                  if text:
+                      if dry:
+                          print(f"\n----- [{src['name']}] {why} -----\n{text}")
+                          sent = True
+                      else:
+                          try:
+                              tg_send(token, chat, text)
+                              sent = True
+                          except Exception as e:                      # 한 기능 실패가 나머지를 막지 않게
+                              failed = True
+                              print(f"[error] {src['id']}: {e}")
+                      if sent:
+                          state[src["id"]] = new
+                  else:
+                      state[src["id"]] = {k: v for k, v in new.items() if k != "last_key"} | (
+                          {"last_key": st["last_key"]} if "last_key" in st else {})
+                  print(f"[{'SEND' if sent else 'skip'}] {src['id']:<18} {why}")
+                  log.append((src["id"], why, sent))
+
+              os.makedirs(os.path.dirname(state_path), exist_ok=True)
+              with open(state_path, "w", encoding="utf-8") as f:
+                  json.dump(state, f, ensure_ascii=False, indent=1, sort_keys=True)
+              if failed:
+                  sys.exit(1)
+              return log
+
+
+          if __name__ == "__main__":
+              ap = argparse.ArgumentParser()
+              ap.add_argument("--dry-run", action="store_true")
+              ap.add_argument("--now", help="KST 시각 지정 (테스트용) 예: 2026-10-19T09:40")
+              ap.add_argument("--root", default=ROOT)
+              ap.add_argument("--state", default=STATE_PATH)
+              a = ap.parse_args()
+              now = datetime.fromisoformat(a.now).replace(tzinfo=KST) if a.now else datetime.now(KST)
+              run(now, a.dry_run, a.root, a.state)
+          PY_EOF
+      - name: Run hub
+        env:
+          HUB_BOT_TOKEN: ${{ secrets.HUB_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY" = "true" ]; then python brief_hub/hub.py --dry-run; else python brief_hub/hub.py; fi
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add brief_hub/data/sent.json
+          git diff --staged --quiet && exit 0
+          git commit -m "chore(brief-hub): sent state"
+          for i in 1 2 3; do git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break || sleep 6; done
