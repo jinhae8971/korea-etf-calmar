@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26226868,
-  "rh": 92644320
+  "eth": 26228857,
+  "rh": 92879167
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -9,8 +9,8 @@
    "hash": "2d4d502a36ea3ea5"
   },
   "https://docs.lighter.xyz/llms.txt": {
-   "changed": 1791985475,
-   "hash": "248163be9676a6e4"
+   "changed": 1792439853,
+   "hash": "c539f1fcc80c1997"
   },
   "https://docs.lighter.xyz/points-program.md": {
    "changed": 1790638034,
@@ -22,6 +22,207 @@
   }
  },
  "events": [
+  {
+   "detail": "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "861dfe55e8f4",
+   "ref": {
+    "added": [
+     "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
+     "- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)",
+     "- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)"
+    ],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: llms.txt",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f1d42aac953d",
+   "ref": {
+    "name": "BOOrderNotification"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: BOOrderNotification",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "5da204eaeea3",
+   "ref": {
+    "name": "CoinSelector"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: CoinSelector",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "53b00c9aa1e3",
+   "ref": {
+    "name": "ErrorState"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: ErrorState",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "354901a90d04",
+   "ref": {
+    "name": "FilterToggle"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: FilterToggle",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "762e96bf5593",
+   "ref": {
+    "name": "MarketCell"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: MarketCell",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "4a7164bd4725",
+   "ref": {
+    "name": "NoItemsWithFilter"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: NoItemsWithFilter",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "9ca1dd2dbc84",
+   "ref": {
+    "name": "PercentageSlider"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: PercentageSlider",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f1acac90b211",
+   "ref": {
+    "name": "PriceToBeatMoveLabel"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: PriceToBeatMoveLabel",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "55873934e6d4",
+   "ref": {
+    "name": "bo"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: bo",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "6a1b414f712e",
+   "ref": {
+    "name": "boardWindows"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: boardWindows",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "a6a7070843f9",
+   "ref": {
+    "name": "detail"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: detail",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "22524920d62a",
+   "ref": {
+    "name": "getPaidFees"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: getPaidFees",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "19e6de7f34b0",
+   "ref": {
+    "name": "subscribeCandleForeground"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: subscribeCandleForeground",
+   "ts": 1792439853
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNOWlkdmVpOGQxUEJLc09TRDRFSFppXy04V05TYWctVTY2UFZNci1VMmNtQ0FPQ0ZJQVRMemZ3d1Q1ZTR3VEpvWUR",
    "family": "S4",
@@ -380,24 +581,10 @@
    "signal": "fe_chunk",
    "title": "화면 모듈 추가: usePriceOracle",
    "ts": 1791907236
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5QOTR5ZmIxa2pYSUtzdGpOaUg4VWNkT0hiSU5FTklkOEs2VGZHWldiZ0lHNXVwRnpPeDEtcE1wc3pHYkdrbkR3czN",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "1fc1ee302bef",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5QOTR5ZmIxa2pYSUtzdGpOaUg4VWNkT0hiSU5FTklkOEs2VGZHWldiZ0lHNXVwRnpPeDEtcE1wc3pHYkdrbkR3czNIZDVtdUxYa0R5OC1RS09DUUdpZlYwUXFmVk1YQ2piajRNbHZhNVBpSE12Tm1ybDhJQl9MRm8?oc=5"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: Lighter.xyz Cracks Down on Sybil Activity as $LIT Airdrop Ec",
-   "ts": 1791818891
   }
  ],
  "families": [],
- "generated_at": 1792415921,
+ "generated_at": 1792439853,
  "lb_hist": [
   [
    1790638034,
@@ -818,11 +1005,217 @@
    1792415921,
    192121.107,
    45513.53
+  ],
+  [
+   1792439853,
+   192418.409,
+   45638.664
   ]
  ],
  "level": "WATCH",
  "note": "",
  "recent_all": [
+  {
+   "detail": "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "861dfe55e8f4",
+   "ref": {
+    "added": [
+     "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
+     "- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)",
+     "- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)"
+    ],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: llms.txt",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f1d42aac953d",
+   "ref": {
+    "name": "BOOrderNotification"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: BOOrderNotification",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "5da204eaeea3",
+   "ref": {
+    "name": "CoinSelector"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: CoinSelector",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "53b00c9aa1e3",
+   "ref": {
+    "name": "ErrorState"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: ErrorState",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "354901a90d04",
+   "ref": {
+    "name": "FilterToggle"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: FilterToggle",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "762e96bf5593",
+   "ref": {
+    "name": "MarketCell"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: MarketCell",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "4a7164bd4725",
+   "ref": {
+    "name": "NoItemsWithFilter"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: NoItemsWithFilter",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "9ca1dd2dbc84",
+   "ref": {
+    "name": "PercentageSlider"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: PercentageSlider",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f1acac90b211",
+   "ref": {
+    "name": "PriceToBeatMoveLabel"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: PriceToBeatMoveLabel",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "55873934e6d4",
+   "ref": {
+    "name": "bo"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: bo",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "6a1b414f712e",
+   "ref": {
+    "name": "boardWindows"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: boardWindows",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "a6a7070843f9",
+   "ref": {
+    "name": "detail"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: detail",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "22524920d62a",
+   "ref": {
+    "name": "getPaidFees"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: getPaidFees",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "19e6de7f34b0",
+   "ref": {
+    "name": "subscribeCandleForeground"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: subscribeCandleForeground",
+   "ts": 1792439853
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNOWlkdmVpOGQxUEJLc09TRDRFSFppXy04V05TYWctVTY2UFZNci1VMmNtQ0FPQ0ZJQVRMemZ3d1Q1ZTR3VEpvWUR",
    "family": "S4",
@@ -1681,10 +2074,6 @@
  ],
  "rh_supply_hist": [
   [
-   1791211343,
-   424378.83
-  ],
-  [
    1791239922,
    421878.83
   ],
@@ -1907,57 +2296,61 @@
   [
    1792415921,
    451620.94
+  ],
+  [
+   1792439853,
+   451620.94
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792415921,
-   "note": "2567블록 · 대량 0건",
+   "at": 1792439853,
+   "note": "1989블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792415921,
-   "note": "모듈 127 · API 127",
+   "at": 1792439853,
+   "note": "모듈 137 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792415921,
-   "note": "상위10 합계 192,121",
+   "at": 1792439853,
+   "note": "상위10 합계 192,418",
    "ok": true
   },
   "news": {
-   "at": 1792415921,
-   "note": "117건",
+   "at": 1792439853,
+   "note": "118건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "451,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792415921,
-   "note": "39건",
+   "at": 1792439853,
+   "note": "20건",
    "ok": true
   }
  }

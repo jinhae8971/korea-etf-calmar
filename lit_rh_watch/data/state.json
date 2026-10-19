@@ -114,8 +114,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26226868,
-  "rh": 92644320
+  "eth": 26228857,
+  "rh": 92879167
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -124,9 +124,9 @@
    "text": "# LIT Utility\n\nLighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n\n### Staking\n\nThe **LIT Staking Pool** (<https://app.lighter.xyz/staking>) is designed to align long-term participants with the core economics of the protocol. By staking LIT, participants gain access to platform benefits aligned with how they interact with the exchange. Unstaking is subject to a 3-day lockup period.\n\nActive Staking Programs:\n\n* LLP Access\n* Staking APR\n\n#### LLP Access\n\nAs part of our approach to offering access to niche financial products, the Lighter Liquidity Pool (LLP) is now exclusively accessible to LIT stakers. For every 1 LIT staked, participants may deposit up to 10 USDC into the LLP.\n\n#### Staking APR\n\nStaking participants currently earn a fixed 6% APR through staking rewards. LIT is bought from `0xADbE1265C0df1B623A56d324De494Bcb8e8914Ff` for these rewards.\n\n### Buybacks\n\nLIT is bought back by the protocol using trading fee revenue. Buybacks are executed via daily 24-hour TWAPs, with the flexibility to use shorter timeframes depending on market conditions.\n\nThe treasury account that conducts these is `0x0000000000000000000000000000000000000000`"
   },
   "https://docs.lighter.xyz/llms.txt": {
-   "changed": 1791985475,
-   "hash": "248163be9676a6e4",
-   "text": "# Lighter Docs\n\n## Lighter Docs\n\n- [Introduction](https://docs.lighter.xyz/about-lighter/introduction.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md): Lighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md): Available to be enabled only on web for now.\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [RWA Pricing Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/rwa-pricing-mechanism.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [perpRFQ](https://docs.lighter.xyz/trading/perprfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Referral Program](https://docs.lighter.xyz/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/liquidity-partner-program.md)\n- [Points Program](https://docs.lighter.xyz/points-program.md)\n- [Market Makers](https://docs.lighter.xyz/points-program/market-makers.md): Points Season 2 ended on December 26th 2025.\n- [Retail](https://docs.lighter.xyz/points-program/retail.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md)\n- [Partner Attribution](https://docs.lighter.xyz/integrations/partner-attribution.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)"
+   "changed": 1792439853,
+   "hash": "c539f1fcc80c1997",
+   "text": "# Lighter Docs\n\n## Lighter Docs\n\n- [Introduction](https://docs.lighter.xyz/about-lighter/introduction.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md): Lighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md): Available to be enabled only on web for now.\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [RWA Pricing Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/rwa-pricing-mechanism.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [perpRFQ](https://docs.lighter.xyz/trading/perprfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)\n- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Referral Program](https://docs.lighter.xyz/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/liquidity-partner-program.md)\n- [Points Program](https://docs.lighter.xyz/points-program.md)\n- [Market Makers](https://docs.lighter.xyz/points-program/market-makers.md): Points Season 2 ended on December 26th 2025.\n- [Retail](https://docs.lighter.xyz/points-program/retail.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md)\n- [Partner Attribution](https://docs.lighter.xyz/integrations/partner-attribution.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)"
   },
   "https://docs.lighter.xyz/points-program.md": {
    "changed": 1790638034,
@@ -994,6 +994,207 @@
    "signal": "news",
    "title": "뉴스: Perp-DEX Lighter Announces Airdrop - ForkLog",
    "ts": 1792362376
+  },
+  {
+   "detail": "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "861dfe55e8f4",
+   "ref": {
+    "added": [
+     "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
+     "- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)",
+     "- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)"
+    ],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: llms.txt",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f1d42aac953d",
+   "ref": {
+    "name": "BOOrderNotification"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: BOOrderNotification",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "5da204eaeea3",
+   "ref": {
+    "name": "CoinSelector"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: CoinSelector",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "53b00c9aa1e3",
+   "ref": {
+    "name": "ErrorState"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: ErrorState",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "354901a90d04",
+   "ref": {
+    "name": "FilterToggle"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: FilterToggle",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "762e96bf5593",
+   "ref": {
+    "name": "MarketCell"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: MarketCell",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "4a7164bd4725",
+   "ref": {
+    "name": "NoItemsWithFilter"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: NoItemsWithFilter",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "9ca1dd2dbc84",
+   "ref": {
+    "name": "PercentageSlider"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: PercentageSlider",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f1acac90b211",
+   "ref": {
+    "name": "PriceToBeatMoveLabel"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: PriceToBeatMoveLabel",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "55873934e6d4",
+   "ref": {
+    "name": "bo"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: bo",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "6a1b414f712e",
+   "ref": {
+    "name": "boardWindows"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: boardWindows",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "a6a7070843f9",
+   "ref": {
+    "name": "detail"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: detail",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "22524920d62a",
+   "ref": {
+    "name": "getPaidFees"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: getPaidFees",
+   "ts": 1792439853
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "19e6de7f34b0",
+   "ref": {
+    "name": "subscribeCandleForeground"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "화면 모듈 추가: subscribeCandleForeground",
+   "ts": 1792439853
   }
  ],
  "fail_streak": 0,
@@ -1134,6 +1335,7 @@
    "ActionButtonBlocker",
    "AiChatDock",
    "Analytics",
+   "BOOrderNotification",
    "Badge",
    "Banners",
    "BatchPage",
@@ -1144,21 +1346,26 @@
    "ChartEmptyState",
    "ChartSkeleton",
    "CheckboxSelector",
+   "CoinSelector",
    "CompetitionLeaderboard",
    "DepthChart",
+   "ErrorState",
    "ExplorerSearch",
+   "FilterToggle",
    "FundingRateChart",
    "InlineBanner",
    "Input",
    "KLineChart",
    "Line",
    "LogPage",
+   "MarketCell",
    "MarketPage",
    "MarketsTable",
    "MobileCollapsibleCards",
    "MobileList",
    "Modal",
    "NewVersionNotification",
+   "NoItemsWithFilter",
    "NoMarketsFound",
    "NoOrdersText",
    "NotFoundExplorer",
@@ -1167,11 +1374,13 @@
    "PageGate",
    "PageSelector",
    "PageShell",
+   "PercentageSlider",
    "PillTabs",
    "PnlCalendarWrapper",
    "PnlLeaderboard",
    "PointsLeaderboard",
    "PoolPageSkeleton",
+   "PriceToBeatMoveLabel",
    "QuickOrder",
    "RequestMarket",
    "SavedFeeCardModal",
@@ -1197,6 +1406,8 @@
    "announcements",
    "apikeys",
    "blockexplorer",
+   "bo",
+   "boardWindows",
    "changelog",
    "chartColors",
    "cn",
@@ -1205,6 +1416,7 @@
    "constants",
    "dateRange",
    "design-system",
+   "detail",
    "dist",
    "esm",
    "exchange-stats",
@@ -1213,6 +1425,7 @@
    "funding-markets-risk-params",
    "fundingCountdown",
    "gateway",
+   "getPaidFees",
    "history",
    "i18next",
    "index",
@@ -1233,6 +1446,7 @@
    "staking-pool",
    "stockFormatting",
    "sub-accounts",
+   "subscribeCandleForeground",
    "timeAgo",
    "types",
    "useAccountExistence",
@@ -1699,6 +1913,11 @@
    1792415921,
    192121.107,
    45513.53
+  ],
+  [
+   1792439853,
+   192418.409,
+   45638.664
   ]
  ],
  "level": "WATCH",
@@ -1831,6 +2050,7 @@
   "93a4eccd07c5",
   "9514eccc3ea4",
   "96b150c50794",
+  "98ae181eba6d",
   "9b44188e2991",
   "9dcd0dfea6b9",
   "9dcf65bee4be",
@@ -1895,6 +2115,7 @@
   "eee7b21705bc",
   "f0becf9d6270",
   "f1b574b32249",
+  "f21f09b41226",
   "f22926fdfb83",
   "f53b6162e6a3",
   "f56765a2e0aa",
@@ -1915,10 +2136,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1791211343,
-   424378.83
-  ],
   [
    1791239922,
    421878.83
@@ -2142,58 +2359,62 @@
   [
    1792415921,
    451620.94
+  ],
+  [
+   1792439853,
+   451620.94
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792415921,
-   "note": "2567블록 · 대량 0건",
+   "at": 1792439853,
+   "note": "1989블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792415921,
-   "note": "모듈 127 · API 127",
+   "at": 1792439853,
+   "note": "모듈 137 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792415921,
-   "note": "상위10 합계 192,121",
+   "at": 1792439853,
+   "note": "상위10 합계 192,418",
    "ok": true
   },
   "news": {
-   "at": 1792415921,
-   "note": "117건",
+   "at": 1792439853,
+   "note": "118건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "451,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792415921,
+   "at": 1792439853,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792415921,
-   "note": "39건",
+   "at": 1792439853,
+   "note": "20건",
    "ok": true
   }
  },
