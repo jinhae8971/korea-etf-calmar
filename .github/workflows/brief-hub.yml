@@ -69,16 +69,6 @@ jobs:
                 "why": "미국 거래일 종가 기반 · 화~토 아침 (수집 07:36)"
               },
               {
-                "id": "alpha_radar",
-                "name": "알파 추세 레이더",
-                "path": "alpha_radar/data/latest.json",
-                "mode": "daily",
-                "earliest": "09:30",
-                "days": [0, 1, 2, 3, 4, 5, 6],
-                "fresh_key": "as_of_kst",
-                "why": "UTC 일봉 마감(09:00 KST) 직후 · 매일 (수집 09:07)"
-              },
-              {
                 "id": "onchain_liquidity",
                 "name": "온체인 유동성",
                 "path": "onchain_liquidity/data/latest.json",
@@ -100,17 +90,6 @@ jobs:
                 "fresh_key": "as_of_date",
                 "event_levels": ["high"],
                 "why": "30일 누적 순위라 변화가 느림 · 월요일 정기 + 큰 변화(high) 시"
-              },
-              {
-                "id": "physical_ai",
-                "name": "피지컬 AI·로봇 사이클",
-                "path": "docs/physical-ai/data/latest.json",
-                "mode": "weekly_or_event",
-                "earliest": "10:30",
-                "weekly_day": 0,
-                "fresh_key": "generated_at",
-                "alert_levels": ["WARN", "ALERT", "HIGH"],
-                "why": "월 1회 수준으로 변하는 사이클 · 월요일 수집(08:00) 후 주 1회"
               }
             ]
           }
