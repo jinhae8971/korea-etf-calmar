@@ -57,7 +57,9 @@ TH = {
 PRICE_BASKET = [("coingecko:ethereum", 0.70), ("coingecko:bitcoin", 0.30)]
 
 WATCH_CHAINS = ["Ethereum", "Tron", "Solana", "BSC", "Base", "Arbitrum",
-                "Hyperliquid L1", "Polygon"]
+                "Hyperliquid L1", "Polygon", "Robinhood Chain"]
+# 이동폭 상위 4개에 못 들어도 텔레그램에 항상 표시할 체인 (2026-10-19 추가)
+PINNED_CHAINS = ["Robinhood Chain"]
 
 KST = dt.timezone(dt.timedelta(hours=9))
 UA_POOL = [
@@ -491,10 +493,12 @@ def render_telegram(m, state, reasons, streak, demoted, degraded, as_of):
 
     if m["chains"]:
         mv = sorted(m["chains"], key=lambda x: -abs(x["p7"]))[:4]
+        mv += [c for c in m["chains"]
+               if c["chain"] in PINNED_CHAINS and c not in mv]
         L.append("")
         L.append("<b>⛓ 체인별 스테이블 7일 이동</b>")
         for c in mv:
-            L.append("  %s %-14s %s  (%s)" % (
+            L.append("  %s %-15s %s  (%s)" % (
                 dot(c["p7"], 0.3), c["chain"], signed(c["p7"], "%", 2), money(c["abs7"])))
 
     L.append("")

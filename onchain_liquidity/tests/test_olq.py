@@ -190,6 +190,22 @@ class TestRender(unittest.TestCase):
         self.assertIn("온체인 유동성", msg)
         self.assertLess(len(msg), 4000)  # 텔레그램 단일 메시지 한도
 
+    def test_pinned_chain_always_shown(self):
+        m = self._full()
+        m["chains"] = [{"chain": n, "cur": 1e10, "p1": 0.0, "p7": p, "abs7": 1e8}
+                       for n, p in (("Arbitrum", -6.0), ("Solana", -2.0), ("Base", 3.0),
+                                    ("Polygon", -2.3), ("Robinhood Chain", -0.1))]
+        msg = olq.render_telegram(m, "NEUTRAL", ["r"], 1, False, False, "2026-10-19")
+        self.assertIn("Robinhood Chain", msg)
+        self.assertEqual(msg.count("Robinhood Chain"), 1)
+        m["chains"][4]["p7"] = -9.0  # 상위권이어도 중복 없이 한 번만
+        msg = olq.render_telegram(m, "NEUTRAL", ["r"], 1, False, False, "2026-10-19")
+        self.assertEqual(msg.count("Robinhood Chain"), 1)
+
+    def test_robinhood_in_watch_list(self):
+        self.assertIn("Robinhood Chain", olq.WATCH_CHAINS)
+        self.assertTrue(set(olq.PINNED_CHAINS) <= set(olq.WATCH_CHAINS))
+
     def test_degraded_and_demoted_banners(self):
         msg = olq.render_telegram(self._full(), "SOFTEN", ["r"], 1, True, True, "2026-09-08")
         self.assertIn("DEGRADED", msg)
