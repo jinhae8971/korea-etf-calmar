@@ -12,6 +12,9 @@ on:
   schedule:
     - cron: "46 22 * * *"      # KST 07:46 — 23:xx UTC 슬롯은 큐 혼잡으로 100분씩 밀림
   workflow_dispatch:
+  push:                         # 원격 세션용 실행 경로 — 이 파일만 바꾸면 1회 실행
+    branches: [main]
+    paths: ["onchain_liquidity/.run"]
 
 permissions:
   contents: write
