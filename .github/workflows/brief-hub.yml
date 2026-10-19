@@ -319,6 +319,8 @@ jobs:
                   print(f"[{'SEND' if sent else 'skip'}] {src['id']:<18} {why}")
                   log.append((src["id"], why, sent))
 
+              if dry:                                            # 모의 실행은 발송 기록을 남기지 않음
+                  return log
               os.makedirs(os.path.dirname(state_path), exist_ok=True)
               with open(state_path, "w", encoding="utf-8") as f:
                   json.dump(state, f, ensure_ascii=False, indent=1, sort_keys=True)
@@ -349,6 +351,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          [ -f brief_hub/data/sent.json ] || exit 0
           git add brief_hub/data/sent.json
           git diff --staged --quiet && exit 0
           git commit -m "chore(brief-hub): sent state"
