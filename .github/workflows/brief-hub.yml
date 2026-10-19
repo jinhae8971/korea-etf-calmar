@@ -6,6 +6,9 @@ name: Brief Hub
 on:
   schedule:
     - cron: "17 22,23,0-12 * * *"
+  push:
+    branches: [main]
+    paths: [".github/workflows/brief-hub.yml"]
   workflow_dispatch:
     inputs:
       dry_run:
