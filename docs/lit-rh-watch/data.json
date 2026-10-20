@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26233549,
-  "rh": 93422708
+  "eth": 26235189,
+  "rh": 93612402
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -441,164 +441,10 @@
    "signal": "eth_large",
    "title": "ETH LIT 4.16M 대량 이동",
    "ts": 1791976271
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "7f1560486cb4",
-   "ref": {
-    "name": "Analytics"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: Analytics",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "cf2e4abb3ce9",
-   "ref": {
-    "name": "InlineBanner"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: InlineBanner",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "3d1917374b23",
-   "ref": {
-    "name": "KLineChart"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: KLineChart",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "9b48201173b4",
-   "ref": {
-    "name": "QuickOrder"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: QuickOrder",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "3cece6f162db",
-   "ref": {
-    "name": "ToggleSwitch"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: ToggleSwitch",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "511a0e3f4a6a",
-   "ref": {
-    "name": "i18next"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: i18next",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "439f75c5444e",
-   "ref": {
-    "name": "maintenance"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: maintenance",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "554ff846168d",
-   "ref": {
-    "name": "useAccountExistence"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: useAccountExistence",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "a209f83292ba",
-   "ref": {
-    "name": "useCancelOrder"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: useCancelOrder",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "dd44e638bcdd",
-   "ref": {
-    "name": "useIntegratorApproval"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: useIntegratorApproval",
-   "ts": 1791907236
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "3d3471191ee5",
-   "ref": {
-    "name": "usePriceOracle"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: usePriceOracle",
-   "ts": 1791907236
   }
  ],
  "families": [],
- "generated_at": 1792496360,
+ "generated_at": 1792516142,
  "lb_hist": [
   [
    1790638034,
@@ -1039,6 +885,11 @@
    1792496360,
    192840.314,
    45834.297
+  ],
+  [
+   1792516142,
+   193241.274,
+   46009.586
   ]
  ],
  "level": "WATCH",
@@ -2117,10 +1968,6 @@
  ],
  "rh_supply_hist": [
   [
-   1791299600,
-   421878.83
-  ],
-  [
    1791320379,
    421878.83
   ],
@@ -2347,56 +2194,60 @@
   [
    1792496360,
    451620.94
+  ],
+  [
+   1792516142,
+   451620.94
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792496360,
+   "at": 1792516142,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792496360,
+   "at": 1792516142,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792496360,
-   "note": "2024블록 · 대량 0건",
+   "at": 1792516142,
+   "note": "1640블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792496360,
+   "at": 1792516142,
    "note": "모듈 137 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792496360,
-   "note": "상위10 합계 192,840",
+   "at": 1792516142,
+   "note": "상위10 합계 193,241",
    "ok": true
   },
   "news": {
-   "at": 1792496360,
-   "note": "115건",
+   "at": 1792516142,
+   "note": "114건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792496360,
+   "at": 1792516142,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792496360,
+   "at": 1792516142,
    "note": "451,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792496360,
+   "at": 1792516142,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792496360,
+   "at": 1792516142,
    "note": "39건",
    "ok": true
   }
