@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26239537,
-  "rh": 94115155
+  "eth": 26241375,
+  "rh": 94329328
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -408,43 +408,10 @@
    "signal": "news",
    "title": "뉴스: Lighter’s $675M LIT Airdrop Becomes 10th Largest in Crypto H",
    "ts": 1792063890
-  },
-  {
-   "detail": "삭제·서식 변경",
-   "family": "S2",
-   "grade": "WATCH",
-   "id": "313e5479bfec",
-   "ref": {
-    "added": [],
-    "url": "https://docs.lighter.xyz/llms.txt"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "doc_change",
-   "title": "문서 문구 변경: llms.txt",
-   "ts": 1791985475
-  },
-  {
-   "detail": "0xfa2d7c37→0xa9d1e08c",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "248d6a734452",
-   "ref": {
-    "amount": 4163975.13,
-    "chain": "eth",
-    "from": "0xfa2d7c3767b08087db725fee6661ef0c114fea2c",
-    "to": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
-    "tx": "0x227107fde2075bfa3decb320b188185cdddcf448e8333739ce1f43733751223d"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 4.16M 대량 이동",
-   "ts": 1791976271
   }
  ],
  "families": [],
- "generated_at": 1792568452,
+ "generated_at": 1792590563,
  "lb_hist": [
   [
    1790638034,
@@ -905,6 +872,11 @@
    1792568452,
    194144.095,
    46229.32
+  ],
+  [
+   1792590563,
+   194467.446,
+   46343.38
   ]
  ],
  "level": "WATCH",
@@ -1983,10 +1955,6 @@
  ],
  "rh_supply_hist": [
   [
-   1791362447,
-   421878.83
-  ],
-  [
    1791394002,
    421878.83
   ],
@@ -2217,56 +2185,60 @@
   [
    1792568452,
    451620.94
+  ],
+  [
+   1792590563,
+   451620.94
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792568452,
+   "at": 1792590563,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792568452,
+   "at": 1792590563,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792568452,
-   "note": "2110블록 · 대량 0건",
+   "at": 1792590563,
+   "note": "1838블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792568452,
+   "at": 1792590563,
    "note": "모듈 137 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792568452,
-   "note": "상위10 합계 194,144",
+   "at": 1792590563,
+   "note": "상위10 합계 194,467",
    "ok": true
   },
   "news": {
-   "at": 1792568452,
-   "note": "114건",
+   "at": 1792590563,
+   "note": "103건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792568452,
+   "at": 1792590563,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792568452,
+   "at": 1792590563,
    "note": "451,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792568452,
+   "at": 1792590563,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792568452,
+   "at": 1792590563,
    "note": "39건",
    "ok": true
   }
