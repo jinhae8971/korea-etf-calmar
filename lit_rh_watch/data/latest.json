@@ -2,10 +2,16 @@
  "families": [
   "S2"
  ],
- "generated_at": 1792607994,
+ "generated_at": 1792624872,
  "level": "ALERT",
  "note": "",
- "outbox": null,
+ "outbox": {
+  "created": 1792624872,
+  "id": "8cdc85e57fa3",
+  "kind": "alert",
+  "level": "ALERT",
+  "text": "🟡 라이터RH 전환감시 · ALERT\n10-22 08:21 KST\n\n판정: 공식 강신호\n- 공식: 문서 변경: lighter-on-robinhoo…\n  ### Option 1 — Ask a question (recom…\n- 공식: 문서 변경: points-program\n  ### Option 1 — Ask a question (recom…\n- 공식: 문서 변경: llms.txt\n  - [Choose your integration](https://…\n\n반증: 문구가 일정·비율이 아닌 일반 약…\n\nhttps://jinhae8971.github.io/korea-etf-calmar/lit-rh-watch/"
+ },
  "status": {
   "announcements": true,
   "docs": true,
