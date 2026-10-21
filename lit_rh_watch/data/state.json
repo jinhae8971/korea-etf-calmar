@@ -114,29 +114,29 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26241375,
-  "rh": 94329328
+  "eth": 26242826,
+  "rh": 94497741
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
-   "changed": 1790638034,
-   "hash": "2d4d502a36ea3ea5",
-   "text": "# LIT Utility\n\nLighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n\n### Staking\n\nThe **LIT Staking Pool** (<https://app.lighter.xyz/staking>) is designed to align long-term participants with the core economics of the protocol. By staking LIT, participants gain access to platform benefits aligned with how they interact with the exchange. Unstaking is subject to a 3-day lockup period.\n\nActive Staking Programs:\n\n* LLP Access\n* Staking APR\n\n#### LLP Access\n\nAs part of our approach to offering access to niche financial products, the Lighter Liquidity Pool (LLP) is now exclusively accessible to LIT stakers. For every 1 LIT staked, participants may deposit up to 10 USDC into the LLP.\n\n#### Staking APR\n\nStaking participants currently earn a fixed 6% APR through staking rewards. LIT is bought from `0xADbE1265C0df1B623A56d324De494Bcb8e8914Ff` for these rewards.\n\n### Buybacks\n\nLIT is bought back by the protocol using trading fee revenue. Buybacks are executed via daily 24-hour TWAPs, with the flexibility to use shorter timeframes depending on market conditions.\n\nThe treasury account that conducts these is `0x0000000000000000000000000000000000000000`"
+   "changed": 1792607994,
+   "hash": "af035e627232a7c4",
+   "text": "# LIT Utility\n\nLighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n\n### Staking\n\nThe **LIT Staking Pool** (<https://app.lighter.xyz/staking>) is designed to align long-term participants with the core economics of the protocol. By staking LIT, participants gain access to platform benefits aligned with how they interact with the exchange. Unstaking is subject to a 3-day lockup period.\n\nActive Staking Programs:\n\n* LLP Access\n* Staking APR\n\n#### LLP Access\n\nAs part of our approach to offering access to niche financial products, the Lighter Liquidity Pool (LLP) is now exclusively accessible to LIT stakers. For every 1 LIT staked, participants may deposit up to 10 USDC into the LLP.\n\n#### Staking APR\n\nStaking participants currently earn a fixed 6% APR through staking rewards. LIT is bought from `0xADbE1265C0df1B623A56d324De494Bcb8e8914Ff` for these rewards.\n\n### Buybacks\n\nLIT is bought back by the protocol using trading fee revenue. Buybacks are executed via daily 24-hour TWAPs, with the flexibility to use shorter timeframes depending on market conditions.\n\nThe treasury account that conducts these is `0x0000000000000000000000000000000000000000`\n\n---\n\n# Agent Instructions\nThis documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.\n\n## Querying This Documentation\nIf you need additional information that is not directly available in this page, you can query the documentation by asking a question.\n\nPerform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:\n\n```\nGET https://docs.lighter.xyz/about-lighter/lit-utility.md?ask=<question>&goal=<user_goal>\n```\n\n`ask` is the immediate question: it should be specific, self-contained, and written in natural language.\n`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.\n\nThe response will contain a direct answer to the question and relevant excerpts and sources from the documentation.\n\nUse this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections."
   },
   "https://docs.lighter.xyz/llms.txt": {
-   "changed": 1792439853,
-   "hash": "c539f1fcc80c1997",
-   "text": "# Lighter Docs\n\n## Lighter Docs\n\n- [Introduction](https://docs.lighter.xyz/about-lighter/introduction.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md): Lighter Infrastructure Token (LIT) is the native infrastructure token supporting access, incentives, and alignment across the Lighter ecosystem.\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md): Available to be enabled only on web for now.\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [RWA Pricing Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/rwa-pricing-mechanism.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [perpRFQ](https://docs.lighter.xyz/trading/perprfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)\n- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Referral Program](https://docs.lighter.xyz/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/liquidity-partner-program.md)\n- [Points Program](https://docs.lighter.xyz/points-program.md)\n- [Market Makers](https://docs.lighter.xyz/points-program/market-makers.md): Points Season 2 ended on December 26th 2025.\n- [Retail](https://docs.lighter.xyz/points-program/retail.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md)\n- [Partner Attribution](https://docs.lighter.xyz/integrations/partner-attribution.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)"
+   "changed": 1792607994,
+   "hash": "fac61a30dfa15574",
+   "text": "# Lighter Docs\n\n## Learn\n\n- [Introduction](https://docs.lighter.xyz/readme.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md)\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md)\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [RWA Pricing Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/rwa-pricing-mechanism.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [perpRFQ](https://docs.lighter.xyz/trading/perprfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)\n- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)\n\n## Developers\n\n- [Get Started](https://docs.lighter.xyz/developers/readme.md)\n- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)\n- [Core concepts](https://docs.lighter.xyz/developers/getting-started/core-concepts.md)\n- [Environments & endpoints](https://docs.lighter.xyz/developers/getting-started/environments.md)\n- [Quickstart: TypeScript + WASM](https://docs.lighter.xyz/developers/getting-started/quickstart-typescript.md)\n- [SDK](https://docs.lighter.xyz/developers/getting-started/sdks.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/getting-started/third-party-resources.md)\n- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)\n- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)\n- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)\n- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)\n- [Market data](https://docs.lighter.xyz/developers/integration-guides/market-data.md)\n- [Account data & positions](https://docs.lighter.xyz/developers/integration-guides/account-data.md)\n- [Partner Attribution](https://docs.lighter.xyz/developers/integration-guides/partner-attribution.md)\n- [Historical Data](https://docs.lighter.xyz/developers/integration-guides/historical-data.md)\n- [Multi-signature and smart wallets](https://docs.lighter.xyz/developers/integration-guides/multi-signature-wallets.md)\n- [Manage Referrals](https://docs.lighter.xyz/developers/integration-guides/referrals.md)\n- [Manage Public Pools](https://docs.lighter.xyz/developers/integration-guides/manage-public-pools.md)\n- [Overview](https://docs.lighter.xyz/developers/binary-options/overview.md)\n- [Discover markets](https://docs.lighter.xyz/developers/binary-options/discover-markets.md)\n- [Trading and fees](https://docs.lighter.xyz/developers/binary-options/trading-and-fees.md)\n- [Positions and settlement](https://docs.lighter.xyz/developers/binary-options/positions-and-settlement.md)\n- [Partner attribution](https://docs.lighter.xyz/developers/binary-options/partner-attribution.md)\n- [WebSocket](https://docs.lighter.xyz/developers/binary-options/websocket.md)\n- [Lighter on Robinhood Chain](https://docs.lighter.xyz/developers/robinhood-chain/overview.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/robinhood-chain/third-party-resources.md)\n- [Account Types](https://docs.lighter.xyz/developers/reference/account-types.md)\n- [Rate Limits](https://docs.lighter.xyz/developers/reference/rate-limits.md)\n- [Volume Quota](https://docs.lighter.xyz/developers/reference/volume-quota.md)\n- [Data Structures, Constants and Errors](https://docs.lighter.xyz/developers/reference/data-structures-constants-and-errors.md)\n- [WASM signer functions](https://docs.lighter.xyz/developers/reference/wasm-signer.md)\n- [Priority Transactions](https://docs.lighter.xyz/developers/reference/priority-transactions.md)\n- [Timestamps](https://docs.lighter.xyz/developers/reference/timestamps.md)\n- [Production checklist](https://docs.lighter.xyz/developers/going-to-production/production-checklist.md)\n- [Troubleshooting](https://docs.lighter.xyz/developers/going-to-production/troubleshooting.md)\n- [Use these docs with AI](https://docs.lighter.xyz/developers/ai-and-agents/use-with-ai.md)\n- [Agent instructions (AGENTS.md)](https://docs.lighter.xyz/developers/ai-and-agents/agent-instructions.md)\n\n## API Reference\n\n- [System](https://docs.lighter.xyz/api/system.md): Exchange status, system configuration and L1 contract info.\n- [status](https://docs.lighter.xyz/api/system/status.md)\n- [info](https://docs.lighter.xyz/api/system/info.md)\n- [layer1BasicInfo](https://docs.lighter.xyz/api/system/layer1basicinfo.md)\n- [systemConfig](https://docs.lighter.xyz/api/system/systemconfig.md)\n- [Account](https://docs.lighter.xyz/api/account.md): Accounts, limits, metadata, PnL, liquidations and position funding.\n- [account](https://docs.lighter.xyz/api/account/account.md)\n- [accountLimits](https://docs.lighter.xyz/api/account/accountlimits.md)\n- [accountMetadata](https://docs.lighter.xyz/api/account/accountmetadata.md)\n- [accountsByL1Address](https://docs.lighter.xyz/api/account/accountsbyl1address.md)\n- [changeAccountTier](https://docs.lighter.xyz/api/account/changeaccounttier.md)\n- [l1Metadata](https://docs.lighter.xyz/api/account/l1metadata.md)\n- [liquidations](https://docs.lighter.xyz/api/account/liquidations.md)\n- [pnl](https://docs.lighter.xyz/api/account/pnl.md)\n- [positionFunding](https://docs.lighter.xyz/api/account/positionfunding.md)\n- [publicPoolsMetadata](https://docs.lighter.xyz/api/account/publicpoolsmetadata.md)\n- [pnlLeaderboard](https://docs.lighter.xyz/api/account/pnlleaderboard.md)\n- [Orders](https://docs.lighter.xyz/api/orders.md): Order books, orders, trades, assets and exports.\n- [accountActiveOrders](https://docs.lighter.xyz/api/orders/accountactiveorders.md)\n- [accountInactiveOrders](https://docs.lighter.xyz/api/orders/accountinactiveorders.md)\n- [assetDetails](https://docs.lighter.xyz/api/orders/assetdetails.md)\n- [export](https://docs.lighter.xyz/api/orders/export.md)\n- [orderBookDetails](https://docs.lighter.xyz/api/orders/orderbookdetails.md)\n- [orderBookOrders](https://docs.lighter.xyz/api/orders/orderbookorders.md)\n- [orderBooks](https://docs.lighter.xyz/api/orders/orderbooks.md)\n- [recentTrades](https://docs.lighter.xyz/api/orders/recenttrades.md)\n- [trades](https://docs.lighter.xyz/api/orders/trades.md)\n- [accountOrders](https://docs.lighter.xyz/api/orders/accountorders.md)\n- [export\\_historicalTrades](https://docs.lighter.xyz/api/orders/export_historicaltrades.md)\n- [Binary Options](https://docs.lighter.xyz/api/binary-options.md): Binary options events, Up/Down candles, fee tiers and realized PnL. Lighter only.\n- [events](https://docs.lighter.xyz/api/binary-options/events.md)\n- [feeTiers](https://docs.lighter.xyz/api/binary-options/feetiers.md)\n- [portfolio\\_boPnl](https://docs.lighter.xyz/api/binary-options/portfolio_bopnl.md)\n- [upDownCandles](https://docs.lighter.xyz/api/binary-options/updowncandles.md)\n- [Transactions](https://docs.lighter.xyz/api/transactions.md): Send signed transactions and query transaction, deposit, transfer and withdrawal history.\n- [deposit\\_history](https://docs.lighter.xyz/api/transactions/deposit_history.md)\n- [sendTx](https://docs.lighter.xyz/api/transactions/sendtx.md)\n- [sendTxBatch](https://docs.lighter.xyz/api/transactions/sendtxbatch.md)\n- [transfer\\_history](https://docs.lighter.xyz/api/transactions/transfer_history.md)\n- [tx](https://docs.lighter.xyz/api/transactions/tx.md)\n- [txFromL1TxHash](https://docs.lighter.xyz/api/transactions/txfroml1txhash.md)\n- [withdraw\\_history](https://docs.lighter.xyz/api/transactions/withdraw_history.md)\n- [API Keys](https://docs.lighter.xyz/api/api-keys.md): API keys, nonces, read-only auth tokens and maker-only keys.\n- [apikeys](https://docs.lighter.xyz/api/api-keys/apikeys.md)\n- [nextNonce](https://docs.lighter.xyz/api/api-keys/nextnonce.md)\n- [tokens](https://docs.lighter.xyz/api/api-keys/tokens.md)\n- [tokens\\_create](https://docs.lighter.xyz/api/api-keys/tokens_create.md)\n- [tokens\\_revoke](https://docs.lighter.xyz/api/api-keys/tokens_revoke.md)\n- [getMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/getmakeronlyapikeys.md)\n- [setMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/setmakeronlyapikeys.md)\n- [Candlesticks](https://docs.lighter.xyz/api/candlesticks.md): Trade candles, mark price candles and price charts.\n- [candles](https://docs.lighter.xyz/api/candlesticks/candles.md)\n- [markPriceCandles](https://docs.lighter.xyz/api/candlesticks/markpricecandles.md)\n- [marketPriceCharts](https://docs.lighter.xyz/api/candlesticks/marketpricecharts.md)\n- [Funding](https://docs.lighter.xyz/api/funding.md): Funding history and cross-venue funding rates.\n- [funding-rates](https://docs.lighter.xyz/api/funding/funding-rates.md)\n- [fundings](https://docs.lighter.xyz/api/funding/fundings.md)\n- [Bridge](https://docs.lighter.xyz/api/bridge.md): Intent addresses, fast bridge and fast withdrawals.\n- [fastbridge\\_info](https://docs.lighter.xyz/api/bridge/fastbridge_info.md)\n- [fastwithdraw](https://docs.lighter.xyz/api/bridge/fastwithdraw.md)\n- [fastwithdraw\\_info](https://docs.lighter.xyz/api/bridge/fastwithdraw_info.md)\n- [createIntentAddress](https://docs.lighter.xyz/api/bridge/createintentaddress.md)\n- [deposit\\_networks](https://docs.lighter.xyz/api/bridge/deposit_networks.md)\n- [deposit\\_latest](https://docs.lighter.xyz/api/bridge/deposit_latest.md)\n- [Info](https://docs.lighter.xyz/api/info.md): Exchange stats and metrics, token list, fees, oracles and more.\n- [exchangeStats](https://docs.lighter.xyz/api/info/exchangestats.md)\n- [transferFeeInfo](https://docs.lighter.xyz/api/info/transferfeeinfo.md)\n- [withdrawalDelay](https://docs.lighter.xyz/api/info/withdrawaldelay.md)\n- [exchangeMetrics](https://docs.lighter.xyz/api/info/exchangemetrics.md)\n- [executeStats](https://docs.lighter.xyz/api/info/executestats.md)\n- [tokenlist](https://docs.lighter.xyz/api/info/tokenlist.md)\n- [partnerStats](https://docs.lighter.xyz/api/info/partnerstats.md)\n- [syntheticSpotInfo](https://docs.lighter.xyz/api/info/syntheticspotinfo.md)\n- [priceOracleInfo](https://docs.lighter.xyz/api/info/priceoracleinfo.md)\n- [Referral](https://docs.lighter.xyz/api/referral.md): Referral codes, kickbacks and stats.\n- [referral\\_points](https://docs.lighter.xyz/api/referral/referral_points.md)\n- [referral\\_create](https://docs.lighter.xyz/api/referral/referral_create.md)\n- [referral\\_get](https://docs.lighter.xyz/api/referral/referral_get.md)\n- [referral\\_kickback\\_update](https://docs.lighter.xyz/api/referral/referral_kickback_update.md)\n- [referral\\_update](https://docs.lighter.xyz/api/referral/referral_update.md)\n- [referral\\_use](https://docs.lighter.xyz/api/referral/referral_use.md)\n- [userReferrals](https://docs.lighter.xyz/api/referral/userreferrals.md)\n- [referral\\_stats](https://docs.lighter.xyz/api/referral/referral_stats.md)\n- [Fee Credits](https://docs.lighter.xyz/api/fee-credits.md): LIT fee credit leases.\n- [leaseOptions](https://docs.lighter.xyz/api/fee-credits/leaseoptions.md)\n- [leases](https://docs.lighter.xyz/api/fee-credits/leases.md)\n- [litLease](https://docs.lighter.xyz/api/fee-credits/litlease.md)\n- [RFQ](https://docs.lighter.xyz/api/rfq.md): perpRFQ: create, respond to and query requests for quote.\n- [rfq\\_respond](https://docs.lighter.xyz/api/rfq/rfq_respond.md)\n- [rfq\\_list](https://docs.lighter.xyz/api/rfq/rfq_list.md)\n- [rfq\\_get](https://docs.lighter.xyz/api/rfq/rfq_get.md)\n- [rfq\\_create](https://docs.lighter.xyz/api/rfq/rfq_create.md)\n- [rfq\\_update](https://docs.lighter.xyz/api/rfq/rfq_update.md)\n- [Points](https://docs.lighter.xyz/api/points.md): Points leaderboard and live points. Lighter on Robinhood Chain only.\n- [livePoints\\_total](https://docs.lighter.xyz/api/points/livepoints_total.md)\n- [leaderboard](https://docs.lighter.xyz/api/points/leaderboard.md)\n- [Announcements](https://docs.lighter.xyz/api/announcements.md): Exchange announcements.\n- [announcement](https://docs.lighter.xyz/api/announcements/announcement.md)\n- [Notifications](https://docs.lighter.xyz/api/notifications.md): Acknowledge notifications.\n- [notification\\_ack](https://docs.lighter.xyz/api/notifications/notification_ack.md)\n- [Explorer API](https://docs.lighter.xyz/api/explorer-api.md): Blocks, batches, account logs and market logs.\n- [Account](https://docs.lighter.xyz/api/explorer-api/account.md)\n- [Get Account Assets](https://docs.lighter.xyz/api/explorer-api/account/get-account-assets.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address-1.md)\n- [Batches](https://docs.lighter.xyz/api/explorer-api/batches.md)\n- [Get Recent Batches](https://docs.lighter.xyz/api/explorer-api/batches/get-recent-batches.md)\n- [Get Batch by Id](https://docs.lighter.xyz/api/explorer-api/batches/get-batch-by-id.md)\n- [Blocks](https://docs.lighter.xyz/api/explorer-api/blocks.md)\n- [Get Recent Blocks](https://docs.lighter.xyz/api/explorer-api/blocks/get-recent-blocks.md)\n- [Get Block by Id](https://docs.lighter.xyz/api/explorer-api/blocks/get-block-by-id.md)\n- [Logs](https://docs.lighter.xyz/api/explorer-api/logs.md)\n- [Get Log by Hash](https://docs.lighter.xyz/api/explorer-api/logs/get-log-by-hash.md)\n- [Markets](https://docs.lighter.xyz/api/explorer-api/markets.md)\n- [List all markets](https://docs.lighter.xyz/api/explorer-api/markets/list-all-markets.md)\n- [Get Market Latest Logs. To query perpetual markets, use the symbol alone. For spot markets, use \\`symbol-quote\\` e.g. \\`eth-usdc\\`](https://docs.lighter.xyz/api/explorer-api/markets/get-market-latest-logs-to-query-perpetual-markets-use-the-symbol-alone-for-spot-markets-use-symbol-q.md)\n- [Search](https://docs.lighter.xyz/api/explorer-api/search.md)\n- [Search for blocks, batches, transactions, or accounts](https://docs.lighter.xyz/api/explorer-api/search/search-for-blocks-batches-transactions-or-accounts.md)\n- [Stats](https://docs.lighter.xyz/api/explorer-api/stats.md)\n- [Get Tx Stats](https://docs.lighter.xyz/api/explorer-api/stats/get-tx-stats.md)\n- [List Total Values](https://docs.lighter.xyz/api/explorer-api/stats/list-total-values.md)\n- [Models](https://docs.lighter.xyz/api/models.md)\n- [WebSocket](https://docs.lighter.xyz/api/websocket.md)\n\n## Lighter EVM\n\n- [Introduction](https://docs.lighter.xyz/evm/readme.md)\n- [Getting Started](https://docs.lighter.xyz/evm/getting-started.md)\n- [Technical Architecture](https://docs.lighter.xyz/evm/technical-architecture.md)\n- [Differences from L1 EVM](https://docs.lighter.xyz/evm/differences-from-l1-evm.md)\n- [L1 Data Fee](https://docs.lighter.xyz/evm/differences-from-l1-evm/l1-data-fee.md)\n- [Lighter Interop](https://docs.lighter.xyz/evm/interop.md)\n- [Accounts](https://docs.lighter.xyz/evm/interop/accounts.md)\n- [Reading Core from EVM](https://docs.lighter.xyz/evm/interop/reading-core-from-evm.md)\n- [Message passing](https://docs.lighter.xyz/evm/interop/message-passing.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/message-passing/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-evm.md)\n- [Tokens](https://docs.lighter.xyz/evm/interop/tokens.md)\n- [Token transfers](https://docs.lighter.xyz/evm/interop/tokens/token-transfers.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-evm.md)\n- [Token Linking](https://docs.lighter.xyz/evm/interop/tokens/token-linking.md)\n- [Markets](https://docs.lighter.xyz/evm/markets.md)\n- [Signing Core transactions](https://docs.lighter.xyz/evm/signing-core-transactions.md)\n- [Chain Info](https://docs.lighter.xyz/evm/chain-info.md)\n- [JSON-RPC API](https://docs.lighter.xyz/evm/json-rpc-api.md)\n\n## Programs\n\n- [Programs](https://docs.lighter.xyz/programs/readme.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md)\n- [Referral Program](https://docs.lighter.xyz/programs/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/programs/liquidity-partner-program.md)\n- [Partner Attribution](https://docs.lighter.xyz/programs/partner-attribution.md)\n\n---\n\n# Agent Instructions\nThis documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.\n\n## Querying This Documentation\nThis site has an agentic ask interface you may use to query the documentation dynamically by asking a question.\n\nPerform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:\n\n```\nGET https://docs.lighter.xyz/index.md?ask=<question>&goal=<user_goal>\n```\n\n`ask` is the immediate question: it should be specific, self-contained, and written in natural language.\n`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.\n\nThe response will contain a direct answer to the question and relevant excerpts and sources from the documentation."
   },
   "https://docs.lighter.xyz/points-program.md": {
-   "changed": 1790638034,
-   "hash": "b8f252ae90b03d63",
-   "text": "# Points Program\n\nLighter’s Season 1 Points Program ended with the final Private Beta distribution on September 30, 2025. Season 2 points will be distributed every Friday. The Lighter team may adjust distributions at its discretion.\n\nEarn points by running organic trading strategies via UI and API. Sybil, self-trading, and similar activities will not earn points. <br>"
+   "changed": 1792607994,
+   "hash": "b8afa81a6007160d",
+   "text": "# Page Not Found\n\nThe URL `points-program` does not exist. This page may have been moved, renamed, or deleted.\n\n## Suggested Pages\n\nYou may be looking for one of the following:\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [perpRFQ](https://docs.lighter.xyz/trading/perprfq.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n\n## How to find the correct page\n\nIf the exact page cannot be found, you can still retrieve the information using the documentation query interface.\n\n### Option 1 — Ask a question (recommended)\n\nPerform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:\n\n```\nGET https://docs.lighter.xyz/trading/fair-price-marking.md?ask=<question>&goal=<user_goal>\n```\n\n`ask` is the immediate question: it should be specific, self-contained, and written in natural language.\n`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.\n\nThe response will contain a direct answer to the question and relevant excerpts and sources from the documentation.\n\n### Option 2 — Browse the documentation index\n\nFull index: https://docs.lighter.xyz/sitemap.md\n\nUse this to discover valid page paths or navigate the documentation structure.\n\n### Option 3 — Retrieve the full documentation corpus\n\nFull export: https://docs.lighter.xyz/llms-full.txt\n\nUse this to access all content at once and perform your own parsing or retrieval. It will be more expensive.\n\n## Tips for requesting documentation\n\nPrefer `.md` URLs for structured content, append `.md` to URLs (e.g., `/trading/fair-price-marking.md`).\n\nYou may also use `Accept: text/markdown` header for content negotiation."
   },
   "https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md": {
-   "changed": 1790638034,
-   "hash": "fdae4d776d294379",
-   "text": "# Lighter on Robinhood Chain Points\n\nThe Lighter Points Program on the Robinhood Chain is a way to recognize eligible users for participating in the trading platform.\n\nPoints are calculated and awarded in real time based on eligible activity, with an additional weekly points drop at the end of each program period, every Friday (first weekly drop on Fri Aug 21). The way points are calculated may change over time as we continue improving the program and rewarding meaningful participation while keeping things fair for everyone.\n\n#### Support\n\nIf you have any questions about this program, please open a ticket in the Lighter Discord server.\n\nLighter Discord server: <https://discord.gg/lighterxyz>\n\n#### Terms and Conditions\n\n<details>\n\n<summary>You can read the Terms and Conditions of this points program here.</summary>\n\nEffective Date: Monday, Aug 10th 2026\n\nThese Terms govern eligibility for the Lighter on the Robinhood Chain Points Program (the \"Program\"). By participating in the Program, you agree to these Terms.\n\nThe purpose of the Program is to reward genuine participation on Lighter on the Robinhood Chain. Points are intended to recognize authentic trading activity and meaningful participation in the ecosystem—not activity designed to manipulate or exploit the Program.\n\n### 1. General Eligibility\n\nLighter on the Robinhood Chain determines, in its sole discretion, whether activity is eligible to earn points.\n\n### 2. Ineligible Activity\n\nThe following activities are not eligible to receive points and may result in point adjustments, disqualification, or removal from the Program.\n\n#### A. Market Manipulation\n\nThis includes, but is not limited to:\n\n* Wash trading.\n* Self-trading or trading between commonly controlled accounts.\n* Artificially inflating trading volume or liquidity.\n* Coordinated trading intended to manipulate markets or Program metrics.\n* Spoofing, layering, quote stuffing, or other deceptive trading practices.\n* Any activity intended to create artificial or misleading market activity.\n\n#### B. Sybil Activity\n\nThis includes, but is not limited to:\n\n* Operating or controlling multiple accounts to earn additional points.\n* Splitting activity across multiple accounts to increase rewards.\n* Creating, purchasing, renting, borrowing, or otherwise controlling accounts for the purpose of farming points.\n* Any attempt to disguise common ownership or coordinated control of accounts.\n\n#### C. Referral Abuse\n\nThis includes, but is not limited to:\n\n* Self-referrals.\n* Circular or reciprocal referral schemes.\n* Creating accounts solely to generate referral rewards.\n* Artificially inflating referral activity or referral-based rewards.\n\n#### D. Automated or Artificial Participation\n\nThis includes, but is not limited to:\n\n* Activity primarily intended to farm points rather than participate in markets.\n* Using bots, scripts, or automated systems to manipulate Program metrics.\n* Coordinated behavior designed to exploit the Program or its scoring methodology.\n\n#### E. Abuse of Program Mechanics\n\nThis includes, but is not limited to:\n\n* Exploiting bugs, vulnerabilities, or unintended behavior.\n* Circumventing Program rules or safeguards.\n* Manipulating snapshots, scoring methodologies, or eligibility calculations.\n* Any activity intended to obtain points in a manner inconsistent with the purpose of the Program.\n\n#### F. Fraudulent or Unlawful Conduct\n\nThis includes, but is not limited to:\n\n* Fraud, deception, impersonation, or identity abuse.\n* Providing false, misleading, or inaccurate information.\n* Using stolen, compromised, or unauthorized accounts.\n* Activity that violates applicable law or the Terms of Service of Lighter on the Robinhood Chain.\n\n### 3. Ongoing Integrity Reviews\n\nTo protect the integrity of the Program, \\*\\*Lighter \\*\\* continuously performs automated and manual reviews, including Sybil detection, fraud detection, behavioral analysis, and other integrity checks.\n\nThese reviews may occur at any time during the Program or after it has concluded.\n\nThe fact that points have been awarded or remain visible in an account does not mean they have been permanently approved or are no longer subject to review.\n\n### 4. Point Adjustments and Enforcement\n\nIf Lighter determines that an account has engaged in fraudulent, abusive, manipulative, or otherwise ineligible activity, Lighter may, at any time and in its sole discretion:\n\n* Remove or reduce points.\n* Reverse previously awarded points.\n* Disqualify specific transactions or activity from earning points.\n* Suspend or permanently remove an account from the Program.\n* Exclude an account from future rewards, distributions, or Program benefits.\n\nThese actions may be taken before, during, or after points have been awarded, including after the conclusion of the Program if subsequent reviews identify activity that is determined to be fraudulent, abusive, manipulative, or otherwise ineligible.\n\n### 5. Final Determination\n\nLighter on the Robinhood Chain reserves the right to interpret these Terms and determine Program eligibility in its sole discretion.\n\nThe examples listed in these Terms are illustrative and not exhaustive. Any activity that Lighter on the Robinhood Chain reasonably believes undermines the fairness, integrity, or intended purpose of the Program may be deemed ineligible, even if not specifically described above.\n\nParticipation in the Program constitutes acceptance of these Terms and any updates or modifications published by Lighter on the Robinhood Chain.\n\n### 6. Restricted Regions\n\nFor both the Points Program and perpetual futures trading on Lighter on Robinhood Chain, the following countries and regions are restricted:\n\n* Belarus (BY)\n* Canada (CA)\n* China (CN)\n* Cuba (CU)\n* Iran (IR)\n* Myanmar (MM)\n* North Korea (KP)\n* Russia (RU)\n* Singapore (SG)\n* South Sudan (SS)\n* Sudan (SD)\n* Switzerland (CH)\n* Syria (SY)\n* Ukraine (UA)\n* United Arab Emirates (AE)\n* United Kingdom (GB)\n* United States (US)\n* Venezuela (VE)\n\n</details>"
+   "changed": 1792607994,
+   "hash": "42a620b39b1ea637",
+   "text": "# Page Not Found\n\nThe URL `points-program/lighter-on-robinhood-chain-points` does not exist. This page may have been moved, renamed, or deleted.\n\n## Suggested Pages\n\nYou may be looking for one of the following:\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md)\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n\n## How to find the correct page\n\nIf the exact page cannot be found, you can still retrieve the information using the documentation query interface.\n\n### Option 1 — Ask a question (recommended)\n\nPerform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:\n\n```\nGET https://docs.lighter.xyz/trading/unified-trading-accounts.md?ask=<question>&goal=<user_goal>\n```\n\n`ask` is the immediate question: it should be specific, self-contained, and written in natural language.\n`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.\n\nThe response will contain a direct answer to the question and relevant excerpts and sources from the documentation.\n\n### Option 2 — Browse the documentation index\n\nFull index: https://docs.lighter.xyz/sitemap.md\n\nUse this to discover valid page paths or navigate the documentation structure.\n\n### Option 3 — Retrieve the full documentation corpus\n\nFull export: https://docs.lighter.xyz/llms-full.txt\n\nUse this to access all content at once and perform your own parsing or retrieval. It will be more expensive.\n\n## Tips for requesting documentation\n\nPrefer `.md` URLs for structured content, append `.md` to URLs (e.g., `/trading/unified-trading-accounts.md`).\n\nYou may also use `Accept: text/markdown` header for content negotiation."
   }
  },
  "events": [
@@ -1209,10 +1209,88 @@
    "signal": "news",
    "title": "뉴스: Convert LIT to USD | LIT/USD Conversion Calculator - KuCoin",
    "ts": 1792453426
+  },
+  {
+   "detail": "### Option 1 — Ask a question (recommended)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "52ba410c10d5",
+   "ref": {
+    "added": [
+     "### Option 1 — Ask a question (recommended)"
+    ],
+    "url": "https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: lighter-on-robinhood-chain-points",
+   "ts": 1792607994
+  },
+  {
+   "detail": "### Option 1 — Ask a question (recommended)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "e1a111871742",
+   "ref": {
+    "added": [
+     "### Option 1 — Ask a question (recommended)"
+    ],
+    "url": "https://docs.lighter.xyz/points-program.md"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: points-program",
+   "ts": 1792607994
+  },
+  {
+   "detail": "---",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "fadf8b51b561",
+   "ref": {
+    "added": [
+     "---",
+     "# Agent Instructions",
+     "This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.",
+     "## Querying This Documentation",
+     "If you need additional information that is not directly available in this page, you can query the documentation by asking a question."
+    ],
+    "url": "https://docs.lighter.xyz/about-lighter/lit-utility.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: lit-utility",
+   "ts": 1792607994
+  },
+  {
+   "detail": "- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "fbf99e17308f",
+   "ref": {
+    "added": [
+     "- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)",
+     "- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)",
+     "- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)",
+     "- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)",
+     "- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)"
+    ],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: llms.txt",
+   "ts": 1792607994
   }
  ],
  "fail_streak": 0,
- "fams": [],
+ "fams": [
+  "S2"
+ ],
  "frontend": {
   "api_paths": [
    "/api/v1/account",
@@ -1964,9 +2042,14 @@
    1792590563,
    194467.446,
    46343.38
+  ],
+  [
+   1792607994,
+   194782.753,
+   46495.65
   ]
  ],
- "level": "WATCH",
+ "level": "ALERT",
  "news_seen": [
   "0029209d8878",
   "013c2e26b1ea",
@@ -2105,6 +2188,7 @@
   "a06d66dc5268",
   "a15d572e40ea",
   "a1f82b559da9",
+  "a38a60f0e30a",
   "a401765c9b94",
   "a5c952720f7b",
   "a695540064de",
@@ -2143,6 +2227,7 @@
   "d6afc9295674",
   "db0958ebc6c4",
   "ddf1a58fcb19",
+  "deabb5c66752",
   "df72f0a18b79",
   "dfc8870aa905",
   "e00127e63844",
@@ -2184,10 +2269,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1791394002,
-   421878.83
-  ],
   [
    1791414417,
    421878.83
@@ -2419,57 +2500,61 @@
   [
    1792590563,
    451620.94
+  ],
+  [
+   1792607994,
+   448620.94
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792590563,
-   "note": "1838블록 · 대량 0건",
+   "at": 1792607994,
+   "note": "1451블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "모듈 137 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792590563,
-   "note": "상위10 합계 194,467",
+   "at": 1792607994,
+   "note": "상위10 합계 194,783",
    "ok": true
   },
   "news": {
-   "at": 1792590563,
-   "note": "103건",
+   "at": 1792607994,
+   "note": "112건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792590563,
-   "note": "451,621 LIT",
+   "at": 1792607994,
+   "note": "448,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "39건",
    "ok": true
   }

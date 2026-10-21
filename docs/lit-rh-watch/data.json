@@ -1,27 +1,103 @@
 {
  "cursors": {
-  "eth": 26241375,
-  "rh": 94329328
+  "eth": 26242826,
+  "rh": 94497741
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
-   "changed": 1790638034,
-   "hash": "2d4d502a36ea3ea5"
+   "changed": 1792607994,
+   "hash": "af035e627232a7c4"
   },
   "https://docs.lighter.xyz/llms.txt": {
-   "changed": 1792439853,
-   "hash": "c539f1fcc80c1997"
+   "changed": 1792607994,
+   "hash": "fac61a30dfa15574"
   },
   "https://docs.lighter.xyz/points-program.md": {
-   "changed": 1790638034,
-   "hash": "b8f252ae90b03d63"
+   "changed": 1792607994,
+   "hash": "b8afa81a6007160d"
   },
   "https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md": {
-   "changed": 1790638034,
-   "hash": "fdae4d776d294379"
+   "changed": 1792607994,
+   "hash": "42a620b39b1ea637"
   }
  },
  "events": [
+  {
+   "detail": "### Option 1 — Ask a question (recommended)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "52ba410c10d5",
+   "ref": {
+    "added": [
+     "### Option 1 — Ask a question (recommended)"
+    ],
+    "url": "https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: lighter-on-robinhood-chain-points",
+   "ts": 1792607994
+  },
+  {
+   "detail": "### Option 1 — Ask a question (recommended)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "e1a111871742",
+   "ref": {
+    "added": [
+     "### Option 1 — Ask a question (recommended)"
+    ],
+    "url": "https://docs.lighter.xyz/points-program.md"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: points-program",
+   "ts": 1792607994
+  },
+  {
+   "detail": "---",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "fadf8b51b561",
+   "ref": {
+    "added": [
+     "---",
+     "# Agent Instructions",
+     "This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.",
+     "## Querying This Documentation",
+     "If you need additional information that is not directly available in this page, you can query the documentation by asking a question."
+    ],
+    "url": "https://docs.lighter.xyz/about-lighter/lit-utility.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: lit-utility",
+   "ts": 1792607994
+  },
+  {
+   "detail": "- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "fbf99e17308f",
+   "ref": {
+    "added": [
+     "- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)",
+     "- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)",
+     "- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)",
+     "- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)",
+     "- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)"
+    ],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: llms.txt",
+   "ts": 1792607994
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9XaUstajM3THpYVi1Pa0JsZ3lxVGR1Z1hRVjZXTWFRdmNhbzNxOHZwdWk4bFNxbm9qWno3cjYxWFlVUVBLcGRNSm8",
    "family": "S4",
@@ -410,8 +486,10 @@
    "ts": 1792063890
   }
  ],
- "families": [],
- "generated_at": 1792590563,
+ "families": [
+  "S2"
+ ],
+ "generated_at": 1792607994,
  "lb_hist": [
   [
    1790638034,
@@ -877,11 +955,92 @@
    1792590563,
    194467.446,
    46343.38
+  ],
+  [
+   1792607994,
+   194782.753,
+   46495.65
   ]
  ],
- "level": "WATCH",
+ "level": "ALERT",
  "note": "",
  "recent_all": [
+  {
+   "detail": "### Option 1 — Ask a question (recommended)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "52ba410c10d5",
+   "ref": {
+    "added": [
+     "### Option 1 — Ask a question (recommended)"
+    ],
+    "url": "https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: lighter-on-robinhood-chain-points",
+   "ts": 1792607994
+  },
+  {
+   "detail": "### Option 1 — Ask a question (recommended)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "e1a111871742",
+   "ref": {
+    "added": [
+     "### Option 1 — Ask a question (recommended)"
+    ],
+    "url": "https://docs.lighter.xyz/points-program.md"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: points-program",
+   "ts": 1792607994
+  },
+  {
+   "detail": "---",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "fadf8b51b561",
+   "ref": {
+    "added": [
+     "---",
+     "# Agent Instructions",
+     "This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.",
+     "## Querying This Documentation",
+     "If you need additional information that is not directly available in this page, you can query the documentation by asking a question."
+    ],
+    "url": "https://docs.lighter.xyz/about-lighter/lit-utility.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "문서 문구 변경: lit-utility",
+   "ts": 1792607994
+  },
+  {
+   "detail": "- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "fbf99e17308f",
+   "ref": {
+    "added": [
+     "- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)",
+     "- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)",
+     "- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)",
+     "- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)",
+     "- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)"
+    ],
+    "url": "https://docs.lighter.xyz/llms.txt"
+   },
+   "refute": "문구가 일정·비율이 아닌 일반 약관 정정이면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "문서 변경: llms.txt",
+   "ts": 1792607994
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9XaUstajM3THpYVi1Pa0JsZ3lxVGR1Z1hRVjZXTWFRdmNhbzNxOHZwdWk4bFNxbm9qWno3cjYxWFlVUVBLcGRNSm8",
    "family": "S4",
@@ -1955,10 +2114,6 @@
  ],
  "rh_supply_hist": [
   [
-   1791394002,
-   421878.83
-  ],
-  [
    1791414417,
    421878.83
   ],
@@ -2189,56 +2344,60 @@
   [
    1792590563,
    451620.94
+  ],
+  [
+   1792607994,
+   448620.94
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792590563,
-   "note": "1838블록 · 대량 0건",
+   "at": 1792607994,
+   "note": "1451블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "모듈 137 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792590563,
-   "note": "상위10 합계 194,467",
+   "at": 1792607994,
+   "note": "상위10 합계 194,783",
    "ok": true
   },
   "news": {
-   "at": 1792590563,
-   "note": "103건",
+   "at": 1792607994,
+   "note": "112건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792590563,
-   "note": "451,621 LIT",
+   "at": 1792607994,
+   "note": "448,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792590563,
+   "at": 1792607994,
    "note": "39건",
    "ok": true
   }
