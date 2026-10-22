@@ -1,16 +1,14 @@
 {
- "families": [
-  "S2"
- ],
- "generated_at": 1792624872,
- "level": "ALERT",
+ "families": [],
+ "generated_at": 1792631040,
+ "level": "WATCH",
  "note": "",
  "outbox": {
-  "created": 1792624872,
-  "id": "8cdc85e57fa3",
-  "kind": "alert",
-  "level": "ALERT",
-  "text": "🟡 라이터RH 전환감시 · ALERT\n10-22 08:21 KST\n\n판정: 공식 강신호\n- 공식: 문서 변경: lighter-on-robinhoo…\n  ### Option 1 — Ask a question (recom…\n- 공식: 문서 변경: points-program\n  ### Option 1 — Ask a question (recom…\n- 공식: 문서 변경: llms.txt\n  - [Choose your integration](https://…\n\n반증: 문구가 일정·비율이 아닌 일반 약…\n\nhttps://jinhae8971.github.io/korea-etf-calmar/lit-rh-watch/"
+  "created": 1792631040,
+  "id": "108322f4f0b3",
+  "kind": "release",
+  "level": "WATCH",
+  "text": "<b>라이터RH 전환 감시 · 정정</b>\n10/22(목) 08:21 '경보' 알림은 오탐이었어요. 포인트→LIT 전환 관련 변화는 없어요.\n\n<b>무슨 일이었나</b>\n· 로빈후드 체인 포인트 안내 — 라이터가 문서 주소를 옮겼어요(내용은 그대로). 옛 주소의 '페이지 없음' 안내문을 변경으로 잘못 읽었어요\n· 포인트 프로그램 안내 — 라이터가 문서 주소를 옮기면서 내용도 바꿨어요(바뀐 내용은 새 주소에서 따로 판정). 옛 주소의 '페이지 없음' 안내문을 변경으로 잘못 읽었어요\n· 문서 전체 목록 — 'integration' 속 'ratio'처럼 단어 일부만 맞은 키워드 오탐이에요\n\n<b>지금</b>\n관찰 — 경보 신호는 없고, 약한 신호만 대시보드에 남겨요\n옮겨진 문서는 새 주소로 계속 감시해요: <a href=\"https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points\">로빈후드 체인 포인트 안내</a> · <a href=\"https://docs.lighter.xyz/programs/readme\">프로그램 목록</a>\n\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/lit-rh-watch/\">대시보드</a>"
  },
  "status": {
   "announcements": true,
