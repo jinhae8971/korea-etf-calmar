@@ -7,9 +7,10 @@
 
 출력
   data/state.json            내부 상태(커서·기준선·이벤트)
-  data/latest.json           릴레이용 스냅샷(outbox 포함)
+  data/latest.json           발송용 스냅샷(outbox 포함)
   ../docs/lit-rh-watch/data.json  대시보드용
-발송은 하지 않는다 — hynix-correction-monitor의 lit-rh-relay가 outbox를 읽어 트레이드채널로 보낸다.
+발송은 하지 않는다 — 같은 레포의 Brief Hub(brief-hub.yml)가 outbox를 읽어 @spytltgld_strategy_bot으로 보낸다.
+outbox 종류: alert(경보·임박) · release(보낸 경보가 풀림 — 오탐이면 정정) · heartbeat(월초 점검).
 """
 from __future__ import annotations
 
@@ -64,8 +65,8 @@ def new_state():
     return {"version": 1, "seeded": False, "cursors": {}, "rh_supply_hist": [], "lb_hist": [],
             "docs": {}, "ann_seen": [], "frontend": None, "news_seen": [], "pm_seen": [],
             "large_hist": [], "addr_cache": {}, "events": [], "level": "NONE", "fams": [],
-            "notified": "NONE", "calm_since": None, "outbox": None, "heartbeat": "",
-            "fail_streak": 0, "status": {}}
+            "notified": "NONE", "notified_ids": [], "notified_at": None, "doc_moves": {},
+            "calm_since": None, "outbox": None, "heartbeat": "", "fail_streak": 0, "status": {}}
 
 
 class Run:
@@ -164,19 +165,47 @@ class Run:
 
     # ── S2 문서 ──
     def docs(self):
-        evs, nok = [], 0
-        for url in self.cfg["docs_pages"]:
+        """문서 전체 목록(llms.txt)을 먼저 읽고, '페이지 없음'이 된 문서는 목록에서 새 주소를 찾아 따라간다.
+
+        기준선(state.docs)은 설정의 주소로 묶어 두므로, 주소가 바뀌어도 옛 내용과 그대로 비교한다.
+        '페이지 없음' 안내문은 기준선에 넣지 않는다 — 2026-10-22 오탐(문서 이전을 내용 변경으로 읽음)."""
+        cfg, st = self.cfg, self.st
+        pages = cfg["docs_pages"]
+        moves = st.setdefault("doc_moves", {})
+        idx_url = next((u for u in pages if u.endswith("llms.txt")), None)
+        order = ([idx_url] if idx_url else []) + [u for u in pages if u != idx_url]
+        index: dict = {}
+        evs, nok, notes = [], 0, []
+        for url in order:
+            name = J.doc_name(url, cfg)
+            eff = follow(moves, url)
+            prev = st["docs"].get(url) or {}
             try:
-                txt = S.fetch_doc(url)
-                old = (self.st["docs"].get(url) or {}).get("text")
-                evs += J.detect_doc(url, old, txt, self.now)
-                if old != txt:
-                    self.st["docs"][url] = {"text": txt, "hash": S.sha(txt), "changed": self.now}
+                txt = S.fetch_doc(eff)
+                if S.is_not_found(txt):
+                    new = J.resolve_move(eff, index, prev.get("text"))
+                    txt2 = S.fetch_doc(new) if new else None
+                    if not txt2 or S.is_not_found(txt2):
+                        evs.append(J.doc_missing_event(eff, name, self.now))
+                        notes.append(f"{name} 없음")
+                        continue
+                    same = prev.get("text") == txt2
+                    moves[eff] = {"to": new, "at": self.now, "same": same, "name": name}
+                    evs.append(J.doc_moved_event(eff, new, name, same, self.now))
+                    notes.append(f"{name} 주소 이전")
+                    txt, eff = txt2, new
+                old = prev.get("text")
+                evs += J.detect_doc(eff, old, txt, self.now, name)
+                if old != txt or prev.get("url") != eff:
+                    st["docs"][url] = {"text": txt, "hash": S.sha(txt), "url": eff,
+                                       "changed": self.now if old != txt else prev.get("changed")}
+                if url == idx_url:
+                    index = J.parse_index(txt)
                 nok += 1
             except Exception as e:  # noqa: BLE001
-                print(f"[docs] {url}: {e}")
+                print(f"[docs] {eff}: {e}")
         if nok:
-            self.ok("docs", f"{nok}/{len(self.cfg['docs_pages'])} 페이지")
+            self.ok("docs", f"{nok}/{len(pages)} 페이지" + (" · " + ", ".join(notes) if notes else ""))
         else:
             self.fail("docs", "전 페이지 실패")
         return evs
@@ -264,6 +293,15 @@ class Run:
         return evs
 
 
+def follow(moves: dict, url: str) -> str:
+    """옮겨진 문서의 지금 주소 — 여러 번 옮겨졌으면 끝까지 따라간다."""
+    seen = set()
+    while url in moves and url not in seen and len(seen) < 5:
+        seen.add(url)
+        url = moves[url]["to"]
+    return url
+
+
 def is_day(now: int, cfg: dict) -> bool:
     h = dt.datetime.fromtimestamp(now, J.KST).hour
     return cfg["day_start_kst"] <= h <= cfg["day_end_kst"]
@@ -296,20 +334,22 @@ def main(argv):
     evs += r.frontend()
     evs += r.aux()
 
-    refuted = J.apply_refutes(st["events"], eth_tr + rh_tr, cfg)
+    refuted = J.apply_refutes(st["events"], eth_tr + rh_tr, cfg, now)
     # 공급 복귀 반증
     if st["rh_supply_hist"]:
         cur = st["rh_supply_hist"][-1][1]
         for e in st["events"]:
             if e["signal"] == "rh_supply" and not e["refuted"] and cur <= e["ref"].get("base", 0) + 1e5:
-                e["refuted"] = True
+                J.lift(e, "로빈후드 체인 LIT 공급이 7일 최저 수준으로 돌아왔어요", "data", now)
                 refuted += 1
     # 리더보드 재증가 → 정지 반증
     if len(st["lb_hist"]) >= 2 and st["lb_hist"][-1][1] > st["lb_hist"][-2][1]:
         for e in st["events"]:
             if e["signal"] == "lb_frozen" and not e["refuted"]:
-                e["refuted"] = True
+                J.lift(e, "포인트 적립이 다시 늘기 시작했어요", "data", now)
                 refuted += 1
+    # 지금 규칙으로 지난 문서 경보를 다시 본다 — 오탐이면 풀고 아래에서 정정 메시지를 만든다
+    refuted += J.rejudge(st["events"], st.get("doc_moves", {}), now)
 
     known = {e["id"] for e in st["events"]}
     fresh = [] if seeding else [e for e in evs if e["id"] not in known]
@@ -343,11 +383,34 @@ def main(argv):
     if ob and now - ob["created"] > cfg["outbox_ttl_hours"] * 3600:
         st["outbox"] = ob = None
     day = is_day(now, cfg)
-    if not seeding and day and J.RANK[level] >= 2 and J.RANK[level] > J.RANK[st.get("notified", "NONE")]:
+    notified = st.get("notified", "NONE")
+    strong_ids = [e["id"] for e in act if J.RANK[e["grade"]] >= 2]
+    nids = set(st.get("notified_ids") or [])
+    if not nids and J.RANK[notified] >= 2:  # 예전 상태 파일 — 알림 당시 강신호를 7일 창에서 추정
+        lim = now - cfg["event_window_days"] * 86400
+        nids = {e["id"] for e in st["events"] if J.RANK[e["grade"]] >= 2 and e["ts"] >= lim}
+    lifted = [e for e in st["events"] if e["id"] in nids and e["refuted"]]
+    if J.RANK[level] < J.RANK[notified]:
+        if lifted:
+            # 보낸 경보의 신호가 풀림 — 오탐이면 '정정', 해제 조건 충족이면 '해제'를 낮에 한 번 보낸다
+            if day and not seeding:
+                moves = {}
+                for e in lifted:  # 메시지의 신호 순서대로
+                    u = (e.get("ref") or {}).get("url")
+                    if u in st.get("doc_moves", {}) and u not in moves:
+                        moves[u] = st["doc_moves"][u]
+                text = J.render_release(lifted, level, notified, st.get("notified_at"), now, cfg, moves)
+                st["outbox"] = {"id": J.eid("release", notified, level, now), "text": text, "created": now,
+                                "kind": "release", "level": level}
+                st["notified"], st["notified_ids"], st["notified_at"] = level, strong_ids, now
+        elif not (nids & {e["id"] for e in act}):
+            # 알린 신호가 7일 창을 지나 빠짐 — 다음 경보를 다시 보낼 수 있게 기준만 낮춘다(메시지 없음)
+            st["notified"], st["notified_ids"] = level, strong_ids
+    elif not seeding and day and J.RANK[level] >= 2 and J.RANK[level] > J.RANK[notified]:
         text = J.render(level, fams, act, now, cfg, note)
         st["outbox"] = {"id": J.eid("alert", level, now), "text": text, "created": now, "kind": "alert",
                         "level": level}
-        st["notified"] = level
+        st["notified"], st["notified_ids"], st["notified_at"] = level, strong_ids, now
     month = dt.datetime.fromtimestamp(now, J.KST).strftime("%Y-%m")
     if (not seeding and day and st.get("heartbeat") != month and not st.get("outbox")
             and dt.datetime.fromtimestamp(now, J.KST).day <= 7):

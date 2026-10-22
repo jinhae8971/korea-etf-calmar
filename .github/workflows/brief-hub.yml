@@ -3,9 +3,13 @@ name: Brief Hub
 # 흩어진 브리프를 새 봇(@spytltgld_strategy_bot) 하나로 모아 기능별 별도 메시지로 발송.
 # 단일 파일 구성 — 이 파일 하나만 korea-etf-calmar/.github/workflows/brief-hub.yml 로 만들면 끝.
 # 매시 :17 실행(KST 07~21시). 기능별 발송 요일·시각·조건은 아래 schedule.json 이 판정.
+# 라이터RH 전환감시는 수집이 끝나자마자 한 번 더 돈다 — 경보가 다음 :17까지 기다리지 않게(2026-10-22, 1시간 21분 지연).
 on:
   schedule:
     - cron: "17 22,23,0-12 * * *"
+  workflow_run:
+    workflows: ["lit-rh-watch"]
+    types: [completed]
   push:
     branches: [main]
     paths: [".github/workflows/brief-hub.yml"]

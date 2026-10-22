@@ -1,9 +1,16 @@
 name: lit-rh-watch
 
-# 라이터 로빈후드 포인트 → LIT 전환 신호 수집·판정·대시보드 (발송은 hynix-correction-monitor의 lit-rh-relay)
+# 라이터 로빈후드 포인트 → LIT 전환 신호 수집·판정·대시보드
+# 발송은 Brief Hub(brief-hub.yml)가 이 워크플로가 끝나자마자(workflow_run) outbox를 읽어 보낸다.
 on:
   schedule:
     - cron: "17 */2 * * *"     # KST 홀수시 :17 (야간에도 수집, 발송 판단은 낮에만)
+  push:                        # 판정 코드·설정을 바꾸면 바로 한 번 돌려 확인한다 (데이터 커밋은 제외)
+    branches: [main]
+    paths:
+      - "lit_rh_watch/**"
+      - "!lit_rh_watch/data/**"
+      - ".github/workflows/lit-rh-watch.yml"
   workflow_dispatch:
 
 permissions:

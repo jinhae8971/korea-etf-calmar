@@ -13,7 +13,17 @@ sys.path.insert(0, ROOT)
 
 import judge as J  # noqa: E402
 
-CFG = json.load(open(os.path.join(ROOT, "watch_config.json"), encoding="utf-8"))
+def read_json(path):
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def write_json(path, obj):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False)
+
+
+CFG = read_json(os.path.join(ROOT, "watch_config.json"))
 KST = J.KST
 
 
@@ -133,15 +143,107 @@ class S2(unittest.TestCase):
         self.assertIn("lb_slowdown", [e["signal"] for e in J.detect_leaderboard(h, CFG, NOW)])
 
 
+class Keywords(unittest.TestCase):
+    """2026-10-22 오탐: 'recommended' 속 'ended', 'integration' 속 'ratio' — 단어 경계로 막는다."""
+
+    def test_partial_words_do_not_hit(self):
+        for s in ["### Option 1 — Ask a question (recommended)",
+                  "- [Choose your integration](https://docs.lighter.xyz/developers/choose-your-integration.md)",
+                  "Unclaimed reward history is in the portfolio tab maybe", "We are concerned about latency"]:
+            self.assertFalse(J.KW.search(s), s)
+
+    def test_real_statements_hit(self):
+        for s in ["Points will convert to LIT at a ratio of 4.2 LIT per point.",
+                  "Season 1 Points Program ended with the final distribution",
+                  "The airdrop snapshot was taken on Friday", "Claim opens on Nov 3", "Points conversion begins"]:
+            self.assertTrue(J.KW.search(s), s)
+
+    def test_legacy_explanation(self):
+        self.assertEqual(J.legacy_why(["### Option 1 — Ask a question (recommended)"]), "'recommended' 속 'ended'")
+        self.assertEqual(J.legacy_why(["- [Choose your integration](u)"]), "'integration' 속 'ratio'")
+
+    def test_announcement_words(self):
+        self.assertFalse(J.KW_ANN.search("Scheduled maintenance appointment window"))
+        self.assertTrue(J.KW_ANN.search("Weekly points drop moved to Saturday"))
+
+
+class Docs(unittest.TestCase):
+    AGENT = ("\n\n---\n\n# Agent Instructions\nThis documentation is published with GitBook.\n\n"
+             "## Querying This Documentation\n### Option 1 — Ask a question (recommended)\n")
+
+    def test_agent_block_stripped(self):
+        import sources as S
+        body = "# Points\n\nPoints are calculated in real time."
+        self.assertEqual(S.normalize_doc(body + self.AGENT), S.normalize_doc(body))
+        self.assertTrue(S.is_not_found("# Page Not Found\n\nThe URL `points-program` does not exist."))
+        self.assertFalse(S.is_not_found(body))
+
+    def test_minor_edit_is_watch(self):
+        old = "# T\n\nManipulating snapshots, scoring methodologies, or eligibility.\n"
+        new = "# T\n\nManipulating snapshots, scoring methodologies or eligibility calculations.\n"
+        self.assertEqual(J.detect_doc("https://x/terms.md", old, new, NOW)[0]["grade"], "WATCH")
+
+    def test_doc_names_and_links(self):
+        self.assertEqual(J.doc_key("https://docs.lighter.xyz/programs/readme.md"), "programs/readme")
+        self.assertEqual(J.doc_name("https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md", CFG),
+                         "로빈후드 체인 포인트 안내")
+        self.assertEqual(J.web_url("https://docs.lighter.xyz/programs/readme.md"), "https://docs.lighter.xyz/programs/readme")
+
+    IDX_OLD = ("# Lighter Docs\n- [Points Program](https://d/points-program.md)\n"
+               "- [Lighter on Robinhood Chain Points](https://d/points-program/lighter-on-robinhood-chain-points.md)\n"
+               "- [Trading Fees](https://d/trading/trading-fees.md)\n")
+
+    def test_index_move_is_not_a_signal(self):
+        new = self.IDX_OLD.replace("points-program/lighter", "programs/lighter") + \
+            "- [Choose your integration](https://d/developers/choose-your-integration.md)\n"
+        ev = J.detect_doc("https://d/llms.txt", self.IDX_OLD, new, NOW, "문서 전체 목록")
+        self.assertEqual([e["grade"] for e in ev], ["WATCH"])
+        self.assertIn("주소 이전 1개", ev[0]["title"])
+        self.assertIn("새 문서 1개", ev[0]["title"])
+
+    def test_index_new_conversion_page_is_alert(self):
+        new = self.IDX_OLD + "- [LIT Conversion](https://d/programs/lit-conversion.md): How points convert to LIT\n"
+        ev = J.detect_doc("https://d/llms.txt", self.IDX_OLD, new, NOW)
+        self.assertEqual(ev[0]["signal"], "index_keyword")
+        self.assertEqual(ev[0]["grade"], "ALERT")
+
+    def test_resolve_move(self):
+        idx = J.parse_index(self.IDX_OLD.replace("points-program/lighter", "programs/lighter"))
+        self.assertEqual(J.resolve_move("https://d/points-program/lighter-on-robinhood-chain-points.md", idx),
+                         "https://d/programs/lighter-on-robinhood-chain-points.md")
+        idx2 = J.parse_index("- [RH Points](https://d/programs/rh.md)\n")
+        self.assertEqual(J.resolve_move("https://d/old/rh-points.md", idx2, "# RH Points\n\nbody"),
+                         "https://d/programs/rh.md")
+        self.assertIsNone(J.resolve_move("https://d/points-program.md", idx2, "# Points Program"))
+
+    def test_rejudge_lifts_old_false_positives(self):
+        old_rh = "https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md"
+        moved = J.event("S2", "doc_keyword", "ALERT", "문서 변경: lighter-on-robinhood-chain-points",
+                        ts=NOW, ref={"url": old_rh, "added": ["### Option 1 — Ask a question (recommended)"]}, key="a")
+        index = J.event("S2", "doc_keyword", "ALERT", "문서 변경: llms.txt", ts=NOW,
+                        ref={"url": "https://docs.lighter.xyz/llms.txt",
+                             "added": ["- [Choose your integration](https://d/choose-your-integration.md)"]}, key="b")
+        real = J.event("S2", "doc_keyword", "ALERT", "문서 변경: x", ts=NOW,
+                       ref={"url": "u", "added": ["Points convert to LIT at 4.2 LIT per point."]}, key="c")
+        evs = [moved, index, real]
+        n = J.rejudge(evs, {old_rh: {"to": "new", "same": True}}, NOW + 60)
+        self.assertEqual(n, 2)
+        self.assertTrue(moved["refuted"] and index["refuted"])
+        self.assertFalse(real["refuted"])
+        self.assertIn("문서 주소를 옮겼어요(내용은 그대로)", moved["refute_reason"])
+        self.assertIn("'integration' 속 'ratio'", index["refute_reason"])
+        self.assertEqual(moved["refute_kind"], "false_positive")
+
+
 class S3(unittest.TestCase):
     def test_frontend(self):
         old = {"chunks": ["PointsLeaderboard", "referrals"], "api_paths": ["/api/v1/airdrop"]}
         new = {"chunks": ["PointsLeaderboard", "referrals", "ClaimRewards", "StockNews"],
                "api_paths": ["/api/v1/airdrop", "/api/v1/rhClaim"]}
         ev = {e["title"]: e["grade"] for e in J.detect_frontend(old, new, NOW)}
-        self.assertEqual(ev["화면 모듈 추가: ClaimRewards"], "ALERT")
-        self.assertEqual(ev["화면 모듈 추가: StockNews"], "WATCH")
-        self.assertEqual(ev["API 경로 추가: /api/v1/rhClaim"], "ALERT")
+        self.assertEqual(ev["앱에 새 화면 모듈: ClaimRewards"], "ALERT")
+        self.assertEqual(ev["앱에 새 화면 모듈: StockNews"], "WATCH")
+        self.assertEqual(ev["앱에 새 API 경로: /api/v1/rhClaim"], "ALERT")
         self.assertEqual(J.detect_frontend(None, new, NOW), [])
 
 
@@ -161,18 +263,59 @@ class Level(unittest.TestCase):
         old = J.event("S1", "x", "ALERT", "t", ts=NOW - 8 * 86400)
         self.assertEqual(J.active([old], NOW, 7), [])
 
-    def test_render_width(self):
-        evs = [J.event("S1", "rh_supply", "ALERT", "RH체인 LIT 공급 +10.80M (풀 규모) 아주 긴 제목 테스트입니다",
-                       "7일 최저 396K → 11.20M", "공급이 7일 최저 수준으로 복귀 시 해제", NOW),
-               J.event("S2", "doc_keyword", "ALERT", "문서 변경: lighter-on-robinhood-chain-points",
-                       "Points will convert to LIT at a ratio", "x", NOW)]
+
+class Render(unittest.TestCase):
+    """메시지만 보고 무슨 일인지 알 수 있어야 한다 — 무슨 일 → 의미 → 해제 조건 → 링크, 잘림 없음."""
+
+    URL = "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+
+    def doc_alert(self):
+        old = "# Lighter on Robinhood Chain Points\n\nPoints are calculated in real time.\n"
+        new = old + "\nPoints will convert to LIT at a ratio of 4.2 LIT per point after the final weekly drop on Nov 6.\n"
+        return J.detect_doc(self.URL, old, new, NOW, J.doc_name(self.URL, CFG))
+
+    def test_alert_reads_on_its_own(self):
+        txt = J.render("ALERT", ["S2"], self.doc_alert(), NOW, CFG)
+        self.assertTrue(txt.startswith("🟡 <b>라이터RH 전환 감시 · 경보</b>"))
+        self.assertIn("10/12(월) 09:17 감지 · 공식 문서·공지", txt)
+        self.assertIn("공식 문서 '로빈후드 체인 포인트 안내'에 전환 관련 문구 추가", txt)
+        self.assertIn("after the final weekly drop on Nov 6.", txt)          # 문장이 잘리지 않는다
+        for part in ("<b>무슨 일</b>", "<b>의미</b>", "<b>해제 조건</b>", "'임박'으로 올려요"):
+            self.assertIn(part, txt)
+        self.assertIn('<a href="https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points">문서 원문</a>', txt)
+        self.assertNotIn("…", txt)
+        self.assertNotIn("반증", txt)
+
+    def test_imminent_lists_both(self):
+        evs = self.doc_alert() + J.detect_rh_supply([[NOW - 86400, 396_441], [NOW, 11_300_000]], CFG, NOW)
         txt = J.render("IMMINENT", ["S1", "S2"], evs, NOW, CFG)
-        for ln in txt.split("\n"):
-            if ln.startswith("http"):
-                continue
-            self.assertLessEqual(J.cell_width(ln), 40, ln)
         self.assertTrue(txt.startswith("🔴"))
-        self.assertIn("반증:", txt)
+        self.assertIn("· 로빈후드 체인 LIT 공급 +10.90M (포인트 풀 규모)", txt)
+        self.assertIn("서로 다른 종류의 신호 2개", txt)
+        self.assertIn("공급이 7일 최저 수준으로 돌아오면 해제", txt)
+
+    def test_html_escaped(self):
+        e = J.event("S2", "announcement", "ALERT", "라이터 RH 앱 공지: <Season 3> & claims", "x < y", "r", NOW)
+        txt = J.render("ALERT", ["S2"], [e], NOW, CFG)
+        self.assertIn("&lt;Season 3&gt; &amp; claims", txt)
+        self.assertNotIn("<Season", txt)
+
+    def test_release_correction(self):
+        e = J.event("S2", "doc_keyword", "ALERT", "문서 변경: llms.txt", ts=NOW,
+                    ref={"url": "https://docs.lighter.xyz/llms.txt", "added": ["- [Choose your integration](u)"]})
+        J.rejudge([e], {}, NOW + 3600)
+        txt = J.render_release([e], "WATCH", "ALERT", NOW, NOW + 3600, CFG)
+        self.assertTrue(txt.startswith("<b>라이터RH 전환 감시 · 정정</b>"))
+        self.assertIn("10/12(월) 09:17 '경보' 알림은 오탐이었어요.", txt)
+        self.assertIn("· 문서 전체 목록 — 'integration' 속 'ratio'처럼", txt)
+        self.assertIn("관찰 — 경보 신호는 없고", txt)
+
+    def test_release_by_data_is_haeje(self):
+        ev = J.detect_eth([tr(A, B, 10_800_000)], {}, CFG, NOW, [])
+        J.apply_refutes(ev, [tr(B, A, 10_000_000, NOW + 3600, "0x9")], CFG, NOW + 3600)
+        txt = J.render_release(ev, "NONE", "ALERT", NOW, NOW + 3600, CFG)
+        self.assertIn("· 해제</b>", txt)
+        self.assertIn("원래 지갑으로 돌아왔어요", txt)
 
 
 class Integration(unittest.TestCase):
@@ -189,6 +332,8 @@ class Integration(unittest.TestCase):
         self.W = watch
         self.supply = 396_441.0
         self.docs = "# Points\n\nreal time\n"
+        self.pages = None          # {주소: 본문} — 주어지면 주소별로 다른 문서를 돌려준다
+        self.fetched: list[str] = []
         self.lb_sum = 100_000.0
 
     def tearDown(self):
@@ -196,13 +341,19 @@ class Integration(unittest.TestCase):
         sys.modules.pop("watch", None)
         shutil.rmtree(self.tmp, ignore_errors=True)
 
+    def fetch(self, url):
+        self.fetched.append(url)
+        if self.pages is None:
+            return self.docs
+        return self.pages.get(url, "# Page Not Found\n\nThe URL does not exist.\n\n### Option 1 — Ask a question (recommended)\n")
+
     def run_at(self, now):
         S = self.W.S
         patches = [
             mock.patch.object(S, "block_number", side_effect=lambda u: 1000 + (now // 12) % 10_000_000),
             mock.patch.object(S, "transfer_logs", return_value=[]),
             mock.patch.object(S, "total_supply", side_effect=lambda u, t: self.supply),
-            mock.patch.object(S, "fetch_doc", side_effect=lambda u: self.docs),
+            mock.patch.object(S, "fetch_doc", side_effect=self.fetch),
             mock.patch.object(S, "announcements", return_value=[]),
             mock.patch.object(S, "leaderboard", side_effect=lambda a: [
                 {"addr": "0x", "points": self.lb_sum, "rank": 1}]),
@@ -220,7 +371,7 @@ class Integration(unittest.TestCase):
         finally:
             for p in patches:
                 p.stop()
-        latest = json.load(open(os.path.join(self.root, "data", "latest.json")))
+        latest = read_json(os.path.join(self.root, "data", "latest.json"))
         return rc, latest
 
     def test_flow(self):
@@ -242,7 +393,8 @@ class Integration(unittest.TestCase):
         self.lb_sum += 500
         rc, l3 = self.run_at(ts(2026, 10, 13, 7, 17))
         self.assertEqual(l3["outbox"]["level"], "ALERT")
-        self.assertIn("RH체인 LIT 공급", l3["outbox"]["text"])
+        self.assertIn("로빈후드 체인 LIT 공급", l3["outbox"]["text"])
+        self.assertIn("10/12(월) 23:17 감지", l3["outbox"]["text"])     # 밤에 감지한 시각 그대로
         first_id = l3["outbox"]["id"]
         # 같은 등급 유지 — 새 outbox 없음(기존 것 TTL 안에서 유지)
         self.lb_sum += 500
@@ -255,6 +407,103 @@ class Integration(unittest.TestCase):
         self.assertEqual(l5["level"], "IMMINENT")
         self.assertNotEqual(l5["outbox"]["id"], first_id)
         self.assertTrue(l5["outbox"]["text"].startswith("🔴"))
+
+    D = "https://docs.lighter.xyz/"
+
+    def site(self, rh_path):
+        rh = "# Lighter on Robinhood Chain Points\n\nWeekly drop every Friday.\n"
+        return {
+            self.D + "llms.txt": (f"# Lighter Docs\n- [Lighter on Robinhood Chain Points]({self.D}{rh_path}.md)\n"
+                                  f"- [Programs]({self.D}programs/readme.md)\n"
+                                  f"- [LIT Utility]({self.D}about-lighter/lit-utility.md)\n"),
+            self.D + rh_path + ".md": rh,
+            self.D + "programs/readme.md": "# Programs\n\nSeveral programs.\n",
+            self.D + "about-lighter/lit-utility.md": "# LIT Utility\n\nBuybacks.\n",
+        }
+
+    def test_doc_move_is_followed_quietly(self):
+        """2026-10-22처럼 문서 주소가 바뀌면 경보 없이 새 주소로 따라가고, 옛 내용과 그대로 비교한다."""
+        self.pages = self.site("programs/lighter-on-robinhood-chain-points")
+        t0 = ts(2026, 10, 12, 9, 17)
+        self.run_at(t0)                                                   # 시딩
+        self.pages = self.site("rewards/lighter-on-robinhood-chain-points")  # 주소만 옮김
+        self.lb_sum += 1
+        rc, l1 = self.run_at(t0 + 7200)
+        self.assertEqual(rc, 0)
+        self.assertIsNone(l1["outbox"])                                   # 경보·메시지 없음
+        st = read_json(os.path.join(self.root, "data", "state.json"))
+        old = self.D + "programs/lighter-on-robinhood-chain-points.md"
+        new = self.D + "rewards/lighter-on-robinhood-chain-points.md"
+        self.assertEqual(st["doc_moves"][old]["to"], new)
+        self.assertTrue(st["doc_moves"][old]["same"])
+        self.assertEqual(st["docs"][old]["url"], new)
+        sig = {e["signal"]: e for e in st["events"]}
+        self.assertEqual(sig["doc_moved"]["grade"], "WATCH")
+        self.assertIn("(내용 그대로)", sig["doc_moved"]["title"])
+        self.assertNotIn("doc_keyword", sig)
+        # 다음 실행은 새 주소를 바로 읽고, 내용이 바뀌면 옛 기준선과 비교해 판정한다
+        self.fetched.clear()
+        self.pages[new] += "\nPoints will convert to LIT at 4.2 LIT per point.\n"
+        self.lb_sum += 1
+        rc, l2 = self.run_at(t0 + 14400)
+        self.assertNotIn(old, self.fetched)
+        self.assertEqual(l2["outbox"]["level"], "ALERT")
+        self.assertIn("rewards/lighter-on-robinhood-chain-points", l2["outbox"]["text"])  # 원문 링크는 새 주소
+
+    def test_missing_doc_keeps_baseline(self):
+        self.pages = self.site("programs/lighter-on-robinhood-chain-points")
+        t0 = ts(2026, 10, 12, 9, 17)
+        self.run_at(t0)
+        url = self.D + "programs/lighter-on-robinhood-chain-points.md"
+        before = read_json(os.path.join(self.root, "data", "state.json"))["docs"][url]["text"]
+        del self.pages[url]                                               # 목록에서도 사라짐
+        self.pages[self.D + "llms.txt"] = "# Lighter Docs\n"
+        self.lb_sum += 1
+        rc, l = self.run_at(t0 + 7200)
+        st = read_json(os.path.join(self.root, "data", "state.json"))
+        self.assertEqual(st["docs"][url]["text"], before)                 # '페이지 없음'으로 덮지 않는다
+        self.assertIn("doc_missing", [e["signal"] for e in st["events"]])
+        self.assertIsNone(l["outbox"])
+
+    def test_release_after_false_positive(self):
+        """보낸 경보가 오탐으로 풀리면 낮에 '정정' 한 번 — 다음 실행에서 되풀이하지 않는다."""
+        t0 = ts(2026, 10, 12, 9, 17)
+        self.run_at(t0)
+        p = os.path.join(self.root, "data", "state.json")
+        st = read_json(p)
+        e = J.event("S2", "doc_keyword", "ALERT", "문서 변경: llms.txt", ts=t0 + 600,
+                    ref={"url": "https://docs.lighter.xyz/llms.txt", "added": ["- [Choose your integration](u)"]})
+        st["events"].append(e)
+        st.update({"notified": "ALERT", "notified_ids": [e["id"]], "notified_at": t0 + 900})
+        write_json(p, st)
+        self.lb_sum += 1
+        rc, l = self.run_at(t0 + 3600)
+        self.assertEqual(l["outbox"]["kind"], "release")
+        self.assertIn("· 정정</b>", l["outbox"]["text"])
+        self.assertIn("'integration' 속 'ratio'", l["outbox"]["text"])
+        self.lb_sum += 1
+        rc, l2 = self.run_at(t0 + 7200)
+        self.assertEqual(l2["outbox"]["id"], l["outbox"]["id"])
+        self.assertEqual(read_json(p)["notified"], "NONE")
+
+    def test_expired_alert_does_not_block_the_next(self):
+        """알린 신호가 7일 창을 지나 빠지면, 그 뒤 새 경보는 다시 보낸다."""
+        t0 = ts(2026, 10, 12, 9, 17)
+        self.run_at(t0)
+        self.docs += "\nPoints convert to LIT at 4.2 LIT per point.\n"
+        self.lb_sum += 1
+        rc, l1 = self.run_at(t0 + 7200)
+        self.assertEqual(l1["outbox"]["kind"], "alert")
+        for d in range(2, 10, 2):                                         # 약신호(일반 문구 변경)만 이어지는 9일
+            self.docs += f"\nPlain note {d}.\n"
+            self.lb_sum += 1
+            rc, lw = self.run_at(t0 + d * 86400)
+        self.assertEqual(lw["level"], "WATCH")                            # 조용함(NONE)은 아니다
+        self.docs += "\nClaim opens on Nov 3.\n"
+        self.lb_sum += 1
+        rc, l2 = self.run_at(t0 + 10 * 86400)
+        self.assertEqual(l2["outbox"]["kind"], "alert")
+        self.assertNotEqual(l2["outbox"]["id"], l1["outbox"]["id"])
 
     def test_undecidable_exit(self):
         t0 = ts(2026, 10, 12, 9, 17)

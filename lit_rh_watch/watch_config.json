@@ -8,11 +8,18 @@
   "rh_api": "https://api.rh.lighter.xyz",
   "rh_frontend": "https://robinhoodchain.lighter.xyz",
   "docs_pages": [
-    "https://docs.lighter.xyz/points-program/lighter-on-robinhood-chain-points.md",
-    "https://docs.lighter.xyz/points-program.md",
-    "https://docs.lighter.xyz/about-lighter/lit-utility.md",
-    "https://docs.lighter.xyz/llms.txt"
+    "https://docs.lighter.xyz/llms.txt",
+    "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md",
+    "https://docs.lighter.xyz/programs/readme.md",
+    "https://docs.lighter.xyz/about-lighter/lit-utility.md"
   ],
+  "doc_names": {
+    "llms.txt": "문서 전체 목록",
+    "lighter-on-robinhood-chain-points": "로빈후드 체인 포인트 안내",
+    "programs/readme": "프로그램 목록",
+    "points-program": "포인트 프로그램 안내",
+    "lit-utility": "LIT 활용"
+  },
   "pool_lit": 11000000,
   "pool_band_pct": 15,
   "eth_large_lit": 1000000,

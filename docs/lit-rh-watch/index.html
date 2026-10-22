@@ -86,7 +86,7 @@ a{color:inherit}
 <script>
 const LEVELS=["NONE","WATCH","ALERT","IMMINENT"];
 const LABEL={NONE:"조용함",WATCH:"관찰",ALERT:"경보",IMMINENT:"임박"};
-const FAM={S1:"온체인",S2:"공식",S3:"UI·API",S4:"보조"};
+const FAM={S1:"온체인",S2:"공식 문서·공지",S3:"앱 화면·API",S4:"보조"};
 const SRC={eth_transfers:"ETH 대량 이동",rh_supply:"RH 총공급",rh_transfers:"RH 대량 이동",docs:"공식 문서",
   announcements:"앱 공지",leaderboard:"리더보드",frontend:"프론트 번들",news:"뉴스",x:"X",polymarket:"Polymarket"};
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -102,10 +102,14 @@ function spark(el,pts,col){
   <p class="chart-cap">최저 ${fmt(y0)} · 최고 ${fmt(y1)} · 현재 ${fmt(ys[ys.length-1])}</p>`;
 }
 function evRow(e){
+  const ref=e.ref||{};
+  const src=/^https?:/.test(ref.url||"")?` · <a href="${esc(String(ref.url).replace(/\.md$/,""))}" rel="noopener">원문</a>`:"";
+  const off=e.refuted?`<span class="r">${e.refute_kind==="false_positive"?"오탐":"해제"}: ${esc(e.refute_reason||"해제 조건 충족")}</span>`
+    :(e.refute?`<span class="r">해제 조건: ${esc(e.refute)}</span>`:"");
   return `<div class="ev${e.refuted?" off":""}"><span class="tag ${e.grade}">${LABEL[e.grade]}</span>
   <span class="t">${esc(FAM[e.family])} · ${esc(e.title)}</span>
-  <span class="d">${kst(e.ts)}${e.detail?" · "+esc(e.detail):""}</span>
-  ${e.refute?`<span class="r">반증: ${esc(e.refute)}</span>`:""}</div>`;
+  <span class="d">${kst(e.ts)}${e.detail?" · "+esc(e.detail):""}${src}</span>
+  ${off}</div>`;
 }
 fetch("data.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
   document.getElementById("asof").textContent=`${kst(d.generated_at)} KST 기준 · 2시간마다 갱신`;

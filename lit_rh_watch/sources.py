@@ -131,11 +131,21 @@ def address_meta(blockscout: str, addr: str) -> dict:
 
 # ───────────────────────── 문서 ─────────────────────────
 _DOC_NOISE = re.compile(r"^> For the complete documentation index.*$", re.M)
+# GitBook이 2026-10-22부터 모든 .md 끝에 붙이는 AI 에이전트용 안내문 — 본문이 아니다.
+_AGENT_BLOCK = re.compile(r"(?:^|\n)[ \t]*-{3,}[ \t]*\n(?:[ \t]*\n)*#[ \t]+Agent Instructions\b.*\Z", re.S)
+_AGENT_TAIL = re.compile(r"(?:^|\n)#[ \t]+Agent Instructions\b.*\Z", re.S)
+
+
+def is_not_found(text: str) -> bool:
+    """GitBook의 '페이지 없음' 응답(HTTP 200으로 온다) — 문서가 옮겨졌거나 지워졌다."""
+    return (text or "").lstrip().startswith("# Page Not Found")
 
 
 def normalize_doc(text: str) -> str:
+    text = text.replace("\r", "")
+    text = _AGENT_TAIL.sub("", _AGENT_BLOCK.sub("", text))
     text = _DOC_NOISE.sub("", text)
-    text = text.replace("&#x20;", " ").replace("\r", "")
+    text = text.replace("&#x20;", " ")
     lines = [ln.rstrip() for ln in text.split("\n")]
     out, blank = [], False
     for ln in lines:
