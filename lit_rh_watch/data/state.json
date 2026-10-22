@@ -114,8 +114,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26247983,
-  "rh": 95092641
+  "eth": 26249566,
+  "rh": 95275259
  },
  "doc_moves": {
   "https://docs.lighter.xyz/points-program.md": {
@@ -1366,6 +1366,90 @@
    "signal": "doc_change",
    "title": "공식 문서 '프로그램 목록' 문구 변경",
    "ts": 1792631040
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "f4f9e4ce664f",
+   "ref": {
+    "name": "MobileExpandableList"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: MobileExpandableList",
+   "ts": 1792689121
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "257de088f89b",
+   "ref": {
+    "name": "export"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: export",
+   "ts": 1792689121
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "572f4f531657",
+   "ref": {
+    "name": "exportRange"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: exportRange",
+   "ts": 1792689121
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "103067be1cad",
+   "ref": {
+    "name": "runtime"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: runtime",
+   "ts": 1792689121
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "cf7882e5d14d",
+   "ref": {
+    "name": "useSignMessage"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: useSignMessage",
+   "ts": 1792689121
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVU9FVFl5NWl1QjR4a045REdiSTljRGVoXzhCaFRaVUxyLW9Ib1c2a3JzZVNlTDhaX3ZRQ2pqdFR2Z1drMGFac0E",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "1a1a364ba74b",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVU9FVFl5NWl1QjR4a045REdiSTljRGVoXzhCaFRaVUxyLW9Ib1c2a3JzZVNlTDhaX3ZRQ2pqdFR2Z1drMGFac0EyQlg2SGtTZkFkUEVJS3I1YVRIMjdmLVN6Z094bDJfYkdybU9ocllkcHQ2UXVvVlR3akh4NWZHQks1MWdXN1VSOWFfMnQzZTM?oc=5"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: Lighter Distributes $675M in LIT Tokens in 10th-Largest Crypto Airdrop - CoinMarketCap",
+   "ts": 1792689121
   }
  ],
  "fail_streak": 0,
@@ -1533,6 +1617,7 @@
    "MarketPage",
    "MarketsTable",
    "MobileCollapsibleCards",
+   "MobileExpandableList",
    "MobileList",
    "Modal",
    "NewVersionNotification",
@@ -1592,6 +1677,8 @@
    "esm",
    "exchange-stats",
    "explorer-sdk",
+   "export",
+   "exportRange",
    "formatSigned",
    "funding-markets-risk-params",
    "fundingCountdown",
@@ -1613,6 +1700,7 @@
    "read-only-tokens",
    "referrals",
    "rolldown-runtime",
+   "runtime",
    "shared",
    "staking-pool",
    "stockFormatting",
@@ -1634,6 +1722,7 @@
    "usePnlLeaderboardQueries",
    "usePriceOracle",
    "useSafeSorting",
+   "useSignMessage",
    "useSignMessagesMutation",
    "useTokenCategories",
    "util",
@@ -2146,6 +2235,11 @@
    1792670090,
    195651.81,
    46897.457
+  ],
+  [
+   1792689121,
+   196074.729,
+   47093.516
   ]
  ],
  "level": "WATCH",
@@ -2301,6 +2395,7 @@
   "a863af1db515",
   "a888766f3753",
   "a8e8b73b9663",
+  "a92f408c697b",
   "a99dad30e1e4",
   "aae07c64c3ed",
   "aae57ef0de47",
@@ -2387,10 +2482,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1791466321,
-   421878.83
-  ],
   [
    1791489470,
    421878.83
@@ -2630,58 +2721,62 @@
   [
    1792670090,
    448620.94
+  ],
+  [
+   1792689121,
+   448620.94
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792670090,
+   "at": 1792689121,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792670090,
+   "at": 1792689121,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792670090,
-   "note": "2119블록 · 대량 0건",
+   "at": 1792689121,
+   "note": "1583블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792670090,
-   "note": "모듈 137 · API 127",
+   "at": 1792689121,
+   "note": "모듈 141 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792670090,
-   "note": "상위10 합계 195,652",
+   "at": 1792689121,
+   "note": "상위10 합계 196,075",
    "ok": true
   },
   "news": {
-   "at": 1792670090,
-   "note": "120건",
+   "at": 1792689121,
+   "note": "123건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792670090,
+   "at": 1792689121,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792670090,
+   "at": 1792689121,
    "note": "448,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792670090,
+   "at": 1792689121,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792670090,
-   "note": "39건",
+   "at": 1792689121,
+   "note": "20건",
    "ok": true
   }
  },
