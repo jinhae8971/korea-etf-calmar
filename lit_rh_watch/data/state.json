@@ -114,8 +114,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26249566,
-  "rh": 95275259
+  "eth": 26250887,
+  "rh": 95428415
  },
  "doc_moves": {
   "https://docs.lighter.xyz/points-program.md": {
@@ -1450,6 +1450,20 @@
    "signal": "news",
    "title": "뉴스: Lighter Distributes $675M in LIT Tokens in 10th-Largest Crypto Airdrop - CoinMarketCap",
    "ts": 1792689121
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE12WEF4ZVlPTGpGQThZcFBPamluRVZKN3prQmJ3all1S0lqcGRmMTJsWWdXRUZRTTRHSm52RVdXcmxHb0tCYmFINW1",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "45e180b59faa",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE12WEF4ZVlPTGpGQThZcFBPamluRVZKN3prQmJ3all1S0lqcGRmMTJsWWdXRUZRTTRHSm52RVdXcmxHb0tCYmFINW1VTFVBN1VIdk1iOExZem1zRHMzQXfSAWNBVV95cUxNLWNwX2VGYXNnbE9VS1lLOU9rU1pqbzFwcEo1VnNpa2dnVE5wb3Eyc0VYY2hqSGszUUNtZnl3MTBLckd1NXBJSUlNdnVldXZDcG5aXy1YSUtYVUhtZUhTNnZjQzg?oc=5"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: Airdrop Points Spark $363K Wagers as Lighter Disrupts Traditional DeFi Trading - Bitget",
+   "ts": 1792705042
   }
  ],
  "fail_streak": 0,
@@ -2240,6 +2254,11 @@
    1792689121,
    196074.729,
    47093.516
+  ],
+  [
+   1792705042,
+   196352.791,
+   47215.97
   ]
  ],
  "level": "WATCH",
@@ -2369,6 +2388,7 @@
   "86b713a06156",
   "87da0d7c9bf1",
   "87de28e656b5",
+  "88c180b7fe73",
   "8a02eb8c12ac",
   "8a3546be5eb4",
   "8de518f2f8ab",
@@ -2482,10 +2502,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1791489470,
-   421878.83
-  ],
   [
    1791505420,
    421878.83
@@ -2725,59 +2741,63 @@
   [
    1792689121,
    448620.94
+  ],
+  [
+   1792705042,
+   448620.94
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792689121,
+   "at": 1792705042,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792689121,
+   "at": 1792705042,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792689121,
-   "note": "1583블록 · 대량 0건",
+   "at": 1792705042,
+   "note": "1321블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792689121,
+   "at": 1792705042,
    "note": "모듈 141 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792689121,
-   "note": "상위10 합계 196,075",
+   "at": 1792705042,
+   "note": "상위10 합계 196,353",
    "ok": true
   },
   "news": {
-   "at": 1792689121,
-   "note": "123건",
+   "at": 1792705042,
+   "note": "124건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792689121,
+   "at": 1792705042,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792689121,
+   "at": 1792705042,
    "note": "448,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792689121,
+   "at": 1792705042,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792689121,
-   "note": "20건",
-   "ok": true
+   "at": 1792705042,
+   "err": "수집 불가(보조 원천)",
+   "ok": false
   }
  },
  "version": 1
