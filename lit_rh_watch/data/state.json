@@ -114,8 +114,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26251802,
-  "rh": 95533859
+  "eth": 26253856,
+  "rh": 95772052
  },
  "doc_moves": {
   "https://docs.lighter.xyz/points-program.md": {
@@ -2264,6 +2264,11 @@
    1792716069,
    196582.162,
    47274.86
+  ],
+  [
+   1792740835,
+   196791.343,
+   47367.562
   ]
  ],
  "level": "WATCH",
@@ -2384,6 +2389,7 @@
   "7ab7bdbe4bda",
   "7c19d6a369ec",
   "7c1fe3f132e1",
+  "7c2f88404a79",
   "7f8cf597b281",
   "813ecc30136b",
   "824f3cd88566",
@@ -2472,6 +2478,7 @@
   "eacb753778d7",
   "eaff9ca771a5",
   "ecfb189b7999",
+  "ed30621eea45",
   "ed5228624773",
   "ed76c710715d",
   "eecfe3e27d59",
@@ -2497,13 +2504,7 @@
  "notified": "WATCH",
  "notified_at": 1792631040,
  "notified_ids": [],
- "outbox": {
-  "created": 1792631040,
-  "id": "108322f4f0b3",
-  "kind": "release",
-  "level": "WATCH",
-  "text": "<b>라이터RH 전환 감시 · 정정</b>\n10/22(목) 08:21 '경보' 알림은 오탐이었어요. 포인트→LIT 전환 관련 변화는 없어요.\n\n<b>무슨 일이었나</b>\n· 로빈후드 체인 포인트 안내 — 라이터가 문서 주소를 옮겼어요(내용은 그대로). 옛 주소의 '페이지 없음' 안내문을 변경으로 잘못 읽었어요\n· 포인트 프로그램 안내 — 라이터가 문서 주소를 옮기면서 내용도 바꿨어요(바뀐 내용은 새 주소에서 따로 판정). 옛 주소의 '페이지 없음' 안내문을 변경으로 잘못 읽었어요\n· 문서 전체 목록 — 'integration' 속 'ratio'처럼 단어 일부만 맞은 키워드 오탐이에요\n\n<b>지금</b>\n관찰 — 경보 신호는 없고, 약한 신호만 대시보드에 남겨요\n옮겨진 문서는 새 주소로 계속 감시해요: <a href=\"https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points\">로빈후드 체인 포인트 안내</a> · <a href=\"https://docs.lighter.xyz/programs/readme\">프로그램 목록</a>\n\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/lit-rh-watch/\">대시보드</a>"
- },
+ "outbox": null,
  "pm_seen": [
   "what-price-will-lighter-hit-before-2027"
  ],
@@ -2751,57 +2752,61 @@
   [
    1792716069,
    448620.94
+  ],
+  [
+   1792740835,
+   448620.94
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792716069,
+   "at": 1792740835,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792716069,
+   "at": 1792740835,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792716069,
-   "note": "915블록 · 대량 0건",
+   "at": 1792740835,
+   "note": "2054블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792716069,
+   "at": 1792740835,
    "note": "모듈 141 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792716069,
-   "note": "상위10 합계 196,582",
+   "at": 1792740835,
+   "note": "상위10 합계 196,791",
    "ok": true
   },
   "news": {
-   "at": 1792716069,
-   "note": "116건",
+   "at": 1792740835,
+   "note": "128건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792716069,
+   "at": 1792740835,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792716069,
+   "at": 1792740835,
    "note": "448,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792716069,
+   "at": 1792740835,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792716069,
+   "at": 1792740835,
    "note": "39건",
    "ok": true
   }
