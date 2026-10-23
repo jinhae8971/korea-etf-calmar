@@ -114,8 +114,8 @@
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26253856,
-  "rh": 95772052
+  "eth": 26255619,
+  "rh": 95974947
  },
  "doc_moves": {
   "https://docs.lighter.xyz/points-program.md": {
@@ -1464,6 +1464,20 @@
    "signal": "news",
    "title": "뉴스: Airdrop Points Spark $363K Wagers as Lighter Disrupts Traditional DeFi Trading - Bitget",
    "ts": 1792705042
+  },
+  {
+   "detail": "주간 배분 축소 가능성",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "43c7ff81cf3a",
+   "ref": {
+    "ratio": 0.2227385993895009
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "lb_slowdown",
+   "title": "상위권 주간 적립이 지난주의 22%로 둔화",
+   "ts": 1792762086
   }
  ],
  "fail_streak": 0,
@@ -2269,6 +2283,11 @@
    1792740835,
    196791.343,
    47367.562
+  ],
+  [
+   1792762086,
+   197020.031,
+   47474.48
   ]
  ],
  "level": "WATCH",
@@ -2509,10 +2528,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1791536784,
-   421878.83
-  ],
   [
    1791565228,
    421878.83
@@ -2756,57 +2771,61 @@
   [
    1792740835,
    448620.94
+  ],
+  [
+   1792762086,
+   448620.94
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792740835,
+   "at": 1792762086,
    "note": "13건",
    "ok": true
   },
   "docs": {
-   "at": 1792740835,
+   "at": 1792762086,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792740835,
-   "note": "2054블록 · 대량 0건",
+   "at": 1792762086,
+   "note": "1763블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792740835,
+   "at": 1792762086,
    "note": "모듈 141 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792740835,
-   "note": "상위10 합계 196,791",
+   "at": 1792762086,
+   "note": "상위10 합계 197,020",
    "ok": true
   },
   "news": {
-   "at": 1792740835,
-   "note": "128건",
+   "at": 1792762086,
+   "note": "127건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792740835,
+   "at": 1792762086,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792740835,
+   "at": 1792762086,
    "note": "448,621 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792740835,
+   "at": 1792762086,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792740835,
+   "at": 1792762086,
    "note": "39건",
    "ok": true
   }
