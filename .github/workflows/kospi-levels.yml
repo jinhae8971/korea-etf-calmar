@@ -1,0 +1,103 @@
+name: KOSPI Levels
+
+# 코스피 매매기준점(지지·저항·추세·3-시나리오) — 평일 장 시작 전 브리프.
+# 계산만 하고 kospi_levels/data/latest.json(message)을 커밋한다. 발송은 Brief Hub(@spytltgld_strategy_bot).
+# 2026-10-24 jinhae8971/kospi-levels 레포에서 이전 — 그쪽 봇 토큰이 폐기돼(401) 10/21부터 연속 실패.
+#
+# 타이밍: 이 레포의 크론은 1~2시간 밀리고 슬롯이 자주 빠진다(2026-10 실측: 07:36 크론 → 09:42~12:10 시작).
+#   ① KST 05:43~07:23 슬롯 4개 — 오늘 데이터가 이미 있으면 계산 없이 끝낸다(멱등).
+#   ② 08:00 KST 전에 끝난 예약 실행은 08:00까지 기다렸다 종료 → 종료 즉시 Brief Hub(workflow_run)가 발송.
+#   어떤 슬롯도 08:00 전에 못 돌면 첫 완료 시점에 바로 발송. 정오까지 데이터가 없으면 허브가 지연 알림.
+on:
+  schedule:
+    - cron: "43 20 * * 0-4"   # KST 월~금 05:43
+    - cron: "21 21 * * 0-4"   # 06:21
+    - cron: "47 21 * * 0-4"   # 06:47
+    - cron: "23 22 * * 0-4"   # 07:23
+  push:
+    branches: [main]
+    paths:
+      - "kospi_levels/kospi_levels.py"
+      - "kospi_levels/tests/**"
+      - "kospi_levels/requirements.txt"
+      - ".github/workflows/kospi-levels.yml"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "오늘 데이터가 있어도 다시 계산"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kospi-levels
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -q -r kospi_levels/requirements.txt
+
+      - name: Test gate
+        run: python -m unittest discover -s kospi_levels/tests
+
+      - name: Collect
+        env:
+          TZ: "Asia/Seoul"
+          FORCE: ${{ github.event_name == 'push' || inputs.force == true }}
+        run: |
+          set -euo pipefail
+          if [ "$FORCE" = "true" ]; then
+            python kospi_levels/kospi_levels.py --force
+          else
+            python kospi_levels/kospi_levels.py
+          fi
+
+      - name: Commit
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kospi_levels/data
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+            exit 0
+          fi
+          AS_OF=$(python -c "import json;print(json.load(open('kospi_levels/data/latest.json'))['as_of_kst'])")
+          git commit -m "chore(kospi-levels): snapshot ${AS_OF} KST"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
+
+      # 이 잡이 끝나는 순간 Brief Hub가 workflow_run으로 돈다. 08:00 전에 끝나면 허브가 '발송 시각 전'으로
+      # 넘기고 다음 정시 실행(실측 1~2시간 지연)까지 밀리므로, 예약 실행은 08:00까지 잡을 붙잡아 둔다.
+      - name: Hold until 08:00 KST
+        if: github.event_name == 'schedule'
+        run: |
+          now=$(date +%s)
+          target=$(TZ=Asia/Seoul date -d "$(TZ=Asia/Seoul date +%F) 08:00:30" +%s)
+          wait=$(( target - now ))
+          if [ "$wait" -gt 0 ] && [ "$wait" -le 9000 ]; then
+            echo "08:00 KST까지 ${wait}s 대기 — 종료 시점에 Brief Hub가 발송"
+            sleep "$wait"
+          else
+            echo "대기 없음 (지금 $(TZ=Asia/Seoul date '+%H:%M') KST)"
+          fi
