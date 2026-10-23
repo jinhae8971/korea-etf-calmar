@@ -64,6 +64,54 @@ class ComputeTest(unittest.TestCase):
             kl.compute_reference_points(self.weekly, bad)
 
 
+def synth_crash(seed: int = 21) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """긴 상승 뒤 급락 → 슈퍼트렌드가 가격 위로 올라간 하락 국면 (2026-10 실제 국면과 같은 모양)."""
+    rng = np.random.default_rng(seed)
+    days = 780
+    idx = pd.bdate_range("2023-10-02", periods=days)
+    drift = np.r_[np.full(days - 140, 0.0016), np.full(110, -0.0052), np.full(30, 0.001)]
+    close = 2400 * np.exp(np.cumsum(drift + rng.normal(0, 0.009, days)))
+    high, low = close * 1.006, close * 0.994
+    daily = pd.DataFrame({"Open": close, "High": high, "Low": low, "Close": close,
+                          "Volume": np.full(days, 5e8)}, index=idx)
+    weekly = daily.resample("W-MON", label="left", closed="left").agg(
+        {"Open": "first", "High": "max", "Low": "min", "Close": "last", "Volume": "sum"}).dropna()
+    return weekly, daily.tail(40)
+
+
+class ScenarioDirectionTest(unittest.TestCase):
+    """약세 시나리오의 하방 목표는 항상 직전 저점 아래여야 한다 (2026-10-24 하락 국면 버그)."""
+
+    def test_downtrend_bear_targets_below(self):
+        w, d = synth_crash()
+        r = kl.compute_reference_points(w, d)
+        self.assertFalse(r["st_up"])
+        self.assertGreater(r["st"], r["swing_low"])
+        self.assertLess(r["deep_target"], r["swing_low"])
+        self.assertLess(r["deep_target"], r["price"])
+        act = r["scenarios"]["bear"]["action"]
+        self.assertNotIn("테스트", act)
+        self.assertIn("위쪽 저항", act)
+        self.assertLess(r["ext_pct"], -6)
+        self.assertIn("하방", kl.build_message(r))
+
+    def test_bear_target_below_swing_low_for_all_shapes(self):
+        for seed in range(30):
+            for fn in (synth, synth_crash):
+                w, d = fn(seed=seed)
+                r = kl.compute_reference_points(w, d)
+                self.assertLess(r["deep_target"], r["swing_low"], (fn.__name__, seed))
+
+    def test_uptrend_wording_unchanged(self):
+        for seed in range(30):
+            w, d = synth(seed=seed)
+            r = kl.compute_reference_points(w, d)
+            if r["st"] < r["swing_low"]:
+                self.assertTrue(r["scenarios"]["bear"]["action"].startswith(f"슈퍼트렌드 {kl.fmt(r['st'])} 테스트"))
+                return
+        self.skipTest("상승 구조 표본 없음")
+
+
 class MessageTest(unittest.TestCase):
     def setUp(self):
         weekly, daily = synth(seed=11)

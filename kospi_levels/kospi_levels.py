@@ -279,8 +279,18 @@ def compute_reference_points(df: pd.DataFrame, daily: pd.DataFrame) -> dict:
     key_res = fib_res["61.8%"]   # 낙폭 61.8% 회복 = 반등 성공 상단
     key_sup = swing_low          # 직전(급락) 저점 = 방어 1선
     trend_line = st_now          # 슈퍼트렌드 = 추세 최종선
-    # 추세선 이탈 시 다음 지지: 추세선 하단 근접 심리선(1,000단위)
-    deep_target = math.floor((trend_line - 1) / 1000) * 1000
+    if trend_line < key_sup:
+        # 상승 구조: 직전 저점 아래에 추세선이 받친다 → 추세선 테스트, 이탈 시 그 아래 심리선(1,000단위)
+        deep_target = math.floor((trend_line - 1) / 1000) * 1000
+        bear_action = (f"슈퍼트렌드 {fmt(trend_line)} 테스트, 이마저 이탈 시 {fmt(deep_target)} 심리선까지 개방"
+                       " · 현물 코어 방어선 점검")
+    else:
+        # 추세선이 직전 저점보다 위(하락 추세면 가격 위의 저항) → 직전 저점 아래 심리선이 다음 목표 (2026-10-24 수정:
+        # 기존 문구는 하락장에서 위쪽 추세선을 하방 '테스트' 레벨로 안내했다)
+        deep_target = math.floor((key_sup - 1) / 1000) * 1000
+        st_note = (f"슈퍼트렌드 {fmt(trend_line)}는 위쪽 저항(하락 추세)" if not st_up
+                   else f"슈퍼트렌드 {fmt(trend_line)} 하회가 먼저 — 추세 하락 전환")
+        bear_action = f"{fmt(deep_target)} 심리선까지 개방 · {st_note} · 현물 코어 방어선 점검"
 
     scenarios = {
         "bull": {
@@ -296,7 +306,7 @@ def compute_reference_points(df: pd.DataFrame, daily: pd.DataFrame) -> dict:
         "bear": {
             "title": "약세 — 추세 붕괴",
             "trigger": f"주봉 종가 {fmt(key_sup)} 이탈",
-            "action": f"슈퍼트렌드 {fmt(trend_line)} 테스트, 이마저 이탈 시 {fmt(deep_target)} 심리선까지 개방 · 현물 코어 방어선 점검",
+            "action": bear_action,
         },
     }
 
@@ -315,6 +325,7 @@ def compute_reference_points(df: pd.DataFrame, daily: pd.DataFrame) -> dict:
         "macd_state": macd_state, "hist_state": hist_state,
         "atr": atr_now,
         "swing_high": swing_high, "swing_low": swing_low, "base_low": base_low,
+        "key_res": key_res, "deep_target": deep_target,
         "resistances": [[label, lv] for label, lv in resistances],
         "supports": [[label, lv] for label, lv in supports],
         "regime": regime, "regime_tag": regime_tag,
@@ -328,7 +339,9 @@ def compute_reference_points(df: pd.DataFrame, daily: pd.DataFrame) -> dict:
 def build_message(d: dict) -> str:
     arrow = "▲" if d["chg"] >= 0 else "▼"
     sign = "+" if d["chg"] >= 0 else ""
-    ext_word = "과확장" if d["ext_pct"] > 12 else ("확장" if d["ext_pct"] > 6 else "정상")
+    e = d["ext_pct"]   # 슈퍼트렌드 대비 이격 — 음수(추세선 아래)도 크기를 표시 (2026-10-24: -31%가 '정상'으로 나오던 것 수정)
+    ext_word = ("과확장" if e > 12 else "확장" if e > 6 else
+                "하방 과이격" if e < -12 else "하방 이격" if e < -6 else "정상")
     cd = datetime.strptime(d["close_date"], "%Y-%m-%d")
 
     L = []
