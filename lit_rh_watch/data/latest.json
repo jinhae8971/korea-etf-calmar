@@ -2,10 +2,16 @@
  "families": [
   "S2"
  ],
- "generated_at": 1792779774,
+ "generated_at": 1792797001,
  "level": "ALERT",
  "note": "",
- "outbox": null,
+ "outbox": {
+  "created": 1792797001,
+  "id": "09161f8ce695",
+  "kind": "alert",
+  "level": "ALERT",
+  "text": "🟡 <b>라이터RH 전환 감시 · 경보</b>\n10/24(토) 03:22 감지 · 공식 문서·공지\n\n<b>무슨 일</b>\n공식 문서 '로빈후드 체인 포인트 안내'에 전환 관련 문구 추가\n  <i>“The live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.”</i>\n  잡힌 단어: distributed\n\n<b>의미</b>\n전환 일정·비율이 공식 문서에 들어가기 시작했다는 뜻일 수 있어요.\n다른 종류 신호(온체인·공식 문서·앱 중)가 7일 안에 하나 더 나오면 '임박'으로 올려요.\n\n<b>해제 조건</b>\n일정·비율이 아닌 일반 약관 정정으로 확인되면 해제\n\n<a href=\"https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points\">문서 원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/lit-rh-watch/\">대시보드</a>"
+ },
  "status": {
   "announcements": true,
   "docs": true,
