@@ -1,7 +1,7 @@
 {
  "cursors": {
-  "eth": 26255619,
-  "rh": 95974947
+  "eth": 26257089,
+  "rh": 96144806
  },
  "docs": {
   "https://docs.lighter.xyz/about-lighter/lit-utility.md": {
@@ -13,8 +13,8 @@
    "hash": "6c09694ff8dfc73e"
   },
   "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md": {
-   "changed": 1790638034,
-   "hash": "fdae4d776d294379"
+   "changed": 1792779774,
+   "hash": "6cd6e5d0f63d89fa"
   },
   "https://docs.lighter.xyz/programs/readme.md": {
    "changed": 1792631040,
@@ -22,6 +22,28 @@
   }
  },
  "events": [
+  {
+   "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "cc53f4286465",
+   "ref": {
+    "added": [
+     "The live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.",
+     "Weekly points are based on the activity from the previous Friday (incl.) to Thursday (incl.), are distributed every Friday, and are fine-tuned depending on the week’s activity."
+    ],
+    "name": "로빈후드 체인 포인트 안내",
+    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md",
+    "words": [
+     "distributed"
+    ]
+   },
+   "refute": "일정·비율이 아닌 일반 약관 정정으로 확인되면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "공식 문서 '로빈후드 체인 포인트 안내'에 전환 관련 문구 추가",
+   "ts": 1792779774
+  },
   {
    "detail": "주간 배분 축소 가능성",
    "family": "S2",
@@ -567,24 +589,12 @@
    "signal": "eth_large",
    "title": "ETH LIT 2.20M 대량 이동",
    "ts": 1792190171
-  },
-  {
-   "detail": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "c70004afcadd",
-   "ref": {
-    "link": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "x",
-   "title": "X: RT by @vnovakovski: Lighter EVM devnet is live! An EVM-equiv",
-   "ts": 1792173865
   }
  ],
- "families": [],
- "generated_at": 1792762086,
+ "families": [
+  "S2"
+ ],
+ "generated_at": 1792779774,
  "lb_hist": [
   [
    1790638034,
@@ -1100,11 +1110,38 @@
    1792762086,
    197020.031,
    47474.48
+  ],
+  [
+   1792779774,
+   216716.668,
+   52497.31
   ]
  ],
- "level": "WATCH",
+ "level": "ALERT",
  "note": "",
  "recent_all": [
+  {
+   "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "cc53f4286465",
+   "ref": {
+    "added": [
+     "The live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.",
+     "Weekly points are based on the activity from the previous Friday (incl.) to Thursday (incl.), are distributed every Friday, and are fine-tuned depending on the week’s activity."
+    ],
+    "name": "로빈후드 체인 포인트 안내",
+    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md",
+    "words": [
+     "distributed"
+    ]
+   },
+   "refute": "일정·비율이 아닌 일반 약관 정정으로 확인되면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "공식 문서 '로빈후드 체인 포인트 안내'에 전환 관련 문구 추가",
+   "ts": 1792779774
+  },
   {
    "detail": "주간 배분 축소 가능성",
    "family": "S2",
@@ -2429,10 +2466,6 @@
  ],
  "rh_supply_hist": [
   [
-   1791565228,
-   421878.83
-  ],
-  [
    1791585582,
    421878.83
   ],
@@ -2675,56 +2708,60 @@
   [
    1792762086,
    448620.94
+  ],
+  [
+   1792779774,
+   451072.78
   ]
  ],
  "status": {
   "announcements": {
-   "at": 1792762086,
-   "note": "13건",
+   "at": 1792779774,
+   "note": "14건",
    "ok": true
   },
   "docs": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792762086,
-   "note": "1763블록 · 대량 0건",
+   "at": 1792779774,
+   "note": "1470블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "모듈 141 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792762086,
-   "note": "상위10 합계 197,020",
+   "at": 1792779774,
+   "note": "상위10 합계 216,717",
    "ok": true
   },
   "news": {
-   "at": 1792762086,
-   "note": "127건",
+   "at": 1792779774,
+   "note": "117건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792762086,
-   "note": "448,621 LIT",
+   "at": 1792779774,
+   "note": "451,073 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "39건",
    "ok": true
   }

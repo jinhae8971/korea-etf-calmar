@@ -110,12 +110,13 @@
   "1786729940:New Perp Listing",
   "1790956575:Network Upgrade",
   "1790953145:New Perp Listing",
-  "1791310722:Network Upgrade"
+  "1791310722:Network Upgrade",
+  "1792779495:New Perp Listings"
  ],
  "calm_since": null,
  "cursors": {
-  "eth": 26255619,
-  "rh": 95974947
+  "eth": 26257089,
+  "rh": 96144806
  },
  "doc_moves": {
   "https://docs.lighter.xyz/points-program.md": {
@@ -145,9 +146,9 @@
    "url": "https://docs.lighter.xyz/llms.txt"
   },
   "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md": {
-   "changed": 1790638034,
-   "hash": "fdae4d776d294379",
-   "text": "# Lighter on Robinhood Chain Points\n\nThe Lighter Points Program on the Robinhood Chain is a way to recognize eligible users for participating in the trading platform.\n\nPoints are calculated and awarded in real time based on eligible activity, with an additional weekly points drop at the end of each program period, every Friday (first weekly drop on Fri Aug 21). The way points are calculated may change over time as we continue improving the program and rewarding meaningful participation while keeping things fair for everyone.\n\n#### Support\n\nIf you have any questions about this program, please open a ticket in the Lighter Discord server.\n\nLighter Discord server: <https://discord.gg/lighterxyz>\n\n#### Terms and Conditions\n\n<details>\n\n<summary>You can read the Terms and Conditions of this points program here.</summary>\n\nEffective Date: Monday, Aug 10th 2026\n\nThese Terms govern eligibility for the Lighter on the Robinhood Chain Points Program (the \"Program\"). By participating in the Program, you agree to these Terms.\n\nThe purpose of the Program is to reward genuine participation on Lighter on the Robinhood Chain. Points are intended to recognize authentic trading activity and meaningful participation in the ecosystem—not activity designed to manipulate or exploit the Program.\n\n### 1. General Eligibility\n\nLighter on the Robinhood Chain determines, in its sole discretion, whether activity is eligible to earn points.\n\n### 2. Ineligible Activity\n\nThe following activities are not eligible to receive points and may result in point adjustments, disqualification, or removal from the Program.\n\n#### A. Market Manipulation\n\nThis includes, but is not limited to:\n\n* Wash trading.\n* Self-trading or trading between commonly controlled accounts.\n* Artificially inflating trading volume or liquidity.\n* Coordinated trading intended to manipulate markets or Program metrics.\n* Spoofing, layering, quote stuffing, or other deceptive trading practices.\n* Any activity intended to create artificial or misleading market activity.\n\n#### B. Sybil Activity\n\nThis includes, but is not limited to:\n\n* Operating or controlling multiple accounts to earn additional points.\n* Splitting activity across multiple accounts to increase rewards.\n* Creating, purchasing, renting, borrowing, or otherwise controlling accounts for the purpose of farming points.\n* Any attempt to disguise common ownership or coordinated control of accounts.\n\n#### C. Referral Abuse\n\nThis includes, but is not limited to:\n\n* Self-referrals.\n* Circular or reciprocal referral schemes.\n* Creating accounts solely to generate referral rewards.\n* Artificially inflating referral activity or referral-based rewards.\n\n#### D. Automated or Artificial Participation\n\nThis includes, but is not limited to:\n\n* Activity primarily intended to farm points rather than participate in markets.\n* Using bots, scripts, or automated systems to manipulate Program metrics.\n* Coordinated behavior designed to exploit the Program or its scoring methodology.\n\n#### E. Abuse of Program Mechanics\n\nThis includes, but is not limited to:\n\n* Exploiting bugs, vulnerabilities, or unintended behavior.\n* Circumventing Program rules or safeguards.\n* Manipulating snapshots, scoring methodologies, or eligibility calculations.\n* Any activity intended to obtain points in a manner inconsistent with the purpose of the Program.\n\n#### F. Fraudulent or Unlawful Conduct\n\nThis includes, but is not limited to:\n\n* Fraud, deception, impersonation, or identity abuse.\n* Providing false, misleading, or inaccurate information.\n* Using stolen, compromised, or unauthorized accounts.\n* Activity that violates applicable law or the Terms of Service of Lighter on the Robinhood Chain.\n\n### 3. Ongoing Integrity Reviews\n\nTo protect the integrity of the Program, \\*\\*Lighter \\*\\* continuously performs automated and manual reviews, including Sybil detection, fraud detection, behavioral analysis, and other integrity checks.\n\nThese reviews may occur at any time during the Program or after it has concluded.\n\nThe fact that points have been awarded or remain visible in an account does not mean they have been permanently approved or are no longer subject to review.\n\n### 4. Point Adjustments and Enforcement\n\nIf Lighter determines that an account has engaged in fraudulent, abusive, manipulative, or otherwise ineligible activity, Lighter may, at any time and in its sole discretion:\n\n* Remove or reduce points.\n* Reverse previously awarded points.\n* Disqualify specific transactions or activity from earning points.\n* Suspend or permanently remove an account from the Program.\n* Exclude an account from future rewards, distributions, or Program benefits.\n\nThese actions may be taken before, during, or after points have been awarded, including after the conclusion of the Program if subsequent reviews identify activity that is determined to be fraudulent, abusive, manipulative, or otherwise ineligible.\n\n### 5. Final Determination\n\nLighter on the Robinhood Chain reserves the right to interpret these Terms and determine Program eligibility in its sole discretion.\n\nThe examples listed in these Terms are illustrative and not exhaustive. Any activity that Lighter on the Robinhood Chain reasonably believes undermines the fairness, integrity, or intended purpose of the Program may be deemed ineligible, even if not specifically described above.\n\nParticipation in the Program constitutes acceptance of these Terms and any updates or modifications published by Lighter on the Robinhood Chain.\n\n### 6. Restricted Regions\n\nFor both the Points Program and perpetual futures trading on Lighter on Robinhood Chain, the following countries and regions are restricted:\n\n* Belarus (BY)\n* Canada (CA)\n* China (CN)\n* Cuba (CU)\n* Iran (IR)\n* Myanmar (MM)\n* North Korea (KP)\n* Russia (RU)\n* Singapore (SG)\n* South Sudan (SS)\n* Sudan (SD)\n* Switzerland (CH)\n* Syria (SY)\n* Ukraine (UA)\n* United Arab Emirates (AE)\n* United Kingdom (GB)\n* United States (US)\n* Venezuela (VE)\n\n</details>",
+   "changed": 1792779774,
+   "hash": "6cd6e5d0f63d89fa",
+   "text": "# Lighter on Robinhood Chain Points\n\nThe Lighter Points Program on the Robinhood Chain is a way to recognize eligible users for participating in the trading platform and reward them for the value they bring.\n\nPoints are calculated and awarded in real time based on eligible activity, with an additional weekly points drop every Friday (first weekly drop on Fri Aug 21). The way points are calculated may change over time as we continue improving the program and rewarding meaningful participation while keeping things fair for everyone.\n\n### Live & Weekly Points\n\nThe live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.\n\nWeekly points are based on the activity from the previous Friday (incl.) to Thursday (incl.), are distributed every Friday, and are fine-tuned depending on the week’s activity.\n\nFor both point types, standard-to-standard activity is not rewarded.\n\n### Boosts\n\nThere are several ways for a user to boost their points. Some apply to both live and weekly points; others apply only to weekly points.\n\n#### Robinhood Wallet Mobile boost\n\nThe mobile boost is linear and ranges from 1x for a user with only non-RH wallet mobile app volume to 2x for a user with only RH wallet volume. The volume is considered coming from the plaftorm that the order was placed from.\n\nThe boost influences both live and weekly points.\n\n#### Referral boost\n\nIf you refer a trader, you get 10% of their points (live + weekly).\n\nReferred traders get a 10% boost for their weekly points.\n\n#### Market boosts\n\nSome markets generate more points than others. Some do so for live points, some for the weekly, some for both.\n\nA notable current boost is the earnings boost for weekly points: if an RWA market is tied to a company that does its earnings call in the interval the weekly points are calculated for, that market is boosted.\n\nPre IPO markets and new listings may also get boosts.\n\n#### Hedge boost\n\nThe hedge boost allows traders to hedge (some of) their Lighter RH positions on Lighter Core and get more points for it.\n\nFor each market present on both venues, the boost only applies to one pair of directions (e.g. long Core, short RH) out of the two.\n\nCurrently, we consider the following categories for the boost:\n\n<table data-header-hidden><thead><tr><th width=\"282\"></th><th width=\"181.125\"></th><th></th><th width=\"107.5\"></th></tr></thead><tbody><tr><td></td><td><strong>(Lighter) Core</strong></td><td><strong>(Lighter) RH</strong></td><td><strong>Boost</strong></td></tr><tr><td><strong>Crypto</strong></td><td>Short</td><td>Long</td><td rowspan=\"3\">2.5x</td></tr><tr><td><strong>RWA (Commodities, ETFs)</strong></td><td>Short</td><td>Long</td></tr><tr><td><strong>RWA (Pre IPOs, Equities)</strong></td><td>Long</td><td>Short</td></tr></tbody></table>\n\nThe hedge boost only applies to weekly points and can be updated weekly.\n\n### Support\n\nIf you have any questions about this program, please open a ticket in the Lighter Discord server.\n\nLighter Discord server: <https://discord.gg/lighterxyz>\n\n### Terms and Conditions\n\n<details>\n\n<summary>You can read the Terms and Conditions of this points program here.</summary>\n\nEffective Date: Monday, Aug 10th 2026\n\nThese Terms govern eligibility for the Lighter on the Robinhood Chain Points Program (the \"Program\"). By participating in the Program, you agree to these Terms.\n\nThe purpose of the Program is to reward genuine participation on Lighter on the Robinhood Chain. Points are intended to recognize authentic trading activity and meaningful participation in the ecosystem—not activity designed to manipulate or exploit the Program.\n\n### 1. General Eligibility\n\nLighter on the Robinhood Chain determines, in its sole discretion, whether activity is eligible to earn points.\n\n### 2. Ineligible Activity\n\nThe following activities are not eligible to receive points and may result in point adjustments, disqualification, or removal from the Program.\n\n#### A. Market Manipulation\n\nThis includes, but is not limited to:\n\n* Wash trading.\n* Self-trading or trading between commonly controlled accounts.\n* Artificially inflating trading volume or liquidity.\n* Coordinated trading intended to manipulate markets or Program metrics.\n* Spoofing, layering, quote stuffing, or other deceptive trading practices.\n* Any activity intended to create artificial or misleading market activity.\n\n#### B. Sybil Activity\n\nThis includes, but is not limited to:\n\n* Operating or controlling multiple accounts to earn additional points.\n* Splitting activity across multiple accounts to increase rewards.\n* Creating, purchasing, renting, borrowing, or otherwise controlling accounts for the purpose of farming points.\n* Any attempt to disguise common ownership or coordinated control of accounts.\n\n#### C. Referral Abuse\n\nThis includes, but is not limited to:\n\n* Self-referrals.\n* Circular or reciprocal referral schemes.\n* Creating accounts solely to generate referral rewards.\n* Artificially inflating referral activity or referral-based rewards.\n\n#### D. Automated or Artificial Participation\n\nThis includes, but is not limited to:\n\n* Activity primarily intended to farm points rather than participate in markets.\n* Using bots, scripts, or automated systems to manipulate Program metrics.\n* Coordinated behavior designed to exploit the Program or its scoring methodology.\n\n#### E. Abuse of Program Mechanics\n\nThis includes, but is not limited to:\n\n* Exploiting bugs, vulnerabilities, or unintended behavior.\n* Circumventing Program rules or safeguards.\n* Manipulating snapshots, scoring methodologies, or eligibility calculations.\n* Any activity intended to obtain points in a manner inconsistent with the purpose of the Program.\n\n#### F. Fraudulent or Unlawful Conduct\n\nThis includes, but is not limited to:\n\n* Fraud, deception, impersonation, or identity abuse.\n* Providing false, misleading, or inaccurate information.\n* Using stolen, compromised, or unauthorized accounts.\n* Activity that violates applicable law or the Terms of Service of Lighter on the Robinhood Chain.\n\n### 3. Ongoing Integrity Reviews\n\nTo protect the integrity of the Program, \\*\\*Lighter \\*\\* continuously performs automated and manual reviews, including Sybil detection, fraud detection, behavioral analysis, and other integrity checks.\n\nThese reviews may occur at any time during the Program or after it has concluded.\n\nThe fact that points have been awarded or remain visible in an account does not mean they have been permanently approved or are no longer subject to review.\n\n### 4. Point Adjustments and Enforcement\n\nIf Lighter determines that an account has engaged in fraudulent, abusive, manipulative, or otherwise ineligible activity, Lighter may, at any time and in its sole discretion:\n\n* Remove or reduce points.\n* Reverse previously awarded points.\n* Disqualify specific transactions or activity from earning points.\n* Suspend or permanently remove an account from the Program.\n* Exclude an account from future rewards, distributions, or Program benefits.\n\nThese actions may be taken before, during, or after points have been awarded, including after the conclusion of the Program if subsequent reviews identify activity that is determined to be fraudulent, abusive, manipulative, or otherwise ineligible.\n\n### 5. Final Determination\n\nLighter on the Robinhood Chain reserves the right to interpret these Terms and determine Program eligibility in its sole discretion.\n\nThe examples listed in these Terms are illustrative and not exhaustive. Any activity that Lighter on the Robinhood Chain reasonably believes undermines the fairness, integrity, or intended purpose of the Program may be deemed ineligible, even if not specifically described above.\n\nParticipation in the Program constitutes acceptance of these Terms and any updates or modifications published by Lighter on the Robinhood Chain.\n\n### 6. Restricted Regions\n\nFor both the Points Program and perpetual futures trading on Lighter on Robinhood Chain, the following countries and regions are restricted:\n\n* Belarus (BY)\n* Canada (CA)\n* China (CN)\n* Cuba (CU)\n* Iran (IR)\n* Myanmar (MM)\n* North Korea (KP)\n* Russia (RU)\n* Singapore (SG)\n* South Sudan (SS)\n* Sudan (SD)\n* Switzerland (CH)\n* Syria (SY)\n* Ukraine (UA)\n* United Arab Emirates (AE)\n* United Kingdom (GB)\n* United States (US)\n* Venezuela (VE)\n\n</details>",
    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
   },
   "https://docs.lighter.xyz/programs/readme.md": {
@@ -1478,10 +1479,34 @@
    "signal": "lb_slowdown",
    "title": "상위권 주간 적립이 지난주의 22%로 둔화",
    "ts": 1792762086
+  },
+  {
+   "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "cc53f4286465",
+   "ref": {
+    "added": [
+     "The live points are distributed in real time based on factors like volume, positions held, fees paid, and others. Most markets have the same weight.",
+     "Weekly points are based on the activity from the previous Friday (incl.) to Thursday (incl.), are distributed every Friday, and are fine-tuned depending on the week’s activity."
+    ],
+    "name": "로빈후드 체인 포인트 안내",
+    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md",
+    "words": [
+     "distributed"
+    ]
+   },
+   "refute": "일정·비율이 아닌 일반 약관 정정으로 확인되면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "공식 문서 '로빈후드 체인 포인트 안내'에 전환 관련 문구 추가",
+   "ts": 1792779774
   }
  ],
  "fail_streak": 0,
- "fams": [],
+ "fams": [
+  "S2"
+ ],
  "frontend": {
   "api_paths": [
    "/api/v1/account",
@@ -2288,9 +2313,14 @@
    1792762086,
    197020.031,
    47474.48
+  ],
+  [
+   1792779774,
+   216716.668,
+   52497.31
   ]
  ],
- "level": "WATCH",
+ "level": "ALERT",
  "news_seen": [
   "0029209d8878",
   "013c2e26b1ea",
@@ -2528,10 +2558,6 @@
   "what-price-will-lighter-hit-before-2027"
  ],
  "rh_supply_hist": [
-  [
-   1791565228,
-   421878.83
-  ],
   [
    1791585582,
    421878.83
@@ -2775,57 +2801,61 @@
   [
    1792762086,
    448620.94
+  ],
+  [
+   1792779774,
+   451072.78
   ]
  ],
  "seeded": true,
  "status": {
   "announcements": {
-   "at": 1792762086,
-   "note": "13건",
+   "at": 1792779774,
+   "note": "14건",
    "ok": true
   },
   "docs": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "4/4 페이지",
    "ok": true
   },
   "eth_transfers": {
-   "at": 1792762086,
-   "note": "1763블록 · 대량 0건",
+   "at": 1792779774,
+   "note": "1470블록 · 대량 0건",
    "ok": true
   },
   "frontend": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "모듈 141 · API 127",
    "ok": true
   },
   "leaderboard": {
-   "at": 1792762086,
-   "note": "상위10 합계 197,020",
+   "at": 1792779774,
+   "note": "상위10 합계 216,717",
    "ok": true
   },
   "news": {
-   "at": 1792762086,
-   "note": "127건",
+   "at": 1792779774,
+   "note": "117건",
    "ok": true
   },
   "polymarket": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "진행 중 1건",
    "ok": true
   },
   "rh_supply": {
-   "at": 1792762086,
-   "note": "448,621 LIT",
+   "at": 1792779774,
+   "note": "451,073 LIT",
    "ok": true
   },
   "rh_transfers": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "대량 0건",
    "ok": true
   },
   "x": {
-   "at": 1792762086,
+   "at": 1792779774,
    "note": "39건",
    "ok": true
   }
