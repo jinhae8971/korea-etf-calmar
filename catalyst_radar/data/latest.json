@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-10-24 09:05",
+ "as_of_kst": "2026-10-25 08:48",
  "calendar": [
   {
    "event_date": "2026-10-26",
@@ -7,7 +7,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "ethereum/go-ethereum@v1.17.10",
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -41,7 +41,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-10-18",
     "price_at_detect": 2497.06,
-    "score_at_detect": 30.0
+    "score_at_detect": 30.0,
+    "t7": 0.0,
+    "t7_at": "2026-10-25"
    },
    "score": 35.3,
    "source": "news",
@@ -148,7 +150,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1059",
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-21",
@@ -169,6 +171,34 @@
    "trust": 1.0,
    "url": "https://www.mintscan.io/cosmoshub/proposals/1059",
    "when": "2026-10-27"
+  },
+  {
+   "event_date": "2026-11-01",
+   "first_seen": "2026-10-22",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:ethena-ena-275-million-tokens-unlock-on-november-1-cryptotic",
+   "last_seen": "2026-10-25",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-22",
+    "price_at_detect": 0.174712,
+    "score_at_detect": 42.8
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-22",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ENA",
+   "title": "Ethena ENA: 275 Million Tokens Unlock on November 1 - CryptoTicker",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBxc1d4ZWJyYkM1R21XUXZFZTJBeXB5VFRHNml3Z201VnBaVUgzN2RfLTVXbnRWalJITEFIZXdxQmE4LXAtSm9VMlVUVHFveWJ3TXhCZkN2Y1hXd3o2Z2t1ZklCT2FmUWFjS0V3YmppbGFsS3FjM1E?oc=5",
+   "when": "Wed, 21 Oct 2026"
   },
   {
    "event_date": "2026-11-01",
@@ -199,40 +229,12 @@
    "when": "Sun, 18 Oct 2026"
   },
   {
-   "event_date": "2026-11-01",
-   "first_seen": "2026-10-22",
-   "grade": "B",
-   "impact": "SUPPLY",
-   "key": "news:ethena-ena-275-million-tokens-unlock-on-november-1-cryptotic",
-   "last_seen": "2026-10-24",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-22",
-    "price_at_detect": 0.174712,
-    "score_at_detect": 42.8
-   },
-   "score": 42.8,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-22",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ENA",
-   "title": "Ethena ENA: 275 Million Tokens Unlock on November 1 - CryptoTicker",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBxc1d4ZWJyYkM1R21XUXZFZTJBeXB5VFRHNml3Z201VnBaVUgzN2RfLTVXbnRWalJITEFIZXdxQmE4LXAtSm9VMlVUVHFveWJ3TXhCZkN2Y1hXd3o2Z2t1ZklCT2FmUWFjS0V3YmppbGFsS3FjM1E?oc=5",
-   "when": "Wed, 21 Oct 2026"
-  },
-  {
    "event_date": "2026-11-05",
    "first_seen": "2026-10-22",
    "grade": "B",
    "impact": "INFRA",
    "key": "news:zcash-developers-set-nu7-upgrade-target-for-november-5-at-bl",
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-22",
@@ -339,12 +341,40 @@
    "when": "Fri, 23 Oct 2026"
   },
   {
+   "event_date": "2026-11-05",
+   "first_seen": "2026-10-25",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:monero-tops-650-as-zcash-targets-nov-5-for-nu7-upgrade-www-t",
+   "last_seen": "2026-10-25",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-25",
+    "price_at_detect": 1192.89,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-25",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ZEC",
+   "title": "Monero Tops $650 as Zcash Targets Nov. 5 for NU7 Upgrade - www.tokenpost.com",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE13ME91NG9JM0k1WVJ2a3RYSlJHblZZWFhpMXBPNmFEb1RlUW1zWXJRaGhkdWxpc0kwNG9uOTZHYlktYk11SWRsd3dfYWszb1dOdDIyMVg0WWx3dw?oc=5",
+   "when": "Sat, 24 Oct 2026"
+  },
+  {
    "event_date": "2026-11-06",
    "first_seen": "2026-10-24",
    "grade": "B",
    "impact": "INFRA",
    "key": "news:zcash-nu7-block-3-543-405-activation-on-november-6-cryptotic",
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-24",
@@ -372,7 +402,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:elysium-sets-nov-9-mainnet-launch-for-hyperliquid-layer-2-ne",
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-20",
@@ -389,7 +419,7 @@
     }
    ],
    "symbol": "HYPE",
-   "title": "Elysium Sets Nov. 9 Mainnet Launch for Hyperliquid Layer-2 Network - tokenpost.com",
+   "title": "Elysium Sets Nov. 9 Mainnet Launch for Hyperliquid Layer-2 Network - TOKENPOST",
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1IWFlDdWZqS3JUV295TmVEM1BHMEtpT3o2MmdCVHdJU0xveUE5dVZPeE5nUVlUcl8wdHlvc19MQUlaSzhubUdwMF9IMmt0R0pnN25oa0ljOFRnMnM?oc=5",
    "when": "Mon, 19 Oct 2026"
@@ -400,7 +430,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:stellar-bell-upgrade-protocol-30-set-for-november-23-mainnet",
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-25",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-22",
@@ -506,74 +536,17 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-24 09:05\n감시 52종목(체인 34·프로토콜 18) · 이벤트 101건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>ETH</b> [인프라·신규] go-ethereum v1.17.10 — &lt;!-- Soil Reducer (v1.17.10) --&gt;\n🟠 <b>ZEC</b> [인프라·신규] Zcash NU7: block 3,543,405, activation on November 6 - CryptoTicker\n🟠 <b>ZEC</b> [인프라·신규] Zcash Sets NU7 Activation Height at 3,543,405, Targets Nov. 5 - TOKENPOST\n🟠 <b>ATOM</b> [인프라·신규] gaia v29.0.1 — A release notes template that should be adapted for every relea\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-2   </code> ETH <b>활성화</b> · go-ethereum v1.17.10 — &lt;!-- Soil Reducer (v1.17.10) --&gt;\n🟠 <code>D-2   </code> ETH <b>일정확정</b> · Ethereum sets October 26 for Hoodi’s 200 million gas test - Cr\n🟠 <code>D-2   </code> ETH <b>일정확정</b> · Ethereum Sets October 26 for Glamsterdam Upgrade on Hoodi - Cr\n🟠 <code>D-2   </code> ETH <b>일정확정</b> · Ethereum Is About to Get Way Faster: Glamsterdam Hits Testnet \n🟠 <code>D-2   </code> ETH <b>일정확정</b> · Ethereum Price Prediction: Will October 26 Glamsterdam Upgrade\n🔴 <code>D-3   </code> ATOM <b>투표중</b> · Gaia v29.0.0 upgrade\n🟠 <code>D-8   </code> XRP <b>일정확정</b> · XRP News: Ripple Holds 35.6B XRP Ahead of Nov 1 Unlock as Pepe\n🟠 <code>D-8   </code> ENA <b>일정확정</b> · Ethena ENA: 275 Million Tokens Unlock on November 1 - CryptoTi\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=9, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-25 08:48\n감시 52종목(체인 34·프로토콜 18) · 이벤트 101건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>ZEC</b> [인프라·신규] Monero Tops $650 as Zcash Targets Nov. 5 for NU7 Upgrade - www.tokenpost.com\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-1   </code> ETH <b>활성화</b> · go-ethereum v1.17.10 — &lt;!-- Soil Reducer (v1.17.10) --&gt;\n🟠 <code>D-1   </code> ETH <b>일정확정</b> · Ethereum sets October 26 for Hoodi’s 200 million gas test - Cr\n🟠 <code>D-1   </code> ETH <b>일정확정</b> · Ethereum Sets October 26 for Glamsterdam Upgrade on Hoodi - Cr\n🟠 <code>D-1   </code> ETH <b>일정확정</b> · Ethereum Is About to Get Way Faster: Glamsterdam Hits Testnet \n🟠 <code>D-1   </code> ETH <b>일정확정</b> · Ethereum Price Prediction: Will October 26 Glamsterdam Upgrade\n🔴 <code>D-2   </code> ATOM <b>투표중</b> · Gaia v29.0.0 upgrade\n🔴 <code>D-7   </code> ENA <b>일정확정</b> · Ethena ENA: 275 Million Tokens Unlock on November 1 - CryptoTi\n🟠 <code>D-7   </code> XRP <b>일정확정</b> · XRP News: Ripple Holds 35.6B XRP Ahead of Nov 1 Unlock as Pepe\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=10, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-10-26",
-   "first_seen": "2026-10-24",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "ethereum/go-ethereum@v1.17.10",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-24",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 70.0
-   },
-   "score": 70.0,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-24",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "ETH",
-   "title": "go-ethereum v1.17.10 — <!-- Soil Reducer (v1.17.10) -->",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.10",
-   "when": "2026-10-23"
-  },
-  {
-   "event_date": "2026-11-06",
-   "first_seen": "2026-10-24",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:zcash-nu7-block-3-543-405-activation-on-november-6-cryptotic",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-24",
-    "price_at_detect": 1192.89,
-    "score_at_detect": 30.0
-   },
-   "score": 30.0,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-24",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ZEC",
-   "title": "Zcash NU7: block 3,543,405, activation on November 6 - CryptoTicker",
-   "transition": "NEW",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBOMVhsel9hQkc4ZGtuVVNqZjVoVVJfTEZSanpZaGJhZ0pfNXpJZDFiYjF0Sy1VSmUybURNMmNRTVNIbFBzWGY1RE54bGNQak1TV0lIYzFYMzh5cmVLeXFkdTc0TUpWUldZTENTU3NPaEJXblk?oc=5",
-   "when": "Fri, 23 Oct 2026"
-  },
-  {
    "event_date": "2026-11-05",
-   "first_seen": "2026-10-24",
+   "first_seen": "2026-10-25",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:zcash-sets-nu7-activation-height-at-3-543-405-targets-nov-5-",
+   "key": "news:monero-tops-650-as-zcash-targets-nov-5-for-nu7-upgrade-www-t",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-24",
+    "detected_at": "2026-10-25",
     "price_at_detect": 1192.89,
     "score_at_detect": 30.0
    },
@@ -582,45 +555,16 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-24",
+     "at": "2026-10-25",
      "stage": "SCHEDULED"
     }
    ],
    "symbol": "ZEC",
-   "title": "Zcash Sets NU7 Activation Height at 3,543,405, Targets Nov. 5 - TOKENPOST",
+   "title": "Monero Tops $650 as Zcash Targets Nov. 5 for NU7 Upgrade - www.tokenpost.com",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1DSXdpb19wSVJ5SUFBTHpfY2ZLMzZHdUNkQ1F5WEEzZUY0Yy1felh3Smw4dGdiSUdRYWVqdWtOWmctY01BajVSQTlRdHVHOS1TUzNWc1dJTDJQNEE?oc=5",
-   "when": "Fri, 23 Oct 2026"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-24",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "cosmos/gaia@v29.0.1",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-24",
-    "price_at_detect": 1.59,
-    "score_at_detect": 29.9
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-24",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "gaia v29.0.1 — A release notes template that should be adapted for every release",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/cosmos/gaia/releases/tag/v29.0.1",
-   "when": "2026-10-23"
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE13ME91NG9JM0k1WVJ2a3RYSlJHblZZWFhpMXBPNmFEb1RlUW1zWXJRaGhkdWxpc0kwNG9uOTZHYlktYk11SWRsd3dfYWszb1dOdDIyMVg0WWx3dw?oc=5",
+   "when": "Sat, 24 Oct 2026"
   }
  ],
  "universe": {
@@ -713,14 +657,14 @@
  "verification": [
   {
    "bucket": "ALL",
-   "hit_rate": 1.9,
+   "hit_rate": 1.8,
    "horizon": 7,
    "iqr": [
     0.0,
     0.0
    ],
    "median": 0.0,
-   "n": 53,
+   "n": 55,
    "status": "OK"
   },
   {
@@ -732,7 +676,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 9,
+   "n": 10,
    "status": "OK"
   },
   {
@@ -744,25 +688,25 @@
     0.0
    ],
    "median": 0.0,
-   "n": 17,
+   "n": 15,
    "status": "OK"
   },
   {
    "bucket": "impact:FEATURE",
    "horizon": 30,
-   "n": 3,
+   "n": 4,
    "status": "표본 부족"
   },
   {
    "bucket": "impact:INFRA",
-   "hit_rate": 3.0,
+   "hit_rate": 2.9,
    "horizon": 7,
    "iqr": [
     0.0,
     0.0
    ],
    "median": 0.0,
-   "n": 33,
+   "n": 35,
    "status": "OK"
   },
   {
@@ -774,7 +718,7 @@
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 3,
+   "n": 5,
    "status": "표본 부족"
   },
   {
@@ -786,19 +730,19 @@
   {
    "bucket": "source:cosmos",
    "horizon": 30,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
    "bucket": "source:news",
-   "hit_rate": 12.5,
+   "hit_rate": 8.3,
    "horizon": 7,
    "iqr": [
     0.0,
     0.0
    ],
    "median": 0.0,
-   "n": 8,
+   "n": 12,
    "status": "OK"
   },
   {
@@ -816,7 +760,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 31,
+   "n": 29,
    "status": "OK"
   },
   {
@@ -832,5 +776,5 @@
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=9, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=10, BTC 대비)"
 }
