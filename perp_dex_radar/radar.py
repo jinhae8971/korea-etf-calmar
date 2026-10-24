@@ -7,6 +7,8 @@
   --seed    : 기준선만 갱신하고 이벤트를 만들지 않는다(새 거래소·새 원천은 첫 실행에 자동 적용).
   --dry     : 파일을 쓰지 않는다.
   --summary : 다른 메시지가 없으면 '현황' 메시지를 만든다(낮에만). 환경변수 RADAR_SUMMARY=1, 첫 줄 문구 RADAR_SUMMARY_NOTE.
+현황 요청 파일 request.json {"summary": {"id", "at": "YYYY-MM-DD HH:MM"(KST), "note"}} — push하면 그 실행(못 하면 다음 낮
+실행)에서 한 번 만든다. 24시간 지난 요청은 버린다. (Actions 수동 실행 권한이 없는 곳에서도 요청할 수 있게)
 
 출력
   data/state.json                  내부 상태(거래소별 커서·기준선·이벤트)
@@ -493,6 +495,18 @@ def main(argv):
     st_path = os.path.join(DATA, "state.json")
     st = migrate(load_json(st_path, None) or new_state())
     day = is_day(now, cfg)
+    req = (load_json(os.path.join(HERE, "request.json"), {}) or {}).get("summary") or {}
+    req_id = str(req.get("id") or "")
+    if req_id and req_id != st.get("summary_done"):
+        try:
+            req_at = J.kst_time(req.get("at") or "")[0]
+        except ValueError:
+            req_at = now
+        if now - req_at <= 24 * 3600:
+            want_summary = True
+            summary_note = summary_note or str(req.get("note") or "").strip()[:200]
+        else:
+            st["summary_done"] = req_id   # 하루 지난 요청은 버린다
     window = cfg["event_window_days"]
     alerts, releases, release_fp, summaries = [], [], [], []
     core_ok = core_all = 0
@@ -600,9 +614,11 @@ def main(argv):
     elif releases:
         text = J.render_release(releases, cfg, all(release_fp))
         kind = "release"
-    elif want_summary and day and not seed_flag:  # 요청한 현황(workflow_dispatch summary) — 다른 메시지가 없을 때만
+    elif want_summary and day and not seed_flag:  # 요청한 현황(수동 실행·request.json) — 다른 메시지가 없을 때만
         text = J.render_summary(summaries, now, cfg, "현황", summary_note)
         kind = "summary"
+        if req_id:
+            st["summary_done"] = req_id
     if want_summary and kind != "summary":
         why = f"'{kind}' 메시지가 있어" if kind else ("밤이라" if not day else "기준선만 잡는 실행이라")
         print(f"[현황] 이번 실행은 {why} 현황을 만들지 않음")

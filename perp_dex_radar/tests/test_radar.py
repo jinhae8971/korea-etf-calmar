@@ -519,7 +519,7 @@ class Integration(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.mkdtemp()
         shutil.copytree(ROOT, os.path.join(self.tmp, "perp_dex_radar"),
-                        ignore=shutil.ignore_patterns("data", "__pycache__", "account_probe"))
+                        ignore=shutil.ignore_patterns("data", "__pycache__", "account_probe", "request.json"))
         self.root = os.path.join(self.tmp, "perp_dex_radar")
         write_json(os.path.join(self.root, "radar_config.json"), test_cfg())
         sys.modules.pop("radar", None)
@@ -804,6 +804,33 @@ class Integration(unittest.TestCase):
         l5 = self.run_at(ts(2026, 10, 25, 10, 20))                    # 24시간 지난 것(어제 09:55 범위 변경)은 빠진다
         self.assertEqual([o["kind"] for o in l5["outboxes"]], ["summary", "alert"])
         self.assertEqual(self.state()["outbox_log"][-1]["id"], l4["outbox"]["id"])
+
+    def test_summary_request_file(self):
+        t0 = ts(2026, 10, 24, 9, 55)
+        self.run_at(t0)
+        write_json(os.path.join(self.root, "request.json"),
+                   {"summary": {"id": "r1", "at": "2026-10-24 10:20", "note": "보기를 바꿨어요"}})
+        self.lb_sum += 1
+        l1 = self.run_at(ts(2026, 10, 24, 10, 22))
+        self.assertEqual(l1["outbox"]["kind"], "summary")
+        self.assertIn("\n보기를 바꿨어요\n", l1["outbox"]["text"])
+        self.assertEqual(self.state()["summary_done"], "r1")
+        self.lb_sum += 1
+        l2 = self.run_at(ts(2026, 10, 24, 12, 17))                    # 같은 요청은 한 번만
+        self.assertEqual(l2["outbox"]["id"], l1["outbox"]["id"])
+        write_json(os.path.join(self.root, "request.json"), {"summary": {"id": "r2", "at": "2026-10-24 22:30"}})
+        self.lb_sum += 1
+        l3 = self.run_at(ts(2026, 10, 24, 23, 17))                    # 밤 — 다음 낮 실행으로 미룬다
+        self.assertEqual(l3["outbox"]["id"], l1["outbox"]["id"])
+        self.lb_sum += 1
+        l4 = self.run_at(ts(2026, 10, 25, 7, 17))
+        self.assertEqual(l4["outbox"]["kind"], "summary")
+        self.assertNotEqual(l4["outbox"]["id"], l1["outbox"]["id"])
+        write_json(os.path.join(self.root, "request.json"), {"summary": {"id": "r3", "at": "2026-10-20 10:00"}})
+        self.lb_sum += 1
+        l5 = self.run_at(ts(2026, 10, 25, 9, 17))                     # 하루 지난 요청은 버린다
+        self.assertEqual(l5["outbox"]["id"], l4["outbox"]["id"])
+        self.assertEqual(self.state()["summary_done"], "r3")
 
     def test_heartbeat_first_week(self):
         self.run_at(ts(2026, 10, 30, 9, 17))  # 시딩 + 범위 안내
