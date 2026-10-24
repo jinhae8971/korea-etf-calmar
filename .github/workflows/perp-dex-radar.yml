@@ -1,23 +1,25 @@
-name: lit-rh-watch
+name: perp-dex-radar
 
-# 라이터 로빈후드 포인트 → LIT 전환 신호 수집·판정·대시보드
-# 발송은 Brief Hub(brief-hub.yml)가 이 워크플로가 끝나자마자(workflow_run) outbox를 읽어 보낸다.
+# 퍼프덱스 레이더 — 퍼프 DEX 7곳(Arcus·Lighter RH·QFEX·Extended·StandX·Variational·Pacifica)의
+# 포인트 → 토큰 전환(TGE·에어드랍) 신호 수집·판정·대시보드. 2026-10-24 lit-rh-watch에서 이름·범위 확장.
+# 발송은 이 워크플로가 하지 않는다 — PC의 airdrop-radar가 10분마다 perp_dex_radar/data/latest.json을 읽어
+# 새 outbox를 @spytltgld_airdrop_bot(아커스·라이터 채굴단가 채널)으로 중계한다(2026-10-24, Brief Hub에서 옮김).
 on:
   schedule:
     - cron: "17 */2 * * *"     # KST 홀수시 :17 (야간에도 수집, 발송 판단은 낮에만)
   push:                        # 판정 코드·설정을 바꾸면 바로 한 번 돌려 확인한다 (데이터 커밋은 제외)
     branches: [main]
     paths:
-      - "lit_rh_watch/**"
-      - "!lit_rh_watch/data/**"
-      - ".github/workflows/lit-rh-watch.yml"
+      - "perp_dex_radar/**"
+      - "!perp_dex_radar/data/**"
+      - ".github/workflows/perp-dex-radar.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: lit-rh-watch
+  group: perp-dex-radar
   cancel-in-progress: false
 
 defaults:
@@ -34,33 +36,33 @@ jobs:
         with:
           python-version: "3.11"
       - name: Unit tests (외부 의존성 없음)
-        working-directory: lit_rh_watch
+        working-directory: perp_dex_radar
         run: python -m unittest discover -s tests -v
 
   run:
     needs: test
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - name: Collect & judge
-        working-directory: lit_rh_watch
+        working-directory: perp_dex_radar
         env:
           TZ: Asia/Seoul
-        run: python watch.py
+        run: python radar.py
 
       - name: Commit snapshot
         if: always()
         run: |
           set -euo pipefail
-          git config user.name "lit-rh-watch[bot]"
+          git config user.name "perp-dex-radar[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lit_rh_watch/data docs/lit-rh-watch
+          git add perp_dex_radar/data docs/perp-dex-radar
           if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
-          git commit -m "data(lit-rh-watch): $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST')"
+          git commit -m "data(perp-dex-radar): $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST')"
           for i in 1 2 3; do
             if git push; then exit 0; fi
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
