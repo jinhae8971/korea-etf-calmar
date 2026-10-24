@@ -32,6 +32,8 @@ h1{font-size:20px;font-weight:700;margin:0 0 2px;letter-spacing:-.01em}
 .pill.NONE{background:var(--none)} .pill.WATCH{background:var(--watch)} .pill.ALERT{background:var(--alert)} .pill.IMMINENT{background:var(--imm)}
 .card .note{font-size:13px;color:var(--ink);margin:6px 0 0}
 .card .odds{font-size:13px;color:var(--steel);margin:4px 0 0}
+.card .up{list-style:none;margin:6px 0 0;padding:0;font-size:13px}
+.card .up li{margin:2px 0;color:var(--steel)} .card .up li.near{color:var(--ink);font-weight:700}
 .card .meta{font-size:12px;color:var(--steel);margin:6px 0 0}
 .card .meta .bad{color:var(--imm)}
 .card .last{font-size:13px;margin:6px 0 0;padding-top:6px;border-top:1px solid var(--rule)}
@@ -87,6 +89,9 @@ const SRC={eth_transfers:"이더리움 LIT 이동",rh_supply:"RH LIT 총공급",
   ann:"앱 공지",board:"포인트 리더보드",frontend:"앱 번들",js:"앱 코드",api:"포인트 API",telegram:"공식 텔레그램",
   blog:"공식 블로그",feed:"공식 블로그(RSS)",news:"뉴스",polymarket:"Polymarket"};
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+/* 설정 문구의 **굵게** (메시지와 같은 규칙) — 이스케이프한 뒤에만 살린다 */
+const noteHtml=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
+const oddsHtml=s=>esc(s).replace(/(\d+)%/g,(m,n)=>+n>=70?`<b>${m}</b>`:m);
 const kst=t=>new Date(t*1000).toLocaleString("ko-KR",{timeZone:"Asia/Seoul",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false});
 function fmt(n){return n>=1e6?(n/1e6).toFixed(2)+"M":n>=1e3?(n/1e3).toFixed(1)+"K":n.toFixed(0)}
 function srcName(k){return k.startsWith("x:")?"공식 X @"+k.slice(2):(SRC[k]||k)}
@@ -128,8 +133,9 @@ fetch("data.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
     const bad=Object.entries(v.sources||{}).filter(([k,s])=>!s.ok).map(([k])=>srcName(k));
     return `<article class="card ${v.level}"><div class="top"><span class="nm">${v.site?`<a href="${esc(v.site)}" rel="noopener">${esc(v.name)}</a>`:esc(v.name)}</span>
       <span class="pill ${v.level}">${LABEL[v.level]}</span></div>
-      ${v.status_note?`<p class="note">${esc(v.status_note)}</p>`:""}
-      ${v.odds?`<p class="odds">${esc(v.odds)} · Polymarket</p>`:""}
+      ${v.status_note?`<p class="note">${noteHtml(v.status_note)}</p>`:""}
+      ${(v.upcoming||[]).length?`<ul class="up">${v.upcoming.map(u=>`<li class="${u.near?"near":""}">${esc(u.when)}${u.dday?" · "+esc(u.dday):""} — ${noteHtml(u.text)}</li>`).join("")}</ul>`:""}
+      ${v.odds?`<p class="odds">${oddsHtml(v.odds)} · Polymarket</p>`:""}
       <p class="meta">수집 ${v.sources_ok}/${v.sources_all} 정상${bad.length?` · <span class="bad">안 됨: ${esc(bad.join(", "))}</span>`:""}</p>
       ${last?`<p class="last">${kst(last.ts)} · ${esc(last.title)}</p>`:""}</article>`;
   }).join("");

@@ -13,7 +13,16 @@ on:
       - "perp_dex_radar/**"
       - "!perp_dex_radar/data/**"
       - ".github/workflows/perp-dex-radar.yml"
-  workflow_dispatch:
+  workflow_dispatch:           # 손으로 한 번 — summary를 켜면 '현황' 메시지(다른 메시지가 없을 때, 낮에만)
+    inputs:
+      summary:
+        description: "현황 메시지 만들기"
+        type: boolean
+        default: false
+      note:
+        description: "현황 첫 줄에 붙일 문구 (선택)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -52,6 +61,8 @@ jobs:
         working-directory: perp_dex_radar
         env:
           TZ: Asia/Seoul
+          RADAR_SUMMARY: ${{ github.event_name == 'workflow_dispatch' && inputs.summary && '1' || '' }}
+          RADAR_SUMMARY_NOTE: ${{ github.event_name == 'workflow_dispatch' && inputs.note || '' }}
         run: python radar.py
 
       - name: Commit snapshot

@@ -3,9 +3,10 @@
 
 2026-10-24 '라이터RH 전환감시'(lit-rh-watch)를 이름을 바꾸고 거래소 7곳으로 넓혔다.
 
-실행: python radar.py [--seed] [--dry]
-  --seed : 기준선만 갱신하고 이벤트를 만들지 않는다(새 거래소·새 원천은 첫 실행에 자동 적용).
-  --dry  : 파일을 쓰지 않는다.
+실행: python radar.py [--seed] [--dry] [--summary]
+  --seed    : 기준선만 갱신하고 이벤트를 만들지 않는다(새 거래소·새 원천은 첫 실행에 자동 적용).
+  --dry     : 파일을 쓰지 않는다.
+  --summary : 다른 메시지가 없으면 '현황' 메시지를 만든다(낮에만). 환경변수 RADAR_SUMMARY=1, 첫 줄 문구 RADAR_SUMMARY_NOTE.
 
 출력
   data/state.json                  내부 상태(거래소별 커서·기준선·이벤트)
@@ -13,7 +14,8 @@
   ../docs/perp-dex-radar/data.json 대시보드용
 발송은 하지 않는다 — PC의 airdrop-radar(swing-rebalancer/airdrop-radar, radar/relay.py)가 10분마다 data/latest.json을 읽어
 새 outbox를 @spytltgld_airdrop_bot(아커스·라이터 채굴단가 채널)으로 보낸다(2026-10-24부터 — 그 전에는 Brief Hub·전략 봇).
-outbox 종류: alert(경보·임박) · release(보낸 경보가 풀림 — 오탐이면 정정) · scope(감시 범위 변경) · heartbeat(월초 점검).
+outbox 종류: alert(경보·임박) · release(보낸 경보가 풀림 — 오탐이면 정정) · scope(감시 범위 변경) · summary(요청한 현황) ·
+heartbeat(월초 점검). latest.json의 outboxes = 24시간 안에 만든 것 전부(오래된 순) — 실행이 몰려도 중계가 놓치지 않게.
 """
 from __future__ import annotations
 
@@ -468,12 +470,21 @@ def summary(v: dict, vs: dict, now: int) -> dict:
     odds = J.odds_line(vs.get("odds", {}), vs.get("odds_titles", {}), now=now) if v.get("show_odds", True) else ""
     return {"id": v["id"], "name": v["name"], "level": vs["level"], "groups": vs.get("groups", []),
             "status_note": v.get("status_note", ""), "sources_ok": sum(1 for k in core if vs["status"][k]["ok"]),
-            "sources_all": len(core), "odds": odds, "site": v.get("site", "")}
+            "sources_all": len(core), "odds": odds, "site": v.get("site", ""), "upcoming": J.upcoming(v, now)}
+
+
+def push_outbox(st: dict, ob: dict, now: int, ttl: int) -> None:
+    """새 메시지 — outbox(최신 하나)와 outbox_log(24시간 안 것, 중계가 놓치지 않게)에 넣는다."""
+    st["outbox"] = ob
+    log = [o for o in st.get("outbox_log") or [] if now - o["created"] <= ttl and o["id"] != ob["id"]]
+    st["outbox_log"] = (log + [ob])[-10:]
 
 
 # ───────────────────────── 실행 ─────────────────────────
 def main(argv):
     seed_flag, dry = "--seed" in argv, "--dry" in argv
+    want_summary = "--summary" in argv or os.environ.get("RADAR_SUMMARY", "").strip() in ("1", "true")
+    summary_note = (os.environ.get("RADAR_SUMMARY_NOTE") or "").strip()[:200]
     cfg = load_json(os.path.join(HERE, "radar_config.json"), None)
     if cfg is None:
         print("radar_config.json 없음")
@@ -559,9 +570,13 @@ def main(argv):
         print(f"[{v['id']}] {level} {groups} · 신규 {len(fresh)} · 반증 {refuted} · 원천 {len(ok)}/{len(core)}"
               + (" · 시딩" if seeding else ""))
 
-    # ── 메시지(outbox) — 실행마다 많아야 하나 ──
+    # ── 메시지(outbox) — 실행마다 많아야 하나. 중계(PC airdrop-radar)는 outbox_log의 24시간 안 것을 순서대로 읽는다 ──
+    ttl = cfg["outbox_ttl_hours"] * 3600
+    if st.get("outbox_log") is None:  # 이전 상태: 마지막 outbox만 있음
+        st["outbox_log"] = [st["outbox"]] if st.get("outbox") else []
+    st["outbox_log"] = [o for o in st["outbox_log"] if now - o["created"] <= ttl]
     ob = st.get("outbox")
-    if ob and now - ob["created"] > cfg["outbox_ttl_hours"] * 3600:
+    if ob and now - ob["created"] > ttl:
         st["outbox"] = None
     scope = [v["id"] for v in cfg["venues"]]
     names = {v["id"]: v["name"] for v in cfg["venues"]}
@@ -585,13 +600,20 @@ def main(argv):
     elif releases:
         text = J.render_release(releases, cfg, all(release_fp))
         kind = "release"
+    elif want_summary and day and not seed_flag:  # 요청한 현황(workflow_dispatch summary) — 다른 메시지가 없을 때만
+        text = J.render_summary(summaries, now, cfg, "현황", summary_note)
+        kind = "summary"
+    if want_summary and kind != "summary":
+        why = f"'{kind}' 메시지가 있어" if kind else ("밤이라" if not day else "기준선만 잡는 실행이라")
+        print(f"[현황] 이번 실행은 {why} 현황을 만들지 않음")
     if text:
-        st["outbox"] = {"id": J.eid(kind, now, text[:300]), "text": text, "created": now, "kind": kind, "level": top}
+        push_outbox(st, {"id": J.eid(kind, now, text[:300]), "text": text, "created": now, "kind": kind, "level": top},
+                    now, ttl)
     month = dt.datetime.fromtimestamp(now, J.KST).strftime("%Y-%m")
     if (not st.get("outbox") and day and not seed_flag and st.get("heartbeat") != month
             and dt.datetime.fromtimestamp(now, J.KST).day <= 7):
-        st["outbox"] = {"id": J.eid("hb", month), "text": J.render_heartbeat(summaries, now, cfg),
-                        "created": now, "kind": "heartbeat", "level": "NONE"}
+        push_outbox(st, {"id": J.eid("hb", month), "text": J.render_heartbeat(summaries, now, cfg),
+                         "created": now, "kind": "heartbeat", "level": "NONE"}, now, ttl)
         st["heartbeat"] = month
 
     undecidable = core_all > 0 and core_ok < core_all / 2
@@ -599,6 +621,7 @@ def main(argv):
     latest = {
         "generated_at": now, "levels": {v["id"]: st["venues"][v["id"]]["level"] for v in cfg["venues"]},
         "undecidable": undecidable, "outbox": st.get("outbox"),
+        "outboxes": sorted(st.get("outbox_log") or [], key=lambda o: o["created"]),
         "status": {v["id"]: {k: s.get("ok") for k, s in st["venues"][v["id"]]["status"].items()} for v in cfg["venues"]},
     }
     dash = {"generated_at": now, "name": J.NAME, "venues": [], "recent_all": []}

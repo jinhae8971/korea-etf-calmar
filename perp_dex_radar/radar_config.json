@@ -116,7 +116,12 @@
       "site": "https://app.extended.exchange",
       "tickers": ["XTEN"],
       "token_live": false,
-      "status_note": "XTEN 발표(10/23) · TGE 11월 예정(날짜 미정) · 공급 30%가 포인트 참여자 몫 · 10/31 MiCA 백서 공개 예정 · 주간 포인트 배분 끝(Final Arc 대회 ~11/3)",
+      "status_note": "XTEN 발표(10/23) · **TGE 11월 예정**(날짜 미정) · 공급 30%가 포인트 참여자 몫 · 10/31 MiCA 백서 공개 예정 · 주간 포인트 배분 끝(Final Arc 대회 ~11/3)",
+      "key_dates": [
+        {"at": "2026-10-31", "text": "MiCA 백서 공개 예정"},
+        {"at": "2026-11-03", "text": "Final Arc 대회 끝"},
+        {"at": "2026-11-30", "label": "11월 중", "text": "**XTEN TGE** (날짜 미정)"}
+      ],
       "docs": {
         "index": "https://docs.extended.exchange/llms.txt",
         "pages": [
@@ -137,7 +142,11 @@
       "tickers": ["DUSD"],
       "token_live": false,
       "show_odds": false,
-      "status_note": "토큰 발행 취소(10/15) → DUSD 1회 에어드랍 · 대상 확인 10/26 09:00 · 청구 11/1 09:00 ~ 12/31 17:00(KST, 미청구분 소멸) · StandX에서 쓰던 지갑으로 청구 · 10/20부터 포지션 축소만 가능",
+      "status_note": "토큰 발행 취소(10/15) → **DUSD 1회 에어드랍** · 대상 확인 10/26 09:00 · 청구 11/1 09:00 ~ 12/31 17:00(KST, **미청구분 소멸**) · StandX에서 쓰던 지갑으로 청구 · 10/20부터 포지션 축소만 가능",
+      "key_dates": [
+        {"at": "2026-10-26 09:00", "text": "DUSD 에어드랍 대상 확인 열림"},
+        {"at": "2026-11-01 09:00", "until": "2026-12-31 17:00", "text": "DUSD 청구(쓰던 지갑으로) · **미청구분 소멸**"}
+      ],
       "x": ["StandX_Official", "StandX_AG"],
       "js": {
         "url": "https://standx.com/",
@@ -154,7 +163,10 @@
       "site": "https://omni.variational.io",
       "tickers": ["VAR"],
       "token_live": false,
-      "status_note": "$VAR TGE 2026년 4분기 예정(날짜 미정) · 제네시스 에어드랍 32%(TGE 때 전량 언락) · 포인트는 TGE 전까지 매주 금 15만 pt",
+      "status_note": "**$VAR TGE 2026년 4분기 예정**(날짜 미정) · 제네시스 에어드랍 32%(TGE 때 전량 언락) · 포인트는 TGE 전까지 매주 금 15만 pt",
+      "key_dates": [
+        {"at": "2026-12-31", "label": "4분기", "text": "**$VAR TGE** (날짜 미정)"}
+      ],
       "docs": {
         "index": "https://docs.variational.io/llms.txt",
         "pages": [
@@ -176,6 +188,9 @@
       "tickers": [],
       "token_live": false,
       "status_note": "토큰·TGE 미발표 · 포인트 매주 1,000만 pt(종료일 없음) · Print 대회 10/19~11/2(100만 pt)",
+      "key_dates": [
+        {"at": "2026-11-02", "text": "Print 대회 끝 (100만 pt)"}
+      ],
       "docs": {
         "index": "https://docs.pacifica.fi/llms.txt",
         "pages": [

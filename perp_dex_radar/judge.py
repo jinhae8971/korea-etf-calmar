@@ -960,7 +960,7 @@ def render_venue_alert(vcfg: dict, level: str, groups: list[str], events: list[d
         lines.append(f"<b>━ {esc(vname)} · {LEVEL_KO[level]}</b>")
     lines.append(f"{span_text(t0, t1)} 감지 · {kinds}")
     if vcfg.get("status_note"):
-        lines.append(f"알려진 상태: {esc(vcfg['status_note'])}")
+        lines.append(f"알려진 상태: {note_html(vcfg['status_note'])}")
     lines += ["", "<b>무슨 일</b>"]
     for e in strong:
         q = _quote(e)
@@ -1032,9 +1032,9 @@ def render_release_section(vcfg: dict, lifted: list[dict], level: str, notified:
     sent = when(notified_at) if notified_at else "앞서 보낸"
     was = LEVEL_KO.get(notified, notified)
     if fp and RANK[level] < 2:
-        first = f"{sent} '{was}' 알림은 오탐이었어요. 토큰 전환 관련 변화는 없어요."
+        first = f"{sent} '{was}' 알림은 <b>오탐</b>이었어요. 토큰 전환 관련 변화는 없어요."
     elif fp:
-        first = f"{sent} '{was}' 알림 중 일부 신호는 오탐이었어요."
+        first = f"{sent} '{was}' 알림 중 일부 신호는 <b>오탐</b>이었어요."
     else:
         first = f"{sent} '{was}' 알림의 신호가 풀렸어요."
     lines = [f"<b>{esc(vcfg['name'])} · {'정정' if fp else '해제'}</b>", first]
@@ -1057,22 +1057,98 @@ def render_release(sections: list[str], cfg: dict, fp: bool) -> str:
     return head + "\n\n" + "\n\n".join(sections) + "\n\n" + link(cfg["dashboard_url"], "대시보드")
 
 
-def venue_line(s: dict) -> str:
-    """요약 한 줄 — '· Arcus — 관찰 · 원천 4/4 · 알려진 상태'."""
-    parts = [f"{LEVEL_KO[s['level']]}"]
+# ── 요약 메시지(범위 변경·현황·월간 점검)의 강조 규칙 (2026-10-24 운영자: "거래소간 줄바꿈해서 가시성을 올려주고
+#    강조할게 있으면 표시도 해줘") — 거래소 칸 사이 빈 줄, 굵게는 챙길 것에만:
+#    3일 안 일정 · 7일 안 마감 · 설정에서 **로 표시한 핵심 사실 · 출시 확률 70% 이상 · 수집 일부 실패 · 경보·임박(색 표시).
+NEAR_DAYS, DEADLINE_DAYS, HORIZON_DAYS, HIGH_ODDS = 3, 7, 90, 70
+LEVEL_LINE = {"NONE": "조용함", "WATCH": "관찰(약한 신호만)", "ALERT": "🟡 <b>경보</b>", "IMMINENT": "🔴 <b>임박</b>"}
+
+
+def note_html(text: str) -> str:
+    """설정 문구(상태 한 줄·일정) — HTML 이스케이프 뒤 **굵게**만 살린다."""
+    return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", esc(text))
+
+
+def odds_html(odds: str) -> str:
+    """토큰 출시 확률 — 70% 이상만 굵게."""
+    return re.sub(r"(\d+)%", lambda m: f"<b>{m.group(0)}</b>" if int(m.group(1)) >= HIGH_ODDS else m.group(0), esc(odds))
+
+
+def kst_time(s: str) -> tuple[int, bool]:
+    """'2026-10-26' · '2026-10-26 09:00' (KST) → (epoch, 시각까지 있나)."""
+    s = str(s).strip()
+    timed = " " in s
+    d = dt.datetime.strptime(s, "%Y-%m-%d %H:%M" if timed else "%Y-%m-%d").replace(tzinfo=KST)
+    return int(d.timestamp()), timed
+
+
+def md(ts: int, timed: bool) -> str:
+    d = dt.datetime.fromtimestamp(ts, KST)
+    return f"{d.month}/{d.day}({WEEKDAY_KO[d.weekday()]})" + (f" {d:%H:%M}" if timed else "")
+
+
+def upcoming(vcfg: dict, now: int, horizon_days: int = HORIZON_DAYS) -> list[dict]:
+    """설정 key_dates 중 안 지난 일정 — [{venue, when, dday, text, near, sort}], 가까운 순.
+    key_dates: {"at": "YYYY-MM-DD[ HH:MM]", "until"?: 마감, "label"?: '11월 중'처럼 날짜가 안 정해진 것(at = 늦어도), "text"}."""
+    today = dt.datetime.fromtimestamp(now, KST).date()
+    out = []
+    for k in vcfg.get("key_dates") or []:
+        try:
+            start, timed = kst_time(k["at"])
+            end, end_timed = kst_time(k["until"]) if k.get("until") else (None, False)
+        except (KeyError, TypeError, ValueError):
+            continue
+        last = end if end is not None else start + (0 if timed else 86399)
+        if last < now or start - now > horizon_days * 86400:
+            continue
+        if k.get("label"):
+            when_s, dday, near = k["label"], "", False
+        else:
+            when_s = md(start, timed) + (f" ~ {md(end, end_timed)}" if end is not None else "")
+            if end is not None and start <= now:
+                left = (dt.datetime.fromtimestamp(end, KST).date() - today).days
+                dday, near = "진행 중 · 마감 " + ("오늘" if left <= 0 else f"D-{left}"), left <= DEADLINE_DAYS
+            else:
+                left = (dt.datetime.fromtimestamp(start, KST).date() - today).days
+                dday, near = ("오늘" if left <= 0 else "내일" if left == 1 else f"D-{left}"), left <= NEAR_DAYS
+        out.append({"venue": vcfg["name"], "when": when_s, "dday": dday, "text": k.get("text", ""), "near": near,
+                    "sort": start})
+    return sorted(out, key=lambda u: u["sort"])
+
+
+def upcoming_line(u: dict) -> str:
+    head = esc(u["when"]) + (f" · {esc(u['dday'])}" if u.get("dday") else "")
+    if u.get("near"):
+        head = f"<b>{head}</b>"
+    return f"· {head} — {esc(u['venue'])} {note_html(u['text'])}"
+
+
+def upcoming_section(summaries: list[dict], limit: int = 8) -> list[str]:
+    items = sorted((u for s in summaries for u in s.get("upcoming") or []), key=lambda u: u["sort"])
+    return ["<b>다가오는 일정</b>"] + [upcoming_line(u) for u in items[:limit]] if items else []
+
+
+def venue_block(s: dict) -> str:
+    """요약의 거래소 한 칸 — 이름·등급·수집 상태 / 알려진 상태 / 토큰 출시 확률. 칸끼리는 빈 줄로 띄운다."""
+    parts = [LEVEL_LINE[s["level"]]]
     if s.get("sources_all"):
-        parts.append(f"수집 {s['sources_ok']}/{s['sources_all']} 정상")
-    line = f"· <b>{esc(s['name'])}</b> — " + " · ".join(parts)
+        ok, n = s["sources_ok"], s["sources_all"]
+        parts.append(f"수집 {ok}/{n} 정상" if ok == n else f"수집 <b>{ok}/{n}</b> 정상")
+    lines = [f"<b>{esc(s['name'])}</b> — " + " · ".join(parts)]
     if s.get("status_note"):
-        line += f"\n  {esc(s['status_note'])}"
+        lines.append(note_html(s["status_note"]))
     if s.get("odds"):
-        line += f"\n  {esc(s['odds'])} (Polymarket)"
-    return line
+        lines.append(f"{odds_html(s['odds'])} (Polymarket)")
+    return "\n".join(lines)
+
+
+def status_section(summaries: list[dict]) -> list[str]:
+    return ["<b>거래소별 지금 상태</b>", "", "\n\n".join(venue_block(s) for s in summaries)]
 
 
 def render_kickoff(summaries: list[dict], now: int, cfg: dict, release_sections: list[str] | None = None,
                    added: list[str] | None = None, removed: list[str] | None = None, renamed: bool = False) -> str:
-    """감시 범위가 바뀌었을 때 한 번 — 거래소별 지금 상태와 보내는 규칙."""
+    """감시 범위가 바뀌었을 때 한 번 — 다가오는 일정, 거래소별 지금 상태, 보내는 규칙."""
     lines = [f"<b>{NAME} · 감시 범위 변경</b>", when(now)]
     if renamed:
         lines.append(f"라이터RH 전환감시를 '{NAME}'로 바꾸고 {len(summaries)}곳의 포인트→토큰 전환(TGE·에어드랍) 신호를 함께 봐요.")
@@ -1081,7 +1157,10 @@ def render_kickoff(summaries: list[dict], now: int, cfg: dict, release_sections:
             lines.append("추가: " + ", ".join(esc(a) for a in added))
         if removed:
             lines.append("제외: " + ", ".join(esc(r) for r in removed))
-    lines += ["", "<b>거래소별 지금 상태</b>"] + [venue_line(s) for s in summaries]
+    up = upcoming_section(summaries)
+    if up:
+        lines += [""] + up
+    lines += [""] + status_section(summaries)
     for sec in release_sections or []:
         lines += ["", sec]
     lines += ["", "<b>보내는 때</b>",
@@ -1090,7 +1169,17 @@ def render_kickoff(summaries: list[dict], now: int, cfg: dict, release_sections:
     return "\n".join(lines)
 
 
+def render_summary(summaries: list[dict], now: int, cfg: dict, title: str = "현황", note: str = "") -> str:
+    """현황(요청 시)·월간 점검 — 다가오는 일정과 거래소별 지금 상태."""
+    lines = [f"<b>{NAME} · {esc(title)}</b>", when(now)]
+    if note:
+        lines.append(esc(note))
+    up = upcoming_section(summaries)
+    if up:
+        lines += [""] + up
+    lines += [""] + status_section(summaries) + ["", link(cfg["dashboard_url"], "대시보드")]
+    return "\n".join(lines)
+
+
 def render_heartbeat(summaries: list[dict], now: int, cfg: dict) -> str:
-    return "\n".join([f"<b>{NAME} · 월간 점검</b>", when(now), ""]
-                     + [venue_line(s) for s in summaries]
-                     + ["", link(cfg["dashboard_url"], "대시보드")])
+    return render_summary(summaries, now, cfg, "월간 점검")

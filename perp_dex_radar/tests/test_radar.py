@@ -427,7 +427,7 @@ class Render(unittest.TestCase):
         J.rejudge([e], {}, NOW + 3600)
         sec = J.render_release_section(LRH, [e], "WATCH", "ALERT", NOW)
         self.assertTrue(sec.startswith("<b>Lighter RH · 정정</b>"))
-        self.assertIn("10/12(월) 09:17 '경보' 알림은 오탐이었어요.", sec)
+        self.assertIn("10/12(월) 09:17 '경보' 알림은 <b>오탐</b>이었어요.", sec)
         self.assertIn("· 문서 전체 목록 — 'integration' 속 'ratio'처럼", sec)
         self.assertTrue(J.render_release([sec], CFG, True).startswith("<b>퍼프덱스 레이더 · 정정</b>"))
         ev = J.detect_eth([tr(A, B, 10_800_000)], {}, OC, NOW, [])
@@ -435,14 +435,54 @@ class Render(unittest.TestCase):
         self.assertIn("· 해제</b>", J.render_release_section(LRH, ev, "NONE", "ALERT", NOW))
 
     def test_kickoff_lists_every_venue(self):
+        now = ts(2026, 10, 24, 9, 55)
         sums = [{"id": v["id"], "name": v["name"], "level": "NONE", "status_note": v["status_note"], "sources_ok": 2,
-                 "sources_all": 2, "odds": ""} for v in CFG["venues"]]
-        txt = J.render_kickoff(sums, NOW, CFG, ["<b>Lighter RH · 정정</b>\n…"], renamed=True)
+                 "sources_all": 2, "odds": "", "upcoming": J.upcoming(v, now)} for v in CFG["venues"]]
+        txt = J.render_kickoff(sums, now, CFG, ["<b>Lighter RH · 정정</b>\n…"], renamed=True)
         self.assertIn("라이터RH 전환감시를 '퍼프덱스 레이더'로 바꾸고 7곳의", txt)
-        for v in CFG["venues"]:
-            self.assertIn(f"· <b>{v['name']}</b> — 조용함 · 수집 2/2 정상", txt)
-        self.assertIn("청구 11/1 09:00 ~ 12/31 17:00", txt)
+        for v in CFG["venues"]:  # 거래소 칸마다 빈 줄로 띄운다
+            self.assertIn(f"\n\n<b>{v['name']}</b> — 조용함 · 수집 2/2 정상\n", txt)
+        self.assertIn("청구 11/1 09:00 ~ 12/31 17:00(KST, <b>미청구분 소멸</b>)", txt)
+        self.assertIn("→ <b>DUSD 1회 에어드랍</b>", txt)
+        self.assertNotIn("**", txt)
+        self.assertIn("<b>다가오는 일정</b>\n· <b>10/26(월) 09:00 · D-2</b> — StandX DUSD 에어드랍 대상 확인 열림", txt)
+        self.assertLess(txt.index("<b>다가오는 일정</b>"), txt.index("<b>거래소별 지금 상태</b>"))
         self.assertIn("<b>Lighter RH · 정정</b>", txt)
+
+    def test_upcoming_dates(self):
+        sx, ex = VENUES["standx"], VENUES["extended"]
+        now = ts(2026, 10, 24, 10, 30)
+        u = J.upcoming(sx, now)
+        self.assertEqual([(x["when"], x["dday"], x["near"]) for x in u],
+                         [("10/26(월) 09:00", "D-2", True), ("11/1(일) 09:00 ~ 12/31(목) 17:00", "D-8", False)])
+        self.assertEqual([(x["when"], x["dday"]) for x in J.upcoming(ex, now)],
+                         [("10/31(토)", "D-7"), ("11/3(화)", "D-10"), ("11월 중", "")])
+        self.assertEqual(J.upcoming(sx, ts(2026, 10, 25, 9))[0]["dday"], "내일")
+        self.assertEqual(J.upcoming(sx, ts(2026, 10, 26, 8))[0]["dday"], "오늘")
+        mid = J.upcoming(sx, ts(2026, 11, 2, 10))   # 대상 확인은 지났고 청구가 진행 중
+        self.assertEqual([(x["dday"], x["near"]) for x in mid], [("진행 중 · 마감 D-59", False)])
+        self.assertEqual(J.upcoming(sx, ts(2026, 12, 28, 10))[0]["dday"], "진행 중 · 마감 D-3")
+        self.assertTrue(J.upcoming(sx, ts(2026, 12, 28, 10))[0]["near"])
+        self.assertEqual(J.upcoming(sx, ts(2026, 12, 31, 17, 1)), [])
+        self.assertEqual(J.upcoming(ex, ts(2026, 10, 31, 23, 59))[0]["dday"], "오늘")  # 날짜만 있는 일정은 그날 끝까지
+        self.assertEqual(J.upcoming({"name": "x", "key_dates": [{"at": "2027-06-30", "text": "far"},
+                                                                  {"at": "bad", "text": "x"}]}, now), [])
+
+    def test_summary_emphasis(self):
+        s = {"name": "Extended", "level": "NONE", "status_note": "a **b** <c>", "sources_ok": 1, "sources_all": 2,
+             "odds": "토큰 출시 확률 11/30까지 33% · 12/31까지 97%", "upcoming": []}
+        b = J.venue_block(s)
+        self.assertIn("<b>Extended</b> — 조용함 · 수집 <b>1/2</b> 정상", b)
+        self.assertIn("a <b>b</b> &lt;c&gt;", b)
+        self.assertIn("11/30까지 33% · 12/31까지 <b>97%</b> (Polymarket)", b)
+        self.assertTrue(J.venue_block({**s, "level": "ALERT"}).startswith("<b>Extended</b> — 🟡 <b>경보</b>"))
+        self.assertIn("관찰(약한 신호만)", J.venue_block({**s, "level": "WATCH"}))
+        txt = J.render_summary([s, {**s, "name": "Pacifica"}], NOW, CFG, "현황", "보기를 바꿨어요 <new>")
+        self.assertTrue(txt.startswith("<b>퍼프덱스 레이더 · 현황</b>\n10/12(월) 09:17\n보기를 바꿨어요 &lt;new&gt;"))
+        self.assertIn("&lt;c&gt;\n11/30까지 33%", txt.replace("토큰 출시 확률 ", ""))
+        self.assertIn("(Polymarket)\n\n<b>Pacifica</b>", txt)
+        self.assertNotIn("다가오는 일정", txt)
+        self.assertIn("<b>퍼프덱스 레이더 · 월간 점검</b>", J.render_heartbeat([s], NOW, CFG))
 
     def test_html_escaped(self):
         e = J.event("S2", "announcement", "ALERT", "앱 공지: <Season 3> & claims", "x < y", "r", NOW)
@@ -513,7 +553,7 @@ class Integration(unittest.TestCase):
             return self.pages.get(url, "# Page Not Found\n\nThe URL does not exist.\n\n### Option 1 — Ask a question (recommended)\n")
         return self.demo_docs if url.startswith(DEMO) else self.docs
 
-    def run_at(self, now, expect_rc=0):
+    def run_at(self, now, expect_rc=0, env=None):
         S_ = self.R.S
 
         def boom(*a, **k):
@@ -538,7 +578,7 @@ class Integration(unittest.TestCase):
         for p in patches:
             p.start()
         try:
-            with mock.patch.dict(os.environ, {"RADAR_NOW": str(now)}):
+            with mock.patch.dict(os.environ, {"RADAR_NOW": str(now), **(env or {})}):
                 rc = self.R.main([])
         finally:
             for p in patches:
@@ -553,7 +593,7 @@ class Integration(unittest.TestCase):
         t0 = ts(2026, 10, 12, 9, 17)
         l0 = self.run_at(t0)  # 처음 — 기준선 + 감시 범위 안내 한 번
         self.assertEqual(l0["outbox"]["kind"], "scope")
-        self.assertIn("· <b>Demo</b> — 조용함", l0["outbox"]["text"])
+        self.assertIn("\n\n<b>Demo</b> — 조용함", l0["outbox"]["text"])
         self.assertIn("토큰 출시 확률 12/31까지 20%", l0["outbox"]["text"])
         self.lb_sum += 500
         l1 = self.run_at(t0 + 7200)
@@ -637,7 +677,7 @@ class Integration(unittest.TestCase):
         txt = l["outbox"]["text"]
         self.assertIn("라이터RH 전환감시를 '퍼프덱스 레이더'로 바꾸고 2곳의", txt)
         self.assertIn("<b>Lighter RH · 정정</b>", txt)
-        self.assertIn("10/24(토) 08:10 '경보' 알림은 오탐이었어요", txt)
+        self.assertIn("10/24(토) 08:10 '경보' 알림은 <b>오탐</b>이었어요", txt)
         self.assertIn("'distributed'가 토큰·에어드랍 언급 없이", txt)
         st = self.state()
         self.assertEqual(st["version"], 2)
@@ -737,6 +777,33 @@ class Integration(unittest.TestCase):
         self.fail_all = True
         self.run_at(t0 + 7200, expect_rc=0)   # 1회는 경고만
         self.run_at(t0 + 14400, expect_rc=1)  # 2회 연속부터 실패
+
+    def test_summary_on_request_and_outbox_log(self):
+        t0 = ts(2026, 10, 24, 9, 55)
+        l0 = self.run_at(t0)
+        self.assertEqual([o["kind"] for o in l0["outboxes"]], ["scope"])
+        self.lb_sum += 1
+        l1 = self.run_at(t0 + 1800, env={"RADAR_SUMMARY": "1", "RADAR_SUMMARY_NOTE": "보기를 바꿨어요"})
+        self.assertEqual(l1["outbox"]["kind"], "summary")
+        txt = l1["outbox"]["text"]
+        self.assertTrue(txt.startswith("<b>퍼프덱스 레이더 · 현황</b>\n10/24(토) 10:25\n보기를 바꿨어요"))
+        self.assertIn("\n\n<b>Demo</b> — 조용함", txt)
+        self.assertEqual([o["kind"] for o in l1["outboxes"]], ["scope", "summary"])  # 중계가 둘 다 볼 수 있게
+        self.lb_sum += 1
+        l2 = self.run_at(t0 + 3600)                                   # 요청 없는 실행은 현황을 다시 만들지 않는다
+        self.assertEqual(l2["outbox"]["id"], l1["outbox"]["id"])
+        self.lb_sum += 1
+        l3 = self.run_at(ts(2026, 10, 24, 23, 17), env={"RADAR_SUMMARY": "1"})   # 밤 — 만들지 않음
+        self.assertEqual(l3["outbox"]["id"], l1["outbox"]["id"])
+        self.tg.append({"title": "Demo airdrop checker is live", "link": "https://t.me/demo/3", "ts": t0})
+        self.lb_sum += 1
+        l4 = self.run_at(ts(2026, 10, 25, 9, 17), env={"RADAR_SUMMARY": "1"})   # 경보가 있으면 경보가 먼저
+        self.assertEqual(l4["outbox"]["kind"], "alert")
+        self.assertEqual([o["kind"] for o in l4["outboxes"]], ["scope", "summary", "alert"])
+        self.lb_sum += 1
+        l5 = self.run_at(ts(2026, 10, 25, 10, 20))                    # 24시간 지난 것(어제 09:55 범위 변경)은 빠진다
+        self.assertEqual([o["kind"] for o in l5["outboxes"]], ["summary", "alert"])
+        self.assertEqual(self.state()["outbox_log"][-1]["id"], l4["outbox"]["id"])
 
     def test_heartbeat_first_week(self):
         self.run_at(ts(2026, 10, 30, 9, 17))  # 시딩 + 범위 안내
