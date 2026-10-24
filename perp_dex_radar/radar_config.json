@@ -204,6 +204,67 @@
       "x": ["pacifica_fi"],
       "news": {"q": "\"Pacifica\" (perp OR perps OR DEX OR airdrop OR TGE) -Cyberpunk -Chrysler", "match": "pacifica.*\\b(perps?|dex|airdrop|tge|token|points?|solana)\\b|\\b(perps?|dex|airdrop|tge|token|points?|solana)\\b.*pacifica"},
       "polymarket": {"q": "pacifica", "match": "\\bpacifica\\b"}
+    },
+    {
+      "id": "txflow",
+      "name": "TxFlow",
+      "site": "https://app.txflow.com",
+      "tickers": [],
+      "token_live": false,
+      "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소",
+      "key_dates": [
+        {"at": "2027-03-31", "label": "2027년 1분기", "text": "시즌1 주간 배분 끝(늦어도)"}
+      ],
+      "extra_kw": "\\bseason (?:2|two)\\b|\\bpoints? (?:conversion|snapshot)\\b",
+      "docs": {
+        "index": "https://docs.txflow.com/llms.txt",
+        "pages": [
+          {"url": "https://docs.txflow.com/points/how-points-work.md", "name": "포인트 작동 방식"},
+          {"url": "https://docs.txflow.com/terms/points-program-terms.md", "name": "포인트 약관"}
+        ],
+        "names": {"llms.txt": "문서 전체 목록"}
+      },
+      "x": ["TxFlow_L1"],
+      "news": {"q": "\"TxFlow\"", "match": "\\bTxFlow\\b"},
+      "polymarket": {"q": "TxFlow", "match": "\\btxflow\\b"}
+    },
+    {
+      "id": "hellotrade",
+      "name": "HelloTrade",
+      "site": "https://www.hello.trade",
+      "tickers": [],
+      "token_live": false,
+      "status_note": "Monad 위 주식·원자재·크립토 퍼프(최대 50배, 24시간) · 클로즈드 알파(웨이팅리스트 · X로 초대 코드) · 토큰·포인트 미발표 — 포인트 프로그램이 생기는지부터 봐요",
+      "extra_kw": "\\bpoints? (?:program|season|campaign|system)\\b|\\bHello ?Trade points\\b|\\bseason (?:1|one)\\b",
+      "docs": {
+        "index": "https://docs.hello.trade/llms.txt",
+        "pages": [
+          {"url": "https://docs.hello.trade/about/readme.md", "name": "소개·이용 방법"},
+          {"url": "https://docs.hello.trade/about/trading/trading-fees.md", "name": "수수료"}
+        ],
+        "names": {"llms.txt": "문서 전체 목록"}
+      },
+      "x": ["hellotradeapp"],
+      "news": {"q": "\"HelloTrade\"", "match": "\\bHello ?Trade\\b"},
+      "polymarket": {"q": "HelloTrade", "match": "\\bhello ?trade\\b"}
+    },
+    {
+      "id": "titanx",
+      "name": "TitanX",
+      "site": "https://titanx.cc",
+      "tickers": [],
+      "token_live": false,
+      "status_note": "Titan Exchange(titanx.cc) · Canton 위 프라이버시·규제 거래소(크립토·주식·비상장) · 웨이팅리스트·테스트넷 단계 · 토큰·포인트 공식 발표 없음 — 공식 문서는 로그인이 필요해서 홈페이지·사이트 지도·X로 봐요",
+      "extra_kw": "\\bpoints? (?:program|season|campaign|system)\\b|\\btestnet points?\\b|\\bseason (?:1|one)\\b",
+      "docs": {
+        "index": "https://titanx.cc/sitemap-0.xml",
+        "pages": [
+          {"url": "https://titanx.cc/", "name": "공식 홈페이지"}
+        ],
+        "names": {"sitemap-0.xml": "사이트 페이지 목록"}
+      },
+      "x": ["TitanExchange_"],
+      "news": {"q": "\"Titan Exchange\" (Canton OR waitlist OR testnet OR titanx)", "match": "\\bTitan Exchange\\b|\\btitanx\\b"}
     }
   ]
 }

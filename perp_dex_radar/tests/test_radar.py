@@ -47,9 +47,13 @@ def tr(frm, to, amt, t=NOW, tx="0x1", li=0):
 
 
 class Config(unittest.TestCase):
-    def test_seven_venues(self):
+    def test_ten_venues(self):
         self.assertEqual([v["id"] for v in CFG["venues"]],
-                         ["arcus", "lighter-rh", "qfex", "extended", "standx", "variational", "pacifica"])
+                         ["arcus", "lighter-rh", "qfex", "extended", "standx", "variational", "pacifica",
+                          "txflow", "hellotrade", "titanx"])  # 2026-10-24 TxFlow · HelloTrade · TitanX 추가
+        for v in CFG["venues"]:
+            for k in v.get("key_dates") or []:
+                J.kst_time(k["at"])
         for v in CFG["venues"]:
             self.assertTrue(v.get("status_note"), v["id"])
             for k in ("news", "polymarket"):
@@ -153,6 +157,28 @@ class Docs(unittest.TestCase):
         ev = J.detect_doc("https://d/llms.txt", self.IDX_OLD, new, NOW, "문서 전체 목록")
         self.assertEqual([e["grade"] for e in ev], ["WATCH"])
         self.assertIn("주소 이전 1개", ev[0]["title"])
+
+    def test_sitemap_is_a_page_list(self):
+        xml = ('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+               '<url><loc>https://titanx.cc/</loc></url><url><loc>https://titanx.cc/terms</loc></url></urlset>')
+        with mock.patch.object(S, "http", return_value=xml.encode()):
+            old = S.fetch_doc("https://titanx.cc/sitemap-0.xml")
+        self.assertEqual(old, "- [/](https://titanx.cc/)\n- [/terms](https://titanx.cc/terms)")
+        new = old + "\n- [/airdrop](https://titanx.cc/airdrop)"
+        ev = J.detect_doc("https://titanx.cc/sitemap-0.xml", old, new, NOW, "사이트 페이지 목록")
+        self.assertEqual((ev[0]["signal"], ev[0]["grade"]), ("index_keyword", "ALERT"))
+        self.assertIn("'/airdrop'", ev[0]["title"])
+        ev2 = J.detect_doc("https://titanx.cc/sitemap-0.xml", old, old + "\n- [/careers](https://titanx.cc/careers)", NOW)
+        self.assertEqual((ev2[0]["signal"], ev2[0]["grade"]), ("index_change", "WATCH"))
+
+    def test_relative_index_links(self):
+        txt = "# TxFlow Docs\n- [How Points Work](/points/how-points-work.md): weekly pool\n"
+        idx = J.parse_index(txt, "https://docs.txflow.com/llms.txt")
+        self.assertEqual(list(idx), ["https://docs.txflow.com/points/how-points-work.md"])
+        self.assertEqual(list(J.parse_index("- [A](https://d/a.md)", "https://x/llms.txt")), ["https://d/a.md"])
+        new = txt + "- [Airdrop Checker](/token/airdrop.md): Check your allocation\n"
+        ev = J.detect_doc("https://docs.txflow.com/llms.txt", txt, new, NOW)
+        self.assertEqual(ev[0]["ref"]["url"], "https://docs.txflow.com/token/airdrop.md")
 
     def test_index_new_token_page_is_alert(self):
         new = self.IDX_OLD + "- [XTEN Tokenomics](https://d/token/xten.md): Supply and airdrop\n"
@@ -439,7 +465,7 @@ class Render(unittest.TestCase):
         sums = [{"id": v["id"], "name": v["name"], "level": "NONE", "status_note": v["status_note"], "sources_ok": 2,
                  "sources_all": 2, "odds": "", "upcoming": J.upcoming(v, now)} for v in CFG["venues"]]
         txt = J.render_kickoff(sums, now, CFG, ["<b>Lighter RH · 정정</b>\n…"], renamed=True)
-        self.assertIn("라이터RH 전환감시를 '퍼프덱스 레이더'로 바꾸고 7곳의", txt)
+        self.assertIn(f"라이터RH 전환감시를 '퍼프덱스 레이더'로 바꾸고 {len(CFG['venues'])}곳의", txt)
         for v in CFG["venues"]:  # 거래소 칸마다 빈 줄로 띄운다
             self.assertIn(f"\n\n<b>{v['name']}</b> — 조용함 · 수집 2/2 정상\n", txt)
         self.assertIn("청구 11/1 09:00 ~ 12/31 17:00(KST, <b>미청구분 소멸</b>)", txt)
@@ -768,7 +794,7 @@ class Integration(unittest.TestCase):
         self.lb_sum += 1
         l = self.run_at(t0 + 2 * 86400)
         self.assertEqual(l["outbox"]["kind"], "scope")
-        self.assertIn("추가: Demo", l["outbox"]["text"])
+        self.assertIn("새로 추가: <b>Demo</b> — 이제 2곳을 봐요.", l["outbox"]["text"])
         self.assertEqual(l["levels"]["demo"], "NONE")
 
     def test_undecidable_exit(self):

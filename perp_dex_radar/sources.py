@@ -165,10 +165,20 @@ def normalize_doc(text: str) -> str:
     return "\n".join(out).strip()
 
 
+_LOC = re.compile(r"<loc>\s*([^<\s]+)\s*</loc>", re.I)
+
+
+def sitemap_list(raw: str) -> str:
+    """사이트 지도(XML) → llms.txt와 같은 꼴의 목록 '- [/경로](주소)' — 새 페이지(/airdrop 같은)를 문서 목록 규칙으로 본다."""
+    return "\n".join(f"- [{urllib.parse.urlsplit(u).path or '/'}]({u})" for u in _LOC.findall(raw))
+
+
 def fetch_doc(url: str) -> str:
-    """문서 한 장 — 마크다운(.md·llms.txt)은 그대로, HTML이면 본문 글자만 뽑아 같은 규칙으로 정리."""
+    """문서 한 장 — 마크다운(.md·llms.txt)은 그대로, HTML이면 본문 글자만, 사이트 지도(XML)는 페이지 목록으로 정리."""
     raw = http(url).decode("utf-8", "replace")
-    if re.match(r"\s*(<!doctype html|<html)", raw, re.I):
+    if re.match(r"\s*<\?xml", raw) and re.search(r"<(urlset|sitemapindex)\b", raw):
+        raw = sitemap_list(raw)
+    elif re.match(r"\s*(<!doctype html|<html)", raw, re.I):
         raw = html_text(raw)
     return normalize_doc(raw)
 

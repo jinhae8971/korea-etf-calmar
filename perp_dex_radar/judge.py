@@ -19,6 +19,7 @@ import difflib
 import hashlib
 import html
 import re
+from urllib.parse import urljoin
 
 KST = dt.timezone(dt.timedelta(hours=9))
 RANK = {"NONE": 0, "WATCH": 1, "ALERT": 2, "IMMINENT": 3}
@@ -401,7 +402,7 @@ def detect_doc(url: str, old: str | None, new: str, now: int, name: str | None =
                tickers=(), watch_any: bool = False, extra: str | None = None) -> list[dict]:
     if old is None or old == new:
         return []
-    if url.endswith("llms.txt"):
+    if is_index_url(url):
         return detect_index(url, old, new, now, name, tickers, extra)
     name = name or doc_key(url)
     added, removed = doc_diff(old, new)
@@ -426,14 +427,19 @@ def detect_doc(url: str, old: str | None, new: str, now: int, name: str | None =
 _IDX = re.compile(r"^\s*[-*]\s*\[(?P<title>[^\]]+)\]\((?P<url>[^)\s]+)\)(?::\s*(?P<desc>.*))?\s*$")
 
 
-def parse_index(text: str) -> dict[str, tuple[str, str]]:
-    """llms.txt 목록 → {주소: (제목, 설명)}."""
+def is_index_url(url: str) -> bool:
+    """문서 전체 목록 — llms.txt, 또는 사이트 지도(sitemap*.xml, sources.fetch_doc이 같은 꼴의 목록으로 바꿔 준다)."""
+    return url.endswith("llms.txt") or bool(re.search(r"/sitemap[^/]*\.xml$", url))
+
+
+def parse_index(text: str, base: str | None = None) -> dict[str, tuple[str, str]]:
+    """llms.txt 목록 → {주소: (제목, 설명)}. 상대 주소(/points/x.md — TxFlow 문서)는 base 기준 절대 주소로."""
     out: dict[str, tuple[str, str]] = {}
     for ln in (text or "").split("\n"):
         m = _IDX.match(ln)
         if m:
-            out.setdefault(m.group("url"), (m.group("title").replace("\\", "").strip(),
-                                            (m.group("desc") or "").strip()))
+            u = urljoin(base, m.group("url")) if base else m.group("url")
+            out.setdefault(u, (m.group("title").replace("\\", "").strip(), (m.group("desc") or "").strip()))
     return out
 
 
@@ -441,7 +447,7 @@ def detect_index(url: str, old: str, new: str, now: int, name: str | None = None
                  extra: str | None = None) -> list[dict]:
     """문서 전체 목록(llms.txt) — 새로 생긴 페이지만 본다. 주소만 옮긴 페이지는 신호가 아니다."""
     name = name or "문서 전체 목록"
-    o, n = parse_index(old), parse_index(new)
+    o, n = parse_index(old, url), parse_index(new, url)
     gone_by_title: dict[str, list[str]] = {}
     for u in o:
         if u not in n:
@@ -1154,7 +1160,7 @@ def render_kickoff(summaries: list[dict], now: int, cfg: dict, release_sections:
         lines.append(f"라이터RH 전환감시를 '{NAME}'로 바꾸고 {len(summaries)}곳의 포인트→토큰 전환(TGE·에어드랍) 신호를 함께 봐요.")
     else:
         if added:
-            lines.append("추가: " + ", ".join(esc(a) for a in added))
+            lines.append(f"새로 추가: <b>{' · '.join(esc(a) for a in added)}</b> — 이제 {len(summaries)}곳을 봐요.")
         if removed:
             lines.append("제외: " + ", ".join(esc(r) for r in removed))
     up = upcoming_section(summaries)

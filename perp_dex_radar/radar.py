@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """perp-dex-radar — 퍼프 DEX 여러 곳의 포인트 → 토큰 전환(TGE·에어드랍) 신호 감시기 (수집·판정·대시보드 데이터).
 
-2026-10-24 '라이터RH 전환감시'(lit-rh-watch)를 이름을 바꾸고 거래소 7곳으로 넓혔다.
+2026-10-24 '라이터RH 전환감시'(lit-rh-watch)를 이름을 바꾸고 거래소 7곳으로 넓혔다. 같은 날 TxFlow·HelloTrade·TitanX를 더해 10곳.
 
 실행: python radar.py [--seed] [--dry] [--summary]
   --seed    : 기준선만 갱신하고 이벤트를 만들지 않는다(새 거래소·새 원천은 첫 실행에 자동 적용).
@@ -279,7 +279,7 @@ class VenueRun:
                     st["docs"][url] = {"text": txt, "hash": S.sha(txt), "url": eff,
                                        "changed": now if old != txt else prev.get("changed")}
                 if p.get("index"):
-                    index = J.parse_index(txt)
+                    index = J.parse_index(txt, eff)
                 nok += 1
             except Exception as e:  # noqa: BLE001
                 print(f"[{self.v['id']}:docs] {eff}: {e}")
