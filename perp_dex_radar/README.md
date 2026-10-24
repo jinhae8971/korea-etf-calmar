@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | 수집 | 2시간마다 KST 홀수시 :17 (`.github/workflows/perp-dex-radar.yml`, GitHub 지연으로 실제로는 2~5시간 간격). 판정 코드·설정을 push하면 그 자리에서 한 번 |
-| 발송 | **@spytltgld_airdrop_bot** (아커스·라이터 채굴단가 채널). PC의 airdrop-radar(`swing-rebalancer/airdrop-radar`, `radar/relay.py`)가 10분마다 `data/latest.json`을 읽어 새 outbox를 보낸다. 2026-10-24 전에는 Brief Hub(전략 봇)가 보냈다 |
+| 발송 | **@spytltgld_airdrop_bot** (아커스·라이터 채굴단가 채널). PC의 airdrop-radar(`swing-rebalancer/airdrop-radar`, `radar/relay.py`)가 30분마다(:08/:38, 밤 22~07시 쉼) `data/latest.json`을 읽어 새 outbox를 보낸다. 2026-10-24 전에는 Brief Hub(전략 봇)가 보냈다 |
 | 시간 | 메시지는 KST 07~21시에만 만들고, 중계는 22~07시에 보내지 않는다(밤에 생긴 것은 아침에) |
 | 대시보드 | https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/ (옛 `/lit-rh-watch/`는 여기로 넘어간다) |
 | 설정 | `radar_config.json` — 거래소별 원천·티커·지금 상태 한 줄(`status_note`)·다가오는 일정(`key_dates`) |

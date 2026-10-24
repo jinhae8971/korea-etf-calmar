@@ -487,7 +487,7 @@ function renderRadar() {
   if (!data) {
     $("radar-kpis").innerHTML = "";
     $("radar-up").innerHTML = $("radar-events").innerHTML = "";
-    $("radar-venues").innerHTML = `<div class="card"><div class="empty">${R.error ? esc(R.error) : "레이더 데이터를 아직 받지 않았어요 — 이 PC가 10분마다 확인해요"}</div></div>`;
+    $("radar-venues").innerHTML = `<div class="card"><div class="empty">${R.error ? esc(R.error) : "레이더 데이터를 아직 받지 않았어요 — 다음 수집(약 2시간 주기) 뒤 다시 열어 주세요"}</div></div>`;
     $("radar-charts").innerHTML = "";
     return;
   }
@@ -532,7 +532,7 @@ function renderRadar() {
   const all = data.recent_all || [];
   $("radar-all").innerHTML = all.length ? all.map(evRow).join("") : `<div class="empty">기록 없음</div>`;
   $("radar-all-sum").textContent = `${all.length}건`;
-  $("radar-foot").innerHTML = `데이터: GitHub Actions가 약 2시간마다 수집 · 텔레그램 알림은 @spytltgld_airdrop_bot(PC가 10분마다 중계) · ` +
+  $("radar-foot").innerHTML = `데이터: GitHub Actions가 약 2시간마다 수집 · 텔레그램 알림은 @spytltgld_airdrop_bot(PC가 30분마다 중계, 밤 22~07시 쉼) · ` +
     `PC 대시보드(localhost:4000)의 '퍼프덱스 레이더'와 같은 화면`;
 }
 $("radar-pick").addEventListener("click", (ev) => {

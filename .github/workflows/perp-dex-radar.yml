@@ -2,7 +2,7 @@ name: perp-dex-radar
 
 # 퍼프덱스 레이더 — 퍼프 DEX 10곳(Arcus·Lighter RH·QFEX·Extended·StandX·Variational·Pacifica·TxFlow·HelloTrade·TitanX)의
 # 포인트 → 토큰 전환(TGE·에어드랍) 신호 수집·판정·대시보드. 2026-10-24 lit-rh-watch에서 이름·범위 확장.
-# 발송은 이 워크플로가 하지 않는다 — PC의 airdrop-radar가 10분마다 perp_dex_radar/data/latest.json을 읽어
+# 발송은 이 워크플로가 하지 않는다 — PC의 airdrop-radar가 30분마다(:08/:38, 밤 쉼) perp_dex_radar/data/latest.json을 읽어
 # 새 outbox를 @spytltgld_airdrop_bot(아커스·라이터 채굴단가 채널)으로 중계한다(2026-10-24, Brief Hub에서 옮김).
 on:
   schedule:

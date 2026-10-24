@@ -14,7 +14,7 @@
   data/state.json                  내부 상태(거래소별 커서·기준선·이벤트)
   data/latest.json                 발송용 스냅샷(outbox 포함)
   ../docs/perp-dex-radar/data.json 대시보드용
-발송은 하지 않는다 — PC의 airdrop-radar(swing-rebalancer/airdrop-radar, radar/relay.py)가 10분마다 data/latest.json을 읽어
+발송은 하지 않는다 — PC의 airdrop-radar(swing-rebalancer/airdrop-radar, radar/relay.py)가 30분마다(낮) data/latest.json을 읽어
 새 outbox를 @spytltgld_airdrop_bot(아커스·라이터 채굴단가 채널)으로 보낸다(2026-10-24부터 — 그 전에는 Brief Hub·전략 봇).
 outbox 종류: alert(경보·임박) · release(보낸 경보가 풀림 — 오탐이면 정정) · scope(감시 범위 변경) · summary(요청한 현황) ·
 heartbeat(월초 점검). latest.json의 outboxes = 24시간 안에 만든 것 전부(오래된 순) — 실행이 몰려도 중계가 놓치지 않게.
