@@ -5,7 +5,7 @@
 
 | | |
 |---|---|
-| 수집 | 2시간마다 KST 홀수시 :17 (`.github/workflows/perp-dex-radar.yml`, GitHub 지연으로 실제로는 2~5시간 간격). 판정 코드·설정을 push하면 그 자리에서 한 번 |
+| 수집 | 낮(KST 07~21시) 30분마다 :17/:47, 밤 2시간마다(22·00·02·04·06시 :17) — `.github/workflows/perp-dex-radar.yml`. GitHub이 예약 실행을 자주 늦추거나 빠뜨려서(10/25: 2시간마다 12번 중 5번, 낮엔 2번) 2026-10-26 낮 간격을 줄였다. 실제 간격은 GitHub 사정에 따라 들쭉날쭉하다. 판정 코드·설정을 push하면 그 자리에서 한 번 |
 | 발송 | **@spytltgld_airdrop_bot** (아커스·라이터 채굴단가 채널). PC의 airdrop-radar(`swing-rebalancer/airdrop-radar`, `radar/relay.py`)가 30분마다(:08/:38, 밤 22~07시 쉼) `data/latest.json`을 읽어 새 outbox를 보낸다. 2026-10-24 전에는 Brief Hub(전략 봇)가 보냈다 |
 | 시간 | 메시지는 KST 07~21시에만 만들고, 중계는 22~07시에 보내지 않는다(밤에 생긴 것은 아침에) |
 | 대시보드 | https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/ (옛 `/lit-rh-watch/`는 여기로 넘어간다) |
