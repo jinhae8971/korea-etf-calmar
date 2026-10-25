@@ -482,6 +482,17 @@ def push_outbox(st: dict, ob: dict, now: int, ttl: int) -> None:
     st["outbox_log"] = (log + [ob])[-10:]
 
 
+RUN_SRC = {"schedule": "s", "workflow_dispatch": "d", "push": "p"}
+
+
+def record_run(st: dict, now: int, event: str | None = None) -> list:
+    """실행 기록 — [시각, 출처(s 예약 · d 수동/PC 시작 · p push · l 로컬)], 48시간 안 것만 (2026-10-26 운영자
+    "어제 메시지가 안 온 것 같은데 주기 확인해봐" — GitHub 예약이 자주 빠져 실제 주기를 보이게)."""
+    runs = [r for r in st.get("runs") or [] if isinstance(r, list) and now - r[0] <= 48 * 3600]
+    st["runs"] = runs + [[now, RUN_SRC.get(event or "", "l")]]
+    return st["runs"]
+
+
 # ───────────────────────── 실행 ─────────────────────────
 def main(argv):
     seed_flag, dry = "--seed" in argv, "--dry" in argv
@@ -634,13 +645,16 @@ def main(argv):
 
     undecidable = core_all > 0 and core_ok < core_all / 2
     st["fail_streak"] = st.get("fail_streak", 0) + 1 if undecidable else 0
+    runs = record_run(st, now, os.environ.get("GITHUB_EVENT_NAME"))
+    runs24 = [r for r in runs if now - r[0] <= 24 * 3600]
     latest = {
         "generated_at": now, "levels": {v["id"]: st["venues"][v["id"]]["level"] for v in cfg["venues"]},
         "undecidable": undecidable, "outbox": st.get("outbox"),
         "outboxes": sorted(st.get("outbox_log") or [], key=lambda o: o["created"]),
         "status": {v["id"]: {k: s.get("ok") for k, s in st["venues"][v["id"]]["status"].items()} for v in cfg["venues"]},
+        "runs": runs24,
     }
-    dash = {"generated_at": now, "name": J.NAME, "venues": [], "recent_all": []}
+    dash = {"generated_at": now, "name": J.NAME, "venues": [], "recent_all": [], "runs": runs24}
     for v, s in zip(cfg["venues"], summaries):
         vs = st["venues"][v["id"]]
         act = J.active(vs["events"], now, window)

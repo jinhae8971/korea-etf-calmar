@@ -831,6 +831,18 @@ class Integration(unittest.TestCase):
         self.assertEqual([o["kind"] for o in l5["outboxes"]], ["summary", "alert"])
         self.assertEqual(self.state()["outbox_log"][-1]["id"], l4["outbox"]["id"])
 
+    def test_run_history(self):
+        t0 = ts(2026, 10, 25, 9, 17)
+        self.run_at(t0, env={"GITHUB_EVENT_NAME": "schedule"})
+        self.run_at(t0 + 1800, env={"GITHUB_EVENT_NAME": "workflow_dispatch"})
+        l2 = self.run_at(t0 + 25 * 3600, env={"GITHUB_EVENT_NAME": "push"})
+        self.assertEqual(l2["runs"], [[t0 + 25 * 3600, "p"]])                     # latest·대시보드는 24시간 안 것
+        self.assertEqual([r[1] for r in self.state()["runs"]], ["s", "d", "p"])  # 상태는 48시간
+        dash = json.load(open(os.path.join(self.R.DOCS, "data.json"), encoding="utf-8"))
+        self.assertEqual(dash["runs"], l2["runs"])
+        self.run_at(t0 + 50 * 3600, env={"GITHUB_EVENT_NAME": ""})
+        self.assertEqual([r[1] for r in self.state()["runs"]], ["p", "l"])
+
     def test_summary_request_file(self):
         t0 = ts(2026, 10, 24, 9, 55)
         self.run_at(t0)

@@ -328,6 +328,7 @@ const kst = (iso, withDay) => {
   return (withDay ? `${p.m}/${p.d} ` : "") + `${p.hh}:${p.mm}`;
 };
 const kstTs = (t, withDay = true) => t ? kst(new Date(t * 1000).toISOString(), withDay) : "—";
+const runsText = (d) => Array.isArray(d.runs) ? `최근 24시간 ${d.runs.length}회 수집` : "낮 30분마다 수집";   // 2026-10-26 실제 주기를 보이게
 const pill = (tone, text, sm) => `<span class="pill ${tone || ""}${sm ? " sm" : ""}">${text}</span>`;
 function toast(msg, tone) {
   const el = document.createElement("div");
@@ -359,7 +360,7 @@ function renderTop() {
   if (!data) { $("top-pill").innerHTML = pill("muted", "데이터 없음"); $("top-at").textContent = ""; return; }
   const c = radarCounts(data);
   $("top-pill").innerHTML = c.imm ? pill("critical", `임박 ${c.imm}`) : c.alert ? pill("warn", `경보 ${c.alert}`) : c.watch ? pill("info", `관찰 ${c.watch}`) : pill("muted", "조용함");
-  $("top-at").innerHTML = `<b class="mono">${kstTs(data.generated_at)}</b> 기준 · ${c.total}곳 · 약 2시간마다`;
+  $("top-at").innerHTML = `<b class="mono">${kstTs(data.generated_at)}</b> 기준 · ${c.total}곳 · ${runsText(data)}`;
 }
 let resizeTimer = null;
 window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (radar && radar.data) renderRadarCharts(radar.data); }, 150); });
@@ -492,7 +493,7 @@ function renderRadar() {
     return;
   }
   const c = radarCounts(data);
-  $("radar-sub").textContent = `퍼프 DEX ${c.total}곳의 포인트 → 토큰 전환(TGE·에어드랍) 신호 · ${kstTs(data.generated_at)} 기준 · 약 2시간마다`;
+  $("radar-sub").textContent = `퍼프 DEX ${c.total}곳의 포인트 → 토큰 전환(TGE·에어드랍) 신호 · ${kstTs(data.generated_at)} 기준 · ${runsText(data)}`;
   const strong = data.venues.filter((v) => v.level === "ALERT" || v.level === "IMMINENT");
   const watch = data.venues.filter((v) => v.level === "WATCH");
   const nx = nextUpcoming(data);
@@ -532,7 +533,7 @@ function renderRadar() {
   const all = data.recent_all || [];
   $("radar-all").innerHTML = all.length ? all.map(evRow).join("") : `<div class="empty">기록 없음</div>`;
   $("radar-all-sum").textContent = `${all.length}건`;
-  $("radar-foot").innerHTML = `데이터: GitHub Actions가 약 2시간마다 수집 · 텔레그램 알림은 @spytltgld_airdrop_bot(PC가 30분마다 중계, 밤 22~07시 쉼) · ` +
+  $("radar-foot").innerHTML = `데이터: GitHub Actions가 수집(낮에는 PC가 30분마다 실행을 시작, 예약 실행은 보조) · 텔레그램 알림은 @spytltgld_airdrop_bot(PC가 30분마다 중계, 밤 22~07시 쉼) · ` +
     `PC 대시보드(localhost:4000)의 '퍼프덱스 레이더'와 같은 화면`;
 }
 $("radar-pick").addEventListener("click", (ev) => {
