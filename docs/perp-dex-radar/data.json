@@ -1,7 +1,77 @@
 {
- "generated_at": 1793016502,
+ "generated_at": 1793018312,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "17ad4cbf5120",
+   "ref": {
+    "name": "ToasterContainer"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: ToasterContainer",
+   "ts": 1793018312,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "efd81f3df5ab",
+   "ref": {
+    "name": "useBOOneTapOrder"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: useBOOneTapOrder",
+   "ts": 1793018312,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "66f5bd28517d",
+   "ref": {
+    "name": "usePlaceBOOrder"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: usePlaceBOOrder",
+   "ts": 1793018312,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "https://x.com/StandX_Official/status/2114694796816065006",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "5fb4d3468427",
+   "ref": {
+    "label": "공식 X",
+    "text": "📢 The StandX Airdrop Checker is now live. Standers can now check their airdrop eligibility and allocation. 🔎 Check yours now: https://standx.com/airdrop Stay safe and only use official StandX links..",
+    "url": "https://x.com/StandX_Official/status/2114694796816065006",
+    "words": [
+     "Airdrop Checker",
+     "airdrop eligibility"
+    ]
+   },
+   "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
+   "refuted": false,
+   "signal": "x_post",
+   "title": "StandX 공식 X: 📢 The StandX Airdrop Checker is now live. Standers can now check their airdrop eligibility and allocation. 🔎 Check yours",
+   "ts": 1793017503,
+   "venue": "standx",
+   "venue_name": "StandX"
+  },
   {
    "detail": "0xa0e56f65 → 0x18add7f0",
    "family": "S1",
@@ -2034,6 +2104,10 @@
   [
    1793016502,
    "d"
+  ],
+  [
+   1793018312,
+   "d"
   ]
  ],
  "venues": [
@@ -2069,37 +2143,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "56건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -2111,6 +2185,51 @@
   },
   {
    "events": [
+    {
+     "detail": "",
+     "family": "S3",
+     "grade": "WATCH",
+     "id": "17ad4cbf5120",
+     "ref": {
+      "name": "ToasterContainer"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "fe_chunk",
+     "title": "앱에 새 화면 모듈: ToasterContainer",
+     "ts": 1793018312,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "",
+     "family": "S3",
+     "grade": "WATCH",
+     "id": "efd81f3df5ab",
+     "ref": {
+      "name": "useBOOneTapOrder"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "fe_chunk",
+     "title": "앱에 새 화면 모듈: useBOOneTapOrder",
+     "ts": 1793018312,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "",
+     "family": "S3",
+     "grade": "WATCH",
+     "id": "66f5bd28517d",
+     "ref": {
+      "name": "usePlaceBOOrder"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "fe_chunk",
+     "title": "앱에 새 화면 모듈: usePlaceBOOrder",
+     "ts": 1793018312,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "0xa0e56f65 → 0x18add7f0",
      "family": "S1",
@@ -3435,6 +3554,11 @@
      1793016502,
      218943.986,
      52830.645
+    ],
+    [
+     1793018312,
+     218967.921,
+     52837.145
     ]
    ],
    "level": "WATCH",
@@ -3825,62 +3949,66 @@
     [
      1793016502,
      459569.98
+    ],
+    [
+     1793018312,
+     459569.98
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793016502,
-     "note": "상위 10명 합계 218,944",
+     "at": 1793018312,
+     "note": "상위 10명 합계 218,968",
      "ok": true
     },
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793016502,
-     "note": "150블록 · 대량 1건",
+     "at": 1793018312,
+     "note": "151블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793016502,
-     "note": "모듈 141 · API 127",
+     "at": 1793018312,
+     "note": "모듈 142 · API 127",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
-     "note": "105건",
+     "at": 1793018312,
+     "note": "97건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "459,570 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "19건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -3903,27 +4031,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "15건",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -3946,27 +4074,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
-     "note": "41건",
+     "at": 1793018312,
+     "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "21건",
      "ok": true
     }
@@ -4003,6 +4131,27 @@
   },
   {
    "events": [
+    {
+     "detail": "https://x.com/StandX_Official/status/2114694796816065006",
+     "family": "S2",
+     "grade": "ALERT",
+     "id": "5fb4d3468427",
+     "ref": {
+      "label": "공식 X",
+      "text": "📢 The StandX Airdrop Checker is now live. Standers can now check their airdrop eligibility and allocation. 🔎 Check yours now: https://standx.com/airdrop Stay safe and only use official StandX links..",
+      "url": "https://x.com/StandX_Official/status/2114694796816065006",
+      "words": [
+       "Airdrop Checker",
+       "airdrop eligibility"
+      ]
+     },
+     "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
+     "refuted": false,
+     "signal": "x_post",
+     "title": "StandX 공식 X: 📢 The StandX Airdrop Checker is now live. Standers can now check their airdrop eligibility and allocation. 🔎 Check yours",
+     "ts": 1793017503,
+     "venue": "standx"
+    },
     {
      "detail": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAxZ3NfaDhhQUVYck1wM0xQR3hIaGJMbmhxSndKV1JzdHZxVEkzWXVQdVA0LVFyVXdJalhFLTh6em5qejlQVW9idWxZSmFwcWJXQTdjZndnekN",
      "family": "S4",
@@ -4188,27 +4337,27 @@
    "site": "https://standx.com/airdrop",
    "sources": {
     "js": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "에어드랍 확인 API 경로=/airdrop/claimable",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
-     "note": "35건",
+     "at": 1793018312,
+     "note": "34건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 16개",
      "ok": true
     },
     "x:StandX_AG": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "19건",
      "ok": true
     },
     "x:StandX_Official": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -4240,27 +4389,27 @@
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -4287,32 +4436,32 @@
    "level": "NONE",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 18%",
+   "odds": "토큰 출시 확률 12/31까지 19%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -4364,22 +4513,22 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -4421,22 +4570,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "20건",
      "ok": true
     }
@@ -4459,17 +4608,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793016502,
+     "at": 1793018312,
      "note": "8건",
      "ok": true
     }
