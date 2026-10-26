@@ -1,7 +1,27 @@
 {
- "generated_at": 1793014707,
+ "generated_at": 1793016502,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "0xa0e56f65 → 0x18add7f0",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "dcb426424f60",
+   "ref": {
+    "amount": 1000008.0,
+    "chain": "eth",
+    "from": "0xa0e56f656c89e4819909d921a880329bc9bc8e38",
+    "to": "0x18add7f0bd3ee215677d6b55b5c967e057777e4b",
+    "tx": "0x583a74c66592cb386fd88717217df5aeec9df21ff55c99ecfdab6f63704f01c4"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.00M개 대량 이동",
+   "ts": 1793014799,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "0x4a4aaa01 → 0xa0e56f65",
    "family": "S1",
@@ -2010,6 +2030,10 @@
   [
    1793014707,
    "d"
+  ],
+  [
+   1793016502,
+   "d"
   ]
  ],
  "venues": [
@@ -2045,37 +2069,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
-     "note": "57건",
+     "at": 1793016502,
+     "note": "56건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -2087,6 +2111,25 @@
   },
   {
    "events": [
+    {
+     "detail": "0xa0e56f65 → 0x18add7f0",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "dcb426424f60",
+     "ref": {
+      "amount": 1000008.0,
+      "chain": "eth",
+      "from": "0xa0e56f656c89e4819909d921a880329bc9bc8e38",
+      "to": "0x18add7f0bd3ee215677d6b55b5c967e057777e4b",
+      "tx": "0x583a74c66592cb386fd88717217df5aeec9df21ff55c99ecfdab6f63704f01c4"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.00M개 대량 이동",
+     "ts": 1793014799,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "0x4a4aaa01 → 0xa0e56f65",
      "family": "S1",
@@ -3387,6 +3430,11 @@
      1793014707,
      218915.318,
      52826.09
+    ],
+    [
+     1793016502,
+     218943.986,
+     52830.645
     ]
    ],
    "level": "WATCH",
@@ -3773,62 +3821,66 @@
     [
      1793014707,
      459569.98
+    ],
+    [
+     1793016502,
+     459569.98
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793014707,
-     "note": "상위 10명 합계 218,915",
+     "at": 1793016502,
+     "note": "상위 10명 합계 218,944",
      "ok": true
     },
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793014707,
-     "note": "147블록 · 대량 3건",
+     "at": 1793016502,
+     "note": "150블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "모듈 141 · API 127",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "105건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "459,570 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "19건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -3851,27 +3903,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "15건",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -3894,27 +3946,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
-     "note": "42건",
+     "at": 1793016502,
+     "note": "41건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "21건",
      "ok": true
     }
@@ -4136,27 +4188,27 @@
    "site": "https://standx.com/airdrop",
    "sources": {
     "js": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "에어드랍 확인 API 경로=/airdrop/claimable",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "35건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 16개",
      "ok": true
     },
     "x:StandX_AG": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "19건",
      "ok": true
     },
     "x:StandX_Official": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -4188,27 +4240,27 @@
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -4235,32 +4287,32 @@
    "level": "NONE",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 19%",
+   "odds": "토큰 출시 확률 12/31까지 18%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -4312,22 +4364,22 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -4369,22 +4421,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "20건",
      "ok": true
     }
@@ -4407,17 +4459,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793014707,
+     "at": 1793016502,
      "note": "8건",
      "ok": true
     }
