@@ -1,5 +1,5 @@
 {
- "generated_at": 1792971706,
+ "generated_at": 1792973306,
  "levels": {
   "arcus": "WATCH",
   "extended": "NONE",
@@ -7,13 +7,27 @@
   "lighter-rh": "WATCH",
   "pacifica": "NONE",
   "qfex": "NONE",
-  "standx": "WATCH",
+  "standx": "IMMINENT",
   "titanx": "NONE",
   "txflow": "WATCH",
   "variational": "NONE"
  },
- "outbox": null,
- "outboxes": [],
+ "outbox": {
+  "created": 1792973306,
+  "id": "e58392096ab0",
+  "kind": "alert",
+  "level": "IMMINENT",
+  "text": "🔴 <b>퍼프덱스 레이더 · StandX 임박</b>\n10/26(월) 09:06 ~ 09:08 감지 · 앱 · 공식 발표\n알려진 상태: 토큰 발행 취소(10/15) → <b>DUSD 1회 에어드랍</b> · 대상 확인 10/26 09:00 · 청구 11/1 09:00 ~ 12/31 17:00(KST, <b>미청구분 소멸</b>) · StandX에서 쓰던 지갑으로 청구 · 10/20부터 포지션 축소만 가능\n\n<b>무슨 일</b>\n· StandX 공식 X에 새 글\n  <i>“📢 The StandX Airdrop Checker is now live. Standers can now check their airdrop eligibility and allocation. 🔎 Check yours now: https://standx.com/airdrop Stay safe and only use official StandX links..”</i>\n  잡힌 단어: Airdrop Checker · airdrop eligibility\n· StandX 앱 코드: 에어드랍 확인 API 경로 바뀜\n  404 → /airdrop/claimable\n\n<b>의미</b>\n서로 다른 근거 2가지가 7일 안에 함께 나왔어요. 토큰 전환이 가까웠을 가능성이 높아요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n앱에 청구 기능이 실제로 연결되고 있어요 — 확인(checker)·청구 오픈이 가깝다는 뜻이에요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n배포 뒤 7일 안에 되돌려지면 해제\n\n<a href=\"https://x.com/StandX_Official/status/2114508865836630149\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+ },
+ "outboxes": [
+  {
+   "created": 1792973306,
+   "id": "e58392096ab0",
+   "kind": "alert",
+   "level": "IMMINENT",
+   "text": "🔴 <b>퍼프덱스 레이더 · StandX 임박</b>\n10/26(월) 09:06 ~ 09:08 감지 · 앱 · 공식 발표\n알려진 상태: 토큰 발행 취소(10/15) → <b>DUSD 1회 에어드랍</b> · 대상 확인 10/26 09:00 · 청구 11/1 09:00 ~ 12/31 17:00(KST, <b>미청구분 소멸</b>) · StandX에서 쓰던 지갑으로 청구 · 10/20부터 포지션 축소만 가능\n\n<b>무슨 일</b>\n· StandX 공식 X에 새 글\n  <i>“📢 The StandX Airdrop Checker is now live. Standers can now check their airdrop eligibility and allocation. 🔎 Check yours now: https://standx.com/airdrop Stay safe and only use official StandX links..”</i>\n  잡힌 단어: Airdrop Checker · airdrop eligibility\n· StandX 앱 코드: 에어드랍 확인 API 경로 바뀜\n  404 → /airdrop/claimable\n\n<b>의미</b>\n서로 다른 근거 2가지가 7일 안에 함께 나왔어요. 토큰 전환이 가까웠을 가능성이 높아요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n앱에 청구 기능이 실제로 연결되고 있어요 — 확인(checker)·청구 오픈이 가깝다는 뜻이에요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n배포 뒤 7일 안에 되돌려지면 해제\n\n<a href=\"https://x.com/StandX_Official/status/2114508865836630149\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+  }
+ ],
  "runs": [
   [
    1792971414,
@@ -21,6 +35,10 @@
   ],
   [
    1792971706,
+   "d"
+  ],
+  [
+   1792973306,
    "d"
   ]
  ],
@@ -39,7 +57,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
