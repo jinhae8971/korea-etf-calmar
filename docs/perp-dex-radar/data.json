@@ -1,5 +1,5 @@
 {
- "generated_at": 1793042602,
+ "generated_at": 1793052504,
  "name": "퍼프덱스 레이더",
  "recent_all": [
   {
@@ -2178,6 +2178,10 @@
   [
    1793042602,
    "s"
+  ],
+  [
+   1793052504,
+   "d"
   ]
  ],
  "venues": [
@@ -2231,37 +2235,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
-     "note": "54건",
+     "at": 1793052504,
+     "note": "30건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     }
@@ -2702,221 +2706,6 @@
      "signal": "news",
      "title": "뉴스: Convert LIT to USD | LIT/USD Conversion Calculator - KuCoin",
      "ts": 1792453426,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "861dfe55e8f4",
-     "ref": {
-      "added": [
-       "- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)",
-       "- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)",
-       "- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)"
-      ],
-      "url": "https://docs.lighter.xyz/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "문서 문구 변경: llms.txt",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "f1d42aac953d",
-     "ref": {
-      "name": "BOOrderNotification"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: BOOrderNotification",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "5da204eaeea3",
-     "ref": {
-      "name": "CoinSelector"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: CoinSelector",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "53b00c9aa1e3",
-     "ref": {
-      "name": "ErrorState"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: ErrorState",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "354901a90d04",
-     "ref": {
-      "name": "FilterToggle"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: FilterToggle",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "762e96bf5593",
-     "ref": {
-      "name": "MarketCell"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: MarketCell",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "4a7164bd4725",
-     "ref": {
-      "name": "NoItemsWithFilter"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: NoItemsWithFilter",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "9ca1dd2dbc84",
-     "ref": {
-      "name": "PercentageSlider"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: PercentageSlider",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "f1acac90b211",
-     "ref": {
-      "name": "PriceToBeatMoveLabel"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: PriceToBeatMoveLabel",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "55873934e6d4",
-     "ref": {
-      "name": "bo"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: bo",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "6a1b414f712e",
-     "ref": {
-      "name": "boardWindows"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: boardWindows",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "a6a7070843f9",
-     "ref": {
-      "name": "detail"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: detail",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "22524920d62a",
-     "ref": {
-      "name": "getPaidFees"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: getPaidFees",
-     "ts": 1792439853,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "19e6de7f34b0",
-     "ref": {
-      "name": "subscribeCandleForeground"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "화면 모듈 추가: subscribeCandleForeground",
-     "ts": 1792439853,
      "venue": "lighter-rh"
     }
    ],
@@ -3677,6 +3466,11 @@
      1793042602,
      219367.175,
      52889.51
+    ],
+    [
+     1793052504,
+     219453.223,
+     52906.57
     ]
    ],
    "level": "WATCH",
@@ -4075,62 +3869,66 @@
     [
      1793042602,
      461668.24
+    ],
+    [
+     1793052504,
+     461668.24
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793042602,
-     "note": "상위 10명 합계 219,367",
+     "at": 1793052504,
+     "note": "상위 10명 합계 219,453",
      "ok": true
     },
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793042602,
-     "note": "1549블록 · 대량 1건",
+     "at": 1793052504,
+     "note": "823블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "모듈 142 · API 127",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
-     "note": "129건",
+     "at": 1793052504,
+     "note": "127건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "461,668 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "19건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     }
@@ -4148,32 +3946,32 @@
    "level": "NONE",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 22% · 27년 6/30까지 30%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 21% · 27년 6/30까지 30%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "15건",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
-     "note": "21건",
+     "at": 1793052504,
+     "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     }
@@ -4196,27 +3994,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "42건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     }
@@ -4459,29 +4257,29 @@
    "site": "https://standx.com/airdrop",
    "sources": {
     "js": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "에어드랍 확인 API 경로=/airdrop/claimable",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
-     "note": "32건",
+     "at": 1793052504,
+     "note": "34건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 16개",
      "ok": true
     },
     "x:StandX_AG": {
-     "at": 1793042602,
-     "note": "19건",
-     "ok": true
+     "at": 1793052504,
+     "err": "X 수집 실패: https://xcancel.com/StandX_AG/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/StandX_AG/statuses → HTTP 404",
+     "ok": false
     },
     "x:StandX_Official": {
-     "at": 1793042602,
-     "note": "20건",
-     "ok": true
+     "at": 1793052504,
+     "err": "X 수집 실패: https://xcancel.com/StandX_Official/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/StandX_Official/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -4528,34 +4326,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 10/31까지 1% · 11/30까지 18% · 12/31까지 81%",
+   "odds": "토큰 출시 확률 10/31까지 1% · 11/30까지 17% · 12/31까지 81%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793042602,
-     "note": "18건",
-     "ok": true
+     "at": 1793052504,
+     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -4585,27 +4383,27 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     }
@@ -4657,28 +4455,28 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793042602,
-     "err": "전 페이지 실패",
-     "ok": false
+     "at": 1793052504,
+     "note": "3/3 페이지",
+     "ok": true
     },
     "news": {
-     "at": 1793042602,
-     "note": "11건",
+     "at": 1793052504,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     }
    },
    "sources_all": 1,
-   "sources_ok": 0,
+   "sources_ok": 1,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소",
    "upcoming": []
   },
@@ -4714,22 +4512,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "20건",
      "ok": true
     }
@@ -4752,18 +4550,18 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793042602,
+     "at": 1793052504,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793042602,
-     "note": "8건",
+     "at": 1793052504,
+     "note": "6건",
      "ok": true
     }
    },
