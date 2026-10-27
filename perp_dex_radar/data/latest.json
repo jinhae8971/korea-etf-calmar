@@ -1,5 +1,5 @@
 {
- "generated_at": 1793102903,
+ "generated_at": 1793104715,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -15,10 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1793018312,
-   "d"
-  ],
   [
    1793023997,
    "s"
@@ -138,6 +134,10 @@
   [
    1793102903,
    "d"
+  ],
+  [
+   1793104715,
+   "d"
   ]
  ],
  "status": {
@@ -161,7 +161,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:hellotradeapp": false
+   "x:hellotradeapp": true
   },
   "lighter-rh": {
    "ann": true,
@@ -213,7 +213,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": true
+   "x:variational_io": false
   }
  },
  "undecidable": false
