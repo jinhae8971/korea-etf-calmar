@@ -1,7 +1,83 @@
 {
- "generated_at": 1793106666,
+ "generated_at": 1793126672,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "3069cc204834",
+   "ref": {
+    "name": "MarketBadge"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: MarketBadge",
+   "ts": 1793126672,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "244aa0381fd0",
+   "ref": {
+    "name": "marketData"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_chunk",
+   "title": "앱에 새 화면 모듈: marketData",
+   "ts": 1793126672,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "27th October 2026",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "e422f38d0ee1",
+   "ref": {
+    "added": [
+     "**27th October 2026**",
+     "Breaking Change",
+     "**Builder wallet messages accept a website domain and default to qfex.com.**",
+     "Endpoints: `GET /builder/web3/message`.",
+     "The optional domain query parameter accepts non-QFEX hostnames and sets the message domain and HTTPS URI. If the domain is not provided  the default website uri in the message is [www.qfex.com](http://www.qfex.com). Browser access still requires the website origin in the API CORS configuration. Registration requires the generated URI in the Supabase Auth Redirect URLs allowlist."
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1793126672,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9YNm5RbDBHcjhyeEZ6OTNFM3Z3Z3BKcXU4cjFKVGQzSUhVeDA4UlRkcTBvQmhWN3JQY0tMV0pFdjJUbkxndXQ4TkRCWVdKLXh3V1A0Q1pWVUl",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "6d045aadb2b3",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9YNm5RbDBHcjhyeEZ6OTNFM3Z3Z3BKcXU4cjFKVGQzSUhVeDA4UlRkcTBvQmhWN3JQY0tMV0pFdjJUbkxndXQ4TkRCWVdKLXh3V1A0Q1pWVUlkNWJ3eFVTa0pINGVVSGZBcFVrc05XWQ?oc=5",
+    "words": [
+     "Launch"
+    ]
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: XTEN 3x Leverage Launch Expands Options on Hyperliquid - The Cryptonomist",
+   "ts": 1793126672,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
   {
    "detail": "Season 0 Points, accountAccessStatus",
    "family": "S2",
@@ -1942,10 +2018,6 @@
  ],
  "runs": [
   [
-   1793023997,
-   "s"
-  ],
-  [
    1793042602,
    "s"
   ],
@@ -2072,6 +2144,10 @@
   [
    1793106666,
    "s"
+  ],
+  [
+   1793126672,
+   "s"
   ]
  ],
  "venues": [
@@ -2125,37 +2201,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
-     "note": "50건",
+     "at": 1793126672,
+     "note": "48건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     }
@@ -2167,6 +2243,36 @@
   },
   {
    "events": [
+    {
+     "detail": "",
+     "family": "S3",
+     "grade": "WATCH",
+     "id": "3069cc204834",
+     "ref": {
+      "name": "MarketBadge"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "fe_chunk",
+     "title": "앱에 새 화면 모듈: MarketBadge",
+     "ts": 1793126672,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "",
+     "family": "S3",
+     "grade": "WATCH",
+     "id": "244aa0381fd0",
+     "ref": {
+      "name": "marketData"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "fe_chunk",
+     "title": "앱에 새 화면 모듈: marketData",
+     "ts": 1793126672,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "A partial hedge also counts: if your position on Lighter RH is $100, but you're only hedged for $50 on Lighter Core, you will get a 1.75x boost. Otherwise, if the (opposing) position on Core is the same or larger, you get the complete boost.",
      "family": "S2",
@@ -3496,6 +3602,11 @@
      1793106666,
      219860.773,
      52982.996
+    ],
+    [
+     1793126672,
+     220156.661,
+     53040.156
     ]
    ],
    "level": "WATCH",
@@ -3503,10 +3614,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1791907236,
-     437821.27
-    ],
     [
      1791926185,
      437821.27
@@ -4010,62 +4117,66 @@
     [
      1793106666,
      461668.24
+    ],
+    [
+     1793126672,
+     461668.24
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793106666,
-     "note": "상위 10명 합계 219,861",
+     "at": 1793126672,
+     "note": "상위 10명 합계 220,157",
      "ok": true
     },
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793106666,
-     "note": "137블록 · 대량 0건",
+     "at": 1793126672,
+     "note": "1666블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793106666,
-     "note": "모듈 142 · API 127",
+     "at": 1793126672,
+     "note": "모듈 144 · API 127",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
-     "note": "127건",
+     "at": 1793126672,
+     "note": "106건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "461,668 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "19건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     }
@@ -4076,39 +4187,64 @@
    "upcoming": []
   },
   {
-   "events": [],
+   "events": [
+    {
+     "detail": "27th October 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "e422f38d0ee1",
+     "ref": {
+      "added": [
+       "**27th October 2026**",
+       "Breaking Change",
+       "**Builder wallet messages accept a website domain and default to qfex.com.**",
+       "Endpoints: `GET /builder/web3/message`.",
+       "The optional domain query parameter accepts non-QFEX hostnames and sets the message domain and HTTPS URI. If the domain is not provided  the default website uri in the message is [www.qfex.com](http://www.qfex.com). Browser access still requires the website origin in the API CORS configuration. Registration requires the generated URI in the Supabase Auth Redirect URLs allowlist."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1793126672,
+     "venue": "qfex"
+    }
+   ],
    "groups": [],
    "id": "qfex",
    "lb_hist": null,
-   "level": "NONE",
+   "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 21% · 27년 6/30까지 29%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 22% · 27년 6/30까지 29%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "15건",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "22건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     }
@@ -4120,6 +4256,24 @@
   },
   {
    "events": [
+    {
+     "detail": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9YNm5RbDBHcjhyeEZ6OTNFM3Z3Z3BKcXU4cjFKVGQzSUhVeDA4UlRkcTBvQmhWN3JQY0tMV0pFdjJUbkxndXQ4TkRCWVdKLXh3V1A0Q1pWVUl",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "6d045aadb2b3",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9YNm5RbDBHcjhyeEZ6OTNFM3Z3Z3BKcXU4cjFKVGQzSUhVeDA4UlRkcTBvQmhWN3JQY0tMV0pFdjJUbkxndXQ4TkRCWVdKLXh3V1A0Q1pWVUlkNWJ3eFVTa0pINGVVSGZBcFVrc05XWQ?oc=5",
+      "words": [
+       "Launch"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: XTEN 3x Leverage Launch Expands Options on Hyperliquid - The Cryptonomist",
+     "ts": 1793126672,
+     "venue": "extended"
+    },
     {
      "detail": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYXhVeHhVV3NfQkZRcTVUSlIxc1Z5SmFJRXFqQ2pmX3FtWS1kTkl6VDdMNHBHTXI1Tm1OajhsMjRhSmhhQk1lNzRYc3FVZHRfS0dEb1FnT3l",
      "family": "S4",
@@ -4163,34 +4317,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Extended",
-   "odds": "토큰 출시 확률 12/31까지 96%",
+   "odds": "토큰 출시 확률 12/31까지 95%",
    "rh_supply_hist": null,
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
-     "note": "17건",
+     "at": 1793126672,
+     "note": "45건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793106666,
-     "note": "20건",
-     "ok": true
+     "at": 1793126672,
+     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -4198,15 +4352,15 @@
    "status_note": "XTEN 발표(10/23) · **TGE 11월 예정**(날짜 미정) · 공급 30%가 포인트 참여자 몫 · 10/31 MiCA 백서 공개 예정 · 주간 포인트 배분 끝(Final Arc 대회 ~11/3)",
    "upcoming": [
     {
-     "dday": "D-4",
-     "near": false,
+     "dday": "D-3",
+     "near": true,
      "sort": 1793372400,
      "text": "MiCA 백서 공개 예정",
      "venue": "Extended",
      "when": "10/31(토)"
     },
     {
-     "dday": "D-7",
+     "dday": "D-6",
      "near": false,
      "sort": 1793631600,
      "text": "Final Arc 대회 끝",
@@ -4253,32 +4407,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 10/31까지 2% · 11/30까지 18% · 12/31까지 80%",
+   "odds": "토큰 출시 확률 10/31까지 1% · 11/30까지 20% · 12/31까지 81%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "18건",
      "ok": true
     }
@@ -4305,32 +4459,32 @@
    "level": "NONE",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 15%",
+   "odds": "토큰 출시 확률 12/31까지 17%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
-     "note": "10건",
+     "at": 1793126672,
+     "note": "23건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     }
@@ -4340,7 +4494,7 @@
    "status_note": "토큰·TGE 미발표 · 포인트 매주 1,000만 pt(종료일 없음) · Print 대회 10/19~11/2(100만 pt)",
    "upcoming": [
     {
-     "dday": "D-6",
+     "dday": "D-5",
      "near": false,
      "sort": 1793545200,
      "text": "Print 대회 끝 (100만 pt)",
@@ -4429,22 +4583,22 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     }
@@ -4486,22 +4640,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "20건",
      "ok": true
     }
@@ -4524,17 +4678,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "8건",
      "ok": true
     }
@@ -4552,27 +4706,27 @@
    "level": "NONE",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 22% · 27년 12/31까지 70%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 34% · 27년 12/31까지 75%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793106666,
-     "note": "13건",
+     "at": 1793126672,
+     "note": "29건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793106666,
+     "at": 1793126672,
      "note": "19건",
      "ok": true
     }
