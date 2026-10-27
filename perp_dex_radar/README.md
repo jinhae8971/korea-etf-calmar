@@ -19,12 +19,14 @@
 | Lighter RH | ETH·RH 온체인(LIT 이동·RH체인 공급) · 문서 `programs/…` · 앱 공지 · 리더보드 상위 10 · 프론트 번들 · X |
 | QFEX | 문서(changelog·수수료) · 리서치 블로그 RSS · X — 포인트 프로그램이 생기는지부터 본다 |
 | Extended | 문서(포인트·Final Arc) · 공식 텔레그램 · X |
-| StandX | 앱 JS의 청구 API 경로(`claimable`) · X 2곳 |
 | Variational | 문서(usdVAR·포인트·로드맵) · 공식 텔레그램 · X |
 | Pacifica | 문서(포인트·Print 대회) · 앱 공지 API · X |
 | TxFlow | 문서 목록(`llms.txt`, 상대 주소) · 포인트 작동 방식·포인트 약관 · X — 2026-10-24 추가 |
 | HelloTrade | 문서 목록(`llms.txt`) · 소개·수수료 · X — 포인트 프로그램이 생기는지부터 (2026-10-24 추가) |
 | TitanX | Titan Exchange 홈페이지 · 사이트 지도(`sitemap-0.xml`을 문서 목록처럼 — 새 페이지 감지) · X. 공식 문서는 로그인이 필요 (2026-10-24 추가) |
+| RISEx | 문서 사이트 지도(`docs.risechain.com/sitemap.xml`) · 포인트(시즌1 Ignite)·FAQ·로드맵 · X(@risextrade) — 2026-10-27 추가 |
+
+2026-10-27 StandX를 뺐다(운영자 "항목에 스탠드엑스는 이제 제거해" — 토큰 발행 취소 뒤 DUSD 1회 에어드랍으로 정리). 설정의 `removed_venues`에 이름을 남겨 범위 변경 메시지에 쓰고, 앱 JS 청구 감시 시험은 `tests/fixtures/standx_venue.json`으로 유지한다.
 
 모든 거래소에 Google News와 Polymarket(토큰 출시 확률)이 보조로 붙는다. 보조와 공식 X(미러가 자주 막힘)는
 '원천 정상' 계산에서 뺀다.

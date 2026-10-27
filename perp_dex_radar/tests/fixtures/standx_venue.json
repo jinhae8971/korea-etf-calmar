@@ -1,0 +1,44 @@
+{
+  "id": "standx",
+  "name": "StandX",
+  "site": "https://standx.com/airdrop",
+  "tickers": [
+    "DUSD"
+  ],
+  "token_live": false,
+  "show_odds": false,
+  "status_note": "토큰 발행 취소(10/15) → **DUSD 1회 에어드랍** · 대상 확인 10/26 09:00 · 청구 11/1 09:00 ~ 12/31 17:00(KST, **미청구분 소멸**) · StandX에서 쓰던 지갑으로 청구 · 10/20부터 포지션 축소만 가능",
+  "key_dates": [
+    {
+      "at": "2026-10-26 09:00",
+      "text": "DUSD 에어드랍 대상 확인 열림"
+    },
+    {
+      "at": "2026-11-01 09:00",
+      "until": "2026-12-31 17:00",
+      "text": "DUSD 청구(쓰던 지갑으로) · **미청구분 소멸**"
+    }
+  ],
+  "x": [
+    "StandX_Official",
+    "StandX_AG"
+  ],
+  "js": {
+    "url": "https://standx.com/",
+    "patterns": {
+      "claimable": "getAirdropClaimable\\(\\)\\{[^}]*?post\\(\"([^\"]+)\""
+    },
+    "names": {
+      "claimable": "에어드랍 확인 API 경로"
+    },
+    "max_files": 60
+  },
+  "news": {
+    "q": "\"StandX\"",
+    "match": "\\bStandX\\b"
+  },
+  "polymarket": {
+    "q": "StandX",
+    "match": "\\bstandx\\b"
+  }
+}

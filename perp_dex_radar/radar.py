@@ -605,6 +605,7 @@ def main(argv):
         st["outbox"] = None
     scope = [v["id"] for v in cfg["venues"]]
     names = {v["id"]: v["name"] for v in cfg["venues"]}
+    gone = {r["id"]: r.get("name") or r["id"] for r in cfg.get("removed_venues") or []}   # 뺀 거래소 이름 (메시지용)
     text = kind = None
     top = max((lv for lv, *_ in alerts), key=lambda lv: J.RANK[lv], default="NONE")
     if alerts:
@@ -617,7 +618,7 @@ def main(argv):
     elif day and not seed_flag and st.get("scope") != scope:
         old = st.get("scope") or []
         text = J.render_kickoff(summaries, now, cfg, releases or None,
-                                [names[i] for i in scope if i not in old], [i for i in old if i not in scope],
+                                [names[i] for i in scope if i not in old], [gone.get(i, i) for i in old if i not in scope],
                                 renamed=bool(st.get("renamed_from")))
         st["scope"] = scope
         st.pop("renamed_from", None)

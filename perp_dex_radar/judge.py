@@ -1162,7 +1162,7 @@ def render_kickoff(summaries: list[dict], now: int, cfg: dict, release_sections:
         if added:
             lines.append(f"새로 추가: <b>{' · '.join(esc(a) for a in added)}</b> — 이제 {len(summaries)}곳을 봐요.")
         if removed:
-            lines.append("제외: " + ", ".join(esc(r) for r in removed))
+            lines.append(f"제외: <b>{' · '.join(esc(r) for r in removed)}</b>" + ("" if added else f" — 이제 {len(summaries)}곳을 봐요."))
     up = upcoming_section(summaries)
     if up:
         lines += [""] + up

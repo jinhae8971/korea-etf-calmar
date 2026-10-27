@@ -27,7 +27,9 @@ def write_json(path, obj):
 
 
 CFG = read_json(os.path.join(ROOT, "radar_config.json"))
-VENUES = {v["id"]: v for v in CFG["venues"]}
+# StandX는 2026-10-27 감시 범위에서 뺐다 — 앱 JS·청구 일정 판정 시험용으로 그때 설정을 고정해 둔다
+STANDX = read_json(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "standx_venue.json"))
+VENUES = {**{v["id"]: v for v in CFG["venues"]}, "standx": STANDX}
 LRH = VENUES["lighter-rh"]
 OC = LRH["onchain"]
 NAMES = LRH["docs"]["names"]
@@ -49,8 +51,9 @@ def tr(frm, to, amt, t=NOW, tx="0x1", li=0):
 class Config(unittest.TestCase):
     def test_ten_venues(self):
         self.assertEqual([v["id"] for v in CFG["venues"]],
-                         ["arcus", "lighter-rh", "qfex", "extended", "standx", "variational", "pacifica",
-                          "txflow", "hellotrade", "titanx"])  # 2026-10-24 TxFlow · HelloTrade · TitanX 추가
+                         ["arcus", "lighter-rh", "qfex", "extended", "variational", "pacifica",
+                          "txflow", "hellotrade", "titanx", "risex"])  # 10/24 TxFlow·HelloTrade·TitanX, 10/27 RISEx 추가·StandX 제외
+        self.assertEqual([r["id"] for r in CFG["removed_venues"]], ["standx"])
         for v in CFG["venues"]:
             for k in v.get("key_dates") or []:
                 J.kst_time(k["at"])
@@ -462,11 +465,12 @@ class Render(unittest.TestCase):
 
     def test_kickoff_lists_every_venue(self):
         now = ts(2026, 10, 24, 9, 55)
+        venues = CFG["venues"] + [STANDX]
         sums = [{"id": v["id"], "name": v["name"], "level": "NONE", "status_note": v["status_note"], "sources_ok": 2,
-                 "sources_all": 2, "odds": "", "upcoming": J.upcoming(v, now)} for v in CFG["venues"]]
+                 "sources_all": 2, "odds": "", "upcoming": J.upcoming(v, now)} for v in venues]
         txt = J.render_kickoff(sums, now, CFG, ["<b>Lighter RH · 정정</b>\n…"], renamed=True)
-        self.assertIn(f"라이터RH 전환감시를 '퍼프덱스 레이더'로 바꾸고 {len(CFG['venues'])}곳의", txt)
-        for v in CFG["venues"]:  # 거래소 칸마다 빈 줄로 띄운다
+        self.assertIn(f"라이터RH 전환감시를 '퍼프덱스 레이더'로 바꾸고 {len(venues)}곳의", txt)
+        for v in venues:  # 거래소 칸마다 빈 줄로 띄운다
             self.assertIn(f"\n\n<b>{v['name']}</b> — 조용함 · 수집 2/2 정상\n", txt)
         self.assertIn("청구 11/1 09:00 ~ 12/31 17:00(KST, <b>미청구분 소멸</b>)", txt)
         self.assertIn("→ <b>DUSD 1회 에어드랍</b>", txt)
@@ -474,6 +478,14 @@ class Render(unittest.TestCase):
         self.assertIn("<b>다가오는 일정</b>\n· <b>10/26(월) 09:00 · D-2</b> — StandX DUSD 에어드랍 대상 확인 열림", txt)
         self.assertLess(txt.index("<b>다가오는 일정</b>"), txt.index("<b>거래소별 지금 상태</b>"))
         self.assertIn("<b>Lighter RH · 정정</b>", txt)
+
+    def test_scope_change_added_and_removed(self):
+        now = ts(2026, 10, 27, 21, 40)
+        sums = [{"id": v["id"], "name": v["name"], "level": "NONE", "status_note": v["status_note"], "sources_ok": 1,
+                 "sources_all": 1, "odds": "", "upcoming": []} for v in CFG["venues"]]
+        txt = J.render_kickoff(sums, now, CFG, None, ["RISEx"], ["StandX"])
+        self.assertIn("새로 추가: <b>RISEx</b> — 이제 10곳을 봐요.\n제외: <b>StandX</b>\n", txt)
+        self.assertIn("제외: <b>StandX</b> — 이제 10곳을 봐요.", J.render_kickoff(sums, now, CFG, None, [], ["StandX"]))
 
     def test_upcoming_dates(self):
         sx, ex = VENUES["standx"], VENUES["extended"]
