@@ -3,6 +3,7 @@ name: Brief Hub
 # 흩어진 브리프를 새 봇(@spytltgld_strategy_bot) 하나로 모아 기능별 별도 메시지로 발송.
 # 단일 파일 구성 — 이 파일 하나만 korea-etf-calmar/.github/workflows/brief-hub.yml 로 만들면 끝.
 # 매시 :17 실행(KST 07~21시). 기능별 발송 요일·시각·조건은 아래 schedule.json 이 판정.
+# 미증시 마감 브리핑(us_close)은 Claude 예약작업이 us_close/data/latest.json 을 커밋하는 순간 push 로 허브가 깨어나 발송한다(2026-10-28).
 # 코스피 매매기준점은 수집이 끝나자마자 한 번 더 돈다 — 수집 잡이 08:00 KST에 끝나며 허브를 깨운다(2026-10-24, 장 시작 전 도착용).
 # 라이터RH 전환감시는 2026-10-24 '퍼프덱스 레이더'로 바뀌면서 이 허브에서 빠졌다 — 메시지는 퍼프 에어드랍 데일리 채널
 # (@spytltgld_airdrop_bot)로 간다: PC의 airdrop-radar가 perp_dex_radar/data/latest.json의 outbox를 중계.
@@ -14,7 +15,7 @@ on:
     types: [completed]
   push:
     branches: [main]
-    paths: [".github/workflows/brief-hub.yml"]
+    paths: [".github/workflows/brief-hub.yml", "us_close/data/latest.json"]
   workflow_dispatch:
     inputs:
       dry_run:
@@ -99,6 +100,13 @@ jobs:
                 "fresh_key": "as_of_date",
                 "event_levels": ["high"],
                 "why": "30일 누적 순위라 변화가 느림 · 월요일 정기 + 큰 변화(high) 시"
+              },
+              {
+                "id": "us_close",
+                "name": "미증시 마감 브리핑",
+                "path": "us_close/data/latest.json",
+                "mode": "outbox",
+                "why": "QQQ·SPY·AAPL 차트 분석 · 미국 거래일 다음날 07:40 KST · Claude 예약작업이 outbox를 커밋하면 push로 바로 발송 (2026-10-28)"
               }
             ]
           }
