@@ -1,0 +1,42 @@
+{
+ "headline": "Fed는 동결했지만 매파적이었고, 반도체 장비주와 오라클이 지수를 받쳤어요. 장 마감 후 알파벳 −10%가 나스닥 선물을 끌어내렸어요.",
+ "breadth_note": "오른 종목 49, 내린 종목 48로 팽팽했어요. 동일가중(RSP)이 시총가중(SPY)보다 0.38%p 약해서 사흘째 좁은 반등이에요. 다만 SMA50 위 종목 비율은 56.7%에서 60.8%로 올랐어요.",
+ "drivers": [
+  "FOMC: 기준금리를 3.75~4.00%로 동결했어요. 10대 2 표결이었고, 쿡 이사와 해맥 총재는 25bp 인상을 주장하며 반대했어요. 성명은 인플레이션이 \"여전히 높다\"고 유지했고, 경기 판단은 \"강한 속도로 확장\"으로 상향했어요. 시장은 12월 인상 가능성을 높게 반영하기 시작했어요.",
+  "금리: 결정 후 10년물이 5bp 올라 5.04%, 30년물은 5.36%가 됐어요. 그 영향으로 유틸리티(−0.8%)와 부동산(−0.7%)이 가장 약했어요.",
+  "반도체 장비·메모리 강세: SOX +1.75%였어요. MU +5.9%, LRCX +5.4%, AMAT +5.1%, KLAC +3.3%, AMD +3.2%가 올랐고, NVDA만 −1.2%로 엇갈렸어요. ORCL은 거래량 2.9배와 함께 +10.7% 급등했어요.",
+  "약세 종목: NOW −3.0%(거래량 2.4배), HOOD −3.3%, GEV −1.9%였어요. 모멘텀 팩터가 저변동보다 1.46%p 강했어요.",
+  "WTI가 +2.0% 올라 101.9달러예요. 에너지는 1개월 +11%로 가장 강한 섹터가 이어지고 있어요."
+ ],
+ "after_hours": [
+  "알파벳(GOOGL)이 시간외 약 −10%예요(324.9 → 291.9). 매출 1,275.8억 달러로 예상 1,279.7억 달러를 소폭 밑돌았어요. EPS는 2.12달러로 예상 약 3.01달러에 못 미쳤는데, 87억 달러 투자 손실이 반영됐어요. 잉여현금흐름도 약 −91억 달러로 적자 전환했다는 보도가 나왔어요.",
+  "마이크로소프트(MSFT)는 시간외 +3~4%예요. 매출 922.8억 달러(예상 906.9억 달러), 조정 EPS 4.89달러(예상 4.73달러)였어요. Azure는 +48%(전 분기 42%)였고, capex는 452억 달러로 예상 507억 달러보다 적었어요.",
+  "시간외 기준 QQQ 716.9(−1.2%), SPY 768.6(−0.5%), AAPL 345.4(+0.4%)예요. 알파벳 비중 때문에 QQQ가 정규장 상승분을 모두 반납했어요."
+ ],
+ "tech": {
+  "QQQ": {"short": 50, "swing": 45, "short_d": -5, "swing_d": 0,
+          "note": "정규장에서 1D EMA50(724.7)과 4H EMA120을 되찾았어요. 하지만 시간외 716.9로 다시 EMA50과 722.8 지지 아래로 밀렸어요. 1D 히스토그램 축소(−3.26 → −2.03)는 유지되고 있어요.",
+          "up": "724.7 회복 후 728.3 종가 돌파 → 735(4H SuperTrend)", "down": "710.0 이탈 → 707.9(EMA120), 701.3"},
+  "SPY": {"short": 50, "swing": 50, "short_d": -5, "swing_d": 0,
+          "note": "1D SuperTrend 상승과 EMA50(766.2) 위 구조가 유지되고, 4H 히스토그램도 확대 중이에요. 다만 10년물 5.04%와 12월 인상 가능성이 상단을 누르고, 거래량도 평균의 0.76배로 약해요.",
+          "up": "775.4 돌파 → 780.5~781.6(ATH)", "down": "766.2 이탈 → 762.0, 758.6"},
+  "AAPL": {"short": 45, "swing": 50, "short_d": -5, "swing_d": 0,
+           "note": "1D MACD가 데드크로스로 돌아섰고 4H 히스토그램도 꺾였어요. 344.9 저항 바로 아래에서 11/2 실적을 기다리는 자리예요. 주봉 추세는 여전히 상승이에요.",
+           "up": "344.9 종가 회복 → 348.2, 351.7(ATH)", "down": "339.8(4H EMA50) 이탈 → 338.7, 335.4"}
+ },
+ "calendar": ["10/29 3분기 GDP 속보치·9월 PCE", "10/29 장후 아마존 실적", "11/1 미국 서머타임 종료(마감 06:00 KST)", "11/2 장후 애플 실적", "12월 FOMC 인상 여부(시장 반영 상승)"],
+ "view": "Fed의 매파적 동결과 10년물 5% 재돌파로 금리 부담이 다시 커졌어요. 그 속에서도 반도체 장비·메모리와 오라클 같은 AI 인프라 쪽으로만 돈이 몰리는 좁은 장이에요. 오늘 밤에는 알파벳 −10%를 MSFT 호실적이 얼마나 상쇄하는지, 그리고 GDP·PCE가 12월 인상 기대를 더 키우는지를 봐야 해요. QQQ는 시간외 기준으로 EMA50(724.7)을 다시 잃어 단기 확률을 낮췄어요.",
+ "summary": [
+  "Fed: 3.75~4.00% 동결, 인상 쪽 반대 2표로 매파적이었어요. 10년물은 5.04%로 올랐어요.",
+  "지수: SOX +1.75%와 ORCL +10.7%가 끌어올렸지만 동일가중은 −0.04%로 폭이 좁았어요.",
+  "시간외: GOOGL 약 −10%, MSFT +3~4%로 엇갈렸고, QQQ는 −1.2%로 정규장 상승분을 반납했어요.",
+  "기술적: QQQ는 724.7 회복 여부, SPY는 766.2 지지, AAPL은 344.9 회복과 11/2 실적이 관건이에요."
+ ],
+ "sources": [
+  {"title": "Fed Holds Rates at 3.75%-4% as Cook and Hammack Dissent (Traders Agency)", "url": "https://tradersagency.com/blog/fed-holds-rates-at-375percent-4percent-as-cook-and-hammack-dissent-warsh-unveils-fewer-rate-setting-meetings-starting-2027"},
+  {"title": "FOMC holds rates steady, markets mostly follow suit (Yahoo Finance)", "url": "https://finance.yahoo.com/economy/policy/articles/fomc-holds-rates-steady-markets-182955276.html"},
+  {"title": "Google misses revenue expectations, Alphabet stock sinks in early after-hours trading (AP)", "url": "https://www.clickorlando.com/business/2026/10/28/google-misses-revenue-expectations-alphabet-stock-sinks-in-early-after-hours-trading/"},
+  {"title": "Alphabet Shares Plunge After Hours as Q3 Revenue, Net Income Miss (TradingKey)", "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262248965-google-earnings-report-q3-services-cloud-search-capital-expenditures-cash-tradingkey"},
+  {"title": "Microsoft shares rebound in after-hours trading; Azure revenue beats (fnnews)", "url": "https://en.fnnews.com/news/202610290543166596"}
+ ]
+}
