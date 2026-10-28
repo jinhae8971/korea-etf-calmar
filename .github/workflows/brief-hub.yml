@@ -106,7 +106,7 @@ jobs:
                 "name": "미증시 마감 브리핑",
                 "path": "us_close/data/latest.json",
                 "mode": "outbox",
-                "why": "QQQ·SPY·AAPL 차트 분석 · 미국 거래일 다음날 07:40 KST · Claude 예약작업이 outbox를 커밋하면 push로 바로 발송 (2026-10-28)"
+                "why": "미증시 마감 브리핑(크로스에셋·섹터·대형주 히트맵·브레드스·기술적 확률) · 미국 거래일 다음날 07:40 KST · 사진 앨범 + 본문 · Claude 예약작업이 outbox를 커밋하면 push로 바로 발송 (2026-10-28)"
               }
             ]
           }
@@ -259,6 +259,46 @@ jobs:
               return parts
 
 
+          def tg_media(token: str, chat: str, paths: list, caption: str = "") -> None:
+              """사진 앨범(최대 10장)을 sendMediaGroup 으로 보낸다. 첫 장에 캡션(HTML)."""
+              import uuid
+              paths = [p for p in paths if os.path.exists(os.path.join(ROOT, p))][:10]
+              if not paths:
+                  return
+              if len(paths) == 1:                                 # sendMediaGroup 은 2장 이상만 받는다
+                  paths = paths * 1
+                  media_one = True
+              else:
+                  media_one = False
+              media = []
+              for i, p in enumerate(paths):
+                  m = {"type": "photo", "media": f"attach://p{i}"}
+                  if i == 0 and caption:
+                      m.update({"caption": caption[:1000], "parse_mode": "HTML"})
+                  media.append(m)
+              bd = uuid.uuid4().hex
+              body = b""
+              def field(name, val):
+                  return (f"--{bd}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{val}\r\n").encode()
+              body += field("chat_id", chat) + field("media", json.dumps(media, ensure_ascii=False))
+              for i, p in enumerate(paths):
+                  with open(os.path.join(ROOT, p), "rb") as f:
+                      data = f.read()
+                  body += (f"--{bd}\r\nContent-Disposition: form-data; name=\"p{i}\"; filename=\"{os.path.basename(p)}\"\r\n"
+                           f"Content-Type: image/png\r\n\r\n").encode() + data + b"\r\n"
+              body += f"--{bd}--\r\n".encode()
+              if media_one:                                        # 1장은 sendPhoto
+                  body = field("chat_id", chat) + field("caption", caption[:1000]) + field("parse_mode", "HTML")
+                  with open(os.path.join(ROOT, paths[0]), "rb") as f:
+                      data = f.read()
+                  body += (f"--{bd}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"{os.path.basename(paths[0])}\"\r\n"
+                           f"Content-Type: image/png\r\n\r\n").encode() + data + b"\r\n" + f"--{bd}--\r\n".encode()
+              req = urllib.request.Request(f"https://api.telegram.org/bot{token}/{'sendPhoto' if media_one else 'sendMediaGroup'}", data=body, method="POST",
+                                           headers={"Content-Type": f"multipart/form-data; boundary={bd}"})
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  r.read()
+
+
           def tg_send(token: str, chat: str, text: str) -> None:
               def post(payload: dict) -> None:
                   req = urllib.request.Request(
@@ -305,6 +345,9 @@ jobs:
                           sent = True
                       else:
                           try:
+                              ob = d.get("outbox") if (src["mode"] == "outbox" and isinstance(d, dict)) else None
+                              if ob and ob.get("photos"):
+                                  tg_media(token, chat, ob["photos"], ob.get("caption", ""))
                               tg_send(token, chat, text)
                               sent = True
                           except Exception as e:                      # 한 기능 실패가 나머지를 막지 않게
