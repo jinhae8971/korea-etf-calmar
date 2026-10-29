@@ -1,5 +1,5 @@
 {
- "generated_at": 1793277506,
+ "generated_at": 1793287952,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -15,14 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1793191108,
-   "d"
-  ],
-  [
-   1793197839,
-   "s"
-  ],
   [
    1793213725,
    "s"
@@ -146,6 +138,10 @@
   [
    1793277506,
    "d"
+  ],
+  [
+   1793287952,
+   "s"
   ]
  ],
  "status": {
@@ -156,7 +152,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": true
+   "x:arcus_xyz": false
   },
   "extended": {
    "docs": true,
@@ -189,20 +185,20 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:pacifica_fi": false
+   "x:pacifica_fi": true
   },
   "qfex": {
    "docs": true,
    "feed": true,
    "news": true,
    "polymarket": true,
-   "x:QFEX": false
+   "x:QFEX": true
   },
   "risex": {
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:risextrade": true
+   "x:risextrade": false
   },
   "titanx": {
    "docs": true,
@@ -210,10 +206,10 @@
    "x:TitanExchange_": true
   },
   "txflow": {
-   "docs": true,
+   "docs": false,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": false
+   "x:TxFlow_L1": true
   },
   "variational": {
    "docs": true,

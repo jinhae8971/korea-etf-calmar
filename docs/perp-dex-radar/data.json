@@ -1,7 +1,107 @@
 {
- "generated_at": 1793277506,
+ "generated_at": 1793287952,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "0xab00e8f5 → 0xcd531ae9",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "ad9b46ef9367",
+   "ref": {
+    "amount": 1500000.0,
+    "chain": "eth",
+    "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+    "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+    "tx": "0x4c25fbbad929f10585c3bb352b365b35f783c0ed5619255e3a841991192f8c14"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.50M개 대량 이동",
+   "ts": 1793287055,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x1a51016f → 0xab00e8f5",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "d84d35f6eeab",
+   "ref": {
+    "amount": 1500000.0,
+    "chain": "eth",
+    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+    "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+    "tx": "0x089586a765fc8281a1b968998ae1ce6a313c1eed86f143faa8bbc4dcaba8a716"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.50M개 대량 이동",
+   "ts": 1793287031,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x09671d2a → 0xf89d7b9c",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "3292ca6458f4",
+   "ref": {
+    "amount": 1216000.0,
+    "chain": "eth",
+    "from": "0x09671d2a9a43bf70cd282318f75c9c9f122a0440",
+    "to": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
+    "tx": "0xc6469c2337327d542b5818517b8fc1ac3135f1ff3373e69e10972c0ddf801865"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.22M개 대량 이동",
+   "ts": 1793281763,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x5ee84d30 → 0x091d1c97",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "fae76bebf886",
+   "ref": {
+    "amount": 1600000.0,
+    "chain": "eth",
+    "from": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
+    "to": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
+    "tx": "0x5bdabbb2266f443ba053a710fd4e22bb9ac0e83ffa5c293c5a53dd1511721f5e"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.60M개 대량 이동",
+   "ts": 1793279171,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x5ee84d30 → 0x091d1c97",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "2bf0bedfefbc",
+   "ref": {
+    "amount": 1600000.0,
+    "chain": "eth",
+    "from": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
+    "to": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
+    "tx": "0x5cd82d9a8651c6c7ce969150bf05ae987b0689f145e248829b57f3dddbf37c1f"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.60M개 대량 이동",
+   "ts": 1793278535,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "29th October 2026",
    "family": "S2",
@@ -2424,14 +2524,6 @@
  ],
  "runs": [
   [
-   1793191108,
-   "d"
-  ],
-  [
-   1793197839,
-   "s"
-  ],
-  [
    1793213725,
    "s"
   ],
@@ -2554,6 +2646,10 @@
   [
    1793277506,
    "d"
+  ],
+  [
+   1793287952,
+   "s"
   ]
  ],
  "venues": [
@@ -2607,39 +2703,39 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
-     "note": "15건",
+     "at": 1793287952,
+     "note": "27건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793277506,
-     "note": "20건",
-     "ok": true
+     "at": 1793287952,
+     "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 4,
@@ -2649,6 +2745,101 @@
   },
   {
    "events": [
+    {
+     "detail": "0xab00e8f5 → 0xcd531ae9",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "ad9b46ef9367",
+     "ref": {
+      "amount": 1500000.0,
+      "chain": "eth",
+      "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+      "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "tx": "0x4c25fbbad929f10585c3bb352b365b35f783c0ed5619255e3a841991192f8c14"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.50M개 대량 이동",
+     "ts": 1793287055,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x1a51016f → 0xab00e8f5",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "d84d35f6eeab",
+     "ref": {
+      "amount": 1500000.0,
+      "chain": "eth",
+      "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
+      "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
+      "tx": "0x089586a765fc8281a1b968998ae1ce6a313c1eed86f143faa8bbc4dcaba8a716"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.50M개 대량 이동",
+     "ts": 1793287031,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x09671d2a → 0xf89d7b9c",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "3292ca6458f4",
+     "ref": {
+      "amount": 1216000.0,
+      "chain": "eth",
+      "from": "0x09671d2a9a43bf70cd282318f75c9c9f122a0440",
+      "to": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
+      "tx": "0xc6469c2337327d542b5818517b8fc1ac3135f1ff3373e69e10972c0ddf801865"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.22M개 대량 이동",
+     "ts": 1793281763,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x5ee84d30 → 0x091d1c97",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "fae76bebf886",
+     "ref": {
+      "amount": 1600000.0,
+      "chain": "eth",
+      "from": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
+      "to": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
+      "tx": "0x5bdabbb2266f443ba053a710fd4e22bb9ac0e83ffa5c293c5a53dd1511721f5e"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.60M개 대량 이동",
+     "ts": 1793279171,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x5ee84d30 → 0x091d1c97",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "2bf0bedfefbc",
+     "ref": {
+      "amount": 1600000.0,
+      "chain": "eth",
+      "from": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
+      "to": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
+      "tx": "0x5cd82d9a8651c6c7ce969150bf05ae987b0689f145e248829b57f3dddbf37c1f"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.60M개 대량 이동",
+     "ts": 1793278535,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "Manage Trading Mode and Margin",
      "family": "S2",
@@ -3214,81 +3405,6 @@
      "refuted": false,
      "signal": "fe_chunk",
      "title": "앱에 새 화면 모듈: MobileExpandableList",
-     "ts": 1792689121,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "257de088f89b",
-     "ref": {
-      "name": "export"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "앱에 새 화면 모듈: export",
-     "ts": 1792689121,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "572f4f531657",
-     "ref": {
-      "name": "exportRange"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "앱에 새 화면 모듈: exportRange",
-     "ts": 1792689121,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "103067be1cad",
-     "ref": {
-      "name": "runtime"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "앱에 새 화면 모듈: runtime",
-     "ts": 1792689121,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "cf7882e5d14d",
-     "ref": {
-      "name": "useSignMessage"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "앱에 새 화면 모듈: useSignMessage",
-     "ts": 1792689121,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVU9FVFl5NWl1QjR4a045REdiSTljRGVoXzhCaFRaVUxyLW9Ib1c2a3JzZVNlTDhaX3ZRQ2pqdFR2Z1drMGFac0E",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "1a1a364ba74b",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVU9FVFl5NWl1QjR4a045REdiSTljRGVoXzhCaFRaVUxyLW9Ib1c2a3JzZVNlTDhaX3ZRQ2pqdFR2Z1drMGFac0EyQlg2SGtTZkFkUEVJS3I1YVRIMjdmLVN6Z094bDJfYkdybU9ocllkcHQ2UXVvVlR3akh4NWZHQks1MWdXN1VSOWFfMnQzZTM?oc=5"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: Lighter Distributes $675M in LIT Tokens in 10th-Largest Crypto Airdrop - CoinMarketCap",
      "ts": 1792689121,
      "venue": "lighter-rh"
     }
@@ -4510,6 +4626,11 @@
      1793277506,
      222100.799,
      53440.71
+    ],
+    [
+     1793287952,
+     222381.285,
+     53487.223
     ]
    ],
    "level": "WATCH",
@@ -5232,62 +5353,66 @@
     [
      1793277506,
      442499.27
+    ],
+    [
+     1793287952,
+     442569.78
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793277506,
-     "note": "상위 10명 합계 222,101",
+     "at": 1793287952,
+     "note": "상위 10명 합계 222,381",
      "ok": true
     },
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793277506,
-     "note": "151블록 · 대량 0건",
+     "at": 1793287952,
+     "note": "867블록 · 대량 5건",
      "ok": true
     },
     "frontend": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "모듈 144 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
-     "note": "107건",
+     "at": 1793287952,
+     "note": "119건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793277506,
-     "note": "442,499 LIT",
+     "at": 1793287952,
+     "note": "442,570 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "18건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "20건",
      "ok": true
     }
@@ -5358,29 +5483,29 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793277506,
-     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
-     "ok": false
+     "at": 1793287952,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -5490,27 +5615,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
-     "note": "17건",
+     "at": 1793287952,
+     "note": "44건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "20건",
      "ok": true
     }
@@ -5520,7 +5645,7 @@
    "status_note": "XTEN 발표(10/23) · **TGE 11월 예정**(날짜 미정) · 공급 30%가 포인트 참여자 몫 · 10/31 MiCA 백서 공개 예정 · 주간 포인트 배분 끝(Final Arc 대회 ~11/3)",
    "upcoming": [
     {
-     "dday": "D-2",
+     "dday": "내일",
      "near": true,
      "sort": 1793372400,
      "text": "MiCA 백서 공개 예정",
@@ -5528,7 +5653,7 @@
      "when": "10/31(토)"
     },
     {
-     "dday": "D-5",
+     "dday": "D-4",
      "near": false,
      "sort": 1793631600,
      "text": "Final Arc 대회 끝",
@@ -5580,28 +5705,28 @@
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793277506,
-     "note": "18건",
+     "at": 1793287952,
+     "note": "19건",
      "ok": true
     }
    },
@@ -5653,29 +5778,29 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793277506,
-     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
-     "ok": false
+     "at": 1793287952,
+     "note": "19건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -5683,8 +5808,8 @@
    "status_note": "토큰·TGE 미발표 · 포인트 매주 1,000만 pt(종료일 없음) · Print 대회 10/19~11/2(100만 pt)",
    "upcoming": [
     {
-     "dday": "D-4",
-     "near": false,
+     "dday": "D-3",
+     "near": true,
      "sort": 1793545200,
      "text": "Print 대회 끝 (100만 pt)",
      "venue": "Pacifica",
@@ -5801,28 +5926,28 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793277506,
-     "note": "3/3 페이지",
-     "ok": true
+     "at": 1793287952,
+     "err": "전 페이지 실패",
+     "ok": false
     },
     "news": {
-     "at": 1793277506,
-     "note": "12건",
+     "at": 1793287952,
+     "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793277506,
-     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
-     "ok": false
+     "at": 1793287952,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
-   "sources_ok": 1,
+   "sources_ok": 0,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소",
    "upcoming": []
   },
@@ -5858,22 +5983,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "20건",
      "ok": true
     }
@@ -5896,17 +6021,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "6건",
      "ok": true
     }
@@ -5946,24 +6071,24 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "29건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793277506,
+     "at": 1793287952,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793277506,
-     "note": "20건",
-     "ok": true
+     "at": 1793287952,
+     "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
