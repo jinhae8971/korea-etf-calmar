@@ -1,5 +1,5 @@
 {
- "generated_at": 1793315312,
+ "generated_at": 1793316083,
  "name": "퍼프덱스 레이더",
  "recent_all": [
   {
@@ -2639,10 +2639,6 @@
  ],
  "runs": [
   [
-   1793229466,
-   "s"
-  ],
-  [
    1793232502,
    "d"
   ],
@@ -2765,6 +2761,10 @@
   [
    1793315312,
    "d"
+  ],
+  [
+   1793316083,
+   "s"
   ]
  ],
  "venues": [
@@ -2818,37 +2818,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
-     "note": "27건",
+     "at": 1793316083,
+     "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "20건",
      "ok": true
     }
@@ -4778,6 +4778,11 @@
      1793315312,
      223075.832,
      53650.1
+    ],
+    [
+     1793316083,
+     223106.59,
+     53654.21
     ]
    ],
    "level": "WATCH",
@@ -5512,62 +5517,66 @@
     [
      1793315312,
      443367.5
+    ],
+    [
+     1793316083,
+     443367.5
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793315312,
-     "note": "상위 10명 합계 223,076",
+     "at": 1793316083,
+     "note": "상위 10명 합계 223,107",
      "ok": true
     },
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793315312,
-     "note": "151블록 · 대량 0건",
+     "at": 1793316083,
+     "note": "65블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "모듈 144 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
-     "note": "117건",
+     "at": 1793316083,
+     "note": "94건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "443,368 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793315312,
-     "note": "18건",
-     "ok": true
+     "at": 1793316083,
+     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
+     "ok": false
     },
     "x:vnovakovski": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "20건",
      "ok": true
     }
@@ -5686,34 +5695,34 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 15% · 27년 6/30까지 13%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 15% · 27년 6/30까지 12%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793315312,
-     "note": "20건",
-     "ok": true
+     "at": 1793316083,
+     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -5823,27 +5832,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "45건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "21건",
      "ok": true
     }
@@ -5913,27 +5922,27 @@
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "18건",
      "ok": true
     }
@@ -5986,27 +5995,27 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
-     "note": "10건",
+     "at": 1793316083,
+     "note": "24건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "19건",
      "ok": true
     }
@@ -6134,28 +6143,28 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793315312,
-     "note": "3/3 페이지",
-     "ok": true
+     "at": 1793316083,
+     "err": "전 페이지 실패",
+     "ok": false
     },
     "news": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793315312,
-     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
-     "ok": false
+     "at": 1793316083,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
-   "sources_ok": 1,
+   "sources_ok": 0,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소",
    "upcoming": []
   },
@@ -6191,24 +6200,24 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793315312,
-     "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
-     "ok": false
+     "at": 1793316083,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
@@ -6229,17 +6238,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "6건",
      "ok": true
     }
@@ -6279,22 +6288,22 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793315312,
-     "note": "10건",
+     "at": 1793316083,
+     "note": "28건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793315312,
+     "at": 1793316083,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793315312,
+     "at": 1793316083,
      "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
      "ok": false
     }
