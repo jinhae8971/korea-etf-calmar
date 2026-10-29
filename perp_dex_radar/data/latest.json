@@ -1,5 +1,5 @@
 {
- "generated_at": 1793262305,
+ "generated_at": 1793264908,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -15,10 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1793176708,
-   "d"
-  ],
   [
    1793178511,
    "d"
@@ -142,6 +138,10 @@
   [
    1793262305,
    "s"
+  ],
+  [
+   1793264908,
+   "d"
   ]
  ],
  "status": {
@@ -152,7 +152,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": false
+   "x:arcus_xyz": true
   },
   "extended": {
    "docs": true,
@@ -198,7 +198,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:risextrade": false
+   "x:risextrade": true
   },
   "titanx": {
    "docs": true,
@@ -216,7 +216,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": false
+   "x:variational_io": true
   }
  },
  "undecidable": false

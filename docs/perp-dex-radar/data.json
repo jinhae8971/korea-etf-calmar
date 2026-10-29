@@ -1,7 +1,31 @@
 {
- "generated_at": 1793262305,
+ "generated_at": 1793264908,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "29th October 2026",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "569581b08b71",
+   "ref": {
+    "added": [
+     "**29th October 2026**",
+     "Trade WebSocket documentation correction",
+     "Corrected the [Balances](https://docs.qfex.com/websocket/channels/trade/balance.md) and [Positions](https://docs.qfex.com/websocket/channels/trade/positions.md) references and Trade Playground schema: both channels have a 60-second periodic refresh plus event-driven updates.",
+     "Documented immediate cached snapshots on subscription and coalesced updates when placing or cancelling orders changes reserved margin. Clarified that subscribers receive `balance_response` and per-symbol `position_response` snapshots, and removed the obsolete v4 envelopes from the Trade schema. This corrects the documentation; it does not announce a protocol change."
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1793264908,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
   {
    "detail": "Manage Trading Mode and Margin",
    "family": "S2",
@@ -2400,10 +2424,6 @@
  ],
  "runs": [
   [
-   1793176708,
-   "d"
-  ],
-  [
    1793178511,
    "d"
   ],
@@ -2526,6 +2546,10 @@
   [
    1793262305,
    "s"
+  ],
+  [
+   1793264908,
+   "d"
   ]
  ],
  "venues": [
@@ -2579,39 +2603,39 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
-     "note": "28건",
+     "at": 1793264908,
+     "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793262305,
-     "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
-     "ok": false
+     "at": 1793264908,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 4,
@@ -4442,6 +4466,11 @@
      1793262305,
      221868.284,
      53406.14
+    ],
+    [
+     1793264908,
+     221928.317,
+     53417.03
     ]
    ],
    "level": "WATCH",
@@ -5136,62 +5165,66 @@
     [
      1793262305,
      442499.27
+    ],
+    [
+     1793264908,
+     442499.27
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793262305,
-     "note": "상위 10명 합계 221,868",
+     "at": 1793264908,
+     "note": "상위 10명 합계 221,928",
      "ok": true
     },
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793262305,
-     "note": "82블록 · 대량 0건",
+     "at": 1793264908,
+     "note": "217블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "모듈 144 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
-     "note": "65건",
+     "at": 1793264908,
+     "note": "106건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "442,499 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "18건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     }
@@ -5203,6 +5236,29 @@
   },
   {
    "events": [
+    {
+     "detail": "29th October 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "569581b08b71",
+     "ref": {
+      "added": [
+       "**29th October 2026**",
+       "Trade WebSocket documentation correction",
+       "Corrected the [Balances](https://docs.qfex.com/websocket/channels/trade/balance.md) and [Positions](https://docs.qfex.com/websocket/channels/trade/positions.md) references and Trade Playground schema: both channels have a 60-second periodic refresh plus event-driven updates.",
+       "Documented immediate cached snapshots on subscription and coalesced updates when placing or cancelling orders changes reserved margin. Clarified that subscribers receive `balance_response` and per-symbol `position_response` snapshots, and removed the obsolete v4 envelopes from the Trade schema. This corrects the documentation; it does not announce a protocol change."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1793264908,
+     "venue": "qfex"
+    },
     {
      "detail": "27th October 2026",
      "family": "S2",
@@ -5234,32 +5290,32 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 16% · 27년 6/30까지 28%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 14% · 27년 6/30까지 28%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
-     "note": "20건",
+     "at": 1793264908,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     }
@@ -5371,27 +5427,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "17건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     }
@@ -5456,34 +5512,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 10/31까지 0% · 11/30까지 26% · 12/31까지 77%",
+   "odds": "토큰 출시 확률 10/31까지 0% · 11/30까지 26% · 12/31까지 83%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793262305,
-     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
-     "ok": false
+     "at": 1793264908,
+     "note": "18건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -5534,27 +5590,27 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
-     "note": "24건",
+     "at": 1793264908,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "19건",
      "ok": true
     }
@@ -5682,22 +5738,22 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     }
@@ -5739,22 +5795,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "20건",
      "ok": true
     }
@@ -5777,17 +5833,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "6건",
      "ok": true
     }
@@ -5822,29 +5878,29 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 33% · 27년 12/31까지 74%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 32% · 27년 12/31까지 74%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "28건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793262305,
+     "at": 1793264908,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793262305,
-     "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
-     "ok": false
+     "at": 1793264908,
+     "note": "21건",
+     "ok": true
     }
    },
    "sources_all": 1,
