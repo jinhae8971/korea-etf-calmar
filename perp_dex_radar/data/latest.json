@@ -1,5 +1,5 @@
 {
- "generated_at": 1793229466,
+ "generated_at": 1793232502,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -15,10 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1793144300,
-   "d"
-  ],
   [
    1793146116,
    "d"
@@ -138,6 +134,10 @@
   [
    1793229466,
    "s"
+  ],
+  [
+   1793232502,
+   "d"
   ]
  ],
  "status": {
@@ -181,14 +181,14 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:pacifica_fi": true
+   "x:pacifica_fi": false
   },
   "qfex": {
    "docs": true,
    "feed": true,
    "news": true,
    "polymarket": true,
-   "x:QFEX": false
+   "x:QFEX": true
   },
   "risex": {
    "docs": true,
@@ -205,14 +205,14 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": false
+   "x:TxFlow_L1": true
   },
   "variational": {
    "docs": true,
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": false
+   "x:variational_io": true
   }
  },
  "undecidable": false
