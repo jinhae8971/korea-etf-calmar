@@ -1,7 +1,30 @@
 {
- "generated_at": 1793363904,
+ "generated_at": 1793373610,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Interface Terms of Use, Spot Trading Service Terms of Use",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "03b41d569d21",
+   "ref": {
+    "moved": [],
+    "name": "문서 전체 목록",
+    "new": [
+     "Interface Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md",
+     "Spot Trading Service Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md"
+    ],
+    "removed": [],
+    "url": "https://docs.extended.exchange/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 새 문서 2개",
+   "ts": 1793373610,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRHV3RHRYbVlZZGRPajVab3hYVzdibDdfS1gxbDFMODlHTDhKcURkb09fbVB2bFNIekYtTndlQVVKbTViWEdyQ0F3cXNsNEZqMlpmaG54OFg",
    "family": "S4",
@@ -2575,53 +2598,9 @@
    "ts": 1790793251,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0xab00e8f5→0xcd531ae9",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "caecb7a0e9e2",
-   "ref": {
-    "amount": 1500000.0,
-    "chain": "eth",
-    "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-    "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-    "tx": "0x318bea14af7ec1c0fc2c05522a1101d1c673ae0f4ac253bfa4174d84f5dbaed5"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 1.50M 대량 이동",
-   "ts": 1790778647,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x1a51016f→0xab00e8f5",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "b97818351be3",
-   "ref": {
-    "amount": 1500000.0,
-    "chain": "eth",
-    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-    "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-    "tx": "0x4d58ca290982434ad067a735bddbdd3262864732d602d6a9f74b30608e97a848"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 1.50M 대량 이동",
-   "ts": 1790778431,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1793277506,
-   "d"
-  ],
   [
    1793287952,
    "s"
@@ -2749,6 +2728,10 @@
   [
    1793363904,
    "d"
+  ],
+  [
+   1793373610,
+   "s"
   ]
  ],
  "venues": [
@@ -2820,37 +2803,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "15건",
+     "at": 1793373610,
+     "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793363904,
+     "at": 1793373610,
      "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
      "ok": false
     }
@@ -4910,6 +4893,11 @@
      1793363904,
      223837.456,
      53805.21
+    ],
+    [
+     1793373610,
+     242122.914,
+     57722.145
     ]
    ],
    "level": "WATCH",
@@ -4917,10 +4905,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1792156575,
-     449115.11
-    ],
     [
      1792173865,
      449115.11
@@ -5744,64 +5728,68 @@
     [
      1793363904,
      445570.1
+    ],
+    [
+     1793373610,
+     445570.1
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793363904,
-     "note": "상위 10명 합계 223,837",
+     "at": 1793373610,
+     "note": "상위 10명 합계 242,123",
      "ok": true
     },
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793363904,
-     "note": "149블록 · 대량 0건",
+     "at": 1793373610,
+     "note": "806블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "모듈 144 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "100건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "445,570 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793363904,
-     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
-     "ok": false
+     "at": 1793373610,
+     "note": "18건",
+     "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793363904,
-     "note": "20건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/vnovakovski/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/vnovakovski/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 7,
@@ -5918,32 +5906,32 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 13% · 27년 6/30까지 16%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 3/31까지 12% · 27년 6/30까지 16%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     }
@@ -5955,6 +5943,28 @@
   },
   {
    "events": [
+    {
+     "detail": "Interface Terms of Use, Spot Trading Service Terms of Use",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "03b41d569d21",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Interface Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md",
+       "Spot Trading Service Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md"
+      ],
+      "removed": [],
+      "url": "https://docs.extended.exchange/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 2개",
+     "ts": 1793373610,
+     "venue": "extended"
+    },
     {
      "detail": "Migration from Starknet to Arc: Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
      "family": "S2",
@@ -6055,27 +6065,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "44건",
+     "at": 1793373610,
+     "note": "19건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793363904,
+     "at": 1793373610,
      "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
      "ok": false
     }
@@ -6085,7 +6095,7 @@
    "status_note": "XTEN 발표(10/23) · **TGE 11월 예정**(날짜 미정) · 공급 30%가 포인트 참여자 몫 · 10/31 MiCA 백서 공개 예정 · 주간 포인트 배분 끝(Final Arc 대회 ~11/3)",
    "upcoming": [
     {
-     "dday": "내일",
+     "dday": "오늘",
      "near": true,
      "sort": 1793372400,
      "text": "MiCA 백서 공개 예정",
@@ -6093,8 +6103,8 @@
      "when": "10/31(토)"
     },
     {
-     "dday": "D-4",
-     "near": false,
+     "dday": "D-3",
+     "near": true,
      "sort": 1793631600,
      "text": "Final Arc 대회 끝",
      "venue": "Extended",
@@ -6155,34 +6165,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 10/31까지 0% · 11/30까지 25% · 12/31까지 86%",
+   "odds": "토큰 출시 확률 10/31까지 0% · 11/30까지 22% · 12/31까지 82%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793363904,
-     "note": "19건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -6228,34 +6238,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 24%",
+   "odds": "토큰 출시 확률 12/31까지 18%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "23건",
+     "at": 1793373610,
+     "note": "24건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793363904,
-     "note": "19건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -6263,7 +6273,7 @@
    "status_note": "토큰·TGE 미발표 · 포인트 매주 1,000만 pt(종료일 없음) · Print 대회 10/19~11/2(100만 pt)",
    "upcoming": [
     {
-     "dday": "D-3",
+     "dday": "D-2",
      "near": true,
      "sort": 1793545200,
      "text": "Print 대회 끝 (100만 pt)",
@@ -6401,24 +6411,24 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "11건",
+     "at": 1793373610,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793363904,
-     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
-     "ok": false
+     "at": 1793373610,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
@@ -6458,24 +6468,24 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793363904,
-     "note": "20건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -6496,17 +6506,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "6건",
      "ok": true
     }
@@ -6541,29 +6551,29 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 34% · 27년 12/31까지 74%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 35% · 27년 12/31까지 74%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "9건",
+     "at": 1793373610,
+     "note": "25건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793363904,
-     "note": "20건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,

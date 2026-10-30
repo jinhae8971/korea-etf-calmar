@@ -5,14 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1793191108,
-   "d"
-  ],
-  [
-   1793197839,
-   "s"
-  ],
-  [
    1793213725,
    "s"
   ],
@@ -263,6 +255,10 @@
   [
    1793363904,
    "d"
+  ],
+  [
+   1793373610,
+   "s"
   ]
  ],
  "scope": [
@@ -603,37 +599,37 @@
    },
    "status": {
     "api": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "15건",
+     "at": 1793373610,
+     "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793363904,
+     "at": 1793373610,
      "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
      "ok": false
     }
@@ -660,9 +656,9 @@
      "url": "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md"
     },
     "https://docs.extended.exchange/llms.txt": {
-     "changed": 1793138904,
-     "hash": "8db7dd9d0c12088e",
-     "text": "# Extended Documentation\n\n## Extended Documentation\n\n- [Overview & Vision](https://docs.extended.exchange/about-extended/readme.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Technical Architecture](https://docs.extended.exchange/about-extended/technical-architecture.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Team](https://docs.extended.exchange/about-extended/team.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Migration from Starknet to Arc](https://docs.extended.exchange/about-extended/migration-from-starknet-to-arc.md): Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading](https://docs.extended.exchange/extended-resources/trading.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Accounts and Modes](https://docs.extended.exchange/extended-resources/trading/trading-accounts-and-modes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Unified Margin and Balances](https://docs.extended.exchange/extended-resources/trading/unified-margin-and-balances.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Types](https://docs.extended.exchange/extended-resources/trading/order-types.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Cost](https://docs.extended.exchange/extended-resources/trading/order-cost.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RFQ Execution](https://docs.extended.exchange/extended-resources/trading/rfq-execution.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Fees and Rebates](https://docs.extended.exchange/extended-resources/trading/trading-fees-and-rebates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Liquidation Logic](https://docs.extended.exchange/extended-resources/trading/liquidation-logic.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Funding Payments](https://docs.extended.exchange/extended-resources/trading/funding-payments.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Oracle Prices](https://docs.extended.exchange/extended-resources/trading/oracle-prices.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/crypto-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/rwa-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/crypto-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/crypto-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/crypto-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-market Listings](https://docs.extended.exchange/extended-resources/trading/crypto-markets/pre-market-listings.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/rwa-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/rwa-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Corporate Actions](https://docs.extended.exchange/extended-resources/trading/rwa-markets/corporate-actions.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-IPO Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets/pre-ipo-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Account Operations](https://docs.extended.exchange/extended-resources/account-operations.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Account Creation](https://docs.extended.exchange/extended-resources/account-operations/account-creation.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Deposits and Withdrawals](https://docs.extended.exchange/extended-resources/account-operations/deposits-and-withdrawals.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Vault](https://docs.extended.exchange/extended-resources/vault.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Money Market](https://docs.extended.exchange/extended-resources/money-market.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Referrals and Affiliates](https://docs.extended.exchange/extended-resources/referrals-and-affiliates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Builder Codes](https://docs.extended.exchange/extended-resources/builder-codes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Points Program](https://docs.extended.exchange/extended-resources/points-program.md)\n- [More](https://docs.extended.exchange/extended-resources/more.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testers Program](https://docs.extended.exchange/extended-resources/more/testers-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Leaderboard](https://docs.extended.exchange/extended-resources/more/leaderboard.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Platform Outage](https://docs.extended.exchange/extended-resources/more/platform-outage.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testnet](https://docs.extended.exchange/extended-resources/more/testnet.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Troubleshooting Guide](https://docs.extended.exchange/extended-resources/more/troubleshooting-guide.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Smart Contract Audits](https://docs.extended.exchange/extended-resources/more/smart-contract-audits.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Bounty program](https://docs.extended.exchange/extended-resources/more/bounty-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Brand Kit](https://docs.extended.exchange/extended-resources/more/brand-kit.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Legal](https://docs.extended.exchange/extended-resources/legal.md)\n- [Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use.md): Last Updated on 08/10/2026\n- [Statement of Risk](https://docs.extended.exchange/extended-resources/legal/statement-of-risk.md)\n- [Restricted Countries](https://docs.extended.exchange/extended-resources/legal/restricted-countries.md)\n- [Privacy Policy](https://docs.extended.exchange/extended-resources/legal/privacy-policy.md): Last Updated on 16/07/2024.\n- [Trading Competitions](https://docs.extended.exchange/extended-resources/trading-competitions.md)\n- [RWA Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/rwa-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [The Final Arc Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
+     "changed": 1793373610,
+     "hash": "e77ebe3d34b4f3d5",
+     "text": "# Extended Documentation\n\n## Extended Documentation\n\n- [Overview & Vision](https://docs.extended.exchange/about-extended/readme.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Technical Architecture](https://docs.extended.exchange/about-extended/technical-architecture.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Team](https://docs.extended.exchange/about-extended/team.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Migration from Starknet to Arc](https://docs.extended.exchange/about-extended/migration-from-starknet-to-arc.md): Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading](https://docs.extended.exchange/extended-resources/trading.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Accounts and Modes](https://docs.extended.exchange/extended-resources/trading/trading-accounts-and-modes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Unified Margin and Balances](https://docs.extended.exchange/extended-resources/trading/unified-margin-and-balances.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Types](https://docs.extended.exchange/extended-resources/trading/order-types.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Cost](https://docs.extended.exchange/extended-resources/trading/order-cost.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RFQ Execution](https://docs.extended.exchange/extended-resources/trading/rfq-execution.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Fees and Rebates](https://docs.extended.exchange/extended-resources/trading/trading-fees-and-rebates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Liquidation Logic](https://docs.extended.exchange/extended-resources/trading/liquidation-logic.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Funding Payments](https://docs.extended.exchange/extended-resources/trading/funding-payments.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Oracle Prices](https://docs.extended.exchange/extended-resources/trading/oracle-prices.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/crypto-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/rwa-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/crypto-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/crypto-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/crypto-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-market Listings](https://docs.extended.exchange/extended-resources/trading/crypto-markets/pre-market-listings.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/rwa-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/rwa-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Corporate Actions](https://docs.extended.exchange/extended-resources/trading/rwa-markets/corporate-actions.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-IPO Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets/pre-ipo-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Account Operations](https://docs.extended.exchange/extended-resources/account-operations.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Account Creation](https://docs.extended.exchange/extended-resources/account-operations/account-creation.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Deposits and Withdrawals](https://docs.extended.exchange/extended-resources/account-operations/deposits-and-withdrawals.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Vault](https://docs.extended.exchange/extended-resources/vault.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Money Market](https://docs.extended.exchange/extended-resources/money-market.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Referrals and Affiliates](https://docs.extended.exchange/extended-resources/referrals-and-affiliates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Builder Codes](https://docs.extended.exchange/extended-resources/builder-codes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Points Program](https://docs.extended.exchange/extended-resources/points-program.md)\n- [More](https://docs.extended.exchange/extended-resources/more.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testers Program](https://docs.extended.exchange/extended-resources/more/testers-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Leaderboard](https://docs.extended.exchange/extended-resources/more/leaderboard.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Platform Outage](https://docs.extended.exchange/extended-resources/more/platform-outage.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testnet](https://docs.extended.exchange/extended-resources/more/testnet.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Troubleshooting Guide](https://docs.extended.exchange/extended-resources/more/troubleshooting-guide.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Smart Contract Audits](https://docs.extended.exchange/extended-resources/more/smart-contract-audits.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Bounty program](https://docs.extended.exchange/extended-resources/more/bounty-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Brand Kit](https://docs.extended.exchange/extended-resources/more/brand-kit.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Legal](https://docs.extended.exchange/extended-resources/legal.md)\n- [Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use.md): Last Updated on 30/10/2026\n- [Interface Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md): Last updated on 30 October 2026\n- [Spot Trading Service Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md): Last updated on 30 October 2026\n- [Statement of Risk](https://docs.extended.exchange/extended-resources/legal/statement-of-risk.md)\n- [Restricted Regions](https://docs.extended.exchange/extended-resources/legal/restricted-countries.md)\n- [Privacy Policy](https://docs.extended.exchange/extended-resources/legal/privacy-policy.md): Last Updated on 30 October 2026.\n- [Trading Competitions](https://docs.extended.exchange/extended-resources/trading-competitions.md)\n- [RWA Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/rwa-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [The Final Arc Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
      "url": "https://docs.extended.exchange/llms.txt"
     }
    },
@@ -753,6 +749,28 @@
      "signal": "news",
      "title": "뉴스: Hyperliquid Launches Extended (XTEN) with 3x Leverage - Cryptonews.net",
      "ts": 1793138904,
+     "venue": "extended"
+    },
+    {
+     "detail": "Interface Terms of Use, Spot Trading Service Terms of Use",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "03b41d569d21",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Interface Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md",
+       "Spot Trading Service Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md"
+      ],
+      "removed": [],
+      "url": "https://docs.extended.exchange/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 2개",
+     "ts": 1793373610,
      "venue": "extended"
     }
    ],
@@ -1050,6 +1068,10 @@
      [
       1793362096,
       77.0
+     ],
+     [
+      1793373610,
+      77.5
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
@@ -1203,6 +1225,10 @@
      ],
      [
       1793345911,
+      4.5
+     ],
+     [
+      1793373610,
       4.5
      ]
     ],
@@ -1600,6 +1626,10 @@
      [
       1793363904,
       24.0
+     ],
+     [
+      1793373610,
+      26.5
      ]
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
@@ -2009,6 +2039,10 @@
      ],
      [
       1793345911,
+      7.5
+     ],
+     [
+      1793373610,
       7.5
      ]
     ],
@@ -2578,6 +2612,10 @@
      [
       1793363904,
       43.5
+     ],
+     [
+      1793373610,
+      42.5
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
@@ -2868,6 +2906,10 @@
      [
       1793360305,
       52.0
+     ],
+     [
+      1793373610,
+      54.5
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
@@ -3258,6 +3300,10 @@
      [
       1793363904,
       63.5
+     ],
+     [
+      1793373610,
+      63.0
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
@@ -3448,6 +3494,10 @@
      [
       1793347700,
       34.0
+     ],
+     [
+      1793373610,
+      39.5
      ]
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
@@ -3674,6 +3724,10 @@
      [
       1793363904,
       34.5
+     ],
+     [
+      1793373610,
+      34.0
      ]
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
@@ -3887,6 +3941,10 @@
      ],
      [
       1793349282,
+      31.5
+     ],
+     [
+      1793373610,
       31.5
      ]
     ],
@@ -4259,27 +4317,27 @@
    },
    "status": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "44건",
+     "at": 1793373610,
+     "note": "19건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793363904,
+     "at": 1793373610,
      "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
      "ok": false
     }
@@ -4396,24 +4454,24 @@
    },
    "status": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793363904,
-     "note": "20건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -4608,8 +4666,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26305619,
-    "rh": 101732609
+    "eth": 26306425,
+    "rh": 101826688
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -4652,44 +4710,6 @@
     }
    },
    "events": [
-    {
-     "detail": "0x1a51016f→0xab00e8f5",
-     "family": "S1",
-     "grade": "WATCH",
-     "id": "b97818351be3",
-     "ref": {
-      "amount": 1500000.0,
-      "chain": "eth",
-      "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-      "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-      "tx": "0x4d58ca290982434ad067a735bddbdd3262864732d602d6a9f74b30608e97a848"
-     },
-     "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-     "refuted": false,
-     "signal": "eth_large",
-     "title": "ETH LIT 1.50M 대량 이동",
-     "ts": 1790778431,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "0xab00e8f5→0xcd531ae9",
-     "family": "S1",
-     "grade": "WATCH",
-     "id": "caecb7a0e9e2",
-     "ref": {
-      "amount": 1500000.0,
-      "chain": "eth",
-      "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-      "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-      "tx": "0x318bea14af7ec1c0fc2c05522a1101d1c673ae0f4ac253bfa4174d84f5dbaed5"
-     },
-     "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-     "refuted": false,
-     "signal": "eth_large",
-     "title": "ETH LIT 1.50M 대량 이동",
-     "ts": 1790778647,
-     "venue": "lighter-rh"
-    },
     {
      "detail": "0x91d40e48→0xac1ee1f2",
      "family": "S1",
@@ -8469,6 +8489,11 @@
      1793363904,
      223837.456,
      53805.21
+    ],
+    [
+     1793373610,
+     242122.914,
+     57722.145
     ]
    ],
    "level": "WATCH",
@@ -8721,10 +8746,6 @@
    "odds_titles": {},
    "pm_seen": [],
    "rh_supply_hist": [
-    [
-     1792156575,
-     449115.11
-    ],
     [
      1792173865,
      449115.11
@@ -9548,6 +9569,10 @@
     [
      1793363904,
      445570.1
+    ],
+    [
+     1793373610,
+     445570.1
     ]
    ],
    "seeded": true,
@@ -9651,59 +9676,59 @@
    },
    "status": {
     "ann": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793363904,
-     "note": "상위 10명 합계 223,837",
+     "at": 1793373610,
+     "note": "상위 10명 합계 242,123",
      "ok": true
     },
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793363904,
-     "note": "149블록 · 대량 0건",
+     "at": 1793373610,
+     "note": "806블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "모듈 144 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "100건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "445,570 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793363904,
-     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
-     "ok": false
+     "at": 1793373610,
+     "note": "18건",
+     "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793363904,
-     "note": "20건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/vnovakovski/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/vnovakovski/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -9859,6 +9884,7 @@
     "c607bf41885b",
     "c6b5d923e278",
     "c89debcb05e8",
+    "c989d7be11fa",
     "cba91bfc7227",
     "cf5a12d075bf",
     "d4140a1bcd83",
@@ -10078,6 +10104,10 @@
      [
       1793363904,
       8.3
+     ],
+     [
+      1793373610,
+      8.2
      ]
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
@@ -10351,6 +10381,10 @@
      ],
      [
       1793347700,
+      2.6
+     ],
+     [
+      1793373610,
       2.6
      ]
     ],
@@ -10806,6 +10840,10 @@
      [
       1793363904,
       8.5
+     ],
+     [
+      1793373610,
+      9.2
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
@@ -11099,6 +11137,10 @@
      ],
      [
       1793345911,
+      3.4
+     ],
+     [
+      1793373610,
       3.4
      ]
     ],
@@ -11544,6 +11586,10 @@
      [
       1793363904,
       1.9
+     ],
+     [
+      1793373610,
+      1.7
      ]
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
@@ -11854,6 +11900,10 @@
      [
       1793363904,
       4.1
+     ],
+     [
+      1793373610,
+      3.9
      ]
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
@@ -12024,6 +12074,10 @@
      [
       1793353104,
       15.5
+     ],
+     [
+      1793373610,
+      15.0
      ]
     ],
     "pacifica-fdv-above-800m-one-day-after-launch-685-634": [
@@ -12282,6 +12336,10 @@
      [
       1793362096,
       4.9
+     ],
+     [
+      1793373610,
+      4.7
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
@@ -12556,6 +12614,10 @@
      [
       1793362096,
       24.0
+     ],
+     [
+      1793373610,
+      17.5
      ]
     ]
    },
@@ -12662,29 +12724,29 @@
    },
    "status": {
     "ann": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "23건",
+     "at": 1793373610,
+     "note": "24건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793363904,
-     "note": "19건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -13127,6 +13189,10 @@
      [
       1793363904,
       37.5
+     ],
+     [
+      1793373610,
+      38.0
      ]
     ],
     "qfex-fdv-above-200m-one-day-after-launch": [
@@ -13281,6 +13347,10 @@
      [
       1793363904,
       32.5
+     ],
+     [
+      1793373610,
+      31.5
      ]
     ],
     "qfex-fdv-above-300m-one-day-after-launch": [
@@ -13993,6 +14063,10 @@
      [
       1793363904,
       19.5
+     ],
+     [
+      1793373610,
+      21.0
      ]
     ],
     "qfex-fdv-above-50m-one-day-after-launch": [
@@ -14339,6 +14413,10 @@
      [
       1793363904,
       48.0
+     ],
+     [
+      1793373610,
+      50.5
      ]
     ],
     "qfex-fdv-above-80m-one-day-after-launch": [
@@ -14517,6 +14595,10 @@
      [
       1793362096,
       45.5
+     ],
+     [
+      1793373610,
+      43.0
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2026": [
@@ -14881,6 +14963,10 @@
      [
       1793363904,
       59.0
+     ],
+     [
+      1793373610,
+      61.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
@@ -15273,6 +15359,10 @@
      [
       1793362096,
       13.0
+     ],
+     [
+      1793373610,
+      12.5
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
@@ -15551,6 +15641,10 @@
      [
       1793342310,
       47.5
+     ],
+     [
+      1793373610,
+      47.5
      ]
     ]
    },
@@ -15646,32 +15740,33 @@
      "6a9b2437703d",
      "ae0f0acbe359",
      "a646c9a2f9bc",
-     "f2299d39976e"
+     "f2299d39976e",
+     "d4410c66252f"
     ]
    },
    "status": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     }
@@ -16086,6 +16181,10 @@
      [
       1793363904,
       34.5
+     ],
+     [
+      1793373610,
+      35.0
      ]
     ]
    },
@@ -16166,24 +16265,24 @@
    },
    "status": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "9건",
+     "at": 1793373610,
+     "note": "25건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793363904,
-     "note": "20건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -17671,17 +17770,17 @@
    },
    "status": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "6건",
      "ok": true
     }
@@ -17902,29 +18001,32 @@
      "f17a1a5e6684",
      "0a78d1292745",
      "ada9f973e341",
-     "3c5772a1aec1"
+     "3c5772a1aec1",
+     "5e395ce40d7f",
+     "bbce819d43a5",
+     "723735e316e4"
     ]
    },
    "status": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
-     "note": "11건",
+     "at": 1793373610,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793363904,
-     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
-     "ok": false
+     "at": 1793373610,
+     "note": "20건",
+     "ok": true
     }
    }
   },
@@ -18274,6 +18376,10 @@
      [
       1793356707,
       54.5
+     ],
+     [
+      1793373610,
+      55.5
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
@@ -18604,6 +18710,10 @@
      [
       1793347700,
       93.3
+     ],
+     [
+      1793373610,
+      93.3
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
@@ -18878,6 +18988,10 @@
      [
       1793363904,
       26.1
+     ],
+     [
+      1793373610,
+      27.2
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
@@ -19390,6 +19504,10 @@
      [
       1793363904,
       10.8
+     ],
+     [
+      1793373610,
+      11.9
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
@@ -19488,6 +19606,10 @@
      [
       1793351301,
       4.0
+     ],
+     [
+      1793373610,
+      10.8
      ]
     ],
     "variational-fdv-above-500m-one-day-after-launch-547-272": [
@@ -19972,6 +20094,10 @@
      [
       1793362096,
       1.7
+     ],
+     [
+      1793373610,
+      1.5
      ]
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
@@ -20464,6 +20590,10 @@
      [
       1793363904,
       86.0
+     ],
+     [
+      1793373610,
+      81.8
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
@@ -20770,6 +20900,10 @@
      [
       1793360305,
       25.0
+     ],
+     [
+      1793373610,
+      22.5
      ]
     ],
     "will-variational-launch-a-token-by-october-31-2026": [
@@ -20879,6 +21013,10 @@
      ],
      [
       1793342310,
+      0.1
+     ],
+     [
+      1793373610,
       0.1
      ]
     ]
@@ -21000,29 +21138,29 @@
    },
    "status": {
     "docs": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793363904,
+     "at": 1793373610,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793363904,
-     "note": "19건",
-     "ok": true
+     "at": 1793373610,
+     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
+     "ok": false
     }
    }
   }
