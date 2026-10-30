@@ -1,5 +1,5 @@
 {
- "generated_at": 1793351301,
+ "generated_at": 1793353104,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -15,14 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1793264908,
-   "d"
-  ],
-  [
-   1793266700,
-   "d"
-  ],
   [
    1793268512,
    "d"
@@ -146,6 +138,10 @@
   [
    1793351301,
    "d"
+  ],
+  [
+   1793353104,
+   "d"
   ]
  ],
  "status": {
@@ -156,14 +152,14 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": true
+   "x:arcus_xyz": false
   },
   "extended": {
    "docs": true,
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
@@ -213,14 +209,14 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": true
+   "x:TxFlow_L1": false
   },
   "variational": {
    "docs": true,
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": true
+   "x:variational_io": false
   }
  },
  "undecidable": false
