@@ -1,5 +1,5 @@
 {
- "generated_at": 1793401246,
+ "generated_at": 1793403509,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -9,20 +9,26 @@
   "qfex": "WATCH",
   "risex": "WATCH",
   "titanx": "NONE",
-  "txflow": "WATCH",
+  "txflow": "ALERT",
   "variational": "WATCH"
  },
- "outbox": null,
- "outboxes": [],
+ "outbox": {
+  "created": 1793403509,
+  "id": "2991f07daf12",
+  "kind": "alert",
+  "level": "ALERT",
+  "text": "🟡 <b>퍼프덱스 레이더 · TxFlow 경보</b>\n10/31(토) 08:17 감지 · 공식 발표\n알려진 상태: 자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · <b>시즌1 포인트 진행 중</b>(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소\n\n<b>무슨 일</b>\nTxFlow 공식 X에 새 글\n  <i>“At the community’s request, TxFlow has listed $PREDICT. Now available pre-market before its token launches with up to 5x leverage..”</i>\n  잡힌 단어: token launches\n\n<b>의미</b>\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n다른 종류 근거(온체인·공식 문서·공식 발표·리더보드·앱 중)가 7일 안에 하나 더 나오면 '임박'으로 올려요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n<a href=\"https://x.com/TxFlow_L1/status/2116308541611081982\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+ },
+ "outboxes": [
+  {
+   "created": 1793403509,
+   "id": "2991f07daf12",
+   "kind": "alert",
+   "level": "ALERT",
+   "text": "🟡 <b>퍼프덱스 레이더 · TxFlow 경보</b>\n10/31(토) 08:17 감지 · 공식 발표\n알려진 상태: 자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · <b>시즌1 포인트 진행 중</b>(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소\n\n<b>무슨 일</b>\nTxFlow 공식 X에 새 글\n  <i>“At the community’s request, TxFlow has listed $PREDICT. Now available pre-market before its token launches with up to 5x leverage..”</i>\n  잡힌 단어: token launches\n\n<b>의미</b>\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n다른 종류 근거(온체인·공식 문서·공식 발표·리더보드·앱 중)가 7일 안에 하나 더 나오면 '임박'으로 올려요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n<a href=\"https://x.com/TxFlow_L1/status/2116308541611081982\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+  }
+ ],
  "runs": [
-  [
-   1793315312,
-   "d"
-  ],
-  [
-   1793316083,
-   "s"
-  ],
   [
    1793318909,
    "d"
@@ -146,6 +152,10 @@
   [
    1793401246,
    "s"
+  ],
+  [
+   1793403509,
+   "d"
   ]
  ],
  "status": {
@@ -153,21 +163,21 @@
    "api": true,
    "blog": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:arcus_xyz": true
   },
   "extended": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:extendedapp": true
   },
   "hellotrade": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:hellotradeapp": true
   },
@@ -177,47 +187,47 @@
    "docs": true,
    "eth_transfers": true,
    "frontend": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "rh_supply": true,
    "rh_transfers": true,
-   "x:Lighter_xyz": false,
-   "x:vnovakovski": false
+   "x:Lighter_xyz": true,
+   "x:vnovakovski": true
   },
   "pacifica": {
    "ann": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:pacifica_fi": true
   },
   "qfex": {
    "docs": true,
    "feed": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:QFEX": true
   },
   "risex": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:risextrade": true
   },
   "titanx": {
    "docs": true,
-   "news": true,
-   "x:TitanExchange_": false
+   "news": false,
+   "x:TitanExchange_": true
   },
   "txflow": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:TxFlow_L1": false
+   "x:TxFlow_L1": true
   },
   "variational": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:variational_io": true
