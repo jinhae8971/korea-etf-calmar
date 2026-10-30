@@ -34,7 +34,7 @@ def api(path):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("session"); ap.add_argument("narrative"); ap.add_argument("--kind", default="daily")
+    ap.add_argument("session"); ap.add_argument("narrative"); ap.add_argument("--kind", default="daily"); ap.add_argument("--text-only", action="store_true")
     a = ap.parse_args()
     sdir = os.path.join(HERE, "out", a.session)
     render.main(a.session, a.narrative)
@@ -75,7 +75,7 @@ def main():
            "outbox": {"id": oid, "kind": a.kind,
                       "text": open(os.path.join(sdir, "telegram.html")).read(),
                       "caption": open(os.path.join(sdir, "caption.html")).read(),
-                      "photos": [f"docs/us-close/{a.session}/img/{f}" for f in imgs]}}
+                      "photos": [] if a.text_only else [f"docs/us-close/{a.session}/img/{f}" for f in imgs]}}
     os.makedirs(os.path.join(CLONE, "us_close", "data"), exist_ok=True)
     json.dump(out, open(os.path.join(CLONE, "us_close", "data", "latest.json"), "w"), ensure_ascii=False, indent=1)
     sh("git", "add", "docs/us-close", "us_close/data/latest.json", "us_close/engine")

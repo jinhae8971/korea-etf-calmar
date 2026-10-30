@@ -6,6 +6,7 @@
   - 리포트: https://jinhae8971.github.io/korea-etf-calmar/us-close/ (날짜별 보관)
 - 채팅에는 본문을 보내지 않는다(중복 금지). 마지막 답변 한 줄만 쓴다.
 - 요약은 항상 마지막에 둔다(10/23 요청). AAPL은 계속 포함한다(10/23 요청).
+- **텔레그램 본문은 핵심만(10/31 요청 "메시지가 너무 길어 핵심위주로")**: 렌더러가 제목·한 줄 헤드라인·지수/금리·섹터 1줄·종목별 확률 1줄(상방/하방 기준 레벨)·일정 3개·요약 4줄만 낸다(1,500자 상한, 보통 900자 안팎). drivers·after_hours·view·breadth_note·note는 리포트 페이지에만 들어간다.
 - 예약 이름: `QQQ·SPY·AAPL 데일리 차트 분석`
 
 ## 0. 다음 회차 예약 (가장 먼저)
@@ -41,12 +42,13 @@
 
 ## 4. narrative.json 작성 → 발송
 - 파일: `out/<session>/narrative.json`. 스키마와 문체는 `out/2026-10-27/narrative.json`을 그대로 따른다.
+  - 텔레그램용으로 짧게 쓸 필드: headline 1문장(70자 이내), summary 3~4줄(각 45자 안팎, 시간외 급변이 있으면 한 줄에 반영), calendar 앞 3개가 가장 중요한 일정. tech.up/down은 "→" 앞부분이 기준 레벨로 표시된다.
   - 필드: headline, breadth_note, drivers(3~5), after_hours, tech{QQQ,SPY,AAPL: short, swing, short_d, swing_d, note, up, down}, calendar, view, summary(3~4, 맨 끝), sources
 - 숫자는 다이제스트나 출처에 있는 것만 쓴다. 지수·섹터·종목 수치는 렌더러가 data.json에서 직접 넣으므로 반복하지 않는다.
 - 해석을 중심에 둔다: 무엇이 움직였나, 폭(브레드스·동일가중), 팩터 로테이션, 금리·유가·달러의 영향.
 - 발송: `python3 publish.py <session> out/<session>/narrative.json`
   - `SENT OK`가 나와야 완료다. 렌더 → Pages → us_close outbox push → hub가 앨범과 본문을 보낸다.
-  - 본문 3,900자, 캡션 1,000자를 넘으면 중단되니 narrative를 줄인다.
+  - 본문 1,500자, 캡션 1,000자를 넘으면 중단되니 narrative를 줄인다.
 - 실패 시(SENT OK 없음)에만 SendUserMessage로 원인 한 줄 + 리포트 링크를 보낸다.
 - **복구**: /home/claude/market_brief가 없으면 korea-etf-calmar의 `us_close/engine/`(코드·런북·확률 기록·narrative, publish 때마다 백업)을 /home/claude/market_brief로 복사하고 `pip install --break-system-packages pandas numpy matplotlib`(없을 때만)
 - 클론이 없으면: `add_repo jinhae8971/korea-etf-calmar (push)` → `git clone --depth 1 https://github.com/jinhae8971/korea-etf-calmar /home/claude/korea-etf-calmar`.

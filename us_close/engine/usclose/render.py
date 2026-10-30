@@ -75,65 +75,42 @@ def delta(v):
     return "" if not v else f" ({v:+d})"
 
 
+def key_level(x):
+    """'701.3 회복 → 707.7 ...' -> '701.3 회복' (first leg only)."""
+    return str(x).split("→")[0].strip()
+
+
 def telegram(d, n):
+    """Compact Telegram text (2026-10-31: '핵심 위주로'). Details live in the report page."""
     c = cross_map(d)
     g = lambda s: c.get(s, {})  # noqa: E731
-    L = [f"<b>미증시 마감 브리핑 · {dstr(d['session'])}</b>", e(n["headline"]), ""]
-    L.append(f"<b>지수</b> S&amp;P {num(g('^GSPC')['close'])} {pct(g('^GSPC')['d1'])} · 나스닥100 {pct(g('^NDX')['d1'])} · "
-             f"다우 {pct(g('^DJI')['d1'])} · 러셀 {pct(g('^RUT')['d1'])} · SOX {pct(g('^SOX')['d1'])}")
-    L.append(f"<b>위험·금리</b> VIX {g('^VIX')['close']:.1f} ({g('^VIX')['d1']:+.1f}) · 10년 {g('^TNX')['close']:.2f}% "
-             f"({g('^TNX')['d1']:+.0f}bp) · 30년 {g('^TYX')['close']:.2f}% · 달러 {g('DX-Y.NYB')['close']:.1f} ({pct(g('DX-Y.NYB')['d1'], 1)})")
-    L.append(f"<b>원자재·환율</b> WTI {g('CL=F')['close']:.1f} ({pct(g('CL=F')['d1'], 1)}) · 금 {g('GC=F')['close']:,.0f} "
-             f"({pct(g('GC=F')['d1'], 1)}) · BTC {k_btc(g('BTC-USD')['close'])} ({pct(g('BTC-USD')['d1'], 1)}) · "
-             f"원/달러 {g('USDKRW=X')['close']:,.0f} ({pct(g('USDKRW=X')['d1'], 1)})")
+    L = [f"<b>미증시 마감 · {dstr(d['session'])}</b>", e(n["headline"]), ""]
+    L.append(f"S&amp;P {pct(g('^GSPC')['d1'])} · 나스닥100 {pct(g('^NDX')['d1'])} · 다우 {pct(g('^DJI')['d1'])} · "
+             f"러셀 {pct(g('^RUT')['d1'])} · SOX {pct(g('^SOX')['d1'])}")
+    L.append(f"VIX {g('^VIX')['close']:.1f} · 10년 {g('^TNX')['close']:.2f}% ({g('^TNX')['d1']:+.0f}bp) · "
+             f"WTI {g('CL=F')['close']:.0f} · 금 {pct(g('GC=F')['d1'], 1)} · BTC {k_btc(g('BTC-USD')['close'])}")
+    up, dn = lead_lag(d["sectors"], n=2)
+    L.append(f"강세 {up} / 약세 {dn}")
     L.append("")
-    up, dn = lead_lag(d["sectors"])
-    L.append(f"<b>섹터</b> 강세 {up}\n          약세 {dn}")
-    up, dn = lead_lag(d["themes"])
-    L.append(f"<b>테마</b> 강세 {up}\n          약세 {dn}")
-    mu = " · ".join(f"{x['sym']} {x['d1']:+.1f}" for x in d["movers"]["up"][:5])
-    md = " · ".join(f"{x['sym']} {x['d1']:+.1f}" for x in d["movers"]["down"][:5])
-    L.append(f"<b>대형주</b> 상승 {mu}\n          하락 {md}")
-    b = d["breadth"]
-    L.append(f"<b>브레드스</b> 상승 {b['adv']} / 하락 {b['dec']} · 50일선 위 {b['above50']:.0f}% (전일 {b['above50_prev']:.0f}%) · "
-             f"200일선 위 {b['above200']:.0f}%")
-    if n.get("breadth_note"):
-        L.append(e(n["breadth_note"]))
-    L.append("")
-    L.append("<b>무엇이 시장을 움직였나</b>")
-    L += [f"- {e(x)}" for x in n["drivers"]]
-    if n.get("after_hours"):
-        L.append("")
-        L.append("<b>장 마감 후·시간외</b>")
-        L += [f"- {e(x)}" for x in n["after_hours"]]
-    L.append("")
-    L.append("<b>기술적 확률</b> (차트 기반, 단기 ~1주 / 스윙 2~4주)")
+    L.append("<b>확률</b> 단기 / 스윙(2~4주) · 상방 / 하방 기준")
     for s, t in n["tech"].items():
         tt = d["tech"][s]
-        L.append(f"<b>{s}</b> {tt['price']} ({tt['chg_pct']:+.2f}%) · {short_label(tt)} {t['short']}{delta(t.get('short_d'))} / "
-                 f"스윙 {t['swing']}{delta(t.get('swing_d'))}")
-        L.append(f"  {e(t['note'])}")
-        L.append(f"  상방 {e(t['up'])} / 하방 {e(t['down'])}")
+        L.append(f"<b>{s}</b> {tt['price']} ({tt['chg_pct']:+.1f}%) {short_label(tt)} {t['short']}{delta(t.get('short_d'))} / "
+                 f"{t['swing']}{delta(t.get('swing_d'))} · {e(key_level(t['up']))} / {e(key_level(t['down']))}")
     if n.get("calendar"):
         L.append("")
-        L.append("<b>일정</b> " + " · ".join(e(x) for x in n["calendar"]))
-    L.append("")
-    L.append("<b>종합 판단</b>")
-    L.append(e(n["view"]))
+        L.append("<b>일정</b> " + " · ".join(e(x) for x in n["calendar"][:3]))
     L.append("")
     L.append("<b>요약</b>")
-    L += [f"- {e(x)}" for x in n["summary"]]
+    L += [f"- {e(x)}" for x in n["summary"][:4]]
     L.append("")
-    L.append(f'<a href="{REPORT_URL}">전체 리포트 (차트·표·출처)</a> · 확률은 차트 기반 추정치라 참고용이에요.')
+    L.append(f'<a href="{REPORT_URL}">전체 리포트(원인·시간외·차트·출처)</a> · 확률은 참고용')
     return "\n".join(L)
 
 
 def caption(d, n, imgs):
-    c = cross_map(d)
-    return (f"<b>미증시 마감 · {dstr(d['session'])}</b>\n"
-            f"S&amp;P {pct(c['^GSPC']['d1'])} · 나스닥100 {pct(c['^NDX']['d1'])} · VIX {c['^VIX']['close']:.1f}\n"
-            f"{e(n['headline'])}\n"
-            f"차트 {len(imgs)}장: 크로스에셋 · 섹터 · 대형주 히트맵 · 브레드스 · " + " · ".join(n["tech"].keys()))
+    return (f"<b>미증시 마감 · {dstr(d['session'])}</b> 차트 {len(imgs)}장\n"
+            "크로스에셋 · 섹터 · 대형주 · 브레드스 · " + " · ".join(n["tech"].keys()))
 
 
 # ------------------------------------------------------------------ HTML report
@@ -237,7 +214,7 @@ def main(session, narrative_path):
     open(os.path.join(sdir, "caption.html"), "w").write(cap)
     open(os.path.join(sdir, "report.html"), "w").write(report(d, n, imgs, "img/"))
     print(f"telegram {len(tg)} chars · caption {len(cap)} chars · imgs {imgs}")
-    if len(tg) > 3900 or len(cap) > 1000:
+    if len(tg) > 1500 or len(cap) > 1000:
         sys.exit("too long: trim narrative")
 
 
