@@ -5,10 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1793153311,
-   "d"
-  ],
-  [
    1793155108,
    "d"
   ],
@@ -255,6 +251,10 @@
   [
    1793325362,
    "s"
+  ],
+  [
+   1793327902,
+   "d"
   ]
  ],
  "scope": [
@@ -351,6 +351,24 @@
      "title": "뉴스: Arcus, Built by dYdX Labs, Launches Leveraged Stock and Crypto Tokens on Robinhood Chain - unchained",
      "ts": 1793042602,
      "venue": "arcus"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRHV3RHRYbVlZZGRPajVab3hYVzdibDdfS1gxbDFMODlHTDhKcURkb09fbVB2bFNIekYtTndlQVVKbTViWEdyQ0F3cXNsNEZqMlpmaG54OFg",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "b25f2765fa06",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRHV3RHRYbVlZZGRPajVab3hYVzdibDdfS1gxbDFMODlHTDhKcURkb09fbVB2bFNIekYtTndlQVVKbTViWEdyQ0F3cXNsNEZqMlpmaG54OFg4bkdO?oc=5",
+      "words": [
+       "Airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Arcus New DEX by dYdX 💱 Guide to Interact, Expected Airdrop - Hindi - YouTube",
+     "ts": 1793327902,
+     "venue": "arcus"
     }
    ],
    "frontend": null,
@@ -374,6 +392,7 @@
     "2a174fec9e38",
     "2b8677df39d3",
     "2f6d7f35bdbb",
+    "3301823ae4a3",
     "34e3361012cb",
     "3992ae121244",
     "3f9e163d5f65",
@@ -576,37 +595,37 @@
    },
    "status": {
     "api": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "15건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "20건",
      "ok": true
     }
@@ -999,6 +1018,10 @@
      [
       1793324303,
       78.0
+     ],
+     [
+      1793327902,
+      77.5
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
@@ -1137,6 +1160,10 @@
      [
       1793311706,
       4.5
+     ],
+     [
+      1793327902,
+      4.6
      ]
     ],
     "extended-fdv-above-2b-one-day-after-launch-692-597-187": [
@@ -1473,6 +1500,10 @@
      [
       1793320701,
       27.5
+     ],
+     [
+      1793327902,
+      28.0
      ]
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
@@ -1705,6 +1736,10 @@
      [
       1793325362,
       12.0
+     ],
+     [
+      1793327902,
+      11.0
      ]
     ],
     "extended-fdv-above-800m-one-day-after-launch-299-255-178": [
@@ -2307,6 +2342,10 @@
      [
       1793325362,
       28.0
+     ],
+     [
+      1793327902,
+      48.5
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
@@ -2577,6 +2616,10 @@
      [
       1793311706,
       50.0
+     ],
+     [
+      1793327902,
+      51.0
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
@@ -3707,6 +3750,10 @@
      [
       1793315312,
       94.3
+     ],
+     [
+      1793327902,
+      94.2
      ]
     ]
    },
@@ -3820,29 +3867,29 @@
    },
    "status": {
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "44건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793325362,
-     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
-     "ok": false
+     "at": 1793327902,
+     "note": "21건",
+     "ok": true
     }
    }
   },
@@ -3956,22 +4003,22 @@
    },
    "status": {
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "9건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "20건",
      "ok": true
     }
@@ -4076,7 +4123,7 @@
      "tags": []
     },
     "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe": {
-     "_at": 1790796106,
+     "_at": 1793327902,
      "addr": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
      "created_ts": null,
      "is_contract": false,
@@ -4168,8 +4215,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26302422,
-    "rh": 101366569
+    "eth": 26302628,
+    "rh": 101390517
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -6245,6 +6292,25 @@
      "title": "이더리움 LIT 1.02M개 대량 이동",
      "ts": 1793300015,
      "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x4a4aaa01 → 0x91d40e48",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "05ba19489a4b",
+     "ref": {
+      "amount": 1019774.97,
+      "chain": "eth",
+      "from": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
+      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "tx": "0x6456a3ec8e2e477bc14598d2abd82db61b6976ea4fef5b370e25934f9131fdca"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.02M개 대량 이동",
+     "ts": 1793325575,
+     "venue": "lighter-rh"
     }
    ],
    "frontend": {
@@ -6655,6 +6721,14 @@
      "to": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
      "ts": 1793300015,
      "tx": "0x708548e7be5ea071436f1e292bc5a679ede2c2216480d81c4b414a25c9bad41f"
+    },
+    {
+     "amount": 1019774.97,
+     "block": 26302439,
+     "from": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
+     "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+     "ts": 1793325575,
+     "tx": "0x6456a3ec8e2e477bc14598d2abd82db61b6976ea4fef5b370e25934f9131fdca"
     }
    ],
    "lb_hist": [
@@ -7927,6 +8001,11 @@
      1793325362,
      223358.406,
      53691.707
+    ],
+    [
+     1793327902,
+     223387.658,
+     53697.137
     ]
    ],
    "level": "WATCH",
@@ -8925,6 +9004,10 @@
     [
      1793325362,
      443367.5
+    ],
+    [
+     1793327902,
+     445570.1
     ]
    ],
    "seeded": true,
@@ -9028,57 +9111,57 @@
    },
    "status": {
     "ann": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793325362,
-     "note": "상위 10명 합계 223,358",
+     "at": 1793327902,
+     "note": "상위 10명 합계 223,388",
      "ok": true
     },
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793325362,
-     "note": "91블록 · 대량 0건",
+     "at": 1793327902,
+     "note": "206블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "모듈 144 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "65건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793325362,
-     "note": "443,368 LIT",
+     "at": 1793327902,
+     "note": "445,570 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793325362,
-     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
-     "ok": false
+     "at": 1793327902,
+     "note": "18건",
+     "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "20건",
      "ok": true
     }
@@ -9977,6 +10060,10 @@
      [
       1793325362,
       15.3
+     ],
+     [
+      1793327902,
+      18.0
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
@@ -10381,6 +10468,10 @@
      [
       1793322506,
       5.0
+     ],
+     [
+      1793327902,
+      4.9
      ]
     ],
     "pacifica-fdv-above-3b-one-day-after-launch-755-395": [
@@ -10639,6 +10730,10 @@
      [
       1793322506,
       1.8
+     ],
+     [
+      1793327902,
+      1.7
      ]
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
@@ -10933,6 +11028,10 @@
      [
       1793311706,
       4.2
+     ],
+     [
+      1793327902,
+      4.1
      ]
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
@@ -11683,29 +11782,29 @@
    },
    "status": {
     "ann": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "23건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 10개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793325362,
-     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
-     "ok": false
+     "at": 1793327902,
+     "note": "19건",
+     "ok": true
     }
    }
   },
@@ -12088,6 +12187,10 @@
      [
       1793325362,
       35.0
+     ],
+     [
+      1793327902,
+      34.0
      ]
     ],
     "qfex-fdv-above-200m-one-day-after-launch": [
@@ -13804,6 +13907,10 @@
      [
       1793325362,
       16.5
+     ],
+     [
+      1793327902,
+      17.0
      ]
     ],
     "will-qfex-launch-a-token-by-march-31-2027": [
@@ -14368,27 +14475,27 @@
    },
    "status": {
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "19건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "20건",
      "ok": true
     }
@@ -14729,6 +14836,10 @@
      [
       1793325362,
       34.5
+     ],
+     [
+      1793327902,
+      35.5
      ]
     ]
    },
@@ -14808,22 +14919,22 @@
    },
    "status": {
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "27건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "21건",
      "ok": true
     }
@@ -16313,17 +16424,17 @@
    },
    "status": {
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "4건",
+     "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "6건",
      "ok": true
     }
@@ -16344,9 +16455,9 @@
      "url": "https://docs.txflow.com/llms.txt"
     },
     "https://docs.txflow.com/points/how-points-work.md": {
-     "changed": 1793102903,
-     "hash": "bf686541d5a19d9d",
-     "text": "<!-- Source: /points/how-points-work -->\n\n# How Points Work\n\nHow the TxFlow Points Program measures trading, how each weekly pool is shared out, and what does not earn Points.\n\n*Updated on October 12 after community feedback.*\n\n> **Key takeaway:** Points are a **share of a weekly pool**, not a fixed reward per trade. **1,250,000 trader Points** are distributed every week among eligible traders, based on the overall quality of their **perpetual** trading. Activity that exists only to farm Points earns fewer Points or none.\n\n## Why Points exist\n\nThe TxFlow Points Program exists to reward real traders and support the healthy, long-term growth of the platform. Traders always come first. The trader pool is the largest pool in the program, and activity that only exists to farm Points earns fewer Points or none, which leaves more for genuine traders.\n\n## A fair game for every trader\n\nPoints are a share of a weekly pool, so your reward reflects how your trading compares with others that week. Every trader can earn a fair share of the pool:\n\n- **Everyone plays by the same rules.** All trading is measured against the same standards of genuine activity.\n- **No one can take the whole pool.** The scoring limits how much the very largest traders can dominate, so the pool stays open to everyone.\n- **Every eligible trader counts.** Our scoring is designed to recognize genuine trading across different trading volumes, giving smaller traders a real opportunity to take part.\n- **Farming doesn't pay off.** Activity that only exists to collect Points earns fewer Points or none, and those Points stay in the pool for genuine traders.\n\n## How Points are distributed\n\nSeason 1 starts on **October 12, 2026**, and weekly distribution will conclude no later than **Q1 2027**. Each week is one epoch, running Monday to Monday (UTC). Points are credited on **Tuesday** after each epoch ends and displayed on your Points dashboard. The first Season 1 drop will happen on **Tuesday, October 20, 2026**. Early activity before Season 1 has been accounted for in the Season 0 points distribution. More details found [here](/points/season-0-points.md).\n\nThis weekly Points epoch is unrelated to the consensus epochs reported by [`epochHistory`](/api/info/epochHistory.md).\n\n| Pool | Share | Basis | Amount |\n|---|---|---|---|\n| Trader | 82% | Weekly | 1,250,000 |\n| Referral | 10% | Weekly | 152,000/Cap |\n| Growth Reserve | 8% | Monthly | 488,000/Month |\n\n- **1,250,000** trader Points are distributed every week among eligible traders. Your share reflects the overall quality of your trading across multiple factors, with volume as one part of the picture.\n- **152,000** Points is the weekly cap for total referral rewards. Referral rewards are 10% of the Points earned by referred users. Total referral rewards will never exceed this weekly cap, including any future referral campaigns or incentives\n- **Growth Reserve** is a monthly budget of **488,000** Points for growth activities. Unused Points roll over to the next month, and any Points still unused at the end of Season 1 are burned. See [Growth Reserve](#growth-reserve) below.\n\n## How to earn Points\n\nTrade perpetual futures on TxFlow. Both maker and taker trades count. Points are based on the overall quality of your trading, including:\n\n- Trading volume\n- Open interest (holding real positions)\n- Trading activity over time\n- Fees paid\n- TVL contribution (capital you keep on the platform)\n- Referrals\n\nThe exact weights and formulas are not published, so the program rewards genuine trading rather than trading aimed at a formula. You need a minimum amount of genuine trading in an epoch to qualify.\n\n## Activity that earns no Points\n\n- Spot trading and Prediction Markets (Season 1)\n- Orders that are placed but canceled before filling.\n- Depositing, withdrawing or holding a position on its own. Your balance and open positions still count toward your score when you're trading.\n\n## Referrals\n\n- Anyone can share a referral code. No application is needed.\n- Referrers earn trader Points from their own trading like everyone else, and on top of that earn referral rewards based on their referred users' trading.\n- Referral rewards come from a **separate pool of up to 152,000 Points per week**, so they never reduce anyone's trader Points, including the referred user's own.\n- Any referral Points not used within a given week are burned at the end of that week. They do not carry over.\n- A referral link is set when someone signs up and cannot be changed later.\n\nTo get a referral code to share, see [Referral](/trade/referral.md). Referral Points are separate from the fee rebate and fee discount described there.\n\n## Growth Reserve\n\nThe Growth Reserve is a monthly budget of 488,000 Points, drawn from the 8% share of the Season 1 budget. It funds growth activities such as community trading campaigns and builder programs. Points not used in a month roll forward to the next month, and any Points still unused at the end of Season 1 are burned.\n\n- **Why monthly, not weekly:** growth activity doesn't follow a weekly cycle, and market conditions can change. We adjust the budget accordingly. A monthly budget gives room to respond without locking Points into weeks where they wouldn't be used.\n- **Rollover:** if the monthly budget is not fully used, the remainder rolls forward to the next month.\n- **Burn:** any Points still remaining in this pool at the end of the season are burned.\n- **Use:** Growth Reserve Points may fund growth activities, including future community trading campaigns and builder programs. Growth Reserve Points will never be used by the TxFlow team for its own benefit.\n\n## Keeping the game fair\n\nOur checks exist to protect genuine traders. We use automated and manual systems to detect Sybil accounts and farming, such as wash trading, deliberately creating multiple accounts (manually or in an automated way) to farm Points systematically, and artificial volume. Activity identified as farming earns fewer Points or none, and those Points go to genuine traders instead.\n\nOur detection is designed to identify abusive activity while minimizing the impact on legitimate traders. The signals we use are not disclosed, so they cannot be worked around. Full details are in the [Points Program Terms](/terms/points-program-terms.md).\n\n## Your Points\n\n- Points stay with the wallet that earned them and cannot be transferred, bought or sold.\n- TxFlow never sells Points and does not allow anyone to sell them. Anyone offering to sell Points is running a scam.\n- Keep your wallet secure. Points cannot be moved to a new wallet if access to the original wallet is lost.\n\n> **Info:** Points are a measure of your trading contribution to TxFlow. Read the full [Points Program Terms](/terms/points-program-terms.md) for details.",
+     "changed": 1793327902,
+     "hash": "06e9645e566d99cf",
+     "text": "<!-- Source: /points/how-points-work -->\n\n# How Points Work\n\nHow the TxFlow Points Program measures trading, how each weekly pool is shared out, and what does not earn Points.\n\n*Updated on October 12 after community feedback.*\n\n> **Key takeaway:** Points are a **share of a weekly pool**, not a fixed reward per trade. **1,250,000 trader Points** are distributed every week among eligible traders, based on the overall quality of their **perpetual** trading. Activity that exists only to farm Points earns fewer Points or none.\n\n## Why Points exist\n\nThe TxFlow Points Program exists to reward real traders and support the healthy, long-term growth of the platform. Traders always come first. The trader pool is the largest pool in the program, and activity that only exists to farm Points earns fewer Points or none, which leaves more for genuine traders.\n\n## A fair game for every trader\n\nPoints are a share of a weekly pool, so your reward reflects how your trading compares with others that week. Every trader can earn a fair share of the pool:\n\n- **Everyone plays by the same rules.** All trading is measured against the same standards of genuine activity.\n- **No one can take the whole pool.** The scoring limits how much the very largest traders can dominate, so the pool stays open to everyone.\n- **Every eligible trader counts.** Our scoring is designed to recognize genuine trading across different trading volumes, giving smaller traders a real opportunity to take part.\n- **Farming doesn't pay off.** Activity that only exists to collect Points earns fewer Points or none, and those Points stay in the pool for genuine traders.\n\n## How Points are distributed\n\nSeason 1 starts on **October 12, 2026**, and weekly distribution will conclude no later than **Q1 2027**. Each week is one epoch, running Monday to Monday (UTC). Points are credited on **Tuesday** after each epoch ends and displayed on your Points dashboard. The first Season 1 drop will happen on **Tuesday, October 20, 2026**. Early activity before Season 1 has been accounted for in the Season 0 points distribution. More details found [here](/points/season-0-points.md).\n\nThis weekly Points epoch is unrelated to the consensus epochs reported by [`epochHistory`](/api/info/epochHistory.md).\n\n| Pool | Share | Basis | Amount |\n|---|---|---|---|\n| Trader | 82% | Weekly | 1,250,000 |\n| Referral | 10% | Weekly | 152,000/Cap |\n| Growth Reserve | 8% | Monthly | 488,000/Month |\n\n- **1,250,000** trader Points are distributed every week among eligible traders. Your share reflects the overall quality of your trading across multiple factors, with volume as one part of the picture.\n- **152,000** Points is the weekly cap for total referral rewards. Referral rewards are 10% of the trader points earned by referred users. Total referral rewards will never exceed this weekly cap, including any future referral campaigns or incentives\n- **Growth Reserve** is a monthly budget of **488,000** Points for growth activities. Unused Points roll over to the next month, and any Points still unused at the end of Season 1 are burned. See [Growth Reserve](#growth-reserve) below.\n\n## How to earn Points\n\nTrade perpetual futures on TxFlow. Both maker and taker trades count. Points are based on the overall quality of your trading, including:\n\n- Trading volume\n- Open interest (holding real positions)\n- Trading activity over time\n- Fees paid\n- TVL contribution (capital you keep on the platform)\n- Referrals\n\nThe exact weights and formulas are not published, so the program rewards genuine trading rather than trading aimed at a formula. You need a minimum amount of genuine trading in an epoch to qualify.\n\n## Activity that earns no Points\n\n- Spot trading and Prediction Markets (Season 1)\n- Orders that are placed but canceled before filling.\n- Depositing, withdrawing or holding a position on its own. Your balance and open positions still count toward your score when you're trading.\n\n## Referrals\n\n- Anyone can share a referral code. No application is needed.\n- Referrers earn trader Points from their own trading like everyone else, and on top of that earn referral rewards based on their referred users' trading.\n- Referral rewards come from a **separate pool of up to 152,000 Points per week**, so they never reduce anyone's trader Points, including the referred user's own.\n- Any referral Points not used within a given week are burned at the end of that week. They do not carry over.\n- A referral link is set when someone signs up and cannot be changed later.\n\nTo get a referral code to share, see [Referral](/trade/referral.md). Referral Points are separate from the fee rebate and fee discount described there.\n\n## Growth Reserve\n\nThe Growth Reserve is a monthly budget of 488,000 Points, drawn from the 8% share of the Season 1 budget. It funds growth activities such as community trading campaigns and builder programs. Points not used in a month roll forward to the next month, and any Points still unused at the end of Season 1 are burned.\n\n- **Why monthly, not weekly:** growth activity doesn't follow a weekly cycle, and market conditions can change. We adjust the budget accordingly. A monthly budget gives room to respond without locking Points into weeks where they wouldn't be used.\n- **Rollover:** if the monthly budget is not fully used, the remainder rolls forward to the next month.\n- **Burn:** any Points still remaining in this pool at the end of the season are burned.\n- **Use:** Growth Reserve Points may fund growth activities, including future community trading campaigns and builder programs. Growth Reserve Points will never be used by the TxFlow team for its own benefit.\n\n## Keeping the game fair\n\nOur checks exist to protect genuine traders. We use automated and manual systems to detect Sybil accounts and farming, such as wash trading, deliberately creating multiple accounts (manually or in an automated way) to farm Points systematically, and artificial volume. Activity identified as farming earns fewer Points or none, and those Points go to genuine traders instead.\n\nOur detection is designed to identify abusive activity while minimizing the impact on legitimate traders. The signals we use are not disclosed, so they cannot be worked around. Full details are in the [Points Program Terms](/terms/points-program-terms.md).\n\n## Your Points\n\n- Points stay with the wallet that earned them and cannot be transferred, bought or sold.\n- TxFlow never sells Points and does not allow anyone to sell them. Anyone offering to sell Points is running a scam.\n- Keep your wallet secure. Points cannot be moved to a new wallet if access to the original wallet is lost.\n\n> **Info:** Points are a measure of your trading contribution to TxFlow. Read the full [Points Program Terms](/terms/points-program-terms.md) for details.",
      "url": "https://docs.txflow.com/points/how-points-work.md"
     },
     "https://docs.txflow.com/terms/points-program-terms.md": {
@@ -16451,6 +16562,26 @@
      "title": "공식 문서 목록 변경: 새 문서 7개 · 삭제 1개",
      "ts": 1793185704,
      "venue": "txflow"
+    },
+    {
+     "detail": "152,000 Points is the weekly cap for total referral rewards. Referral rewards are 10% of the trader points earned by referred users. Total referral rewards will never exceed this weekly cap, including any future referral campaigns or incentives",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "2c76e51908ca",
+     "ref": {
+      "added": [
+       "- **152,000** Points is the weekly cap for total referral rewards. Referral rewards are 10% of the trader points earned by referred users. Total referral rewards will never exceed this weekly cap, including any future referral campaigns or incentives"
+      ],
+      "name": "포인트 작동 방식",
+      "removed": 1,
+      "url": "https://docs.txflow.com/points/how-points-work.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '포인트 작동 방식' 문구 변경",
+     "ts": 1793327902,
+     "venue": "txflow"
     }
    ],
    "frontend": null,
@@ -16528,24 +16659,24 @@
    },
    "status": {
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "11건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793325362,
-     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
-     "ok": false
+     "at": 1793327902,
+     "note": "20건",
+     "ok": true
     }
    }
   },
@@ -17399,6 +17530,10 @@
      [
       1793325362,
       29.9
+     ],
+     [
+      1793327902,
+      30.1
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
@@ -17497,6 +17632,10 @@
      [
       1793311706,
       93.8
+     ],
+     [
+      1793327902,
+      93.7
      ]
     ],
     "variational-fdv-above-3b-one-day-after-launch-846-887-175": [
@@ -17965,6 +18104,10 @@
      [
       1793311706,
       3.5
+     ],
+     [
+      1793327902,
+      4.0
      ]
     ],
     "variational-fdv-above-500m-one-day-after-launch-547-272": [
@@ -18401,6 +18544,10 @@
      [
       1793325362,
       1.4
+     ],
+     [
+      1793327902,
+      1.3
      ]
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
@@ -18813,6 +18960,10 @@
      [
       1793324303,
       79.6
+     ],
+     [
+      1793327902,
+      80.7
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
@@ -19071,6 +19222,10 @@
      [
       1793325362,
       41.0
+     ],
+     [
+      1793327902,
+      41.5
      ]
     ],
     "will-variational-launch-a-token-by-october-31-2026": [
@@ -19297,29 +19452,29 @@
    },
    "status": {
     "docs": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793325362,
-     "err": "수집 0건",
-     "ok": false
+     "at": 1793327902,
+     "note": "12건",
+     "ok": true
     },
     "polymarket": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793325362,
+     "at": 1793327902,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793325362,
-     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
-     "ok": false
+     "at": 1793327902,
+     "note": "19건",
+     "ok": true
     }
    }
   }
