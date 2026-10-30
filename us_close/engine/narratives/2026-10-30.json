@@ -1,0 +1,37 @@
+{
+ "headline": "인텔 −28.6%가 반도체 투매를 불렀어요. SOX −7.2%, 나스닥100 −3.5%로 QQQ가 일봉 EMA120까지 깨면서 10월을 마감했어요.",
+ "breadth_note": "오른 종목 42, 내린 종목 55였어요. 동일가중(RSP −0.79%)이 시총가중(SPY −1.77%)보다 1.0%p 덜 빠졌어요. 기술주에 집중된 매도였고, 에너지·필수소비재·헬스케어는 올랐어요. SMA50 위 종목 비율은 59.8%에서 55.7%로 내려왔어요.",
+ "drivers": [
+  "인텔 −28.6%(거래량 4.6배)는 1974년 이후 최악의 하루예요. 4분기 매출 가이던스 150~160억 달러가 예상 171억 달러를 밑돌았어요. 조정 총이익률도 44.1%에서 38.0%로 떨어질 전망이고, PC 부진이 내년 상반기까지 간다는 언급까지 나왔어요.",
+  "반도체 동반 급락: AMD −10.9%, QCOM −11.1%, ANET −8.3%, AMAT −7.5%, AVGO −5.5%, MU −5.3%, NVDA −4.2%였어요. 전날 아마존의 현금흐름 적자에서 시작된 'AI capex 부담' 우려가 반도체 전체로 번졌어요.",
+  "바이낸스 보안사고: 영향 규모가 약 63억 달러이고, 약 30억 달러를 동결했으며 손실은 전액 보전하겠다고 밝혔어요. 출금은 48시간 안에 재개될 예정이에요. 이 여파로 비트코인 ETF −5.1%, HOOD −7.2%가 빠졌고, 비트코인은 7.7만 달러로 내려갔어요.",
+  "레딧은 4분기 매출 가이던스가 약해 약 −29%였어요. 혁신성장(ARKK)도 −6.1%였어요. 3분기 고용비용지수는 +0.8%였어요.",
+  "10년물은 6bp 내려 4.93%, VIX는 19.4(+2.2pt)예요. 금은 −3.6%로 3,885달러까지 밀렸어요. 모멘텀 팩터는 하루 −4.6%p, 1개월 −15.7%p로 급격히 꺾였어요."
+ ],
+ "after_hours": [],
+ "tech": {
+  "QQQ": {"short": 45, "swing": 35, "short_d": 0, "swing_d": -5,
+          "note": "일봉 EMA120(707.7)을 종가로 이탈해 중기 추세가 꺾이는 레짐 신호가 나왔어요. 주봉 RSI도 50 아래로 내려갔어요. 대신 일봉 RSI 34.9, 4H RSI 31.8로 과매도 근처이고 686.5 지지가 바로 아래라 단기 반등 여지는 있어요.",
+          "up": "701.3 회복 → 707.7(EMA120) 재탈환 시 이탈 무효", "down": "686.5 이탈 → 661.1, 649.6(주봉 SuperTrend)"},
+  "SPY": {"short": 45, "swing": 45, "short_d": -5, "swing_d": -5,
+          "note": "일봉 EMA50을 이탈했고 MACD선도 0선 아래로 내려갔어요. 일봉 SuperTrend 상승선(752.5)과 EMA120(751.6), 지지 749.7이 겹친 750 부근이 추세를 지키는 마지노선이에요.",
+          "up": "758.6 회복 → 765.9(EMA50)", "down": "749.7 이탈 → 일봉 추세 하락 전환, 740.2, 729.7"},
+  "AAPL": {"short": 50, "swing": 55, "short_d": -5, "swing_d": 0,
+           "note": "반도체 투매 속에서도 −1.2%로 상대 강세였어요. 344.9 바로 아래에서 11/2 실적을 맞아요. 4H MACD는 데드크로스지만 주봉 추세는 견고해요(RSI 65).",
+           "up": "344.9 회복 → 348.2, 351.7(ATH)", "down": "343.0 이탈 → 338.7, 335.4"}
+ },
+ "calendar": ["11/1 미국 서머타임 종료(마감 06:00 KST)", "11/2 장후 애플 실적", "11/3 미국 중간선거", "바이낸스 출금 재개 여부(48시간 이내 예정)", "12월 FOMC 인상 여부"],
+ "view": "하이퍼스케일러의 현금흐름 우려가 인텔 쇼크를 만나 반도체 전반으로 번졌어요. 나스닥100은 10월에만 큰 폭으로 빠지며 월간 하락 마감했어요. 반면 에너지, 필수소비재, 헬스케어는 1개월 +11%로 극단적인 로테이션이 진행 중이에요. QQQ의 EMA120 이탈은 스윙 관점에서 의미가 큰 신호라 스윙 확률을 낮췄어요. 다만 과매도 구간이어서 단기 반등은 열어두고, 다음 주 애플 실적과 중간선거가 변동성의 분기점이에요.",
+ "summary": [
+  "지수: 나스닥100 −3.5%, S&P −1.8%, SOX −7.2%로 인텔 쇼크(−28.6%)가 반도체 전반을 끌어내렸어요.",
+  "로테이션: 기술 −4.9%인 반면 에너지 +1.9%, 필수소비재 +1.4%였어요. 동일가중이 시총가중보다 1.0%p 선방했어요.",
+  "리스크: 바이낸스 약 63억 달러 보안사고로 비트코인은 7.7만 달러, VIX는 19.4로 올랐어요.",
+  "기술적: QQQ는 EMA120 이탈(스윙 35%)로 686.5 지지가 관건이고, SPY는 750 부근 일봉 추세선, AAPL은 11/2 실적이에요."
+ ],
+ "sources": [
+  {"title": "Stock Market Today (Oct. 30, 2026): Intel, Reddit are latest tech earnings casualties (TheStreet)", "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026"},
+  {"title": "Stock Market Today Live October 30, 2026: Intel Has Its Worst Day in Decades (StockTitan)", "url": "https://www.stocktitan.net/articles/stock-market-today-live-october-30-2026"},
+  {"title": "Intel shares plunge 28.6% as U.S. stocks suffer broad selloff (AP via Star-Advertiser)", "url": "https://www.staradvertiser.com/2026/10/30/breaking-news/tech-stocks-tumble-as-amazon-intel-fuel-ai-spending-fears/"},
+  {"title": "Apple to Report Q4 2026 Earnings on November 2 (MacRumors)", "url": "https://macrumors.com/2026/10/06/apple-q4-2026-earnings-nov-2"}
+ ]
+}
