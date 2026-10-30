@@ -1,7 +1,141 @@
 {
- "generated_at": 1793373610,
+ "generated_at": 1793385590,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Earnings and Economic Calendar, Earnings and Economic Calendar",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "3be07dd68d67",
+   "ref": {
+    "moved": [],
+    "name": "문서 전체 목록",
+    "new": [
+     "Earnings and Economic Calendar — https://docs.qfex.com/api-reference/rest/market-data/earnings-and-economic-calendar.md",
+     "Earnings and Economic Calendar — https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md"
+    ],
+    "removed": [],
+    "url": "https://docs.qfex.com/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 새 문서 2개",
+   "ts": 1793385590,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "30th October 2026",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "619ad2a64bd3",
+   "ref": {
+    "added": [
+     "**30th October 2026**",
+     "Breaking Change",
+     "**Publish API version 2026-10-30 with source-free earnings metadata.**",
+     "Endpoints: `GET /calendar`.",
+     "The latest API contract is now 2026-10-30. Calendar earnings metadata omits source, sources, source\\_name and source\\_url keys, including nested release-time attribution. Financial results, release timing and economic events are unchanged. The 2026-10-29 contract preserves its original response."
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1793385590,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "will-pacifica-launch-a-token-by-december-31-2027 · Yes 51.0%",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "090924e10a0a",
+   "ref": {
+    "end": "2028-01-01T04:59:00Z",
+    "event": "will-pacifica-launch-a-token-by",
+    "slug": "will-pacifica-launch-a-token-by-december-31-2027",
+    "title": "Will Pacifica launch a token by December 31, 2027?",
+    "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-december-31-2027",
+    "volume": 0.0,
+    "yes_pct": 51.0
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "polymarket",
+   "title": "Polymarket 새 시장: Will Pacifica launch a token by December 31, 2027?",
+   "ts": 1793385590,
+   "venue": "pacifica",
+   "venue_name": "Pacifica"
+  },
+  {
+   "detail": "will-pacifica-launch-a-token-by-june-30-2027 · Yes 50.0%",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "9985f24ec047",
+   "ref": {
+    "end": "2027-07-01T03:59:00Z",
+    "event": "will-pacifica-launch-a-token-by",
+    "slug": "will-pacifica-launch-a-token-by-june-30-2027",
+    "title": "Will Pacifica launch a token by June 30, 2027?",
+    "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-june-30-2027",
+    "volume": 0.0,
+    "yes_pct": 50.0
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "polymarket",
+   "title": "Polymarket 새 시장: Will Pacifica launch a token by June 30, 2027?",
+   "ts": 1793385590,
+   "venue": "pacifica",
+   "venue_name": "Pacifica"
+  },
+  {
+   "detail": "will-pacifica-launch-a-token-by-march-31-2027 · Yes 58.5%",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "921d158f2460",
+   "ref": {
+    "end": "2027-04-01T03:59:00Z",
+    "event": "will-pacifica-launch-a-token-by",
+    "slug": "will-pacifica-launch-a-token-by-march-31-2027",
+    "title": "Will Pacifica launch a token by March 31, 2027?",
+    "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-march-31-2027",
+    "volume": 347.02,
+    "yes_pct": 58.5
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "polymarket",
+   "title": "Polymarket 새 시장: Will Pacifica launch a token by March 31, 2027?",
+   "ts": 1793385590,
+   "venue": "pacifica",
+   "venue_name": "Pacifica"
+  },
+  {
+   "detail": "0x91d40e48 → 0x1c75ce78",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "03a9cd8f9859",
+   "ref": {
+    "amount": 1149595.12,
+    "chain": "eth",
+    "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "to": "0x1c75ce784b4a8509840cdafa09bc382dbd89c3ba",
+    "tx": "0x0672722fcd52169362695624dcfbce7355742f50c72980a732842c59d5ba8518"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.15M개 대량 이동",
+   "ts": 1793374499,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "Interface Terms of Use, Spot Trading Service Terms of Use",
    "family": "S2",
@@ -2578,33 +2712,9 @@
    "ts": 1790793611,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x91d40e48→0xac1ee1f2",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "23be114d392c",
-   "ref": {
-    "amount": 1000000.0,
-    "chain": "eth",
-    "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-    "to": "0xac1ee1f2c8e35cb99a7823d09595db103e67b719",
-    "tx": "0x26e7aab10d9199bed3ee28670c411b54620aa5e6f836d53da4fef106932092db"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 1.00M 대량 이동",
-   "ts": 1790793251,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1793287952,
-   "s"
-  ],
   [
    1793300371,
    "s"
@@ -2732,6 +2842,10 @@
   [
    1793373610,
    "s"
+  ],
+  [
+   1793385590,
+   "s"
   ]
  ],
  "venues": [
@@ -2803,39 +2917,39 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
-     "note": "16건",
+     "at": 1793385590,
+     "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793373610,
-     "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
-     "ok": false
+     "at": 1793385590,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 4,
@@ -2845,6 +2959,25 @@
   },
   {
    "events": [
+    {
+     "detail": "0x91d40e48 → 0x1c75ce78",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "03a9cd8f9859",
+     "ref": {
+      "amount": 1149595.12,
+      "chain": "eth",
+      "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "to": "0x1c75ce784b4a8509840cdafa09bc382dbd89c3ba",
+      "tx": "0x0672722fcd52169362695624dcfbce7355742f50c72980a732842c59d5ba8518"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.15M개 대량 이동",
+     "ts": 1793374499,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "0x4a4aaa01 → 0x91d40e48",
      "family": "S1",
@@ -3497,22 +3630,6 @@
      "signal": "news",
      "title": "뉴스: Breaking: Hyperliquid Rival Lighter Announces LIT Token Launch Amid Rising Demand - CoinGape",
      "ts": 1792862790,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "Getting started",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "d9169a8cc5f2",
-     "ref": {
-      "name": "문서 전체 목록",
-      "url": "https://docs.lighter.xyz/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '문서 전체 목록' 문구 변경",
-     "ts": 1792797001,
      "venue": "lighter-rh"
     }
    ],
@@ -4898,6 +5015,11 @@
      1793373610,
      242122.914,
      57722.145
+    ],
+    [
+     1793385590,
+     242336.81,
+     57768.473
     ]
    ],
    "level": "WATCH",
@@ -4905,10 +5027,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1792173865,
-     449115.11
-    ],
     [
      1792185024,
      449115.11
@@ -5732,64 +5850,68 @@
     [
      1793373610,
      445570.1
+    ],
+    [
+     1793385590,
+     445732.7
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "14건",
      "ok": true
     },
     "board": {
-     "at": 1793373610,
-     "note": "상위 10명 합계 242,123",
+     "at": 1793385590,
+     "note": "상위 10명 합계 242,337",
      "ok": true
     },
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793373610,
-     "note": "806블록 · 대량 0건",
+     "at": 1793385590,
+     "note": "996블록 · 대량 2건",
      "ok": true
     },
     "frontend": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "모듈 144 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
-     "note": "100건",
+     "at": 1793385590,
+     "note": "81건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793373610,
-     "note": "445,570 LIT",
+     "at": 1793385590,
+     "note": "445,733 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "18건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793373610,
-     "err": "X 수집 실패: https://xcancel.com/vnovakovski/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/vnovakovski/statuses → HTTP 404",
-     "ok": false
+     "at": 1793385590,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 7,
@@ -5799,6 +5921,52 @@
   },
   {
    "events": [
+    {
+     "detail": "Earnings and Economic Calendar, Earnings and Economic Calendar",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "3be07dd68d67",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Earnings and Economic Calendar — https://docs.qfex.com/api-reference/rest/market-data/earnings-and-economic-calendar.md",
+       "Earnings and Economic Calendar — https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md"
+      ],
+      "removed": [],
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 2개",
+     "ts": 1793385590,
+     "venue": "qfex"
+    },
+    {
+     "detail": "30th October 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "619ad2a64bd3",
+     "ref": {
+      "added": [
+       "**30th October 2026**",
+       "Breaking Change",
+       "**Publish API version 2026-10-30 with source-free earnings metadata.**",
+       "Endpoints: `GET /calendar`.",
+       "The latest API contract is now 2026-10-30. Calendar earnings metadata omits source, sources, source\\_name and source\\_url keys, including nested release-time attribution. Financial results, release timing and economic events are unchanged. The 2026-10-29 contract preserves its original response."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1793385590,
+     "venue": "qfex"
+    },
     {
      "detail": "API versioning, REST API: 2026-10-29, Generate a wallet user's main-account trading key",
      "family": "S2",
@@ -5911,29 +6079,29 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
-     "note": "13건",
+     "at": 1793385590,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793373610,
-     "note": "20건",
-     "ok": true
+     "at": 1793385590,
+     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -6065,27 +6233,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "19건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793373610,
+     "at": 1793385590,
      "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
      "ok": false
     }
@@ -6170,27 +6338,27 @@
    "site": "https://omni.variational.io",
    "sources": {
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793373610,
+     "at": 1793385590,
      "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
      "ok": false
     }
@@ -6211,6 +6379,69 @@
   },
   {
    "events": [
+    {
+     "detail": "will-pacifica-launch-a-token-by-december-31-2027 · Yes 51.0%",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "090924e10a0a",
+     "ref": {
+      "end": "2028-01-01T04:59:00Z",
+      "event": "will-pacifica-launch-a-token-by",
+      "slug": "will-pacifica-launch-a-token-by-december-31-2027",
+      "title": "Will Pacifica launch a token by December 31, 2027?",
+      "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-december-31-2027",
+      "volume": 0.0,
+      "yes_pct": 51.0
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket 새 시장: Will Pacifica launch a token by December 31, 2027?",
+     "ts": 1793385590,
+     "venue": "pacifica"
+    },
+    {
+     "detail": "will-pacifica-launch-a-token-by-june-30-2027 · Yes 50.0%",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "9985f24ec047",
+     "ref": {
+      "end": "2027-07-01T03:59:00Z",
+      "event": "will-pacifica-launch-a-token-by",
+      "slug": "will-pacifica-launch-a-token-by-june-30-2027",
+      "title": "Will Pacifica launch a token by June 30, 2027?",
+      "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-june-30-2027",
+      "volume": 0.0,
+      "yes_pct": 50.0
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket 새 시장: Will Pacifica launch a token by June 30, 2027?",
+     "ts": 1793385590,
+     "venue": "pacifica"
+    },
+    {
+     "detail": "will-pacifica-launch-a-token-by-march-31-2027 · Yes 58.5%",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "921d158f2460",
+     "ref": {
+      "end": "2027-04-01T03:59:00Z",
+      "event": "will-pacifica-launch-a-token-by",
+      "slug": "will-pacifica-launch-a-token-by-march-31-2027",
+      "title": "Will Pacifica launch a token by March 31, 2027?",
+      "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-march-31-2027",
+      "volume": 347.02,
+      "yes_pct": 58.5
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket 새 시장: Will Pacifica launch a token by March 31, 2027?",
+     "ts": 1793385590,
+     "venue": "pacifica"
+    },
     {
      "detail": "Print is available on BTC, ETH, SOL, HYPE, ZEC, XRP, LIT, NEAR, ENA, and SKHYNIX. Every listed Print market offers a 24-hour cycle; BTC also offers 7-day and 30-day cycles. See Specifications for current leverage and deposit limits.",
      "family": "S2",
@@ -6238,32 +6469,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 18%",
+   "odds": "토큰 출시 확률 12/31까지 18% · 27년 3/31까지 58%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
-     "note": "24건",
+     "at": 1793385590,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
-     "note": "열린 시장 10개",
+     "at": 1793385590,
+     "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793373610,
+     "at": 1793385590,
      "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
      "ok": false
     }
@@ -6411,28 +6642,28 @@
    "site": "https://app.txflow.com",
    "sources": {
     "docs": {
-     "at": 1793373610,
-     "note": "3/3 페이지",
-     "ok": true
+     "at": 1793385590,
+     "err": "전 페이지 실패",
+     "ok": false
     },
     "news": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793373610,
-     "note": "20건",
-     "ok": true
+     "at": 1793385590,
+     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
-   "sources_ok": 1,
+   "sources_ok": 0,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소",
    "upcoming": []
   },
@@ -6468,24 +6699,24 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793373610,
-     "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
-     "ok": false
+     "at": 1793385590,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
@@ -6506,17 +6737,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "6건",
      "ok": true
     }
@@ -6551,27 +6782,27 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 35% · 27년 12/31까지 74%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 34% · 27년 12/31까지 74%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793373610,
-     "note": "25건",
+     "at": 1793385590,
+     "note": "24건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793373610,
+     "at": 1793385590,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793373610,
+     "at": 1793385590,
      "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
      "ok": false
     }
