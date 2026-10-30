@@ -2,12 +2,13 @@
 
 - 요청: 영길님. 미국 거래일 다음날 07:40 KST, 텔레그램 전략 봇(Brief Hub, @spytltgld_strategy_bot)으로 발송한다.
 - 구성: 사진 앨범 7장 + 본문 1건 + 전체 리포트 페이지(GitHub Pages)
-  - 사진: 크로스에셋, 섹터·테마 히트맵, 대형주 트리맵, 브레드스·팩터, QQQ·SPY·AAPL 일봉
+  - 사진: 크로스에셋, 섹터·테마 히트맵, 대형주 트리맵, 브레드스·팩터, QQQ·SPY·SOXX·DRAM 일봉
   - 리포트: https://jinhae8971.github.io/korea-etf-calmar/us-close/ (날짜별 보관)
 - 채팅에는 본문을 보내지 않는다(중복 금지). 마지막 답변 한 줄만 쓴다.
-- 요약은 항상 마지막에 둔다(10/23 요청). AAPL은 계속 포함한다(10/23 요청).
+- 요약은 항상 마지막에 둔다(10/23 요청).
+- 분석 종목: QQQ·SPY·SOXX(반도체 ETF)·DRAM(Roundhill Memory ETF). 10/31 요청으로 AAPL을 빼고 SOXX·DRAM을 넣었다(차트 8장). DRAM은 2026-04-02 상장이라 주봉 EMA120·주봉 SuperTrend 이력이 짧으니 스윙 판단은 일봉 위주로 보고 note에 한계를 적는다.
 - **텔레그램 본문은 핵심만(10/31 요청 "메시지가 너무 길어 핵심위주로")**: 렌더러가 제목·한 줄 헤드라인·지수/금리·섹터 1줄·종목별 확률 1줄(상방/하방 기준 레벨)·일정 3개·요약 4줄만 낸다(1,500자 상한, 보통 900자 안팎). drivers·after_hours·view·breadth_note·note는 리포트 페이지에만 들어간다.
-- 예약 이름: `QQQ·SPY·AAPL 데일리 차트 분석`
+- 예약 이름: `QQQ·SPY·SOXX·DRAM 데일리 차트 분석`
 
 ## 0. 다음 회차 예약 (가장 먼저)
 1. `python3 /home/claude/market_brief/brief.py --next-run` → `{"utc": ...}`
@@ -15,16 +16,16 @@
 3. 예약 메시지 원문:
 
 ```
-[예약] QQQ·SPY·AAPL 데일리 차트 분석
+[예약] QQQ·SPY·SOXX·DRAM 데일리 차트 분석
 ① 다음 회차 예약부터: `python3 /home/claude/market_brief/brief.py --next-run` → list_triggers로 중복 확인 → send_later로 이 메시지 그대로 재예약 (initiation=human_schedule)
-② /home/claude/market_brief/RUNBOOK.md 절차대로 미증시 마감 브리핑(v2: 수집→차트→뉴스→narrative→publish)을 만들어 전략 봇으로 발송, SENT OK 확인 — 맨 끝에 요약 필수, 채팅엔 한 줄만 (폴더가 없으면 10/17·10/23·10/28 대화 기록대로 재구성)
+② /home/claude/market_brief/RUNBOOK.md 절차대로 미증시 마감 브리핑(v2: 수집→차트→뉴스→narrative→publish)을 만들어 전략 봇으로 발송, SENT OK 확인 — 텔레그램 본문은 핵심만(10/31), 맨 끝에 요약 필수, 채팅엔 한 줄만 (폴더가 없으면 korea-etf-calmar us_close/engine에서 복구)
 ```
 
 ## 1. 수집 (코드: /home/claude/market_brief/usclose/)
 - `cd /home/claude/market_brief/usclose && python3 collect.py`
   - 출력: 다이제스트 + `out/<session>/data.json` + `bars.pkl`
   - 대상: 크로스에셋 14종, 섹터 11, 테마 9, 팩터 4쌍, 대형주 97종(시총은 Nasdaq API, 14일 캐시 `state/shares.json`)
-  - QQQ·SPY·AAPL 보정 지표도 계산한다(brief.snapshot, state/snap 저장).
+  - QQQ·SPY·SOXX·DRAM 보정 지표도 계산한다(brief.snapshot, state/snap 저장).
 - `stale=True`면 1회 재실행한다. 그래도 stale이면 "데이터 미갱신" 한 줄만 보고하고 끝낸다.
 - 시세는 세션 날짜로 정렬된다. 비트코인만 최신값을 쓴다.
 
@@ -38,12 +39,12 @@
 - 장 마감 후 실적·시간외 반응
 - 다가오는 일정: FOMC, CPI, PCE, 고용, 빅테크·반도체 실적
 - 시간외 가격: Yahoo chart API `range=1d&interval=5m&includePrePost=true`의 마지막 봉
-- 일정 메모: AAPL 회계 4분기 실적 11/2(월) 장후. 11/1부터 미국 서머타임이 끝나 마감이 06:00 KST가 된다(발송 07:40은 유지).
+- 일정 메모: 11/1부터 미국 서머타임이 끝나 마감이 06:00 KST가 된다(발송 07:40은 유지).
 
 ## 4. narrative.json 작성 → 발송
 - 파일: `out/<session>/narrative.json`. 스키마와 문체는 `out/2026-10-27/narrative.json`을 그대로 따른다.
   - 텔레그램용으로 짧게 쓸 필드: headline 1문장(70자 이내), summary 3~4줄(각 45자 안팎, 시간외 급변이 있으면 한 줄에 반영), calendar 앞 3개가 가장 중요한 일정. tech.up/down은 "→" 앞부분이 기준 레벨로 표시된다.
-  - 필드: headline, breadth_note, drivers(3~5), after_hours, tech{QQQ,SPY,AAPL: short, swing, short_d, swing_d, note, up, down}, calendar, view, summary(3~4, 맨 끝), sources
+  - 필드: headline, breadth_note, drivers(3~5), after_hours, tech{QQQ,SPY,SOXX,DRAM: short, swing, short_d, swing_d, note, up, down}, calendar, view, summary(3~4, 맨 끝), sources
 - 숫자는 다이제스트나 출처에 있는 것만 쓴다. 지수·섹터·종목 수치는 렌더러가 data.json에서 직접 넣으므로 반복하지 않는다.
 - 해석을 중심에 둔다: 무엇이 움직였나, 폭(브레드스·동일가중), 팩터 로테이션, 금리·유가·달러의 영향.
 - 발송: `python3 publish.py <session> out/<session>/narrative.json`
@@ -53,9 +54,9 @@
 - **복구**: /home/claude/market_brief가 없으면 korea-etf-calmar의 `us_close/engine/`(코드·런북·확률 기록·narrative, publish 때마다 백업)을 /home/claude/market_brief로 복사하고 `pip install --break-system-packages pandas numpy matplotlib`(없을 때만)
 - 클론이 없으면: `add_repo jinhae8971/korea-etf-calmar (push)` → `git clone --depth 1 https://github.com/jinhae8971/korea-etf-calmar /home/claude/korea-etf-calmar`.
 - 마지막으로 확률을 기록한다:
-  `python3 /home/claude/market_brief/brief.py --record '{"session":"<session>","QQQ":{"short_up":N,"swing_up":N},"SPY":{...},"AAPL":{...},"note":"..."}'`
+  `python3 /home/claude/market_brief/brief.py --record '{"session":"<session>","QQQ":{"short_up":N,"swing_up":N},"SPY":{...},"SOXX":{...},"DRAM":{...},"note":"..."}'`
 
-## 5. 확률 산정 원칙 (QQQ·SPY·AAPL)
+## 5. 확률 산정 원칙 (QQQ·SPY·SOXX·DRAM)
 - 지표는 영길님 TradingView와 맞춰 두었다(10/16 검증, 36개 값 일치).
   - EMA50·EMA120
   - SuperTrend ATR 20(RMA) × 4
@@ -74,7 +75,7 @@
 - 1D 종가가 EMA50 아래면 단기 확률은 "반등"으로 표기한다(렌더러가 자동 처리).
 
 ## 6. 파일
-- `/home/claude/market_brief/brief.py`: QQQ·SPY·AAPL 보정 지표, 다음 실행 시각(NYSE 휴장일 2026~2027), 확률 기록
+- `/home/claude/market_brief/brief.py`: QQQ·SPY·SOXX·DRAM 보정 지표, 다음 실행 시각(NYSE 휴장일 2026~2027), 확률 기록
 - `usclose/`
   - `universe.py`: 종목 구성
   - `collect.py`: 수집·지표

@@ -34,7 +34,7 @@ KST = ZoneInfo("Asia/Seoul")
 UTC = dt.timezone.utc
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0 Safari/537.36")
-SYMBOLS = ["QQQ", "SPY", "AAPL"]  # AAPL added 2026-10-23 at the user's request
+SYMBOLS = ["QQQ", "SPY", "SOXX", "DRAM"]  # 2026-10-31: AAPL out, SOXX·DRAM in (user request)
 RUN_HH, RUN_MM = 7, 40  # KST delivery time
 
 # NYSE full-day holidays (2026-2027)

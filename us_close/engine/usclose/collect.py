@@ -172,7 +172,7 @@ def factors(px):
 def main():
     t0 = time.time()
     syms = sorted({s for _, s, _ in CROSS} | {s for s, _ in SECTORS + THEMES + CORE} |
-                  {x for _, a, b in FACTORS for x in (a, b)} | set(LARGE))
+                  {x for _, a, b in FACTORS for x in (a, b)} | set(LARGE) | set(TECH_FOCUS))
     px, errors = fetch_all(syms)
     spy = px["SPY"][0]
     session = str(spy.index[-1].date())

@@ -29,7 +29,8 @@ IMG_CAPTIONS = {
     "04_breadth.png": "브레드스·팩터 — 이동평균 위 종목 비율, 팩터 상대강도",
     "05_qqq.png": "QQQ 일봉 — EMA50·EMA120·SuperTrend·지지/저항",
     "06_spy.png": "SPY 일봉",
-    "07_aapl.png": "AAPL 일봉",
+    "07_soxx.png": "SOXX 일봉 — 반도체 ETF",
+    "08_dram.png": "DRAM 일봉 — 메모리 ETF(2026-04 상장, 주봉 이력 짧음)",
 }
 
 

@@ -74,4 +74,4 @@ LARGE = {
     "LIN": "소재", "PLD": "부동산", "AMT": "부동산",
 }
 
-TECH_FOCUS = ["QQQ", "SPY", "AAPL"]  # calibrated chart analysis with probabilities
+TECH_FOCUS = ["QQQ", "SPY", "SOXX", "DRAM"]  # calibrated chart analysis with probabilities (2026-10-31: AAPL -> SOXX, DRAM)
