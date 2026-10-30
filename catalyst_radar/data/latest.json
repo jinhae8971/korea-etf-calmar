@@ -1,34 +1,6 @@
 {
- "as_of_kst": "2026-10-29 10:18",
+ "as_of_kst": "2026-10-30 10:22",
  "calendar": [
-  {
-   "event_date": "2026-10-29",
-   "first_seen": "2026-10-29",
-   "grade": "A",
-   "impact": "SUPPLY",
-   "key": "news:-47-12m-worth-of-tokens-from-cards-kmno-sui-and-eigen-unlock",
-   "last_seen": "2026-10-29",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.796873,
-    "score_at_detect": 50.4
-   },
-   "score": 50.4,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-29",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "SUI",
-   "title": "$47.12M worth of tokens from CARDS, KMNO, SUI, and EIGEN unlock Oct 29-Nov 1 - Pluang",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5jdFdNNHZCcEhzS2I5NXlkbGtwTXVSMUsyT3k1WlpEVEpiMDA3aFV1QU5BcnZGTkhuNGVfc3hUZzN1dk5NeDFSNTZJbmZnYzRNR2ZHVklSU2VSeUhnYUlDcW9CWVRxQ2xvdGUzRzJ5UlJBQVF0bE1naFYyS2hJZw?oc=5",
-   "when": "Mon, 26 Oct 2026"
-  },
   {
    "event_date": "2026-11-01",
    "first_seen": "2026-10-22",
@@ -121,7 +93,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:near-issuance-vote-closes-november-2-what-it-means-for-the-n",
-   "last_seen": "2026-10-28",
+   "last_seen": "2026-10-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
@@ -149,7 +121,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:bitway-token-unlock-on-november-2-101-6m-btw-cryptoticker-io",
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-29",
@@ -172,12 +144,40 @@
    "when": "Sun, 25 Oct 2026"
   },
   {
+   "event_date": "2026-11-02",
+   "first_seen": "2026-10-30",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:near-protocol-price-weighs-on-issuance-vote-ahead-of-novembe",
+   "last_seen": "2026-10-30",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-30",
+    "price_at_detect": 2.42,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-30",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "NEAR",
+   "title": "NEAR Protocol price weighs on issuance vote ahead of November 2 deadline - ad-hoc-news.de",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPaVBmb3R2WG9KWk5FcHcwUHBrSi1XRmZqTDRtRWJDMGNPcEVIVXN3UU82V0tseGxFY3pWcjhXQnZqcVM3R3BKdHBqVGRDcG93MmVIRk9ocWJxV2JlWktfeUVoSW91M292TkdyaFI3YVBMN2tKNDJEOUVkMXJGWGNFVC1iZ0dNUWtXc3VQc3BER3lvVjhBdkVHcUFMX3V4bVAxYXZtbDk1SFZrcmc4R1hYNFJIZXdpUTFHNnZhWjN3RVljZG5vWFc0MnR6ZkNLX1U?oc=5",
+   "when": "Thu, 29 Oct 2026"
+  },
+  {
    "event_date": "2026-11-03",
    "first_seen": "2026-10-28",
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1060",
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
@@ -198,6 +198,35 @@
    "trust": 1.0,
    "url": "https://www.mintscan.io/cosmoshub/proposals/1060",
    "when": "2026-11-03"
+  },
+  {
+   "event_date": "2026-11-05",
+   "first_seen": "2026-10-30",
+   "grade": "A",
+   "impact": "INFRA",
+   "key": "snapshot:0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
+   "last_seen": "2026-10-30",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-30",
+    "price_at_detect": 0.175026,
+    "score_at_detect": 45.5
+   },
+   "score": 45.5,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-10-30",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "ARB",
+   "title": "[Constitutional] AIP: Stylus Activation Contract",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
+   "vote_state": "active",
+   "when": "2026-11-05"
   },
   {
    "event_date": "2026-11-05",
@@ -319,14 +348,14 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:zcash-nu7-block-3-543-405-activation-on-november-6-cryptotic",
-   "last_seen": "2026-10-27",
+   "last_seen": "2026-10-30",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-24",
     "price_at_detect": 1192.89,
     "score_at_detect": 30.0
    },
-   "score": 30.0,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
@@ -336,7 +365,7 @@
     }
    ],
    "symbol": "ZEC",
-   "title": "Zcash NU7: block 3,543,405, activation on November 6 - CryptoTicker",
+   "title": "Zcash NU7: block 3,543,405, activation on November 6 - CryptoTicker.io",
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBOMVhsel9hQkc4ZGtuVVNqZjVoVVJfTEZSanpZaGJhZ0pfNXpJZDFiYjF0Sy1VSmUybURNMmNRTVNIbFBzWGY1RE54bGNQak1TV0lIYzFYMzh5cmVLeXFkdTc0TUpWUldZTENTU3NPaEJXblk?oc=5",
    "when": "Fri, 23 Oct 2026"
@@ -442,7 +471,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-10-23",
     "price_at_detect": 0.192579,
-    "score_at_detect": 21.2
+    "score_at_detect": 21.2,
+    "t7": 0.0,
+    "t7_at": "2026-10-30"
    },
    "score": 30.0,
    "source": "news",
@@ -463,7 +494,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 94,
+ "event_count": 92,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -487,46 +518,18 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-29 10:18\n감시 52종목(체인 34·프로토콜 18) · 이벤트 94건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>SUI</b> [공급·신규] $47.12M worth of tokens from CARDS, KMNO, SUI, and EIGEN unlock Oct 29-Nov 1 -\n🔴 <b>BTW</b> [공급·신규] Bitway token unlock on November 2: 101.6m BTW - CryptoTicker.io\n🟠 <b>ETH</b> [인프라·신규] Add EIP: Normalized state gas limit\n🟠 <b>ALGO</b> [인프라·신규] go-algorand v5.0.5-stable — ![GitHub Logo](https://raw.githubusercontent.com/a\n🟠 <b>ALGO</b> [인프라·신규] go-algorand v5.0.5-beta — ![GitHub Logo](https://raw.githubusercontent.com/alg\n🟠 <b>ADA</b> [인프라·신규] cardano-node 11.2.0 — Release Notes\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> SUI <b>일정확정</b> · $47.12M worth of tokens from CARDS, KMNO, SUI, and EIGEN unloc\n🔴 <code>D-3   </code> ENA <b>일정확정</b> · Ethena ENA: 275 Million Tokens Unlock on November 1 - CryptoTi\n🔴 <code>D-3   </code> ENA <b>일정확정</b> · Ethena unlocks $56.9M ENA tokens on Nov 1, but buyback won't s\n🔴 <code>D-4   </code> BTW <b>일정확정</b> · Bitway token unlock on November 2: 101.6m BTW - CryptoTicker\n🔴 <code>D-4   </code> NEAR <b>일정확정</b> · NEAR issuance vote closes November 2: What it means for the NE\n🔴 <code>D-4   </code> BTW <b>일정확정</b> · Bitway token unlock on November 2: 101.6m BTW - CryptoTicker.i\n🟠 <code>D-5   </code> ATOM <b>투표중</b> · Migrate Community Pool USDC.n to USDC.inj via a Community Mult\n🟠 <code>D-7   </code> ZEC <b>일정확정</b> · Zcash Developers Set NU7 Upgrade Target for November 5 at Bloc\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=8, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-10-30 10:22\n감시 52종목(체인 34·프로토콜 18) · 이벤트 92건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>NEAR</b> [공급·신규] NEAR Protocol price weighs on issuance vote ahead of November 2 deadline - ad-\n🔴 <b>SOL</b> [공급·제안→가결] docs: align SIMD-0550 with the integer inflation schedule\n🔴 <b>ARB</b> [인프라·신규] [Constitutional] AIP: Stylus Activation Contract\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-2   </code> ENA <b>일정확정</b> · Ethena ENA: 275 Million Tokens Unlock on November 1 - CryptoTi\n🔴 <code>D-2   </code> ENA <b>일정확정</b> · Ethena unlocks $56.9M ENA tokens on Nov 1, but buyback won't s\n🔴 <code>D-3   </code> BTW <b>일정확정</b> · Bitway token unlock on November 2: 101.6m BTW - CryptoTicker\n🔴 <code>D-3   </code> NEAR <b>일정확정</b> · NEAR issuance vote closes November 2: What it means for the NE\n🔴 <code>D-3   </code> BTW <b>일정확정</b> · Bitway token unlock on November 2: 101.6m BTW - CryptoTicker.i\n🔴 <code>D-3   </code> NEAR <b>일정확정</b> · NEAR Protocol price weighs on issuance vote ahead of November \n🟠 <code>D-4   </code> ATOM <b>투표중</b> · Migrate Community Pool USDC.n to USDC.inj via a Community Mult\n🔴 <code>D-6   </code> ARB <b>투표중</b> · [Constitutional] AIP: Stylus Activation Contract\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-10-29",
-   "first_seen": "2026-10-29",
-   "grade": "A",
-   "impact": "SUPPLY",
-   "key": "news:-47-12m-worth-of-tokens-from-cards-kmno-sui-and-eigen-unlock",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.796873,
-    "score_at_detect": 50.4
-   },
-   "score": 50.4,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-29",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "SUI",
-   "title": "$47.12M worth of tokens from CARDS, KMNO, SUI, and EIGEN unlock Oct 29-Nov 1 - Pluang",
-   "transition": "NEW",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5jdFdNNHZCcEhzS2I5NXlkbGtwTXVSMUsyT3k1WlpEVEpiMDA3aFV1QU5BcnZGTkhuNGVfc3hUZzN1dk5NeDFSNTZJbmZnYzRNR2ZHVklSU2VSeUhnYUlDcW9CWVRxQ2xvdGUzRzJ5UlJBQVF0bE1naFYyS2hJZw?oc=5",
-   "when": "Mon, 26 Oct 2026"
-  },
-  {
    "event_date": "2026-11-02",
-   "first_seen": "2026-10-29",
+   "first_seen": "2026-10-30",
    "grade": "A",
    "impact": "SUPPLY",
-   "key": "news:bitway-token-unlock-on-november-2-101-6m-btw-cryptoticker-io",
+   "key": "news:near-protocol-price-weighs-on-issuance-vote-ahead-of-novembe",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.429684,
+    "detected_at": "2026-10-30",
+    "price_at_detect": 2.42,
     "score_at_detect": 50.4
    },
    "score": 50.4,
@@ -534,132 +537,81 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-29",
+     "at": "2026-10-30",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "BTW",
-   "title": "Bitway token unlock on November 2: 101.6m BTW - CryptoTicker.io",
+   "symbol": "NEAR",
+   "title": "NEAR Protocol price weighs on issuance vote ahead of November 2 deadline - ad-hoc-news.de",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBlVEZfaTNPTE9OYWlmcy1ZcWdOaDVRQV9mZDRlYVFNc1F5UnljRVlUMFI3UDl0TEFSOTM1cnotdHBBVzZmQW5HM1ZrZWcxOGREenNodTNpeEZzRURWSmpFd3JIakNpWlk?oc=5",
-   "when": "Sun, 25 Oct 2026"
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPaVBmb3R2WG9KWk5FcHcwUHBrSi1XRmZqTDRtRWJDMGNPcEVIVXN3UU82V0tseGxFY3pWcjhXQnZqcVM3R3BKdHBqVGRDcG93MmVIRk9ocWJxV2JlWktfeUVoSW91M292TkdyaFI3YVBMN2tKNDJEOUVkMXJGWGNFVC1iZ0dNUWtXc3VQc3BER3lvVjhBdkVHcUFMX3V4bVAxYXZtbDk1SFZrcmc4R1hYNFJIZXdpUTFHNnZhWjN3RVljZG5vWFc0MnR6ZkNLX1U?oc=5",
+   "when": "Thu, 29 Oct 2026"
   },
   {
    "event_date": null,
-   "first_seen": "2026-10-29",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "ethereum/EIPs#12119",
+   "first_seen": "2026-10-22",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "solana-foundation/solana-improvement-documents#704",
+   "prev_stage": "PROPOSED",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 32.7
+    "detected_at": "2026-10-22",
+    "price_at_detect": 105.14,
+    "score_at_detect": 16.5,
+    "t7": 0.0,
+    "t7_at": "2026-10-29"
    },
-   "score": 32.7,
+   "score": 46.8,
    "source": "proposal",
    "stage": "PASSED",
    "stage_history": [
     {
-     "at": "2026-10-29",
+     "at": "2026-10-22",
+     "stage": "PROPOSED"
+    },
+    {
+     "at": "2026-10-30",
      "stage": "PASSED"
     }
    ],
-   "symbol": "ETH",
-   "title": "Add EIP: Normalized state gas limit",
-   "transition": "NEW",
+   "symbol": "SOL",
+   "title": "docs: align SIMD-0550 with the integer inflation schedule",
+   "transition": "STAGE_UP",
    "trust": 1.0,
-   "updated_at": "2026-10-28T20:38:51Z",
-   "url": "https://github.com/ethereum/EIPs/pull/12119",
+   "updated_at": "2026-10-29T14:07:04Z",
+   "url": "https://github.com/solana-foundation/solana-improvement-documents/pull/704",
    "when": null
   },
   {
-   "event_date": null,
-   "first_seen": "2026-10-29",
-   "grade": "B",
+   "event_date": "2026-11-05",
+   "first_seen": "2026-10-30",
+   "grade": "A",
    "impact": "INFRA",
-   "key": "algorand/go-algorand@v5.0.5-stable",
-   "prerelease": false,
+   "key": "snapshot:0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.094562,
-    "score_at_detect": 29.9
+    "detected_at": "2026-10-30",
+    "price_at_detect": 0.175026,
+    "score_at_detect": 45.5
    },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
+   "score": 45.5,
+   "source": "snapshot",
+   "stage": "VOTING",
    "stage_history": [
     {
-     "at": "2026-10-29",
-     "stage": "ACTIVATED"
+     "at": "2026-10-30",
+     "stage": "VOTING"
     }
    ],
-   "symbol": "ALGO",
-   "title": "go-algorand v5.0.5-stable — ![GitHub Logo](https://raw.githubusercontent.com/algorand/go-algorand/master/release/release-banner.jpg)",
+   "symbol": "ARB",
+   "title": "[Constitutional] AIP: Stylus Activation Contract",
    "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/algorand/go-algorand/releases/tag/v5.0.5-stable",
-   "when": "2026-10-28"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-29",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "algorand/go-algorand@v5.0.5-beta",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.094562,
-    "score_at_detect": 29.9
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-29",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "ALGO",
-   "title": "go-algorand v5.0.5-beta — ![GitHub Logo](https://raw.githubusercontent.com/algorand/go-algorand/master/release/release-banner.jpg)",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/algorand/go-algorand/releases/tag/v5.0.5-beta",
-   "when": "2026-10-28"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-29",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "IntersectMBO/cardano-node@11.2.0",
-   "prerelease": true,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.218904,
-    "score_at_detect": 26.9
-   },
-   "score": 26.9,
-   "source": "release",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-29",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "ADA",
-   "title": "cardano-node 11.2.0 — Release Notes",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/IntersectMBO/cardano-node/releases/tag/11.2.0",
-   "when": "2026-10-28"
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
+   "vote_state": "active",
+   "when": "2026-11-05"
   }
  ],
  "universe": {
@@ -759,7 +711,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 53,
+   "n": 54,
    "status": "OK"
   },
   {
@@ -771,7 +723,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 8,
+   "n": 11,
    "status": "OK"
   },
   {
@@ -783,13 +735,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 17,
+   "n": 18,
    "status": "OK"
   },
   {
    "bucket": "impact:FEATURE",
    "horizon": 30,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
@@ -807,7 +759,7 @@
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 4,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -837,13 +789,19 @@
     0.0
    ],
    "median": 0.0,
-   "n": 11,
+   "n": 9,
    "status": "OK"
   },
   {
    "bucket": "source:proposal",
    "horizon": 7,
    "n": 6,
+   "status": "표본 부족"
+  },
+  {
+   "bucket": "source:proposal",
+   "horizon": 30,
+   "n": 2,
    "status": "표본 부족"
   },
   {
@@ -855,13 +813,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 25,
+   "n": 28,
    "status": "OK"
   },
   {
    "bucket": "source:release",
    "horizon": 30,
-   "n": 3,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -871,5 +829,5 @@
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=8, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)"
 }
