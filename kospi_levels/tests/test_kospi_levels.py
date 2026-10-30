@@ -181,5 +181,48 @@ class HubContractTest(unittest.TestCase):
                 self.assertEqual(json.load(f)["message"], p["message"])
 
 
+class TestDailySource(unittest.TestCase):
+    """2026-10-30: Yahoo 일봉 누락(10/29) 재발 방지 — 미확정 봉 제외 · 주봉 마지막 봉 보정."""
+
+    def _daily(self, dates):
+        idx = pd.to_datetime(dates)
+        n = len(idx)
+        return pd.DataFrame({"Open": np.arange(n) + 100.0, "High": np.arange(n) + 110.0,
+                             "Low": np.arange(n) + 90.0, "Close": np.arange(n) + 105.0,
+                             "Volume": np.ones(n)}, index=idx)
+
+    def test_drop_today_before_close(self):
+        d = self._daily(["2026-10-28", "2026-10-29", "2026-10-30"])
+        out = kl.drop_unconfirmed(d, datetime(2026, 10, 30, 7, 42, tzinfo=kl.KST))
+        self.assertEqual(out.index[-1].strftime("%Y-%m-%d"), "2026-10-29")
+
+    def test_keep_today_after_close(self):
+        d = self._daily(["2026-10-29", "2026-10-30"])
+        out = kl.drop_unconfirmed(d, datetime(2026, 10, 30, 16, 0, tzinfo=kl.KST))
+        self.assertEqual(out.index[-1].strftime("%Y-%m-%d"), "2026-10-30")
+
+    def test_weekly_last_close_follows_daily(self):
+        w = self._daily(["2026-10-12", "2026-10-19", "2026-10-26"])
+        d = self._daily(["2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29"])
+        out = kl.patch_weekly_last(w, d)
+        self.assertEqual(len(out), 3)
+        self.assertEqual(out["Close"].iloc[-1], d["Close"].iloc[-1])
+        self.assertEqual(out["High"].iloc[-1], d["High"].max())
+
+    def test_zero_price_bar_removed(self):
+        d = self._daily(["2026-10-19", "2026-10-26"])
+        d.loc[d.index[0], "Low"] = 0.0
+        out = kl.sanitize_ohlc(d)
+        self.assertEqual(len(out), 1)
+        self.assertTrue((out[["Open", "High", "Low", "Close"]] > 0).all().all())
+
+    def test_weekly_missing_week_is_added(self):
+        w = self._daily(["2026-10-12", "2026-10-19"])
+        d = self._daily(["2026-10-26", "2026-10-27"])
+        out = kl.patch_weekly_last(w, d)
+        self.assertEqual(out.index[-1].strftime("%Y-%m-%d"), "2026-10-26")
+        self.assertEqual(out["Close"].iloc[-1], d["Close"].iloc[-1])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

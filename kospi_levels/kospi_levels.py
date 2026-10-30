@@ -50,6 +50,15 @@ UPLEG_WIN       = 104     # 상승 파동 기저 탐색(주)
 # ============================================================
 # 데이터 로드
 # ============================================================
+def sanitize_ohlc(df: pd.DataFrame) -> pd.DataFrame:
+    """가격이 0·음수인 불량 봉 제거 (2026-10-30: Yahoo 주봉 저가 0 → 스윙저점 0·ATR 왜곡·'주봉 종가 0 이탈' 문구)."""
+    px = df[["Open", "High", "Low", "Close"]]
+    bad = (px <= 0).any(axis=1)
+    if bad.any():
+        print(f"[fetch] 불량 봉 {int(bad.sum())}개 제거: {[i.strftime('%Y-%m-%d') for i in df.index[bad]]}")
+    return df[~bad]
+
+
 def _download(period: str, interval: str, min_rows: int) -> pd.DataFrame:
     import yfinance as yf
 
@@ -65,7 +74,7 @@ def _download(period: str, interval: str, min_rows: int) -> pd.DataFrame:
             if df is not None and len(df) >= min_rows:
                 if isinstance(df.columns, pd.MultiIndex):
                     df.columns = df.columns.get_level_values(0)
-                df = df[["Open", "High", "Low", "Close", "Volume"]].dropna()
+                df = sanitize_ohlc(df[["Open", "High", "Low", "Close", "Volume"]].dropna())
                 if len(df) >= min_rows:
                     return df
             last_err = RuntimeError(f"행 부족 ({0 if df is None else len(df)} < {min_rows})")
@@ -75,11 +84,89 @@ def _download(period: str, interval: str, min_rows: int) -> pd.DataFrame:
     raise RuntimeError(f"데이터 로드 실패({interval}): {last_err}")
 
 
-def fetch_ohlc() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """(weekly, daily) 반환. 레벨=주봉, 가격/등락=일봉."""
+# ---- 일봉 1차 소스 = 네이버 증권 지수 API (KRX 확정 종가) ----
+# 2026-10-30: Yahoo ^KS11 일봉이 10/29를 통째로 누락 → 10/30 브리프가 '10/28 종가 기준'으로 나감.
+# 가격·등락·주봉 마지막 봉은 네이버 확정 종가로 맞추고, Yahoo 는 폴백 + 3년 주봉 이력용으로만 쓴다.
+NAVER_URL = "https://m.stock.naver.com/api/index/KOSPI/price"
+CLOSE_CONFIRM_HM = (15, 40)   # 이 시각(KST) 전 실행이면 오늘 봉은 장중/미확정 → 제외
+DAILY_SOURCE = "Yahoo Finance ^KS11"
+
+
+def _num(x) -> float:
+    return float(str(x).replace(",", ""))
+
+
+def _fetch_daily_naver(pages: int = 3) -> pd.DataFrame:
+    import requests
+
+    rows = []
+    for p in range(1, pages + 1):
+        r = requests.get(NAVER_URL, params={"pageSize": 20, "page": p},
+                         headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        r.raise_for_status()
+        for it in r.json():
+            rows.append({
+                "Date": pd.Timestamp(str(it["localTradedAt"])[:10]),
+                "Open": _num(it["openPrice"]), "High": _num(it["highPrice"]),
+                "Low": _num(it["lowPrice"]), "Close": _num(it["closePrice"]),
+                "Volume": _num(it.get("accumulatedTradingVolume") or 0),
+            })
+    if len(rows) < 2:
+        raise RuntimeError(f"네이버 일봉 행 부족 ({len(rows)})")
+    return pd.DataFrame(rows).drop_duplicates("Date").set_index("Date").sort_index()
+
+
+def _naive_dates(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    idx = pd.to_datetime(df.index)
+    if idx.tz is not None:
+        idx = idx.tz_localize(None)
+    df.index = idx.normalize()
+    return df
+
+
+def drop_unconfirmed(daily: pd.DataFrame, now: datetime) -> pd.DataFrame:
+    """KST 15:40 이전 실행이면 오늘 날짜 봉(장중·미확정)을 뺀다."""
+    if len(daily) and (now.hour, now.minute) < CLOSE_CONFIRM_HM \
+            and daily.index[-1].date() == now.date():
+        return daily.iloc[:-1]
+    return daily
+
+
+def patch_weekly_last(weekly: pd.DataFrame, daily: pd.DataFrame) -> pd.DataFrame:
+    """주봉 마지막 봉을 확정 일봉으로 보정 — 이번 주 봉이 없으면 만들고, 미확정 오늘분은 일봉에서 이미 빠져 있다."""
+    w = _naive_dates(weekly)
+    last_d = daily.index[-1]
+    wk_start = last_d - pd.Timedelta(days=last_d.weekday())
+    wk = daily[daily.index >= wk_start]
+    if wk.empty:
+        return w
+    if w.index[-1] < wk_start:
+        w.loc[wk_start] = [wk["Open"].iloc[0], wk["High"].max(), wk["Low"].min(),
+                           wk["Close"].iloc[-1], wk["Volume"].sum()]
+        return w
+    i = w.index[-1]
+    w.loc[i, ["Open", "High", "Low", "Close"]] = [
+        wk["Open"].iloc[0], wk["High"].max(), wk["Low"].min(), wk["Close"].iloc[-1]]
+    return w
+
+
+def fetch_ohlc(now: datetime | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """(weekly, daily) 반환. 레벨=주봉, 가격/등락=일봉(네이버 확정 종가, 실패 시 Yahoo)."""
+    global DAILY_SOURCE
+    now = now or datetime.now(KST)
     weekly = _download(LOOKBACK_PERIOD, "1wk", MACD_SLOW + MACD_SIG)
-    daily = _download("2mo", "1d", 2)
-    return weekly, daily
+    try:
+        daily = _fetch_daily_naver()
+        DAILY_SOURCE = "Naver 증권 KOSPI (KRX 확정 종가)"
+    except Exception as e:  # pragma: no cover - 네트워크
+        print(f"[fetch] 네이버 일봉 실패 → Yahoo 폴백: {e}")
+        daily = _download("2mo", "1d", 2)
+        DAILY_SOURCE = "Yahoo Finance ^KS11 (폴백)"
+    daily = drop_unconfirmed(_naive_dates(sanitize_ohlc(daily.dropna(subset=["Close"]))), now)
+    if len(daily) < 2:
+        raise RuntimeError("확정 일봉 부족")
+    return patch_weekly_last(weekly, daily), daily
 
 
 # ============================================================
@@ -311,7 +398,7 @@ def compute_reference_points(df: pd.DataFrame, daily: pd.DataFrame) -> dict:
     }
 
     core = [price, chg, st_now, ma, rsi_now, macd_now, sig_now, atr_now, swing_high, swing_low]
-    if not all(math.isfinite(v) for v in core) or price <= 0:
+    if not all(math.isfinite(v) for v in core) or price <= 0 or swing_low <= 0:
         raise ValueError(f"지표 계산 결과에 비정상 값이 있습니다: {core}")
 
     return {
@@ -407,7 +494,7 @@ def build_payload(d: dict, now: datetime) -> dict:
     return {
         "as_of_kst": now.strftime("%Y-%m-%d %H:%M"),   # Brief Hub fresh_key
         "data_status": "OK",
-        "source": f"Yahoo Finance {TICKER}",
+        "source": f"일봉 {DAILY_SOURCE} · 주봉 이력 Yahoo Finance {TICKER}",
         **{k: v for k, v in d.items() if k != "regime_tag"},
         "message": build_message(d),
     }
@@ -434,7 +521,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[skip] {now:%Y-%m-%d} 데이터가 이미 있습니다 — 재계산 생략 (--force 로 갱신)")
         return 0
 
-    weekly, daily = fetch_ohlc()
+    weekly, daily = fetch_ohlc(now)
     d = compute_reference_points(weekly, daily)
     payload = build_payload(d, now)
 
