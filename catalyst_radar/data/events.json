@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30 10:22",
+ "as_of": "2026-10-31 10:07",
  "events": [
   {
    "event_date": "2026-11-01",
@@ -7,7 +7,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:ethena-ena-275-million-tokens-unlock-on-november-1-cryptotic",
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-22",
@@ -93,7 +93,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:near-issuance-vote-closes-november-2-what-it-means-for-the-n",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
@@ -149,7 +149,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:bitway-token-unlock-on-november-2-101-6m-btw-cryptoticker-io",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-29",
@@ -177,7 +177,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:near-protocol-price-weighs-on-issuance-vote-ahead-of-novembe",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -200,12 +200,40 @@
    "when": "Thu, 29 Oct 2026"
   },
   {
+   "event_date": "2026-11-06",
+   "first_seen": "2026-10-31",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:hyperliquid-labs-planned-180-000-hype-unlock-for-nov-6-team-",
+   "last_seen": "2026-10-31",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-31",
+    "price_at_detect": 86.24,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-10-31",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "HYPE",
+   "title": "Hyperliquid Labs Planned 180,000 HYPE Unlock for Nov. 6 Team Distribution - TOKENPOST",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE80SEpURWVac1BpWDV6cHpDZGR1RDVGb28zZWo2MGljVWtpaW43SjI1OXZTT21aQy1JSkR5VHhoOXI4OUlTU0M2eXlnNmtWMzJkSnFRRzUwYzI?oc=5",
+   "when": "Wed, 28 Oct 2026"
+  },
+  {
    "event_date": null,
    "first_seen": "2026-10-22",
    "grade": "A",
    "impact": "SUPPLY",
    "key": "solana-foundation/solana-improvement-documents#704",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-22",
@@ -240,7 +268,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -262,37 +290,6 @@
    "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
    "vote_state": "active",
    "when": "2026-11-05"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-17",
-   "grade": "B",
-   "impact": "SUPPLY",
-   "key": "bnb-chain/bsc@v1.8.1",
-   "last_seen": "2026-10-30",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-17",
-    "price_at_detect": 746.55,
-    "score_at_detect": 42.8,
-    "t7": 0.0,
-    "t7_at": "2026-10-24"
-   },
-   "score": 42.8,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-17",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "BNB",
-   "title": "bsc v1.8.1 — Mandatory Update Required: Yes",
-   "trust": 0.95,
-   "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.1",
-   "when": "2026-10-16"
   },
   {
    "event_date": "2026-11-06",
@@ -356,12 +353,14 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:zcash-nu7-block-3-543-405-activation-on-november-6-cryptotic",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-24",
     "price_at_detect": 1192.89,
-    "score_at_detect": 30.0
+    "score_at_detect": 30.0,
+    "t7": 0.0,
+    "t7_at": "2026-10-31"
    },
    "score": 35.3,
    "source": "news",
@@ -390,6 +389,8 @@
     "detected_at": "2026-10-01",
     "price_at_detect": 1192.89,
     "score_at_detect": 32.7,
+    "t30": 0.0,
+    "t30_at": "2026-10-31",
     "t7": 0.0,
     "t7_at": "2026-10-08"
    },
@@ -415,7 +416,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "zcash/zips#1405",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-20",
@@ -450,7 +451,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "ethereum/EIPs#12119",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-29",
@@ -569,7 +570,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:stellar-sets-nov-23-vote-on-bell-s-post-quantum-contract-upg",
-   "last_seen": "2026-10-28",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-22",
@@ -588,7 +589,7 @@
     }
    ],
    "symbol": "XLM",
-   "title": "Stellar Sets Nov. 23 Vote on Bell's Post-Quantum Contract Upgrade - TOKENPOST",
+   "title": "Stellar Sets Nov. 23 Vote on Bell's Post-Quantum Contract Upgrade - tokenpost.com",
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5NaWpCN0JVeUFLeWFMdmdBYmVBdmFDN3hQRFJsdnBVa2FZVUF4S3NlYnBqTWNaOGdkTGh2Slp6MklCckpVS2pLVU51bGpOYV9wNnpJa2psRG9ILVE?oc=5",
    "when": "Wed, 21 Oct 2026"
@@ -604,7 +605,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-10-24",
     "price_at_detect": 1192.89,
-    "score_at_detect": 30.0
+    "score_at_detect": 30.0,
+    "t7": 0.0,
+    "t7_at": "2026-10-31"
    },
    "score": 30.0,
    "source": "news",
@@ -685,13 +688,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "ethereum/go-ethereum@v1.17.10",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-24",
     "price_at_detect": 2497.06,
-    "score_at_detect": 70.0
+    "score_at_detect": 70.0,
+    "t7": 0.0,
+    "t7_at": "2026-10-31"
    },
    "score": 29.9,
    "source": "release",
@@ -749,7 +754,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "cosmos/gaia@v29.0.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -904,7 +909,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@v1.38.3",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -935,7 +940,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@miner/v1.38.3",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -966,7 +971,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.4",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -997,7 +1002,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.78.1",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1028,13 +1033,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "cosmos/gaia@v29.0.1",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-24",
     "price_at_detect": 1.59,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-10-31"
    },
    "score": 29.9,
    "source": "release",
@@ -1057,7 +1064,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "near/nearcore@2.14.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1119,7 +1126,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@testnet-v1.83.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1148,7 +1155,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.5-stable",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1177,7 +1184,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.5-beta",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1206,7 +1213,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1060",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
@@ -1234,7 +1241,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "anza-xyz/agave@v4.5.0-alpha.4",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1263,7 +1270,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@devnet-v1.83.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1292,7 +1299,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "IntersectMBO/cardano-node@11.2.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1321,7 +1328,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1059",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-21",
@@ -1351,42 +1358,11 @@
   },
   {
    "event_date": null,
-   "first_seen": "2026-10-17",
-   "grade": "C",
-   "impact": "FEATURE",
-   "key": "stellar/stellar-core@v30.0.0",
-   "last_seen": "2026-10-30",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-17",
-    "price_at_detect": 0.192579,
-    "score_at_detect": 19.2,
-    "t7": 0.0,
-    "t7_at": "2026-10-24"
-   },
-   "score": 19.2,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-10-17",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "XLM",
-   "title": "stellar-core v30.0.0 — Release Notes",
-   "trust": 0.95,
-   "url": "https://github.com/stellar/stellar-core/releases/tag/v30.0.0",
-   "when": "2026-10-16"
-  },
-  {
-   "event_date": null,
    "first_seen": "2026-10-22",
    "grade": "C",
    "impact": "FEATURE",
    "key": "ethereum/go-ethereum@v1.17.9",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1417,7 +1393,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ava-labs/avalanchego@v1.15.2",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1448,7 +1424,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.2",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1477,7 +1453,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v32.1",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1506,7 +1482,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v31.2",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1535,7 +1511,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "anza-xyz/agave@v4.4.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1557,7 +1533,7 @@
     }
    ],
    "symbol": "SOL",
-   "title": "agave v4.4.0 — This is stable release recommended for 20% adoption.",
+   "title": "agave v4.4.0 — This is stable release recommended for general adoption.",
    "trust": 0.95,
    "url": "https://github.com/anza-xyz/agave/releases/tag/v4.4.0",
    "when": "2026-10-28"
@@ -1806,7 +1782,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "near/nearcore@2.14.0-rc.7",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1863,7 +1839,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x2281f0e25992b203f0318542f74cd4ebd4d61625383c09e11839807834857906",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1898,7 +1874,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0xe4e1011484f2c499a39d0ebce83ae2d402e8e8d61a56c336e3ceb09ecc1e5776",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1933,7 +1909,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x8b670b4e3d960905dcd91be58e9588c3aa2449822cc761e2324fe7a70e5a7fdc",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1968,7 +1944,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x6bb55945d25b6a5ffe8469533b6c4953d27e0fd79e74ce1b5711eea9a3c47f4c",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1996,36 +1972,6 @@
    "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x6bb55945d25b6a5ffe8469533b6c4953d27e0fd79e74ce1b5711eea9a3c47f4c",
    "vote_state": "closed",
    "when": "2026-10-22"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-16",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "news:binance-will-support-the-filecoin-fil-network-upgrade-hard-f",
-   "last_seen": "2026-10-25",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-16",
-    "price_at_detect": 0.799444,
-    "score_at_detect": 35.3,
-    "t7": 0.0,
-    "t7_at": "2026-10-23"
-   },
-   "score": 12.1,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-16",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "FIL",
-   "title": "Binance Will Support the Filecoin (FIL) Network Upgrade & Hard Fork - 2026-10-19 - Binance",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZWtleVowR1dsMkxRT3pZLUlDbl9SSVUwSHAtdlFkbGtnMzlMTFgxVzdPMUVDTm9QTGNUYXYzQ0h4Qm44VDh4QktYZnY2TEc1OHNDZlMtZENfWUtfT1dCcUpYTE8zbEg0WHJvYUQwZ04xcTVqV2dIWGpnN21tdnRCUUVETXJFV0sydXZ5NHdlUXk?oc=5",
-   "when": "Thu, 15 Oct 2026"
   },
   {
    "event_date": null,
@@ -2185,7 +2131,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "bitcoin/bips#2339",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-27",
@@ -2204,7 +2150,7 @@
    "symbol": "BTC",
    "title": "Bip352: Add consensus-validity requirement to Scanning requirements",
    "trust": 1.0,
-   "updated_at": "2026-10-26T13:52:57Z",
+   "updated_at": "2026-10-30T10:49:25Z",
    "url": "https://github.com/bitcoin/bips/pull/2339",
    "when": null
   },
@@ -2214,7 +2160,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "solana-foundation/solana-improvement-documents#713",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -2233,9 +2179,40 @@
    "symbol": "SOL",
    "title": "Add missing feature gate keys to SIMD front matter",
    "trust": 1.0,
-   "updated_at": "2026-10-29T16:34:51Z",
+   "updated_at": "2026-10-30T04:19:23Z",
    "url": "https://github.com/solana-foundation/solana-improvement-documents/pull/713",
    "when": null
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-10-17",
+   "grade": "C",
+   "impact": "SUPPLY",
+   "key": "bnb-chain/bsc@v1.8.1",
+   "last_seen": "2026-10-31",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-17",
+    "price_at_detect": 746.55,
+    "score_at_detect": 42.8,
+    "t7": 0.0,
+    "t7_at": "2026-10-24"
+   },
+   "score": 9.5,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-17",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "BNB",
+   "title": "bsc v1.8.1 — Mandatory Update Required: Yes",
+   "trust": 0.95,
+   "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.1",
+   "when": "2026-10-16"
   },
   {
    "event_date": null,
@@ -2243,7 +2220,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.77.3",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2274,7 +2251,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "XRPLF/rippled@3.4.1",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2305,7 +2282,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "bitcoin-cash-node/bitcoin-cash-node@v29.2.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2367,13 +2344,15 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.3",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-01",
     "price_at_detect": 0.33657,
     "score_at_detect": 29.9,
+    "t30": 0.0,
+    "t30_at": "2026-10-31",
     "t7": 0.0,
     "t7_at": "2026-10-08"
    },
@@ -2398,7 +2377,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "XRPLF/rippled@3.4.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2464,7 +2443,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1055",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-18",
@@ -2528,11 +2507,42 @@
   },
   {
    "event_date": null,
+   "first_seen": "2026-10-17",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "stellar/stellar-core@v30.0.0",
+   "last_seen": "2026-10-31",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-17",
+    "price_at_detect": 0.192579,
+    "score_at_detect": 19.2,
+    "t7": 0.0,
+    "t7_at": "2026-10-24"
+   },
+   "score": 4.3,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-10-17",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "XLM",
+   "title": "stellar-core v30.0.0 — Release Notes",
+   "trust": 0.95,
+   "url": "https://github.com/stellar/stellar-core/releases/tag/v30.0.0",
+   "when": "2026-10-16"
+  },
+  {
+   "event_date": null,
    "first_seen": "2026-10-06",
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v29.0.0",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2563,7 +2573,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.1",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2594,7 +2604,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ava-labs/avalanchego@v1.15.1",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2625,7 +2635,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "IntersectMBO/cardano-node@11.1.3",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2691,7 +2701,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-06",
@@ -2725,7 +2735,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1057",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -2761,7 +2771,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1054",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-11",
@@ -2797,7 +2807,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1053",
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
