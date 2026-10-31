@@ -1,5 +1,5 @@
 {
- "generated_at": 1793419701,
+ "generated_at": 1793421509,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -29,14 +29,6 @@
   }
  ],
  "runs": [
-  [
-   1793333309,
-   "d"
-  ],
-  [
-   1793335103,
-   "d"
-  ],
   [
    1793336909,
    "d"
@@ -160,6 +152,10 @@
   [
    1793419701,
    "d"
+  ],
+  [
+   1793421509,
+   "d"
   ]
  ],
  "status": {
@@ -170,20 +166,20 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": false
+   "x:arcus_xyz": true
   },
   "extended": {
    "docs": true,
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:hellotradeapp": true
+   "x:hellotradeapp": false
   },
   "lighter-rh": {
    "ann": true,
@@ -195,8 +191,8 @@
    "polymarket": true,
    "rh_supply": true,
    "rh_transfers": true,
-   "x:Lighter_xyz": true,
-   "x:vnovakovski": false
+   "x:Lighter_xyz": false,
+   "x:vnovakovski": true
   },
   "pacifica": {
    "ann": true,
@@ -210,7 +206,7 @@
    "feed": true,
    "news": true,
    "polymarket": true,
-   "x:QFEX": false
+   "x:QFEX": true
   },
   "risex": {
    "docs": true,
@@ -227,14 +223,14 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": false
+   "x:TxFlow_L1": true
   },
   "variational": {
    "docs": true,
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": false
+   "x:variational_io": true
   }
  },
  "undecidable": false
