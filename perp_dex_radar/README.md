@@ -73,6 +73,18 @@ API 토큰·액세스 토큰처럼 토큰이 아닌 'token'은 맥락으로 치�
 - 규칙을 고치면 지난 문서 경보도 매 실행 다시 판정한다(`judge.rejudge`). 오탐으로 풀리면 정정 메시지가 나간다.
   10/24 08:10 LRH 경보('distributed' — 토큰 언급 없는 포인트 설명)가 이렇게 풀려 범위 변경 메시지에 정정으로 붙는다.
 
+## 거래 API 공개 감시 (2026-11-01)
+
+운영자 "TxFlow·Variational 개인용 API가 공개되면 알 수 있게" — 토큰 전환 판정과 별개로, 공식 문서의 '아직 공개 전' 문구를 본다.
+설정 `api_watch`: `{"what", "pages": [{"url", "name", "closed": 정규식}]}`. 페이지를 제대로 읽었는데 그 문구가 사라지면 '공개 신호'로
+한 번 알린다(🟢, 밤이면 아침에 · 다른 메시지가 있으면 그 뒤에 붙임). 문구가 다시 나타나면 닫힘으로 되돌린다. 보조 원천이라 '원천 정상'
+계산에서는 뺀다.
+
+| 거래소 | 문서 | 닫힘 문구 |
+|---|---|---|
+| Variational | API 문서(`technical-documentation/api.md`) · 도움말 'API Access' | trading API is still in development / not yet live |
+| TxFlow | Exchange API 문서(`api/exchange.md`) | `POST /exchange` is open only to whitelisted accounts (메인넷은 빌더 화이트리스트) |
+
 ## 파일
 
 `radar.py`(수집·판정·outbox) · `judge.py`(순수 함수: 키워드·판정·메시지) · `sources.py`(수집기) ·

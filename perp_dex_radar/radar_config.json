@@ -144,7 +144,14 @@
       "site": "https://omni.variational.io",
       "tickers": ["VAR"],
       "token_live": false,
-      "status_note": "**$VAR TGE 2026년 4분기 예정**(날짜 미정) · 제네시스 에어드랍 32%(TGE 때 전량 언락) · 포인트는 TGE 전까지 매주 금 15만 pt",
+      "status_note": "**$VAR TGE 2026년 4분기 예정**(날짜 미정) · 제네시스 에어드랍 32%(TGE 때 전량 언락) · 포인트는 TGE 전까지 매주 금 15만 pt · 거래 API 미출시(읽기 전용만) — 공개 감시 중",
+      "api_watch": {
+        "what": "거래 API",
+        "pages": [
+          {"url": "https://docs.variational.io/technical-documentation/api.md", "name": "API 문서", "closed": "trading api is still in development|not yet available to any users"},
+          {"url": "https://help.variational.io/en/articles/14766804-variational-api-access", "name": "API 접근 안내", "closed": "trading api is not yet live|not yet live"}
+        ]
+      },
       "key_dates": [
         {"at": "2026-12-31", "label": "4분기", "text": "**$VAR TGE** (날짜 미정)"}
       ],
@@ -192,7 +199,13 @@
       "site": "https://app.txflow.com",
       "tickers": [],
       "token_live": false,
-      "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소",
+      "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소 · 거래 API는 빌더 화이트리스트만(개인 미공개) — 공개 감시 중",
+      "api_watch": {
+        "what": "개인용 거래 API",
+        "pages": [
+          {"url": "https://docs.txflow.com/api/exchange.md", "name": "Exchange API 문서", "closed": "open only to whitelisted accounts|access is whitelisted"}
+        ]
+      },
       "key_dates": [
         {"at": "2027-03-31", "label": "2027년 1분기", "text": "시즌1 주간 배분 끝(늦어도)"}
       ],

@@ -1189,3 +1189,41 @@ def render_summary(summaries: list[dict], now: int, cfg: dict, title: str = "현
 
 def render_heartbeat(summaries: list[dict], now: int, cfg: dict) -> str:
     return render_summary(summaries, now, cfg, "월간 점검")
+
+
+# ───────────────────────── 거래 API 공개 감시 (2026-11-01) ─────────────────────────
+# 운영자 2026-11-01 "TxFlow·Variational 개인용 API 공개되면 알 수 있게 레이더에 추가" — 토큰 전환 판정과 별개.
+# 거래소 설정 `api_watch`: {"what": "거래 API", "pages": [{"url", "name", "closed": 정규식}]} — 공식 문서의 '아직 공개 전'
+# 문구(closed)가 페이지에 있으면 닫힘, 페이지를 제대로 읽었는데 그 문구가 사라졌으면 '공개 신호'. 닫힘 → 공개 신호로
+# 바뀔 때 한 번 알린다(밤이면 아침에). 문구가 다시 나타나면 닫힘으로 되돌린다(메시지 없음).
+
+def api_page_state(text: str | None, closed: str) -> str:
+    """'closed' | 'open' | 'unknown'(못 읽음·페이지 없음)."""
+    if not text or not text.strip() or text.lstrip().startswith("# Page Not Found"):
+        return "unknown"
+    return "closed" if re.search(closed, text, re.I) else "open"
+
+
+def api_context(text: str, limit: int = 2) -> list[str]:
+    """공개 신호 때 보여 줄 문장 — API·접근·화이트리스트·공개를 말하는 줄 몇 개."""
+    pat = re.compile(r"\b(api|trading|whitelist\w*|access|available|open|live|launch\w*|apply)\b", re.I)
+    out = []
+    for ln in (text or "").split("\n"):
+        s = plain_md(ln).strip()
+        if 20 <= len(s) <= 400 and pat.search(s):
+            out.append(s)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def render_api_open(items: list[dict]) -> str:
+    """items: [{"venue", "what", "name", "url", "lines"}] — 거래소마다 한 칸."""
+    secs = []
+    for it in items:
+        q = "\n".join(f"<i>“{esc(s[:300])}”</i>" for s in it.get("lines") or [])
+        secs.append(f"🟢 <b>{esc(it['venue'])} — {esc(it['what'])} 공개 신호</b>\n"
+                    f"공식 문서의 '아직 공개 전' 문구가 사라졌어요: {link(web_url(it['url']), it['name'])}"
+                    + (f"\n{q}" if q else "")
+                    + "\n확인되면 우리 시스템에 거래 모듈을 붙일 수 있어요.")
+    return f"<b>{NAME} · 거래 API 공개 감시</b>\n\n" + "\n\n".join(secs)

@@ -895,3 +895,41 @@ class Integration(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ApiWatchTest(unittest.TestCase):
+    """거래 API 공개 감시 (2026-11-01) — '아직 공개 전' 문구가 사라지면 공개 신호."""
+
+    def test_page_state(self):
+        closed = "open only to whitelisted accounts|access is whitelisted"
+        self.assertEqual(J.api_page_state("On mainnet, POST /exchange is open only to whitelisted accounts.", closed),
+                         "closed")
+        self.assertEqual(J.api_page_state("POST /exchange is open to every account.", closed), "open")
+        self.assertEqual(J.api_page_state("", closed), "unknown")
+        self.assertEqual(J.api_page_state("# Page Not Found\n...", closed), "unknown")
+
+    def test_open_message(self):
+        txt = J.render_api_open([{"venue": "TxFlow", "what": "개인용 거래 API", "name": "Exchange API 문서",
+                                  "url": "https://docs.txflow.com/api/exchange.md",
+                                  "lines": J.api_context("intro\nPOST /exchange is now open to every account with an agent key.")}])
+        self.assertIn("TxFlow — 개인용 거래 API 공개 신호", txt)
+        self.assertIn("now open to every account", txt)
+        self.assertIn("https://docs.txflow.com/api/exchange", txt)
+
+    def test_venue_run_flags_once(self):
+        import radar as R
+        v = {"id": "txflow", "name": "TxFlow", "api_watch": {"what": "거래 API", "pages": [
+            {"url": "https://x.test/api.md", "name": "API", "closed": "whitelisted"}]}}
+        vs = R.new_venue_state()
+        pages = iter(["open only to whitelisted accounts", "open to all accounts", "open to all accounts"])
+        with mock.patch.object(S, "fetch_doc", side_effect=lambda u: next(pages)):
+            r = R.VenueRun({}, v, vs, 100)
+            r.apiwatch()
+            self.assertEqual(vs["api_watch"]["state"], "closed")
+            self.assertIsNone(vs["api_watch"]["pending"])
+            R.VenueRun({}, v, vs, 200).apiwatch()
+            self.assertEqual(vs["api_watch"]["state"], "open")
+            self.assertEqual(vs["api_watch"]["pending"][0]["venue"], "TxFlow")
+            vs["api_watch"]["pending"] = None
+            R.VenueRun({}, v, vs, 300).apiwatch()             # 계속 공개 — 다시 알리지 않는다
+            self.assertIsNone(vs["api_watch"]["pending"])

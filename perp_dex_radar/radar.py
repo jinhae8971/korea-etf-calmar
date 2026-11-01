@@ -36,7 +36,7 @@ import sources as S  # noqa: E402
 
 DATA = os.path.join(HERE, "data")
 DOCS = os.path.join(os.path.dirname(HERE), "docs", "perp-dex-radar")
-AUX = ("news", "polymarket")   # 보조 원천 — '원천 정상' 계산에서 뺀다
+AUX = ("news", "polymarket", "api_watch")   # 보조 원천(거래 API 감시 포함) — '원천 정상' 계산에서 뺀다
 FLAKY = ("x:",)                # 공식 X는 미러가 자주 막혀 핵심 원천에서 뺀다
 
 
@@ -152,6 +152,8 @@ class VenueRun:
             evs += self.frontend()
         if v.get("js"):
             evs += self.js()
+        if v.get("api_watch"):
+            self.apiwatch()
         evs += self.aux()
         for e in evs:
             e["venue"] = v["id"]
@@ -370,6 +372,36 @@ class VenueRun:
         self.ok("api", f"항목 {len(flat)}개")
         return evs
 
+    # ── 거래 API 공개 감시 (2026-11-01, 토큰 판정과 별개 — 이벤트를 만들지 않고 vs["api_watch"]만 고친다) ──
+    def apiwatch(self):
+        aw, vs = self.v["api_watch"], self.vs
+        rec = vs.setdefault("api_watch", {"state": None, "pages": {}, "pending": None, "since": None})
+        states, opened = [], []
+        for pg in aw.get("pages") or []:
+            try:
+                text = S.fetch_doc(pg["url"])
+            except Exception as e:  # noqa: BLE001
+                print(f"[{self.v['id']}:api_watch] {pg['url'][:80]} 실패: {e}")
+                text = None
+            stt = J.api_page_state(text, pg["closed"])
+            prev = (rec["pages"].get(pg["url"]) or {}).get("state")
+            if stt != "unknown":
+                rec["pages"][pg["url"]] = {"state": stt, "at": self.now}
+            states.append(stt)
+            if stt == "open" and prev == "closed":
+                opened.append({"venue": self.v["name"], "what": aw.get("what", "거래 API"), "name": pg.get("name", ""),
+                               "url": pg["url"], "lines": J.api_context(text or "")})
+        known = [s for s in states if s != "unknown"]
+        if not known:
+            self.fail("api_watch", "공식 문서를 읽지 못했어요")
+            return
+        cur = "open" if "open" in known else "closed"
+        if cur != rec.get("state"):
+            rec["state"], rec["since"] = cur, self.now
+        if opened and not rec.get("pending"):
+            rec["pending"] = opened
+        self.ok("api_watch", "공개 신호" if cur == "open" else "아직 공개 전")
+
     # ── S3 앱 화면·코드 ──
     def frontend(self):
         try:
@@ -472,7 +504,8 @@ def summary(v: dict, vs: dict, now: int) -> dict:
     odds = J.odds_line(vs.get("odds", {}), vs.get("odds_titles", {}), now=now) if v.get("show_odds", True) else ""
     return {"id": v["id"], "name": v["name"], "level": vs["level"], "groups": vs.get("groups", []),
             "status_note": v.get("status_note", ""), "sources_ok": sum(1 for k in core if vs["status"][k]["ok"]),
-            "sources_all": len(core), "odds": odds, "site": v.get("site", ""), "upcoming": J.upcoming(v, now)}
+            "sources_all": len(core), "odds": odds, "site": v.get("site", ""), "upcoming": J.upcoming(v, now),
+            "api_watch": (vs.get("api_watch") or {}).get("state") if v.get("api_watch") else None}
 
 
 def push_outbox(st: dict, ob: dict, now: int, ttl: int) -> None:
@@ -519,7 +552,7 @@ def main(argv):
         else:
             st["summary_done"] = req_id   # 하루 지난 요청은 버린다
     window = cfg["event_window_days"]
-    alerts, releases, release_fp, summaries = [], [], [], []
+    alerts, releases, release_fp, summaries, api_opens = [], [], [], [], []
     core_ok = core_all = 0
 
     for v in cfg["venues"]:
@@ -592,6 +625,10 @@ def main(argv):
         if seeding and not seed_flag:
             vs["seeded"] = True
         summaries.append(summary(v, vs, now))
+        aw = vs.get("api_watch") or {}
+        if aw.get("pending") and day and not seed_flag:
+            api_opens += aw["pending"]
+            aw["pending"] = None
         print(f"[{v['id']}] {level} {groups} · 신규 {len(fresh)} · 반증 {refuted} · 원천 {len(ok)}/{len(core)}"
               + (" · 시딩" if seeding else ""))
 
@@ -631,6 +668,9 @@ def main(argv):
         kind = "summary"
         if req_id:
             st["summary_done"] = req_id
+    if api_opens:   # 거래 API 공개 신호 — 다른 메시지가 있으면 그 뒤에 붙이고, 없으면 따로 한 통
+        api_text = J.render_api_open(api_opens)
+        text, kind = (text + "\n\n" + api_text, kind) if text else (api_text, "api")
     if want_summary and kind != "summary":
         why = f"'{kind}' 메시지가 있어" if kind else ("밤이라" if not day else "기준선만 잡는 실행이라")
         print(f"[현황] 이번 실행은 {why} 현황을 만들지 않음")
