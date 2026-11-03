@@ -1,7 +1,29 @@
 {
- "generated_at": 1793693315,
+ "generated_at": 1793695104,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Do Vault deposits earn Points?",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "5dffe7eba95d",
+   "ref": {
+    "added": [
+     "### Do Vault deposits earn Points?",
+     "Depositing into a Vault alone does not earn Points. To have your Vault contribution factored into your Points for an epoch, you must have eligible trading activity during that epoch."
+    ],
+    "name": "포인트 작동 방식",
+    "removed": 0,
+    "url": "https://docs.txflow.com/points/how-points-work.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '포인트 작동 방식' 문구 변경",
+   "ts": 1793695104,
+   "venue": "txflow",
+   "venue_name": "TxFlow"
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPTEEyWVpWQTZITDZxSmNHa1pPZmsyb3lSWl9GYS1wRFc1MFNVT1lDRmxwRnBkM1JSSE1OZDh3eWtFalNrekhtT2MyY0JyS091UmVoSUEwZjZ",
    "family": "S4",
@@ -3296,14 +3318,6 @@
  ],
  "runs": [
   [
-   1793606916,
-   "d"
-  ],
-  [
-   1793607544,
-   "s"
-  ],
-  [
    1793610507,
    "d"
   ],
@@ -3422,6 +3436,10 @@
   [
    1793693315,
    "d"
+  ],
+  [
+   1793695104,
+   "d"
   ]
  ],
  "venues": [
@@ -3458,37 +3476,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
-     "note": "17건",
+     "at": 1793695104,
+     "note": "26건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     }
@@ -6174,6 +6192,11 @@
      1793693315,
      245219.379,
      58436.656
+    ],
+    [
+     1793695104,
+     245236.398,
+     58439.645
     ]
    ],
    "level": "WATCH",
@@ -7404,62 +7427,66 @@
     [
      1793693315,
      448369.56
+    ],
+    [
+     1793695104,
+     448369.56
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "15건",
      "ok": true
     },
     "board": {
-     "at": 1793693315,
-     "note": "상위 10명 합계 245,219",
+     "at": 1793695104,
+     "note": "상위 10명 합계 245,236",
      "ok": true
     },
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793693315,
-     "note": "150블록 · 대량 0건",
+     "at": 1793695104,
+     "note": "149블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "모듈 143 · API 144",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
-     "note": "114건",
+     "at": 1793695104,
+     "note": "66건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "448,370 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "19건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     }
@@ -7727,27 +7754,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     }
@@ -8074,29 +8101,29 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "22건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793693315,
-     "note": "20건",
-     "ok": true
+     "at": 1793695104,
+     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -8181,32 +8208,32 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
-     "note": "14건",
+     "at": 1793695104,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     }
@@ -8383,27 +8410,27 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
-     "note": "10건",
+     "at": 1793695104,
+     "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     }
@@ -8416,6 +8443,27 @@
   {
    "api_watch": "closed",
    "events": [
+    {
+     "detail": "Do Vault deposits earn Points?",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "5dffe7eba95d",
+     "ref": {
+      "added": [
+       "### Do Vault deposits earn Points?",
+       "Depositing into a Vault alone does not earn Points. To have your Vault contribution factored into your Points for an epoch, you must have eligible trading activity during that epoch."
+      ],
+      "name": "포인트 작동 방식",
+      "removed": 0,
+      "url": "https://docs.txflow.com/points/how-points-work.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '포인트 작동 방식' 문구 변경",
+     "ts": 1793695104,
+     "venue": "txflow"
+    },
     {
      "detail": "https://x.com/TxFlow_L1/status/2116308541611081982",
      "family": "S2",
@@ -8546,27 +8594,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     }
@@ -8609,22 +8657,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "20건",
      "ok": true
     }
@@ -8648,17 +8696,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "8건",
      "ok": true
     }
@@ -8710,27 +8758,27 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 35% · 27년 12/31까지 74%",
+   "odds": "토큰 출시 확률 12/31까지 3% · 27년 6/30까지 36% · 27년 12/31까지 74%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793693315,
-     "note": "21건",
+     "at": 1793695104,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793693315,
+     "at": 1793695104,
      "note": "19건",
      "ok": true
     }
