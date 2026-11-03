@@ -548,6 +548,10 @@ def render_message(p):
         if line:
             L.append("     %s" % line)
         L.append("     <i>%s</i>" % s["note"])
+    olq = render_olq_lines(p.get("onchain"))
+    if olq:
+        L.append("")
+        L.extend(olq)
     L.append("")
     if p.get("changes"):
         L.append("⚡ <b>변화</b>")
@@ -601,6 +605,10 @@ def render_dashboard(p):
                     % (s["label"], s.get("source_txt", ""), color, DOT.get(lv, "⚪"), s["display"],
                        cell(dl.get("d1")), cell(dl.get("d30")), s["note"], spark))
     changes = "".join("<li>%s</li>" % c for c in p.get("changes", [])) or "<li>변화 없음</li>"
+    olq_html = ""
+    if p.get("onchain"):
+        h, b, v = render_olq_lines(p["onchain"])
+        olq_html = '<h2>%s</h2><p style="font-size:14px;margin:0">%s<br>%s</p>' % (h, b.strip(), v.strip())
     return """<!doctype html><html lang="ko"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BTC 매크로 레이더</title>
@@ -620,6 +628,7 @@ h2{font-size:15px;margin:18px 0 6px}ul{margin:0;padding-left:18px;font-size:14px
 <div class="sub">%s KST · 데이터 상태 %s</div>
 <div class="phase">%s · 순풍도 %s/%s</div>
 <table>%s</table>
+%s
 <h2>⚡ 변화(전일 대비)</h2><ul>%s</ul>
 <p class="note">관측 리포트입니다. 🟢순풍 🟡중립 🔴역풍은 BTC 입장에서 본 현재 구간의 서술이며
 방향이나 수익률을 주장하지 않습니다.<br>
@@ -627,7 +636,7 @@ h2{font-size:15px;margin:18px 0 6px}ul{margin:0;padding-left:18px;font-size:14px
 공개 원천 지연이 커서 제외했습니다. 30일 변동은 각 원천의 자체 시계열에서 산출합니다.<br>
 임계값 고정일 %s</p>
 </html>""" % (p["as_of_kst"], p["data_status"], p["phase"]["phase"], p["phase"]["score"],
-              p["phase"]["max"], "".join(rows), changes, THRESHOLDS_FROZEN_AT)
+              p["phase"]["max"], "".join(rows), olq_html, changes, THRESHOLDS_FROZEN_AT)
 
 
 # ── 수집 ──────────────────────────────────────────────────────────────
@@ -691,6 +700,68 @@ def collect():
     return signals, status, failed, price
 
 
+# ── 참고: 온체인 유동성(OLQ) 대조 — 영길님 2026-11-03 "여기 온체인 유동성 더해줘 비교할수있게" ──
+# 같은 레포의 온체인 유동성 레이더(onchain_liquidity/) 최신 판정을 옮겨 와 M2(바깥 유동성)와 나란히 보여 준다.
+# 순풍도·국면·임계값에는 넣지 않는다(THRESHOLDS_FROZEN_AT 유지) — 비교용 참고 줄이다.
+OLQ_PATH = os.path.join(os.path.dirname(HERE), "onchain_liquidity", "data", "latest.json")
+OLQ_STATE = {"CRITICAL": ("🚨", "급속 수축", -1), "CONTRACT": ("🔴", "수축", -1), "SOFTEN": ("🟡", "둔화", 0),
+             "NEUTRAL": ("⚪", "중립", 0), "EXPAND": ("🟢", "확장", 1)}
+OLQ_VS = {
+    (1, 1): "같은 방향 — 바깥 유동성과 온체인 유동성이 함께 늘고 있음",
+    (1, -1): "엇갈림 — 바깥 유동성은 늘지만 온체인에서는 돈이 빠져나가는 중",
+    (-1, 1): "엇갈림 — 바깥 유동성은 줄지만 온체인으로는 돈이 들어오는 중",
+    (-1, -1): "같은 방향 — 바깥·온체인 유동성이 함께 줄고 있음",
+}
+
+
+def _usd_short(x):
+    return "$%.1fB" % (x / 1e9) if abs(x) < 1e12 else "$%.2fT" % (x / 1e12)
+
+
+def olq_compare(signals, today, path=OLQ_PATH):
+    """온체인 유동성 레이더의 최신 판정 + M2와의 방향 비교. 파일이 없거나 깨졌으면 None."""
+    try:
+        d = json.load(open(path, encoding="utf-8"))
+        stable = d["metrics"]["stable"]
+        state = d["state"]
+        dot, label, side = OLQ_STATE[state]
+    except Exception:  # noqa: BLE001 - 참고 줄이라 없으면 그냥 뺀다
+        return None
+    m2 = next((x for x in signals if x.get("key") == "m2"), None)
+    m2_side = None if not m2 or m2.get("level") is None else {0: 1, 1: 0, 2: -1}[m2["level"]]
+    if m2_side is None:
+        vs = "M2 수집 실패 — 비교 생략"
+    else:
+        vs = OLQ_VS.get((m2_side, side), "한쪽은 뚜렷한 방향 없음 — M2 %s · 온체인 %s"
+                        % ({1: "확장", 0: "중립", -1: "수축"}[m2_side], label))
+    age = None
+    try:
+        age = (datetime.strptime(today, "%Y-%m-%d") - datetime.strptime(d["as_of"], "%Y-%m-%d")).days
+    except Exception:  # noqa: BLE001
+        pass
+    return {"as_of": d.get("as_of"), "age_days": age, "state": state, "dot": dot, "label": label,
+            "streak": d.get("streak"), "stable_usd": stable.get("level"), "d7": stable.get("d7"),
+            "d30": stable.get("d30"), "vs_m2": vs}
+
+
+def render_olq_lines(o):
+    if not o:
+        return []
+    when = (o.get("as_of") or "?????")[5:].replace("-", "/")
+    stale = " · %d일 전 값" % o["age_days"] if o.get("age_days") and o["age_days"] >= 2 else ""
+    head = "🔗 <b>온체인 유동성</b> (참고 · 순풍도 미포함 · %s 기준%s)" % (when, stale)
+    body = "%s %s" % (o["dot"], o["label"])
+    if o.get("streak"):
+        body += " %s일째" % o["streak"]
+    if o.get("stable_usd") is not None:
+        body += " · 스테이블 총공급 %s" % _usd_short(o["stable_usd"])
+    if o.get("d7") is not None:
+        body += " · 7일 %+.2f%%" % o["d7"]
+    if o.get("d30") is not None:
+        body += " · 30일 %+.2f%%" % o["d30"]
+    return [head, "     " + body, "     <i>M2 대비: %s</i>" % o["vs_m2"]]
+
+
 def main():
     now = datetime.now(KST)
     os.makedirs(DATA, exist_ok=True)
@@ -718,6 +789,7 @@ def main():
         if h.get("as_of") != payload["as_of"]:
             prev = h
             break
+    payload["onchain"] = olq_compare(signals, payload["as_of"])
     payload["first_run"] = prev is None
     payload["changes"] = detect_changes(payload, prev)
     payload["message"] = render_message(payload)

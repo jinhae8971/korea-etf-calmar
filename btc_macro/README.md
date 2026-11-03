@@ -15,3 +15,7 @@
 - `data_status`: OK / DEGRADED(3~4개 성공) / FAIL(2개 이하, exit 1)
 - 테스트: `cd btc_macro && python3 -m unittest discover -s tests`
 - 유동성 프록시에서 일본·중국 M2는 공개 원천 지연(IMF IFS 18개월+)으로 제외
+
+## 참고 줄: 온체인 유동성 (2026-11-03)
+
+지표 5개 아래에 같은 레포의 온체인 유동성 레이더(`onchain_liquidity/data/latest.json`) 최신 판정(상태·연속 일수·스테이블 총공급 7일/30일)을 붙이고, M2와 방향이 같은지 엇갈리는지 한 줄로 적는다. 순풍도·국면·임계값에는 넣지 않는다(고정일 유지). 온체인 값이 2일 이상 묵으면 "N일 전 값"으로 표시한다.

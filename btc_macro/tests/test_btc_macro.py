@@ -162,5 +162,45 @@ class RenderTests(unittest.TestCase):
         self.assertIn("임계값 고정일", html)
 
 
+class OnchainCompareTests(unittest.TestCase):
+    def _olq(self, state, d30=-2.96, as_of="2026-11-02"):
+        import json
+        import tempfile
+        f = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8")
+        json.dump({"as_of": as_of, "state": state, "streak": 4,
+                   "metrics": {"stable": {"level": 299552631600.4, "d7": -1.47, "d30": d30}}}, f)
+        f.close()
+        return f.name
+
+    def test_divergence_m2_up_onchain_down(self):
+        o = m.olq_compare([sig("m2", 0, 3.53)], "2026-11-03", self._olq("CONTRACT"))
+        self.assertIn("엇갈림", o["vs_m2"])
+        self.assertEqual(o["age_days"], 1)
+        lines = m.render_olq_lines(o)
+        self.assertIn("수축 4일째", lines[1])
+        self.assertIn("$299.6B", lines[1])
+        self.assertIn("30일 -2.96%", lines[1])
+        self.assertNotIn("전 값", lines[0])
+
+    def test_same_direction_and_stale_mark(self):
+        o = m.olq_compare([sig("m2", 0, 3.53)], "2026-11-05", self._olq("EXPAND", 2.1))
+        self.assertIn("같은 방향", o["vs_m2"])
+        self.assertIn("3일 전 값", m.render_olq_lines(o)[0])
+
+    def test_missing_file_and_failed_m2(self):
+        self.assertIsNone(m.olq_compare([sig("m2", 0, 3.5)], "2026-11-03", "/nonexistent.json"))
+        o = m.olq_compare([sig("m2", None, None)], "2026-11-03", self._olq("NEUTRAL"))
+        self.assertIn("비교 생략", o["vs_m2"])
+
+    def test_message_has_onchain_block_and_phase_unchanged(self):
+        p = {"as_of_kst": "2026-11-03 07:40", "phase": {"phase": "중립", "score": 4, "max": 10},
+             "signals": [sig("m2", 0, 3.53)], "changes": [], "first_run": False, "data_status": "OK",
+             "onchain": m.olq_compare([sig("m2", 0, 3.53)], "2026-11-03", self._olq("CONTRACT"))}
+        msg = m.render_message(p)
+        self.assertIn("온체인 유동성", msg)
+        self.assertIn("순풍도 미포함", msg)
+        self.assertIn("순풍도 4/10", msg)
+
+
 if __name__ == "__main__":
     unittest.main()
