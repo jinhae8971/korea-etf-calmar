@@ -3,6 +3,8 @@ name: BTC Macro Radar
 on:
   schedule:
     - cron: "36 22 * * 1-5"   # KST 화~토 07:36 (미국 거래일 종가 반영, 혼잡대 회피)
+    - cron: "13 0 * * 2-6"    # KST 화~토 09:13 백업 — 아침 슬롯이 밀리거나 빠질 때 따라잡기 (UTC 요일 = KST 요일)
+    - cron: "43 1 * * 2-6"    # KST 화~토 10:43 백업 — 이미 오늘 스냅샷이 있으면 아래 gate가 건너뜀
   workflow_dispatch:
 
 permissions:
@@ -31,12 +33,25 @@ jobs:
       # paste.rs 번들로 btc_macro/ 소스를 덮어써서, 레포에 직접 가한 수정이
       # 조용히 되돌아갔다(압축 규격 v1 적용분이 실제로 유실됨).
       # 소스는 이미 레포에 커밋돼 있으므로 checkout 이 정본이다.
+      - name: Already collected today? (backup slots)
+        id: gate
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          TODAY="$(TZ=Asia/Seoul date +%F)"
+          AS_OF="$(python3 -c "import json;print(json.load(open('btc_macro/data/latest.json')).get('as_of',''))" 2>/dev/null || true)"
+          if [[ "$EVENT" == "schedule" && "$AS_OF" == "$TODAY" ]]; then
+            echo "skip=1" >> "$GITHUB_OUTPUT"; echo "오늘 스냅샷 이미 있음 ($AS_OF) - 수집 생략"
+          fi
+
       - name: Test gate
+        if: steps.gate.outputs.skip != '1'
         run: |
           set -euo pipefail
           cd btc_macro && python3 -m unittest discover -s tests
 
       - name: Collect & render
+        if: steps.gate.outputs.skip != '1'
         env:
           TZ: "Asia/Seoul"
         run: |
@@ -44,7 +59,7 @@ jobs:
           python3 btc_macro/btc_macro.py
 
       - name: Commit snapshot
-        if: always()
+        if: always() && steps.gate.outputs.skip != '1'
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"

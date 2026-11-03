@@ -3,6 +3,8 @@ name: Crypto Top Signal
 on:
   schedule:
     - cron: "48 22 * * *"      # KST 매일 07:48 (혼잡대 회피)
+    - cron: "13 0 * * *"       # KST 09:13 백업 — 아침 슬롯이 밀리거나 빠질 때(11/03 07:48분이 12:41에야 돎) 따라잡기
+    - cron: "43 1 * * *"       # KST 10:43 백업 — 이미 오늘 스냅샷이 있으면 아래 gate가 건너뜀
   workflow_dispatch:
 
 permissions:
@@ -26,16 +28,29 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Already collected today? (backup slots)
+        id: gate
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          TODAY="$(TZ=Asia/Seoul date +%F)"
+          AS_OF="$(python3 -c "import json;print(json.load(open('topsignal/data/latest.json')).get('as_of',''))" 2>/dev/null || true)"
+          if [[ "$EVENT" == "schedule" && "$AS_OF" == "$TODAY" ]]; then
+            echo "skip=1" >> "$GITHUB_OUTPUT"; echo "오늘 스냅샷 이미 있음 ($AS_OF) - 수집 생략"
+          fi
+
       - name: Test gate
+        if: steps.gate.outputs.skip != '1'
         run: python topsignal/tests/test_top_signal.py
 
       - name: Run monitor
+        if: steps.gate.outputs.skip != '1'
         env:
           TZ: "Asia/Seoul"
         run: python topsignal/top_signal.py
 
       - name: Commit
-        if: always()
+        if: always() && steps.gate.outputs.skip != '1'
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"
@@ -46,6 +61,10 @@ jobs:
           else
             AS_OF=$(python -c "import json;print(json.load(open('topsignal/data/latest.json'))['as_of_kst'])")
             git commit -m "top-signal: snapshot ${AS_OF} KST"
-            git pull --rebase --autostash origin main || true
-            git push
+            for i in 1 2 3; do
+              if git push; then exit 0; fi
+              git pull --rebase --autostash origin main
+              sleep $((i * 5))
+            done
+            echo "::error::3회 시도 후에도 푸시 실패"; exit 1
           fi
