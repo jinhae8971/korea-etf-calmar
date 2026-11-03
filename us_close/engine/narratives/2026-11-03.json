@@ -1,0 +1,42 @@
+{
+ "headline": "중간선거 당일 반도체가 반등해(SOX +2.6%) S&P가 4일 만에 올랐어요. 장 마감 후 AMD는 호실적으로 시간외 +5.8%예요.",
+ "breadth_note": "지수는 올랐지만 오른 종목은 41, 내린 종목은 56이었어요. 동일가중(RSP −0.33%)이 시총가중보다 0.62%p 약했어요. 최근 한 달 이어진 로테이션이 하루 되돌려지면서, 기술·AI 대형주로 자금이 다시 들어온 날이에요.",
+ "drivers": [
+  "반도체 반등: SOX +2.6%였어요. AMD +3.7%, ANET +3.5%가 올랐고, 오라클은 +5.9%로 전날 낙폭(−8.8%)을 일부 되찾았어요. 아시아에서는 코스피와 대만 지수가 각각 −3.6% 급락한 뒤였어요.",
+  "AI 전력 인프라: GEV +6.5%, VST +3.7%가 올랐어요.",
+  "약세 섹터: 필수소비재(−2.1%)와 소재(−2.0%)가 가장 약했고, 주택건설도 −3.6%였어요. 한 달 강했던 방어주에서 차익이 나왔어요.",
+  "10년물이 5.8bp 올라 4.95%예요. 금리 부담이 기술주 상단을 누르고 있다는 분석이 나왔어요. WTI는 96.8달러(+0.3%)였어요.",
+  "중간선거는 마감 시점에 개표 전이었어요. AP의 상·하원 확정 발표는 아직 없어요."
+ ],
+ "after_hours": [
+  "AMD 시간외 +5.8%(483.9 → 511.9)예요. 3분기 실적과 4분기 매출 가이던스가 모두 예상을 넘었다는 보도가 나왔어요. 데이터센터 매출은 약 2배 늘어난 것으로 전해졌어요.",
+  "시간외 기준 SOXX 473.0(+1.7%), DRAM 48.3(+1.5%), QQQ 688.0(+0.4%), SPY 755.8(+0.2%)이에요."
+ ],
+ "tech": {
+  "QQQ": {"short": 50, "swing": 35, "short_d": 5, "swing_d": 0,
+          "note": "4H RSI가 30 위로 돌아왔고 4H 히스토그램도 상승 전환했어요. 시간외 688로 686.5 저항을 넘어선 상태예요. 일봉 히스토그램은 아직 확대 중(−4.55)이고, 일봉 EMA120(706.9) 아래라 스윙은 그대로 뒀어요.",
+          "up": "686.5 종가 회복 → 695.3, 701.3", "down": "661.1 이탈 → 636.8"},
+  "SPY": {"short": 50, "swing": 40, "short_d": 5, "swing_d": 0,
+          "note": "일봉 EMA120(751.7)을 이틀째 지켰고, 4H 히스토그램이 바닥을 찍고 돌아섰어요. 일봉 SuperTrend는 하락(782.5)이라 스윙은 보수적으로 봐요.",
+          "up": "758.9 회복 → 765.0(EMA50)", "down": "749.7 이탈 → 740.2"},
+  "SOXX": {"short": 50, "swing": 35, "short_d": 10, "swing_d": 5,
+           "note": "주봉 EMA50(457.3)과 464.1을 하루 만에 되찾았어요. AMD 시간외 강세로 473 출발이 예상돼요. 4H 히스토그램 상승 전환, RSI 37로 과매도에서 벗어나는 중이에요. 일봉·주봉 SuperTrend는 여전히 하락이에요.",
+           "up": "472.2 종가 돌파 → 478.0, 489.2", "down": "457.3 재이탈 → 450"},
+  "DRAM": {"short": 45, "swing": 35, "short_d": 5, "swing_d": 0,
+           "note": "주봉 EMA50(46.9)을 되찾고 주봉 RSI가 50 위로 올라왔어요. 일봉 RSI도 평균선 위예요. 4H SuperTrend(53.7)와 일봉 EMA 밀집대(52.9~53.8)는 한참 위예요. 주봉 이력이 짧아 일봉 위주로 판단해요.",
+           "up": "48.7 돌파 → 49.9, 51.7(4H EMA50)", "down": "46.4 이탈 → 45.3, 44.4"}
+ },
+ "calendar": ["중간선거 개표 결과(11/4 장 반영)", "AMD 시간외 강세의 반도체 확산 여부", "12월 FOMC 인상 여부"],
+ "view": "중간선거를 앞두고 한 달간의 '기술주 매도, 방어주 매수' 흐름이 하루 쉬어갔어요. 반도체는 과매도 반등에 AMD 호실적이 더해져 단기 확률을 올렸어요. 다만 QQQ와 SOXX 모두 일봉 추세선(SuperTrend) 아래라, 이번 반등은 아직 추세 전환이 아니라 되돌림이에요. 오늘 밤 선거 결과에 따른 금리·재정 경로가 반등의 지속 여부를 가를 거예요.",
+ "summary": [
+  "반도체 반등(SOX +2.6%)으로 S&P가 4일 만에 상승했지만, 동일가중은 −0.3%였어요.",
+  "AMD가 실적·가이던스 모두 예상을 넘어 시간외 +5.8%예요. SOXX는 시간외 +1.7%예요.",
+  "중간선거는 개표 중이고 확정 발표는 없어요. 10년물은 4.95%로 다시 올랐어요.",
+  "SOXX는 주봉 EMA50(457)을 회복했어요. QQQ는 686.5, DRAM은 48.7 돌파가 관건이에요."
+ ],
+ "sources": [
+  {"title": "Stock Market Today Live, November 3, 2026: Chip Stocks Lift the Nasdaq, Then AMD Jumps After the Close (StockTitan)", "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"},
+  {"title": "Stock Market Today (Nov. 3, 2026): Nasdaq, Russell 2000 finish higher in homestretch of U.S. midterm election (TheStreet)", "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-03-2026"},
+  {"title": "AMD stock jumps after hours as quarterly results, revenue guidance beat estimates (Investing.com, 헤드라인만 확인)", "url": "https://www.investing.com/news/earnings/amd-stock-jumps-after-hours-as-quarterly-results-revenue-guidance-beat-estimates-4996344"}
+ ]
+}
