@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-03 12:06",
+ "as_of": "2026-11-04 10:43",
  "events": [
   {
    "event_date": "2026-11-01",
@@ -42,7 +42,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
     "price_at_detect": 2.42,
-    "score_at_detect": 50.4
+    "score_at_detect": 50.4,
+    "t7": 0.0,
+    "t7_at": "2026-11-04"
    },
    "score": 50.4,
    "source": "news",
@@ -58,34 +60,6 @@
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQb3BrYkFnQzhhTUhvVzF0VHlFdXpwaWVKcEVJR0o5LS1veGVDYjl3U2pYYmRQdVJkZGdDa2RJeEVORjJDUW52VTUtaUVWOTV0UUp2Sm02dFR4d3A4OHV4RzdXMDc0WHdDazVEampEMlZVOVFxbFFYR29uc2tvOEpHZ2tiWlg0Y3p0SVZvNWlFYWZUY0JlYXhqdmRDdkpMcm1PZHBoVmxJLVBWOW5QR25TWTI3RVZGNW5VLVRJZVVNZXhjT0dCSzVvNFR3b1N0Zm5TRnVoM09nWQ?oc=5",
    "when": "Tue, 27 Oct 2026"
-  },
-  {
-   "event_date": "2026-10-29",
-   "first_seen": "2026-10-29",
-   "grade": "A",
-   "impact": "SUPPLY",
-   "key": "news:-47-12m-worth-of-tokens-from-cards-kmno-sui-and-eigen-unlock",
-   "last_seen": "2026-10-29",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.796873,
-    "score_at_detect": 50.4
-   },
-   "score": 50.4,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-29",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "SUI",
-   "title": "$47.12M worth of tokens from CARDS, KMNO, SUI, and EIGEN unlock Oct 29-Nov 1 - Pluang",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5jdFdNNHZCcEhzS2I5NXlkbGtwTXVSMUsyT3k1WlpEVEpiMDA3aFV1QU5BcnZGTkhuNGVfc3hUZzN1dk5NeDFSNTZJbmZnYzRNR2ZHVklSU2VSeUhnYUlDcW9CWVRxQ2xvdGUzRzJ5UlJBQVF0bE1naFYyS2hJZw?oc=5",
-   "when": "Mon, 26 Oct 2026"
   },
   {
    "event_date": "2026-11-02",
@@ -149,7 +123,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:hyperliquid-price-token-burn-meets-november-6-unlock-ad-hoc-",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-02",
@@ -177,7 +151,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:hyperliquid-to-unlock-180-000-hype-for-core-contributors-on-",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-03",
@@ -200,12 +174,40 @@
    "when": "Mon, 02 Nov 2026"
   },
   {
+   "event_date": "2026-11-06",
+   "first_seen": "2026-11-04",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:hyperliquid-price-faces-burn-support-and-november-6-token-un",
+   "last_seen": "2026-11-04",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-04",
+    "price_at_detect": 86.24,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-04",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "HYPE",
+   "title": "Hyperliquid price faces burn support and November 6 token unlock - ad-hoc-news.de",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbXl4MWtwZzNwSTllTW9LeVp5eUVHR3RlaWtna2FRVlh2ZXBRWlZiZUVVWFgweWQyS2hJdmswSWlxdmlsZUg3UkpQRFF3SEhQdktGLURiNTM1dmJpbnNfQndFbUJFZ3I5NVhsbURTSmNLSW5DVWx1R1JYekIwNUZHRGhoYzU1ZG9DOVJ6cVBwdEJPd3hBdng4b29jd2Z1S1JvTkdXQXJQZTlEVkRXMGN3VUlvS01HS1MwRmdndnBoU1AxR21K?oc=5",
+   "when": "Tue, 03 Nov 2026"
+  },
+  {
    "event_date": null,
    "first_seen": "2026-10-22",
    "grade": "A",
    "impact": "SUPPLY",
    "key": "solana-foundation/solana-improvement-documents#704",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-22",
@@ -240,7 +242,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -269,7 +271,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -323,37 +325,60 @@
    "when": "Fri, 23 Oct 2026"
   },
   {
-   "event_date": null,
-   "first_seen": "2026-10-01",
+   "event_date": "2026-11-05",
+   "first_seen": "2026-11-04",
    "grade": "B",
    "impact": "INFRA",
-   "key": "zcash/zips#1384",
-   "last_seen": "2026-10-29",
+   "key": "news:zcash-upgrade-to-triple-transaction-speed-on-november-5-cryp",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-01",
+    "detected_at": "2026-11-04",
     "price_at_detect": 1192.89,
-    "score_at_detect": 32.7,
-    "t30": 0.0,
-    "t30_at": "2026-10-31",
-    "t7": 0.0,
-    "t7_at": "2026-10-08"
+    "score_at_detect": 35.3
    },
-   "score": 32.7,
-   "source": "proposal",
-   "stage": "PASSED",
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-10-01",
-     "stage": "PASSED"
+     "at": "2026-11-04",
+     "stage": "SCHEDULED"
     }
    ],
    "symbol": "ZEC",
-   "title": "Set the NU7 testnet activation height to 4465026",
-   "trust": 1.0,
-   "updated_at": "2026-10-01T15:34:09Z",
-   "url": "https://github.com/zcash/zips/pull/1384",
-   "when": null
+   "title": "Zcash Upgrade to Triple Transaction Speed on November 5 - Cryptonews",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVTZ6Zmx3S0VtQVdoS2dsbE9NZHpxQ3JwWTJnYkZfODR1NlhVbEMtSkpKcUJyb0xSYjJ4MU5QNTBxVXp2LTZLZ2ItS1JYTldkaEFnbF9STjlaMnB1cjJUVlhOSWFPTTJrTmUtX0ZDVHFNY1N1QXFwdlFEWHcwVVRuTUZGQzc?oc=5",
+   "when": "Tue, 03 Nov 2026"
+  },
+  {
+   "event_date": "2026-11-05",
+   "first_seen": "2026-11-04",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:zcash-reveals-seven-zebra-security-fixes-ahead-of-november-5",
+   "last_seen": "2026-11-04",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-04",
+    "price_at_detect": 1192.89,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-04",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ZEC",
+   "title": "Zcash Reveals Seven Zebra Security Fixes Ahead of November 5 NU7 Upgrade - Cryptonews.net",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBQQV9xRGMtc3V1bXFOcVJ0Yk1adWNCVHU1azREdUhZdHJaYTJGX0xCaUlObVpwenNIaUlyeEdoWFh6SjVtREZZbGhFUC1zTGdLTG9MbTlDR0c3QQ?oc=5",
+   "when": "Wed, 04 Nov 2026"
   },
   {
    "event_date": null,
@@ -361,7 +386,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "zcash/zips#1405",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-20",
@@ -424,36 +449,6 @@
    "first_seen": "2026-10-22",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:stellar-bell-upgrade-protocol-30-set-for-november-23-mainnet",
-   "last_seen": "2026-10-29",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-22",
-    "price_at_detect": 0.192579,
-    "score_at_detect": 21.2,
-    "t7": 0.0,
-    "t7_at": "2026-10-29"
-   },
-   "score": 30.0,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-22",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "XLM",
-   "title": "Stellar Bell Upgrade (Protocol 30) Set for November 23 Mainnet Activation - KuCoin",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUmZRZ2ROWFBwVFRRN1JELURaNV9VTTRvb2xndmpkMnhHV3cxXzRYR3pXY1hCRjFBaG9wNFVKd29BYWJoYWdnSTFjbVJrb1kwNE5UenM4TXBvamxKWHpqZ3pFOGFCUTQ4VU9wNE5EOW5xYy1DOWgxbDVxa1ZLOEhaNVNSdENPb1k4eVBYR05qdXExZkZOTWN2cVRES0g2aDRyaFRpdDVPS1c?oc=5",
-   "when": "Wed, 21 Oct 2026"
-  },
-  {
-   "event_date": "2026-11-23",
-   "first_seen": "2026-10-22",
-   "grade": "B",
-   "impact": "INFRA",
    "key": "news:stellar-sets-nov-23-vote-on-bell-s-post-quantum-contract-upg",
    "last_seen": "2026-10-31",
    "registry": {
@@ -485,7 +480,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "ethereum/go-ethereum@v1.17.10",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -547,7 +542,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@v1.38.3",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -578,7 +573,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@miner/v1.38.3",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -609,7 +604,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.4",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -640,7 +635,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.78.1",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -671,7 +666,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "cosmos/gaia@v29.0.1",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -702,7 +697,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "near/nearcore@2.14.0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -733,13 +728,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@testnet-v1.83.0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
     "price_at_detect": 0.796873,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-11-04"
    },
    "score": 29.9,
    "source": "release",
@@ -762,7 +759,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.5-stable",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -791,7 +788,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.5-beta",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -815,31 +812,32 @@
    "when": "2026-10-28"
   },
   {
-   "event_date": "2026-11-03",
-   "first_seen": "2026-10-28",
+   "event_date": null,
+   "first_seen": "2026-11-04",
    "grade": "B",
-   "impact": "FEATURE",
-   "key": "cosmoshub:gov:1060",
-   "last_seen": "2026-11-03",
+   "impact": "INFRA",
+   "key": "MystenLabs/sui@testnet-v1.83.1",
+   "last_seen": "2026-11-04",
+   "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-10-28",
-    "price_at_detect": 1.59,
-    "score_at_detect": 29.2
+    "detected_at": "2026-11-04",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 29.9
    },
-   "score": 29.2,
-   "source": "cosmos",
-   "stage": "VOTING",
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-10-28",
-     "stage": "VOTING"
+     "at": "2026-11-04",
+     "stage": "ACTIVATED"
     }
    ],
-   "symbol": "ATOM",
-   "title": "Migrate Community Pool USDC.n to USDC.inj via a Community Multisig",
-   "trust": 1.0,
-   "url": "https://www.mintscan.io/cosmoshub/proposals/1060",
+   "symbol": "SUI",
+   "title": "sui testnet-v1.83.1 — Sui Protocol Version in this release: `140`",
+   "trust": 0.95,
+   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.83.1",
    "when": "2026-11-03"
   },
   {
@@ -848,7 +846,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "anza-xyz/agave@v4.5.0-alpha.4",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -910,7 +908,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "IntersectMBO/cardano-node@11.2.0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -939,7 +937,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1059",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-21",
@@ -969,11 +967,40 @@
   },
   {
    "event_date": null,
+   "first_seen": "2026-11-04",
+   "grade": "C",
+   "impact": "SUPPLY",
+   "key": "ethereum/EIPs#12130",
+   "last_seen": "2026-11-04",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-04",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 24.8
+   },
+   "score": 24.8,
+   "source": "proposal",
+   "stage": "REVIEW",
+   "stage_history": [
+    {
+     "at": "2026-11-04",
+     "stage": "REVIEW"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Add EIP: ePBS Mandatory Burn of Execution Rewards",
+   "trust": 1.0,
+   "updated_at": "2026-11-03T23:11:18Z",
+   "url": "https://github.com/ethereum/EIPs/pull/12130",
+   "when": null
+  },
+  {
+   "event_date": null,
    "first_seen": "2026-10-22",
    "grade": "C",
    "impact": "FEATURE",
    "key": "ethereum/go-ethereum@v1.17.9",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1004,7 +1031,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ava-labs/avalanchego@v1.15.2",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1035,13 +1062,15 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.2",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
     "price_at_detect": 0.175026,
-    "score_at_detect": 19.2
+    "score_at_detect": 19.2,
+    "t7": 0.0,
+    "t7_at": "2026-11-04"
    },
    "score": 19.2,
    "source": "release",
@@ -1064,7 +1093,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v32.1",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1093,7 +1122,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v31.2",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1122,7 +1151,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "anza-xyz/agave@v4.4.0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1155,7 +1184,7 @@
    "grade": "C",
    "impact": "SUPPLY",
    "key": "news:bitway-token-unlock-on-november-2-101-6m-btw-cryptoticker-io",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-29",
@@ -1183,7 +1212,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "ethereum/EIPs#12581",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-25",
@@ -1214,7 +1243,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "near/nearcore@2.14.0-rc.7",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1241,39 +1270,11 @@
   },
   {
    "event_date": null,
-   "first_seen": "2026-10-29",
-   "grade": "C",
-   "impact": "SUPPLY",
-   "key": "news:universal-burn-vote-on-october-21-2026-what-it-means-for-the",
-   "last_seen": "2026-10-29",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 0.109916,
-    "score_at_detect": 17.3
-   },
-   "score": 17.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-29",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "CC",
-   "title": "Universal Burn vote on October 21, 2026: What it means for the Canton price - ad-hoc-news.de",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSEZZa195Y0d1cG5lQkJuZ2lOTWNUUUpVZDVmVjhQejBYRFlCVm1ReEVLZXFuLVZZcndNRzlWcXRIRmlNZ05MaWItSDc4NmtaM2pmTUtkamRIWTJiY3dkaDhMdmJPZThZaG1BTHhhUExCdkN4cFNySW52VFhORkpyRUI5WXRqX1FpVy1hWFI5MFNpOWpvQW9ReFBTakZvUmVYS2UtNFdDbWh2amJSMV9lblRQdGVMeFRKalJFZjl1YzBiUEVpX0ZYM3VfTk9KMWYz?oc=5",
-   "when": "Wed, 28 Oct 2026"
-  },
-  {
-   "event_date": null,
    "first_seen": "2026-11-03",
    "grade": "C",
    "impact": "INFRA",
    "key": "ethereum/EIPs#12612",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-03",
@@ -1302,7 +1303,7 @@
    "grade": "C",
    "impact": "SUPPLY",
    "key": "news:near-protocol-price-in-focus-as-issuance-vote-reaches-novemb",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-03",
@@ -1330,7 +1331,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmos/gaia@v29.1.0-rc0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1354,12 +1355,104 @@
    "when": "2026-11-02"
   },
   {
+   "event_date": null,
+   "first_seen": "2026-11-04",
+   "grade": "C",
+   "impact": "INFRA",
+   "key": "ethereum/EIPs#12527",
+   "last_seen": "2026-11-04",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-04",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 17.3
+   },
+   "score": 17.3,
+   "source": "proposal",
+   "stage": "REVIEW",
+   "stage_history": [
+    {
+     "at": "2026-11-04",
+     "stage": "REVIEW"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Add EIP: Common Computational Gas Scaling Factor",
+   "trust": 1.0,
+   "updated_at": "2026-11-03T19:00:33Z",
+   "url": "https://github.com/ethereum/EIPs/pull/12527",
+   "when": null
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-04",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "vechain/thor@v2.5.1-rc.1",
+   "last_seen": "2026-11-04",
+   "prerelease": true,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-04",
+    "price_at_detect": 0.0072353,
+    "score_at_detect": 17.3
+   },
+   "score": 17.3,
+   "source": "release",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-04",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "VET",
+   "title": "thor v2.5.1-rc.1 — What's Changed",
+   "trust": 0.95,
+   "url": "https://github.com/vechain/thor/releases/tag/v2.5.1-rc.1",
+   "when": "2026-11-03"
+  },
+  {
+   "event_date": "2026-11-03",
+   "first_seen": "2026-10-28",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "cosmoshub:gov:1060",
+   "last_seen": "2026-11-04",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-10-28",
+    "price_at_detect": 1.59,
+    "score_at_detect": 29.2,
+    "t7": 0.0,
+    "t7_at": "2026-11-04"
+   },
+   "score": 17.2,
+   "source": "cosmos",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-10-28",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-11-04",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ATOM",
+   "title": "Migrate Community Pool USDC.n to USDC.inj via a Community Multisig",
+   "trust": 1.0,
+   "url": "https://www.mintscan.io/cosmoshub/proposals/1060",
+   "when": "2026-11-03"
+  },
+  {
    "event_date": "2026-10-22",
    "first_seen": "2026-10-16",
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x2281f0e25992b203f0318542f74cd4ebd4d61625383c09e11839807834857906",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1394,7 +1487,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0xe4e1011484f2c499a39d0ebce83ae2d402e8e8d61a56c336e3ceb09ecc1e5776",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1429,7 +1522,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x8b670b4e3d960905dcd91be58e9588c3aa2449822cc761e2324fe7a70e5a7fdc",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1464,7 +1557,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x6bb55945d25b6a5ffe8469533b6c4953d27e0fd79e74ce1b5711eea9a3c47f4c",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-16",
@@ -1495,67 +1588,11 @@
   },
   {
    "event_date": null,
-   "first_seen": "2026-10-28",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "news:sun-wukong-ecosystem-hosts-x-space-roundtable-on-october-27-",
-   "last_seen": "2026-10-29",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-28",
-    "price_at_detect": 0.33657,
-    "score_at_detect": 12.1
-   },
-   "score": 12.1,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-28",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "TRX",
-   "title": "Sun Wukong Ecosystem hosts X Space roundtable on October 27 to discuss JUST upgrade and TRON growth flywheel - 深潮TechFlow",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKNTJJRmxuN1lDLVEzeDVKdnZaQlRFT2JEUkFwOGpEVU5VS3pTM0Vid2R5VTg5bmJTUlZSbFRFLWN2ZGRrMTdQdGxYcDNDTmlRYkhaRnFYZl9SUQ?oc=5",
-   "when": "Mon, 26 Oct 2026"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-10-29",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "news:october-22-2026-new-l1-plan-keeps-bnb-as-gas-asset-what-it-m",
-   "last_seen": "2026-10-29",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-10-29",
-    "price_at_detect": 746.55,
-    "score_at_detect": 12.1
-   },
-   "score": 12.1,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-10-29",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "BNB",
-   "title": "October 22, 2026 New L1 plan keeps BNB as gas asset: What it means for the BNB price - ad-hoc-news.de",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQazhwalE2VFYwR0duQmJmYkdMbGlwZ0cxMWRGcTBCYkVfbzZsVVdSZ0FlNHJ3Wkc4VnVQVlE2bmFOelJ6Y1ZJNW9kcnRxWW5xM2VaR1UtWVlPbk9GbEZKWFRUMHh3Q2gwQUdLcENveUFqVHMtYkZZSXhDT2FCV2lUZ3dmRmplbkZkQVByWW5HT1E0Vy1YOXVJT1ZYUnRpN0s0RUhjZnNPNkdzY3IyRUJrSHVYN3lHT3VUWnQyc1diZkEzQUc4b0pRT1pmRHVYSFJtVmNfZW4xVDRlV1Zp?oc=5",
-   "when": "Wed, 28 Oct 2026"
-  },
-  {
-   "event_date": null,
    "first_seen": "2026-10-27",
    "grade": "C",
    "impact": "INFRA",
    "key": "bitcoin/bips#2339",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-27",
@@ -1586,7 +1623,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "solana-foundation/solana-improvement-documents#713",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -1605,8 +1642,37 @@
    "symbol": "SOL",
    "title": "Add missing feature gate keys to SIMD front matter",
    "trust": 1.0,
-   "updated_at": "2026-11-02T22:54:23Z",
+   "updated_at": "2026-11-03T11:01:28Z",
    "url": "https://github.com/solana-foundation/solana-improvement-documents/pull/713",
+   "when": null
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-04",
+   "grade": "C",
+   "impact": "INFRA",
+   "key": "filecoin-project/FIPs#1303",
+   "last_seen": "2026-11-04",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-04",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 11.6
+   },
+   "score": 11.6,
+   "source": "proposal",
+   "stage": "PROPOSED",
+   "stage_history": [
+    {
+     "at": "2026-11-04",
+     "stage": "PROPOSED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "Add FIP: Size the miner actor's reward-derived charges (faults) by the consensus weight",
+   "trust": 1.0,
+   "updated_at": "2026-11-03T16:14:32Z",
+   "url": "https://github.com/filecoin-project/FIPs/pull/1303",
    "when": null
   },
   {
@@ -1615,7 +1681,7 @@
    "grade": "C",
    "impact": "SUPPLY",
    "key": "bnb-chain/bsc@v1.8.1",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1646,7 +1712,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.77.3",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1677,7 +1743,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "XRPLF/rippled@3.4.1",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1708,7 +1774,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "bitcoin-cash-node/bitcoin-cash-node@v29.2.0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1741,7 +1807,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.3",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1807,7 +1873,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1055",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-18",
@@ -1843,7 +1909,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v30.0.0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1874,7 +1940,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v29.0.0",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1905,7 +1971,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.1",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1938,7 +2004,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ava-labs/avalanchego@v1.15.1",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1971,7 +2037,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "IntersectMBO/cardano-node@11.1.3",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2004,7 +2070,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-06",
@@ -2038,7 +2104,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1057",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -2074,7 +2140,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1054",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-11",
@@ -2110,7 +2176,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1053",
-   "last_seen": "2026-11-03",
+   "last_seen": "2026-11-04",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-07",
