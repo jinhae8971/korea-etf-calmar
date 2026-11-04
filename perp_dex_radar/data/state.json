@@ -255,6 +255,10 @@
   [
    1793754511,
    "d"
+  ],
+  [
+   1793755661,
+   "s"
   ]
  ],
  "scope": [
@@ -607,37 +611,37 @@
    },
    "status": {
     "api": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "22건",
      "ok": true
     },
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     }
@@ -4546,6 +4550,10 @@
      [
       1793754511,
       45.5
+     ],
+     [
+      1793755661,
+      45.0
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
@@ -5574,6 +5582,10 @@
      [
       1793747310,
       72.5
+     ],
+     [
+      1793755661,
+      72.0
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
@@ -6418,6 +6430,10 @@
      [
       1793750912,
       26.5
+     ],
+     [
+      1793755661,
+      25.0
      ]
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
@@ -7405,27 +7421,27 @@
    },
    "status": {
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
-     "note": "23건",
+     "at": 1793755661,
+     "note": "43건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793754511,
+     "at": 1793755661,
      "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
      "ok": false
     }
@@ -7563,22 +7579,22 @@
    },
    "status": {
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     }
@@ -7887,8 +7903,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26338058,
-    "rh": 105504325
+    "eth": 26338154,
+    "rh": 105515547
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -10365,6 +10381,168 @@
      "signal": "fe_path",
      "title": "앱에 새 API 경로: /api/v1/buyVolumeQuota",
      "ts": 1793707709,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTWxEVkd0a2xXekhRSGdsMGJDSUl0U3BMQi1iUkRGMWFjRFVqUk80TjJJSXl5UHBVV2h6akhhOFpPdlEzNXo0TWFwZDF4dHhhWnVBMVVNOWl",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "73373aa919fc",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTWxEVkd0a2xXekhRSGdsMGJDSUl0U3BMQi1iUkRGMWFjRFVqUk80TjJJSXl5UHBVV2h6akhhOFpPdlEzNXo0TWFwZDF4dHhhWnVBMVVNOWlwUXVPQjdKNHVrUWozN3RsRlR3eG52N3VWZWVVQm1iWGpzbWpqcEpsUDZMbE9zbFZ0RW9VMmxR?oc=5",
+      "words": [
+       "launches"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Lighter price gains as Bitwise launches LIT staking ETP on Xetra - Crypto News",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOFRLSzgxdW1ubllKTWJpUUdwTVJzRVY0UUhPYzNzck91MU5LTlZWZ1VTUlBMeUdjdUl1eklCcldYVzIxM1BmejdZREJyUF9XazJ4ZkFjcGh",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "f21ee4411fb5",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOFRLSzgxdW1ubllKTWJpUUdwTVJzRVY0UUhPYzNzck91MU5LTlZWZ1VTUlBMeUdjdUl1eklCcldYVzIxM1BmejdZREJyUF9XazJ4ZkFjcGh1MDM2UVhma0w3bnAwMC0xOWdWYzJ4d2EzMXN2Qk9zVjVuYUtQZUlTa1pRT0FuWlEtY3k4eHZRN3VRTlZLRnpoa18tS01wLVh2VHY3b0ZrRFZPMjBtMzVvdzNvWWhJNExNYW1Kc2NVbGhEUHE2X1ZFSQ?oc=5",
+      "words": [
+       "airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Polymarket bets surge on Lighter airdrop as Hyperliquid lists LIT - TradingView",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9IU1Jma2JDdWxMWWtFTUJOZ2xQRTBYNzNPN0gzVlBRbEJzOGYybHNnNEI2SEVwOEV4ZThxQ1d2Wmo0MXVHTlVsR19OYzVuNGkwOTJQcjZJS2N",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "49176c8c0d28",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9IU1Jma2JDdWxMWWtFTUJOZ2xQRTBYNzNPN0gzVlBRbEJzOGYybHNnNEI2SEVwOEV4ZThxQ1d2Wmo0MXVHTlVsR19OYzVuNGkwOTJQcjZJS2NkYUdPM2RSNmVyTks0aUNpN0ktd1p4eGQ?oc=5",
+      "words": [
+       "Launch"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Lighter (LIT) Surges 3.95% on Bitwise ETP Launch - CoinMarketCap",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9BT0VFVGRSNEppWUk1Ykpfd2U0d3JudzEydWRWa2hBZkthSWdxLXA5SjV1N29ocHVPT3c0MkhMWUVqTjR6aTJIOXRLUWVvRS1GTFhMTzBxMXp",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "d3640de9aec7",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9BT0VFVGRSNEppWUk1Ykpfd2U0d3JudzEydWRWa2hBZkthSWdxLXA5SjV1N29ocHVPT3c0MkhMWUVqTjR6aTJIOXRLUWVvRS1GTFhMTzBxMXpPcmpkbFZjOGk1YU5JYjYyS1NsaFAtSWE?oc=5",
+      "words": [
+       "Listing"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Lighter (LIT) Surges 4.27 Points on Upbit Listing, Strong Fundamentals - CoinMarketCap",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZHVDUFBqU1R3TXZCVWNtb2V3TUNsT2stVFRIY185R2xCbXRCZFd1M05makJTVlNxeFRXOGZWdEhoV0FtOWo5SkIzOVk4MHdvRGVmQ2o4N2F",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "c05135f88da8",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZHVDUFBqU1R3TXZCVWNtb2V3TUNsT2stVFRIY185R2xCbXRCZFd1M05makJTVlNxeFRXOGZWdEhoV0FtOWo5SkIzOVk4MHdvRGVmQ2o4N2FkYWpYMU5QSGNzV0hma1M3U2lQYllnVThSbFhVLV9CQ2V4WUNrWEN1eUc2LTJzcXptdWVjTk0yN2htb1hUWE9od1NvTTZYUWt2QUhXS2I5LVdUTzNkazVsR0xDWHV2dw?oc=5",
+      "words": [
+       "Airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Lighter Airdrop Odds Hit 86% on Polymarket as Hyperliquid Lists LIT - CoinMarketCap",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPVE1rb0FZd25IZHNibWpUb0RJZ3RNX3ZGUkNBcmtwb21HazVuS0VRdlNVdmxaUWdUVEpMTnVNWXY4SkRRR0RFV0JoMV8wYS1QX1NoVzJob21",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "59a3ead65f9a",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPVE1rb0FZd25IZHNibWpUb0RJZ3RNX3ZGUkNBcmtwb21HazVuS0VRdlNVdmxaUWdUVEpMTnVNWXY4SkRRR0RFV0JoMV8wYS1QX1NoVzJob21zdElwdXVKX2M5cVl5aGxBZ0ZZUmc1c0RjRVBUR25qTGc2NGRFMUhlVnk5SS15ZEVBalFiS1dsYjNWNnBOYk5hRlQyTjJOQUQzbjczMlhCek1ZQzlOVGJSU1QwRTV5QkJCcFdHZUg0LTEzcHpQaEE?oc=5",
+      "words": [
+       "Token Listing"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: KuCoin Lighter Deep Dive: LIT Token Listing Rumors and the 2026 Decentralized Orderbook Landscape - ",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBVeE5tRXJ3UlRrRUxxM2lJSEw2bVpCcVJiTmFGS3dnelR1bkdDdXVkMXVmQ3FrVmpQWGJKZWhGeTV1bXVrSlAwMDdOUFYtaWg2ZExvcjA0dTF",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "4b95ee427216",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBVeE5tRXJ3UlRrRUxxM2lJSEw2bVpCcVJiTmFGS3dnelR1bkdDdXVkMXVmQ3FrVmpQWGJKZWhGeTV1bXVrSlAwMDdOUFYtaWg2ZExvcjA0dTF0Q25wazNjMWdRYVRGWjhURURvUTJoMHQ?oc=5",
+      "words": [
+       "Launch"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Lighter's Binary Options Launch Drives LIT Token Surge - CoinMarketCap",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNME5fZktFaXF5cjJLUkpRNWItRUVUWmctdmNreWVVay1SRnZfUmVVS21aRVpKNG9OekFhN2tfa0J6bWZDNXpzS1BOWFlELVJ1RmJPTzlNd1l",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "f913ed3828ca",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNME5fZktFaXF5cjJLUkpRNWItRUVUWmctdmNreWVVay1SRnZfUmVVS21aRVpKNG9OekFhN2tfa0J6bWZDNXpzS1BOWFlELVJ1RmJPTzlNd1loaXR3a2piNGlnbW5vV0dWNU5tYTlTTmpqYm1VbmZqLVJfS0lTd1htY25PS0N4ZkFKQk1ZakVwZmdLM2s?oc=5",
+      "words": [
+       "Airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Lighter Announces LIT Token With Points Airdrop and Buyback Plan - Coinfomania",
+     "ts": 1793755661,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPX3RsZ1ZXZmU5SDhSRFhFbmFYeG14REllMXFQdXAzNzNicGdrZDZ2MU8tUW05Y2hPd29YaFZvUzhSUXRiclZNS2V3ZThRa3BjTEJBalJkS1B",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "9d36de3cdd4b",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPX3RsZ1ZXZmU5SDhSRFhFbmFYeG14REllMXFQdXAzNzNicGdrZDZ2MU8tUW05Y2hPd29YaFZvUzhSUXRiclZNS2V3ZThRa3BjTEJBalJkS1BBUG5IMVlMNEJNRVlXWG5xd3RGcS1OZGxLdE4yZ2l3VkpCbW04bndGdmZ4M0otVzl4Y1c0eFVVU3EydzREZXFrX2JNRkJsR2c?oc=5",
+      "words": [
+       "Airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Lighter’s 250M LIT Token Transfer Sparks Airdrop Speculation - The Crypto Times",
+     "ts": 1793755661,
      "venue": "lighter-rh"
     }
    ],
@@ -12944,6 +13122,11 @@
      1793754511,
      246259.046,
      58647.48
+    ],
+    [
+     1793755661,
+     246299.529,
+     58652.383
     ]
    ],
    "level": "WATCH",
@@ -12954,7 +13137,9 @@
     "02c044ddd17d",
     "03059f0622e8",
     "05daa98f485b",
+    "06a6fd748965",
     "06f3a6ef9d39",
+    "09313586359f",
     "0a0456bae660",
     "0bb333b26c6a",
     "0f899933151b",
@@ -12981,6 +13166,7 @@
     "2233a77fcfff",
     "223ef7173b1c",
     "229e30808e54",
+    "2599044ca264",
     "26c8140aa841",
     "270018f0e559",
     "277db82cce8a",
@@ -12996,6 +13182,7 @@
     "2e58a5a8c9d4",
     "2ff47125cd28",
     "304373a2fd7e",
+    "31320094a627",
     "3262be3084ae",
     "334651fbf7df",
     "35ae83b9e1d1",
@@ -13003,6 +13190,7 @@
     "36963dd7f05d",
     "3710f5acebc6",
     "383659765d10",
+    "3838afe5c12c",
     "3a0d27baa465",
     "3a3f02b4c388",
     "3a7d3496d096",
@@ -13022,6 +13210,7 @@
     "48937e1ea08b",
     "491e744e97c7",
     "4bdcbda357fb",
+    "4c1394f1dbf4",
     "4cf0ea70edec",
     "4d6b177721ae",
     "4e4bd6256753",
@@ -13030,6 +13219,7 @@
     "51331cc85654",
     "553462a8ca79",
     "567b2609af02",
+    "568b593cd88d",
     "585742375056",
     "5aa332c193aa",
     "5acfe7c25b96",
@@ -13057,12 +13247,14 @@
     "6698626e96c7",
     "66fdd7c71cb7",
     "6b517f08f9b7",
+    "6b5f440e3d53",
     "6bf5dcf6b6e9",
     "6c0817f2d2f8",
     "6cae6234c3a9",
     "6dd57ec38bec",
     "6df53a634bc7",
     "6dfcddc64e87",
+    "7007c6472604",
     "71a228d869e9",
     "7207bd2272a5",
     "721e857c2885",
@@ -13098,6 +13290,7 @@
     "93a4eccd07c5",
     "9514eccc3ea4",
     "96b150c50794",
+    "975994941e75",
     "988ee5eae24b",
     "98ae181eba6d",
     "9b44188e2991",
@@ -13107,6 +13300,7 @@
     "a056b40475e5",
     "a06d66dc5268",
     "a15d572e40ea",
+    "a1a5c47bbf2a",
     "a1f82b559da9",
     "a38a60f0e30a",
     "a401765c9b94",
@@ -13118,10 +13312,12 @@
     "a8e8b73b9663",
     "a92f408c697b",
     "a99dad30e1e4",
+    "aad0324a8463",
     "aae07c64c3ed",
     "aae57ef0de47",
     "ac0257e17ac9",
     "ae0b5a369e45",
+    "ae283bba0541",
     "aedc20fd0e90",
     "af42e8a5ac7e",
     "b09beffba658",
@@ -13132,6 +13328,7 @@
     "b46415a97e07",
     "b6f4f348e640",
     "b7b62dd63ad7",
+    "b9a40ccdc578",
     "bae65f7a4875",
     "bbf271bb67ef",
     "bc685fd1858d",
@@ -13155,6 +13352,7 @@
     "d6afc9295674",
     "d86371f17401",
     "db0958ebc6c4",
+    "db0f68bb8ef8",
     "ddf1a58fcb19",
     "deabb5c66752",
     "df72f0a18b79",
@@ -13169,8 +13367,10 @@
     "e5e56a443e9e",
     "e5e68a9578cf",
     "e5f96b9009f9",
+    "e614c8ee24d8",
     "e7731688ebdb",
     "e8884c639c76",
+    "eabde10ae149",
     "eacb753778d7",
     "eaff9ca771a5",
     "ecfb189b7999",
@@ -13198,6 +13398,7 @@
     "fb67f7cd2e86",
     "fb6bcee58552",
     "fc2618d4ef54",
+    "fc52237bbc62",
     "fd82c7c45527",
     "fffb43ab328d"
    ],
@@ -14487,6 +14688,10 @@
     [
      1793754511,
      448429.83
+    ],
+    [
+     1793755661,
+     448429.83
     ]
    ],
    "seeded": true,
@@ -14596,57 +14801,57 @@
    },
    "status": {
     "ann": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "16건",
      "ok": true
     },
     "board": {
-     "at": 1793754511,
-     "note": "상위 10명 합계 246,259",
+     "at": 1793755661,
+     "note": "상위 10명 합계 246,300",
      "ok": true
     },
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793754511,
-     "note": "150블록 · 대량 0건",
+     "at": 1793755661,
+     "note": "96블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "모듈 159 · API 147",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
-     "note": "112건",
+     "at": 1793755661,
+     "note": "127건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "448,430 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "19건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     }
@@ -15386,6 +15591,10 @@
      [
       1793754511,
       9.5
+     ],
+     [
+      1793755661,
+      9.1
      ]
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
@@ -15928,6 +16137,10 @@
      [
       1793754511,
       4.5
+     ],
+     [
+      1793755661,
+      4.4
      ]
     ],
     "pacifica-fdv-above-200m-one-day-after-launch": [
@@ -17180,6 +17393,10 @@
      [
       1793754511,
       4.7
+     ],
+     [
+      1793755661,
+      4.8
      ]
     ],
     "pacifica-fdv-above-300m-one-day-after-launch-488": [
@@ -19512,6 +19729,10 @@
      [
       1793754511,
       13.5
+     ],
+     [
+      1793755661,
+      14.0
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2027": [
@@ -20091,27 +20312,27 @@
    },
    "status": {
     "ann": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     }
@@ -25126,27 +25347,27 @@
    },
    "status": {
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "16건",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     }
@@ -26142,22 +26363,22 @@
    },
    "status": {
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
-     "note": "9건",
+     "at": 1793755661,
+     "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "19건",
      "ok": true
     }
@@ -27648,17 +27869,17 @@
    },
    "status": {
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "8건",
      "ok": true
     }
@@ -27671,7 +27892,7 @@
    "api_watch": {
     "pages": {
      "https://docs.txflow.com/api/exchange.md": {
-      "at": 1793754511,
+      "at": 1793755661,
       "state": "closed"
      }
     },
@@ -27958,27 +28179,27 @@
    },
    "status": {
     "api_watch": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
-     "note": "16건",
+     "at": 1793755661,
+     "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     }
@@ -27991,11 +28212,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1793754511,
+      "at": 1793755661,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1793754511,
+      "at": 1793755661,
       "state": "closed"
      }
     },
@@ -28985,6 +29206,10 @@
      [
       1793754511,
       97.2
+     ],
+     [
+      1793755661,
+      97.4
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
@@ -30375,6 +30600,10 @@
      [
       1793754511,
       11.8
+     ],
+     [
+      1793755661,
+      11.6
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
@@ -32767,32 +32996,32 @@
    },
    "status": {
     "api_watch": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793754511,
-     "note": "13건",
+     "at": 1793755661,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793754511,
+     "at": 1793755661,
      "note": "20건",
      "ok": true
     }
