@@ -72,6 +72,49 @@ REFERENCE = {
 
 
 # ----------------------------------------------------------------- data
+SPLIT_KS = (2, 3, 4, 5, 8, 10, 15, 20, 25, 50)
+
+
+def adjust_splits(df, events=None, symbol=""):
+    """Back-adjust prices before an unadjusted split (2026-11-05: SOXX 3:1, MTUM ~4:1 came back raw).
+
+    Yahoo sometimes returns the split day unadjusted. A bar-to-bar gap of >44% down or >80% up is
+    treated as a split when it sits within 20% of an integer ratio k (or 1/k); earlier bars are
+    divided by k (volume multiplied). Listed split events are used as hints for the ratio."""
+    if df is None or len(df) < 2:
+        return df
+    df = df.copy()
+    hint = {}
+    for ev in (events or {}).values():
+        try:
+            hint[pd.Timestamp(int(ev["date"]), unit="s", tz="UTC").date()] = ev["numerator"] / ev["denominator"]
+        except Exception:  # noqa: BLE001
+            pass
+    c = df["close"].values
+    o = df["open"].values
+    for i in range(len(df) - 1, 0, -1):
+        prev, cur = c[i - 1], o[i]
+        if not prev or not cur:
+            continue
+        r = prev / cur
+        if 0.55 < r < 1.8:
+            continue
+        cands = list(SPLIT_KS) + [1 / k for k in SPLIT_KS]
+        d = df.index[i].date() if hasattr(df.index[i], "date") else None
+        if d in hint:
+            cands = [hint[d]] + cands
+        k = min(cands, key=lambda x: abs(r / x - 1))
+        if abs(r / k - 1) > 0.2:
+            continue
+        cols = ["open", "high", "low", "close"]
+        df.iloc[:i, [df.columns.get_loc(x) for x in cols]] /= k
+        df.iloc[:i, df.columns.get_loc("volume")] *= k
+        c = df["close"].values
+        o = df["open"].values
+        print(f"[split-adjust] {symbol} {df.index[i]} ratio {k:g} (gap {r:.2f})", file=sys.stderr)
+    return df
+
+
 def yahoo(symbol, interval, rng, prepost=False, tries=5):
     params = {"interval": interval, "range": rng,
               "includePrePost": "true" if prepost else "false",
@@ -93,6 +136,7 @@ def yahoo(symbol, interval, rng, prepost=False, tries=5):
                                ["open", "high", "low", "close", "volume"]}, index=idx)
             df = df.dropna(subset=["open", "high", "low", "close"])
             df = df[~df.index.duplicated(keep="last")].sort_index()
+            df = adjust_splits(df, res.get("events", {}).get("splits"), symbol)
             return df, res["meta"]
         except Exception as e:  # noqa: BLE001
             last = e
