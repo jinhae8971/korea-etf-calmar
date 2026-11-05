@@ -1,5 +1,5 @@
 {
- "generated_at": 1793911349,
+ "generated_at": 1793916504,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -142,6 +142,10 @@
   [
    1793911349,
    "s"
+  ],
+  [
+   1793916504,
+   "d"
   ]
  ],
  "status": {
@@ -171,7 +175,7 @@
    "ann": true,
    "board": true,
    "docs": true,
-   "eth_transfers": false,
+   "eth_transfers": true,
    "frontend": true,
    "news": true,
    "polymarket": true,
@@ -185,7 +189,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:pacifica_fi": false
+   "x:pacifica_fi": true
   },
   "qfex": {
    "docs": true,
@@ -210,7 +214,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": false
+   "x:TxFlow_L1": true
   },
   "variational": {
    "api_watch": true,
@@ -218,7 +222,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": false
+   "x:variational_io": true
   }
  },
  "undecidable": false
