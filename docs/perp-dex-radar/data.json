@@ -1,7 +1,38 @@
 {
- "generated_at": 1793936300,
+ "generated_at": 1793938107,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Update Account Settings, Two-Factor Authentication, Get Two-Factor Status",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "72be5f8ba8e1",
+   "ref": {
+    "moved": [],
+    "name": "문서 전체 목록",
+    "new": [
+     "Update Account Settings — https://docs.pacifica.fi/api-documentation/api/rest-api/account/update-account-settings.md",
+     "Two-Factor Authentication — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor.md",
+     "Get Two-Factor Status — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/get-two-factor-status.md",
+     "Begin TOTP Enrollment — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/begin-totp-enrollment.md",
+     "Finish TOTP Enrollment — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/finish-totp-enrollment.md",
+     "Begin WebAuthn Registration — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/begin-webauthn-registration.md",
+     "Finish WebAuthn Registration — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/finish-webauthn-registration.md",
+     "Begin WebAuthn Authentication — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/begin-webauthn-authentication.md",
+     "Disable Two-Factor Authentication — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/disable-two-factor.md",
+     "Remove Factor — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/remove-factor.md"
+    ],
+    "removed": [],
+    "url": "https://docs.pacifica.fi/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 새 문서 46개",
+   "ts": 1793938107,
+   "venue": "pacifica",
+   "venue_name": "Pacifica"
+  },
   {
    "detail": "Status / 运行状态",
    "family": "S2",
@@ -4203,10 +4234,6 @@
  ],
  "runs": [
   [
-   1793849906,
-   "d"
-  ],
-  [
    1793851714,
    "d"
   ],
@@ -4333,6 +4360,10 @@
   [
    1793936300,
    "d"
+  ],
+  [
+   1793938107,
+   "d"
   ]
  ],
  "venues": [
@@ -4372,37 +4403,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "23건",
      "ok": true
     },
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "19건",
      "ok": true
     }
@@ -5093,11 +5124,6 @@
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1792348739,
-     191233.573,
-     45248.082
-    ],
     [
      1792362376,
      191430.84,
@@ -7092,6 +7118,11 @@
      1793936300,
      249725.61,
      60031.01
+    ],
+    [
+     1793938107,
+     249734.708,
+     60031.93
     ]
    ],
    "level": "WATCH",
@@ -8614,64 +8645,68 @@
     [
      1793936300,
      454646.26
+    ],
+    [
+     1793938107,
+     454646.26
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "16건",
      "ok": true
     },
     "board": {
-     "at": 1793936300,
-     "note": "상위 10명 합계 249,726",
+     "at": 1793938107,
+     "note": "상위 10명 합계 249,735",
      "ok": true
     },
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793936300,
-     "note": "150블록 · 대량 0건",
+     "at": 1793938107,
+     "note": "149블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "모듈 160 · API 147",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
-     "note": "77건",
+     "at": 1793938107,
+     "note": "75건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "454,646 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "18건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1793936300,
-     "note": "20건",
-     "ok": true
+     "at": 1793938107,
+     "err": "X 수집 실패: https://xcancel.com/vnovakovski/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/vnovakovski/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 7,
@@ -8853,27 +8888,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "21건",
      "ok": true
     }
@@ -9268,28 +9303,28 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "29건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793936300,
-     "note": "20건",
+     "at": 1793938107,
+     "note": "22건",
      "ok": true
     }
    },
@@ -9408,34 +9443,34 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
-     "note": "13건",
+     "at": 1793938107,
+     "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793936300,
-     "note": "20건",
-     "ok": true
+     "at": 1793938107,
+     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -9455,6 +9490,36 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "Update Account Settings, Two-Factor Authentication, Get Two-Factor Status",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "72be5f8ba8e1",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Update Account Settings — https://docs.pacifica.fi/api-documentation/api/rest-api/account/update-account-settings.md",
+       "Two-Factor Authentication — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor.md",
+       "Get Two-Factor Status — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/get-two-factor-status.md",
+       "Begin TOTP Enrollment — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/begin-totp-enrollment.md",
+       "Finish TOTP Enrollment — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/finish-totp-enrollment.md",
+       "Begin WebAuthn Registration — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/begin-webauthn-registration.md",
+       "Finish WebAuthn Registration — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/finish-webauthn-registration.md",
+       "Begin WebAuthn Authentication — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/begin-webauthn-authentication.md",
+       "Disable Two-Factor Authentication — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/disable-two-factor.md",
+       "Remove Factor — https://docs.pacifica.fi/api-documentation/api/rest-api/two-factor/remove-factor.md"
+      ],
+      "removed": [],
+      "url": "https://docs.pacifica.fi/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 46개",
+     "ts": 1793938107,
+     "venue": "pacifica"
+    },
     {
      "detail": "will-pacifica-launch-a-token-by-june-30-2027",
      "family": "S4",
@@ -9645,34 +9710,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 13% · 27년 3/31까지 39% · 27년 6/30까지 77%",
+   "odds": "토큰 출시 확률 12/31까지 13% · 27년 3/31까지 39% · 27년 6/30까지 61%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
-     "note": "9건",
+     "at": 1793938107,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793936300,
-     "note": "19건",
-     "ok": true
+     "at": 1793938107,
+     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -9756,27 +9821,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "20건",
      "ok": true
     }
@@ -9819,22 +9884,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "5건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "20건",
      "ok": true
     }
@@ -9858,17 +9923,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "11건",
      "ok": true
     }
@@ -9909,23 +9974,23 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793936300,
+     "at": 1793938107,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793936300,
-     "note": "20건",
+     "at": 1793938107,
+     "note": "21건",
      "ok": true
     }
    },
