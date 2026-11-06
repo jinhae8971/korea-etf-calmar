@@ -1,5 +1,5 @@
 {
- "generated_at": 1793923711,
+ "generated_at": 1793925501,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -15,10 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1793837318,
-   "d"
-  ],
   [
    1793839106,
    "d"
@@ -146,6 +142,10 @@
   [
    1793923711,
    "d"
+  ],
+  [
+   1793925501,
+   "d"
   ]
  ],
  "status": {
@@ -196,7 +196,7 @@
    "feed": true,
    "news": true,
    "polymarket": true,
-   "x:QFEX": false
+   "x:QFEX": true
   },
   "risex": {
    "docs": true,
@@ -210,8 +210,8 @@
    "x:TitanExchange_": true
   },
   "txflow": {
-   "api_watch": true,
-   "docs": true,
+   "api_watch": false,
+   "docs": false,
    "news": true,
    "polymarket": true,
    "x:TxFlow_L1": true
