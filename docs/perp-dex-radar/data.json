@@ -1,7 +1,48 @@
 {
- "generated_at": 1793968704,
+ "generated_at": 1793986106,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral, and others. Most markets have the same weight.",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "05d7da9427a8",
+   "ref": {
+    "added": [
+     "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral, and others. Most markets have the same weight."
+    ],
+    "name": "로빈후드 체인 포인트 안내",
+    "removed": 1,
+    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+   "ts": 1793986106,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52WUwtUVVpemNZb0VXajl1bXFPMlVMWklsczZVOC1NamFoWERfUVR1SFJTaDh4UVRkcDhENDZoOS05dWhOejBwZXZhWVpva016YWM1UlBGLVB",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "d37d97c5e56c",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52WUwtUVVpemNZb0VXajl1bXFPMlVMWklsczZVOC1NamFoWERfUVR1SFJTaDh4UVRkcDhENDZoOS05dWhOejBwZXZhWVpva016YWM1UlBGLVBKLW9qbFJyaExyUERKLThseWlfS0ZoUURDMnU4R0E?oc=5",
+    "words": [
+     "Airdrop",
+     "Rewards"
+    ]
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: How to Participate in the Variational Airdrop and Earn VAR Crypto Rewards - CoinCodex",
+   "ts": 1793986106,
+   "venue": "variational",
+   "venue_name": "Variational"
+  },
   {
    "detail": "0xf89d7b9c → 0xb829e684",
    "family": "S1",
@@ -4290,10 +4331,6 @@
  ],
  "runs": [
   [
-   1793882304,
-   "d"
-  ],
-  [
    1793901563,
    "s"
   ],
@@ -4420,6 +4457,10 @@
   [
    1793968704,
    "d"
+  ],
+  [
+   1793986106,
+   "s"
   ]
  ],
  "venues": [
@@ -4459,39 +4500,39 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "23건",
      "ok": true
     },
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1793968704,
-     "note": "19건",
-     "ok": true
+     "at": 1793986106,
+     "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 4,
@@ -4502,6 +4543,26 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral, and others. Most markets have the same weight.",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "05d7da9427a8",
+     "ref": {
+      "added": [
+       "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral, and others. Most markets have the same weight."
+      ],
+      "name": "로빈후드 체인 포인트 안내",
+      "removed": 1,
+      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+     "ts": 1793986106,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "0xf89d7b9c → 0xb829e684",
      "family": "S1",
@@ -5154,31 +5215,11 @@
      "title": "앱에 새 API 경로: /api/v1/boExecuteStats",
      "ts": 1793707709,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "5ef5af030c73",
-     "ref": {
-      "name": "/api/v1/buyVolumeQuota"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_path",
-     "title": "앱에 새 API 경로: /api/v1/buyVolumeQuota",
-     "ts": 1793707709,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1792689121,
-     196074.729,
-     47093.516
-    ],
     [
      1792705042,
      196352.791,
@@ -7173,6 +7214,11 @@
      1793968704,
      250047.331,
      60093.45
+    ],
+    [
+     1793986106,
+     270632.476,
+     64944.766
     ]
    ],
    "level": "WATCH",
@@ -7180,10 +7226,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1792762086,
-     448620.94
-    ],
     [
      1792779774,
      451072.78
@@ -8763,62 +8805,66 @@
     [
      1793968704,
      454721.94
+    ],
+    [
+     1793986106,
+     454721.94
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1793968704,
-     "note": "16건",
+     "at": 1793986106,
+     "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1793968704,
-     "note": "상위 10명 합계 250,047",
+     "at": 1793986106,
+     "note": "상위 10명 합계 270,632",
      "ok": true
     },
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1793968704,
-     "note": "149블록 · 대량 0건",
+     "at": 1793986106,
+     "note": "1443블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "모듈 161 · API 147",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
-     "note": "75건",
+     "at": 1793986106,
+     "note": "73건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "454,722 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1793968704,
-     "note": "17건",
-     "ok": true
+     "at": 1793986106,
+     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
+     "ok": false
     },
     "x:vnovakovski": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     }
@@ -9002,27 +9048,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
-     "note": "11건",
+     "at": 1793986106,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     }
@@ -9379,28 +9425,6 @@
      "title": "Extended 공식 X: XTEN tokenomics will be released later today. Join the Extended team for a live AMA in Discord at 18:00 UTC. https://dis",
      "ts": 1793629984,
      "venue": "extended"
-    },
-    {
-     "detail": "Interface Terms of Use, Spot Trading Service Terms of Use",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "03b41d569d21",
-     "ref": {
-      "moved": [],
-      "name": "문서 전체 목록",
-      "new": [
-       "Interface Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md",
-       "Spot Trading Service Terms of Use — https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md"
-      ],
-      "removed": [],
-      "url": "https://docs.extended.exchange/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "index_change",
-     "title": "공식 문서 목록 변경: 새 문서 2개",
-     "ts": 1793373610,
-     "venue": "extended"
     }
    ],
    "groups": [
@@ -9412,33 +9436,33 @@
    "level": "IMMINENT",
    "links": {},
    "name": "Extended",
-   "odds": "토큰 출시 확률 12/31까지 94%",
+   "odds": "토큰 출시 확률 12/31까지 96%",
    "rh_supply_hist": null,
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "29건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1793968704,
-     "note": "22건",
+     "at": 1793986106,
+     "note": "20건",
      "ok": true
     }
    },
@@ -9459,6 +9483,25 @@
   {
    "api_watch": "closed",
    "events": [
+    {
+     "detail": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52WUwtUVVpemNZb0VXajl1bXFPMlVMWklsczZVOC1NamFoWERfUVR1SFJTaDh4UVRkcDhENDZoOS05dWhOejBwZXZhWVpva016YWM1UlBGLVB",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "d37d97c5e56c",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52WUwtUVVpemNZb0VXajl1bXFPMlVMWklsczZVOC1NamFoWERfUVR1SFJTaDh4UVRkcDhENDZoOS05dWhOejBwZXZhWVpva016YWM1UlBGLVBKLW9qbFJyaExyUERKLThseWlfS0ZoUURDMnU4R0E?oc=5",
+      "words": [
+       "Airdrop",
+       "Rewards"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: How to Participate in the Variational Airdrop and Earn VAR Crypto Rewards - CoinCodex",
+     "ts": 1793986106,
+     "venue": "variational"
+    },
     {
      "detail": "Order Types",
      "family": "S2",
@@ -9557,32 +9600,32 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
-     "note": "14건",
+     "at": 1793986106,
+     "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     }
@@ -9829,27 +9872,27 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     }
@@ -9935,27 +9978,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
-     "note": "13건",
+     "at": 1793986106,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     }
@@ -9998,22 +10041,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "5건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "20건",
      "ok": true
     }
@@ -10037,17 +10080,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "11건",
      "ok": true
     }
@@ -10088,23 +10131,23 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1793968704,
-     "note": "7건",
+     "at": 1793986106,
+     "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1793968704,
+     "at": 1793986106,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1793968704,
-     "note": "21건",
+     "at": 1793986106,
+     "note": "20건",
      "ok": true
     }
    },
