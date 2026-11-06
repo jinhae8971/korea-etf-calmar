@@ -28,6 +28,7 @@
   - QQQ·SPY·SOXX·DRAM 보정 지표도 계산한다(brief.snapshot, state/snap 저장).
 - `stale=True`면 1회 재실행한다. 그래도 stale이면 "데이터 미갱신" 한 줄만 보고하고 끝낸다.
 - 시세는 세션 날짜로 정렬된다. 비트코인만 최신값을 쓴다.
+- 액면분할 보정(11/5 추가): Yahoo가 분할일 가격을 보정하지 않고 줄 때가 있다(11/5 SOXX 3:1, MTUM 4:1). brief.yahoo()의 adjust_splits()가 봉 사이 44% 이상 갭이 정수 비율에 가까우면 과거 가격을 나눠 맞추고 `[split-adjust]`를 stderr로 남긴다. 이 로그가 나오면 narrative에 보정 사실을 한 줄 적고, 그날 changes()의 해당 종목 '전일 대비' 신호(이전 스냅샷이 미보정 값)는 무시한다.
 
 ## 2. 차트
 - `python3 charts.py <session>` → `out/<session>/img/01~07.png`
