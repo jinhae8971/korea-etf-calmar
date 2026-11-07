@@ -680,6 +680,20 @@ class Integration(unittest.TestCase):
         self.assertIn("Demo 공식 텔레그램에 새 글", txt)
         self.assertIn("Demo 앱 코드: 에어드랍 확인 API 경로 바뀜", txt)
         self.assertIn("알려진 상태: 토큰 없음", txt)
+        # 이미 임박 — 새 강신호(청구 오픈 공지)는 같은 등급이어도 다시 알린다 (2026-11-07)
+        self.tg.append({"title": "Demo airdrop claim is now live. Claim window closes Dec 1.", "link": "https://t.me/demo/3",
+                        "ts": t0 + 7200})
+        self.lb_sum += 1
+        l2 = self.run_at(t0 + 9000)
+        self.assertEqual(l2["levels"]["demo"], "IMMINENT")
+        self.assertNotEqual(l2["outbox"]["id"], l1["outbox"]["id"])
+        t2 = l2["outbox"]["text"]
+        self.assertIn("앞서 보낸 '임박' 알림 뒤에 새로 나온 신호예요.", t2)
+        self.assertIn("claim is now live", t2)
+        self.assertNotIn("앱 코드: 에어드랍 확인 API 경로 바뀜", t2)  # 이미 알린 신호는 다시 안 보여 줌
+        self.lb_sum += 1
+        l3 = self.run_at(t0 + 10800)
+        self.assertEqual(l3["outbox"]["id"], l2["outbox"]["id"])  # 새 신호가 없으면 그대로
 
     def test_api_drop_late_and_resume(self):
         t0 = ts(2026, 10, 12, 9, 17)

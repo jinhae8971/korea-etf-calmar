@@ -622,6 +622,13 @@ def main(argv):
         elif not seeding and day and J.RANK[level] >= 2 and J.RANK[level] > J.RANK[notified]:
             alerts.append((level, v, groups, act, note))
             vs["notified"], vs["notified_ids"], vs["notified_at"] = level, strong_ids, now
+        elif not seeding and day and J.RANK[level] >= 2 and J.RANK[level] == J.RANK[notified] and \
+                (new := [e for e in act if J.RANK[e["grade"]] >= 2 and e["id"] not in nids]):
+            # 같은 등급에서 새 강신호 (2026-11-07) — 이미 '임박'인 거래소에 청구 오픈·TGE 날짜 같은 공지가 와도 알리게.
+            # 새로 나온 신호만 보여 준다.
+            more = f"앞서 보낸 '{J.LEVEL_KO[notified]}' 알림 뒤에 새로 나온 신호예요."
+            alerts.append((level, v, groups, new, (more + " " + note).strip()))
+            vs["notified_ids"], vs["notified_at"] = strong_ids, now
         if seeding and not seed_flag:
             vs["seeded"] = True
         summaries.append(summary(v, vs, now))
