@@ -408,8 +408,16 @@ jobs:
           HUB_BOT_TOKEN: ${{ secrets.HUB_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DRY: ${{ inputs.dry_run }}
-          SEND_NOW: ${{ inputs.send_now }}
+          SEND_NOW_INPUT: ${{ inputs.send_now }}
+          COMMIT_MSG: ${{ github.event_name == 'push' && github.event.head_commit.message || '' }}
         run: |
+          # 즉시 1회 발송: 수동 입력 send_now 또는 푸시 커밋 메시지의 [send-now:기능id]
+          SEND_NOW="$SEND_NOW_INPUT"
+          if [ -z "$SEND_NOW" ]; then
+            SEND_NOW=$(printf '%s' "$COMMIT_MSG" | grep -oE '\[send-now:[a-z_]+\]' | head -1 | sed -E 's/\[send-now:([a-z_]+)\]/\1/' || true)
+          fi
+          export SEND_NOW
+          if [ -n "$SEND_NOW" ]; then echo "즉시 발송 대상: $SEND_NOW"; fi
           if [ "$DRY" = "true" ]; then python brief_hub/hub.py --dry-run; else python brief_hub/hub.py; fi
       - name: Save state
         if: always()
