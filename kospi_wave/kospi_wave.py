@@ -194,6 +194,75 @@ def track_abc(df: pd.DataFrame, imp: dict, pct: float) -> dict:
 # ============================================================
 # 판정
 # ============================================================
+# ============================================================
+# 과거 유사 사례 (급등 → 조정) — 라이브러리는 analogs.json (tools/build_analogs.py로 1회 생성)
+# ============================================================
+ANALOG_PATH = os.path.join(HERE, "analogs.json")
+ANALOG_TOP = 8
+FIRST_LOW_WIN = 60          # 1차 바닥 = 고점 후 60주 내 최저 종가
+
+
+def _shape(seg, n: int = 40):
+    import numpy as np
+    x = np.log(np.asarray(seg, float)); x = (x - x[0]) / (x[-1] - x[0])
+    return np.interp(np.linspace(0, len(x) - 1, n), np.arange(len(x)), x)
+
+
+def find_analogs(df: pd.DataFrame, imp: dict, lib: dict | None = None) -> dict | None:
+    """현재 상승 모양 + 고점 이후 경로를 과거 에피소드와 비교 → 상위 사례와 1차 바닥 시점·깊이 분포."""
+    import numpy as np
+    lib = lib if lib is not None else load(ANALOG_PATH)
+    if not lib or not lib.get("episodes"):
+        return None
+    c = df["Close"].to_numpy(float)
+    i5 = imp["5"]["i"]
+    # 종가 기준 앵커: 5파 주의 종가 고점, 0파 구간 최저 종가
+    i0 = imp["0"]["i"] + int(np.argmin(c[imp["0"]["i"]:i5 + 1]))
+    pk = i5 + int(np.argmax(c[i5:min(len(c), i5 + 3)]))
+    n_post = len(c) - 1 - pk
+    if n_post < 2 or pk - i0 < 10:
+        return None
+    L = np.log(c[pk] / c[i0])
+    cs = _shape(c[i0:pk + 1])
+    cpost = np.log(c[pk:] / c[pk]) / L
+    dd_now = c[-1] / c[pk] - 1
+    rows = []
+    for e in lib["episodes"]:
+        post = np.asarray(e["post"], float) / 100
+        if len(post) <= n_post:
+            continue
+        Lh = np.log(e["x"])
+        pp = np.log(post[:n_post + 1]) / Lh
+        sc = (np.sqrt(np.mean((np.asarray(e["shape"]) - cs) ** 2))
+              + 1.5 * np.sqrt(np.mean((pp - cpost) ** 2))
+              + 0.5 * abs(Lh - L) + 0.5 * abs(np.log(e["rise_w"] / (pk - i0))))
+        w = post[:FIRST_LOW_WIN + 1]
+        k1 = int(np.argmin(w))
+        nh = np.where(post[1:] > 1.0)[0]
+        rows.append({"label": f"{e['name']} {e['peak'][:4]}", "score": float(sc), "dd_same": float(post[n_post] - 1),
+                     "low_w": k1, "low_dd": float(w[k1] - 1), "min_dd": float(post.min() - 1),
+                     "newhigh_w": int(nh[0] + 1) if len(nh) else None})
+    rows.sort(key=lambda r: r["score"])
+    fast = [r for r in rows if r["dd_same"] <= 0.6 * dd_now]          # 같은 시점에 비슷하게 급락한 사례 우선
+    top = (fast if len(fast) >= 5 else rows)[:ANALOG_TOP]
+    lw = sorted(r["low_w"] for r in top)
+    ld = sorted(r["low_dd"] for r in top)
+    peak_date = df.index[pk]
+    med_w = float(np.median(lw))
+    deep = [r for r in top if r["newhigh_w"] is None or r["newhigh_w"] > 156]   # 3년 내 고점 미회복 = 장기 약세
+    return {
+        "peak_close": float(c[pk]), "peak_date": peak_date.strftime("%Y-%m-%d"), "weeks_since": n_post,
+        "dd_now": float(dd_now), "top": top, "filtered": len(fast) >= 5,
+        "low_w_range": [lw[0], lw[-1]], "low_w_med": med_w,
+        "low_date_range": [(peak_date + pd.Timedelta(weeks=lw[0])).strftime("%Y-%m-%d"),
+                           (peak_date + pd.Timedelta(weeks=lw[-1])).strftime("%Y-%m-%d")],
+        "low_date_med": (peak_date + pd.Timedelta(weeks=med_w)).strftime("%Y-%m-%d"),
+        "low_dd_med": float(np.median(ld)), "low_dd_range": [ld[0], ld[-1]],
+        "low_level_med": float(c[pk] * (1 + np.median(ld))),
+        "deep_n": len(deep), "deep_names": [r["label"] for r in deep],
+    }
+
+
 def ema(s: pd.Series, n: int) -> pd.Series:
     return s.ewm(span=n, adjust=False).mean()
 
@@ -269,6 +338,12 @@ def analyze(df: pd.DataFrame, daily: pd.DataFrame, prev_latest: dict | None = No
         out["c_weeks"] = len(df) - 1 - (imp["5"]["i"] + B["k"])     # B 고점 → 이번 주
         out["hist_shrink1"] = abs(h0) < abs(h1)
     out["phase"], out["phase_label"], out["tone"] = judge(out)
+    if abc["stage"] not in ("IMPULSE", "NEW_HIGH"):
+        try:
+            out["analog"] = find_analogs(df, imp)
+        except Exception as e:  # pragma: no cover - 라이브러리 손상 등은 본 판정을 막지 않음
+            print(f"[analog] 실패: {e}")
+            out["analog"] = None
     if abc["stage"] == "C":
         out["score_items"] = score_items(out)
         out["score"] = round(sum(it["pts"] for it in out["score_items"]))
@@ -438,6 +513,23 @@ def build_message(o: dict, prev: dict | None) -> str:
               f"· RSI {o['rsi']:.1f} · MACD 히스토 {o['macd_hist']:+,.0f} {o['hist_state']}",
               f"· EMA50 {f(o['ema50'])} · EMA200 {f(o['ema200'])}",
               "<i>C파 진입 후 완성도 점수가 표시됩니다</i>"]
+
+    an = o.get("analog")
+    if an:
+        ym = lambda d: f"{d[2:4]}/{d[5:7]}"
+        rem = max(0, round(an["low_w_med"] - an["weeks_since"]))
+        lvl, cur = an["low_level_med"], o["price"]
+        L += ["", "〈과거 유사 사례 · 조정 기간〉",
+              "유사도 상위: " + " · ".join(r["label"] for r in an["top"][:3]),
+              f"· 1차 바닥 시점 고점 후 {an['low_w_range'][0]}~{an['low_w_range'][1]}주 (중앙 {an['low_w_med']:.0f}주)",
+              f"   → {ym(an['low_date_range'][0])}~{ym(an['low_date_range'][1])}, 중앙 {ym(an['low_date_med'])}",
+              f"· 현재 {an['weeks_since']}주차 · 남은 기간 약 {rem}주",
+              f"· 1차 바닥 낙폭 중앙 {an['low_dd_med'] * 100:.0f}% → 약 {f(lvl)} (현재 대비 {pct(lvl, cur)})"]
+        lt = "🔴" if an["deep_n"] > len(an["top"]) / 2 else ("🟡" if an["deep_n"] else "🟢")
+        L.append(f"{lt} 3년 내 고점 미회복 {an['deep_n']}/{len(an['top'])}건"
+                 + (f" ({', '.join(an['deep_names'][:3])})" if an["deep_n"] else ""))
+        if an["dd_now"] < min(r["dd_same"] for r in an["top"]):
+            L.append(f"<i>같은 주차 기준 이번 하락({an['dd_now'] * 100:.0f}%)이 비교 사례 중 가장 빠름</i>")
 
     L += ["", "〈트리거〉"]
     if abc["stage"] == "C":

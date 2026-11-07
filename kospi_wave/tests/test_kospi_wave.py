@@ -95,5 +95,18 @@ class WaveTest(unittest.TestCase):
         self.assertEqual(W.grade(85), "완성·반등 확인")
 
 
+    def test_analogs(self):
+        imp = W.count_impulse(self.df, W.zigzag(self.df, 0.06))
+        post = [100, 90, 80, 70, 60, 55, 50, 52, 55, 60] + [65] * 260
+        lib = {"episodes": [{"name": f"T{i}", "low": "2000-01-01", "peak": "2001-01-01", "x": 3.0, "rise_w": 37,
+                             "shape": list(W._shape([1, 1.5, 1.25, 2.6, 2.2, 3.0])), "post": post} for i in range(6)]}
+        an = W.find_analogs(self.df, imp, lib)
+        self.assertIsNotNone(an)
+        self.assertEqual(an["low_w_med"], 6)
+        self.assertAlmostEqual(an["low_dd_med"], -0.5, places=3)
+        self.assertEqual(an["deep_n"], 6)
+        self.assertEqual(len(an["top"]), 6)
+
+
 if __name__ == "__main__":
     unittest.main()
