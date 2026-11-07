@@ -488,7 +488,12 @@ class Render(unittest.TestCase):
         self.assertIn("제외: <b>StandX</b> — 이제 10곳을 봐요.", J.render_kickoff(sums, now, CFG, None, [], ["StandX"]))
 
     def test_upcoming_dates(self):
-        sx, ex = VENUES["standx"], VENUES["extended"]
+        sx = VENUES["standx"]
+        # 일정 계산 시험용 고정 일정 (실제 Extended 설정은 운영 중에 바뀌므로 여기서는 옛 일정을 그대로 씀)
+        ex = dict(VENUES["extended"], key_dates=[
+            {"at": "2026-10-31", "text": "MiCA 백서 공개 예정"},
+            {"at": "2026-11-03", "text": "Final Arc 대회 끝"},
+            {"at": "2026-11-30", "label": "11월 중", "text": "**XTEN TGE** (날짜 미정)"}])
         now = ts(2026, 10, 24, 10, 30)
         u = J.upcoming(sx, now)
         self.assertEqual([(x["when"], x["dday"], x["near"]) for x in u],
