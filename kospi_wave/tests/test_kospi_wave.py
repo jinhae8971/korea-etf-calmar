@@ -76,5 +76,24 @@ class WaveTest(unittest.TestCase):
         self.assertEqual(kept["3"]["date"], imp["3"]["date"])
 
 
+    def test_score_range_and_lights(self):
+        o = W.analyze(self.df, self.df.tail(5))
+        if o["abc"]["stage"] == "C":
+            self.assertTrue(0 <= o["score"] <= 100)
+            self.assertEqual(sum(x["max"] for x in o["score_items"]), 100)
+            for x in o["score_items"]:
+                self.assertIn(x["light"], {"🟢", "🟡", "🔴"})
+                self.assertLessEqual(x["pts"], x["max"])
+            msg = W.build_message(o, {"phase": o["phase"], "score": o["score"] - 5})
+            self.assertIn("〈C파 완성도〉", msg)
+            self.assertIn("전일 +5", msg)
+
+    def test_lerp_and_grade(self):
+        self.assertEqual(W.lerp(40, 45, 30, 0, 10), 10 / 3)
+        self.assertEqual(W.lerp(20, 45, 30, 0, 10), 10)
+        self.assertEqual(W.grade(51), "완성 접근")
+        self.assertEqual(W.grade(85), "완성·반등 확인")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -265,8 +265,82 @@ def analyze(df: pd.DataFrame, daily: pd.DataFrame, prev_latest: dict | None = No
         out["rsi_a"], out["rsi_c"] = rsi_a, rsi_c
         out["bull_div"] = C["p"] < A["p"] and rsi_c > rsi_a + 2
         out["rebound"] = (price - C["p"]) / c_len if c_len else 0.0
+        out["a_weeks"] = A["k"]                                     # 5파 고점 → A 저점
+        out["c_weeks"] = len(df) - 1 - (imp["5"]["i"] + B["k"])     # B 고점 → 이번 주
+        out["hist_shrink1"] = abs(h0) < abs(h1)
     out["phase"], out["phase_label"], out["tone"] = judge(out)
+    if abc["stage"] == "C":
+        out["score_items"] = score_items(out)
+        out["score"] = round(sum(it["pts"] for it in out["score_items"]))
     return out
+
+
+# ============================================================
+# C파 완성도 점수 (0~100) + 지표 신호등
+# ============================================================
+def lerp(x: float, x0: float, x1: float, y0: float, y1: float) -> float:
+    """x0→y0, x1→y1 선형, 구간 밖은 끝값 고정."""
+    if x1 == x0:
+        return y1
+    t = min(max((x - x0) / (x1 - x0), 0.0), 1.0)
+    return y0 + (y1 - y0) * t
+
+
+def light(pts: float, mx: float) -> str:
+    r = pts / mx if mx else 0
+    return "🟢" if r >= 0.8 else ("🟡" if r >= 0.3 else "🔴")
+
+
+SCORE_GRADES = ((80, "완성·반등 확인"), (60, "완성 유력"), (40, "완성 접근"), (0, "진행 중"))
+
+
+def grade(score: float) -> str:
+    return next(g for th, g in SCORE_GRADES if score >= th)
+
+
+def score_items(o: dict) -> list[dict]:
+    """가격 40 · 시간 10 · 모멘텀 30 · 반등 확인 20 = 100. 각 항목 신호등 = 배점 대비 80%↑ 🟢 / 30%↑ 🟡 / 그 외 🔴."""
+    imp, abc, fib = o["impulse"], o["abc"], o["fib"]
+    A, B, C = abc["A"], abc["B"], abc["C"]
+    price, cr, rt = o["price"], o["c_ratio"], o["retr_now"]
+    ct = o["c_targets"]
+    it: list[dict] = []
+
+    def add(group, mx, pts, text):
+        it.append({"group": group, "max": mx, "pts": round(pts, 1), "light": light(pts, mx), "text": text})
+
+    # --- 가격 (40) ---
+    pts = lerp(cr, 0.382, 0.618, 0, 10) + (lerp(cr, 0.618, 1.0, 0, 5) if cr > 0.618 else 0)
+    add("가격", 15, pts, f"C/A {cr:.2f}배 · 0.618={K.fmt(ct['0.618'])}")
+    pts = lerp(rt, 0.382, 0.5, 0, 8) + (lerp(rt, 0.5, 0.618, 0, 7) if rt > 0.5 else 0)
+    add("가격", 15, pts, f"되돌림 {rt * 100:.0f}% · 61.8%={K.fmt(float(fib['0.618']))}")
+    if imp.get("valid"):
+        w4 = imp["4"]["p"]
+        gap = price / w4 - 1
+        add("가격", 10, lerp(gap, 0.10, 0.03, 0, 10), f"4파 저점 {K.fmt(w4)} ({gap * 100:+.1f}%)")
+    else:
+        add("가격", 10, 0, "4파 저점 미확정")
+
+    # --- 시간 (10) ---
+    tr = o["c_weeks"] / o["a_weeks"] if o["a_weeks"] else 0
+    add("시간", 10, lerp(tr, 0.382, 1.0, 0, 10), f"C {o['c_weeks']}주 / A {o['a_weeks']}주 ({tr:.1f}배)")
+
+    # --- 모멘텀 (30) ---
+    add("모멘텀", 10, lerp(o["rsi"], 45, 30, 0, 10), f"RSI {o['rsi']:.1f} (30 이하 만점)")
+    add("모멘텀", 10, 10 if o["bull_div"] else 0,
+        f"RSI 다이버전스 {'있음' if o['bull_div'] else '없음'} (A {o['rsi_a']:.0f}→C {o['rsi_c']:.0f})")
+    pts = 10 if o["hist_turn"] else (5 if o["hist_shrink1"] else 0)
+    st = "2주 연속 축소" if o["hist_turn"] else ("축소 시작" if o["hist_shrink1"] else "확대")
+    add("모멘텀", 10, pts, f"MACD 히스토 {o['macd_hist']:+,.0f} {st}")
+
+    # --- 반등 확인 (20) ---
+    rb = o["rebound"]
+    add("반등", 10, lerp(rb, 0.0, 0.382, 0, 10),
+        f"C저점 대비 반등 {rb * 100:.0f}% (38.2%={K.fmt(C['p'] + 0.382 * (B['p'] - C['p']))})")
+    e50 = o["ema50"]
+    add("반등", 10, 10 if price > e50 else lerp(price / e50 - 1, -0.10, 0.0, 0, 5),
+        f"EMA50 {K.fmt(e50)} ({(price / e50 - 1) * 100:+.1f}%)")
+    return it
 
 
 def judge(o: dict) -> tuple[str, str, str]:
@@ -339,31 +413,36 @@ def build_message(o: dict, prev: dict | None) -> str:
             L.append(f"{k}  {f(abc[k]['p'])}  <i>{sd(abc[k]['date'])}</i>{tail}")
 
     fib = o["fib"]
-    L += ["", "〈위치〉",
-          f"· 0→5 상승분 되돌림 {o['retr_now'] * 100:.0f}% (종가)",
-          f"   38.2% {f(fib['0.382'])} · 50% {f(fib['0.5'])} · 61.8% {f(fib['0.618'])} · 78.6% {f(fib['0.786'])}"]
     if abc["stage"] == "C":
-        ct = o["c_targets"]
-        L.append(f"· C/A 길이 {o['c_ratio']:.2f}배 — C=0.618A {f(ct['0.618'])} · C=A {f(ct['1.0'])}")
-        if imp["valid"]:
-            L.append(f"· 직전 4파 저점 {f(imp['4']['p'])} ({pct(o['price'], imp['4']['p'])})")
-
-    L += ["", "〈바닥 신호〉"]
-    if abc["stage"] == "C":
-        div = "<b>상승 다이버전스</b>" if o["bull_div"] else "다이버전스 없음"
-        L.append(f"· RSI {o['rsi']:.1f} (A저점 {o['rsi_a']:.1f} → C저점 {o['rsi_c']:.1f}) {div}")
+        sc = o["score"]
+        bar = "▰" * round(sc / 10) + "▱" * (10 - round(sc / 10))
+        diff = ""
+        if prev and isinstance(prev.get("score"), (int, float)):
+            dlt = sc - prev["score"]
+            diff = f"  <i>전일 {dlt:+d}</i>" if dlt else "  <i>전일 동일</i>"
+        L += ["", f"〈C파 완성도〉 <b>{sc}/100</b> · {grade(sc)}{diff}", bar]
+        for g in ("가격", "시간", "모멘텀", "반등"):
+            grp = [x for x in o["score_items"] if x["group"] == g]
+            got, mx = sum(x["pts"] for x in grp), sum(x["max"] for x in grp)
+            L.append(f"<b>{g}</b> {got:.0f}/{mx}")
+            for x in grp:
+                L.append(f"{x['light']} {x['text']}")
+        # 반대 시나리오 위험 — 점수와 별개
+        d200 = o["price"] / o["ema200"] - 1
+        lt = "🔴" if d200 < 0 else ("🟡" if d200 < 0.05 else "🟢")
+        L += ["<b>위험</b>", f"{lt} EMA200 {f(o['ema200'])} ({d200 * 100:+.1f}%) · 이탈 시 큰 조정"]
     else:
-        L.append(f"· RSI {o['rsi']:.1f} / SMA {o['rsi_sma']:.1f}")
-    turn = " · <b>2주 연속 축소(전환 초기)</b>" if o["hist_turn"] else ""
-    L.append(f"· MACD 히스토 {o['macd_hist']:+,.0f} {o['hist_state']}{turn}")
-    L.append(f"· EMA50 {f(o['ema50'])} ({pct(o['price'], o['ema50'])}) · EMA200 {f(o['ema200'])} ({pct(o['price'], o['ema200'])})")
-    L.append(f"· 슈퍼트렌드 {f(o['st'])} ({'상승' if o['st_up'] else '하락'})")
+        L += ["", "〈위치〉",
+              f"· 0→5 상승분 되돌림 {o['retr_now'] * 100:.0f}% (종가)",
+              f"   38.2% {f(fib['0.382'])} · 50% {f(fib['0.5'])} · 61.8% {f(fib['0.618'])}",
+              f"· RSI {o['rsi']:.1f} · MACD 히스토 {o['macd_hist']:+,.0f} {o['hist_state']}",
+              f"· EMA50 {f(o['ema50'])} · EMA200 {f(o['ema200'])}",
+              "<i>C파 진입 후 완성도 점수가 표시됩니다</i>"]
 
     L += ["", "〈트리거〉"]
     if abc["stage"] == "C":
         L.append(f"· C 종료 확인: 주봉 종가 EMA50 {f(o['ema50'])} 회복")
         L.append(f"· 조정 종료 확정: B 고점 {f(abc['B']['p'])} 돌파")
-        L.append(f"· 반대 시나리오: 주봉 종가 EMA200 {f(o['ema200'])} 이탈 → 더 큰 조정")
         sup = sorted({round(fib["0.618"]), round(o["c_targets"]["0.618"]), round(o["ema200"])}, reverse=True)
         sup = [s for s in sup if s < o["price"]] or sup
         L.append("· 아래 지지 후보: " + " · ".join(f(s) for s in sup))
@@ -373,7 +452,7 @@ def build_message(o: dict, prev: dict | None) -> str:
     else:
         L.append(f"· 고점 {f(imp['5']['p'])} 대비 {pct(o['price'], imp['5']['p'])}")
 
-    L += ["", "<i>※ 파동 카운트는 해석이 갈릴 수 있는 참고용 분석. 최종 판단·리스크 관리는 본인.</i>"]
+    L += ["", "<i>※ 신호등: 배점 80%↑ 🟢 · 30%↑ 🟡 · 미만 🔴. 파동 카운트는 해석이 갈릴 수 있는 참고용 분석.</i>"]
     return "\n".join(L)
 
 
@@ -398,7 +477,7 @@ def write(path: str, obj) -> None:
 
 def slim(o: dict) -> dict:
     keep = ("price", "chg", "chg_pct", "close_date", "phase", "phase_label", "tone", "retr_now",
-            "ema50", "ema200", "rsi", "macd_hist", "c_ratio", "bull_div", "hist_turn")
+            "ema50", "ema200", "rsi", "macd_hist", "c_ratio", "bull_div", "hist_turn", "score")
     return {k: o[k] for k in keep if k in o}
 
 
