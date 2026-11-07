@@ -89,7 +89,7 @@ class WaveTest(unittest.TestCase):
             self.assertIn("전일 +5", msg)
 
     def test_lerp_and_grade(self):
-        self.assertEqual(W.lerp(40, 45, 30, 0, 10), 10 / 3)
+        self.assertAlmostEqual(W.lerp(40, 45, 30, 0, 10), 10 / 3)
         self.assertEqual(W.lerp(20, 45, 30, 0, 10), 10)
         self.assertEqual(W.grade(51), "완성 접근")
         self.assertEqual(W.grade(85), "완성·반등 확인")
