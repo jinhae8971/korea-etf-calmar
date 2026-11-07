@@ -199,6 +199,11 @@ def track_abc(df: pd.DataFrame, imp: dict, pct: float) -> dict:
 # ============================================================
 ANALOG_PATH = os.path.join(HERE, "analogs.json")
 ANALOG_TOP = 8
+CHART_PATH = os.path.join(HERE, "data", "analog_chart.png")
+CHART_REL = "kospi_wave/data/analog_chart.png"           # 허브가 레포 루트 기준으로 읽는 경로
+EN = {"코스피": "KOSPI", "코스닥": "KOSDAQ", "닛케이": "Nikkei", "대만": "TAIEX", "상해": "Shanghai", "선전": "Shenzhen",
+      "항셍": "Hang Seng", "나스닥": "Nasdaq", "SOX": "SOX", "S&P500": "S&P500", "다우": "Dow", "센섹스": "Sensex",
+      "보베스파": "Bovespa", "인니": "Jakarta", "아르헨": "Merval", "튀르키예": "BIST100"}
 FIRST_LOW_WIN = 60          # 1차 바닥 = 고점 후 60주 내 최저 종가
 
 
@@ -239,7 +244,9 @@ def find_analogs(df: pd.DataFrame, imp: dict, lib: dict | None = None) -> dict |
         w = post[:FIRST_LOW_WIN + 1]
         k1 = int(np.argmin(w))
         nh = np.where(post[1:] > 1.0)[0]
-        rows.append({"label": f"{e['name']} {e['peak'][:4]}", "score": float(sc), "dd_same": float(post[n_post] - 1),
+        rows.append({"label": f"{e['name']} {e['peak'][:4]}", "label_en": f"{EN.get(e['name'], e['name'])} {e['peak'][:4]}",
+                     "path": [round(float(x * 100), 1) for x in post[:FIRST_LOW_WIN + 21]],
+                     "score": float(sc), "dd_same": float(post[n_post] - 1),
                      "low_w": k1, "low_dd": float(w[k1] - 1), "min_dd": float(post.min() - 1),
                      "newhigh_w": int(nh[0] + 1) if len(nh) else None})
     rows.sort(key=lambda r: r["score"])
@@ -251,6 +258,7 @@ def find_analogs(df: pd.DataFrame, imp: dict, lib: dict | None = None) -> dict |
     med_w = float(np.median(lw))
     deep = [r for r in top if r["newhigh_w"] is None or r["newhigh_w"] > 156]   # 3년 내 고점 미회복 = 장기 약세
     return {
+        "cur_path": [round(float(x / c[pk] * 100), 1) for x in c[pk:]],
         "peak_close": float(c[pk]), "peak_date": peak_date.strftime("%Y-%m-%d"), "weeks_since": n_post,
         "dd_now": float(dd_now), "top": top, "filtered": len(fast) >= 5,
         "low_w_range": [lw[0], lw[-1]], "low_w_med": med_w,
@@ -261,6 +269,49 @@ def find_analogs(df: pd.DataFrame, imp: dict, lib: dict | None = None) -> dict |
         "low_level_med": float(c[pk] * (1 + np.median(ld))),
         "deep_n": len(deep), "deep_names": [r["label"] for r in deep],
     }
+
+
+def render_analog_chart(an: dict, path: str = CHART_PATH, n_lines: int = 6) -> str | None:
+    """현재 코스피 vs 유사 사례 경로(고점=100) 오버레이 PNG. 한글 폰트가 없는 러너를 고려해 영문 라벨."""
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+    except Exception as e:  # pragma: no cover
+        print(f"[chart] matplotlib 없음: {e}")
+        return None
+    top = an["top"][:n_lines]
+    fig, ax = plt.subplots(figsize=(8, 5), dpi=110)
+    pal = ["#eb6834", "#1baf7a", "#eda100", "#6250d6", "#e34948", "#888780"]
+    for r, col, ls in zip(top, pal, ["--", ":", "--", ":", "--", ":"]):
+        ax.plot(range(len(r["path"])), r["path"], ls, color=col, lw=1.4, label=r["label_en"])
+    cur = an["cur_path"]
+    ax.plot(range(len(cur)), cur, color="#2a78d6", lw=3, label="KOSPI now", zorder=5)
+    ax.plot(len(cur) - 1, cur[-1], "o", color="#2a78d6", ms=7, zorder=6)
+    a, b = an["low_w_range"]
+    ax.axvspan(a, b, color="#888780", alpha=0.12, lw=0)
+    ax.text((a + b) / 2, 0.02, f"1st-low range {a}-{b}w", transform=ax.get_xaxis_transform(),
+            ha="center", fontsize=8, color="#444441")
+    lvl = 100 * (1 + an["low_dd_med"])
+    ax.axhline(lvl, color="#444441", lw=1, ls="-.")
+    ax.axvline(an["low_w_med"], color="#444441", lw=1, ls="-.")
+    ax.text(an["low_w_med"] + 0.8, 97, f"median 1st low: week {an['low_w_med']:.0f} ({an['low_date_med'][:7]})",
+            fontsize=8, color="#444441")
+    ax.text(1, lvl + 1.2, f"median depth {an['low_dd_med'] * 100:.0f}% = {an['low_level_med']:,.0f}", fontsize=8, color="#444441")
+    ax.set_xlim(0, FIRST_LOW_WIN + 20)
+    ax.set_ylim(max(20, min(min(min(r["path"]) for r in top), min(cur)) - 5), 102)
+    ax.set_xlabel(f"weeks after peak ({an['peak_date']}, close {an['peak_close']:,.0f})")
+    ax.set_ylabel("% of peak")
+    ax.set_title(f"KOSPI correction vs past analogs  (week {an['weeks_since']}, {an['dd_now'] * 100:.0f}%)", fontsize=11)
+    ax.grid(axis="y", color="#e1e0d9", lw=0.8)
+    for sp in ("top", "right"):
+        ax.spines[sp].set_visible(False)
+    ax.legend(fontsize=8, frameon=False, ncol=2, loc="lower left")
+    fig.tight_layout()
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    fig.savefig(path)
+    plt.close(fig)
+    return path
 
 
 def ema(s: pd.Series, n: int) -> pd.Series:
@@ -596,8 +647,12 @@ def main(argv: list[str] | None = None) -> int:
         print(msg)
         return 0
 
+    photos = []
+    if o.get("analog") and render_analog_chart(o["analog"]):
+        photos = [CHART_REL]
     payload = {"as_of_kst": now.strftime("%Y-%m-%dT%H:%M:%S+09:00"), "source": K.DAILY_SOURCE,
-               **{k: v for k, v in o.items()}, "message": msg}
+               **{k: v for k, v in o.items()}, "message": msg,
+               "photos": photos, "photo_caption": "KOSPI 조정 경로 vs 과거 유사 사례 (고점=100)"}
     write(OUT_PATH, payload)
     hist = [h for h in hist if h.get("close_date") != o["close_date"]] + [slim(o)]
     write(HIST_PATH, hist[-260:])

@@ -106,6 +106,9 @@ class WaveTest(unittest.TestCase):
         self.assertAlmostEqual(an["low_dd_med"], -0.5, places=3)
         self.assertEqual(an["deep_n"], 6)
         self.assertEqual(len(an["top"]), 6)
+        import tempfile
+        out = W.render_analog_chart(an, os.path.join(tempfile.mkdtemp(), "c.png"))
+        self.assertTrue(out is None or os.path.getsize(out) > 1000)
 
 
 if __name__ == "__main__":
