@@ -22,6 +22,10 @@ on:
         description: "발송 없이 판정만"
         type: boolean
         default: false
+      send_now:
+        description: "지정한 기능 id를 시각·요일·야간 규칙 무시하고 지금 1회 발송 (예: kospi_wave)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -57,6 +61,16 @@ jobs:
                 "days": [0, 1, 2, 3, 4],
                 "fresh_key": "as_of_kst",
                 "why": "국내 장 시작 전 지지·저항 · 평일 08:00 (수집 05:43~07:23 슬롯, 수집 잡이 08:00에 허브를 깨움)"
+              },
+              {
+                "id": "kospi_wave",
+                "name": "코스피 엘리어트 파동",
+                "path": "kospi_wave/data/latest.json",
+                "mode": "daily",
+                "earliest": "08:00",
+                "days": [0, 1, 2, 3, 4],
+                "fresh_key": "as_of_kst",
+                "why": "5파 상승 → ABC 조정 시나리오 일간 판정 · 평일 08:00 매매기준점 다음 메시지 (2026-11-07, 수집은 KOSPI Levels 잡에서)"
               },
               {
                 "id": "topsignal",
@@ -321,7 +335,10 @@ jobs:
           def run(now: datetime, dry: bool, root: str = ROOT, state_path: str = STATE_PATH) -> list[tuple[str, str, bool]]:
               cfg = load_json(os.path.join(HERE, "schedule.json"))
               ng = cfg["night_guard"]
-              if not (ng["start"] <= now.hour < ng["end"]):
+              force = (os.environ.get("SEND_NOW") or "").strip()
+              if force and force not in {s["id"] for s in cfg["sources"]}:
+                  sys.exit(f"send_now: 알 수 없는 기능 id '{force}'")
+              if not force and not (ng["start"] <= now.hour < ng["end"]):
                   print(f"[night] {now:%H:%M} KST — 야간 발송 금지 창, 종료")
                   return []
               state = load_json(state_path) if os.path.exists(state_path) else {}
@@ -337,7 +354,12 @@ jobs:
                   except (OSError, json.JSONDecodeError):
                       d = None
                   st = state.get(src["id"], {})
-                  text, new, why = decide(src, d, st, now, cfg["stale_alert_after_hours"])
+                  if force and src["id"] != force:
+                      continue
+                  if force:
+                      text, new, why = (body_of(d) if d else None), dict(st), "수동 즉시 발송"
+                  else:
+                      text, new, why = decide(src, d, st, now, cfg["stale_alert_after_hours"])
                   sent = False
                   if text:
                       if dry:
@@ -386,6 +408,7 @@ jobs:
           HUB_BOT_TOKEN: ${{ secrets.HUB_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DRY: ${{ inputs.dry_run }}
+          SEND_NOW: ${{ inputs.send_now }}
         run: |
           if [ "$DRY" = "true" ]; then python brief_hub/hub.py --dry-run; else python brief_hub/hub.py; fi
       - name: Save state

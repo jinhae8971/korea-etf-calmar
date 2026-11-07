@@ -1,6 +1,6 @@
 name: KOSPI Levels
 
-# 코스피 매매기준점(지지·저항·추세·3-시나리오) — 평일 장 시작 전 브리프.
+# 코스피 매매기준점(지지·저항·추세·3-시나리오) + 엘리어트 파동 판정 — 평일 장 시작 전 브리프.
 # 계산만 하고 kospi_levels/data/latest.json(message)을 커밋한다. 발송은 Brief Hub(@spytltgld_strategy_bot).
 # 2026-10-24 jinhae8971/kospi-levels 레포에서 이전 — 그쪽 봇 토큰이 폐기돼(401) 10/21부터 연속 실패.
 #
@@ -20,6 +20,8 @@ on:
       - "kospi_levels/kospi_levels.py"
       - "kospi_levels/tests/**"
       - "kospi_levels/requirements.txt"
+      - "kospi_wave/kospi_wave.py"
+      - "kospi_wave/tests/**"
       - ".github/workflows/kospi-levels.yml"
   workflow_dispatch:
     inputs:
@@ -54,7 +56,9 @@ jobs:
         run: pip install -q -r kospi_levels/requirements.txt
 
       - name: Test gate
-        run: python -m unittest discover -s kospi_levels/tests
+        run: |
+          python -m unittest discover -s kospi_levels/tests
+          python -m unittest discover -s kospi_wave/tests
 
       - name: Collect
         env:
@@ -68,17 +72,31 @@ jobs:
             python kospi_levels/kospi_levels.py
           fi
 
+      # 엘리어트 파동 판정(5파 상승 → ABC 조정) — 같은 데이터 로더 재사용, 실패해도 매매기준점은 막지 않는다 (2026-11-07)
+      - name: Elliott wave
+        continue-on-error: true
+        env:
+          TZ: "Asia/Seoul"
+          FORCE: ${{ github.event_name == 'push' || inputs.force == true }}
+        run: |
+          set -euo pipefail
+          if [ "$FORCE" = "true" ]; then
+            python kospi_wave/kospi_wave.py --force
+          else
+            python kospi_wave/kospi_wave.py
+          fi
+
       - name: Commit
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add kospi_levels/data
+          git add kospi_levels/data kospi_wave/data
           if git diff --cached --quiet; then
             echo "변경 없음 — 커밋 생략"
             exit 0
           fi
-          AS_OF=$(python -c "import json;print(json.load(open('kospi_levels/data/latest.json'))['as_of_kst'])")
+          AS_OF=$(python -c "import json;print(json.load(open('kospi_levels/data/latest.json'))['as_of_kst'])" 2>/dev/null || date +%FT%T)
           git commit -m "chore(kospi-levels): snapshot ${AS_OF} KST"
           for i in 1 2 3; do
             if git push; then exit 0; fi
