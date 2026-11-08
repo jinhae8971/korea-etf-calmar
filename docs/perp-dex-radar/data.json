@@ -1,7 +1,23 @@
 {
- "generated_at": 1794162240,
+ "generated_at": 1794175703,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "",
+   "family": "S3",
+   "grade": "WATCH",
+   "id": "0f46cbd0c225",
+   "ref": {
+    "name": "/api/v1/pushnotif/registered"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "fe_path",
+   "title": "앱에 새 API 경로: /api/v1/pushnotif/registered",
+   "ts": 1794175703,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "0x4a4aaa01 → 0x91d40e48",
    "family": "S1",
@@ -4375,46 +4391,6 @@
    "ts": 1791697749,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x3dd7c834→0x1a51016f",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "0bffcb4bff01",
-   "ref": {
-    "amount": 2452016.0,
-    "chain": "eth",
-    "from": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
-    "to": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-    "tx": "0xaacbe0a243c26a56c413c1d43b862df7956030768a7db111881c8a208e931a0f"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 2.45M 대량 이동",
-   "ts": 1791579647,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0xe554dcb0→0x3dd7c834",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "42c70cb6d14b",
-   "ref": {
-    "amount": 2452017.0,
-    "chain": "eth",
-    "from": "0xe554dcb002e4f3546d67e6deed84323eed989d62",
-    "to": "0x3dd7c834eaa70c98e1c224808a3c62163b344dae",
-    "tx": "0xd02bdd3fe61f0b15ff357be66e399c16bf898bb1f9a72ca08dc4850322c03516"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 2.45M 대량 이동",
-   "ts": 1791571331,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
@@ -4545,6 +4521,10 @@
   [
    1794162240,
    "s"
+  ],
+  [
+   1794175703,
+   "d"
   ]
  ],
  "venues": [
@@ -4584,37 +4564,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "23건",
      "ok": true
     },
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "19건",
      "ok": true
     }
@@ -4627,6 +4607,21 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "",
+     "family": "S3",
+     "grade": "WATCH",
+     "id": "0f46cbd0c225",
+     "ref": {
+      "name": "/api/v1/pushnotif/registered"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "fe_path",
+     "title": "앱에 새 API 경로: /api/v1/pushnotif/registered",
+     "ts": 1794175703,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "0x4a4aaa01 → 0x91d40e48",
      "family": "S1",
@@ -5308,31 +5303,11 @@
      "title": "앱에 새 화면 모듈: guilds",
      "ts": 1793707709,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "0340f912a00b",
-     "ref": {
-      "name": "tickOnSecondBoundaries"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "앱에 새 화면 모듈: tickOnSecondBoundaries",
-     "ts": 1793707709,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793075904,
-     219606.481,
-     52938.41
-    ],
     [
      1793077700,
      219616.928,
@@ -7327,6 +7302,11 @@
      1794162240,
      272109.194,
      65424.887
+    ],
+    [
+     1794175703,
+     272427.19,
+     65543.97
     ]
    ],
    "level": "WATCH",
@@ -7334,10 +7314,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1792961384,
-     459569.98
-    ],
     [
      1792970712,
      459569.98
@@ -9117,62 +9093,66 @@
     [
      1794162240,
      456935.47
+    ],
+    [
+     1794175703,
+     456935.47
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794162240,
-     "note": "상위 10명 합계 272,109",
+     "at": 1794175703,
+     "note": "상위 10명 합계 272,427",
      "ok": true
     },
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794162240,
-     "note": "975블록 · 대량 0건",
+     "at": 1794175703,
+     "note": "1118블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1794162240,
-     "note": "모듈 161 · API 147",
+     "at": 1794175703,
+     "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
-     "note": "75건",
+     "at": 1794175703,
+     "note": "74건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "456,935 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794162240,
-     "note": "12건",
+     "at": 1794175703,
+     "note": "18건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "20건",
      "ok": true
     }
@@ -9229,33 +9209,33 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 14% · 27년 6/30까지 22%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 12% · 27년 6/30까지 22%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794162240,
-     "note": "21건",
+     "at": 1794175703,
+     "note": "20건",
      "ok": true
     }
    },
@@ -9627,29 +9607,29 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
-     "note": "28건",
+     "at": 1794175703,
+     "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794162240,
-     "note": "21건",
-     "ok": true
+     "at": 1794175703,
+     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -9771,33 +9751,33 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794162240,
-     "note": "20건",
+     "at": 1794175703,
+     "note": "21건",
      "ok": true
     }
    },
@@ -9937,21 +9917,6 @@
      "title": "Polymarket: Will Pacifica launch a token by June 30, 2027? 51% → 73%",
      "ts": 1793570911,
      "venue": "pacifica"
-    },
-    {
-     "detail": "will-pacifica-launch-a-token-by-december-31-2027",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "2614a846b400",
-     "ref": {
-      "url": "https://polymarket.com/market/will-pacifica-launch-a-token-by-december-31-2027"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "polymarket",
-     "title": "Polymarket: Will Pacifica launch a token by December 31, 2027? 51% → 76%",
-     "ts": 1793557640,
-     "venue": "pacifica"
     }
    ],
    "groups": [],
@@ -9965,28 +9930,28 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794162240,
-     "note": "20건",
+     "at": 1794175703,
+     "note": "21건",
      "ok": true
     }
    },
@@ -10049,27 +10014,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
-     "note": "12건",
+     "at": 1794175703,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "20건",
      "ok": true
     }
@@ -10112,24 +10077,24 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
-     "note": "7건",
+     "at": 1794175703,
+     "note": "6건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794162240,
-     "note": "20건",
-     "ok": true
+     "at": 1794175703,
+     "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -10151,17 +10116,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "9건",
      "ok": true
     }
@@ -10202,22 +10167,22 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794162240,
+     "at": 1794175703,
      "note": "20건",
      "ok": true
     }
