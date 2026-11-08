@@ -314,6 +314,47 @@ def render_analog_chart(an: dict, path: str = CHART_PATH, n_lines: int = 6) -> s
     return path
 
 
+# ============================================================
+# 엔벨로프 (20일선 ± 밴드) — 11/09 반영: NH투자증권 김동훈 대리 '엔벨로프 활용' 영상(위폴, 2026-11-03)
+#   영상 기준 ±20%는 개별 종목용. 코스피 지수는 ±20% 도달이 드물어(1996~ 4회) ±10%를 주 밴드로 쓴다.
+# ============================================================
+ENV_MA, ENV_BAND, ENV_BAND_STOCK = 20, 0.10, 0.20
+
+
+def envelope_stats(close: pd.Series, band: float = ENV_BAND, fwd: int = 20, gap: int = 20) -> dict | None:
+    """밴드 첫 이탈(직전 20거래일 내 이탈 없음) 이후 fwd 거래일 수익률 분포 — 하단·상단 각각."""
+    import numpy as np
+    ma = close.rolling(ENV_MA).mean()
+    dev = (close / ma - 1).to_numpy()
+    c = close.to_numpy()
+    out = {}
+    for side, hit in (("lo", dev <= -band), ("hi", dev >= band)):
+        first = hit & ~np.r_[False, hit[:-1]]          # 전날은 밴드 안, 오늘 이탈
+        sel, last = [], -10 ** 9
+        for i in np.where(first)[0]:
+            if i - last >= gap:                          # 이벤트 간 20거래일 간격(군집 제거)
+                sel.append(i); last = i
+        r = np.array([c[i + fwd] / c[i] - 1 for i in sel if i + fwd < len(c)])
+        out[side] = {"n": int(len(r)), "med": float(np.median(r)) if len(r) else None,
+                     "win": float((r > 0).mean()) if len(r) else None}
+    return out
+
+
+def envelope(daily: pd.DataFrame) -> dict:
+    close = daily["Close"]
+    ma = float(close.rolling(ENV_MA).mean().iloc[-1])
+    dev = float(close.iloc[-1] / ma - 1)
+    out = {"ma": ma, "dev": dev, "lo": ma * (1 - ENV_BAND), "hi": ma * (1 + ENV_BAND),
+           "lo20": ma * (1 - ENV_BAND_STOCK), "hi20": ma * (1 + ENV_BAND_STOCK)}
+    try:  # 통계는 장기 일봉이 필요 — 실패해도 현재 위치는 표시
+        long = K._naive_dates(K._download("max", "1d", 2000))["Close"]
+        out["stats"] = envelope_stats(long)
+        out["stats_from"] = long.index[0].strftime("%Y")
+    except Exception as e:  # pragma: no cover - 네트워크
+        print(f"[envelope] 통계 생략: {e}")
+    return out
+
+
 def ema(s: pd.Series, n: int) -> pd.Series:
     return s.ewm(span=n, adjust=False).mean()
 
@@ -389,6 +430,10 @@ def analyze(df: pd.DataFrame, daily: pd.DataFrame, prev_latest: dict | None = No
         out["c_weeks"] = len(df) - 1 - (imp["5"]["i"] + B["k"])     # B 고점 → 이번 주
         out["hist_shrink1"] = abs(h0) < abs(h1)
     out["phase"], out["phase_label"], out["tone"] = judge(out)
+    try:
+        out["envelope"] = envelope(daily)
+    except Exception as e:  # pragma: no cover
+        print(f"[envelope] 실패: {e}")
     if abc["stage"] not in ("IMPULSE", "NEW_HIGH"):
         try:
             out["analog"] = find_analogs(df, imp)
@@ -564,6 +609,24 @@ def build_message(o: dict, prev: dict | None) -> str:
               f"· RSI {o['rsi']:.1f} · MACD 히스토 {o['macd_hist']:+,.0f} {o['hist_state']}",
               f"· EMA50 {f(o['ema50'])} · EMA200 {f(o['ema200'])}",
               "<i>C파 진입 후 완성도 점수가 표시됩니다</i>"]
+
+    ev = o.get("envelope")
+    if ev:
+        d = ev["dev"]
+        if d <= -ENV_BAND:
+            head = f"🟡 하단 이탈 {d * 100:+.1f}% — 과매도, 분할 매수 검토 구간"
+            st = (ev.get("stats") or {}).get("lo")
+        elif d >= ENV_BAND:
+            head = f"🔴 상단 돌파 {d * 100:+.1f}% — 단기 과열, 분할 매도 검토 구간"
+            st = (ev.get("stats") or {}).get("hi")
+        else:
+            head, st = f"밴드 안 {d * 100:+.1f}% — 중립", None
+        L += ["", f"〈엔벨로프 · 20일선 ±{ENV_BAND * 100:.0f}%〉", head,
+              f"· 20일선 {f(ev['ma'])} · 하단 {f(ev['lo'])} · 상단 {f(ev['hi'])}"]
+        if st and st["n"]:
+            L.append(f"· {ev.get('stats_from', '')}년 이후 첫 이탈 {st['n']}회 → 20일 뒤 중앙 {st['med'] * 100:+.1f}%, 상승 {st['win'] * 100:.0f}%")
+        if d <= -ENV_BAND:
+            L.append("<i>하단을 여러 번 찍으며 더 내려가기도 함 — 한 번에 사지 말고 나눠서</i>")
 
     an = o.get("analog")
     if an:

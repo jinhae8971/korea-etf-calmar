@@ -111,5 +111,15 @@ class WaveTest(unittest.TestCase):
         self.assertTrue(out is None or os.path.getsize(out) > 1000)
 
 
+    def test_envelope(self):
+        idx = pd.date_range("2020-01-01", periods=120, freq="B")
+        c = pd.Series(np.r_[np.full(60, 100.0), np.full(5, 85.0), np.full(55, 95.0)], index=idx)
+        st = W.envelope_stats(c)
+        self.assertEqual(st["lo"]["n"], 1)
+        self.assertGreater(st["lo"]["med"], 0)
+        ev = W.envelope(pd.DataFrame({"Close": c}))
+        self.assertAlmostEqual(ev["lo"], ev["ma"] * 0.9)
+
+
 if __name__ == "__main__":
     unittest.main()
