@@ -5,14 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1794064160,
-   "s"
-  ],
-  [
-   1794074697,
-   "s"
-  ],
-  [
    1794089303,
    "d"
   ],
@@ -263,6 +255,10 @@
   [
    1794227914,
    "d"
+  ],
+  [
+   1794251247,
+   "s"
   ]
  ],
  "scope": [
@@ -573,7 +569,8 @@
      "e553fec65cef",
      "df6dd91cfb60",
      "c02e7f1a29bc",
-     "7a8043f1d76c"
+     "7a8043f1d76c",
+     "726457297d25"
     ],
     "x:arcus_xyz": [
      "7e39c42d9fa8",
@@ -649,43 +646,45 @@
      "0510ac581ae1",
      "936d604bb4da",
      "6f8614aabd61",
-     "fa109024042e"
+     "fa109024042e",
+     "d3b426b488a3",
+     "fc6213a26a50"
     ]
    },
    "status": {
     "api": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "23건",
      "ok": true
     },
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794227914,
-     "note": "19건",
+     "at": 1794251247,
+     "note": "20건",
      "ok": true
     }
    }
@@ -711,9 +710,9 @@
      "url": "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md"
     },
     "https://docs.extended.exchange/llms.txt": {
-     "changed": 1793736594,
-     "hash": "fb92c99d301230e9",
-     "text": "# Extended Documentation\n\n## Extended Documentation\n\n- [Overview & Vision](https://docs.extended.exchange/about-extended/readme.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Technical Architecture](https://docs.extended.exchange/about-extended/technical-architecture.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Team](https://docs.extended.exchange/about-extended/team.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Migration from Starknet to Arc](https://docs.extended.exchange/about-extended/migration-from-starknet-to-arc.md): Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading](https://docs.extended.exchange/extended-resources/trading.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Accounts and Modes](https://docs.extended.exchange/extended-resources/trading/trading-accounts-and-modes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Unified Margin and Balances](https://docs.extended.exchange/extended-resources/trading/unified-margin-and-balances.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Types](https://docs.extended.exchange/extended-resources/trading/order-types.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Cost](https://docs.extended.exchange/extended-resources/trading/order-cost.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RFQ Execution](https://docs.extended.exchange/extended-resources/trading/rfq-execution.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Fees and Rebates](https://docs.extended.exchange/extended-resources/trading/trading-fees-and-rebates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Liquidation Logic](https://docs.extended.exchange/extended-resources/trading/liquidation-logic.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Funding Payments](https://docs.extended.exchange/extended-resources/trading/funding-payments.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Oracle Prices](https://docs.extended.exchange/extended-resources/trading/oracle-prices.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/crypto-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/rwa-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/crypto-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/crypto-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/crypto-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-market Listings](https://docs.extended.exchange/extended-resources/trading/crypto-markets/pre-market-listings.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/rwa-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/rwa-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Corporate Actions](https://docs.extended.exchange/extended-resources/trading/rwa-markets/corporate-actions.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-IPO Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets/pre-ipo-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Account Operations](https://docs.extended.exchange/extended-resources/account-operations.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Account Creation](https://docs.extended.exchange/extended-resources/account-operations/account-creation.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Deposits and Withdrawals](https://docs.extended.exchange/extended-resources/account-operations/deposits-and-withdrawals.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Vault](https://docs.extended.exchange/extended-resources/vault.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Money Market](https://docs.extended.exchange/extended-resources/money-market.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [XTEN](https://docs.extended.exchange/extended-resources/xten.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Staking](https://docs.extended.exchange/extended-resources/xten/staking.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [The League](https://docs.extended.exchange/extended-resources/xten/the-league.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Fee Discounts](https://docs.extended.exchange/extended-resources/xten/fee-discounts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Volume Fee Tiers](https://docs.extended.exchange/extended-resources/xten/volume-fee-tiers.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Vault Extra Yield Boost](https://docs.extended.exchange/extended-resources/xten/vault-extra-yield-boost.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Tokenomics](https://docs.extended.exchange/extended-resources/xten/tokenomics.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Airdrop Distribution](https://docs.extended.exchange/extended-resources/xten/airdrop-distribution.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Burn and Buybacks](https://docs.extended.exchange/extended-resources/xten/burn-and-buybacks.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Cross-Chain XTEN (CCTP)](https://docs.extended.exchange/extended-resources/xten/cross-chain-xten-cctp.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Contracts](https://docs.extended.exchange/extended-resources/xten/contracts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Issuer and Platform](https://docs.extended.exchange/extended-resources/xten/issuer-and-platform.md)\n- [Regulatory Disclosures](https://docs.extended.exchange/extended-resources/xten/regulatory-disclosures.md)\n- [Referrals and Affiliates](https://docs.extended.exchange/extended-resources/referrals-and-affiliates.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Builder Codes](https://docs.extended.exchange/extended-resources/builder-codes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Points Program](https://docs.extended.exchange/extended-resources/points-program.md)\n- [More](https://docs.extended.exchange/extended-resources/more.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testers Program](https://docs.extended.exchange/extended-resources/more/testers-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Leaderboard](https://docs.extended.exchange/extended-resources/more/leaderboard.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Platform Outage](https://docs.extended.exchange/extended-resources/more/platform-outage.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testnet](https://docs.extended.exchange/extended-resources/more/testnet.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Troubleshooting Guide](https://docs.extended.exchange/extended-resources/more/troubleshooting-guide.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Smart Contract Audits](https://docs.extended.exchange/extended-resources/more/smart-contract-audits.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Bounty program](https://docs.extended.exchange/extended-resources/more/bounty-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Brand Kit](https://docs.extended.exchange/extended-resources/more/brand-kit.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Legal](https://docs.extended.exchange/extended-resources/legal.md)\n- [Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use.md): Last Updated on 30/10/2026\n- [Interface Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md): Last updated on 30 October 2026\n- [Spot Trading Service Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md): Last updated on 30 October 2026\n- [Statement of Risk](https://docs.extended.exchange/extended-resources/legal/statement-of-risk.md)\n- [Restricted Regions](https://docs.extended.exchange/extended-resources/legal/restricted-countries.md)\n- [Privacy Policy](https://docs.extended.exchange/extended-resources/legal/privacy-policy.md): Last Updated on 30 October 2026.\n- [Trading Competitions](https://docs.extended.exchange/extended-resources/trading-competitions.md)\n- [RWA Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/rwa-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [The Final Arc Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
+     "changed": 1794251247,
+     "hash": "71566a3f2a452e74",
+     "text": "# Extended Documentation\n\n## Extended Documentation\n\n- [Overview & Vision](https://docs.extended.exchange/about-extended/readme.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Technical Architecture](https://docs.extended.exchange/about-extended/technical-architecture.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Team](https://docs.extended.exchange/about-extended/team.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Migration from Starknet to Arc](https://docs.extended.exchange/about-extended/migration-from-starknet-to-arc.md): Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading](https://docs.extended.exchange/extended-resources/trading.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Accounts and Modes](https://docs.extended.exchange/extended-resources/trading/trading-accounts-and-modes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Unified Margin and Balances](https://docs.extended.exchange/extended-resources/trading/unified-margin-and-balances.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Types](https://docs.extended.exchange/extended-resources/trading/order-types.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Cost](https://docs.extended.exchange/extended-resources/trading/order-cost.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RFQ Execution](https://docs.extended.exchange/extended-resources/trading/rfq-execution.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Fees and Rebates](https://docs.extended.exchange/extended-resources/trading/trading-fees-and-rebates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Liquidation Logic](https://docs.extended.exchange/extended-resources/trading/liquidation-logic.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Funding Payments](https://docs.extended.exchange/extended-resources/trading/funding-payments.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Oracle Prices](https://docs.extended.exchange/extended-resources/trading/oracle-prices.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/crypto-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/rwa-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/crypto-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/crypto-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/crypto-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-market Listings](https://docs.extended.exchange/extended-resources/trading/crypto-markets/pre-market-listings.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/rwa-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/rwa-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Corporate Actions](https://docs.extended.exchange/extended-resources/trading/rwa-markets/corporate-actions.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-IPO Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets/pre-ipo-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Account Operations](https://docs.extended.exchange/extended-resources/account-operations.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Account Creation](https://docs.extended.exchange/extended-resources/account-operations/account-creation.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Deposits and Withdrawals](https://docs.extended.exchange/extended-resources/account-operations/deposits-and-withdrawals.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Vault](https://docs.extended.exchange/extended-resources/vault.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Money Market](https://docs.extended.exchange/extended-resources/money-market.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [XTEN](https://docs.extended.exchange/extended-resources/xten.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Staking](https://docs.extended.exchange/extended-resources/xten/staking.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [The League](https://docs.extended.exchange/extended-resources/xten/the-league.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Fee Discounts](https://docs.extended.exchange/extended-resources/xten/fee-discounts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Volume Fee Tiers](https://docs.extended.exchange/extended-resources/xten/volume-fee-tiers.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Vault Extra Yield Boost](https://docs.extended.exchange/extended-resources/xten/vault-extra-yield-boost.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Tokenomics](https://docs.extended.exchange/extended-resources/xten/tokenomics.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Airdrop Distribution](https://docs.extended.exchange/extended-resources/xten/airdrop-distribution.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Burn and Buybacks](https://docs.extended.exchange/extended-resources/xten/burn-and-buybacks.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Cross-Chain XTEN (CCTP)](https://docs.extended.exchange/extended-resources/xten/cross-chain-xten-cctp.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Contracts](https://docs.extended.exchange/extended-resources/xten/contracts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Issuer and White Paper](https://docs.extended.exchange/extended-resources/xten/issuer-and-white-paper.md)\n- [Issuer's Regulatory Disclosures](https://docs.extended.exchange/extended-resources/xten/issuers-regulatory-disclosures.md)\n- [Referrals and Affiliates](https://docs.extended.exchange/extended-resources/referrals-and-affiliates.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Builder Codes](https://docs.extended.exchange/extended-resources/builder-codes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Points Program](https://docs.extended.exchange/extended-resources/points-program.md)\n- [More](https://docs.extended.exchange/extended-resources/more.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testers Program](https://docs.extended.exchange/extended-resources/more/testers-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Leaderboard](https://docs.extended.exchange/extended-resources/more/leaderboard.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Platform Outage](https://docs.extended.exchange/extended-resources/more/platform-outage.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testnet](https://docs.extended.exchange/extended-resources/more/testnet.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Troubleshooting Guide](https://docs.extended.exchange/extended-resources/more/troubleshooting-guide.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Smart Contract Audits](https://docs.extended.exchange/extended-resources/more/smart-contract-audits.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Bounty program](https://docs.extended.exchange/extended-resources/more/bounty-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Brand Kit](https://docs.extended.exchange/extended-resources/more/brand-kit.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Legal](https://docs.extended.exchange/extended-resources/legal.md)\n- [Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use.md): Last Updated on 30/10/2026\n- [Interface Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md): Last updated on 30 October 2026\n- [Spot Trading Service Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md): Last updated on 30 October 2026\n- [Statement of Risk](https://docs.extended.exchange/extended-resources/legal/statement-of-risk.md)\n- [Restricted Regions](https://docs.extended.exchange/extended-resources/legal/restricted-countries.md)\n- [Privacy Policy](https://docs.extended.exchange/extended-resources/legal/privacy-policy.md): Last Updated on 30 October 2026.\n- [Trading Competitions](https://docs.extended.exchange/extended-resources/trading-competitions.md)\n- [RWA Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/rwa-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [The Final Arc Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
      "url": "https://docs.extended.exchange/llms.txt"
     }
    },
@@ -1171,6 +1170,51 @@
      "signal": "news",
      "title": "뉴스: Extended Sets Final XTEN Airdrop Rate as Xpoints Program Ends - The Defiant",
      "ts": 1793911349,
+     "venue": "extended"
+    },
+    {
+     "detail": "Issuer and White Paper, Issuer's Regulatory Disclosures",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "b72763813df4",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Issuer and White Paper — https://docs.extended.exchange/extended-resources/xten/issuer-and-white-paper.md",
+       "Issuer's Regulatory Disclosures — https://docs.extended.exchange/extended-resources/xten/issuers-regulatory-disclosures.md"
+      ],
+      "removed": [
+       "Issuer and Platform — https://docs.extended.exchange/extended-resources/xten/issuer-and-platform.md",
+       "Regulatory Disclosures — https://docs.extended.exchange/extended-resources/xten/regulatory-disclosures.md"
+      ],
+      "url": "https://docs.extended.exchange/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 2개 · 삭제 2개",
+     "ts": 1794251247,
+     "venue": "extended"
+    },
+    {
+     "detail": "https://t.me/extended_updates/396",
+     "family": "S2",
+     "grade": "ALERT",
+     "id": "7a19d75ae35a",
+     "ref": {
+      "label": "공식 텔레그램",
+      "text": "XTEN Staking and the League XTEN staking goes live at TGE. Your staked balance determines your League tier, which applies across all sub-accounts linked to the same wallet and sets your fee discount, Vault Extra Yield Boost and affiliate payout multiplier. Staked XTEN can also earn staking rewards. League Tiers • Pawn · 500 XTEN • 5% fee discount • 0.5x Vault boost, $5,000 cap • 1.0x affiliate mul.",
+      "url": "https://t.me/extended_updates/396",
+      "words": [
+       "TGE"
+      ]
+     },
+     "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
+     "refuted": false,
+     "signal": "telegram_post",
+     "title": "Extended 공식 텔레그램: XTEN Staking and the League XTEN staking goes live at TGE. Your staked balance determines your League tier, which applie",
+     "ts": 1794241419,
      "venue": "extended"
     }
    ],
@@ -1764,13 +1808,13 @@
      [
       1794208111,
       70.5
+     ],
+     [
+      1794251247,
+      72.0
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
-     [
-      1793023997,
-      4.6
-     ],
      [
       1793042602,
       4.5
@@ -2065,6 +2109,10 @@
      ],
      [
       1794208111,
+      3.1
+     ],
+     [
+      1794251247,
       3.1
      ]
     ],
@@ -2543,6 +2591,10 @@
      ],
      [
       1794215301,
+      1.3
+     ],
+     [
+      1794251247,
       1.3
      ]
     ],
@@ -3078,6 +3130,10 @@
      [
       1794220708,
       28.5
+     ],
+     [
+      1794251247,
+      28.5
      ]
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
@@ -3415,6 +3471,10 @@
      ],
      [
       1794215301,
+      0.9
+     ],
+     [
+      1794251247,
       0.9
      ]
     ],
@@ -3782,13 +3842,13 @@
      [
       1794227914,
       11.0
+     ],
+     [
+      1794251247,
+      11.0
      ]
     ],
     "extended-fdv-above-800m-one-day-after-launch-299-255-178": [
-     [
-      1793023997,
-      7.5
-     ],
      [
       1793042602,
       7.0
@@ -4043,6 +4103,10 @@
      ],
      [
       1794208111,
+      5.5
+     ],
+     [
+      1794251247,
       5.5
      ]
     ],
@@ -4326,13 +4390,13 @@
      [
       1794208111,
       13.5
+     ],
+     [
+      1794251247,
+      13.5
      ]
     ],
     "extended-listed-on-bybit-within-30-days-of-tge": [
-     [
-      1793468933,
-      44.0
-     ],
      [
       1793484497,
       43.0
@@ -5128,13 +5192,13 @@
      [
       1794227914,
       42.0
+     ],
+     [
+      1794251247,
+      41.5
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
-     [
-      1793023997,
-      33.0
-     ],
      [
       1793042602,
       37.0
@@ -5626,13 +5690,13 @@
      [
       1794215301,
       42.0
+     ],
+     [
+      1794251247,
+      43.5
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
-     [
-      1793102903,
-      57.0
-     ],
      [
       1793104715,
       59.5
@@ -6428,13 +6492,13 @@
      [
       1794217114,
       74.0
+     ],
+     [
+      1794251247,
+      74.0
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
-     [
-      1793023997,
-      47.0
-     ],
      [
       1793052504,
       46.0
@@ -7026,6 +7090,10 @@
      [
       1794220708,
       27.5
+     ],
+     [
+      1794251247,
+      29.0
      ]
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
@@ -7508,6 +7576,10 @@
      [
       1794220708,
       17.5
+     ],
+     [
+      1794251247,
+      17.5
      ]
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
@@ -7922,6 +7994,10 @@
      [
       1794224310,
       33.0
+     ],
+     [
+      1794251247,
+      32.5
      ]
     ],
     "will-extended-launch-a-token-by-december-31-2026": [
@@ -8572,6 +8648,10 @@
      [
       1794211700,
       94.4
+     ],
+     [
+      1794251247,
+      94.5
      ]
     ]
    },
@@ -8648,7 +8728,8 @@
      "9ce6a1eb9071",
      "b8020cde992c",
      "6ed5b6c7bc7f",
-     "b518ab900e61"
+     "b518ab900e61",
+     "63e36e0dc507"
     ],
     "x:extendedapp": [
      "201b3f784cc4",
@@ -8707,29 +8788,29 @@
    },
    "status": {
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794227914,
-     "note": "20건",
-     "ok": true
+     "at": 1794251247,
+     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -8737,7 +8818,7 @@
    "addr_cache": {},
    "api_drop": null,
    "api_flat": null,
-   "calm_since": null,
+   "calm_since": 1794251247,
    "cursors": {},
    "doc_moves": {},
    "docs": {
@@ -8803,7 +8884,7 @@
    "js": null,
    "large_hist": [],
    "lb_hist": [],
-   "level": "WATCH",
+   "level": "NONE",
    "news_seen": [
     "1539aba1a4a3",
     "1ccd9b18a5f0",
@@ -8819,7 +8900,8 @@
     "c6f72aa0aa7e",
     "c99b8a98991d",
     "cd8548280bac",
-    "e12cf6ffe4de"
+    "e12cf6ffe4de",
+    "e341d84ba118"
    ],
    "notified": "NONE",
    "notified_at": null,
@@ -8868,27 +8950,28 @@
      "dbb3081f846a",
      "718d8af92b80",
      "c2c52fd468c2",
-     "cb075646f59c"
+     "cb075646f59c",
+     "a486dc2b7fcb"
     ]
    },
    "status": {
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
-     "note": "6건",
+     "at": 1794251247,
+     "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     }
@@ -9065,7 +9148,7 @@
      "tags": []
     },
     "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b": {
-     "_at": 1793287952,
+     "_at": 1794251247,
      "addr": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
      "created_ts": null,
      "is_contract": false,
@@ -9205,8 +9288,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26377383,
-    "rh": 110062752
+    "eth": 26379320,
+    "rh": 110291220
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -9230,9 +9313,9 @@
      "url": "https://docs.lighter.xyz/about-lighter/lit-utility.md"
     },
     "https://docs.lighter.xyz/llms.txt": {
-     "changed": 1794002913,
-     "hash": "e120a1b1557a589d",
-     "text": "# Lighter Docs\n\n## Learn\n\n- [Introduction](https://docs.lighter.xyz/readme.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md)\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md)\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [RFQ](https://docs.lighter.xyz/trading/rfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)\n- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Internal Pricing Mechanism](https://docs.lighter.xyz/trading/internal-pricing-mechanism.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)\n\n## Developers\n\n- [Get Started](https://docs.lighter.xyz/developers/readme.md)\n- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)\n- [Core concepts](https://docs.lighter.xyz/developers/getting-started/core-concepts.md)\n- [Environments & endpoints](https://docs.lighter.xyz/developers/getting-started/environments.md)\n- [Quickstart: TypeScript + WASM](https://docs.lighter.xyz/developers/getting-started/quickstart-typescript.md)\n- [SDK](https://docs.lighter.xyz/developers/getting-started/sdks.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/getting-started/third-party-resources.md)\n- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)\n- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)\n- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)\n- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)\n- [Market data](https://docs.lighter.xyz/developers/integration-guides/market-data.md)\n- [Account data & positions](https://docs.lighter.xyz/developers/integration-guides/account-data.md)\n- [Partner Attribution](https://docs.lighter.xyz/developers/integration-guides/partner-attribution.md)\n- [Historical Data](https://docs.lighter.xyz/developers/integration-guides/historical-data.md)\n- [Multi-signature and smart wallets](https://docs.lighter.xyz/developers/integration-guides/multi-signature-wallets.md)\n- [Manage Referrals](https://docs.lighter.xyz/developers/integration-guides/referrals.md)\n- [Manage Public Pools](https://docs.lighter.xyz/developers/integration-guides/manage-public-pools.md)\n- [Manage Trading Mode and Margin](https://docs.lighter.xyz/developers/integration-guides/manage-trading-mode-and-margin.md)\n- [Aggregated trades](https://docs.lighter.xyz/developers/integration-guides/aggregated-trades.md)\n- [RFQ](https://docs.lighter.xyz/developers/integration-guides/rfq.md)\n- [Overview](https://docs.lighter.xyz/developers/binary-options/overview.md)\n- [Discover markets](https://docs.lighter.xyz/developers/binary-options/discover-markets.md)\n- [Trading and fees](https://docs.lighter.xyz/developers/binary-options/trading-and-fees.md)\n- [Positions and settlement](https://docs.lighter.xyz/developers/binary-options/positions-and-settlement.md)\n- [Partner attribution](https://docs.lighter.xyz/developers/binary-options/partner-attribution.md)\n- [WebSocket](https://docs.lighter.xyz/developers/binary-options/websocket.md)\n- [Lighter on Robinhood Chain](https://docs.lighter.xyz/developers/robinhood-chain/overview.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/robinhood-chain/third-party-resources.md)\n- [Account Types](https://docs.lighter.xyz/developers/reference/account-types.md)\n- [Rate Limits](https://docs.lighter.xyz/developers/reference/rate-limits.md)\n- [Volume Quota](https://docs.lighter.xyz/developers/reference/volume-quota.md)\n- [Data Structures, Constants and Errors](https://docs.lighter.xyz/developers/reference/data-structures-constants-and-errors.md)\n- [WASM signer functions](https://docs.lighter.xyz/developers/reference/wasm-signer.md)\n- [Priority Transactions](https://docs.lighter.xyz/developers/reference/priority-transactions.md)\n- [Timestamps](https://docs.lighter.xyz/developers/reference/timestamps.md)\n- [Production checklist](https://docs.lighter.xyz/developers/going-to-production/production-checklist.md)\n- [Troubleshooting](https://docs.lighter.xyz/developers/going-to-production/troubleshooting.md)\n- [Use these docs with AI](https://docs.lighter.xyz/developers/ai-and-agents/use-with-ai.md)\n- [Agent instructions (AGENTS.md)](https://docs.lighter.xyz/developers/ai-and-agents/agent-instructions.md)\n\n## API Reference\n\n- [API Reference](https://docs.lighter.xyz/api/readme.md)\n- [System](https://docs.lighter.xyz/api/system.md): Exchange status, system configuration and L1 contract info.\n- [status](https://docs.lighter.xyz/api/system/status.md)\n- [info](https://docs.lighter.xyz/api/system/info.md)\n- [layer1BasicInfo](https://docs.lighter.xyz/api/system/layer1basicinfo.md)\n- [systemConfig](https://docs.lighter.xyz/api/system/systemconfig.md)\n- [Account](https://docs.lighter.xyz/api/account.md): Query accounts, limits, metadata, PnL and its leaderboard, liquidations, funding payments, public pools and L1 metadata; update account tiers and metadata.\n- [account](https://docs.lighter.xyz/api/account/account.md)\n- [accountLimits](https://docs.lighter.xyz/api/account/accountlimits.md)\n- [buyVolumeQuota](https://docs.lighter.xyz/api/account/buyvolumequota.md)\n- [accountMetadata](https://docs.lighter.xyz/api/account/accountmetadata.md)\n- [accountsByL1Address](https://docs.lighter.xyz/api/account/accountsbyl1address.md)\n- [changeAccountTier](https://docs.lighter.xyz/api/account/changeaccounttier.md)\n- [l1Metadata](https://docs.lighter.xyz/api/account/l1metadata.md)\n- [liquidations](https://docs.lighter.xyz/api/account/liquidations.md)\n- [pnl](https://docs.lighter.xyz/api/account/pnl.md)\n- [positionFunding](https://docs.lighter.xyz/api/account/positionfunding.md)\n- [publicPoolsMetadata](https://docs.lighter.xyz/api/account/publicpoolsmetadata.md)\n- [pnlLeaderboard](https://docs.lighter.xyz/api/account/pnlleaderboard.md)\n- [Orders](https://docs.lighter.xyz/api/orders.md): Discover order books and market configuration, query orders and trades, and export account or market history.\n- [accountActiveOrders](https://docs.lighter.xyz/api/orders/accountactiveorders.md)\n- [accountInactiveOrders](https://docs.lighter.xyz/api/orders/accountinactiveorders.md)\n- [export](https://docs.lighter.xyz/api/orders/export.md)\n- [orderBookDetails](https://docs.lighter.xyz/api/orders/orderbookdetails.md)\n- [orderBookOrders](https://docs.lighter.xyz/api/orders/orderbookorders.md)\n- [orderBooks](https://docs.lighter.xyz/api/orders/orderbooks.md)\n- [recentTrades](https://docs.lighter.xyz/api/orders/recenttrades.md)\n- [trades](https://docs.lighter.xyz/api/orders/trades.md)\n- [aggregatedTrades](https://docs.lighter.xyz/api/orders/aggregatedtrades.md)\n- [accountOrders](https://docs.lighter.xyz/api/orders/accountorders.md)\n- [export\\_historicalTrades](https://docs.lighter.xyz/api/orders/export_historicaltrades.md)\n- [Binary Options](https://docs.lighter.xyz/api/binary-options.md): Discover events and market lifecycles, retrieve Up/Down candles and fee tiers, and query realized binary options PnL. These endpoints are available on Lighter only.\n- [events](https://docs.lighter.xyz/api/binary-options/events.md)\n- [feeTiers](https://docs.lighter.xyz/api/binary-options/feetiers.md)\n- [portfolio\\_boPnl](https://docs.lighter.xyz/api/binary-options/portfolio_bopnl.md)\n- [upDownCandles](https://docs.lighter.xyz/api/binary-options/updowncandles.md)\n- [Transactions](https://docs.lighter.xyz/api/transactions.md): Send signed transactions and query transaction, deposit, transfer and withdrawal history.\n- [deposit\\_history](https://docs.lighter.xyz/api/transactions/deposit_history.md)\n- [sendTx](https://docs.lighter.xyz/api/transactions/sendtx.md)\n- [sendTxBatch](https://docs.lighter.xyz/api/transactions/sendtxbatch.md)\n- [transfer\\_history](https://docs.lighter.xyz/api/transactions/transfer_history.md)\n- [tx](https://docs.lighter.xyz/api/transactions/tx.md)\n- [txFromL1TxHash](https://docs.lighter.xyz/api/transactions/txfroml1txhash.md)\n- [withdraw\\_history](https://docs.lighter.xyz/api/transactions/withdraw_history.md)\n- [setAccountMetadata](https://docs.lighter.xyz/api/transactions/setaccountmetadata.md)\n- [API Keys](https://docs.lighter.xyz/api/api-keys.md): Inspect API keys and nonces, create/list/revoke read-only tokens, and configure maker-only keys. See the API key integration guide before signing requests.\n- [apikeys](https://docs.lighter.xyz/api/api-keys/apikeys.md)\n- [nextNonce](https://docs.lighter.xyz/api/api-keys/nextnonce.md)\n- [tokens](https://docs.lighter.xyz/api/api-keys/tokens.md)\n- [tokens\\_create](https://docs.lighter.xyz/api/api-keys/tokens_create.md)\n- [tokens\\_revoke](https://docs.lighter.xyz/api/api-keys/tokens_revoke.md)\n- [getMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/getmakeronlyapikeys.md)\n- [setMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/setmakeronlyapikeys.md)\n- [Candlesticks](https://docs.lighter.xyz/api/candlesticks.md): Retrieve historical trade or mark-price candles and market price charts. Use the endpoint-specific timestamp units and resolution values.\n- [candles](https://docs.lighter.xyz/api/candlesticks/candles.md)\n- [markPriceCandles](https://docs.lighter.xyz/api/candlesticks/markpricecandles.md)\n- [marketPriceCharts](https://docs.lighter.xyz/api/candlesticks/marketpricecharts.md)\n- [Funding](https://docs.lighter.xyz/api/funding.md): Retrieve market funding history and current funding rates across trading venues.\n- [funding-rates](https://docs.lighter.xyz/api/funding/funding-rates.md)\n- [fundings](https://docs.lighter.xyz/api/funding/fundings.md)\n- [Bridge](https://docs.lighter.xyz/api/bridge.md): Create deposit intent addresses, list supported networks and inspect the latest deposit; query fast-bridge information and submit fast withdrawals.\n- [fastbridge\\_info](https://docs.lighter.xyz/api/bridge/fastbridge_info.md)\n- [fastwithdraw](https://docs.lighter.xyz/api/bridge/fastwithdraw.md)\n- [fastwithdraw\\_info](https://docs.lighter.xyz/api/bridge/fastwithdraw_info.md)\n- [createIntentAddress](https://docs.lighter.xyz/api/bridge/createintentaddress.md)\n- [deposit\\_networks](https://docs.lighter.xyz/api/bridge/deposit_networks.md)\n- [deposit\\_latest](https://docs.lighter.xyz/api/bridge/deposit_latest.md)\n- [Info](https://docs.lighter.xyz/api/info.md): Inspect asset metadata, exchange statistics and metrics, transfer fees, token metadata, synthetic spot prices and oracle sources.\n- [assetDetails](https://docs.lighter.xyz/api/info/assetdetails.md)\n- [exchangeStats](https://docs.lighter.xyz/api/info/exchangestats.md)\n- [transferFeeInfo](https://docs.lighter.xyz/api/info/transferfeeinfo.md)\n- [withdrawalDelay](https://docs.lighter.xyz/api/info/withdrawaldelay.md)\n- [exchangeMetrics](https://docs.lighter.xyz/api/info/exchangemetrics.md)\n- [executeStats](https://docs.lighter.xyz/api/info/executestats.md)\n- [tokenlist](https://docs.lighter.xyz/api/info/tokenlist.md)\n- [partnerStats](https://docs.lighter.xyz/api/info/partnerstats.md)\n- [syntheticSpotInfo](https://docs.lighter.xyz/api/info/syntheticspotinfo.md)\n- [priceOracleInfo](https://docs.lighter.xyz/api/info/priceoracleinfo.md)\n- [Referral](https://docs.lighter.xyz/api/referral.md): Referral codes, kickbacks and stats.\n- [referral\\_points](https://docs.lighter.xyz/api/referral/referral_points.md)\n- [referral\\_create](https://docs.lighter.xyz/api/referral/referral_create.md)\n- [referral\\_get](https://docs.lighter.xyz/api/referral/referral_get.md)\n- [referral\\_kickback\\_update](https://docs.lighter.xyz/api/referral/referral_kickback_update.md)\n- [referral\\_update](https://docs.lighter.xyz/api/referral/referral_update.md)\n- [referral\\_use](https://docs.lighter.xyz/api/referral/referral_use.md)\n- [userReferrals](https://docs.lighter.xyz/api/referral/userreferrals.md)\n- [referral\\_stats](https://docs.lighter.xyz/api/referral/referral_stats.md)\n- [Fee Credits](https://docs.lighter.xyz/api/fee-credits.md): List LIT fee-credit lease options, inspect account leases and submit lease requests.\n- [leaseOptions](https://docs.lighter.xyz/api/fee-credits/leaseoptions.md)\n- [leases](https://docs.lighter.xyz/api/fee-credits/leases.md)\n- [litLease](https://docs.lighter.xyz/api/fee-credits/litlease.md)\n- [RFQ](https://docs.lighter.xyz/api/rfq.md): RFQ: create, respond to and query requests for quote.\n- [rfq\\_respond](https://docs.lighter.xyz/api/rfq/rfq_respond.md)\n- [rfq\\_list](https://docs.lighter.xyz/api/rfq/rfq_list.md)\n- [rfq\\_get](https://docs.lighter.xyz/api/rfq/rfq_get.md)\n- [rfq\\_create](https://docs.lighter.xyz/api/rfq/rfq_create.md)\n- [rfq\\_update](https://docs.lighter.xyz/api/rfq/rfq_update.md)\n- [Points](https://docs.lighter.xyz/api/points.md): Points leaderboard and live points. Lighter on Robinhood Chain only.\n- [livePoints\\_total](https://docs.lighter.xyz/api/points/livepoints_total.md)\n- [leaderboard](https://docs.lighter.xyz/api/points/leaderboard.md)\n- [Announcements](https://docs.lighter.xyz/api/announcements.md): Read exchange announcements, including their publication time and optional expiry.\n- [announcement](https://docs.lighter.xyz/api/announcements/announcement.md)\n- [Notifications](https://docs.lighter.xyz/api/notifications.md): Acknowledge notifications.\n- [notification\\_ack](https://docs.lighter.xyz/api/notifications/notification_ack.md)\n- [Explorer API](https://docs.lighter.xyz/api/explorer-api.md): Query blocks, batches, search, transaction statistics, logs by hash, account logs/assets/positions and market logs. Base URLs: https://explorer.elliot.ai/api (Lighter), https://explorerapi.rh.lighter.xyz/api (Robinhood Chain mainnet), https://explorerapi.rh-testnet.lighter.xyz/api (Robinhood Chain testnet).\n- [Account](https://docs.lighter.xyz/api/explorer-api/account.md)\n- [Get Account Assets](https://docs.lighter.xyz/api/explorer-api/account/get-account-assets.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address-1.md)\n- [Batches](https://docs.lighter.xyz/api/explorer-api/batches.md)\n- [Get Recent Batches](https://docs.lighter.xyz/api/explorer-api/batches/get-recent-batches.md)\n- [Get Batch by Id](https://docs.lighter.xyz/api/explorer-api/batches/get-batch-by-id.md)\n- [Blocks](https://docs.lighter.xyz/api/explorer-api/blocks.md)\n- [Get Recent Blocks](https://docs.lighter.xyz/api/explorer-api/blocks/get-recent-blocks.md)\n- [Get Block by Id](https://docs.lighter.xyz/api/explorer-api/blocks/get-block-by-id.md)\n- [Logs](https://docs.lighter.xyz/api/explorer-api/logs.md)\n- [Get Log by Hash](https://docs.lighter.xyz/api/explorer-api/logs/get-log-by-hash.md)\n- [Markets](https://docs.lighter.xyz/api/explorer-api/markets.md)\n- [List all markets](https://docs.lighter.xyz/api/explorer-api/markets/list-all-markets.md)\n- [Get Market Latest Logs. To query perpetual markets, use the symbol alone. For spot markets, use \\`symbol-quote\\` e.g. \\`eth-usdc\\`](https://docs.lighter.xyz/api/explorer-api/markets/get-market-latest-logs-to-query-perpetual-markets-use-the-symbol-alone-for-spot-markets-use-symbol-q.md)\n- [Search](https://docs.lighter.xyz/api/explorer-api/search.md)\n- [Search for blocks, batches, transactions, or accounts](https://docs.lighter.xyz/api/explorer-api/search/search-for-blocks-batches-transactions-or-accounts.md)\n- [Stats](https://docs.lighter.xyz/api/explorer-api/stats.md)\n- [Get Tx Stats](https://docs.lighter.xyz/api/explorer-api/stats/get-tx-stats.md)\n- [List Total Values](https://docs.lighter.xyz/api/explorer-api/stats/list-total-values.md)\n- [Models](https://docs.lighter.xyz/api/models.md)\n- [WebSocket](https://docs.lighter.xyz/api/websocket.md)\n\n## Lighter EVM\n\n- [Introduction](https://docs.lighter.xyz/evm/readme.md)\n- [Getting started](https://docs.lighter.xyz/evm/getting-started.md)\n- [Technical architecture](https://docs.lighter.xyz/evm/technical-architecture.md)\n- [Differences from L1 EVM](https://docs.lighter.xyz/evm/differences-from-l1-evm.md)\n- [L1 data fee](https://docs.lighter.xyz/evm/differences-from-l1-evm/l1-data-fee.md)\n- [Lighter Interop](https://docs.lighter.xyz/evm/interop.md)\n- [Accounts](https://docs.lighter.xyz/evm/interop/accounts.md)\n- [Reading Core from EVM](https://docs.lighter.xyz/evm/interop/reading-core-from-evm.md)\n- [Message passing](https://docs.lighter.xyz/evm/interop/message-passing.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/message-passing/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-evm.md)\n- [Tokens](https://docs.lighter.xyz/evm/interop/tokens.md)\n- [Token transfers](https://docs.lighter.xyz/evm/interop/tokens/token-transfers.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-evm.md)\n- [Token linking](https://docs.lighter.xyz/evm/interop/tokens/token-linking.md)\n- [Markets](https://docs.lighter.xyz/evm/markets.md)\n- [Signing Core transactions](https://docs.lighter.xyz/evm/signing-core-transactions.md)\n- [Chain info](https://docs.lighter.xyz/evm/chain-info.md)\n- [JSON-RPC API](https://docs.lighter.xyz/evm/json-rpc-api.md)\n\n## Programs\n\n- [Programs](https://docs.lighter.xyz/programs/readme.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md)\n- [Referral Program](https://docs.lighter.xyz/programs/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/programs/liquidity-partner-program.md)\n- [Partner Attribution](https://docs.lighter.xyz/programs/partner-attribution.md)",
+     "changed": 1794251247,
+     "hash": "816481cbefde9fb8",
+     "text": "# Lighter Docs\n\n## Learn\n\n- [Introduction](https://docs.lighter.xyz/readme.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md)\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md)\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [RFQ](https://docs.lighter.xyz/trading/rfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)\n- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Internal Pricing Mechanism](https://docs.lighter.xyz/trading/internal-pricing-mechanism.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)\n\n## Developers\n\n- [Get Started](https://docs.lighter.xyz/developers/readme.md)\n- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)\n- [Core concepts](https://docs.lighter.xyz/developers/getting-started/core-concepts.md)\n- [Environments & endpoints](https://docs.lighter.xyz/developers/getting-started/environments.md)\n- [Quickstart: TypeScript + WASM](https://docs.lighter.xyz/developers/getting-started/quickstart-typescript.md)\n- [SDK](https://docs.lighter.xyz/developers/getting-started/sdks.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/getting-started/third-party-resources.md)\n- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)\n- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)\n- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)\n- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)\n- [Market data](https://docs.lighter.xyz/developers/integration-guides/market-data.md)\n- [Account data & positions](https://docs.lighter.xyz/developers/integration-guides/account-data.md)\n- [Partner Attribution](https://docs.lighter.xyz/developers/integration-guides/partner-attribution.md)\n- [Historical Data](https://docs.lighter.xyz/developers/integration-guides/historical-data.md)\n- [Multi-signature and smart wallets](https://docs.lighter.xyz/developers/integration-guides/multi-signature-wallets.md)\n- [Manage Referrals](https://docs.lighter.xyz/developers/integration-guides/referrals.md)\n- [Manage Public Pools](https://docs.lighter.xyz/developers/integration-guides/manage-public-pools.md)\n- [Manage Trading Mode and Margin](https://docs.lighter.xyz/developers/integration-guides/manage-trading-mode-and-margin.md)\n- [Aggregated trades](https://docs.lighter.xyz/developers/integration-guides/aggregated-trades.md)\n- [RFQ](https://docs.lighter.xyz/developers/integration-guides/rfq.md)\n- [Overview](https://docs.lighter.xyz/developers/binary-options/overview.md)\n- [Discover markets](https://docs.lighter.xyz/developers/binary-options/discover-markets.md)\n- [Trading and fees](https://docs.lighter.xyz/developers/binary-options/trading-and-fees.md)\n- [Positions and settlement](https://docs.lighter.xyz/developers/binary-options/positions-and-settlement.md)\n- [Partner attribution](https://docs.lighter.xyz/developers/binary-options/partner-attribution.md)\n- [WebSocket](https://docs.lighter.xyz/developers/binary-options/websocket.md)\n- [Lighter on Robinhood Chain](https://docs.lighter.xyz/developers/robinhood-chain/overview.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/robinhood-chain/third-party-resources.md)\n- [Account Types](https://docs.lighter.xyz/developers/reference/account-types.md)\n- [Rate Limits](https://docs.lighter.xyz/developers/reference/rate-limits.md)\n- [Volume Quota](https://docs.lighter.xyz/developers/reference/volume-quota.md)\n- [Data Structures, Constants and Errors](https://docs.lighter.xyz/developers/reference/data-structures-constants-and-errors.md)\n- [WASM signer functions](https://docs.lighter.xyz/developers/reference/wasm-signer.md)\n- [Priority Transactions](https://docs.lighter.xyz/developers/reference/priority-transactions.md)\n- [Timestamps](https://docs.lighter.xyz/developers/reference/timestamps.md)\n- [Production checklist](https://docs.lighter.xyz/developers/going-to-production/production-checklist.md)\n- [Troubleshooting](https://docs.lighter.xyz/developers/going-to-production/troubleshooting.md)\n- [Use these docs with AI](https://docs.lighter.xyz/developers/ai-and-agents/use-with-ai.md)\n- [Agent instructions (AGENTS.md)](https://docs.lighter.xyz/developers/ai-and-agents/agent-instructions.md)\n\n## API Reference\n\n- [API Reference](https://docs.lighter.xyz/api/readme.md)\n- [System](https://docs.lighter.xyz/api/system.md): Exchange status, system configuration and L1 contract info.\n- [status](https://docs.lighter.xyz/api/system/status.md)\n- [info](https://docs.lighter.xyz/api/system/info.md)\n- [layer1BasicInfo](https://docs.lighter.xyz/api/system/layer1basicinfo.md)\n- [systemConfig](https://docs.lighter.xyz/api/system/systemconfig.md)\n- [Account](https://docs.lighter.xyz/api/account.md): Query accounts, limits, metadata, PnL and its leaderboard, liquidations, funding payments, public pools and L1 metadata; update account tiers and metadata.\n- [account](https://docs.lighter.xyz/api/account/account.md)\n- [accountLimits](https://docs.lighter.xyz/api/account/accountlimits.md)\n- [buyVolumeQuota](https://docs.lighter.xyz/api/account/buyvolumequota.md)\n- [accountMetadata](https://docs.lighter.xyz/api/account/accountmetadata.md)\n- [accountsByL1Address](https://docs.lighter.xyz/api/account/accountsbyl1address.md)\n- [changeAccountTier](https://docs.lighter.xyz/api/account/changeaccounttier.md)\n- [l1Metadata](https://docs.lighter.xyz/api/account/l1metadata.md)\n- [liquidations](https://docs.lighter.xyz/api/account/liquidations.md)\n- [pnl](https://docs.lighter.xyz/api/account/pnl.md)\n- [positionFunding](https://docs.lighter.xyz/api/account/positionfunding.md)\n- [publicPoolsMetadata](https://docs.lighter.xyz/api/account/publicpoolsmetadata.md)\n- [pnlLeaderboard](https://docs.lighter.xyz/api/account/pnlleaderboard.md)\n- [Orders](https://docs.lighter.xyz/api/orders.md): Discover order books and market configuration, query orders and trades, and export account or market history.\n- [accountActiveOrders](https://docs.lighter.xyz/api/orders/accountactiveorders.md)\n- [accountInactiveOrders](https://docs.lighter.xyz/api/orders/accountinactiveorders.md)\n- [export](https://docs.lighter.xyz/api/orders/export.md)\n- [orderBookDetails](https://docs.lighter.xyz/api/orders/orderbookdetails.md)\n- [orderBookOrders](https://docs.lighter.xyz/api/orders/orderbookorders.md)\n- [orderBooks](https://docs.lighter.xyz/api/orders/orderbooks.md)\n- [recentTrades](https://docs.lighter.xyz/api/orders/recenttrades.md)\n- [trades](https://docs.lighter.xyz/api/orders/trades.md)\n- [aggregatedTrades](https://docs.lighter.xyz/api/orders/aggregatedtrades.md)\n- [accountOrderFills](https://docs.lighter.xyz/api/orders/accountorderfills.md)\n- [accountOrders](https://docs.lighter.xyz/api/orders/accountorders.md)\n- [export\\_historicalTrades](https://docs.lighter.xyz/api/orders/export_historicaltrades.md)\n- [Binary Options](https://docs.lighter.xyz/api/binary-options.md): Discover events and market lifecycles, retrieve Up/Down candles and fee tiers, and query realized binary options PnL. These endpoints are available on Lighter only.\n- [events](https://docs.lighter.xyz/api/binary-options/events.md)\n- [feeTiers](https://docs.lighter.xyz/api/binary-options/feetiers.md)\n- [portfolio\\_boPnl](https://docs.lighter.xyz/api/binary-options/portfolio_bopnl.md)\n- [upDownCandles](https://docs.lighter.xyz/api/binary-options/updowncandles.md)\n- [Transactions](https://docs.lighter.xyz/api/transactions.md): Send signed transactions and query transaction, deposit, transfer and withdrawal history.\n- [deposit\\_history](https://docs.lighter.xyz/api/transactions/deposit_history.md)\n- [sendTx](https://docs.lighter.xyz/api/transactions/sendtx.md)\n- [sendTxBatch](https://docs.lighter.xyz/api/transactions/sendtxbatch.md)\n- [transfer\\_history](https://docs.lighter.xyz/api/transactions/transfer_history.md)\n- [tx](https://docs.lighter.xyz/api/transactions/tx.md)\n- [txFromL1TxHash](https://docs.lighter.xyz/api/transactions/txfroml1txhash.md)\n- [withdraw\\_history](https://docs.lighter.xyz/api/transactions/withdraw_history.md)\n- [setAccountMetadata](https://docs.lighter.xyz/api/transactions/setaccountmetadata.md)\n- [API Keys](https://docs.lighter.xyz/api/api-keys.md): Inspect API keys and nonces, create/list/revoke read-only tokens, and configure maker-only keys. See the API key integration guide before signing requests.\n- [apikeys](https://docs.lighter.xyz/api/api-keys/apikeys.md)\n- [nextNonce](https://docs.lighter.xyz/api/api-keys/nextnonce.md)\n- [tokens](https://docs.lighter.xyz/api/api-keys/tokens.md)\n- [tokens\\_create](https://docs.lighter.xyz/api/api-keys/tokens_create.md)\n- [tokens\\_revoke](https://docs.lighter.xyz/api/api-keys/tokens_revoke.md)\n- [getMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/getmakeronlyapikeys.md)\n- [setMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/setmakeronlyapikeys.md)\n- [Candlesticks](https://docs.lighter.xyz/api/candlesticks.md): Retrieve historical trade or mark-price candles and market price charts. Use the endpoint-specific timestamp units and resolution values.\n- [candles](https://docs.lighter.xyz/api/candlesticks/candles.md)\n- [markPriceCandles](https://docs.lighter.xyz/api/candlesticks/markpricecandles.md)\n- [marketPriceCharts](https://docs.lighter.xyz/api/candlesticks/marketpricecharts.md)\n- [Funding](https://docs.lighter.xyz/api/funding.md): Retrieve market funding history and current funding rates across trading venues.\n- [funding-rates](https://docs.lighter.xyz/api/funding/funding-rates.md)\n- [fundings](https://docs.lighter.xyz/api/funding/fundings.md)\n- [Bridge](https://docs.lighter.xyz/api/bridge.md): Create deposit intent addresses, list supported networks and inspect the latest deposit; query fast-bridge information and submit fast withdrawals.\n- [fastbridge\\_info](https://docs.lighter.xyz/api/bridge/fastbridge_info.md)\n- [fastwithdraw](https://docs.lighter.xyz/api/bridge/fastwithdraw.md)\n- [fastwithdraw\\_info](https://docs.lighter.xyz/api/bridge/fastwithdraw_info.md)\n- [createIntentAddress](https://docs.lighter.xyz/api/bridge/createintentaddress.md)\n- [deposit\\_networks](https://docs.lighter.xyz/api/bridge/deposit_networks.md)\n- [deposit\\_latest](https://docs.lighter.xyz/api/bridge/deposit_latest.md)\n- [Info](https://docs.lighter.xyz/api/info.md): Inspect asset metadata, exchange statistics and metrics, transfer fees, token metadata, synthetic spot prices and oracle sources.\n- [assetDetails](https://docs.lighter.xyz/api/info/assetdetails.md)\n- [exchangeStats](https://docs.lighter.xyz/api/info/exchangestats.md)\n- [transferFeeInfo](https://docs.lighter.xyz/api/info/transferfeeinfo.md)\n- [withdrawalDelay](https://docs.lighter.xyz/api/info/withdrawaldelay.md)\n- [exchangeMetrics](https://docs.lighter.xyz/api/info/exchangemetrics.md)\n- [executeStats](https://docs.lighter.xyz/api/info/executestats.md)\n- [tokenlist](https://docs.lighter.xyz/api/info/tokenlist.md)\n- [partnerStats](https://docs.lighter.xyz/api/info/partnerstats.md)\n- [syntheticSpotInfo](https://docs.lighter.xyz/api/info/syntheticspotinfo.md)\n- [priceOracleInfo](https://docs.lighter.xyz/api/info/priceoracleinfo.md)\n- [Referral](https://docs.lighter.xyz/api/referral.md): Referral codes, kickbacks and stats.\n- [referral\\_points](https://docs.lighter.xyz/api/referral/referral_points.md)\n- [referral\\_create](https://docs.lighter.xyz/api/referral/referral_create.md)\n- [referral\\_get](https://docs.lighter.xyz/api/referral/referral_get.md)\n- [referral\\_kickback\\_update](https://docs.lighter.xyz/api/referral/referral_kickback_update.md)\n- [referral\\_update](https://docs.lighter.xyz/api/referral/referral_update.md)\n- [referral\\_use](https://docs.lighter.xyz/api/referral/referral_use.md)\n- [userReferrals](https://docs.lighter.xyz/api/referral/userreferrals.md)\n- [referral\\_stats](https://docs.lighter.xyz/api/referral/referral_stats.md)\n- [Fee Credits](https://docs.lighter.xyz/api/fee-credits.md): List LIT fee-credit lease options, inspect account leases and submit lease requests.\n- [leaseOptions](https://docs.lighter.xyz/api/fee-credits/leaseoptions.md)\n- [leases](https://docs.lighter.xyz/api/fee-credits/leases.md)\n- [litLease](https://docs.lighter.xyz/api/fee-credits/litlease.md)\n- [RFQ](https://docs.lighter.xyz/api/rfq.md): RFQ: create, respond to and query requests for quote.\n- [rfq\\_respond](https://docs.lighter.xyz/api/rfq/rfq_respond.md)\n- [rfq\\_list](https://docs.lighter.xyz/api/rfq/rfq_list.md)\n- [rfq\\_get](https://docs.lighter.xyz/api/rfq/rfq_get.md)\n- [rfq\\_create](https://docs.lighter.xyz/api/rfq/rfq_create.md)\n- [rfq\\_update](https://docs.lighter.xyz/api/rfq/rfq_update.md)\n- [Points](https://docs.lighter.xyz/api/points.md): Points leaderboard and live points. Lighter on Robinhood Chain only.\n- [livePoints\\_total](https://docs.lighter.xyz/api/points/livepoints_total.md)\n- [leaderboard](https://docs.lighter.xyz/api/points/leaderboard.md)\n- [Announcements](https://docs.lighter.xyz/api/announcements.md): Read exchange announcements, including their publication time and optional expiry.\n- [announcement](https://docs.lighter.xyz/api/announcements/announcement.md)\n- [Notifications](https://docs.lighter.xyz/api/notifications.md): Acknowledge notifications.\n- [notification\\_ack](https://docs.lighter.xyz/api/notifications/notification_ack.md)\n- [Explorer API](https://docs.lighter.xyz/api/explorer-api.md): Query blocks, batches, search, transaction statistics, logs by hash, account logs/assets/positions and market logs. Base URLs: https://explorer.elliot.ai/api (Lighter), https://explorerapi.rh.lighter.xyz/api (Robinhood Chain mainnet), https://explorerapi.rh-testnet.lighter.xyz/api (Robinhood Chain testnet).\n- [Account](https://docs.lighter.xyz/api/explorer-api/account.md)\n- [Get Account Assets](https://docs.lighter.xyz/api/explorer-api/account/get-account-assets.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address-1.md)\n- [Batches](https://docs.lighter.xyz/api/explorer-api/batches.md)\n- [Get Recent Batches](https://docs.lighter.xyz/api/explorer-api/batches/get-recent-batches.md)\n- [Get Batch by Id](https://docs.lighter.xyz/api/explorer-api/batches/get-batch-by-id.md)\n- [Blocks](https://docs.lighter.xyz/api/explorer-api/blocks.md)\n- [Get Recent Blocks](https://docs.lighter.xyz/api/explorer-api/blocks/get-recent-blocks.md)\n- [Get Block by Id](https://docs.lighter.xyz/api/explorer-api/blocks/get-block-by-id.md)\n- [Logs](https://docs.lighter.xyz/api/explorer-api/logs.md)\n- [Get Log by Hash](https://docs.lighter.xyz/api/explorer-api/logs/get-log-by-hash.md)\n- [Markets](https://docs.lighter.xyz/api/explorer-api/markets.md)\n- [List all markets](https://docs.lighter.xyz/api/explorer-api/markets/list-all-markets.md)\n- [Get Market Latest Logs. To query perpetual markets, use the symbol alone. For spot markets, use \\`symbol-quote\\` e.g. \\`eth-usdc\\`](https://docs.lighter.xyz/api/explorer-api/markets/get-market-latest-logs-to-query-perpetual-markets-use-the-symbol-alone-for-spot-markets-use-symbol-q.md)\n- [Search](https://docs.lighter.xyz/api/explorer-api/search.md)\n- [Search for blocks, batches, transactions, or accounts](https://docs.lighter.xyz/api/explorer-api/search/search-for-blocks-batches-transactions-or-accounts.md)\n- [Stats](https://docs.lighter.xyz/api/explorer-api/stats.md)\n- [Get Tx Stats](https://docs.lighter.xyz/api/explorer-api/stats/get-tx-stats.md)\n- [List Total Values](https://docs.lighter.xyz/api/explorer-api/stats/list-total-values.md)\n- [Models](https://docs.lighter.xyz/api/models.md)\n- [WebSocket](https://docs.lighter.xyz/api/websocket.md)\n\n## Lighter EVM\n\n- [Introduction](https://docs.lighter.xyz/evm/readme.md)\n- [Getting started](https://docs.lighter.xyz/evm/getting-started.md)\n- [Technical architecture](https://docs.lighter.xyz/evm/technical-architecture.md)\n- [Differences from L1 EVM](https://docs.lighter.xyz/evm/differences-from-l1-evm.md)\n- [L1 data fee](https://docs.lighter.xyz/evm/differences-from-l1-evm/l1-data-fee.md)\n- [Lighter Interop](https://docs.lighter.xyz/evm/interop.md)\n- [Accounts](https://docs.lighter.xyz/evm/interop/accounts.md)\n- [Reading Core from EVM](https://docs.lighter.xyz/evm/interop/reading-core-from-evm.md)\n- [Message passing](https://docs.lighter.xyz/evm/interop/message-passing.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/message-passing/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-evm.md)\n- [Tokens](https://docs.lighter.xyz/evm/interop/tokens.md)\n- [Token transfers](https://docs.lighter.xyz/evm/interop/tokens/token-transfers.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-evm.md)\n- [Token linking](https://docs.lighter.xyz/evm/interop/tokens/token-linking.md)\n- [Markets](https://docs.lighter.xyz/evm/markets.md)\n- [Signing Core transactions](https://docs.lighter.xyz/evm/signing-core-transactions.md)\n- [Chain info](https://docs.lighter.xyz/evm/chain-info.md)\n- [JSON-RPC API](https://docs.lighter.xyz/evm/json-rpc-api.md)\n\n## Programs\n\n- [Programs](https://docs.lighter.xyz/programs/readme.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md)\n- [Referral Program](https://docs.lighter.xyz/programs/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/programs/liquidity-partner-program.md)\n- [Partner Attribution](https://docs.lighter.xyz/programs/partner-attribution.md)",
      "url": "https://docs.lighter.xyz/llms.txt"
     },
     "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md": {
@@ -11998,6 +12081,46 @@
      "title": "앱에 새 API 경로: /api/v1/pushnotif/registered",
      "ts": 1794175703,
      "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x091d1c97 → 0x5ee84d30",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "5d0fc042d399",
+     "ref": {
+      "amount": 2934340.25,
+      "chain": "eth",
+      "from": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
+      "to": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
+      "tx": "0x15af90a27011f3954533a77c119b5b067477291073530b6fcafcb7d48d265182"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 2.93M개 대량 이동",
+     "ts": 1794228035,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "accountOrderFills",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "b63d466d3a8a",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "accountOrderFills — https://docs.lighter.xyz/api/orders/accountorderfills.md"
+      ],
+      "removed": [],
+      "url": "https://docs.lighter.xyz/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 1개",
+     "ts": 1794251247,
+     "venue": "lighter-rh"
     }
    ],
    "frontend": {
@@ -12332,22 +12455,6 @@
    "js": null,
    "large_hist": [
     {
-     "amount": 3518810.03,
-     "block": 26328008,
-     "from": "0x3b4d794a66304f130a4db8f2551b0070dfcf5ca7",
-     "to": "0xa910fea352edb79de0c679e8630d563b6aaffb44",
-     "ts": 1793633495,
-     "tx": "0x4f628bd7e1e520f584750fc003662a356da4d5a409a60b23b9373e439b9f133d"
-    },
-    {
-     "amount": 3518920.03,
-     "block": 26328055,
-     "from": "0xa910fea352edb79de0c679e8630d563b6aaffb44",
-     "to": "0x24b12457d3a68eca9daca48f0628276592bebcdd",
-     "ts": 1793634059,
-     "tx": "0x5a7724c07f5307df9c83e71c4a020b83502e798e3e1151369943a19763e76bd1"
-    },
-    {
      "amount": 1909663.59,
      "block": 26329577,
      "from": "0x7d328f5d5f4640f81b2f93d2903ec0a6c030eed6",
@@ -12442,6 +12549,14 @@
      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
      "ts": 1794026231,
      "tx": "0xb4751f4ad38381fe63152f7e6124a3c7f391136c29baa6a9510e49468077e80a"
+    },
+    {
+     "amount": 2934340.25,
+     "block": 26377396,
+     "from": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
+     "to": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
+     "ts": 1794228035,
+     "tx": "0x15af90a27011f3954533a77c119b5b067477291073530b6fcafcb7d48d265182"
     }
    ],
    "lb_hist": [
@@ -15419,6 +15534,11 @@
      1794227914,
      273421.256,
      65963.97
+    ],
+    [
+     1794251247,
+     273856.111,
+     66135.8
     ]
    ],
    "level": "WATCH",
@@ -15707,10 +15827,6 @@
    "odds_titles": {},
    "pm_seen": [],
    "rh_supply_hist": [
-    [
-     1793023997,
-     459569.98
-    ],
     [
      1793042602,
      461668.24
@@ -17490,6 +17606,10 @@
     [
      1794227914,
      459217.05
+    ],
+    [
+     1794251247,
+     459217.05
     ]
    ],
    "seeded": true,
@@ -17612,57 +17732,57 @@
    },
    "status": {
     "ann": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794227914,
-     "note": "상위 10명 합계 273,421",
+     "at": 1794251247,
+     "note": "상위 10명 합계 273,856",
      "ok": true
     },
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794227914,
-     "note": "150블록 · 대량 0건",
+     "at": 1794251247,
+     "note": "1937블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
-     "note": "75건",
+     "at": 1794251247,
+     "note": "73건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "459,217 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "18건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     }
@@ -18785,13 +18905,13 @@
      [
       1794220708,
       6.7
+     ],
+     [
+      1794251247,
+      6.7
      ]
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
-     [
-      1793023997,
-      2.7
-     ],
      [
       1793042602,
       2.5
@@ -19343,13 +19463,13 @@
      [
       1794220708,
       0.6
+     ],
+     [
+      1794251247,
+      0.5
      ]
     ],
     "pacifica-fdv-above-200m-one-day-after-launch": [
-     [
-      1793349282,
-      7.9
-     ],
      [
       1793351301,
       9.7
@@ -20145,13 +20265,13 @@
      [
       1794227914,
       4.5
+     ],
+     [
+      1794251247,
+      4.1
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
-     [
-      1793023997,
-      4.0
-     ],
      [
       1793042602,
       3.6
@@ -20695,6 +20815,10 @@
      [
       1794220708,
       1.1
+     ],
+     [
+      1794251247,
+      1.1
      ]
     ],
     "pacifica-fdv-above-300m-one-day-after-launch-488": [
@@ -21057,13 +21181,13 @@
      [
       1794217114,
       2.2
+     ],
+     [
+      1794251247,
+      2.2
      ]
     ],
     "pacifica-fdv-above-3b-one-day-after-launch-755-395": [
-     [
-      1793023997,
-      1.7
-     ],
      [
       1793042602,
       2.0
@@ -21567,13 +21691,13 @@
      [
       1794220708,
       1.1
+     ],
+     [
+      1794251247,
+      1.1
      ]
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
-     [
-      1793023997,
-      4.3
-     ],
      [
       1793042602,
       4.5
@@ -22081,6 +22205,10 @@
      [
       1794222507,
       3.4
+     ],
+     [
+      1794251247,
+      2.9
      ]
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
@@ -22543,13 +22671,13 @@
      [
       1794224310,
       10.0
+     ],
+     [
+      1794251247,
+      9.5
      ]
     ],
     "pacifica-fdv-above-800m-one-day-after-launch-685-634": [
-     [
-      1793023997,
-      4.1
-     ],
      [
       1793042602,
       4.2
@@ -22933,6 +23061,10 @@
      [
       1794227914,
       3.7
+     ],
+     [
+      1794251247,
+      3.6
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
@@ -23491,6 +23623,10 @@
      [
       1794227914,
       11.5
+     ],
+     [
+      1794251247,
+      11.5
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2027": [
@@ -23925,6 +24061,10 @@
      [
       1794227914,
       63.5
+     ],
+     [
+      1794251247,
+      65.0
      ]
     ],
     "will-pacifica-launch-a-token-by-june-30-2027": [
@@ -24451,6 +24591,10 @@
      [
       1794224310,
       66.0
+     ],
+     [
+      1794251247,
+      65.0
      ]
     ],
     "will-pacifica-launch-a-token-by-march-31-2027": [
@@ -24725,6 +24869,10 @@
      [
       1794211700,
       40.0
+     ],
+     [
+      1794251247,
+      38.0
      ]
     ]
    },
@@ -24862,32 +25010,34 @@
      "9e1d1a040635",
      "25886d18dfbb",
      "dd83a9e8eb4f",
-     "762b5c212f02"
+     "762b5c212f02",
+     "74d729c7331b",
+     "1c40e098282d"
     ]
    },
    "status": {
     "ann": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     }
@@ -24902,9 +25052,9 @@
    "doc_moves": {},
    "docs": {
     "https://docs.qfex.com/llms.txt": {
-     "changed": 1793911349,
-     "hash": "d5c10d559388d671",
-     "text": "# QFEX API Documentation\n\n## Latest\n\n### QFEX\n\n#### Intro\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n- [Market Makers](https://docs.qfex.com/qfex/market-makers.md): Institutional connectivity enquiries\n- [FAQ](https://docs.qfex.com/qfex/faq.md): Frequently Asked Questions\n\n#### Getting Started\n\n##### Account Funding\n\n- [Bank Transfer](https://docs.qfex.com/qfex/bank-transfer.md): Pay via Bank Transfer\n- [Stablecoins](https://docs.qfex.com/qfex/stablecoins.md): Pay via Stablecoins\n\n#### Community\n\n- [Builder Codes](https://docs.qfex.com/qfex/builder-code.md): Create a builder code, integrate QFEX trading, and earn builder rewards\n- [Referral and Affiliate Program](https://docs.qfex.com/qfex/referral.md): Two commission programs: open referrals and approved affiliates\n\n#### Strategies\n\n- [Managed Account Strategy](https://docs.qfex.com/qfex/managed-account.md): Invite-only systematic market-neutral trading for eligible high-volume QFEX traders.\n- [Agentic Trading](https://docs.qfex.com/qfex/agentic-trading.md): Use AI agents to research markets, manage positions, and trade on QFEX.\n\n#### Trading Rulebook\n\n- [Definitions and Formulae](https://docs.qfex.com/qfex/definitions.md): Common Terms Used in the Rulebook\n- [Exchange](https://docs.qfex.com/qfex/architecture.md): Technical Description of the Exchange\n- [Order Entry](https://docs.qfex.com/qfex/order-types.md): Supported Order Types and Times in Force\n- [Contract Specifications](https://docs.qfex.com/qfex/contract-specifications.md): Perpetual Futures Adapted for Traditional Assets\n- [Pre-IPO Stock Perpetuals](https://docs.qfex.com/qfex/pre-ipo-stocks.md): How QFEX prices, funds, and adjusts perpetuals referencing companies before an IPO.\n- [Specification Index](https://docs.qfex.com/qfex/specification-index.md): A consolidated view of active QFEX production contract, execution, session, and risk parameters.\n- [Roll Schedules](https://docs.qfex.com/qfex/roll-schedules.md): Published dated-futures contracts and roll boundaries used by QFEX oracle pricing.\n- [Funding](https://docs.qfex.com/qfex/funding.md): When funding is active, why it can be zero, and how rates are computed.\n- [Risk Limits](https://docs.qfex.com/qfex/risk-limits.md): Stay Safe\n- [Margin and Liquidations](https://docs.qfex.com/qfex/liquidation-margin-call.md): A Detailed Description of the Liquidation Cascade\n- [Corporate Actions](https://docs.qfex.com/qfex/corporate-actions.md): QFEX Policy on Equity Corporate Actions\n- [Fees](https://docs.qfex.com/qfex/fees.md)\n- [Subaccounts](https://docs.qfex.com/qfex/subaccounts.md): Separate your margin and risk\n\n#### Glossary\n\n- [Blocked Countries and Restrictions](https://docs.qfex.com/qfex/prohibited-jurisdictions.md)\n\n### API Reference\n\n#### API Documentation\n\n- [Introduction](https://docs.qfex.com/api-reference/introduction.md)\n- [API versioning](https://docs.qfex.com/api-reference/versioning.md): Select a REST API contract and pin the request and response format for your integration.\n- [API Keys](https://docs.qfex.com/api-reference/api-keys.md): Create and securely use account-scoped API keys with granular permissions.\n- [Wallet authentication](https://docs.qfex.com/api-reference/wallet-authentication.md): Sign up or sign in to QFEX programmatically with an Ethereum wallet and use the resulting session.\n- [Programmatic deposits and withdrawals](https://docs.qfex.com/api-reference/programmatic-funding.md): Fund a QFEX account and request crypto or USD withdrawals with the REST API.\n- [CLI](https://docs.qfex.com/api-reference/cli.md): JSON-native command-line access to QFEX market data, trading, and account state.\n- [Enums](https://docs.qfex.com/api-reference/enums.md)\n- [Errors](https://docs.qfex.com/websocket/errors.md)\n- [API Rate Limits](https://docs.qfex.com/websocket/rate.md): This page explains how request throttling works on our **WebSocket trading API**. If you’re writing a client, read this to avoid `RateLimited` errors.\n- [Changelog](https://docs.qfex.com/websocket/changelog.md): Product updates and announcements\n\n#### Builder Codes\n\n- [Builder Integration Guide](https://docs.qfex.com/api-reference/builder-integration.md): Choose OAuth or wallet-signed trading keys to onboard users and attribute their trading to your builder code\n- [Builder wallet registration](https://docs.qfex.com/api-reference/builder-wallet-registration.md): Use a wallet signature to create a main-account trading key for a builder's users.\n- [Builder Codes API](https://docs.qfex.com/api-reference/builder-codes.md): Create and retrieve builder codes, attach them to Trade WebSocket sessions, and read builder rewards\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n#### Funding API\n\n##### funding\n\n- [Get a crypto deposit address](https://docs.qfex.com/api-reference/funding/funding/get-a-crypto-deposit-address.md): API keys require view_balance. Returns the existing deposit address or provisions one on the first call without rotating an existing address. ARBITRUM_ONE deposits USDC; TRON deposits USDT. POST /address/rotate requires deposit_withdraw.\n- [List registered crypto withdrawal addresses](https://docs.qfex.com/api-reference/funding/funding/list-registered-crypto-withdrawal-addresses.md): API keys require view_balance. Returns all crypto withdrawal addresses registered by the authenticated user across networks. The user is resolved from authentication; no user-ID query parameter is used. This endpoint does not register, change, or delete addresses.\n- [Request a crypto withdrawal to a registered address](https://docs.qfex.com/api-reference/funding/funding/request-a-crypto-withdrawal-to-a-registered-address.md): Standard API keys require deposit_withdraw. Keys issued or replaced through POST /builder/web3/api-key also support crypto withdrawals to registered destinations when the user owns the selected account. This builder access is not selectable in Developer Settings. Every withdrawal, including all API…\n\n#### WebSocket\n\n- [Websocket Overview](https://docs.qfex.com/websocket/main.md)\n- [Trade Playground](https://docs.qfex.com/websocket/trade.md): Single channel for order commands, positions, balances, fills\n- [MDS Playground](https://docs.qfex.com/websocket/mds.md): Single channel for orderbook, trades, candles\n\n##### Market Data\n\n- [Reference Data](https://docs.qfex.com/websocket/channels/mds/refdata.md)\n- [Pulsed Order Book](https://docs.qfex.com/websocket/channels/mds/orderbook.md)\n- [Public Trades](https://docs.qfex.com/websocket/channels/mds/trades.md)\n- [Pulsed BBO](https://docs.qfex.com/websocket/channels/mds/bbo.md)\n- [Underlier Price](https://docs.qfex.com/websocket/channels/mds/underlier.md)\n- [Funding Rate](https://docs.qfex.com/websocket/channels/mds/funding_rate.md)\n- [Mark Price](https://docs.qfex.com/websocket/channels/mds/mark_price.md)\n- [Open Interest](https://docs.qfex.com/websocket/channels/mds/open_interest.md)\n- [Minmax Price](https://docs.qfex.com/websocket/channels/mds/minmax_price.md)\n- [Market Stats](https://docs.qfex.com/websocket/channels/mds/market_stats.md): Consolidated BBO, mark price, open interest, funding, and rolling 24-hour volume snapshots.\n\n##### Trade\n\n- [Authenticate](https://docs.qfex.com/websocket/channels/trade/authenticate.md)\n- [Subscribe — Order Responses](https://docs.qfex.com/websocket/channels/trade/order.md)\n- [Subscribe — Fills](https://docs.qfex.com/websocket/channels/trade/fills.md)\n- [Order Entry — Add Order](https://docs.qfex.com/websocket/channels/trade/add_order.md)\n- [Order Entry — Cancel Order](https://docs.qfex.com/websocket/channels/trade/cancel_order.md)\n- [Order Entry — Modify Order](https://docs.qfex.com/websocket/channels/trade/modify_order.md)\n- [Cancel All Orders](https://docs.qfex.com/websocket/channels/trade/cancel_all_orders.md)\n- [Order Entry — Close Position](https://docs.qfex.com/websocket/channels/trade/close_position.md)\n- [Order Entry — Add TWAP](https://docs.qfex.com/websocket/channels/trade/add_twap.md)\n- [Get User Orders](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md)\n- [Get Order](https://docs.qfex.com/websocket/channels/trade/get_order.md)\n- [Get User Trades](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md)\n- [Subscribe — Balances](https://docs.qfex.com/websocket/channels/trade/balance.md)\n- [Subscribe — Positions](https://docs.qfex.com/websocket/channels/trade/positions.md)\n- [Get Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_leverage.md)\n- [Get Available Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_available_leverage.md)\n- [Set Leverage](https://docs.qfex.com/websocket/channels/trade/set_leverage.md)\n- [Cancel On Disconnect](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md)\n- [Order Entry — Add Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md)\n- [Order Entry — Cancel Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md)\n- [Order Entry — Modify Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md)\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n- [Privacy Policy](https://docs.qfex.com/legal/privacy-policy.md): Last Updated: 6 October 2026\n- [Cookie Policy](https://docs.qfex.com/legal/cookie-policy.md): Last Updated: 28 November 2025\n- [Bug Bounty](https://docs.qfex.com/legal/bug-bounty.md)\n\n## 2026-10-29\n\n### QFEX\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n\n### API Reference\n\n#### Contract guide\n\n- [REST API: 2026-10-29](https://docs.qfex.com/api-reference/versions/2026-10-29.md): Use the published 2026-10-29 request and response contract.\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/2026-10-29/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/2026-10-29/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/2026-10-29/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/2026-10-29/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n\n## OpenAPI Specs\n\n- [openapi](https://api.qfex.com/openapi.yaml)\n- [funding-openapi](/api-reference/funding-openapi.yaml)\n- [openapi](https://api.qfex.com/contracts/2026-10-29/openapi.yaml)\n\n## AsyncAPI Specs\n\n- [trade](/websocket/trade.yaml)\n- [mds](/websocket/mds.yaml)\n- [asyncapi](/docs/websocket/asyncapi.yaml)\n- [mds](/docs/websocket/mds.yaml)\n- [trade](/docs/websocket/trade.yaml)\n\n## Optional\n\n- [Status / 运行状态](https://status.qfex.com)\n\n> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.\n\n## Indexes\n\n- [Chinese (164 pages)](https://docs.qfex.com/_llms/cn.txt): Documentation for Chinese.",
+     "changed": 1794251247,
+     "hash": "7ac60ba769ade803",
+     "text": "# QFEX API Documentation\n\n## Latest\n\n### QFEX\n\n#### Intro\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n- [Market Makers](https://docs.qfex.com/qfex/market-makers.md): Institutional connectivity enquiries\n- [FAQ](https://docs.qfex.com/qfex/faq.md): Frequently Asked Questions\n\n#### Getting Started\n\n##### Account Funding\n\n- [Bank Transfer](https://docs.qfex.com/qfex/bank-transfer.md): Pay via Bank Transfer\n- [Stablecoins](https://docs.qfex.com/qfex/stablecoins.md): Pay via Stablecoins\n\n#### Community\n\n- [Builder Codes](https://docs.qfex.com/qfex/builder-code.md): Create a builder code, integrate QFEX trading, and earn builder rewards\n- [Referral and Affiliate Program](https://docs.qfex.com/qfex/referral.md): Two commission programs: open referrals and approved affiliates\n\n#### Strategies\n\n- [Managed Account Strategy](https://docs.qfex.com/qfex/managed-account.md): Invite-only systematic market-neutral trading for eligible high-volume QFEX traders.\n- [Agentic Trading](https://docs.qfex.com/qfex/agentic-trading.md): Use AI agents to research markets, manage positions, and trade on QFEX.\n\n#### Trading Rulebook\n\n- [Definitions and Formulae](https://docs.qfex.com/qfex/definitions.md): Common Terms Used in the Rulebook\n- [Exchange](https://docs.qfex.com/qfex/architecture.md): Technical Description of the Exchange\n- [Order Entry](https://docs.qfex.com/qfex/order-types.md): Supported Order Types and Times in Force\n- [Contract Specifications](https://docs.qfex.com/qfex/contract-specifications.md): Perpetual Futures Adapted for Traditional Assets\n- [Pre-IPO Stock Perpetuals](https://docs.qfex.com/qfex/pre-ipo-stocks.md): How QFEX prices, funds, and adjusts perpetuals referencing companies before an IPO.\n- [Specification Index](https://docs.qfex.com/qfex/specification-index.md): A consolidated view of active QFEX production contract, execution, session, and risk parameters.\n- [Roll Schedules](https://docs.qfex.com/qfex/roll-schedules.md): Published dated-futures contracts and roll boundaries used by QFEX oracle pricing.\n- [Funding](https://docs.qfex.com/qfex/funding.md): When funding is active, why it can be zero, and how rates are computed.\n- [Risk Limits](https://docs.qfex.com/qfex/risk-limits.md): Stay Safe\n- [Margin and Liquidations](https://docs.qfex.com/qfex/liquidation-margin-call.md): A Detailed Description of the Liquidation Cascade\n- [Corporate Actions](https://docs.qfex.com/qfex/corporate-actions.md): QFEX Policy on Equity Corporate Actions\n- [Fees](https://docs.qfex.com/qfex/fees.md)\n- [Subaccounts](https://docs.qfex.com/qfex/subaccounts.md): Separate your margin and risk\n\n#### Glossary\n\n- [Blocked Countries and Restrictions](https://docs.qfex.com/qfex/prohibited-jurisdictions.md)\n\n### API Reference\n\n#### API Documentation\n\n- [Introduction](https://docs.qfex.com/api-reference/introduction.md)\n- [API versioning](https://docs.qfex.com/api-reference/versioning.md): Select a REST API contract and pin the request and response format for your integration.\n- [Account execution history](https://docs.qfex.com/api-reference/executions.md): Retrieve funding payments, fee rebates and referral rewards, and use the correct timestamp formats.\n- [API Keys](https://docs.qfex.com/api-reference/api-keys.md): Create and securely use account-scoped API keys with granular permissions.\n- [Wallet authentication](https://docs.qfex.com/api-reference/wallet-authentication.md): Sign up or sign in to QFEX programmatically with an Ethereum wallet and use the resulting session.\n- [Programmatic deposits and withdrawals](https://docs.qfex.com/api-reference/programmatic-funding.md): Fund a QFEX account and request crypto or USD withdrawals with the REST API.\n- [CLI](https://docs.qfex.com/api-reference/cli.md): JSON-native command-line access to QFEX market data, trading, and account state.\n- [Enums](https://docs.qfex.com/api-reference/enums.md)\n- [Errors](https://docs.qfex.com/websocket/errors.md)\n- [API Rate Limits](https://docs.qfex.com/websocket/rate.md): This page explains how request throttling works on our **WebSocket trading API**. If you’re writing a client, read this to avoid `RateLimited` errors.\n- [Changelog](https://docs.qfex.com/websocket/changelog.md): Product updates and announcements\n\n#### Builder Codes\n\n- [Builder Integration Guide](https://docs.qfex.com/api-reference/builder-integration.md): Choose OAuth or wallet-signed trading keys to onboard users and attribute their trading to your builder code\n- [Builder wallet registration](https://docs.qfex.com/api-reference/builder-wallet-registration.md): Use a wallet signature to create a main-account trading key for a builder's users.\n- [Builder Codes API](https://docs.qfex.com/api-reference/builder-codes.md): Create and retrieve builder codes, attach them to Trade WebSocket sessions, and read builder rewards\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n#### Funding API\n\n##### funding\n\n- [Get a crypto deposit address](https://docs.qfex.com/api-reference/funding/funding/get-a-crypto-deposit-address.md): API keys require view_balance. Returns the existing deposit address or provisions one on the first call without rotating an existing address. ARBITRUM_ONE deposits USDC; TRON deposits USDT. POST /address/rotate requires deposit_withdraw.\n- [List registered crypto withdrawal addresses](https://docs.qfex.com/api-reference/funding/funding/list-registered-crypto-withdrawal-addresses.md): API keys require view_balance. Returns all crypto withdrawal addresses registered by the authenticated user across networks. The user is resolved from authentication; no user-ID query parameter is used. This endpoint does not register, change, or delete addresses.\n- [Request a crypto withdrawal to a registered address](https://docs.qfex.com/api-reference/funding/funding/request-a-crypto-withdrawal-to-a-registered-address.md): Standard API keys require deposit_withdraw. Keys issued or replaced through POST /builder/web3/api-key also support crypto withdrawals to registered destinations when the user owns the selected account. This builder access is not selectable in Developer Settings. Every withdrawal, including all API…\n\n#### WebSocket\n\n- [Websocket Overview](https://docs.qfex.com/websocket/main.md)\n- [Trade Playground](https://docs.qfex.com/websocket/trade.md): Single channel for order commands, positions, balances, fills\n- [MDS Playground](https://docs.qfex.com/websocket/mds.md): Single channel for orderbook, trades, candles\n\n##### Market Data\n\n- [Reference Data](https://docs.qfex.com/websocket/channels/mds/refdata.md)\n- [Pulsed Order Book](https://docs.qfex.com/websocket/channels/mds/orderbook.md)\n- [Public Trades](https://docs.qfex.com/websocket/channels/mds/trades.md)\n- [Pulsed BBO](https://docs.qfex.com/websocket/channels/mds/bbo.md)\n- [Underlier Price](https://docs.qfex.com/websocket/channels/mds/underlier.md)\n- [Funding Rate](https://docs.qfex.com/websocket/channels/mds/funding_rate.md)\n- [Mark Price](https://docs.qfex.com/websocket/channels/mds/mark_price.md)\n- [Open Interest](https://docs.qfex.com/websocket/channels/mds/open_interest.md)\n- [Minmax Price](https://docs.qfex.com/websocket/channels/mds/minmax_price.md)\n- [Market Stats](https://docs.qfex.com/websocket/channels/mds/market_stats.md): Consolidated BBO, mark price, open interest, funding, and rolling 24-hour volume snapshots.\n\n##### Trade\n\n- [Authenticate](https://docs.qfex.com/websocket/channels/trade/authenticate.md)\n- [Subscribe — Order Responses](https://docs.qfex.com/websocket/channels/trade/order.md)\n- [Subscribe — Fills](https://docs.qfex.com/websocket/channels/trade/fills.md)\n- [Order Entry — Add Order](https://docs.qfex.com/websocket/channels/trade/add_order.md)\n- [Order Entry — Cancel Order](https://docs.qfex.com/websocket/channels/trade/cancel_order.md)\n- [Order Entry — Modify Order](https://docs.qfex.com/websocket/channels/trade/modify_order.md)\n- [Cancel All Orders](https://docs.qfex.com/websocket/channels/trade/cancel_all_orders.md)\n- [Order Entry — Close Position](https://docs.qfex.com/websocket/channels/trade/close_position.md)\n- [Order Entry — Add TWAP](https://docs.qfex.com/websocket/channels/trade/add_twap.md)\n- [Get User Orders](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md)\n- [Get Order](https://docs.qfex.com/websocket/channels/trade/get_order.md)\n- [Get User Trades](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md)\n- [Subscribe — Balances](https://docs.qfex.com/websocket/channels/trade/balance.md)\n- [Subscribe — Positions](https://docs.qfex.com/websocket/channels/trade/positions.md)\n- [Get Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_leverage.md)\n- [Get Available Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_available_leverage.md)\n- [Set Leverage](https://docs.qfex.com/websocket/channels/trade/set_leverage.md)\n- [Cancel On Disconnect](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md)\n- [Order Entry — Add Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md)\n- [Order Entry — Cancel Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md)\n- [Order Entry — Modify Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md)\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n- [Privacy Policy](https://docs.qfex.com/legal/privacy-policy.md): Last Updated: 6 October 2026\n- [Cookie Policy](https://docs.qfex.com/legal/cookie-policy.md): Last Updated: 28 November 2025\n- [Bug Bounty](https://docs.qfex.com/legal/bug-bounty.md)\n\n## 2026-10-29\n\n### QFEX\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n\n### API Reference\n\n#### Contract guide\n\n- [REST API: 2026-10-29](https://docs.qfex.com/api-reference/versions/2026-10-29.md): Use the published 2026-10-29 request and response contract.\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/2026-10-29/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/2026-10-29/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/2026-10-29/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/2026-10-29/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n\n## OpenAPI Specs\n\n- [openapi](https://api.qfex.com/openapi.yaml)\n- [funding-openapi](/api-reference/funding-openapi.yaml)\n- [openapi](https://api.qfex.com/contracts/2026-10-29/openapi.yaml)\n\n## AsyncAPI Specs\n\n- [trade](/websocket/trade.yaml)\n- [mds](/websocket/mds.yaml)\n- [asyncapi](/docs/websocket/asyncapi.yaml)\n- [mds](/docs/websocket/mds.yaml)\n- [trade](/docs/websocket/trade.yaml)\n\n## Optional\n\n- [Status / 运行状态](https://status.qfex.com)\n\n> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.\n\n## Indexes\n\n- [Chinese (165 pages)](https://docs.qfex.com/_llms/cn.txt): Documentation for Chinese.",
      "url": "https://docs.qfex.com/llms.txt"
     },
     "https://docs.qfex.com/qfex/fees.md": {
@@ -25179,6 +25329,27 @@
      "title": "공식 문서 '문서 전체 목록' 문구 변경",
      "ts": 1793911349,
      "venue": "qfex"
+    },
+    {
+     "detail": "Account execution history",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "39945bae3d74",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Account execution history — https://docs.qfex.com/api-reference/executions.md"
+      ],
+      "removed": [],
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 1개",
+     "ts": 1794251247,
+     "venue": "qfex"
     }
    ],
    "frontend": null,
@@ -25225,10 +25396,6 @@
    "notified_ids": [],
    "odds": {
     "qfex-fdv-above-100m-one-day-after-launch": [
-     [
-      1793023997,
-      38.0
-     ],
      [
       1793052504,
       35.0
@@ -25860,13 +26027,13 @@
      [
       1794211700,
       50.0
+     ],
+     [
+      1794251247,
+      50.0
      ]
     ],
     "qfex-fdv-above-200m-one-day-after-launch": [
-     [
-      1793042602,
-      28.0
-     ],
      [
       1793064488,
       28.0
@@ -26662,13 +26829,13 @@
      [
       1794227914,
       51.5
+     ],
+     [
+      1794251247,
+      51.5
      ]
     ],
     "qfex-fdv-above-300m-one-day-after-launch": [
-     [
-      1793023997,
-      26.0
-     ],
      [
       1793042602,
       23.5
@@ -27428,6 +27595,10 @@
      [
       1794220708,
       51.5
+     ],
+     [
+      1794251247,
+      49.5
      ]
     ],
     "qfex-fdv-above-500m-one-day-after-launch": [
@@ -28222,13 +28393,13 @@
      [
       1794227914,
       34.5
+     ],
+     [
+      1794251247,
+      35.0
      ]
     ],
     "qfex-fdv-above-50m-one-day-after-launch": [
-     [
-      1793023997,
-      52.5
-     ],
      [
       1793042602,
       54.5
@@ -28900,6 +29071,10 @@
      [
       1794224310,
       51.0
+     ],
+     [
+      1794251247,
+      50.5
      ]
     ],
     "qfex-fdv-above-80m-one-day-after-launch": [
@@ -29406,6 +29581,10 @@
      [
       1794226101,
       48.5
+     ],
+     [
+      1794251247,
+      48.0
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2026": [
@@ -29660,13 +29839,13 @@
      [
       1794208111,
       2.1
+     ],
+     [
+      1794251247,
+      2.1
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2027": [
-     [
-      1793023997,
-      52.0
-     ],
      [
       1793042602,
       51.5
@@ -30422,6 +30601,10 @@
      [
       1794224310,
       55.0
+     ],
+     [
+      1794251247,
+      57.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
@@ -31004,13 +31187,13 @@
      [
       1794220708,
       22.5
+     ],
+     [
+      1794251247,
+      22.0
      ]
     ],
     "will-qfex-launch-a-token-by-march-31-2027": [
-     [
-      1793023997,
-      21.5
-     ],
      [
       1793052504,
       21.0
@@ -31358,13 +31541,13 @@
      [
       1794220708,
       12.0
+     ],
+     [
+      1794251247,
+      12.0
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
-     [
-      1793023997,
-      46.0
-     ],
      [
       1793042602,
       47.0
@@ -31796,6 +31979,10 @@
      [
       1794224310,
       40.5
+     ],
+     [
+      1794251247,
+      40.5
      ]
     ]
    },
@@ -31906,32 +32093,37 @@
      "4c5f82f969c3",
      "069455d138a7",
      "a72a14aebde3",
-     "b8b8cdd23649"
+     "b8b8cdd23649",
+     "a2f3208dceb9",
+     "dcbfb824b5db",
+     "f39750496e5b",
+     "a815156e9504",
+     "f879265c9ac4"
     ]
    },
    "status": {
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     }
@@ -32417,6 +32609,10 @@
      [
       1794218900,
       1.8
+     ],
+     [
+      1794251247,
+      1.9
      ]
     ],
     "will-risex-launch-a-token-by-december-31-2027-20260708174012706": [
@@ -32790,6 +32986,10 @@
      ],
      [
       1794220708,
+      72.5
+     ],
+     [
+      1794251247,
       72.5
      ]
     ],
@@ -33357,6 +33557,10 @@
      [
       1794217114,
       35.0
+     ],
+     [
+      1794251247,
+      35.0
      ]
     ]
    },
@@ -33451,28 +33655,32 @@
      "86e2288ac9d9",
      "d37531453540",
      "f9f6a043a22a",
-     "d9538cd76ed9"
+     "d9538cd76ed9",
+     "408a49067d53",
+     "a1afdca4ad4b",
+     "74833a219ed1",
+     "4809f3e8265a"
     ]
    },
    "status": {
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794227914,
-     "note": "20건",
+     "at": 1794251247,
+     "note": "21건",
      "ok": true
     }
    }
@@ -34965,17 +35173,17 @@
    },
    "status": {
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "9건",
      "ok": true
     }
@@ -34988,7 +35196,7 @@
    "api_watch": {
     "pages": {
      "https://docs.txflow.com/api/exchange.md": {
-      "at": 1794227914,
+      "at": 1794251247,
       "state": "closed"
      }
     },
@@ -35305,28 +35513,28 @@
    },
    "status": {
     "api_watch": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
-     "note": "13건",
+     "at": 1794251247,
+     "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794227914,
-     "note": "20건",
+     "at": 1794251247,
+     "note": "21건",
      "ok": true
     }
    }
@@ -35338,11 +35546,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1794227914,
+      "at": 1794251247,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1794227914,
+      "at": 1794251247,
       "state": "closed"
      }
     },
@@ -35861,6 +36069,10 @@
      [
       1794227914,
       97.2
+     ],
+     [
+      1794251247,
+      97.3
      ]
     ],
     "variational-fdv-above-1b-one-day-after-launch-636-229-681": [
@@ -36151,13 +36363,13 @@
      [
       1794220708,
       56.0
+     ],
+     [
+      1794251247,
+      55.5
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
-     [
-      1793023997,
-      95.0
-     ],
      [
       1793042602,
       94.8
@@ -36789,13 +37001,13 @@
      [
       1794224310,
       97.1
+     ],
+     [
+      1794251247,
+      97.1
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
-     [
-      1793023997,
-      26.4
-     ],
      [
       1793042602,
       25.7
@@ -37503,6 +37715,10 @@
      [
       1794227914,
       23.2
+     ],
+     [
+      1794251247,
+      23.1
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
@@ -37812,6 +38028,10 @@
      ],
      [
       1794218900,
+      94.3
+     ],
+     [
+      1794251247,
       94.3
      ]
     ],
@@ -38547,6 +38767,10 @@
      [
       1794217114,
       12.8
+     ],
+     [
+      1794251247,
+      12.4
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
@@ -38801,6 +39025,10 @@
      [
       1794220708,
       5.5
+     ],
+     [
+      1794251247,
+      5.5
      ]
     ],
     "variational-fdv-above-500m-one-day-after-launch-547-272": [
@@ -39039,13 +39267,13 @@
      [
       1794208111,
       87.5
+     ],
+     [
+      1794251247,
+      87.5
      ]
     ],
     "variational-fdv-above-5b-one-day-after-launch-995-724-585": [
-     [
-      1793023997,
-      2.7
-     ],
      [
       1793042602,
       3.2
@@ -39585,6 +39813,10 @@
      [
       1794220708,
       3.5
+     ],
+     [
+      1794251247,
+      3.5
      ]
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
@@ -39855,13 +40087,13 @@
      [
       1794220708,
       73.0
+     ],
+     [
+      1794251247,
+      76.5
      ]
     ],
     "will-variational-launch-a-token-by-december-31-2026-577-621": [
-     [
-      1793300371,
-      82.5
-     ],
      [
       1793311706,
       81.3
@@ -40657,13 +40889,13 @@
      [
       1794226101,
       70.1
+     ],
+     [
+      1794251247,
+      69.5
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
-     [
-      1793023997,
-      17.0
-     ],
      [
       1793042602,
       17.5
@@ -41351,6 +41583,10 @@
      [
       1794211700,
       4.9
+     ],
+     [
+      1794251247,
+      4.5
      ]
     ]
    },
@@ -41508,37 +41744,38 @@
      "f4ef821aacbf",
      "b18e28ff12f5",
      "eae6c1b9aba4",
-     "2ebcac5c15ef"
+     "2ebcac5c15ef",
+     "2b25e8e52b26"
     ]
    },
    "status": {
     "api_watch": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794227914,
+     "at": 1794251247,
      "note": "20건",
      "ok": true
     }

@@ -1,9 +1,9 @@
 {
- "generated_at": 1794227914,
+ "generated_at": 1794251247,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
-  "hellotrade": "WATCH",
+  "hellotrade": "NONE",
   "lighter-rh": "WATCH",
   "pacifica": "WATCH",
   "qfex": "WATCH",
@@ -15,14 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1794150514,
-   "s"
-  ],
-  [
-   1794162240,
-   "s"
-  ],
   [
    1794175703,
    "d"
@@ -146,6 +138,10 @@
   [
    1794227914,
    "d"
+  ],
+  [
+   1794251247,
+   "s"
   ]
  ],
  "status": {
@@ -163,7 +159,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
