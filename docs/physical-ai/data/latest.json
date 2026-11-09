@@ -1,6 +1,6 @@
 {
- "date": "2026-11-02",
- "generated_at": "2026-11-02T11:15:33+09:00",
+ "date": "2026-11-09",
+ "generated_at": "2026-11-09T11:45:34+09:00",
  "summary": {
   "narrative": {
    "label": "서사",
@@ -31,7 +31,7 @@
    "label": "① 서사 점화",
    "rule": "로봇 용어 공시 언급 4분기 합이 2년 전 대비 3배 이상",
    "status": "PASS",
-   "current": 8.57,
+   "current": 8.97,
    "target": 3.0,
    "note": "2년 전 대비 언급 배수",
    "reference": "2023Q1"
@@ -42,7 +42,7 @@
    "label": "② 산업 전반 확산",
    "rule": "로봇 용어를 언급한 SIC 산업 수 4분기 평균이 2년 전 대비 2배 이상",
    "status": "PASS",
-   "current": 2.27,
+   "current": 2.31,
    "target": 2.0,
    "note": "SIC 다양성 배수 (버킷 상한 30)",
    "reference": "2024Q1"
@@ -86,7 +86,7 @@
    "label": "⑥ 가격 재평가",
    "rule": "순수 바스켓 12개월 초과수익 ≥ +20%",
    "status": "FAIL",
-   "current": -0.496,
+   "current": -0.505,
    "target": 0.2,
    "note": "2026Q4 12개월 초과수익",
    "reference": "2023Q2"
@@ -94,18 +94,17 @@
  ],
  "alert": {
   "level": "INFO",
-  "streak": 2,
+  "streak": 3,
   "limit": 6,
-  "text": "서사 선행 상태 2회 연속 (경고 기준 6회)"
+  "text": "서사 선행 상태 3회 연속 (경고 기준 6회)"
  },
  "decoupling": {
-  "corr": 0.067,
+  "corr": 0.237,
   "decoupled": true,
   "threshold": 0.35
  },
  "excess": {
   "pure": {
-   "2024Q1": 0.6925462569500815,
    "2024Q2": -0.4064081378268093,
    "2024Q3": -0.6126072550177859,
    "2024Q4": -0.7792664127003955,
@@ -116,10 +115,9 @@
    "2026Q1": 0.3631578398739881,
    "2026Q2": -0.03130524048649763,
    "2026Q3": -0.23403539922004946,
-   "2026Q4": -0.49590407810830156
+   "2026Q4": -0.5051488414852663
   },
   "legacy": {
-   "2024Q1": -0.30733137587208187,
    "2024Q2": -0.3426425076026909,
    "2024Q3": -0.29625418937100034,
    "2024Q4": -0.3271493668285315,
@@ -130,10 +128,9 @@
    "2026Q1": 0.13078647646272024,
    "2026Q2": 0.24268409724013784,
    "2026Q3": 0.14313913580248117,
-   "2026Q4": 0.14999500738643057
+   "2026Q4": 0.07413203756140796
   },
   "aisemi": {
-   "2024Q1": 0.6760805995506283,
    "2024Q2": 0.6231928630260528,
    "2024Q3": 0.668185730197359,
    "2024Q4": 0.6212814361029684,
@@ -144,7 +141,7 @@
    "2026Q1": 0.7042845709257712,
    "2026Q2": 0.941736836807181,
    "2026Q3": 0.3866762961975071,
-   "2026Q4": 0.2283993160814186
+   "2026Q4": 0.19121834213438627
   }
  },
  "narrative": {
@@ -289,8 +286,8 @@
    "sic_n": 30
   },
   "2026Q4": {
-   "hits": 245,
-   "sic_n": 28
+   "hits": 314,
+   "sic_n": 30
   }
  },
  "data_status": {
@@ -326,13 +323,13 @@
    {
     "rank": 1,
     "ticker": "TER",
-    "score": 82.6,
+    "score": 79.5,
     "coverage": 1.0,
     "detail": {
      "purity": 0.917,
      "realization": 0.909,
-     "independence": 0.412,
-     "resilience": 1.0,
+     "independence": 0.294,
+     "resilience": 0.952,
      "liquidity": 0.909
     },
     "density": 0.2073,
@@ -341,38 +338,6 @@
    },
    {
     "rank": 2,
-    "ticker": "AVAV",
-    "score": 73.7,
-    "coverage": 1.0,
-    "detail": {
-     "purity": 0.833,
-     "realization": 0.864,
-     "independence": 0.794,
-     "resilience": 0.286,
-     "liquidity": 0.697
-    },
-    "density": 0.1569,
-    "persistence": 0.75,
-    "margin": -0.023
-   },
-   {
-    "rank": 3,
-    "ticker": "NVDA",
-    "score": 73.1,
-    "coverage": 1.0,
-    "detail": {
-     "purity": 0.625,
-     "realization": 0.636,
-     "independence": 0.706,
-     "resilience": 0.952,
-     "liquidity": 1.0
-    },
-    "density": 0.1174,
-    "persistence": 0.25,
-    "margin": 0.308
-   },
-   {
-    "rank": 4,
     "ticker": "TSLA",
     "score": 73.0,
     "coverage": 1.0,
@@ -388,48 +353,80 @@
     "margin": 0.026
    },
    {
+    "rank": 3,
+    "ticker": "AVAV",
+    "score": 72.0,
+    "coverage": 1.0,
+    "detail": {
+     "purity": 0.833,
+     "realization": 0.818,
+     "independence": 0.765,
+     "resilience": 0.286,
+     "liquidity": 0.697
+    },
+    "density": 0.1569,
+    "persistence": 0.75,
+    "margin": -0.023
+   },
+   {
+    "rank": 4,
+    "ticker": "NVDA",
+    "score": 71.2,
+    "coverage": 1.0,
+    "detail": {
+     "purity": 0.625,
+     "realization": 0.591,
+     "independence": 0.706,
+     "resilience": 0.905,
+     "liquidity": 1.0
+    },
+    "density": 0.1174,
+    "persistence": 0.25,
+    "margin": 0.308
+   },
+   {
     "rank": 5,
     "ticker": "ZBRA",
-    "score": 67.5,
+    "score": 63.7,
     "coverage": 1.0,
     "detail": {
      "purity": 0.75,
-     "realization": 0.591,
-     "independence": 0.647,
-     "resilience": 0.667,
+     "realization": 0.545,
+     "independence": 0.588,
+     "resilience": 0.571,
      "liquidity": 0.727
     },
     "density": 0.1413,
     "persistence": 0.0,
-    "margin": 0.206
+    "margin": 0.147
    },
    {
     "rank": 6,
     "ticker": "OUST",
-    "score": 65.0,
+    "score": 63.5,
     "coverage": 1.0,
     "detail": {
      "purity": 0.875,
      "realization": 1.0,
-     "independence": 0.324,
+     "independence": 0.265,
      "resilience": 0.143,
-     "liquidity": 0.515
+     "liquidity": 0.485
     },
     "density": 0.1658,
     "persistence": 1.0,
-    "margin": -0.367
+    "margin": -0.325
    },
    {
     "rank": 7,
     "ticker": "SYM",
-    "score": 62.6,
+    "score": 62.9,
     "coverage": 1.0,
     "detail": {
      "purity": 0.667,
-     "realization": 0.818,
-     "independence": 0.559,
+     "realization": 0.773,
+     "independence": 0.647,
      "resilience": 0.429,
-     "liquidity": 0.455
+     "liquidity": 0.424
     },
     "density": 0.1277,
     "persistence": 0.5,
@@ -438,67 +435,55 @@
    {
     "rank": 8,
     "ticker": "KTOS",
-    "score": 58.6,
+    "score": 61.4,
     "coverage": 1.0,
     "detail": {
      "purity": 0.292,
-     "realization": 0.773,
-     "independence": 0.941,
+     "realization": 0.864,
+     "independence": 0.971,
      "resilience": 0.333,
      "liquidity": 0.667
     },
     "density": 0.0093,
-    "persistence": 0.5,
-    "margin": -0.003
+    "persistence": 0.75,
+    "margin": -0.01
    },
    {
     "rank": 9,
     "ticker": "AMD",
-    "score": 54.8,
+    "score": 56.3,
     "coverage": 1.0,
     "detail": {
      "purity": 0.333,
      "realization": 0.955,
-     "independence": 0.147,
-     "resilience": 0.571,
+     "independence": 0.118,
+     "resilience": 0.714,
      "liquidity": 0.939
     },
     "density": 0.0286,
     "persistence": 1.0,
-    "margin": 0.173
+    "margin": 0.212
    },
    {
     "rank": 10,
-    "ticker": "AMBA",
-    "score": 52.7,
+    "ticker": "ISRG",
+    "score": 54.9,
     "coverage": 1.0,
     "detail": {
-     "purity": 0.792,
-     "realization": 0.727,
-     "independence": 0.118,
-     "resilience": 0.238,
-     "liquidity": 0.485
+     "purity": 0.542,
+     "realization": 0.136,
+     "independence": 0.824,
+     "resilience": 0.667,
+     "liquidity": 0.879
     },
-    "density": 0.1462,
-    "persistence": 0.5,
-    "margin": -0.075
+    "density": 0.0683,
+    "persistence": 0.0,
+    "margin": 0.194
    }
   ],
   "etfs": [
    {
     "rank": 1,
-    "ticker": "ARKQ",
-    "score": 88.8,
-    "coverage": 1.0,
-    "detail": {
-     "pure_exposure": 1.0,
-     "independence": 0.778,
-     "liquidity": 0.625
-    },
-    "exposure": -0.023
-   },
-   {
-    "rank": 2,
     "ticker": "ARKX",
     "score": 86.8,
     "coverage": 1.0,
@@ -507,19 +492,31 @@
      "independence": 0.889,
      "liquidity": 0.75
     },
-    "exposure": -0.027
+    "exposure": -0.048
+   },
+   {
+    "rank": 2,
+    "ticker": "ARKQ",
+    "score": 86.0,
+    "coverage": 1.0,
+    "detail": {
+     "pure_exposure": 1.0,
+     "independence": 0.667,
+     "liquidity": 0.625
+    },
+    "exposure": -0.04
    },
    {
     "rank": 3,
     "ticker": "XAR",
-    "score": 78.3,
+    "score": 81.1,
     "coverage": 1.0,
     "detail": {
      "pure_exposure": 0.778,
-     "independence": 0.667,
+     "independence": 0.778,
      "liquidity": 1.0
     },
-    "exposure": -0.12
+    "exposure": -0.147
    },
    {
     "rank": 4,
@@ -531,7 +528,7 @@
      "independence": 1.0,
      "liquidity": 0.0
     },
-    "exposure": -0.169
+    "exposure": -0.228
    },
    {
     "rank": 5,
@@ -543,7 +540,7 @@
      "independence": 0.222,
      "liquidity": 0.875
     },
-    "exposure": -0.381
+    "exposure": -0.377
    }
   ],
   "weights": {
@@ -560,6 +557,6 @@
   },
   "note": "이 목록은 추천이 아니라 스크리닝 결과다. 흐름 적합도 점수가 높다는 것은 '이 테마의 순수 노출이 크다'는 뜻이지 '오를 것'이라는 뜻이 아니다. 현재 국면이 NARRATIVE_LED(서사 선행)이므로, 상위 종목일수록 실현이 오지 않을 때의 하방도 크다.\n"
  },
- "message_full": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-11-02</b>\n\n<b>서사</b> ●● 2/2   <b>실현</b> ○○○ 0/3   <b>가격</b> ○ 0/1\n축 간 격차 +1.00 — 서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간\n\n✅ ① 서사 점화  8.57배 / 기준 3.00배 · AI반도체 2023Q1\n     <i>2년 전 대비 언급 배수</i>\n✅ ② 산업 전반 확산  2.27배 / 기준 2.00배 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ③ 매출 가속 정착  +12% / 기준 +25% · AI반도체 2023Q4\n     <i>최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%</i>\n⚪ ④ 공급 병목 출현  +85% / 기준 +10% · AI반도체 2024Q1\n     <i>2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 +3% · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -50% / 기준 +20% · AI반도체 2023Q2\n     <i>2026Q4 12개월 초과수익</i>\n\nℹ️ 서사 선행 상태 2회 연속 (경고 기준 6회)\n\n<b>디커플링</b> 상관 +0.07 — 독립 사이클 조짐\n\n⚠️ 데이터 상태: prices, purity\n\n<b>📋 흐름 적합도 상위 10 (미국 상장)</b>\n   1. TER   83점\n   2. AVAV  74점 · 순수형\n   3. NVDA  73점 · 순수형\n   4. TSLA  73점\n   5. ZBRA  68점 · 순수형\n   6. OUST  65점 · 반도체 동행형\n   7. SYM   63점\n   8. KTOS  59점 · 순수형\n   9. AMD   55점 · 반도체 동행형\n  10. AMBA  53점 · 반도체 동행형\n\n<b>ETF</b> — 후보 전부 순수 노출이 음수입니다. 로봇 ETF 들이 순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.\n  (최상위 ARKQ 순수노출 -0.02)\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/",
- "message": "🤖 <b>피지컬 AI·로봇 사이클</b> · 11-02\n서사 ●● · 실현 ○○○ · 가격 ○\n<i>서사가 실현보다 크게 앞섬 —</i>\n<i>메타버스형(말만 확산) 패턴과 형태가 같은</i>\n<i>구간</i>\n\n<b>마일스톤</b>\n✅ 서사 점화 <i>8.57 / 기준 3</i>\n✅ 산업 전반 확산 <i>2.27 / 기준 2</i>\n❌ 매출 가속 정착 <i>0.115 / 기준 0.25</i>\n⚪ 공급 병목 출현 <i>0.854 / 기준 0.1</i>\n❌ 이익률 확장 <i>0.015 / 기준 0.03</i>\n❌ 가격 재평가 <i>-0.496 / 기준 0.2</i>\n\n디커플링 상관 🟢+0.07 <i>· 독립 사이클</i>\nℹ️ <i>서사 선행 상태 2회 연속 (경고 기…</i>\n\n<b>흐름 적합도</b>\n🟩 TER <i>83점</i>\n🟩 AVAV <i>74점</i>\n🟩 NVDA <i>73점</i>\n🟩 TSLA <i>73점</i>\n🟢 ZBRA <i>68점</i>\n\n📊 <a href=\"https://jinhae8971.github.io/korea-etf-calmar/physical-ai/\">전체 대시보드</a>\n<i>관측 서술 · 매매 신호 아님</i>"
+ "message_full": "<b>🤖 피지컬 AI·로봇 사이클 — 2026-11-09</b>\n\n<b>서사</b> ●● 2/2   <b>실현</b> ○○○ 0/3   <b>가격</b> ○ 0/1\n축 간 격차 +1.00 — 서사가 실현보다 크게 앞섬 — 메타버스형(말만 확산) 패턴과 형태가 같은 구간\n\n✅ ① 서사 점화  8.97배 / 기준 3.00배 · AI반도체 2023Q1\n     <i>2년 전 대비 언급 배수</i>\n✅ ② 산업 전반 확산  2.31배 / 기준 2.00배 · AI반도체 2024Q1\n     <i>SIC 다양성 배수 (버킷 상한 30)</i>\n❌ ③ 매출 가속 정착  +12% / 기준 +25% · AI반도체 2023Q4\n     <i>최근 4분기 중 0회 통과 (기준 3회) · 2026Q2 +11%</i>\n⚪ ④ 공급 병목 출현  +85% / 기준 +10% · AI반도체 2024Q1\n     <i>2026Q2 재고YoY-매출YoY (매출 가속 미정착 — 병목·적체 구분 불가)</i>\n❌ ⑤ 이익률 확장  +2% / 기준 +3% · AI반도체 2024Q2\n     <i>YoY 마진 변화</i>\n❌ ⑥ 가격 재평가  -50% / 기준 +20% · AI반도체 2023Q2\n     <i>2026Q4 12개월 초과수익</i>\n\nℹ️ 서사 선행 상태 3회 연속 (경고 기준 6회)\n\n<b>디커플링</b> 상관 +0.24 — 독립 사이클 조짐\n\n⚠️ 데이터 상태: prices, purity\n\n<b>📋 흐름 적합도 상위 10 (미국 상장)</b>\n   1. TER   80점 · 반도체 동행형\n   2. TSLA  73점\n   3. AVAV  72점 · 순수형\n   4. NVDA  71점 · 순수형\n   5. ZBRA  64점\n   6. OUST  64점 · 반도체 동행형\n   7. SYM   63점 · 순수형\n   8. KTOS  61점 · 순수형\n   9. AMD   56점 · 반도체 동행형\n  10. ISRG  55점 · 순수형\n\n<b>ETF</b> — 후보 전부 순수 노출이 음수입니다. 로봇 ETF 들이 순수 피지컬AI보다 기성 자동화·반도체에 더 붙어 있습니다.\n  (최상위 ARKX 순수노출 -0.05)\n\n<i>이 지표는 예측이 아니라 관측입니다. 단계 통과 여부만 보고합니다.</i>\n<i>투자 판단의 참고 정보이며, 매매 권유가 아닙니다.</i>\n📎 https://jinhae8971.github.io/korea-etf-calmar/physical-ai/",
+ "message": "🤖 <b>피지컬 AI·로봇 사이클</b> · 11-09\n서사 ●● · 실현 ○○○ · 가격 ○\n<i>서사가 실현보다 크게 앞섬 —</i>\n<i>메타버스형(말만 확산) 패턴과 형태가 같은</i>\n<i>구간</i>\n\n<b>마일스톤</b>\n✅ 서사 점화 <i>8.97 / 기준 3</i>\n✅ 산업 전반 확산 <i>2.31 / 기준 2</i>\n❌ 매출 가속 정착 <i>0.115 / 기준 0.25</i>\n⚪ 공급 병목 출현 <i>0.854 / 기준 0.1</i>\n❌ 이익률 확장 <i>0.015 / 기준 0.03</i>\n❌ 가격 재평가 <i>-0.505 / 기준 0.2</i>\n\n디커플링 상관 🟩+0.24 <i>· 독립 사이클</i>\nℹ️ <i>서사 선행 상태 3회 연속 (경고 기…</i>\n\n<b>흐름 적합도</b>\n🟩 TER <i>80점</i>\n🟩 TSLA <i>73점</i>\n🟩 AVAV <i>72점</i>\n🟩 NVDA <i>71점</i>\n🟢 ZBRA <i>64점</i>\n\n📊 <a href=\"https://jinhae8971.github.io/korea-etf-calmar/physical-ai/\">전체 대시보드</a>\n<i>관측 서술 · 매매 신호 아님</i>"
 }
