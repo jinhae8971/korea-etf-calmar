@@ -1,13 +1,23 @@
 {
  "fail_streak": 0,
  "heartbeat": "2026-11",
- "outbox": null,
- "outbox_log": [],
+ "outbox": {
+  "created": 1794262105,
+  "id": "206a33272db1",
+  "kind": "alert",
+  "level": "IMMINENT",
+  "text": "🔴 <b>퍼프덱스 레이더 · Extended 임박</b>\n11/10(화) 01:13 ~ 01:23 감지 · 공식 문서 · 공식 발표\n알려진 상태: <b>Xpoints 프로그램 종료·최종 배분 확정(11/6)</b> · 전환 1 Xpoint ≈ 4.2857 XTEN(커뮤니티 3억 ÷ 7,000만 pt, TGE 때 전량 언락) · <b>TGE·청구 일정 미정 — 청구 오픈 공지를 기다리는 중</b> · 청구 때 자격·컴플라이언스 확인·토큰 약관 동의 필요\n\n<b>무슨 일</b>\n· Extended 공식 X에 새 글\n  <i>“Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you in the League, which unlocks: - Trading fee discounts from 5% to 30% - Vault Extra Yield Boost from 0.5x to 5x, paid on up to $2,000,000 of your deposit. - Affil”</i>\n  잡힌 단어: TGE\n· Extended 공식 텔레그램에 새 글\n  <i>“XTEN Staking and the League XTEN staking goes live at TGE. Your staked balance determines your League tier, which applies across all sub-accounts linked to the same wallet and sets your fee discount, Vault Extra Yield Boost and affiliate payout multiplier. Staked XTEN can also ea”</i>\n  잡힌 단어: TGE\n\n<b>의미</b>\n서로 다른 근거 2가지가 7일 안에 함께 나왔어요. 토큰 전환이 가까웠을 가능성이 높아요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n공식 공지 채널에 토큰·에어드랍 관련 글이 올라왔어요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n앞서 보낸 '임박' 알림 뒤에 새로 나온 신호예요.\n\n<a href=\"https://x.com/extendedapp/status/2119825671417385414\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+ },
+ "outbox_log": [
+  {
+   "created": 1794262105,
+   "id": "206a33272db1",
+   "kind": "alert",
+   "level": "IMMINENT",
+   "text": "🔴 <b>퍼프덱스 레이더 · Extended 임박</b>\n11/10(화) 01:13 ~ 01:23 감지 · 공식 문서 · 공식 발표\n알려진 상태: <b>Xpoints 프로그램 종료·최종 배분 확정(11/6)</b> · 전환 1 Xpoint ≈ 4.2857 XTEN(커뮤니티 3억 ÷ 7,000만 pt, TGE 때 전량 언락) · <b>TGE·청구 일정 미정 — 청구 오픈 공지를 기다리는 중</b> · 청구 때 자격·컴플라이언스 확인·토큰 약관 동의 필요\n\n<b>무슨 일</b>\n· Extended 공식 X에 새 글\n  <i>“Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you in the League, which unlocks: - Trading fee discounts from 5% to 30% - Vault Extra Yield Boost from 0.5x to 5x, paid on up to $2,000,000 of your deposit. - Affil”</i>\n  잡힌 단어: TGE\n· Extended 공식 텔레그램에 새 글\n  <i>“XTEN Staking and the League XTEN staking goes live at TGE. Your staked balance determines your League tier, which applies across all sub-accounts linked to the same wallet and sets your fee discount, Vault Extra Yield Boost and affiliate payout multiplier. Staked XTEN can also ea”</i>\n  잡힌 단어: TGE\n\n<b>의미</b>\n서로 다른 근거 2가지가 7일 안에 함께 나왔어요. 토큰 전환이 가까웠을 가능성이 높아요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n공식 공지 채널에 토큰·에어드랍 관련 글이 올라왔어요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n앞서 보낸 '임박' 알림 뒤에 새로 나온 신호예요.\n\n<a href=\"https://x.com/extendedapp/status/2119825671417385414\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+  }
+ ],
  "runs": [
-  [
-   1794089303,
-   "d"
-  ],
   [
    1794091112,
    "d"
@@ -259,6 +269,10 @@
   [
    1794251247,
    "s"
+  ],
+  [
+   1794262105,
+   "d"
   ]
  ],
  "scope": [
@@ -393,6 +407,46 @@
      "signal": "index_change",
      "title": "공식 문서 목록 변경: 삭제 1개",
      "ts": 1793901563,
+     "venue": "arcus"
+    },
+    {
+     "detail": "https://x.com/arcus_xyz/status/2119910077335478776",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "60e72c954b88",
+     "ref": {
+      "label": "공식 X",
+      "text": "Multi-Asset Collateral unlocks the basis trade on Arcus.\n\nHold a token, short its perp, collect funding when it’s positive.\n\nWith MAC, your tokens margin the short directly, no separate USDG to back the position. Initial margin is borrowed against your tokens automatically.\nhttps://arcus.xyz/learn/the-basis-trade-on-arcus-multi-asset-collateral-at-work?utm_source=ArcusTW&utm_medium=GlobalSocial&ut.",
+      "url": "https://x.com/arcus_xyz/status/2119910077335478776",
+      "words": [
+       "unlocks"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "x_post",
+     "title": "Arcus 공식 X: Multi-Asset Collateral unlocks the basis trade on Arcus. Hold a token, short its perp, collect funding when it’s positiv",
+     "ts": 1794260923,
+     "venue": "arcus"
+    },
+    {
+     "detail": "https://t.me/Arcus_xyz/147",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "77b41ec6f83f",
+     "ref": {
+      "label": "공식 텔레그램",
+      "text": "Multi-Asset Collateral unlocks the basis trade on Arcus. Hold a token, short its perp, collect funding when it’s positive. With MAC, your tokens margin the short directly, no separate USDG to back the position. Initial margin is borrowed against your tokens automatically. Click here to read more.",
+      "url": "https://t.me/Arcus_xyz/147",
+      "words": [
+       "unlocks"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "telegram_post",
+     "title": "Arcus 공식 텔레그램: Multi-Asset Collateral unlocks the basis trade on Arcus. Hold a token, short its perp, collect funding when it’s positiv",
+     "ts": 1794260950,
      "venue": "arcus"
     }
    ],
@@ -570,7 +624,8 @@
      "df6dd91cfb60",
      "c02e7f1a29bc",
      "7a8043f1d76c",
-     "726457297d25"
+     "726457297d25",
+     "94151bdb18c9"
     ],
     "x:arcus_xyz": [
      "7e39c42d9fa8",
@@ -648,43 +703,44 @@
      "6f8614aabd61",
      "fa109024042e",
      "d3b426b488a3",
-     "fc6213a26a50"
+     "fc6213a26a50",
+     "e7f56d012440"
     ]
    },
    "status": {
     "api": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "23건",
      "ok": true
     },
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794251247,
-     "note": "20건",
+     "at": 1794262105,
+     "note": "19건",
      "ok": true
     }
    }
@@ -1216,6 +1272,46 @@
      "title": "Extended 공식 텔레그램: XTEN Staking and the League XTEN staking goes live at TGE. Your staked balance determines your League tier, which applie",
      "ts": 1794241419,
      "venue": "extended"
+    },
+    {
+     "detail": "https://x.com/extendedapp/status/2119825673720057944",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "e67710c89c51",
+     "ref": {
+      "label": "공식 X",
+      "text": "R to @extendedapp: Staking rewards are variable and not guaranteed. Staked XTEN is non-transferable while staked and during the 7-day unstaking period. Learn more: https://docs.extended.exchange/extended-resources/xten/the-league The offeror of XTEN is Extended Ecosystem Limited, whose contact details are as follows: legal@extended.exchange | +1 284 394 4030. The XTEN crypto-asset white paper and.",
+      "url": "https://x.com/extendedapp/status/2119825673720057944",
+      "words": [
+       "rewards"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "x_post",
+     "title": "Extended 공식 X: R to @extendedapp: Staking rewards are variable and not guaranteed. Staked XTEN is non-transferable while staked and dur",
+     "ts": 1794240799,
+     "venue": "extended"
+    },
+    {
+     "detail": "https://x.com/extendedapp/status/2119825671417385414",
+     "family": "S2",
+     "grade": "ALERT",
+     "id": "9295d75ad27c",
+     "ref": {
+      "label": "공식 X",
+      "text": "Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you in the League, which unlocks: - Trading fee discounts from 5% to 30% - Vault Extra Yield Boost from 0.5x to 5x, paid on up to $2,000,000 of your deposit. - Affiliate payouts multiplied by up to 1.4x Watch how the League works, then pick your piece..",
+      "url": "https://x.com/extendedapp/status/2119825671417385414",
+      "words": [
+       "TGE"
+      ]
+     },
+     "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
+     "refuted": false,
+     "signal": "x_post",
+     "title": "Extended 공식 X: Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you i",
+     "ts": 1794240799,
+     "venue": "extended"
     }
    ],
    "frontend": null,
@@ -1323,20 +1419,14 @@
     "fd2d42ccdc52"
    ],
    "notified": "IMMINENT",
-   "notified_at": 1794023047,
+   "notified_at": 1794262105,
    "notified_ids": [
-    "644cd80a17c7",
-    "9740a7951482",
-    "d6f9dd8e8ccd",
-    "315af7f0bfd3",
-    "d3d5ae03bbd5"
+    "d3d5ae03bbd5",
+    "7a19d75ae35a",
+    "9295d75ad27c"
    ],
    "odds": {
     "extended-fdv-above-150m-one-day-after-launch-452": [
-     [
-      1793042602,
-      78.0
-     ],
      [
       1793056114,
       79.5
@@ -1816,14 +1906,6 @@
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
      [
-      1793042602,
-      4.5
-     ],
-     [
-      1793052504,
-      4.6
-     ],
-     [
       1793057903,
       4.5
      ],
@@ -2117,10 +2199,6 @@
      ]
     ],
     "extended-fdv-above-2b-one-day-after-launch-692-597-187": [
-     [
-      1793042602,
-      1.5
-     ],
      [
       1793054312,
       1.7
@@ -2599,14 +2677,6 @@
      ]
     ],
     "extended-fdv-above-300m-one-day-after-launch-351-333": [
-     [
-      1793042602,
-      30.0
-     ],
-     [
-      1793052504,
-      31.0
-     ],
      [
       1793054312,
       30.5
@@ -3138,10 +3208,6 @@
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
      [
-      1793042602,
-      1.7
-     ],
-     [
       1793064488,
       1.7
      ],
@@ -3479,10 +3545,6 @@
      ]
     ],
     "extended-fdv-above-500m-one-day-after-launch-711-975-248": [
-     [
-      1793042602,
-      15.0
-     ],
      [
       1793054312,
       14.5
@@ -3850,10 +3912,6 @@
     ],
     "extended-fdv-above-800m-one-day-after-launch-299-255-178": [
      [
-      1793042602,
-      7.0
-     ],
-     [
       1793064488,
       7.0
      ],
@@ -4111,10 +4169,6 @@
      ]
     ],
     "extended-listed-on-binance-within-30-days-of-tge": [
-     [
-      1793042602,
-      17.0
-     ],
      [
       1793059712,
       16.5
@@ -4397,10 +4451,6 @@
      ]
     ],
     "extended-listed-on-bybit-within-30-days-of-tge": [
-     [
-      1793484497,
-      43.0
-     ],
      [
       1793486070,
       40.5
@@ -5196,17 +5246,13 @@
      [
       1794251247,
       41.5
+     ],
+     [
+      1794262105,
+      46.5
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
-     [
-      1793042602,
-      37.0
-     ],
-     [
-      1793052504,
-      34.0
-     ],
      [
       1793054312,
       35.5
@@ -5694,6 +5740,10 @@
      [
       1794251247,
       43.5
+     ],
+     [
+      1794262105,
+      42.0
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
@@ -6500,10 +6550,6 @@
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
      [
-      1793052504,
-      46.0
-     ],
-     [
       1793054312,
       45.5
      ],
@@ -7098,10 +7144,6 @@
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
      [
-      1793042602,
-      28.0
-     ],
-     [
       1793064488,
       28.0
      ],
@@ -7584,14 +7626,6 @@
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
      [
-      1793042602,
-      32.0
-     ],
-     [
-      1793052504,
-      32.5
-     ],
-     [
       1793056114,
       33.0
      ],
@@ -8001,10 +8035,6 @@
      ]
     ],
     "will-extended-launch-a-token-by-december-31-2026": [
-     [
-      1793042602,
-      96.4
-     ],
      [
       1793064488,
       96.4
@@ -8783,34 +8813,36 @@
      "96be370ea494",
      "6ce135a0f281",
      "5fa854629bf2",
-     "31d44728dd3d"
+     "31d44728dd3d",
+     "ae801d42b0f9",
+     "3b030436b0ae"
     ]
    },
    "status": {
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794251247,
-     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
-     "ok": false
+     "at": 1794262105,
+     "note": "20건",
+     "ok": true
     }
    }
   },
@@ -8956,22 +8988,22 @@
    },
    "status": {
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
-     "note": "7건",
+     "at": 1794262105,
+     "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     }
@@ -9094,6 +9126,14 @@
     "0x2f341081134d62f24d4f3a7ca36632d44a208c88": {
      "_at": 1793615904,
      "addr": "0x2f341081134d62f24d4f3a7ca36632d44a208c88",
+     "created_ts": null,
+     "is_contract": false,
+     "name": "",
+     "tags": []
+    },
+    "0x3c1d9d9e8f6546f14cc286f8cfceaf9375dc5a20": {
+     "_at": 1794262105,
+     "addr": "0x3c1d9d9e8f6546f14cc286f8cfceaf9375dc5a20",
      "created_ts": null,
      "is_contract": false,
      "name": "",
@@ -9288,8 +9328,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26379320,
-    "rh": 110291220
+    "eth": 26380223,
+    "rh": 110396447
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -9313,9 +9353,9 @@
      "url": "https://docs.lighter.xyz/about-lighter/lit-utility.md"
     },
     "https://docs.lighter.xyz/llms.txt": {
-     "changed": 1794251247,
-     "hash": "816481cbefde9fb8",
-     "text": "# Lighter Docs\n\n## Learn\n\n- [Introduction](https://docs.lighter.xyz/readme.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md)\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md)\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [RFQ](https://docs.lighter.xyz/trading/rfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)\n- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Internal Pricing Mechanism](https://docs.lighter.xyz/trading/internal-pricing-mechanism.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)\n\n## Developers\n\n- [Get Started](https://docs.lighter.xyz/developers/readme.md)\n- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)\n- [Core concepts](https://docs.lighter.xyz/developers/getting-started/core-concepts.md)\n- [Environments & endpoints](https://docs.lighter.xyz/developers/getting-started/environments.md)\n- [Quickstart: TypeScript + WASM](https://docs.lighter.xyz/developers/getting-started/quickstart-typescript.md)\n- [SDK](https://docs.lighter.xyz/developers/getting-started/sdks.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/getting-started/third-party-resources.md)\n- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)\n- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)\n- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)\n- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)\n- [Market data](https://docs.lighter.xyz/developers/integration-guides/market-data.md)\n- [Account data & positions](https://docs.lighter.xyz/developers/integration-guides/account-data.md)\n- [Partner Attribution](https://docs.lighter.xyz/developers/integration-guides/partner-attribution.md)\n- [Historical Data](https://docs.lighter.xyz/developers/integration-guides/historical-data.md)\n- [Multi-signature and smart wallets](https://docs.lighter.xyz/developers/integration-guides/multi-signature-wallets.md)\n- [Manage Referrals](https://docs.lighter.xyz/developers/integration-guides/referrals.md)\n- [Manage Public Pools](https://docs.lighter.xyz/developers/integration-guides/manage-public-pools.md)\n- [Manage Trading Mode and Margin](https://docs.lighter.xyz/developers/integration-guides/manage-trading-mode-and-margin.md)\n- [Aggregated trades](https://docs.lighter.xyz/developers/integration-guides/aggregated-trades.md)\n- [RFQ](https://docs.lighter.xyz/developers/integration-guides/rfq.md)\n- [Overview](https://docs.lighter.xyz/developers/binary-options/overview.md)\n- [Discover markets](https://docs.lighter.xyz/developers/binary-options/discover-markets.md)\n- [Trading and fees](https://docs.lighter.xyz/developers/binary-options/trading-and-fees.md)\n- [Positions and settlement](https://docs.lighter.xyz/developers/binary-options/positions-and-settlement.md)\n- [Partner attribution](https://docs.lighter.xyz/developers/binary-options/partner-attribution.md)\n- [WebSocket](https://docs.lighter.xyz/developers/binary-options/websocket.md)\n- [Lighter on Robinhood Chain](https://docs.lighter.xyz/developers/robinhood-chain/overview.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/robinhood-chain/third-party-resources.md)\n- [Account Types](https://docs.lighter.xyz/developers/reference/account-types.md)\n- [Rate Limits](https://docs.lighter.xyz/developers/reference/rate-limits.md)\n- [Volume Quota](https://docs.lighter.xyz/developers/reference/volume-quota.md)\n- [Data Structures, Constants and Errors](https://docs.lighter.xyz/developers/reference/data-structures-constants-and-errors.md)\n- [WASM signer functions](https://docs.lighter.xyz/developers/reference/wasm-signer.md)\n- [Priority Transactions](https://docs.lighter.xyz/developers/reference/priority-transactions.md)\n- [Timestamps](https://docs.lighter.xyz/developers/reference/timestamps.md)\n- [Production checklist](https://docs.lighter.xyz/developers/going-to-production/production-checklist.md)\n- [Troubleshooting](https://docs.lighter.xyz/developers/going-to-production/troubleshooting.md)\n- [Use these docs with AI](https://docs.lighter.xyz/developers/ai-and-agents/use-with-ai.md)\n- [Agent instructions (AGENTS.md)](https://docs.lighter.xyz/developers/ai-and-agents/agent-instructions.md)\n\n## API Reference\n\n- [API Reference](https://docs.lighter.xyz/api/readme.md)\n- [System](https://docs.lighter.xyz/api/system.md): Exchange status, system configuration and L1 contract info.\n- [status](https://docs.lighter.xyz/api/system/status.md)\n- [info](https://docs.lighter.xyz/api/system/info.md)\n- [layer1BasicInfo](https://docs.lighter.xyz/api/system/layer1basicinfo.md)\n- [systemConfig](https://docs.lighter.xyz/api/system/systemconfig.md)\n- [Account](https://docs.lighter.xyz/api/account.md): Query accounts, limits, metadata, PnL and its leaderboard, liquidations, funding payments, public pools and L1 metadata; update account tiers and metadata.\n- [account](https://docs.lighter.xyz/api/account/account.md)\n- [accountLimits](https://docs.lighter.xyz/api/account/accountlimits.md)\n- [buyVolumeQuota](https://docs.lighter.xyz/api/account/buyvolumequota.md)\n- [accountMetadata](https://docs.lighter.xyz/api/account/accountmetadata.md)\n- [accountsByL1Address](https://docs.lighter.xyz/api/account/accountsbyl1address.md)\n- [changeAccountTier](https://docs.lighter.xyz/api/account/changeaccounttier.md)\n- [l1Metadata](https://docs.lighter.xyz/api/account/l1metadata.md)\n- [liquidations](https://docs.lighter.xyz/api/account/liquidations.md)\n- [pnl](https://docs.lighter.xyz/api/account/pnl.md)\n- [positionFunding](https://docs.lighter.xyz/api/account/positionfunding.md)\n- [publicPoolsMetadata](https://docs.lighter.xyz/api/account/publicpoolsmetadata.md)\n- [pnlLeaderboard](https://docs.lighter.xyz/api/account/pnlleaderboard.md)\n- [Orders](https://docs.lighter.xyz/api/orders.md): Discover order books and market configuration, query orders and trades, and export account or market history.\n- [accountActiveOrders](https://docs.lighter.xyz/api/orders/accountactiveorders.md)\n- [accountInactiveOrders](https://docs.lighter.xyz/api/orders/accountinactiveorders.md)\n- [export](https://docs.lighter.xyz/api/orders/export.md)\n- [orderBookDetails](https://docs.lighter.xyz/api/orders/orderbookdetails.md)\n- [orderBookOrders](https://docs.lighter.xyz/api/orders/orderbookorders.md)\n- [orderBooks](https://docs.lighter.xyz/api/orders/orderbooks.md)\n- [recentTrades](https://docs.lighter.xyz/api/orders/recenttrades.md)\n- [trades](https://docs.lighter.xyz/api/orders/trades.md)\n- [aggregatedTrades](https://docs.lighter.xyz/api/orders/aggregatedtrades.md)\n- [accountOrderFills](https://docs.lighter.xyz/api/orders/accountorderfills.md)\n- [accountOrders](https://docs.lighter.xyz/api/orders/accountorders.md)\n- [export\\_historicalTrades](https://docs.lighter.xyz/api/orders/export_historicaltrades.md)\n- [Binary Options](https://docs.lighter.xyz/api/binary-options.md): Discover events and market lifecycles, retrieve Up/Down candles and fee tiers, and query realized binary options PnL. These endpoints are available on Lighter only.\n- [events](https://docs.lighter.xyz/api/binary-options/events.md)\n- [feeTiers](https://docs.lighter.xyz/api/binary-options/feetiers.md)\n- [portfolio\\_boPnl](https://docs.lighter.xyz/api/binary-options/portfolio_bopnl.md)\n- [upDownCandles](https://docs.lighter.xyz/api/binary-options/updowncandles.md)\n- [Transactions](https://docs.lighter.xyz/api/transactions.md): Send signed transactions and query transaction, deposit, transfer and withdrawal history.\n- [deposit\\_history](https://docs.lighter.xyz/api/transactions/deposit_history.md)\n- [sendTx](https://docs.lighter.xyz/api/transactions/sendtx.md)\n- [sendTxBatch](https://docs.lighter.xyz/api/transactions/sendtxbatch.md)\n- [transfer\\_history](https://docs.lighter.xyz/api/transactions/transfer_history.md)\n- [tx](https://docs.lighter.xyz/api/transactions/tx.md)\n- [txFromL1TxHash](https://docs.lighter.xyz/api/transactions/txfroml1txhash.md)\n- [withdraw\\_history](https://docs.lighter.xyz/api/transactions/withdraw_history.md)\n- [setAccountMetadata](https://docs.lighter.xyz/api/transactions/setaccountmetadata.md)\n- [API Keys](https://docs.lighter.xyz/api/api-keys.md): Inspect API keys and nonces, create/list/revoke read-only tokens, and configure maker-only keys. See the API key integration guide before signing requests.\n- [apikeys](https://docs.lighter.xyz/api/api-keys/apikeys.md)\n- [nextNonce](https://docs.lighter.xyz/api/api-keys/nextnonce.md)\n- [tokens](https://docs.lighter.xyz/api/api-keys/tokens.md)\n- [tokens\\_create](https://docs.lighter.xyz/api/api-keys/tokens_create.md)\n- [tokens\\_revoke](https://docs.lighter.xyz/api/api-keys/tokens_revoke.md)\n- [getMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/getmakeronlyapikeys.md)\n- [setMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/setmakeronlyapikeys.md)\n- [Candlesticks](https://docs.lighter.xyz/api/candlesticks.md): Retrieve historical trade or mark-price candles and market price charts. Use the endpoint-specific timestamp units and resolution values.\n- [candles](https://docs.lighter.xyz/api/candlesticks/candles.md)\n- [markPriceCandles](https://docs.lighter.xyz/api/candlesticks/markpricecandles.md)\n- [marketPriceCharts](https://docs.lighter.xyz/api/candlesticks/marketpricecharts.md)\n- [Funding](https://docs.lighter.xyz/api/funding.md): Retrieve market funding history and current funding rates across trading venues.\n- [funding-rates](https://docs.lighter.xyz/api/funding/funding-rates.md)\n- [fundings](https://docs.lighter.xyz/api/funding/fundings.md)\n- [Bridge](https://docs.lighter.xyz/api/bridge.md): Create deposit intent addresses, list supported networks and inspect the latest deposit; query fast-bridge information and submit fast withdrawals.\n- [fastbridge\\_info](https://docs.lighter.xyz/api/bridge/fastbridge_info.md)\n- [fastwithdraw](https://docs.lighter.xyz/api/bridge/fastwithdraw.md)\n- [fastwithdraw\\_info](https://docs.lighter.xyz/api/bridge/fastwithdraw_info.md)\n- [createIntentAddress](https://docs.lighter.xyz/api/bridge/createintentaddress.md)\n- [deposit\\_networks](https://docs.lighter.xyz/api/bridge/deposit_networks.md)\n- [deposit\\_latest](https://docs.lighter.xyz/api/bridge/deposit_latest.md)\n- [Info](https://docs.lighter.xyz/api/info.md): Inspect asset metadata, exchange statistics and metrics, transfer fees, token metadata, synthetic spot prices and oracle sources.\n- [assetDetails](https://docs.lighter.xyz/api/info/assetdetails.md)\n- [exchangeStats](https://docs.lighter.xyz/api/info/exchangestats.md)\n- [transferFeeInfo](https://docs.lighter.xyz/api/info/transferfeeinfo.md)\n- [withdrawalDelay](https://docs.lighter.xyz/api/info/withdrawaldelay.md)\n- [exchangeMetrics](https://docs.lighter.xyz/api/info/exchangemetrics.md)\n- [executeStats](https://docs.lighter.xyz/api/info/executestats.md)\n- [tokenlist](https://docs.lighter.xyz/api/info/tokenlist.md)\n- [partnerStats](https://docs.lighter.xyz/api/info/partnerstats.md)\n- [syntheticSpotInfo](https://docs.lighter.xyz/api/info/syntheticspotinfo.md)\n- [priceOracleInfo](https://docs.lighter.xyz/api/info/priceoracleinfo.md)\n- [Referral](https://docs.lighter.xyz/api/referral.md): Referral codes, kickbacks and stats.\n- [referral\\_points](https://docs.lighter.xyz/api/referral/referral_points.md)\n- [referral\\_create](https://docs.lighter.xyz/api/referral/referral_create.md)\n- [referral\\_get](https://docs.lighter.xyz/api/referral/referral_get.md)\n- [referral\\_kickback\\_update](https://docs.lighter.xyz/api/referral/referral_kickback_update.md)\n- [referral\\_update](https://docs.lighter.xyz/api/referral/referral_update.md)\n- [referral\\_use](https://docs.lighter.xyz/api/referral/referral_use.md)\n- [userReferrals](https://docs.lighter.xyz/api/referral/userreferrals.md)\n- [referral\\_stats](https://docs.lighter.xyz/api/referral/referral_stats.md)\n- [Fee Credits](https://docs.lighter.xyz/api/fee-credits.md): List LIT fee-credit lease options, inspect account leases and submit lease requests.\n- [leaseOptions](https://docs.lighter.xyz/api/fee-credits/leaseoptions.md)\n- [leases](https://docs.lighter.xyz/api/fee-credits/leases.md)\n- [litLease](https://docs.lighter.xyz/api/fee-credits/litlease.md)\n- [RFQ](https://docs.lighter.xyz/api/rfq.md): RFQ: create, respond to and query requests for quote.\n- [rfq\\_respond](https://docs.lighter.xyz/api/rfq/rfq_respond.md)\n- [rfq\\_list](https://docs.lighter.xyz/api/rfq/rfq_list.md)\n- [rfq\\_get](https://docs.lighter.xyz/api/rfq/rfq_get.md)\n- [rfq\\_create](https://docs.lighter.xyz/api/rfq/rfq_create.md)\n- [rfq\\_update](https://docs.lighter.xyz/api/rfq/rfq_update.md)\n- [Points](https://docs.lighter.xyz/api/points.md): Points leaderboard and live points. Lighter on Robinhood Chain only.\n- [livePoints\\_total](https://docs.lighter.xyz/api/points/livepoints_total.md)\n- [leaderboard](https://docs.lighter.xyz/api/points/leaderboard.md)\n- [Announcements](https://docs.lighter.xyz/api/announcements.md): Read exchange announcements, including their publication time and optional expiry.\n- [announcement](https://docs.lighter.xyz/api/announcements/announcement.md)\n- [Notifications](https://docs.lighter.xyz/api/notifications.md): Acknowledge notifications.\n- [notification\\_ack](https://docs.lighter.xyz/api/notifications/notification_ack.md)\n- [Explorer API](https://docs.lighter.xyz/api/explorer-api.md): Query blocks, batches, search, transaction statistics, logs by hash, account logs/assets/positions and market logs. Base URLs: https://explorer.elliot.ai/api (Lighter), https://explorerapi.rh.lighter.xyz/api (Robinhood Chain mainnet), https://explorerapi.rh-testnet.lighter.xyz/api (Robinhood Chain testnet).\n- [Account](https://docs.lighter.xyz/api/explorer-api/account.md)\n- [Get Account Assets](https://docs.lighter.xyz/api/explorer-api/account/get-account-assets.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address-1.md)\n- [Batches](https://docs.lighter.xyz/api/explorer-api/batches.md)\n- [Get Recent Batches](https://docs.lighter.xyz/api/explorer-api/batches/get-recent-batches.md)\n- [Get Batch by Id](https://docs.lighter.xyz/api/explorer-api/batches/get-batch-by-id.md)\n- [Blocks](https://docs.lighter.xyz/api/explorer-api/blocks.md)\n- [Get Recent Blocks](https://docs.lighter.xyz/api/explorer-api/blocks/get-recent-blocks.md)\n- [Get Block by Id](https://docs.lighter.xyz/api/explorer-api/blocks/get-block-by-id.md)\n- [Logs](https://docs.lighter.xyz/api/explorer-api/logs.md)\n- [Get Log by Hash](https://docs.lighter.xyz/api/explorer-api/logs/get-log-by-hash.md)\n- [Markets](https://docs.lighter.xyz/api/explorer-api/markets.md)\n- [List all markets](https://docs.lighter.xyz/api/explorer-api/markets/list-all-markets.md)\n- [Get Market Latest Logs. To query perpetual markets, use the symbol alone. For spot markets, use \\`symbol-quote\\` e.g. \\`eth-usdc\\`](https://docs.lighter.xyz/api/explorer-api/markets/get-market-latest-logs-to-query-perpetual-markets-use-the-symbol-alone-for-spot-markets-use-symbol-q.md)\n- [Search](https://docs.lighter.xyz/api/explorer-api/search.md)\n- [Search for blocks, batches, transactions, or accounts](https://docs.lighter.xyz/api/explorer-api/search/search-for-blocks-batches-transactions-or-accounts.md)\n- [Stats](https://docs.lighter.xyz/api/explorer-api/stats.md)\n- [Get Tx Stats](https://docs.lighter.xyz/api/explorer-api/stats/get-tx-stats.md)\n- [List Total Values](https://docs.lighter.xyz/api/explorer-api/stats/list-total-values.md)\n- [Models](https://docs.lighter.xyz/api/models.md)\n- [WebSocket](https://docs.lighter.xyz/api/websocket.md)\n\n## Lighter EVM\n\n- [Introduction](https://docs.lighter.xyz/evm/readme.md)\n- [Getting started](https://docs.lighter.xyz/evm/getting-started.md)\n- [Technical architecture](https://docs.lighter.xyz/evm/technical-architecture.md)\n- [Differences from L1 EVM](https://docs.lighter.xyz/evm/differences-from-l1-evm.md)\n- [L1 data fee](https://docs.lighter.xyz/evm/differences-from-l1-evm/l1-data-fee.md)\n- [Lighter Interop](https://docs.lighter.xyz/evm/interop.md)\n- [Accounts](https://docs.lighter.xyz/evm/interop/accounts.md)\n- [Reading Core from EVM](https://docs.lighter.xyz/evm/interop/reading-core-from-evm.md)\n- [Message passing](https://docs.lighter.xyz/evm/interop/message-passing.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/message-passing/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-evm.md)\n- [Tokens](https://docs.lighter.xyz/evm/interop/tokens.md)\n- [Token transfers](https://docs.lighter.xyz/evm/interop/tokens/token-transfers.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-evm.md)\n- [Token linking](https://docs.lighter.xyz/evm/interop/tokens/token-linking.md)\n- [Markets](https://docs.lighter.xyz/evm/markets.md)\n- [Signing Core transactions](https://docs.lighter.xyz/evm/signing-core-transactions.md)\n- [Chain info](https://docs.lighter.xyz/evm/chain-info.md)\n- [JSON-RPC API](https://docs.lighter.xyz/evm/json-rpc-api.md)\n\n## Programs\n\n- [Programs](https://docs.lighter.xyz/programs/readme.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md)\n- [Referral Program](https://docs.lighter.xyz/programs/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/programs/liquidity-partner-program.md)\n- [Partner Attribution](https://docs.lighter.xyz/programs/partner-attribution.md)",
+     "changed": 1794262105,
+     "hash": "232ff913928fe17d",
+     "text": "# Lighter Docs\n\n## Learn\n\n- [Introduction](https://docs.lighter.xyz/readme.md)\n- [Technical Architecture: Lighter Core](https://docs.lighter.xyz/about-lighter/technical-architecture-lighter-core.md)\n- [LIT Utility](https://docs.lighter.xyz/about-lighter/lit-utility.md)\n- [Trading Fees](https://docs.lighter.xyz/trading/trading-fees.md)\n- [LIT Fee Credits](https://docs.lighter.xyz/trading/trading-fees/lit-fee-credits.md)\n- [Unified Trading Accounts](https://docs.lighter.xyz/trading/unified-trading-accounts.md)\n- [Order Types & Matching](https://docs.lighter.xyz/trading/order-types-and-matching.md)\n- [Real World Assets (RWAs)](https://docs.lighter.xyz/trading/real-world-assets-rwas.md)\n- [Futures Contract Price Rolling Mechanism](https://docs.lighter.xyz/trading/real-world-assets-rwas/futures-contract-price-rolling-mechanism.md)\n- [Market Specifications](https://docs.lighter.xyz/trading/real-world-assets-rwas/market-specifications.md)\n- [Pre-IPO Markets](https://docs.lighter.xyz/trading/real-world-assets-rwas/pre-ipo-markets.md)\n- [Corporate Actions](https://docs.lighter.xyz/trading/real-world-assets-rwas/corporate-actions.md)\n- [RFQ](https://docs.lighter.xyz/trading/rfq.md)\n- [Public Pools](https://docs.lighter.xyz/trading/public-pools.md)\n- [Contract Specifications](https://docs.lighter.xyz/trading/contract-specifications.md)\n- [Prelaunch Markets](https://docs.lighter.xyz/trading/prelaunch-markets.md)\n- [Binary Options](https://docs.lighter.xyz/trading/binary-options.md)\n- [Fee Structure](https://docs.lighter.xyz/trading/binary-options/fee-structure.md)\n- [Discovering and Trading Markets](https://docs.lighter.xyz/trading/binary-options/discovering-and-trading-markets.md)\n- [Liquidations & LLP (Insurance Fund)](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund.md)\n- [LLP Strategies](https://docs.lighter.xyz/trading/liquidations-and-llp-insurance-fund/llp-strategies.md)\n- [Multi-Asset Margin](https://docs.lighter.xyz/trading/multi-asset-margin.md)\n- [Funding](https://docs.lighter.xyz/trading/funding.md)\n- [PnL And Total Account Value](https://docs.lighter.xyz/trading/pnl-and-total-account-value.md)\n- [Fair Price Marking](https://docs.lighter.xyz/trading/fair-price-marking.md)\n- [Internal Pricing Mechanism](https://docs.lighter.xyz/trading/internal-pricing-mechanism.md)\n- [Self-Trade Prevention](https://docs.lighter.xyz/trading/self-trade-prevention.md)\n- [API](https://docs.lighter.xyz/trading/api.md)\n- [Guilds](https://docs.lighter.xyz/trading/guilds.md)\n- [Guild Duels](https://docs.lighter.xyz/trading/guilds/guild-duels.md)\n- [Security / Vulnerability Disclosure Policy](https://docs.lighter.xyz/security/security-vulnerability-disclosure-policy.md)\n- [Security Audits](https://docs.lighter.xyz/security/security-audits.md)\n\n## Developers\n\n- [Get Started](https://docs.lighter.xyz/developers/readme.md)\n- [Choose your integration](https://docs.lighter.xyz/developers/getting-started/choose-your-integration.md)\n- [Core concepts](https://docs.lighter.xyz/developers/getting-started/core-concepts.md)\n- [Environments & endpoints](https://docs.lighter.xyz/developers/getting-started/environments.md)\n- [Quickstart: TypeScript + WASM](https://docs.lighter.xyz/developers/getting-started/quickstart-typescript.md)\n- [SDK](https://docs.lighter.xyz/developers/getting-started/sdks.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/getting-started/third-party-resources.md)\n- [Create accounts programmatically](https://docs.lighter.xyz/developers/integration-guides/create-accounts-programmatically.md)\n- [API keys](https://docs.lighter.xyz/developers/integration-guides/api-keys.md)\n- [Deposits, Transfers and Withdrawals](https://docs.lighter.xyz/developers/integration-guides/deposits-transfers-and-withdrawals.md)\n- [Signing Transactions](https://docs.lighter.xyz/developers/integration-guides/signing-transactions.md)\n- [Market data](https://docs.lighter.xyz/developers/integration-guides/market-data.md)\n- [Account data & positions](https://docs.lighter.xyz/developers/integration-guides/account-data.md)\n- [Partner Attribution](https://docs.lighter.xyz/developers/integration-guides/partner-attribution.md)\n- [Historical Data](https://docs.lighter.xyz/developers/integration-guides/historical-data.md)\n- [Multi-signature and smart wallets](https://docs.lighter.xyz/developers/integration-guides/multi-signature-wallets.md)\n- [Manage Referrals](https://docs.lighter.xyz/developers/integration-guides/referrals.md)\n- [Manage Public Pools](https://docs.lighter.xyz/developers/integration-guides/manage-public-pools.md)\n- [Manage Trading Mode and Margin](https://docs.lighter.xyz/developers/integration-guides/manage-trading-mode-and-margin.md)\n- [Aggregated trades](https://docs.lighter.xyz/developers/integration-guides/aggregated-trades.md)\n- [RFQ](https://docs.lighter.xyz/developers/integration-guides/rfq.md)\n- [Overview](https://docs.lighter.xyz/developers/binary-options/overview.md)\n- [Discover markets](https://docs.lighter.xyz/developers/binary-options/discover-markets.md)\n- [Trading and fees](https://docs.lighter.xyz/developers/binary-options/trading-and-fees.md)\n- [Positions and settlement](https://docs.lighter.xyz/developers/binary-options/positions-and-settlement.md)\n- [Partner attribution](https://docs.lighter.xyz/developers/binary-options/partner-attribution.md)\n- [WebSocket](https://docs.lighter.xyz/developers/binary-options/websocket.md)\n- [Lighter on Robinhood Chain](https://docs.lighter.xyz/developers/robinhood-chain/overview.md)\n- [Third-Party Resources](https://docs.lighter.xyz/developers/robinhood-chain/third-party-resources.md)\n- [Account Types](https://docs.lighter.xyz/developers/reference/account-types.md)\n- [Rate Limits](https://docs.lighter.xyz/developers/reference/rate-limits.md)\n- [Volume Quota](https://docs.lighter.xyz/developers/reference/volume-quota.md)\n- [Data Structures, Constants and Errors](https://docs.lighter.xyz/developers/reference/data-structures-constants-and-errors.md)\n- [WASM signer functions](https://docs.lighter.xyz/developers/reference/wasm-signer.md)\n- [Priority Transactions](https://docs.lighter.xyz/developers/reference/priority-transactions.md)\n- [Timestamps](https://docs.lighter.xyz/developers/reference/timestamps.md)\n- [Production checklist](https://docs.lighter.xyz/developers/going-to-production/production-checklist.md)\n- [Troubleshooting](https://docs.lighter.xyz/developers/going-to-production/troubleshooting.md)\n- [Use these docs with AI](https://docs.lighter.xyz/developers/ai-and-agents/use-with-ai.md)\n- [Agent instructions (AGENTS.md)](https://docs.lighter.xyz/developers/ai-and-agents/agent-instructions.md)\n\n## API Reference\n\n- [API Reference](https://docs.lighter.xyz/api/readme.md)\n- [System](https://docs.lighter.xyz/api/system.md): Exchange status, system configuration and L1 contract info.\n- [status](https://docs.lighter.xyz/api/system/status.md)\n- [info](https://docs.lighter.xyz/api/system/info.md)\n- [layer1BasicInfo](https://docs.lighter.xyz/api/system/layer1basicinfo.md)\n- [systemConfig](https://docs.lighter.xyz/api/system/systemconfig.md)\n- [Account](https://docs.lighter.xyz/api/account.md): Query accounts, limits, metadata, PnL and its leaderboard, liquidations, funding payments, public pools and L1 metadata; update account tiers and metadata.\n- [account](https://docs.lighter.xyz/api/account/account.md)\n- [accountLimits](https://docs.lighter.xyz/api/account/accountlimits.md)\n- [buyVolumeQuota](https://docs.lighter.xyz/api/account/buyvolumequota.md)\n- [accountMetadata](https://docs.lighter.xyz/api/account/accountmetadata.md)\n- [accountsByL1Address](https://docs.lighter.xyz/api/account/accountsbyl1address.md)\n- [changeAccountTier](https://docs.lighter.xyz/api/account/changeaccounttier.md)\n- [l1Metadata](https://docs.lighter.xyz/api/account/l1metadata.md)\n- [liquidations](https://docs.lighter.xyz/api/account/liquidations.md)\n- [pnl](https://docs.lighter.xyz/api/account/pnl.md)\n- [positionFunding](https://docs.lighter.xyz/api/account/positionfunding.md)\n- [publicPoolsMetadata](https://docs.lighter.xyz/api/account/publicpoolsmetadata.md)\n- [pnlLeaderboard](https://docs.lighter.xyz/api/account/pnlleaderboard.md)\n- [Orders](https://docs.lighter.xyz/api/orders.md): Discover order books and market configuration, query orders and trades, and export account or market history.\n- [accountActiveOrders](https://docs.lighter.xyz/api/orders/accountactiveorders.md)\n- [accountInactiveOrders](https://docs.lighter.xyz/api/orders/accountinactiveorders.md)\n- [export](https://docs.lighter.xyz/api/orders/export.md)\n- [orderBookDetails](https://docs.lighter.xyz/api/orders/orderbookdetails.md)\n- [orderBookOrders](https://docs.lighter.xyz/api/orders/orderbookorders.md)\n- [orderBooks](https://docs.lighter.xyz/api/orders/orderbooks.md)\n- [recentTrades](https://docs.lighter.xyz/api/orders/recenttrades.md)\n- [trades](https://docs.lighter.xyz/api/orders/trades.md)\n- [aggregatedTrades](https://docs.lighter.xyz/api/orders/aggregatedtrades.md)\n- [accountOrderFills](https://docs.lighter.xyz/api/orders/accountorderfills.md)\n- [accountOrders](https://docs.lighter.xyz/api/orders/accountorders.md)\n- [export\\_historicalTrades](https://docs.lighter.xyz/api/orders/export_historicaltrades.md)\n- [Binary Options](https://docs.lighter.xyz/api/binary-options.md): Discover events and market lifecycles, retrieve Up/Down candles and fee tiers, and query realized binary options PnL. These endpoints are available on Lighter only.\n- [events](https://docs.lighter.xyz/api/binary-options/events.md)\n- [feeTiers](https://docs.lighter.xyz/api/binary-options/feetiers.md)\n- [portfolio\\_boPnl](https://docs.lighter.xyz/api/binary-options/portfolio_bopnl.md)\n- [upDownCandles](https://docs.lighter.xyz/api/binary-options/updowncandles.md)\n- [Transactions](https://docs.lighter.xyz/api/transactions.md): Send signed transactions and query transaction, deposit, transfer and withdrawal history.\n- [deposit\\_history](https://docs.lighter.xyz/api/transactions/deposit_history.md)\n- [sendTx](https://docs.lighter.xyz/api/transactions/sendtx.md)\n- [sendTxBatch](https://docs.lighter.xyz/api/transactions/sendtxbatch.md)\n- [transfer\\_history](https://docs.lighter.xyz/api/transactions/transfer_history.md)\n- [tx](https://docs.lighter.xyz/api/transactions/tx.md)\n- [txFromL1TxHash](https://docs.lighter.xyz/api/transactions/txfroml1txhash.md)\n- [withdraw\\_history](https://docs.lighter.xyz/api/transactions/withdraw_history.md)\n- [setAccountMetadata](https://docs.lighter.xyz/api/transactions/setaccountmetadata.md)\n- [API Keys](https://docs.lighter.xyz/api/api-keys.md): Inspect API keys and nonces, create/list/revoke read-only tokens, and configure maker-only keys. See the API key integration guide before signing requests.\n- [apikeys](https://docs.lighter.xyz/api/api-keys/apikeys.md)\n- [nextNonce](https://docs.lighter.xyz/api/api-keys/nextnonce.md)\n- [tokens](https://docs.lighter.xyz/api/api-keys/tokens.md)\n- [tokens\\_create](https://docs.lighter.xyz/api/api-keys/tokens_create.md)\n- [tokens\\_revoke](https://docs.lighter.xyz/api/api-keys/tokens_revoke.md)\n- [getMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/getmakeronlyapikeys.md)\n- [setMakerOnlyApiKeys](https://docs.lighter.xyz/api/api-keys/setmakeronlyapikeys.md)\n- [Candlesticks](https://docs.lighter.xyz/api/candlesticks.md): Retrieve historical trade or mark-price candles and market price charts. Use the endpoint-specific timestamp units and resolution values.\n- [candles](https://docs.lighter.xyz/api/candlesticks/candles.md)\n- [markPriceCandles](https://docs.lighter.xyz/api/candlesticks/markpricecandles.md)\n- [marketPriceCharts](https://docs.lighter.xyz/api/candlesticks/marketpricecharts.md)\n- [Funding](https://docs.lighter.xyz/api/funding.md): Retrieve market funding history and current funding rates across trading venues.\n- [funding-rates](https://docs.lighter.xyz/api/funding/funding-rates.md)\n- [fundings](https://docs.lighter.xyz/api/funding/fundings.md)\n- [Bridge](https://docs.lighter.xyz/api/bridge.md): Create deposit intent addresses, list supported networks and inspect the latest deposit; query fast-bridge information and submit fast withdrawals.\n- [fastbridge\\_info](https://docs.lighter.xyz/api/bridge/fastbridge_info.md)\n- [fastwithdraw](https://docs.lighter.xyz/api/bridge/fastwithdraw.md)\n- [fastwithdraw\\_info](https://docs.lighter.xyz/api/bridge/fastwithdraw_info.md)\n- [createIntentAddress](https://docs.lighter.xyz/api/bridge/createintentaddress.md)\n- [deposit\\_networks](https://docs.lighter.xyz/api/bridge/deposit_networks.md)\n- [deposit\\_latest](https://docs.lighter.xyz/api/bridge/deposit_latest.md)\n- [Info](https://docs.lighter.xyz/api/info.md): Inspect asset metadata, exchange statistics and metrics, transfer fees, token metadata, synthetic spot prices and oracle sources.\n- [assetDetails](https://docs.lighter.xyz/api/info/assetdetails.md)\n- [exchangeStats](https://docs.lighter.xyz/api/info/exchangestats.md)\n- [transferFeeInfo](https://docs.lighter.xyz/api/info/transferfeeinfo.md)\n- [withdrawalDelay](https://docs.lighter.xyz/api/info/withdrawaldelay.md)\n- [exchangeMetrics](https://docs.lighter.xyz/api/info/exchangemetrics.md)\n- [executeStats](https://docs.lighter.xyz/api/info/executestats.md)\n- [tokenlist](https://docs.lighter.xyz/api/info/tokenlist.md)\n- [partnerStats](https://docs.lighter.xyz/api/info/partnerstats.md)\n- [syntheticSpotInfo](https://docs.lighter.xyz/api/info/syntheticspotinfo.md)\n- [priceOracleInfo](https://docs.lighter.xyz/api/info/priceoracleinfo.md)\n- [Referral](https://docs.lighter.xyz/api/referral.md): Referral codes, kickbacks and stats.\n- [referral\\_points](https://docs.lighter.xyz/api/referral/referral_points.md)\n- [referral\\_create](https://docs.lighter.xyz/api/referral/referral_create.md)\n- [referral\\_get](https://docs.lighter.xyz/api/referral/referral_get.md)\n- [referral\\_kickback\\_update](https://docs.lighter.xyz/api/referral/referral_kickback_update.md)\n- [referral\\_update](https://docs.lighter.xyz/api/referral/referral_update.md)\n- [referral\\_use](https://docs.lighter.xyz/api/referral/referral_use.md)\n- [userReferrals](https://docs.lighter.xyz/api/referral/userreferrals.md)\n- [referral\\_stats](https://docs.lighter.xyz/api/referral/referral_stats.md)\n- [Fee Credits](https://docs.lighter.xyz/api/fee-credits.md): List LIT fee-credit lease options, inspect account leases and submit lease requests.\n- [leaseOptions](https://docs.lighter.xyz/api/fee-credits/leaseoptions.md)\n- [leases](https://docs.lighter.xyz/api/fee-credits/leases.md)\n- [litLease](https://docs.lighter.xyz/api/fee-credits/litlease.md)\n- [RFQ](https://docs.lighter.xyz/api/rfq.md): RFQ: create, respond to and query requests for quote.\n- [rfq\\_respond](https://docs.lighter.xyz/api/rfq/rfq_respond.md)\n- [rfq\\_list](https://docs.lighter.xyz/api/rfq/rfq_list.md)\n- [rfq\\_get](https://docs.lighter.xyz/api/rfq/rfq_get.md)\n- [rfq\\_create](https://docs.lighter.xyz/api/rfq/rfq_create.md)\n- [rfq\\_update](https://docs.lighter.xyz/api/rfq/rfq_update.md)\n- [Points](https://docs.lighter.xyz/api/points.md): Points leaderboard and live points. Lighter on Robinhood Chain only.\n- [livePoints\\_total](https://docs.lighter.xyz/api/points/livepoints_total.md)\n- [leaderboard](https://docs.lighter.xyz/api/points/leaderboard.md)\n- [Announcements](https://docs.lighter.xyz/api/announcements.md): Read exchange announcements, including their publication time and optional expiry.\n- [announcement](https://docs.lighter.xyz/api/announcements/announcement.md)\n- [Notifications](https://docs.lighter.xyz/api/notifications.md): Acknowledge notifications.\n- [notification\\_ack](https://docs.lighter.xyz/api/notifications/notification_ack.md)\n- [Explorer API](https://docs.lighter.xyz/api/explorer-api.md): Query blocks, batches, search, transaction statistics, logs by hash, account logs/assets/positions and market logs. Base URLs: https://explorer.elliot.ai/api (Lighter), https://explorerapi.rh.lighter.xyz/api (Robinhood Chain mainnet), https://explorerapi.rh-testnet.lighter.xyz/api (Robinhood Chain testnet).\n- [Account](https://docs.lighter.xyz/api/explorer-api/account.md)\n- [Get Account Assets](https://docs.lighter.xyz/api/explorer-api/account/get-account-assets.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address.md)\n- [Get Account by Address](https://docs.lighter.xyz/api/explorer-api/account/get-account-by-address-1.md)\n- [Batches](https://docs.lighter.xyz/api/explorer-api/batches.md)\n- [Get Recent Batches](https://docs.lighter.xyz/api/explorer-api/batches/get-recent-batches.md)\n- [Get Batch by Id](https://docs.lighter.xyz/api/explorer-api/batches/get-batch-by-id.md)\n- [Blocks](https://docs.lighter.xyz/api/explorer-api/blocks.md)\n- [Get Recent Blocks](https://docs.lighter.xyz/api/explorer-api/blocks/get-recent-blocks.md)\n- [Get Block by Id](https://docs.lighter.xyz/api/explorer-api/blocks/get-block-by-id.md)\n- [Logs](https://docs.lighter.xyz/api/explorer-api/logs.md)\n- [Get Log by Hash](https://docs.lighter.xyz/api/explorer-api/logs/get-log-by-hash.md)\n- [Markets](https://docs.lighter.xyz/api/explorer-api/markets.md)\n- [List all markets](https://docs.lighter.xyz/api/explorer-api/markets/list-all-markets.md)\n- [Get Market Latest Logs. To query perpetual markets, use the symbol alone. For spot markets, use \\`symbol-quote\\` e.g. \\`eth-usdc\\`](https://docs.lighter.xyz/api/explorer-api/markets/get-market-latest-logs-to-query-perpetual-markets-use-the-symbol-alone-for-spot-markets-use-symbol-q.md)\n- [Search](https://docs.lighter.xyz/api/explorer-api/search.md)\n- [Search for blocks, batches, transactions, or accounts](https://docs.lighter.xyz/api/explorer-api/search/search-for-blocks-batches-transactions-or-accounts.md)\n- [Stats](https://docs.lighter.xyz/api/explorer-api/stats.md)\n- [Get Tx Stats](https://docs.lighter.xyz/api/explorer-api/stats/get-tx-stats.md)\n- [List Total Values](https://docs.lighter.xyz/api/explorer-api/stats/list-total-values.md)\n- [Models](https://docs.lighter.xyz/api/models.md)\n- [Guilds](https://docs.lighter.xyz/api/guilds.md)\n- [Guild discovery](https://docs.lighter.xyz/api/guilds/guild-discovery.md): Browse guilds, view leaderboards, and look up a guild by referral code.\n- [guild](https://docs.lighter.xyz/api/guilds/guild-discovery/guild.md)\n- [guildList](https://docs.lighter.xyz/api/guilds/guild-discovery/guildlist.md)\n- [guildLeaderboard](https://docs.lighter.xyz/api/guilds/guild-discovery/guildleaderboard.md)\n- [guildByReferralCode](https://docs.lighter.xyz/api/guilds/guild-discovery/guildbyreferralcode.md)\n- [Membership](https://docs.lighter.xyz/api/guilds/membership.md): Check membership, request to join a guild, or leave your current guild.\n- [guildMembership](https://docs.lighter.xyz/api/guilds/membership/guildmembership.md)\n- [guildLeave](https://docs.lighter.xyz/api/guilds/membership/guildleave.md)\n- [guildJoinRequest](https://docs.lighter.xyz/api/guilds/membership/guildjoinrequest.md)\n- [Duels](https://docs.lighter.xyz/api/guilds/duels.md): Browse duel metrics and public duels, or view your guild’s duel details.\n- [guildDuelMetrics](https://docs.lighter.xyz/api/guilds/duels/guildduelmetrics.md)\n- [guildDuel](https://docs.lighter.xyz/api/guilds/duels/guildduel.md)\n- [guildDuelList](https://docs.lighter.xyz/api/guilds/duels/guildduellist.md)\n- [guildMyDuels](https://docs.lighter.xyz/api/guilds/duels/guildmyduels.md)\n- [guildMyDuel](https://docs.lighter.xyz/api/guilds/duels/guildmyduel.md)\n- [Duel actions](https://docs.lighter.xyz/api/guilds/duel-actions.md): Challenge another guild, accept or decline a proposal, and report stake transfers.\n- [guildDuelChallenge](https://docs.lighter.xyz/api/guilds/duel-actions/guildduelchallenge.md)\n- [guildDuelAccept](https://docs.lighter.xyz/api/guilds/duel-actions/guildduelaccept.md)\n- [guildDuelDecline](https://docs.lighter.xyz/api/guilds/duel-actions/guilddueldecline.md)\n- [guildDuelStake](https://docs.lighter.xyz/api/guilds/duel-actions/guildduelstake.md)\n- [WebSocket](https://docs.lighter.xyz/api/websocket.md)\n- [Guild field updates — review preview](https://docs.lighter.xyz/api/guild-field-updates-review.md)\n\n## Lighter EVM\n\n- [Introduction](https://docs.lighter.xyz/evm/readme.md)\n- [Getting started](https://docs.lighter.xyz/evm/getting-started.md)\n- [Technical architecture](https://docs.lighter.xyz/evm/technical-architecture.md)\n- [Differences from L1 EVM](https://docs.lighter.xyz/evm/differences-from-l1-evm.md)\n- [L1 data fee](https://docs.lighter.xyz/evm/differences-from-l1-evm/l1-data-fee.md)\n- [Lighter Interop](https://docs.lighter.xyz/evm/interop.md)\n- [Accounts](https://docs.lighter.xyz/evm/interop/accounts.md)\n- [Reading Core from EVM](https://docs.lighter.xyz/evm/interop/reading-core-from-evm.md)\n- [Message passing](https://docs.lighter.xyz/evm/interop/message-passing.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/message-passing/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/message-passing/l1-and-evm.md)\n- [Tokens](https://docs.lighter.xyz/evm/interop/tokens.md)\n- [Token transfers](https://docs.lighter.xyz/evm/interop/tokens/token-transfers.md)\n- [EVM and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/evm-and-core.md)\n- [L1 and Core](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-core.md)\n- [L1 and EVM](https://docs.lighter.xyz/evm/interop/tokens/token-transfers/l1-and-evm.md)\n- [Token linking](https://docs.lighter.xyz/evm/interop/tokens/token-linking.md)\n- [Markets](https://docs.lighter.xyz/evm/markets.md)\n- [Signing Core transactions](https://docs.lighter.xyz/evm/signing-core-transactions.md)\n- [Chain info](https://docs.lighter.xyz/evm/chain-info.md)\n- [JSON-RPC API](https://docs.lighter.xyz/evm/json-rpc-api.md)\n\n## Programs\n\n- [Programs](https://docs.lighter.xyz/programs/readme.md)\n- [Lighter on Robinhood Chain Points](https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md)\n- [Referral Program](https://docs.lighter.xyz/programs/referral-program.md)\n- [Liquidity Partner Program](https://docs.lighter.xyz/programs/liquidity-partner-program.md)\n- [Partner Attribution](https://docs.lighter.xyz/programs/partner-attribution.md)",
      "url": "https://docs.lighter.xyz/llms.txt"
     },
     "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md": {
@@ -12121,6 +12161,36 @@
      "title": "공식 문서 목록 변경: 새 문서 1개",
      "ts": 1794251247,
      "venue": "lighter-rh"
+    },
+    {
+     "detail": "Corporate Actions, Guilds, Guild Duels",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "98eedac40546",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Corporate Actions — https://docs.lighter.xyz/trading/real-world-assets-rwas/corporate-actions.md",
+       "Guilds — https://docs.lighter.xyz/trading/guilds.md",
+       "Guild Duels — https://docs.lighter.xyz/trading/guilds/guild-duels.md",
+       "Guilds — https://docs.lighter.xyz/api/guilds.md",
+       "Guild discovery — https://docs.lighter.xyz/api/guilds/guild-discovery.md",
+       "guild — https://docs.lighter.xyz/api/guilds/guild-discovery/guild.md",
+       "guildList — https://docs.lighter.xyz/api/guilds/guild-discovery/guildlist.md",
+       "guildLeaderboard — https://docs.lighter.xyz/api/guilds/guild-discovery/guildleaderboard.md",
+       "guildByReferralCode — https://docs.lighter.xyz/api/guilds/guild-discovery/guildbyreferralcode.md",
+       "Membership — https://docs.lighter.xyz/api/guilds/membership.md"
+      ],
+      "removed": [],
+      "url": "https://docs.lighter.xyz/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 25개",
+     "ts": 1794262105,
+     "venue": "lighter-rh"
     }
    ],
    "frontend": {
@@ -12455,30 +12525,6 @@
    "js": null,
    "large_hist": [
     {
-     "amount": 1909663.59,
-     "block": 26329577,
-     "from": "0x7d328f5d5f4640f81b2f93d2903ec0a6c030eed6",
-     "to": "0x3d2335cac7b31411467ef03168c5869452fb7e86",
-     "ts": 1793652419,
-     "tx": "0xc8da83950dd08066acb09b8be056709d2fb8613a3b4eedac3af7d14a6e91caff"
-    },
-    {
-     "amount": 1163234.74,
-     "block": 26329578,
-     "from": "0x3c9df24f248ff949161a5a43bbf6dd69378d7799",
-     "to": "0x608c27519c5e65a61cfc1d2c9e658e5c57a2e3d7",
-     "ts": 1793652431,
-     "tx": "0xb7aafae04b40cd28d5d7d846174ea18afe92490acfdd0bad47fbf2cc268c8d32"
-    },
-    {
-     "amount": 1692100.09,
-     "block": 26329582,
-     "from": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
-     "to": "0x03ffb8cc16499d20cf79261ebc7064f72984330e",
-     "ts": 1793652479,
-     "tx": "0x01e7da99156cd4d041e587a050f5caf9ccf924e6117fe7be9340707d711e68fe"
-    },
-    {
      "amount": 1301393.0,
      "block": 26330402,
      "from": "0x841ed663f2636863d40be4ee76243377dff13a34",
@@ -12557,6 +12603,14 @@
      "to": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
      "ts": 1794228035,
      "tx": "0x15af90a27011f3954533a77c119b5b067477291073530b6fcafcb7d48d265182"
+    },
+    {
+     "amount": 1517999.44,
+     "block": 26379680,
+     "from": "0x3b4d794a66304f130a4db8f2551b0070dfcf5ca7",
+     "to": "0x3c1d9d9e8f6546f14cc286f8cfceaf9375dc5a20",
+     "ts": 1794255551,
+     "tx": "0xf01ddba1d56674ea1b5f969ef33a17e3e4fb1f23b5f75c0a26a55f9637e9337b"
     }
    ],
    "lb_hist": [
@@ -15539,6 +15593,11 @@
      1794251247,
      273856.111,
      66135.8
+    ],
+    [
+     1794262105,
+     273991.722,
+     66196.06
     ]
    ],
    "level": "WATCH",
@@ -15827,14 +15886,6 @@
    "odds_titles": {},
    "pm_seen": [],
    "rh_supply_hist": [
-    [
-     1793042602,
-     461668.24
-    ],
-    [
-     1793052504,
-     461668.24
-    ],
     [
      1793054312,
      461668.24
@@ -17610,6 +17661,10 @@
     [
      1794251247,
      459217.05
+    ],
+    [
+     1794262105,
+     459217.05
     ]
    ],
    "seeded": true,
@@ -17701,7 +17756,10 @@
      "1801195e8b96",
      "1be25dd3818f",
      "badfbed6919b",
-     "da3bd91f4697"
+     "da3bd91f4697",
+     "3b473f0c7ebf",
+     "5af33f91b0ec",
+     "af200575160d"
     ],
     "x:vnovakovski": [
      "954280aa62a6",
@@ -17727,62 +17785,63 @@
      "1326168b1ef7",
      "260f7dbe18e6",
      "920ccafba05b",
-     "164296d69493"
+     "164296d69493",
+     "a654c05ead52"
     ]
    },
    "status": {
     "ann": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794251247,
-     "note": "상위 10명 합계 273,856",
+     "at": 1794262105,
+     "note": "상위 10명 합계 273,992",
      "ok": true
     },
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794251247,
-     "note": "1937블록 · 대량 1건",
+     "at": 1794262105,
+     "note": "903블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "73건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "459,217 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794251247,
-     "note": "18건",
+     "at": 1794262105,
+     "note": "20건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     }
@@ -18194,10 +18253,6 @@
    "notified_ids": [],
    "odds": {
     "pacifica-fdv-above-100m-one-day-after-launch": [
-     [
-      1793042602,
-      8.1
-     ],
      [
       1793064488,
       8.1
@@ -18913,14 +18968,6 @@
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
      [
-      1793042602,
-      2.5
-     ],
-     [
-      1793052504,
-      3.0
-     ],
-     [
       1793054312,
       3.6
      ],
@@ -19470,10 +19517,6 @@
      ]
     ],
     "pacifica-fdv-above-200m-one-day-after-launch": [
-     [
-      1793351301,
-      9.7
-     ],
      [
       1793353104,
       9.0
@@ -20269,17 +20312,13 @@
      [
       1794251247,
       4.1
+     ],
+     [
+      1794262105,
+      4.0
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
-     [
-      1793042602,
-      3.6
-     ],
-     [
-      1793052504,
-      4.5
-     ],
      [
       1793054312,
       4.7
@@ -20823,10 +20862,6 @@
     ],
     "pacifica-fdv-above-300m-one-day-after-launch-488": [
      [
-      1793042602,
-      5.2
-     ],
-     [
       1793064488,
       5.2
      ],
@@ -21188,10 +21223,6 @@
      ]
     ],
     "pacifica-fdv-above-3b-one-day-after-launch-755-395": [
-     [
-      1793042602,
-      2.0
-     ],
      [
       1793054312,
       1.9
@@ -21699,14 +21730,6 @@
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
      [
-      1793042602,
-      4.5
-     ],
-     [
-      1793052504,
-      4.7
-     ],
-     [
       1793054312,
       4.5
      ],
@@ -22213,10 +22236,6 @@
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
      [
-      1793042602,
-      16.5
-     ],
-     [
       1793061175,
       16.0
      ],
@@ -22679,14 +22698,6 @@
     ],
     "pacifica-fdv-above-800m-one-day-after-launch-685-634": [
      [
-      1793042602,
-      4.2
-     ],
-     [
-      1793052504,
-      4.8
-     ],
-     [
       1793054312,
       4.2
      ],
@@ -23068,14 +23079,6 @@
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
-     [
-      1793042602,
-      18.5
-     ],
-     [
-      1793052504,
-      17.5
-     ],
      [
       1793057903,
       16.5
@@ -24065,6 +24068,10 @@
      [
       1794251247,
       65.0
+     ],
+     [
+      1794262105,
+      65.5
      ]
     ],
     "will-pacifica-launch-a-token-by-june-30-2027": [
@@ -24873,6 +24880,10 @@
      [
       1794251247,
       38.0
+     ],
+     [
+      1794262105,
+      40.0
      ]
     ]
    },
@@ -25017,27 +25028,27 @@
    },
    "status": {
     "ann": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     }
@@ -25396,10 +25407,6 @@
    "notified_ids": [],
    "odds": {
     "qfex-fdv-above-100m-one-day-after-launch": [
-     [
-      1793052504,
-      35.0
-     ],
      [
       1793054312,
       37.5
@@ -26031,13 +26038,13 @@
      [
       1794251247,
       50.0
+     ],
+     [
+      1794262105,
+      51.0
      ]
     ],
     "qfex-fdv-above-200m-one-day-after-launch": [
-     [
-      1793064488,
-      28.0
-     ],
      [
       1793086712,
       28.0
@@ -26833,17 +26840,13 @@
      [
       1794251247,
       51.5
+     ],
+     [
+      1794262105,
+      47.5
      ]
     ],
     "qfex-fdv-above-300m-one-day-after-launch": [
-     [
-      1793042602,
-      23.5
-     ],
-     [
-      1793052504,
-      23.0
-     ],
      [
       1793054312,
       22.5
@@ -27599,13 +27602,13 @@
      [
       1794251247,
       49.5
+     ],
+     [
+      1794262105,
+      51.5
      ]
     ],
     "qfex-fdv-above-500m-one-day-after-launch": [
-     [
-      1793042602,
-      20.0
-     ],
      [
       1793064488,
       20.0
@@ -28401,14 +28404,6 @@
     ],
     "qfex-fdv-above-50m-one-day-after-launch": [
      [
-      1793042602,
-      54.5
-     ],
-     [
-      1793052504,
-      55.5
-     ],
-     [
       1793059712,
       56.0
      ],
@@ -29079,14 +29074,6 @@
     ],
     "qfex-fdv-above-80m-one-day-after-launch": [
      [
-      1793042602,
-      46.0
-     ],
-     [
-      1793052504,
-      45.5
-     ],
-     [
       1793075904,
       45.5
      ],
@@ -29585,13 +29572,13 @@
      [
       1794251247,
       48.0
+     ],
+     [
+      1794262105,
+      51.0
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2026": [
-     [
-      1793042602,
-      3.2
-     ],
      [
       1793064488,
       3.2
@@ -29846,14 +29833,6 @@
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2027": [
-     [
-      1793042602,
-      51.5
-     ],
-     [
-      1793052504,
-      50.0
-     ],
      [
       1793056114,
       49.0
@@ -30605,13 +30584,13 @@
      [
       1794251247,
       57.0
+     ],
+     [
+      1794262105,
+      55.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
-     [
-      1793042602,
-      29.5
-     ],
      [
       1793064488,
       29.5
@@ -31191,13 +31170,13 @@
      [
       1794251247,
       22.0
+     ],
+     [
+      1794262105,
+      22.5
      ]
     ],
     "will-qfex-launch-a-token-by-march-31-2027": [
-     [
-      1793052504,
-      21.0
-     ],
      [
       1793054312,
       21.5
@@ -31548,14 +31527,6 @@
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
-     [
-      1793042602,
-      47.0
-     ],
-     [
-      1793052504,
-      48.0
-     ],
      [
       1793075904,
       48.0
@@ -31983,6 +31954,10 @@
      [
       1794251247,
       40.5
+     ],
+     [
+      1794262105,
+      39.5
      ]
     ]
    },
@@ -32103,27 +32078,27 @@
    },
    "status": {
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     }
@@ -32613,6 +32588,10 @@
      [
       1794251247,
       1.9
+     ],
+     [
+      1794262105,
+      1.8
      ]
     ],
     "will-risex-launch-a-token-by-december-31-2027-20260708174012706": [
@@ -33659,28 +33638,30 @@
      "408a49067d53",
      "a1afdca4ad4b",
      "74833a219ed1",
-     "4809f3e8265a"
+     "4809f3e8265a",
+     "99c96dd013a4",
+     "a6500bf88de7"
     ]
    },
    "status": {
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794251247,
-     "note": "21건",
+     "at": 1794262105,
+     "note": "20건",
      "ok": true
     }
    }
@@ -35173,17 +35154,17 @@
    },
    "status": {
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "9건",
      "ok": true
     }
@@ -35196,7 +35177,7 @@
    "api_watch": {
     "pages": {
      "https://docs.txflow.com/api/exchange.md": {
-      "at": 1794251247,
+      "at": 1794262105,
       "state": "closed"
      }
     },
@@ -35513,28 +35494,28 @@
    },
    "status": {
     "api_watch": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
-     "note": "14건",
+     "at": 1794262105,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794251247,
-     "note": "21건",
+     "at": 1794262105,
+     "note": "20건",
      "ok": true
     }
    }
@@ -35546,11 +35527,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1794251247,
+      "at": 1794262105,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1794251247,
+      "at": 1794262105,
       "state": "closed"
      }
     },
@@ -35762,10 +35743,6 @@
    "notified_ids": [],
    "odds": {
     "variational-fdv-above-100m-one-day-after-launch-519": [
-     [
-      1793042602,
-      98.5
-     ],
      [
       1793064488,
       98.5
@@ -36077,10 +36054,6 @@
     ],
     "variational-fdv-above-1b-one-day-after-launch-636-229-681": [
      [
-      1793042602,
-      56.5
-     ],
-     [
       1793064488,
       56.5
      ],
@@ -36367,17 +36340,13 @@
      [
       1794251247,
       55.5
+     ],
+     [
+      1794262105,
+      56.0
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
-     [
-      1793042602,
-      94.8
-     ],
-     [
-      1793052504,
-      95.0
-     ],
      [
       1793054312,
       93.9
@@ -37008,14 +36977,6 @@
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
-     [
-      1793042602,
-      25.7
-     ],
-     [
-      1793052504,
-      25.9
-     ],
      [
       1793075904,
       25.9
@@ -37723,10 +37684,6 @@
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
      [
-      1793042602,
-      93.3
-     ],
-     [
       1793064488,
       93.3
      ],
@@ -38036,10 +37993,6 @@
      ]
     ],
     "variational-fdv-above-3b-one-day-after-launch-846-887-175": [
-     [
-      1793042602,
-      11.8
-     ],
      [
       1793054312,
       12.0
@@ -38771,13 +38724,13 @@
      [
       1794251247,
       12.4
+     ],
+     [
+      1794262105,
+      12.7
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
-     [
-      1793042602,
-      6.2
-     ],
      [
       1793064488,
       6.2
@@ -39033,10 +38986,6 @@
     ],
     "variational-fdv-above-500m-one-day-after-launch-547-272": [
      [
-      1793042602,
-      88.5
-     ],
-     [
       1793064488,
       88.5
      ],
@@ -39274,14 +39223,6 @@
      ]
     ],
     "variational-fdv-above-5b-one-day-after-launch-995-724-585": [
-     [
-      1793042602,
-      3.2
-     ],
-     [
-      1793052504,
-      3.5
-     ],
      [
       1793057903,
       3.2
@@ -39821,10 +39762,6 @@
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
      [
-      1793042602,
-      71.5
-     ],
-     [
       1793064488,
       71.5
      ],
@@ -40094,10 +40031,6 @@
      ]
     ],
     "will-variational-launch-a-token-by-december-31-2026-577-621": [
-     [
-      1793311706,
-      81.3
-     ],
      [
       1793313498,
       79.9
@@ -40893,17 +40826,13 @@
      [
       1794251247,
       69.5
+     ],
+     [
+      1794262105,
+      67.0
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
-     [
-      1793042602,
-      17.5
-     ],
-     [
-      1793052504,
-      17.0
-     ],
      [
       1793059712,
       17.5
@@ -41587,6 +41516,10 @@
      [
       1794251247,
       4.5
+     ],
+     [
+      1794262105,
+      4.3
      ]
     ]
    },
@@ -41745,38 +41678,39 @@
      "b18e28ff12f5",
      "eae6c1b9aba4",
      "2ebcac5c15ef",
-     "2b25e8e52b26"
+     "2b25e8e52b26",
+     "36bbf8f992fb"
     ]
    },
    "status": {
     "api_watch": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794251247,
+     "at": 1794262105,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794251247,
-     "note": "20건",
+     "at": 1794262105,
+     "note": "21건",
      "ok": true
     }
    }
