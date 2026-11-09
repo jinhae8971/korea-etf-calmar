@@ -1,0 +1,39 @@
+{
+ "headline": "유가 하락과 반도체 반등으로 S&P +2.4%, 나스닥100 +3.4%였어요. 오른 종목이 85/97로 폭넓었고, 엔비디아만 −4.3%로 역행했어요.",
+ "breadth_note": "오른 종목 85, 내린 종목 12로 폭넓은 랠리였어요. SMA50 위 종목 비율은 50.5%에서 59.8%로 회복했고, 52주 신고가도 6개 나왔어요. 동일가중과 시총가중이 거의 같이 올랐어요.",
+ "drivers": [
+  "반도체 되돌림 2일째: SOX +6.9%였어요. AMD +13.3%(오펜하이머 '시장수익률 상회' 상향), AMAT +11.4%, LRCX +10.4%, KLAC +9.3%, ANET +9.0%가 올랐어요. 5일 기준으로 QQQ는 선거 후 투매분을 거의 되찾았어요(−0.3%).",
+  "엔비디아 −4.3%(거래량 3.9배): 젠슨 황 CEO가 외국 정보기관의 표적이 됐다는 보도로 이사회가 독립 조사에 착수했어요. 이사회는 기밀·국가안보 피해는 없다고 보고 신뢰를 유지했어요. 영향은 엔비디아에 국한됐다는 평가가 나왔어요.",
+  "유가: WTI −4.9%(86.4달러)로 인플레이션 우려가 줄었어요. 금 +1.8%, 달러인덱스 −0.6%예요.",
+  "변동성: VIX가 19.9로 내려왔어요(−5.7pt). 10년물은 4.86%로 보합이에요. 원/달러는 1,340원으로 1.2% 내렸어요.",
+  "AI 전력: CEG +10.5%, 산업재(+3.8%)가 섹터 1위였어요. 선거 후 빠졌던 AI 인프라 쪽에 매수가 돌아왔어요."
+ ],
+ "after_hours": [],
+ "tech": {
+  "QQQ": {"short": 60, "swing": 35, "short_d": 5, "swing_d": 5,
+          "note": "주봉 EMA50(671.7) 위로 복귀했고, 일봉 히스토그램이 상승 전환했어요(−6.64 → −4.98). 4H RSI는 43.8이에요. 일봉 SuperTrend(715.9)와 EMA120(704.5)이 위에 있어, 지금은 추세 회복이 아니라 되돌림 단계예요.",
+          "up": "686.4 돌파 → 695.3, 701.3~705.5", "down": "671.7 이탈 → 661.1"},
+  "SPY": {"short": 60, "swing": 45, "short_d": 10, "swing_d": 10,
+          "note": "일봉 EMA120(751.4)을 종가로 되찾아 11/5 레짐 이탈이 무효가 됐어요. 4H·일봉·주봉 히스토그램이 모두 상승 전환했고, 주봉 RSI도 50을 회복했어요. 일봉 SuperTrend는 아직 하락(776.6)이에요.",
+          "up": "758.9 돌파 → 762.3(EMA50), 775.2", "down": "749.7 이탈 → 739.5"},
+  "SOXX": {"short": 55, "swing": 30, "short_d": 5, "swing_d": 5,
+           "note": "+7.5%로 이틀간 11% 반등했고, 일봉 히스토그램도 상승 전환했어요. 다만 주봉 MACD선이 0선 아래로 내려가 중기 모멘텀은 약해요. 4H SuperTrend(154.7)가 첫 저항이에요.",
+           "up": "154.7 돌파 → 159.3, 162.2(4H EMA50)", "down": "140 이탈 → 131.9"},
+  "DRAM": {"short": 55, "swing": 30, "short_d": 5, "swing_d": 0,
+           "note": "+6.3%로 4H RSI가 30 위로 올라오고 일봉 히스토그램이 반등했어요. 주봉 MACD선은 0선 아래로 내려갔어요. 44.4~45.3 매물대와 4H SuperTrend(46.2)가 저항이에요.",
+           "up": "44.4 돌파 → 46.2, 48.8", "down": "38.5(주봉 EMA120) 이탈 → 37.0"}
+ },
+ "calendar": ["11/10 10월 CPI(08:30 ET, 한국 22:30)", "엔비디아 이사회 조사 경과", "12/9 FOMC"],
+ "view": "선거 후 AI 인프라 투매가 이틀 만에 대부분 되돌려졌어요. 오른 종목 85개에 VIX 19.9까지, 시장 전반의 안도 랠리예요. SPY는 일봉 EMA120을 되찾아 스윙 확률을 회복시켰어요. QQQ와 SOXX는 아직 일봉 추세선 아래라 되돌림 단계로 봐요. 오늘 밤 CPI가 12월 인상 확률을 좌우하며 반등 지속의 분기점이 될 거예요.",
+ "summary": [
+  "유가 −4.9%, 반도체 +6.9%로 S&P +2.4%였어요. 오른 종목은 85/97로 폭넓었어요.",
+  "엔비디아는 CEO 관련 이사회 조사로 −4.3%였지만, 영향은 엔비디아에 국한됐어요.",
+  "SPY는 일봉 EMA120을 회복해 스윙 45%예요. QQQ와 SOXX는 아직 되돌림 단계예요.",
+  "오늘 밤 10월 CPI(22:30 KST)가 반등 지속의 분기점이에요."
+ ],
+ "sources": [
+  {"title": "Nvidia Falls in the Stock Market Today Live, November 9, 2026, as Other Tech Stocks Rally (StockTitan)", "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-9-2026"},
+  {"title": "Stock market today: Nasdaq surges despite Nvidia stock slide (Yahoo Finance)", "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-9-dow-sp-500-nasdaq-nvidia-090535419.html"},
+  {"title": "Wall St jumps back as oil slide eases inflation worries; Nvidia slumps (Reuters via Kitco)", "url": "http://www.kitco.com/news/off-the-wire/2026-11-09/wall-st-jumps-back-oil-slide-eases-inflation-worries-nvidia-slumps"}
+ ]
+}
