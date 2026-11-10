@@ -1,5 +1,5 @@
 {
- "generated_at": 1794290909,
+ "generated_at": 1794292705,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -29,10 +29,6 @@
   }
  ],
  "runs": [
-  [
-   1794204514,
-   "d"
-  ],
   [
    1794206305,
    "d"
@@ -160,6 +156,10 @@
   [
    1794290909,
    "d"
+  ],
+  [
+   1794292705,
+   "d"
   ]
  ],
  "status": {
@@ -170,7 +170,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": false
+   "x:arcus_xyz": true
   },
   "extended": {
    "docs": true,
@@ -195,7 +195,7 @@
    "polymarket": true,
    "rh_supply": true,
    "rh_transfers": true,
-   "x:Lighter_xyz": true,
+   "x:Lighter_xyz": false,
    "x:vnovakovski": true
   },
   "pacifica": {
@@ -221,14 +221,14 @@
   "titanx": {
    "docs": true,
    "news": true,
-   "x:TitanExchange_": true
+   "x:TitanExchange_": false
   },
   "txflow": {
    "api_watch": true,
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": false
+   "x:TxFlow_L1": true
   },
   "variational": {
    "api_watch": true,
