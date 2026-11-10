@@ -1,5 +1,5 @@
 {
- "generated_at": 1794285511,
+ "generated_at": 1794287306,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -156,6 +156,10 @@
   [
    1794285511,
    "d"
+  ],
+  [
+   1794287306,
+   "d"
   ]
  ],
  "status": {
@@ -173,7 +177,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
@@ -220,11 +224,11 @@
    "x:TitanExchange_": true
   },
   "txflow": {
-   "api_watch": true,
-   "docs": true,
+   "api_watch": false,
+   "docs": false,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": true
+   "x:TxFlow_L1": false
   },
   "variational": {
    "api_watch": true,
