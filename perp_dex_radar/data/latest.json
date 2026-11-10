@@ -1,5 +1,5 @@
 {
- "generated_at": 1794348505,
+ "generated_at": 1794350310,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -12,27 +12,9 @@
   "txflow": "WATCH",
   "variational": "WATCH"
  },
- "outbox": {
-  "created": 1794262105,
-  "id": "206a33272db1",
-  "kind": "alert",
-  "level": "IMMINENT",
-  "text": "🔴 <b>퍼프덱스 레이더 · Extended 임박</b>\n11/10(화) 01:13 ~ 01:23 감지 · 공식 문서 · 공식 발표\n알려진 상태: <b>Xpoints 프로그램 종료·최종 배분 확정(11/6)</b> · 전환 1 Xpoint ≈ 4.2857 XTEN(커뮤니티 3억 ÷ 7,000만 pt, TGE 때 전량 언락) · <b>TGE·청구 일정 미정 — 청구 오픈 공지를 기다리는 중</b> · 청구 때 자격·컴플라이언스 확인·토큰 약관 동의 필요\n\n<b>무슨 일</b>\n· Extended 공식 X에 새 글\n  <i>“Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you in the League, which unlocks: - Trading fee discounts from 5% to 30% - Vault Extra Yield Boost from 0.5x to 5x, paid on up to $2,000,000 of your deposit. - Affil”</i>\n  잡힌 단어: TGE\n· Extended 공식 텔레그램에 새 글\n  <i>“XTEN Staking and the League XTEN staking goes live at TGE. Your staked balance determines your League tier, which applies across all sub-accounts linked to the same wallet and sets your fee discount, Vault Extra Yield Boost and affiliate payout multiplier. Staked XTEN can also ea”</i>\n  잡힌 단어: TGE\n\n<b>의미</b>\n서로 다른 근거 2가지가 7일 안에 함께 나왔어요. 토큰 전환이 가까웠을 가능성이 높아요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n공식 공지 채널에 토큰·에어드랍 관련 글이 올라왔어요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n앞서 보낸 '임박' 알림 뒤에 새로 나온 신호예요.\n\n<a href=\"https://x.com/extendedapp/status/2119825671417385414\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
- },
- "outboxes": [
-  {
-   "created": 1794262105,
-   "id": "206a33272db1",
-   "kind": "alert",
-   "level": "IMMINENT",
-   "text": "🔴 <b>퍼프덱스 레이더 · Extended 임박</b>\n11/10(화) 01:13 ~ 01:23 감지 · 공식 문서 · 공식 발표\n알려진 상태: <b>Xpoints 프로그램 종료·최종 배분 확정(11/6)</b> · 전환 1 Xpoint ≈ 4.2857 XTEN(커뮤니티 3억 ÷ 7,000만 pt, TGE 때 전량 언락) · <b>TGE·청구 일정 미정 — 청구 오픈 공지를 기다리는 중</b> · 청구 때 자격·컴플라이언스 확인·토큰 약관 동의 필요\n\n<b>무슨 일</b>\n· Extended 공식 X에 새 글\n  <i>“Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you in the League, which unlocks: - Trading fee discounts from 5% to 30% - Vault Extra Yield Boost from 0.5x to 5x, paid on up to $2,000,000 of your deposit. - Affil”</i>\n  잡힌 단어: TGE\n· Extended 공식 텔레그램에 새 글\n  <i>“XTEN Staking and the League XTEN staking goes live at TGE. Your staked balance determines your League tier, which applies across all sub-accounts linked to the same wallet and sets your fee discount, Vault Extra Yield Boost and affiliate payout multiplier. Staked XTEN can also ea”</i>\n  잡힌 단어: TGE\n\n<b>의미</b>\n서로 다른 근거 2가지가 7일 안에 함께 나왔어요. 토큰 전환이 가까웠을 가능성이 높아요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n공식 공지 채널에 토큰·에어드랍 관련 글이 올라왔어요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n앞서 보낸 '임박' 알림 뒤에 새로 나온 신호예요.\n\n<a href=\"https://x.com/extendedapp/status/2119825671417385414\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
-  }
- ],
+ "outbox": null,
+ "outboxes": [],
  "runs": [
-  [
-   1794262105,
-   "d"
-  ],
   [
    1794263915,
    "d"
@@ -160,6 +142,10 @@
   [
    1794348505,
    "d"
+  ],
+  [
+   1794350310,
+   "d"
   ]
  ],
  "status": {
@@ -177,7 +163,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
@@ -195,7 +181,7 @@
    "polymarket": true,
    "rh_supply": true,
    "rh_transfers": true,
-   "x:Lighter_xyz": true,
+   "x:Lighter_xyz": false,
    "x:vnovakovski": true
   },
   "pacifica": {
@@ -203,25 +189,25 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:pacifica_fi": true
+   "x:pacifica_fi": false
   },
   "qfex": {
    "docs": true,
    "feed": true,
    "news": true,
    "polymarket": true,
-   "x:QFEX": true
+   "x:QFEX": false
   },
   "risex": {
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:risextrade": true
+   "x:risextrade": false
   },
   "titanx": {
    "docs": true,
    "news": true,
-   "x:TitanExchange_": false
+   "x:TitanExchange_": true
   },
   "txflow": {
    "api_watch": true,
@@ -236,7 +222,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": true
+   "x:variational_io": false
   }
  },
  "undecidable": false
