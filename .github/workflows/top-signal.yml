@@ -5,6 +5,9 @@ on:
     - cron: "48 22 * * *"      # KST 매일 07:48 (혼잡대 회피)
     - cron: "13 0 * * *"       # KST 09:13 백업 — 아침 슬롯이 밀리거나 빠질 때(11/03 07:48분이 12:41에야 돎) 따라잡기
     - cron: "43 1 * * *"       # KST 10:43 백업 — 이미 오늘 스냅샷이 있으면 아래 gate가 건너뜀
+  push:                       # (2026-11-10) GitHub 예약이 혼잡 시간대에 3~7시간씩 밀려서, swing-rebalancer의 매일
+    branches: [main]          # 07:40 운영 점검이 오늘 스냅샷이 없으면 이 파일을 커밋해 바로 깨운다 (ops-atlas/tools/kick_briefs.py)
+    paths: ["ops/kick/top-signal.txt"]
   workflow_dispatch:
 
 permissions:

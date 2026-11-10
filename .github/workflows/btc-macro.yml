@@ -5,6 +5,9 @@ on:
     - cron: "36 22 * * 1-5"   # KST 화~토 07:36 (미국 거래일 종가 반영, 혼잡대 회피)
     - cron: "13 0 * * 2-6"    # KST 화~토 09:13 백업 — 아침 슬롯이 밀리거나 빠질 때 따라잡기 (UTC 요일 = KST 요일)
     - cron: "43 1 * * 2-6"    # KST 화~토 10:43 백업 — 이미 오늘 스냅샷이 있으면 아래 gate가 건너뜀
+  push:                       # (2026-11-10) GitHub 예약이 혼잡 시간대에 3~7시간씩 밀려서, swing-rebalancer의 매일
+    branches: [main]          # 07:40 운영 점검이 오늘 스냅샷이 없으면 이 파일을 커밋해 바로 깨운다 (ops-atlas/tools/kick_briefs.py)
+    paths: ["ops/kick/btc-macro.txt"]
   workflow_dispatch:
 
 permissions:
