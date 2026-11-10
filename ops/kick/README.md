@@ -9,3 +9,4 @@ GitHub 예약 실행(cron)이 아침 혼잡 시간대에 3~7시간씩 밀려서(
 |---|---|---|
 | top-signal.txt | top-signal.yml (크립토 고점신호) | 매일 |
 | btc-macro.txt | btc-macro.yml (BTC 매크로 레이더) | 화~토 |
+| ../../onchain_liquidity/.run | onchain-liquidity.yml (온체인 유동성 레이더, 원래 있던 푸시 트리거 파일) | 매일 |
