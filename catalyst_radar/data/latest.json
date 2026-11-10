@@ -1,41 +1,13 @@
 {
- "as_of_kst": "2026-11-09 10:15",
+ "as_of_kst": "2026-11-10 12:51",
  "calendar": [
-  {
-   "event_date": "2026-11-09",
-   "first_seen": "2026-11-09",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:hyperliquid-s-first-layer-2-launches-november-9-with-hype-as",
-   "last_seen": "2026-11-09",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-09",
-    "price_at_detect": 86.24,
-    "score_at_detect": 35.3
-   },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-11-09",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "HYPE",
-   "title": "Hyperliquid's First Layer 2 Launches November 9 With HYPE as Gas Token - Coinpaper",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPYkdUb19uRE1FRF9QTmt5U0Y5alBpYTdTdi1DaWNCSy1NR3gxa2VKZkQ3LUttd2RZTWQ1OHRyM3lGd0FQYUlSbk05MXdWSFV1WkZsUXRfOFRSMUtldTg4YVJtV3FJZk5tNnlneWxGQVBsMktaWmRsSWhsQ2ZtdjMwUDJuc0ZDNFBOYnpwcnR0a1FSUlBnTFprQXBJS0tncTA?oc=5",
-   "when": "Sun, 08 Nov 2026"
-  },
   {
    "event_date": "2026-11-11",
    "first_seen": "2026-11-05",
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xed53c0264b1ca4ec8dbd658b7aca8dcbe0193747313099b1a3c4549d866ba41d",
-   "last_seen": "2026-11-09",
+   "last_seen": "2026-11-10",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-05",
@@ -59,18 +31,106 @@
    "when": "2026-11-11"
   },
   {
+   "event_date": "2026-11-16",
+   "first_seen": "2026-11-10",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:pancakeswap-delays-weekly-cake-burn-to-november-16-for-smart",
+   "last_seen": "2026-11-10",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 2.2,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "CAKE",
+   "title": "PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart Contract Security Upgrade - Cryptonews.net",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94cWRGSW52Tng5dnlQdXFLNWxOZWZXR0lUYk5zb0hDV0g4LVROWG5ZYWpkcUdUZnQ4YkxUenNrT1RwMnEzcDF4TVZOVkZUbjVKY0NiOUYwWjZvQQ?oc=5",
+   "when": "Mon, 09 Nov 2026"
+  },
+  {
+   "event_date": "2026-11-16",
+   "first_seen": "2026-11-10",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
+   "last_seen": "2026-11-10",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 0.644312,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MNT",
+   "title": "Recognition of Halo Prime as a strategic partner of Mantle",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
+   "vote_state": "active",
+   "when": "2026-11-16"
+  },
+  {
+   "event_date": "2026-11-16",
+   "first_seen": "2026-11-10",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
+   "last_seen": "2026-11-10",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 0.175026,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "ARB",
+   "title": "[Constitutional] AIP: Approve Release of Frozen ETH and ARB",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
+   "vote_state": "active",
+   "when": "2026-11-16"
+  },
+  {
    "event_date": "2026-12-08",
    "first_seen": "2026-11-03",
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-09",
+   "last_seen": "2026-11-10",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-03",
     "price_at_detect": 746.55,
-    "score_at_detect": 42.0
+    "score_at_detect": 42.0,
+    "t7": 0.0,
+    "t7_at": "2026-11-10"
    },
    "score": 59.5,
    "source": "release",
@@ -86,6 +146,34 @@
    "trust": 0.95,
    "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.2",
    "when": "2026-11-03"
+  },
+  {
+   "event_date": "2026-12-08",
+   "first_seen": "2026-11-10",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:bnb-news-bnb-chain-fixes-a-node-bug-before-its-december-8-up",
+   "last_seen": "2026-11-10",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 746.55,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "BNB",
+   "title": "BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upgrade, but Pepeto Is the Real Story - openPR.com",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQemFrYU9KLVg1ci1CS2QtZEhLRE5HS2UxOHpISnh4dGV5WF9GLU1yRnRVam5xTk15eFAwVnQ4TTM0Z0szNXFtakVXb3BvemZOWmtCbzRuUVB0NExrMU15MHBuNDRmYm81M05nVFM2UlpIV1BNaEhXdTFlZXhTRWQxSEpjRlRTU18ybkVKZ2VPRTBmNzhiYnEzZld2YlFPVm9VenJj?oc=5",
+   "when": "Mon, 09 Nov 2026"
   }
  ],
  "coverage": 1.0,
@@ -115,35 +203,150 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-09 10:15\n감시 52종목(체인 34·프로토콜 18) · 이벤트 83건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>HYPE</b> [인프라·신규] Hyperliquid's First Layer 2 Launches November 9 With HYPE as Gas Token - Coinp\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> HYPE <b>일정확정</b> · Hyperliquid's First Layer 2 Launches November 9 With HYPE as G\n🟠 <code>D-2   </code> MNT <b>투표중</b> · MIP-35: Mantle Core Budget for the Fourth Budget Cycle\n🔴 <code>D-29  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-10 12:51\n감시 52종목(체인 34·프로토콜 18) · 이벤트 83건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>CAKE</b> [공급·신규] PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart Contract Security\n🟠 <b>BNB</b> [인프라·신규] BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upgrade, but Pepeto\n🟠 <b>MNT</b> [기능·신규] Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <b>ARB</b> [기능·신규] [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🟠 <b>SUI</b> [인프라·신규] sui devnet-v1.84.0 — Sui Protocol Version in this release: `142`\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> MNT <b>투표중</b> · MIP-35: Mantle Core Budget for the Fourth Budget Cycle\n🔴 <code>D-6   </code> CAKE <b>일정확정</b> · PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart C\n🟠 <code>D-6   </code> MNT <b>투표중</b> · Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <code>D-6   </code> ARB <b>투표중</b> · [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🔴 <code>D-28  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n🟠 <code>D-28  </code> BNB <b>일정확정</b> · BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upg\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-11-09",
-   "first_seen": "2026-11-09",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:hyperliquid-s-first-layer-2-launches-november-9-with-hype-as",
+   "event_date": "2026-11-16",
+   "first_seen": "2026-11-10",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:pancakeswap-delays-weekly-cake-burn-to-november-16-for-smart",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-09",
-    "price_at_detect": 86.24,
-    "score_at_detect": 35.3
+    "detected_at": "2026-11-10",
+    "price_at_detect": 2.2,
+    "score_at_detect": 50.4
    },
-   "score": 35.3,
+   "score": 50.4,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-09",
+     "at": "2026-11-10",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "HYPE",
-   "title": "Hyperliquid's First Layer 2 Launches November 9 With HYPE as Gas Token - Coinpaper",
+   "symbol": "CAKE",
+   "title": "PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart Contract Security Upgrade - Cryptonews.net",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPYkdUb19uRE1FRF9QTmt5U0Y5alBpYTdTdi1DaWNCSy1NR3gxa2VKZkQ3LUttd2RZTWQ1OHRyM3lGd0FQYUlSbk05MXdWSFV1WkZsUXRfOFRSMUtldTg4YVJtV3FJZk5tNnlneWxGQVBsMktaWmRsSWhsQ2ZtdjMwUDJuc0ZDNFBOYnpwcnR0a1FSUlBnTFprQXBJS0tncTA?oc=5",
-   "when": "Sun, 08 Nov 2026"
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94cWRGSW52Tng5dnlQdXFLNWxOZWZXR0lUYk5zb0hDV0g4LVROWG5ZYWpkcUdUZnQ4YkxUenNrT1RwMnEzcDF4TVZOVkZUbjVKY0NiOUYwWjZvQQ?oc=5",
+   "when": "Mon, 09 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-08",
+   "first_seen": "2026-11-10",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:bnb-news-bnb-chain-fixes-a-node-bug-before-its-december-8-up",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 746.55,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "BNB",
+   "title": "BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upgrade, but Pepeto Is the Real Story - openPR.com",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQemFrYU9KLVg1ci1CS2QtZEhLRE5HS2UxOHpISnh4dGV5WF9GLU1yRnRVam5xTk15eFAwVnQ4TTM0Z0szNXFtakVXb3BvemZOWmtCbzRuUVB0NExrMU15MHBuNDRmYm81M05nVFM2UlpIV1BNaEhXdTFlZXhTRWQxSEpjRlRTU18ybkVKZ2VPRTBmNzhiYnEzZld2YlFPVm9VenJj?oc=5",
+   "when": "Mon, 09 Nov 2026"
+  },
+  {
+   "event_date": "2026-11-16",
+   "first_seen": "2026-11-10",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 0.644312,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MNT",
+   "title": "Recognition of Halo Prime as a strategic partner of Mantle",
+   "transition": "NEW",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
+   "vote_state": "active",
+   "when": "2026-11-16"
+  },
+  {
+   "event_date": "2026-11-16",
+   "first_seen": "2026-11-10",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 0.175026,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "ARB",
+   "title": "[Constitutional] AIP: Approve Release of Frozen ETH and ARB",
+   "transition": "NEW",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
+   "vote_state": "active",
+   "when": "2026-11-16"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-10",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "MystenLabs/sui@devnet-v1.84.0",
+   "prerelease": true,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-10",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 26.9
+   },
+   "score": 26.9,
+   "source": "release",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-10",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "SUI",
+   "title": "sui devnet-v1.84.0 — Sui Protocol Version in this release: `142`",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/MystenLabs/sui/releases/tag/devnet-v1.84.0",
+   "when": "2026-11-09"
   }
  ],
  "universe": {
@@ -267,7 +470,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 21,
+   "n": 22,
    "status": "OK"
   },
   {
@@ -291,7 +494,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 23,
+   "n": 22,
    "status": "OK"
   },
   {
@@ -327,7 +530,7 @@
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -339,7 +542,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 29,
+   "n": 30,
    "status": "OK"
   },
   {
