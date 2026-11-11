@@ -1,5 +1,5 @@
 {
- "generated_at": 1794359838,
+ "generated_at": 1794362092,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -15,10 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1794274707,
-   "d"
-  ],
   [
    1794276515,
    "d"
@@ -146,6 +142,10 @@
   [
    1794359838,
    "s"
+  ],
+  [
+   1794362092,
+   "s"
   ]
  ],
  "status": {
@@ -160,7 +160,7 @@
   },
   "extended": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:extendedapp": true
@@ -182,7 +182,7 @@
    "rh_supply": true,
    "rh_transfers": true,
    "x:Lighter_xyz": true,
-   "x:vnovakovski": true
+   "x:vnovakovski": false
   },
   "pacifica": {
    "ann": true,
