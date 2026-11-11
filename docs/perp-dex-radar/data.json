@@ -1,7 +1,172 @@
 {
- "generated_at": 1794400705,
+ "generated_at": 1794418023,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "extended-resources/legal/xten-community-distribution-terms",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "dea06eec8af9",
+   "ref": {
+    "added": [
+     "XTEN Community Distribution Terms — https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md"
+    ],
+    "name": "XTEN Community Distribution Terms",
+    "url": "https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md",
+    "words": [
+     "Distribution"
+    ]
+   },
+   "refute": "전환·청구와 무관한 문서로 확인되면 해제",
+   "refuted": false,
+   "signal": "index_keyword",
+   "title": "공식 문서에 새 페이지 'XTEN Community Distribution Terms'",
+   "ts": 1794418023,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
+  {
+   "detail": "Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.",
+   "family": "S2",
+   "grade": "IMMINENT",
+   "id": "b0992ca7e8d1",
+   "ref": {
+    "added": [
+     "**Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.**",
+     "Weekly points distributions have ended. As of 5 November 2026, all 70,000,000 points out of 70 million total points have been distributed under the program."
+    ],
+    "name": "포인트 프로그램",
+    "url": "https://docs.extended.exchange/extended-resources/points-program.md",
+    "words": [
+     "ended"
+    ]
+   },
+   "refute": "일정·비율이 아닌 일반 설명·약관 정정으로 확인되면 해제",
+   "refuted": false,
+   "signal": "doc_keyword",
+   "title": "공식 문서 '포인트 프로그램'에 전환·TGE 관련 문구 추가",
+   "ts": 1794418023,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
+  {
+   "detail": "This competition has ended.",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "ab5a900d426c",
+   "ref": {
+    "added": [
+     "**This competition has ended.**",
+     "The Competition ran for four weeks **from** **7 October 2026, 00:00 UTC until 3 November 2026, 00:00 UTC.**"
+    ],
+    "name": "Final Arc 대회",
+    "removed": 1,
+    "url": "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 'Final Arc 대회' 문구 변경",
+   "ts": 1794418023,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3R",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "f2a50e417041",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3RyN25pQjNtcUFabUh0SGVvVlhxQmZsWGZhUQ?oc=5",
+    "words": [
+     "launches"
+    ]
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: Variational launches on mainnet ahead of $VAR token event - Crypto Briefing",
+   "ts": 1794418023,
+   "venue": "variational",
+   "venue_name": "Variational"
+  },
+  {
+   "detail": "will-variational-launch-a-token-by-november-30-2026",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "256747fcc983",
+   "ref": {
+    "url": "https://polymarket.com/market/will-variational-launch-a-token-by-november-30-2026"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "polymarket",
+   "title": "Polymarket: Will Variational launch a token by November 30, 2026? 2% → 18%",
+   "ts": 1794418023,
+   "venue": "variational",
+   "venue_name": "Variational"
+  },
+  {
+   "detail": "https://t.me/extended_updates/398",
+   "family": "S2",
+   "grade": "ALERT",
+   "id": "58206d9f9889",
+   "ref": {
+    "label": "공식 텔레그램",
+    "text": "XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now live. Eligible Xpoints holders can now sign the Terms to see their XTEN allocations in the Extended app. Allocations are calculated from final Xpoints balances, at approximately 4.2857 XTEN per Xpoint. Figures in the app may be rounded for display. The TGE date will be announced sep.",
+    "url": "https://t.me/extended_updates/398",
+    "words": [
+     "TGE"
+    ]
+   },
+   "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
+   "refuted": false,
+   "signal": "telegram_post",
+   "title": "Extended 공식 텔레그램: XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now liv",
+   "ts": 1794415973,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
+  {
+   "detail": "0x96381b9f → 0x260b364f",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "ef80fbef6e80",
+   "ref": {
+    "amount": 1649875.0,
+    "chain": "eth",
+    "from": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+    "to": "0x260b364fe0d3d37e6fd3cda0fa50926a06c54cea",
+    "tx": "0xf4c5efbaaf0955609f73b4058037db8024918021dd2dfec3c909c7608d367abc"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.65M개 대량 이동",
+   "ts": 1794409583,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x7fdafde5 → 0x96381b9f",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "ebc8b9b8546d",
+   "ref": {
+    "amount": 1649875.0,
+    "chain": "eth",
+    "from": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+    "to": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+    "tx": "0xe5065c5851628e146b5190601c46eaff27be3ef9082e327f4bdbe45ada09cad1"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.65M개 대량 이동",
+   "ts": 1794408539,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "Quantitative Managed Account: The invite-only Quantitative Managed Account offers systematic market-neutral trading for eligible high-volume QFEX traders.",
    "family": "S2",
@@ -4586,134 +4751,6 @@
    "ts": 1791907236,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "9b48201173b4",
-   "ref": {
-    "name": "QuickOrder"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: QuickOrder",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "3cece6f162db",
-   "ref": {
-    "name": "ToggleSwitch"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: ToggleSwitch",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "511a0e3f4a6a",
-   "ref": {
-    "name": "i18next"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: i18next",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "439f75c5444e",
-   "ref": {
-    "name": "maintenance"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: maintenance",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "554ff846168d",
-   "ref": {
-    "name": "useAccountExistence"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: useAccountExistence",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "a209f83292ba",
-   "ref": {
-    "name": "useCancelOrder"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: useCancelOrder",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "dd44e638bcdd",
-   "ref": {
-    "name": "useIntegratorApproval"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: useIntegratorApproval",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "3d3471191ee5",
-   "ref": {
-    "name": "usePriceOracle"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: usePriceOracle",
-   "ts": 1791907236,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
@@ -4844,6 +4881,10 @@
   [
    1794400705,
    "d"
+  ],
+  [
+   1794418023,
+   "s"
   ]
  ],
  "venues": [
@@ -4923,39 +4964,39 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "19건",
+     "at": 1794418023,
+     "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794400705,
-     "note": "19건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 4,
@@ -4966,6 +5007,44 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "0x96381b9f → 0x260b364f",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "ef80fbef6e80",
+     "ref": {
+      "amount": 1649875.0,
+      "chain": "eth",
+      "from": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+      "to": "0x260b364fe0d3d37e6fd3cda0fa50926a06c54cea",
+      "tx": "0xf4c5efbaaf0955609f73b4058037db8024918021dd2dfec3c909c7608d367abc"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.65M개 대량 이동",
+     "ts": 1794409583,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x7fdafde5 → 0x96381b9f",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "ebc8b9b8546d",
+     "ref": {
+      "amount": 1649875.0,
+      "chain": "eth",
+      "from": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+      "to": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+      "tx": "0xe5065c5851628e146b5190601c46eaff27be3ef9082e327f4bdbe45ada09cad1"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.65M개 대량 이동",
+     "ts": 1794408539,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "Manage Guilds and Guild Duels",
      "family": "S2",
@@ -5338,11 +5417,6 @@
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793335103,
-     223445.226,
-     53711.566
-    ],
     [
      1793336909,
      223458.914,
@@ -7337,6 +7411,11 @@
      1794400705,
      275756.105,
      66905.484
+    ],
+    [
+     1794418023,
+     276058.529,
+     67030.82
     ]
    ],
    "level": "WATCH",
@@ -7344,14 +7423,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793191108,
-     461668.24
-    ],
-    [
-     1793197839,
-     439424.62
-    ],
     [
      1793213725,
      439424.62
@@ -9135,64 +9206,68 @@
     [
      1794400705,
      459217.05
+    ],
+    [
+     1794418023,
+     459216.05
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794400705,
-     "note": "상위 10명 합계 275,756",
+     "at": 1794418023,
+     "note": "상위 10명 합계 276,059",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794400705,
-     "note": "149블록 · 대량 1건",
+     "at": 1794418023,
+     "note": "1441블록 · 대량 2건",
      "ok": true
     },
     "frontend": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "76건",
+     "at": 1794418023,
+     "note": "74건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794400705,
-     "note": "459,217 LIT",
+     "at": 1794418023,
+     "note": "459,216 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794400705,
+     "at": 1794418023,
      "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
      "ok": false
     },
     "x:vnovakovski": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/vnovakovski/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/vnovakovski/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 7,
@@ -9284,29 +9359,29 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -9317,6 +9392,92 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "extended-resources/legal/xten-community-distribution-terms",
+     "family": "S2",
+     "grade": "ALERT",
+     "id": "dea06eec8af9",
+     "ref": {
+      "added": [
+       "XTEN Community Distribution Terms — https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md"
+      ],
+      "name": "XTEN Community Distribution Terms",
+      "url": "https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md",
+      "words": [
+       "Distribution"
+      ]
+     },
+     "refute": "전환·청구와 무관한 문서로 확인되면 해제",
+     "refuted": false,
+     "signal": "index_keyword",
+     "title": "공식 문서에 새 페이지 'XTEN Community Distribution Terms'",
+     "ts": 1794418023,
+     "venue": "extended"
+    },
+    {
+     "detail": "Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.",
+     "family": "S2",
+     "grade": "IMMINENT",
+     "id": "b0992ca7e8d1",
+     "ref": {
+      "added": [
+       "**Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.**",
+       "Weekly points distributions have ended. As of 5 November 2026, all 70,000,000 points out of 70 million total points have been distributed under the program."
+      ],
+      "name": "포인트 프로그램",
+      "url": "https://docs.extended.exchange/extended-resources/points-program.md",
+      "words": [
+       "ended"
+      ]
+     },
+     "refute": "일정·비율이 아닌 일반 설명·약관 정정으로 확인되면 해제",
+     "refuted": false,
+     "signal": "doc_keyword",
+     "title": "공식 문서 '포인트 프로그램'에 전환·TGE 관련 문구 추가",
+     "ts": 1794418023,
+     "venue": "extended"
+    },
+    {
+     "detail": "This competition has ended.",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "ab5a900d426c",
+     "ref": {
+      "added": [
+       "**This competition has ended.**",
+       "The Competition ran for four weeks **from** **7 October 2026, 00:00 UTC until 3 November 2026, 00:00 UTC.**"
+      ],
+      "name": "Final Arc 대회",
+      "removed": 1,
+      "url": "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 'Final Arc 대회' 문구 변경",
+     "ts": 1794418023,
+     "venue": "extended"
+    },
+    {
+     "detail": "https://t.me/extended_updates/398",
+     "family": "S2",
+     "grade": "ALERT",
+     "id": "58206d9f9889",
+     "ref": {
+      "label": "공식 텔레그램",
+      "text": "XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now live. Eligible Xpoints holders can now sign the Terms to see their XTEN allocations in the Extended app. Allocations are calculated from final Xpoints balances, at approximately 4.2857 XTEN per Xpoint. Figures in the app may be rounded for display. The TGE date will be announced sep.",
+      "url": "https://t.me/extended_updates/398",
+      "words": [
+       "TGE"
+      ]
+     },
+     "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
+     "refuted": false,
+     "signal": "telegram_post",
+     "title": "Extended 공식 텔레그램: XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now liv",
+     "ts": 1794415973,
+     "venue": "extended"
+    },
     {
      "detail": "Issuer and White Paper, Issuer's Regulatory Disclosures",
      "family": "S2",
@@ -9496,32 +9657,32 @@
    "level": "IMMINENT",
    "links": {},
    "name": "Extended",
-   "odds": "토큰 출시 확률 12/31까지 94%",
+   "odds": "토큰 출시 확률 12/31까지 87%",
    "rh_supply_hist": null,
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "31건",
+     "at": 1794418023,
+     "note": "30건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794400705,
+     "at": 1794418023,
      "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
      "ok": false
     }
@@ -9543,6 +9704,39 @@
   {
    "api_watch": "closed",
    "events": [
+    {
+     "detail": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3R",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "f2a50e417041",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3RyN25pQjNtcUFabUh0SGVvVlhxQmZsWGZhUQ?oc=5",
+      "words": [
+       "launches"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Variational launches on mainnet ahead of $VAR token event - Crypto Briefing",
+     "ts": 1794418023,
+     "venue": "variational"
+    },
+    {
+     "detail": "will-variational-launch-a-token-by-november-30-2026",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "256747fcc983",
+     "ref": {
+      "url": "https://polymarket.com/market/will-variational-launch-a-token-by-november-30-2026"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket: Will Variational launch a token by November 30, 2026? 2% → 18%",
+     "ts": 1794418023,
+     "venue": "variational"
+    },
     {
      "detail": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52WUwtUVVpemNZb0VXajl1bXFPMlVMWklsczZVOC1NamFoWERfUVR1SFJTaDh4UVRkcDhENDZoOS05dWhOejBwZXZhWVpva016YWM1UlBGLVB",
      "family": "S4",
@@ -9625,39 +9819,39 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 5% · 12/31까지 68%",
+   "odds": "토큰 출시 확률 11/30까지 18% · 12/31까지 69%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "15건",
+     "at": 1794418023,
+     "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -9744,34 +9938,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 30% · 27년 6/30까지 58%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 31% · 27년 6/30까지 54%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -9828,33 +10022,33 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1794400705,
-     "note": "아직 공개 전",
-     "ok": true
+     "at": 1794418023,
+     "err": "공식 문서를 읽지 못했어요",
+     "ok": false
     },
     "docs": {
-     "at": 1794400705,
-     "note": "3/3 페이지",
-     "ok": true
+     "at": 1794418023,
+     "err": "전 페이지 실패",
+     "ok": false
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794400705,
-     "note": "20건",
+     "at": 1794418023,
+     "note": "21건",
      "ok": true
     }
    },
    "sources_all": 1,
-   "sources_ok": 1,
+   "sources_ok": 0,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소 · 거래 API는 빌더 화이트리스트만(개인 미공개) — 공개 감시 중",
    "upcoming": []
   },
@@ -9872,22 +10066,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "8건",
+     "at": 1794418023,
+     "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     }
@@ -9933,19 +10127,19 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794400705,
-     "note": "11건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/TitanExchange_/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TitanExchange_/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -9995,27 +10189,27 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 34% · 27년 12/31까지 74%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 26% · 27년 12/31까지 74%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     }

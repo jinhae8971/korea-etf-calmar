@@ -5,10 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1794227914,
-   "d"
-  ],
-  [
    1794251247,
    "s"
   ],
@@ -259,6 +255,10 @@
   [
    1794400705,
    "d"
+  ],
+  [
+   1794418023,
+   "s"
   ]
  ],
  "scope": [
@@ -705,39 +705,39 @@
    },
    "status": {
     "api": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "19건",
+     "at": 1794418023,
+     "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794400705,
-     "note": "19건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/arcus_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/arcus_xyz/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -750,21 +750,21 @@
    "doc_moves": {},
    "docs": {
     "https://docs.extended.exchange/extended-resources/points-program.md": {
-     "changed": 1793911349,
-     "hash": "b4cbabbf0b5ba3fe",
-     "text": "# Points Program\n\n### Overview\n\nThe Extended Points Program recognises certain eligible activity and contributions to the Extended ecosystem.\n\nParticipation is subject to the [Terms of Use](/extended-resources/legal/terms-of-use.md), applicable eligibility requirements and jurisdictional restrictions.\n\nPoints are allocated periodically in accordance with the program parameters, allocation methodology, eligibility requirements and anti-abuse controls described on this page. The program may evolve over time, and its terms, operation or availability may be updated, paused or brought to an end in accordance with the [Terms of Use](/extended-resources/legal/terms-of-use.md).\n\nWeekly points distributions have ended. As of 05.11.2026, all 70,000,000 points out of 70 million total points have been distributed under the program.\n\nThe cumulative figure is provided for informational purposes only. It does not affect individual allocations or imply any monetary value, token allocation or future entitlement.\n\n### Qualifying activity\n\nPoints may be allocated in connection with:\n\n* qualifying trading activity;\n* qualifying liquidity-related activity;\n* eligible referral or affiliate activity;\n* other activity, contributions or circumstances recognised by Extended as supporting the objectives or operation of the program, such as product testing, bug reporting, structured user feedback; and\n* exceptional user-impact events, including operational errors or incidents.\n\nExtended may determine the eligibility, amount and timing of any such allocation in accordance with the applicable program parameters. All allocations will be made within the applicable Points pools.\n\nWhere Points are allocated in connection with an operational error or incident, the allocation does not imply that Points have a fixed monetary value and, unless expressly agreed otherwise with the affected user, does not by itself constitute reimbursement or settlement of any financial loss.\n\nEngaging in qualifying activity does not create an entitlement to any particular allocation. Allocations may depend on multiple factors, including the nature, quality, consistency and eligibility of the relevant activity.\n\nUsers should not trade, deposit, refer others or increase their activity solely for the purpose of obtaining Points.\n\nParticipation in the Vault and in leveraged trading products involves significant risk, including possible total loss. Points are not compensation for taking additional risk and should not be understood as a recommendation or encouragement to trade, deposit or increase activity.\n\n### Allocation methodology\n\nThe allocation methodology is intended to recognise genuine eligible activity and contributions.\n\nExtended may apply weightings, eligibility thresholds, exclusions, adjustments and anti-abuse controls. The existence of qualifying activity does not guarantee that Points will be allocated or that similar activities will receive identical allocations.\n\nDetailed elements of the methodology may not be disclosed where disclosure could facilitate manipulation, circumvention or abuse.\n\nMaterial changes to the program parameters or allocation methodology will be reflected in this documentation. Changes may apply immediately where reasonably required for legal, regulatory, security, operational, anti-abuse or error-correction purposes.\n\n### Eligibility and prohibited conduct\n\nParticipation is not available to persons who are ineligible under the [Terms of Use](/extended-resources/legal/terms-of-use.md) or located in a restricted jurisdiction.\n\nPoints may be withheld, reduced, cancelled or adjusted where activity is determined to involve, among other things:\n\n* wash trading or artificial volume;\n* self-referrals or coordinated referral abuse;\n* multiple-account manipulation;\n* bots or automated activity used to exploit the program;\n* fraud, manipulation or circumvention of program rules;\n* activity by an ineligible person or from a restricted jurisdiction; or\n* an operational, data or calculation error.\n\nExtended may request information reasonably required to verify eligibility, investigate suspected abuse or correct an allocation.\n\n### Nature of Points\n\nPoints:\n\n* are program units and are not freely transferable or tradable by users;\n* are not money and have no guaranteed monetary value;\n* cannot be purchased, sold, transferred or redeemed by users;\n* do not confer ownership, governance, profit-sharing, shareholder or similar rights;\n* do not currently represent a token, cryptoasset, security or other financial instrument and do not create a present entitlement to receive tokens.\n\nExtended may, at its discretion and in limited circumstances, migrate, reassign or otherwise adjust Points, including following a verified wallet compromise, operational error or program-integrity issue. Any such action does not create a general right for users to transfer Points.\n\n**Points may be taken into account in connection with a future token distribution or other program benefit. Any such distribution or benefit would be subject to separate terms, eligibility requirements, compliance and anti-abuse checks, and the final applicable program mechanics. No particular allocation methodology, conversion ratio, claim process, distribution date, staking option or token value has been confirmed unless expressly confirmed in separate official documentation.**\n\n### Adjustments and program changes\n\nExtended may correct individual or aggregate allocations where necessary to address an error, abuse, manipulation, ineligibility or another program-integrity issue.\n\nProgram parameters, eligibility criteria and allocation methodology may be amended, suspended or discontinued.\n\nWhere reasonably practicable, material changes will be reflected on this page. Advance notice may not be provided where an immediate change is reasonably required for legal, regulatory, security, operational, anti-abuse or error-correction purposes.\n\nAny future token distribution and claim process will be governed by separate terms made available at the relevant time. Holding Points does not remove the requirement to satisfy those terms, complete any required eligibility or compliance checks, or submit a valid claim.\n\n### Balances and allocation queries\n\nA user's individual Points balance and distribution history are available at:\n\n<https://app.extended.exchange/points>\n\nBalances and distribution records displayed in the user interface may be corrected where necessary to address an error, abuse, manipulation, ineligibility or other program-integrity issue.\n\nUsers who believe that an allocation contains an error may submit a query through the applicable support channel. Submission of a query does not guarantee an adjustment.\n\n### Primary source of information\n\nThis page is the primary public source for current information about the Points program.\n\nDiscord, X and other public communications are informational only and do not amend or override this documentation or the [Terms of Use](/extended-resources/legal/terms-of-use.md).\n\nThis page should be read together with the [Terms of Use](/extended-resources/legal/terms-of-use.md). In the event of any inconsistency between this page and the [Terms of Use](/extended-resources/legal/terms-of-use.md), the [Terms of Use](/extended-resources/legal/terms-of-use.md) prevail.",
+     "changed": 1794418023,
+     "hash": "7bf1203895063e32",
+     "text": "# Points Program\n\n**Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.**\n\n### Overview\n\nThe Extended Points Program recognises certain eligible activity and contributions to the Extended ecosystem.\n\nParticipation is subject to the [Terms of Use](/extended-resources/legal/terms-of-use.md), applicable eligibility requirements and jurisdictional restrictions.\n\nPoints are allocated periodically in accordance with the program parameters, allocation methodology, eligibility requirements and anti-abuse controls described on this page. The program may evolve over time, and its terms, operation or availability may be updated, paused or brought to an end in accordance with the [Terms of Use](/extended-resources/legal/terms-of-use.md).\n\nWeekly points distributions have ended. As of 5 November 2026, all 70,000,000 points out of 70 million total points have been distributed under the program.\n\nThe cumulative figure is provided for informational purposes only. It does not affect individual allocations or imply any monetary value, token allocation or future entitlement.\n\n### Qualifying activity\n\nPoints may be allocated in connection with:\n\n* qualifying trading activity;\n* qualifying liquidity-related activity;\n* eligible referral or affiliate activity;\n* other activity, contributions or circumstances recognised by Extended as supporting the objectives or operation of the program, such as product testing, bug reporting, structured user feedback; and\n* exceptional user-impact events, including operational errors or incidents.\n\nExtended may determine the eligibility, amount and timing of any such allocation in accordance with the applicable program parameters. All allocations will be made within the applicable Points pools.\n\nWhere Points are allocated in connection with an operational error or incident, the allocation does not imply that Points have a fixed monetary value and, unless expressly agreed otherwise with the affected user, does not by itself constitute reimbursement or settlement of any financial loss.\n\nEngaging in qualifying activity does not create an entitlement to any particular allocation. Allocations may depend on multiple factors, including the nature, quality, consistency and eligibility of the relevant activity.\n\nUsers should not trade, deposit, refer others or increase their activity solely for the purpose of obtaining Points.\n\nParticipation in the Vault and in leveraged trading products involves significant risk, including possible total loss. Points are not compensation for taking additional risk and should not be understood as a recommendation or encouragement to trade, deposit or increase activity.\n\n### Allocation methodology\n\nThe allocation methodology is intended to recognise genuine eligible activity and contributions.\n\nExtended may apply weightings, eligibility thresholds, exclusions, adjustments and anti-abuse controls. The existence of qualifying activity does not guarantee that Points will be allocated or that similar activities will receive identical allocations.\n\nDetailed elements of the methodology may not be disclosed where disclosure could facilitate manipulation, circumvention or abuse.\n\nMaterial changes to the program parameters or allocation methodology will be reflected in this documentation. Changes may apply immediately where reasonably required for legal, regulatory, security, operational, anti-abuse or error-correction purposes.\n\n### Eligibility and prohibited conduct\n\nParticipation is not available to persons who are ineligible under the [Terms of Use](/extended-resources/legal/terms-of-use.md) or located in a restricted jurisdiction.\n\nPoints may be withheld, reduced, cancelled or adjusted where activity is determined to involve, among other things:\n\n* wash trading or artificial volume;\n* self-referrals or coordinated referral abuse;\n* multiple-account manipulation;\n* bots or automated activity used to exploit the program;\n* fraud, manipulation or circumvention of program rules;\n* activity by an ineligible person or from a restricted jurisdiction; or\n* an operational, data or calculation error.\n\nExtended may request information reasonably required to verify eligibility, investigate suspected abuse or correct an allocation.\n\n### Nature of Points\n\nPoints:\n\n* are program units and are not freely transferable or tradable by users;\n* are not money and have no guaranteed monetary value;\n* cannot be purchased, sold, transferred or redeemed by users;\n* do not confer ownership, governance, profit-sharing, shareholder or similar rights;\n* do not currently represent a token, cryptoasset, security or other financial instrument and do not create a present entitlement to receive tokens.\n\nExtended may, at its discretion and in limited circumstances, migrate, reassign or otherwise adjust Points, including following a verified wallet compromise, operational error or program-integrity issue. Any such action does not create a general right for users to transfer Points.\n\n**Points may be taken into account in connection with a future token distribution or other program benefit. Any such distribution or benefit would be subject to separate terms, eligibility requirements, compliance and anti-abuse checks, and the final applicable program mechanics. No particular allocation methodology, conversion ratio, claim process, distribution date, staking option or token value has been confirmed unless expressly confirmed in separate official documentation.**\n\n### Adjustments and program changes\n\nExtended may correct individual or aggregate allocations where necessary to address an error, abuse, manipulation, ineligibility or another program-integrity issue.\n\nProgram parameters, eligibility criteria and allocation methodology may be amended, suspended or discontinued.\n\nWhere reasonably practicable, material changes will be reflected on this page. Advance notice may not be provided where an immediate change is reasonably required for legal, regulatory, security, operational, anti-abuse or error-correction purposes.\n\nAny future token distribution and claim process will be governed by separate terms made available at the relevant time. Holding Points does not remove the requirement to satisfy those terms, complete any required eligibility or compliance checks, or submit a valid claim.\n\n### Balances and allocation queries\n\nA user's individual Points balance and distribution history are available at:\n\n<https://app.extended.exchange/points>\n\nBalances and distribution records displayed in the user interface may be corrected where necessary to address an error, abuse, manipulation, ineligibility or other program-integrity issue.\n\nUsers who believe that an allocation contains an error may submit a query through the applicable support channel. Submission of a query does not guarantee an adjustment.\n\n### Primary source of information\n\nThis page is the primary public source for current information about the Points program.\n\nDiscord, X and other public communications are informational only and do not amend or override this documentation or the [Terms of Use](/extended-resources/legal/terms-of-use.md).\n\nThis page should be read together with the [Terms of Use](/extended-resources/legal/terms-of-use.md). In the event of any inconsistency between this page and the [Terms of Use](/extended-resources/legal/terms-of-use.md), the [Terms of Use](/extended-resources/legal/terms-of-use.md) prevail.",
      "url": "https://docs.extended.exchange/extended-resources/points-program.md"
     },
     "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md": {
-     "changed": 1792803347,
-     "hash": "f517f22df2699664",
-     "text": "# The Final Arc Trading Competition\n\nFor information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n\n### Timeline\n\nThe Competition runs for four weeks **from** **7 October 2026, 00:00 UTC until 3 November 2026, 00:00 UTC.**\n\n### Rewards\n\nTotal prize pool: **$250,000** distributed across **500 winners**, plus **750,000 Xpoints** shared by all qualified traders.\n\n**Cash prizes**\n\n<table><thead><tr><th>Rank</th><th>Reward per user</th><th data-hidden>Winners</th><th data-hidden>Total</th></tr></thead><tbody><tr><td>#1</td><td>$25,000</td><td>1</td><td>$25,000</td></tr><tr><td>#2</td><td>$15,000</td><td>1</td><td>$15,000</td></tr><tr><td>#3</td><td>$10,000</td><td>1</td><td>$10,000</td></tr><tr><td>#4</td><td>$7,500</td><td>1</td><td>$7,500</td></tr><tr><td>#5</td><td>$5,000</td><td>1</td><td>$5,000</td></tr><tr><td>#6–10</td><td>$4,000</td><td>5</td><td>$20,000</td></tr><tr><td>#11–25</td><td>$2,000</td><td>15</td><td>$30,000</td></tr><tr><td>#26–50</td><td>$1,200</td><td>25</td><td>$30,000</td></tr><tr><td>#51–100</td><td>$600</td><td>50</td><td>$30,000</td></tr><tr><td>#101–200</td><td>$300</td><td>100</td><td>$30,000</td></tr><tr><td>#201–300</td><td>$225</td><td>100</td><td>$22,500</td></tr><tr><td>#301–400</td><td>$150</td><td>100</td><td>$15,000</td></tr><tr><td>#401–500</td><td>$100</td><td>100</td><td>$10,000</td></tr></tbody></table>\n\n**Activity Pool**\n\n**750,000 Xpoints** are shared by all qualified traders, in proportion to their Activity Score:\n\n`Activity Score = Weighted Volume⁰·⁷ × OI⁰·³`\n\n`Your Xpoints = 750,000 × (your Activity Score ÷ total Activity Score of all qualified traders)`\n\n* Xpoints from the Activity Pool are earned in addition to any cash prize.\n* Xpoints are distributed after the Competition ends.\n\n### Scoring for Cash Prizes\n\nParticipants are ranked by:\n\n`Score = PnL × Weighted Volume⁰·⁷ × OI⁰·³`\n\n* Weighted Volume - crypto taker fills count in full, RWA taker fills at 50%, maker fills at 10%.\n* OI is measured as time-weighted open interest - open interest averaged across the entire competition period, not the peak or final position size.\n  * Each position contributes in proportion to how long it is held.\n  * OI is measured as your net position in each market, across all of your sub-accounts.\n  * **Example (with a 10 hour competition**):\n    * Trader A opens a $100,000 position at the start and holds it for all 10 hours.\\\n      Time-weighted OI = $100,000 × (10/10) = $100,000\n    * Trader B opens the same $100,000 position, holds it for 1 hour, then closes and stays flat for the remaining 9 hours.\\\n      Time-weighted OI = $100,000 × (1/10) = $10,000\n* **Scoring example:** a trader with $10,000 PnL, $4M crypto taker volume, $2M RWA taker volume, $1M maker volume and $200,000 time-weighted OI:\n  * Weighted Volume = $4M + (50% × $2M) + (10% × $1M) = $5.1M\n  * Activity Score = 5.1M⁰·⁷ × 200,000⁰·³ ≈ 1.93M\n  * Score = 10,000 × 1.93M ≈ 19.3B\n* Scores can be negative. All sub-accounts of a wallet are combined. The leaderboard updates every minute.\n* Extended may correct calculation, pricing or data errors where reasonably necessary.\n\n#### Terms & Conditions\n\nBy participating in The Final Arc Trading Competition (the \"Competition\"), you agree to these Terms.\n\n**Eligibility**\n\nParticipation is subject to Extended's discretion. Extended may refuse, restrict, suspend, or revoke participation or prize eligibility at any time. Participation does not guarantee eligibility for any Arc or Circle points program, token or distribution. Accounts with elevated API rate limits are not eligible to participate or receive prizes, including Xpoints from the Activity Pool. Extended may also exclude accounts that it reasonably believes are operated for institutional, professional, or market-making purposes.\n\n**Prohibited Conduct**\n\nWash trading, self-trading, collusion, use of multiple controlled accounts, artificial volume, manipulation, exploitation of technical errors or other attempts to unfairly influence the Competition are prohibited.\n\n**Disqualification**\n\nExtended may disqualify participants, aggregate related accounts, exclude trades or withhold prizes, including Xpoints, where it reasonably suspects prohibited conduct or abuse.\n\n**Changes / Cancellation**\n\nExtended may suspend, modify or cancel the Competition, or exclude any participant or market, where reasonably necessary, including due to legal, regulatory, technical, security or market-integrity considerations.\n\n**Risk**\n\nTrading involves substantial risk of loss. Nothing relating to the Competition constitutes investment advice. Participants remain solely responsible for their trading decisions.",
+     "changed": 1794418023,
+     "hash": "108a57c0e6c02842",
+     "text": "# The Final Arc Trading Competition\n\nFor information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n\n**This competition has ended.**\n\n### Timeline\n\nThe Competition ran for four weeks **from** **7 October 2026, 00:00 UTC until 3 November 2026, 00:00 UTC.**\n\n### Rewards\n\nTotal prize pool: **$250,000** distributed across **500 winners**, plus **750,000 Xpoints** shared by all qualified traders.\n\n**Cash prizes**\n\n<table><thead><tr><th>Rank</th><th>Reward per user</th><th data-hidden>Winners</th><th data-hidden>Total</th></tr></thead><tbody><tr><td>#1</td><td>$25,000</td><td>1</td><td>$25,000</td></tr><tr><td>#2</td><td>$15,000</td><td>1</td><td>$15,000</td></tr><tr><td>#3</td><td>$10,000</td><td>1</td><td>$10,000</td></tr><tr><td>#4</td><td>$7,500</td><td>1</td><td>$7,500</td></tr><tr><td>#5</td><td>$5,000</td><td>1</td><td>$5,000</td></tr><tr><td>#6–10</td><td>$4,000</td><td>5</td><td>$20,000</td></tr><tr><td>#11–25</td><td>$2,000</td><td>15</td><td>$30,000</td></tr><tr><td>#26–50</td><td>$1,200</td><td>25</td><td>$30,000</td></tr><tr><td>#51–100</td><td>$600</td><td>50</td><td>$30,000</td></tr><tr><td>#101–200</td><td>$300</td><td>100</td><td>$30,000</td></tr><tr><td>#201–300</td><td>$225</td><td>100</td><td>$22,500</td></tr><tr><td>#301–400</td><td>$150</td><td>100</td><td>$15,000</td></tr><tr><td>#401–500</td><td>$100</td><td>100</td><td>$10,000</td></tr></tbody></table>\n\n**Activity Pool**\n\n**750,000 Xpoints** are shared by all qualified traders, in proportion to their Activity Score:\n\n`Activity Score = Weighted Volume⁰·⁷ × OI⁰·³`\n\n`Your Xpoints = 750,000 × (your Activity Score ÷ total Activity Score of all qualified traders)`\n\n* Xpoints from the Activity Pool are earned in addition to any cash prize.\n* Xpoints are distributed after the Competition ends.\n\n### Scoring for Cash Prizes\n\nParticipants are ranked by:\n\n`Score = PnL × Weighted Volume⁰·⁷ × OI⁰·³`\n\n* Weighted Volume - crypto taker fills count in full, RWA taker fills at 50%, maker fills at 10%.\n* OI is measured as time-weighted open interest - open interest averaged across the entire competition period, not the peak or final position size.\n  * Each position contributes in proportion to how long it is held.\n  * OI is measured as your net position in each market, across all of your sub-accounts.\n  * **Example (with a 10 hour competition**):\n    * Trader A opens a $100,000 position at the start and holds it for all 10 hours.\\\n      Time-weighted OI = $100,000 × (10/10) = $100,000\n    * Trader B opens the same $100,000 position, holds it for 1 hour, then closes and stays flat for the remaining 9 hours.\\\n      Time-weighted OI = $100,000 × (1/10) = $10,000\n* **Scoring example:** a trader with $10,000 PnL, $4M crypto taker volume, $2M RWA taker volume, $1M maker volume and $200,000 time-weighted OI:\n  * Weighted Volume = $4M + (50% × $2M) + (10% × $1M) = $5.1M\n  * Activity Score = 5.1M⁰·⁷ × 200,000⁰·³ ≈ 1.93M\n  * Score = 10,000 × 1.93M ≈ 19.3B\n* Scores can be negative. All sub-accounts of a wallet are combined. The leaderboard updates every minute.\n* Extended may correct calculation, pricing or data errors where reasonably necessary.\n\n#### Terms & Conditions\n\nBy participating in The Final Arc Trading Competition (the \"Competition\"), you agree to these Terms.\n\n**Eligibility**\n\nParticipation is subject to Extended's discretion. Extended may refuse, restrict, suspend, or revoke participation or prize eligibility at any time. Participation does not guarantee eligibility for any Arc or Circle points program, token or distribution. Accounts with elevated API rate limits are not eligible to participate or receive prizes, including Xpoints from the Activity Pool. Extended may also exclude accounts that it reasonably believes are operated for institutional, professional, or market-making purposes.\n\n**Prohibited Conduct**\n\nWash trading, self-trading, collusion, use of multiple controlled accounts, artificial volume, manipulation, exploitation of technical errors or other attempts to unfairly influence the Competition are prohibited.\n\n**Disqualification**\n\nExtended may disqualify participants, aggregate related accounts, exclude trades or withhold prizes, including Xpoints, where it reasonably suspects prohibited conduct or abuse.\n\n**Changes / Cancellation**\n\nExtended may suspend, modify or cancel the Competition, or exclude any participant or market, where reasonably necessary, including due to legal, regulatory, technical, security or market-integrity considerations.\n\n**Risk**\n\nTrading involves substantial risk of loss. Nothing relating to the Competition constitutes investment advice. Participants remain solely responsible for their trading decisions.",
      "url": "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md"
     },
     "https://docs.extended.exchange/llms.txt": {
-     "changed": 1794251247,
-     "hash": "71566a3f2a452e74",
-     "text": "# Extended Documentation\n\n## Extended Documentation\n\n- [Overview & Vision](https://docs.extended.exchange/about-extended/readme.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Technical Architecture](https://docs.extended.exchange/about-extended/technical-architecture.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Team](https://docs.extended.exchange/about-extended/team.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Migration from Starknet to Arc](https://docs.extended.exchange/about-extended/migration-from-starknet-to-arc.md): Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading](https://docs.extended.exchange/extended-resources/trading.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Accounts and Modes](https://docs.extended.exchange/extended-resources/trading/trading-accounts-and-modes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Unified Margin and Balances](https://docs.extended.exchange/extended-resources/trading/unified-margin-and-balances.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Types](https://docs.extended.exchange/extended-resources/trading/order-types.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Cost](https://docs.extended.exchange/extended-resources/trading/order-cost.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RFQ Execution](https://docs.extended.exchange/extended-resources/trading/rfq-execution.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Fees and Rebates](https://docs.extended.exchange/extended-resources/trading/trading-fees-and-rebates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Liquidation Logic](https://docs.extended.exchange/extended-resources/trading/liquidation-logic.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Funding Payments](https://docs.extended.exchange/extended-resources/trading/funding-payments.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Oracle Prices](https://docs.extended.exchange/extended-resources/trading/oracle-prices.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/crypto-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/rwa-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/crypto-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/crypto-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/crypto-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-market Listings](https://docs.extended.exchange/extended-resources/trading/crypto-markets/pre-market-listings.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/rwa-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/rwa-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Corporate Actions](https://docs.extended.exchange/extended-resources/trading/rwa-markets/corporate-actions.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-IPO Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets/pre-ipo-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Account Operations](https://docs.extended.exchange/extended-resources/account-operations.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Account Creation](https://docs.extended.exchange/extended-resources/account-operations/account-creation.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Deposits and Withdrawals](https://docs.extended.exchange/extended-resources/account-operations/deposits-and-withdrawals.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Vault](https://docs.extended.exchange/extended-resources/vault.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Money Market](https://docs.extended.exchange/extended-resources/money-market.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [XTEN](https://docs.extended.exchange/extended-resources/xten.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Staking](https://docs.extended.exchange/extended-resources/xten/staking.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [The League](https://docs.extended.exchange/extended-resources/xten/the-league.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Fee Discounts](https://docs.extended.exchange/extended-resources/xten/fee-discounts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Volume Fee Tiers](https://docs.extended.exchange/extended-resources/xten/volume-fee-tiers.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Vault Extra Yield Boost](https://docs.extended.exchange/extended-resources/xten/vault-extra-yield-boost.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Tokenomics](https://docs.extended.exchange/extended-resources/xten/tokenomics.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Airdrop Distribution](https://docs.extended.exchange/extended-resources/xten/airdrop-distribution.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Burn and Buybacks](https://docs.extended.exchange/extended-resources/xten/burn-and-buybacks.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Cross-Chain XTEN (CCTP)](https://docs.extended.exchange/extended-resources/xten/cross-chain-xten-cctp.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Contracts](https://docs.extended.exchange/extended-resources/xten/contracts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Issuer and White Paper](https://docs.extended.exchange/extended-resources/xten/issuer-and-white-paper.md)\n- [Issuer's Regulatory Disclosures](https://docs.extended.exchange/extended-resources/xten/issuers-regulatory-disclosures.md)\n- [Referrals and Affiliates](https://docs.extended.exchange/extended-resources/referrals-and-affiliates.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Builder Codes](https://docs.extended.exchange/extended-resources/builder-codes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Points Program](https://docs.extended.exchange/extended-resources/points-program.md)\n- [More](https://docs.extended.exchange/extended-resources/more.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testers Program](https://docs.extended.exchange/extended-resources/more/testers-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Leaderboard](https://docs.extended.exchange/extended-resources/more/leaderboard.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Platform Outage](https://docs.extended.exchange/extended-resources/more/platform-outage.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testnet](https://docs.extended.exchange/extended-resources/more/testnet.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Troubleshooting Guide](https://docs.extended.exchange/extended-resources/more/troubleshooting-guide.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Smart Contract Audits](https://docs.extended.exchange/extended-resources/more/smart-contract-audits.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Bounty program](https://docs.extended.exchange/extended-resources/more/bounty-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Brand Kit](https://docs.extended.exchange/extended-resources/more/brand-kit.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Legal](https://docs.extended.exchange/extended-resources/legal.md)\n- [Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use.md): Last Updated on 30/10/2026\n- [Interface Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md): Last updated on 30 October 2026\n- [Spot Trading Service Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md): Last updated on 30 October 2026\n- [Statement of Risk](https://docs.extended.exchange/extended-resources/legal/statement-of-risk.md)\n- [Restricted Regions](https://docs.extended.exchange/extended-resources/legal/restricted-countries.md)\n- [Privacy Policy](https://docs.extended.exchange/extended-resources/legal/privacy-policy.md): Last Updated on 30 October 2026.\n- [Trading Competitions](https://docs.extended.exchange/extended-resources/trading-competitions.md)\n- [RWA Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/rwa-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [The Final Arc Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
+     "changed": 1794418023,
+     "hash": "e627461ca59a1b73",
+     "text": "# Extended Documentation\n\n## Extended Documentation\n\n- [Overview & Vision](https://docs.extended.exchange/about-extended/readme.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Technical Architecture](https://docs.extended.exchange/about-extended/technical-architecture.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Team](https://docs.extended.exchange/about-extended/team.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Migration from Starknet to Arc](https://docs.extended.exchange/about-extended/migration-from-starknet-to-arc.md): Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading](https://docs.extended.exchange/extended-resources/trading.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Accounts and Modes](https://docs.extended.exchange/extended-resources/trading/trading-accounts-and-modes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Unified Margin and Balances](https://docs.extended.exchange/extended-resources/trading/unified-margin-and-balances.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Types](https://docs.extended.exchange/extended-resources/trading/order-types.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Order Cost](https://docs.extended.exchange/extended-resources/trading/order-cost.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RFQ Execution](https://docs.extended.exchange/extended-resources/trading/rfq-execution.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Trading Fees and Rebates](https://docs.extended.exchange/extended-resources/trading/trading-fees-and-rebates.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Liquidation Logic](https://docs.extended.exchange/extended-resources/trading/liquidation-logic.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Funding Payments](https://docs.extended.exchange/extended-resources/trading/funding-payments.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Oracle Prices](https://docs.extended.exchange/extended-resources/trading/oracle-prices.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/crypto-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/oracle-prices/rwa-markets.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Crypto Markets](https://docs.extended.exchange/extended-resources/trading/crypto-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/crypto-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/crypto-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-market Listings](https://docs.extended.exchange/extended-resources/trading/crypto-markets/pre-market-listings.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [RWA Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Trading Rules](https://docs.extended.exchange/extended-resources/trading/rwa-markets/trading-rules.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Margin Schedule](https://docs.extended.exchange/extended-resources/trading/rwa-markets/margin-schedule.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Corporate Actions](https://docs.extended.exchange/extended-resources/trading/rwa-markets/corporate-actions.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Pre-IPO Markets](https://docs.extended.exchange/extended-resources/trading/rwa-markets/pre-ipo-markets.md): Trading perpetuals involves significant risk, including the risk of liquidation and partial or total loss of assets. Review the Risk Disclosures and ensure you understand the risks before trading.\n- [Account Operations](https://docs.extended.exchange/extended-resources/account-operations.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Account Creation](https://docs.extended.exchange/extended-resources/account-operations/account-creation.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Deposits and Withdrawals](https://docs.extended.exchange/extended-resources/account-operations/deposits-and-withdrawals.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Vault](https://docs.extended.exchange/extended-resources/vault.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Money Market](https://docs.extended.exchange/extended-resources/money-market.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [XTEN](https://docs.extended.exchange/extended-resources/xten.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Staking](https://docs.extended.exchange/extended-resources/xten/staking.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [The League](https://docs.extended.exchange/extended-resources/xten/the-league.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Fee Discounts](https://docs.extended.exchange/extended-resources/xten/fee-discounts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Volume Fee Tiers](https://docs.extended.exchange/extended-resources/xten/volume-fee-tiers.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Vault Extra Yield Boost](https://docs.extended.exchange/extended-resources/xten/vault-extra-yield-boost.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Tokenomics](https://docs.extended.exchange/extended-resources/xten/tokenomics.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Airdrop Distribution](https://docs.extended.exchange/extended-resources/xten/airdrop-distribution.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Burn and Buybacks](https://docs.extended.exchange/extended-resources/xten/burn-and-buybacks.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Cross-Chain XTEN (CCTP)](https://docs.extended.exchange/extended-resources/xten/cross-chain-xten-cctp.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Contracts](https://docs.extended.exchange/extended-resources/xten/contracts.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Issuer and White Paper](https://docs.extended.exchange/extended-resources/xten/issuer-and-white-paper.md)\n- [Issuer's Regulatory Disclosures](https://docs.extended.exchange/extended-resources/xten/issuers-regulatory-disclosures.md)\n- [Referrals and Affiliates](https://docs.extended.exchange/extended-resources/referrals-and-affiliates.md): Marketing communication. XTEN may lose all value, be illiquid or non-transferable. Restrictions apply. See XTEN White Paper, Terms, Risk Statement & Restricted Regions.\n- [Builder Codes](https://docs.extended.exchange/extended-resources/builder-codes.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Points Program](https://docs.extended.exchange/extended-resources/points-program.md)\n- [More](https://docs.extended.exchange/extended-resources/more.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testers Program](https://docs.extended.exchange/extended-resources/more/testers-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Leaderboard](https://docs.extended.exchange/extended-resources/more/leaderboard.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Platform Outage](https://docs.extended.exchange/extended-resources/more/platform-outage.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Testnet](https://docs.extended.exchange/extended-resources/more/testnet.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Troubleshooting Guide](https://docs.extended.exchange/extended-resources/more/troubleshooting-guide.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Smart Contract Audits](https://docs.extended.exchange/extended-resources/more/smart-contract-audits.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Bounty program](https://docs.extended.exchange/extended-resources/more/bounty-program.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Brand Kit](https://docs.extended.exchange/extended-resources/more/brand-kit.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [Legal](https://docs.extended.exchange/extended-resources/legal.md)\n- [Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use.md): Last Updated on 30/10/2026\n- [Interface Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/interface-terms-of-use.md): Last updated on 30 October 2026\n- [Spot Trading Service Terms of Use](https://docs.extended.exchange/extended-resources/legal/terms-of-use/spot-trading-service-terms-of-use.md): Last updated on 30 October 2026\n- [Statement of Risk](https://docs.extended.exchange/extended-resources/legal/statement-of-risk.md)\n- [Restricted Regions](https://docs.extended.exchange/extended-resources/legal/restricted-countries.md)\n- [Privacy Policy](https://docs.extended.exchange/extended-resources/legal/privacy-policy.md): Last Updated on 30 October 2026.\n- [XTEN Community Distribution Terms](https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md)\n- [Trading Competitions](https://docs.extended.exchange/extended-resources/trading-competitions.md)\n- [RWA Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/rwa-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.\n- [The Final Arc Trading Competition](https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md): For information only. Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
      "url": "https://docs.extended.exchange/llms.txt"
     }
    },
@@ -1308,6 +1308,92 @@
      "title": "Extended 공식 X: Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you i",
      "ts": 1794240799,
      "venue": "extended"
+    },
+    {
+     "detail": "extended-resources/legal/xten-community-distribution-terms",
+     "family": "S2",
+     "grade": "ALERT",
+     "id": "dea06eec8af9",
+     "ref": {
+      "added": [
+       "XTEN Community Distribution Terms — https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md"
+      ],
+      "name": "XTEN Community Distribution Terms",
+      "url": "https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md",
+      "words": [
+       "Distribution"
+      ]
+     },
+     "refute": "전환·청구와 무관한 문서로 확인되면 해제",
+     "refuted": false,
+     "signal": "index_keyword",
+     "title": "공식 문서에 새 페이지 'XTEN Community Distribution Terms'",
+     "ts": 1794418023,
+     "venue": "extended"
+    },
+    {
+     "detail": "Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.",
+     "family": "S2",
+     "grade": "IMMINENT",
+     "id": "b0992ca7e8d1",
+     "ref": {
+      "added": [
+       "**Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.**",
+       "Weekly points distributions have ended. As of 5 November 2026, all 70,000,000 points out of 70 million total points have been distributed under the program."
+      ],
+      "name": "포인트 프로그램",
+      "url": "https://docs.extended.exchange/extended-resources/points-program.md",
+      "words": [
+       "ended"
+      ]
+     },
+     "refute": "일정·비율이 아닌 일반 설명·약관 정정으로 확인되면 해제",
+     "refuted": false,
+     "signal": "doc_keyword",
+     "title": "공식 문서 '포인트 프로그램'에 전환·TGE 관련 문구 추가",
+     "ts": 1794418023,
+     "venue": "extended"
+    },
+    {
+     "detail": "This competition has ended.",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "ab5a900d426c",
+     "ref": {
+      "added": [
+       "**This competition has ended.**",
+       "The Competition ran for four weeks **from** **7 October 2026, 00:00 UTC until 3 November 2026, 00:00 UTC.**"
+      ],
+      "name": "Final Arc 대회",
+      "removed": 1,
+      "url": "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 'Final Arc 대회' 문구 변경",
+     "ts": 1794418023,
+     "venue": "extended"
+    },
+    {
+     "detail": "https://t.me/extended_updates/398",
+     "family": "S2",
+     "grade": "ALERT",
+     "id": "58206d9f9889",
+     "ref": {
+      "label": "공식 텔레그램",
+      "text": "XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now live. Eligible Xpoints holders can now sign the Terms to see their XTEN allocations in the Extended app. Allocations are calculated from final Xpoints balances, at approximately 4.2857 XTEN per Xpoint. Figures in the app may be rounded for display. The TGE date will be announced sep.",
+      "url": "https://t.me/extended_updates/398",
+      "words": [
+       "TGE"
+      ]
+     },
+     "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
+     "refuted": false,
+     "signal": "telegram_post",
+     "title": "Extended 공식 텔레그램: XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now liv",
+     "ts": 1794415973,
+     "venue": "extended"
     }
    ],
    "frontend": null,
@@ -1400,6 +1486,7 @@
     "c289f706a5b0",
     "c36c7c1dab1b",
     "c607bf41885b",
+    "cbec4bbf851a",
     "ce30914ca733",
     "d066557a4e2b",
     "d6b47f10e84f",
@@ -1886,13 +1973,13 @@
      [
       1794400705,
       65.0
+     ],
+     [
+      1794418023,
+      71.5
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
-     [
-      1793197839,
-      4.5
-     ],
      [
       1793225318,
       4.5
@@ -2160,13 +2247,13 @@
      [
       1794386313,
       3.1
+     ],
+     [
+      1794418023,
+      3.1
      ]
     ],
     "extended-fdv-above-2b-one-day-after-launch-692-597-187": [
-     [
-      1793197839,
-      1.5
-     ],
      [
       1793225318,
       1.5
@@ -2630,13 +2717,13 @@
      [
       1794386313,
       1.3
+     ],
+     [
+      1794418023,
+      1.3
      ]
     ],
     "extended-fdv-above-300m-one-day-after-launch-351-333": [
-     [
-      1793197839,
-      29.0
-     ],
      [
       1793213725,
       31.0
@@ -3096,13 +3183,13 @@
      [
       1794380904,
       27.5
+     ],
+     [
+      1794418023,
+      22.5
      ]
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
-     [
-      1793191108,
-      1.4
-     ],
      [
       1793213725,
       1.4
@@ -3430,13 +3517,13 @@
      [
       1794386313,
       0.9
+     ],
+     [
+      1794418023,
+      0.9
      ]
     ],
     "extended-fdv-above-500m-one-day-after-launch-711-975-248": [
-     [
-      1793197839,
-      13.5
-     ],
      [
       1793213725,
       10.5
@@ -3780,6 +3867,10 @@
      [
       1794386313,
       9.5
+     ],
+     [
+      1794418023,
+      9.5
      ]
     ],
     "extended-fdv-above-800m-one-day-after-launch-299-255-178": [
@@ -4034,17 +4125,13 @@
      [
       1794386313,
       4.5
+     ],
+     [
+      1794418023,
+      4.5
      ]
     ],
     "extended-listed-on-binance-within-30-days-of-tge": [
-     [
-      1793191108,
-      16.5
-     ],
-     [
-      1793197839,
-      16.0
-     ],
      [
       1793213725,
       16.5
@@ -4276,13 +4363,13 @@
      [
       1794386313,
       14.0
+     ],
+     [
+      1794418023,
+      14.0
      ]
     ],
     "extended-listed-on-bybit-within-30-days-of-tge": [
-     [
-      1793645429,
-      43.0
-     ],
      [
       1793657302,
       46.0
@@ -5078,13 +5165,13 @@
      [
       1794400705,
       45.0
+     ],
+     [
+      1794418023,
+      40.0
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
-     [
-      1793191108,
-      50.0
-     ],
      [
       1793213725,
       58.0
@@ -5524,13 +5611,13 @@
      [
       1794386313,
       38.0
+     ],
+     [
+      1794418023,
+      38.0
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
-     [
-      1793325362,
-      63.0
-     ],
      [
       1793329707,
       62.0
@@ -6326,6 +6413,10 @@
      [
       1794400705,
       72.5
+     ],
+     [
+      1794418023,
+      49.0
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
@@ -7004,13 +7095,13 @@
      [
       1794400705,
       25.5
+     ],
+     [
+      1794418023,
+      25.0
      ]
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
-     [
-      1793197839,
-      35.5
-     ],
      [
       1793213725,
       33.5
@@ -7880,17 +7971,13 @@
      [
       1794400705,
       32.0
+     ],
+     [
+      1794418023,
+      30.5
      ]
     ],
     "will-extended-launch-a-token-by-december-31-2026": [
-     [
-      1793191108,
-      94.6
-     ],
-     [
-      1793197839,
-      94.7
-     ],
      [
       1793213725,
       94.2
@@ -8498,6 +8585,10 @@
      [
       1794400705,
       94.5
+     ],
+     [
+      1794418023,
+      87.3
      ]
     ]
    },
@@ -8576,7 +8667,8 @@
      "6ed5b6c7bc7f",
      "b518ab900e61",
      "63e36e0dc507",
-     "166f38791443"
+     "166f38791443",
+     "be72ee16ad0b"
     ],
     "x:extendedapp": [
      "201b3f784cc4",
@@ -8640,27 +8732,27 @@
    },
    "status": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "31건",
+     "at": 1794418023,
+     "note": "30건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794400705,
+     "at": 1794418023,
      "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
      "ok": false
     }
@@ -8809,22 +8901,22 @@
    },
    "status": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "8건",
+     "at": 1794418023,
+     "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     }
@@ -8929,7 +9021,7 @@
      "tags": []
     },
     "0x260b364fe0d3d37e6fd3cda0fa50926a06c54cea": {
-     "_at": 1793615904,
+     "_at": 1794418023,
      "addr": "0x260b364fe0d3d37e6fd3cda0fa50926a06c54cea",
      "created_ts": null,
      "is_contract": false,
@@ -9056,6 +9148,14 @@
      "name": "",
      "tags": []
     },
+    "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343": {
+     "_at": 1794418023,
+     "addr": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+     "created_ts": null,
+     "is_contract": false,
+     "name": "",
+     "tags": []
+    },
     "0xa0e56f656c89e4819909d921a880329bc9bc8e38": {
      "_at": 1793014707,
      "addr": "0xa0e56f656c89e4819909d921a880329bc9bc8e38",
@@ -9157,8 +9257,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26391728,
-    "rh": 111705304
+    "eth": 26393169,
+    "rh": 111874108
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -9201,21 +9301,6 @@
     }
    },
    "events": [
-    {
-     "detail": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5QOTR5ZmIxa2pYSUtzdGpOaUg4VWNkT0hiSU5FTklkOEs2VGZHWldiZ0lHNXVwRnpPeDEtcE1wc3pHYkdrbkR3czN",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "1fc1ee302bef",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5QOTR5ZmIxa2pYSUtzdGpOaUg4VWNkT0hiSU5FTklkOEs2VGZHWldiZ0lHNXVwRnpPeDEtcE1wc3pHYkdrbkR3czNIZDVtdUxYa0R5OC1RS09DUUdpZlYwUXFmVk1YQ2piajRNbHZhNVBpSE12Tm1ybDhJQl9MRm8?oc=5"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: Lighter.xyz Cracks Down on Sybil Activity as $LIT Airdrop Ec",
-     "ts": 1791818891,
-     "venue": "lighter-rh"
-    },
     {
      "detail": "",
      "family": "S3",
@@ -12026,6 +12111,44 @@
      "title": "공식 문서 목록 변경: 새 문서 1개",
      "ts": 1794340820,
      "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x7fdafde5 → 0x96381b9f",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "ebc8b9b8546d",
+     "ref": {
+      "amount": 1649875.0,
+      "chain": "eth",
+      "from": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+      "to": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+      "tx": "0xe5065c5851628e146b5190601c46eaff27be3ef9082e327f4bdbe45ada09cad1"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.65M개 대량 이동",
+     "ts": 1794408539,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x96381b9f → 0x260b364f",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "ef80fbef6e80",
+     "ref": {
+      "amount": 1649875.0,
+      "chain": "eth",
+      "from": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+      "to": "0x260b364fe0d3d37e6fd3cda0fa50926a06c54cea",
+      "tx": "0xf4c5efbaaf0955609f73b4058037db8024918021dd2dfec3c909c7608d367abc"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.65M개 대량 이동",
+     "ts": 1794409583,
+     "venue": "lighter-rh"
     }
    ],
    "frontend": {
@@ -12430,6 +12553,22 @@
      "to": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
      "ts": 1794399419,
      "tx": "0xfb6c245276090816a5fa26050fa5bded693e39b99a9d454db183614755ae2039"
+    },
+    {
+     "amount": 1649875.0,
+     "block": 26392382,
+     "from": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+     "to": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+     "ts": 1794408539,
+     "tx": "0xe5065c5851628e146b5190601c46eaff27be3ef9082e327f4bdbe45ada09cad1"
+    },
+    {
+     "amount": 1649875.0,
+     "block": 26392469,
+     "from": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
+     "to": "0x260b364fe0d3d37e6fd3cda0fa50926a06c54cea",
+     "ts": 1794409583,
+     "tx": "0xf4c5efbaaf0955609f73b4058037db8024918021dd2dfec3c909c7608d367abc"
     }
    ],
    "lb_hist": [
@@ -15722,6 +15861,11 @@
      1794400705,
      275756.105,
      66905.484
+    ],
+    [
+     1794418023,
+     276058.529,
+     67030.82
     ]
    ],
    "level": "WATCH",
@@ -15971,6 +16115,7 @@
     "e614c8ee24d8",
     "e7731688ebdb",
     "e8884c639c76",
+    "e98ab3287c1d",
     "eabde10ae149",
     "eacb753778d7",
     "eaff9ca771a5",
@@ -16010,14 +16155,6 @@
    "odds_titles": {},
    "pm_seen": [],
    "rh_supply_hist": [
-    [
-     1793191108,
-     461668.24
-    ],
-    [
-     1793197839,
-     439424.62
-    ],
     [
      1793213725,
      439424.62
@@ -17801,6 +17938,10 @@
     [
      1794400705,
      459217.05
+    ],
+    [
+     1794418023,
+     459216.05
     ]
    ],
    "seeded": true,
@@ -17928,59 +18069,59 @@
    },
    "status": {
     "ann": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794400705,
-     "note": "상위 10명 합계 275,756",
+     "at": 1794418023,
+     "note": "상위 10명 합계 276,059",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794400705,
-     "note": "149블록 · 대량 1건",
+     "at": 1794418023,
+     "note": "1441블록 · 대량 2건",
      "ok": true
     },
     "frontend": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "76건",
+     "at": 1794418023,
+     "note": "74건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794400705,
-     "note": "459,217 LIT",
+     "at": 1794418023,
+     "note": "459,216 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794400705,
+     "at": 1794418023,
      "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
      "ok": false
     },
     "x:vnovakovski": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/vnovakovski/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/vnovakovski/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -19053,6 +19194,10 @@
      [
       1794386313,
       6.7
+     ],
+     [
+      1794418023,
+      6.7
      ]
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
@@ -19535,13 +19680,13 @@
      [
       1794386313,
       0.4
+     ],
+     [
+      1794418023,
+      0.4
      ]
     ],
     "pacifica-fdv-above-200m-one-day-after-launch": [
-     [
-      1793403509,
-      11.3
-     ],
      [
       1793405305,
       10.3
@@ -20337,6 +20482,10 @@
      [
       1794395311,
       2.9
+     ],
+     [
+      1794418023,
+      2.1
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
@@ -20787,13 +20936,13 @@
      [
       1794395311,
       1.0
+     ],
+     [
+      1794418023,
+      1.0
      ]
     ],
     "pacifica-fdv-above-300m-one-day-after-launch-488": [
-     [
-      1793197839,
-      5.0
-     ],
      [
       1793213725,
       5.1
@@ -21153,13 +21302,13 @@
      [
       1794391704,
       2.2
+     ],
+     [
+      1794418023,
+      2.2
      ]
     ],
     "pacifica-fdv-above-3b-one-day-after-launch-755-395": [
-     [
-      1793197839,
-      1.8
-     ],
      [
       1793213725,
       1.7
@@ -21647,10 +21796,6 @@
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
      [
-      1793191108,
-      4.7
-     ],
-     [
       1793213725,
       4.8
      ],
@@ -22037,13 +22182,13 @@
      [
       1794386313,
       2.5
+     ],
+     [
+      1794418023,
+      2.5
      ]
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
-     [
-      1793197839,
-      15.5
-     ],
      [
       1793225318,
       15.5
@@ -22459,6 +22604,10 @@
      [
       1794386313,
       8.0
+     ],
+     [
+      1794418023,
+      8.0
      ]
     ],
     "pacifica-fdv-above-800m-one-day-after-launch-685-634": [
@@ -22773,17 +22922,13 @@
      [
       1794386313,
       3.5
+     ],
+     [
+      1794418023,
+      3.5
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
-     [
-      1793191108,
-      16.0
-     ],
-     [
-      1793197839,
-      15.0
-     ],
      [
       1793213725,
       15.5
@@ -23282,6 +23427,10 @@
      ],
      [
       1794393500,
+      12.5
+     ],
+     [
+      1794418023,
       12.5
      ]
     ],
@@ -23868,6 +24017,10 @@
      ],
      [
       1794386313,
+      65.5
+     ],
+     [
+      1794418023,
       65.5
      ]
     ],
@@ -24575,6 +24728,10 @@
      [
       1794400705,
       57.5
+     ],
+     [
+      1794418023,
+      54.5
      ]
     ],
     "will-pacifica-launch-a-token-by-march-31-2027": [
@@ -24889,6 +25046,10 @@
      [
       1794386313,
       30.0
+     ],
+     [
+      1794418023,
+      31.0
      ]
     ]
    },
@@ -25039,29 +25200,29 @@
    },
    "status": {
     "ann": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -26164,13 +26325,13 @@
      [
       1794398912,
       50.0
+     ],
+     [
+      1794418023,
+      51.0
      ]
     ],
     "qfex-fdv-above-200m-one-day-after-launch": [
-     [
-      1793412502,
-      32.0
-     ],
      [
       1793417910,
       32.5
@@ -26966,17 +27127,13 @@
      [
       1794391704,
       44.5
+     ],
+     [
+      1794418023,
+      45.5
      ]
     ],
     "qfex-fdv-above-300m-one-day-after-launch": [
-     [
-      1793191108,
-      27.5
-     ],
-     [
-      1793197839,
-      28.0
-     ],
      [
       1793213725,
       25.5
@@ -27720,13 +27877,13 @@
      [
       1794400705,
       46.0
+     ],
+     [
+      1794418023,
+      47.0
      ]
     ],
     "qfex-fdv-above-500m-one-day-after-launch": [
-     [
-      1793262305,
-      19.5
-     ],
      [
       1793264908,
       18.0
@@ -28522,6 +28679,10 @@
      [
       1794398912,
       35.5
+     ],
+     [
+      1794418023,
+      34.5
      ]
     ],
     "qfex-fdv-above-50m-one-day-after-launch": [
@@ -29103,10 +29264,6 @@
      ]
     ],
     "qfex-fdv-above-80m-one-day-after-launch": [
-     [
-      1793197839,
-      45.0
-     ],
      [
       1793213725,
       45.5
@@ -29694,6 +29851,10 @@
      [
       1794400705,
       51.5
+     ],
+     [
+      1794418023,
+      52.0
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2026": [
@@ -29916,13 +30077,13 @@
      [
       1794386313,
       2.1
+     ],
+     [
+      1794418023,
+      2.1
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2027": [
-     [
-      1793191108,
-      53.0
-     ],
      [
       1793213725,
       53.0
@@ -30678,13 +30839,13 @@
      [
       1794384507,
       62.0
+     ],
+     [
+      1794418023,
+      62.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
-     [
-      1793197839,
-      29.0
-     ],
      [
       1793213725,
       28.0
@@ -31324,17 +31485,13 @@
      [
       1794384507,
       26.5
+     ],
+     [
+      1794418023,
+      25.5
      ]
     ],
     "will-qfex-launch-a-token-by-march-31-2027": [
-     [
-      1793191108,
-      18.0
-     ],
-     [
-      1793197839,
-      17.5
-     ],
      [
       1793213725,
       16.0
@@ -31613,14 +31770,6 @@
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
-     [
-      1793191108,
-      46.5
-     ],
-     [
-      1793197839,
-      51.5
-     ],
      [
       1793213725,
       48.0
@@ -32020,6 +32169,10 @@
      [
       1794400705,
       40.0
+     ],
+     [
+      1794418023,
+      38.0
      ]
     ]
    },
@@ -32142,29 +32295,29 @@
    },
    "status": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -32345,10 +32498,6 @@
    "notified_ids": [],
    "odds": {
     "will-risex-launch-a-token-by-december-31-2026-20260708174012704": [
-     [
-      1793197839,
-      2.6
-     ],
      [
       1793225318,
       2.6
@@ -32676,17 +32825,13 @@
      [
       1794386313,
       1.8
+     ],
+     [
+      1794418023,
+      1.8
      ]
     ],
     "will-risex-launch-a-token-by-december-31-2027-20260708174012706": [
-     [
-      1793191108,
-      75.5
-     ],
-     [
-      1793197839,
-      76.5
-     ],
      [
       1793225318,
       74.5
@@ -33022,13 +33167,13 @@
      [
       1794386313,
       73.5
+     ],
+     [
+      1794418023,
+      73.5
      ]
     ],
     "will-risex-launch-a-token-by-june-30-2027-20260708174012705": [
-     [
-      1793197839,
-      30.0
-     ],
      [
       1793213725,
       30.5
@@ -33596,6 +33741,10 @@
      [
       1794386313,
       33.5
+     ],
+     [
+      1794418023,
+      26.5
      ]
     ]
    },
@@ -33707,22 +33856,22 @@
    },
    "status": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     }
@@ -35238,19 +35387,19 @@
    },
    "status": {
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794400705,
-     "note": "11건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/TitanExchange_/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TitanExchange_/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -35598,33 +35747,34 @@
      "ea1ea75c1790",
      "9416c4022601",
      "cf8f08a1bcf4",
-     "d04616dcb19f"
+     "d04616dcb19f",
+     "530cee82b763"
     ]
    },
    "status": {
     "api_watch": {
-     "at": 1794400705,
-     "note": "아직 공개 전",
-     "ok": true
+     "at": 1794418023,
+     "err": "공식 문서를 읽지 못했어요",
+     "ok": false
     },
     "docs": {
-     "at": 1794400705,
-     "note": "3/3 페이지",
-     "ok": true
+     "at": 1794418023,
+     "err": "전 페이지 실패",
+     "ok": false
     },
     "news": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794400705,
-     "note": "20건",
+     "at": 1794418023,
+     "note": "21건",
      "ok": true
     }
    }
@@ -35636,11 +35786,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1794400705,
+      "at": 1794418023,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1794400705,
+      "at": 1794418023,
       "state": "closed"
      }
     },
@@ -35818,6 +35968,39 @@
      "title": "뉴스: How to Participate in the Variational Airdrop and Earn VAR Crypto Rewards - CoinCodex",
      "ts": 1793986106,
      "venue": "variational"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3R",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "f2a50e417041",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3RyN25pQjNtcUFabUh0SGVvVlhxQmZsWGZhUQ?oc=5",
+      "words": [
+       "launches"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Variational launches on mainnet ahead of $VAR token event - Crypto Briefing",
+     "ts": 1794418023,
+     "venue": "variational"
+    },
+    {
+     "detail": "will-variational-launch-a-token-by-november-30-2026",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "256747fcc983",
+     "ref": {
+      "url": "https://polymarket.com/market/will-variational-launch-a-token-by-november-30-2026"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket: Will Variational launch a token by November 30, 2026? 2% → 18%",
+     "ts": 1794418023,
+     "venue": "variational"
     }
    ],
    "frontend": null,
@@ -35838,6 +36021,7 @@
     "6709f86ed3f9",
     "68270e32ca8a",
     "736995b43871",
+    "747d9a791d32",
     "8cc70249a344",
     "c43e414545c5",
     "cb79f4fb8a7b",
@@ -35852,10 +36036,6 @@
    "notified_ids": [],
    "odds": {
     "variational-fdv-above-100m-one-day-after-launch-519": [
-     [
-      1793197839,
-      98.4
-     ],
      [
       1793225318,
       98.4
@@ -36167,13 +36347,13 @@
      [
       1794393500,
       97.5
+     ],
+     [
+      1794418023,
+      97.5
      ]
     ],
     "variational-fdv-above-1b-one-day-after-launch-636-229-681": [
-     [
-      1793191108,
-      57.5
-     ],
      [
       1793213725,
       55.0
@@ -36461,17 +36641,13 @@
      [
       1794391704,
       55.0
+     ],
+     [
+      1794418023,
+      54.5
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
-     [
-      1793191108,
-      95.0
-     ],
-     [
-      1793197839,
-      94.9
-     ],
      [
       1793225318,
       94.8
@@ -37127,13 +37303,13 @@
      [
       1794400705,
       96.9
+     ],
+     [
+      1794418023,
+      97.2
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
-     [
-      1793197839,
-      27.4
-     ],
      [
       1793213725,
       28.5
@@ -37849,6 +38025,10 @@
      [
       1794386313,
       22.1
+     ],
+     [
+      1794418023,
+      21.1
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
@@ -38147,17 +38327,13 @@
      [
       1794386313,
       93.5
+     ],
+     [
+      1794418023,
+      93.5
      ]
     ],
     "variational-fdv-above-3b-one-day-after-launch-846-887-175": [
-     [
-      1793191108,
-      13.6
-     ],
-     [
-      1793197839,
-      13.7
-     ],
      [
       1793213725,
       13.6
@@ -38765,13 +38941,13 @@
      [
       1794391704,
       10.6
+     ],
+     [
+      1794418023,
+      10.6
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
-     [
-      1793197839,
-      6.2
-     ],
      [
       1793225318,
       6.2
@@ -39305,13 +39481,13 @@
      [
       1794379113,
       89.5
+     ],
+     [
+      1794418023,
+      89.5
      ]
     ],
     "variational-fdv-above-5b-one-day-after-launch-995-724-585": [
-     [
-      1793191108,
-      2.9
-     ],
      [
       1793213725,
       2.9
@@ -39719,13 +39895,13 @@
      [
       1794398912,
       3.3
+     ],
+     [
+      1794418023,
+      3.0
      ]
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
-     [
-      1793197839,
-      72.5
-     ],
      [
       1793213725,
       73.5
@@ -39997,13 +40173,13 @@
      [
       1794400705,
       71.0
+     ],
+     [
+      1794418023,
+      70.5
      ]
     ],
     "will-variational-launch-a-token-by-december-31-2026-577-621": [
-     [
-      1793434100,
-      77.8
-     ],
      [
       1793435909,
       78.7
@@ -40799,17 +40975,13 @@
      [
       1794395311,
       68.5
+     ],
+     [
+      1794418023,
+      69.1
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
-     [
-      1793191108,
-      21.0
-     ],
-     [
-      1793197839,
-      19.0
-     ],
      [
       1793225318,
       19.5
@@ -41477,6 +41649,10 @@
      [
       1794384507,
       4.8
+     ],
+     [
+      1794418023,
+      17.8
      ]
     ]
    },
@@ -41555,7 +41731,8 @@
      "8f43e30378d5",
      "fe71798ca8e3",
      "487596702cdf",
-     "f5694a11d8a4"
+     "f5694a11d8a4",
+     "0fc572c10838"
     ],
     "x:variational_io": [
      "21f25f747f75",
@@ -41648,34 +41825,34 @@
    },
    "status": {
     "api_watch": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794400705,
-     "note": "15건",
+     "at": 1794418023,
+     "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794400705,
+     "at": 1794418023,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794400705,
-     "note": "20건",
-     "ok": true
+     "at": 1794418023,
+     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
+     "ok": false
     }
    }
   }
