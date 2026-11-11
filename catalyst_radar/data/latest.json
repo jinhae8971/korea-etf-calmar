@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-11-10 12:51",
+ "as_of_kst": "2026-11-11 10:30",
  "calendar": [
   {
    "event_date": "2026-11-11",
@@ -7,7 +7,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xed53c0264b1ca4ec8dbd658b7aca8dcbe0193747313099b1a3c4549d866ba41d",
-   "last_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-05",
@@ -31,12 +31,41 @@
    "when": "2026-11-11"
   },
   {
+   "event_date": "2026-11-13",
+   "first_seen": "2026-11-11",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0xd42b7b5115152c3377b3a598d1fd12f8e29c617bcebdc15859d46ce9f3154a00",
+   "last_seen": "2026-11-11",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 2.6,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-11",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MORPHO",
+   "title": "MIP 135 – Add new LLTVs on Morpho Midnight",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/morpho.eth/proposal/0xd42b7b5115152c3377b3a598d1fd12f8e29c617bcebdc15859d46ce9f3154a00",
+   "vote_state": "active",
+   "when": "2026-11-13"
+  },
+  {
    "event_date": "2026-11-16",
    "first_seen": "2026-11-10",
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:pancakeswap-delays-weekly-cake-burn-to-november-16-for-smart",
-   "last_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -64,7 +93,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "last_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -93,7 +122,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "last_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -117,12 +146,68 @@
    "when": "2026-11-16"
   },
   {
+   "event_date": "2026-11-17",
+   "first_seen": "2026-11-11",
+   "grade": "A",
+   "impact": "INFRA",
+   "key": "cosmoshub:gov:1061",
+   "last_seen": "2026-11-11",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 1.59,
+    "score_at_detect": 45.5
+   },
+   "score": 45.5,
+   "source": "cosmos",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-11",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "ATOM",
+   "title": "Gaia v29.1.0 upgrade",
+   "trust": 1.0,
+   "url": "https://www.mintscan.io/cosmoshub/proposals/1061",
+   "when": "2026-11-17"
+  },
+  {
+   "event_date": "2026-12-02",
+   "first_seen": "2026-11-11",
+   "grade": "B",
+   "impact": "SUPPLY",
+   "key": "news:coinbase-falls-4-robinhood-slides-3-as-hot-inflation-data-dr",
+   "last_seen": "2026-11-11",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 79682,
+    "score_at_detect": 42.8
+   },
+   "score": 42.8,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-11",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "BTC",
+   "title": "Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data Drags Bitcoin Lower; Webull Declines 2% - 24/7 Wall St.",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMEJIVzZDajJZSDNmb3BHVnFJS1VUbTdoOVRqb1IzLW52ckcySTZzampHVl95UzdiV0tTbWYzYXR0VEhQQW9NVnZrMFhsTWZFb2pMU3UxamFOSUFCa28xemJfa1UzMnZoODFXc1pjWjF1dFJCTFAxUnRZcVF3NmtrQ2tMWk9yREZuQ1V6R1NqSGo2eWwxblZKVG5iSFB4b2t3YnhQaThJeWlocWZMSElMSWYxcXhFODRiMVFrbzZMN2JtUlZmUUJTN1plNlZlRTdCT1VQZWF3?oc=5",
+   "when": "Tue, 10 Nov 2026"
+  },
+  {
    "event_date": "2026-12-08",
    "first_seen": "2026-11-03",
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -153,7 +238,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:bnb-news-bnb-chain-fixes-a-node-bug-before-its-december-8-up",
-   "last_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -179,7 +264,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 83,
+ "event_count": 77,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -203,133 +288,133 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-10 12:51\n감시 52종목(체인 34·프로토콜 18) · 이벤트 83건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>CAKE</b> [공급·신규] PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart Contract Security\n🟠 <b>BNB</b> [인프라·신규] BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upgrade, but Pepeto\n🟠 <b>MNT</b> [기능·신규] Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <b>ARB</b> [기능·신규] [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🟠 <b>SUI</b> [인프라·신규] sui devnet-v1.84.0 — Sui Protocol Version in this release: `142`\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> MNT <b>투표중</b> · MIP-35: Mantle Core Budget for the Fourth Budget Cycle\n🔴 <code>D-6   </code> CAKE <b>일정확정</b> · PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart C\n🟠 <code>D-6   </code> MNT <b>투표중</b> · Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <code>D-6   </code> ARB <b>투표중</b> · [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🔴 <code>D-28  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n🟠 <code>D-28  </code> BNB <b>일정확정</b> · BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upg\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-11 10:30\n감시 52종목(체인 34·프로토콜 18) · 이벤트 77건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>ATOM</b> [인프라·신규] Gaia v29.1.0 upgrade\n🟠 <b>BTC</b> [공급·신규] Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data Drags Bitcoin Low\n🟠 <b>SUI</b> [인프라·신규] sui testnet-v1.84.0 — Sui Protocol Version in this release: `142`\n🟠 <b>MORPHO</b> [기능·신규] MIP 135 – Add new LLTVs on Morpho Midnight\n🟠 <b>ADA</b> [인프라·신규] cardano-node 11.2.1 — Release Notes\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MNT <b>투표중</b> · MIP-35: Mantle Core Budget for the Fourth Budget Cycle\n🟠 <code>D-2   </code> MORPHO <b>투표중</b> · MIP 135 – Add new LLTVs on Morpho Midnight\n🔴 <code>D-5   </code> CAKE <b>일정확정</b> · PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart C\n🟠 <code>D-5   </code> MNT <b>투표중</b> · Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <code>D-5   </code> ARB <b>투표중</b> · [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🔴 <code>D-6   </code> ATOM <b>투표중</b> · Gaia v29.1.0 upgrade\n🟠 <code>D-21  </code> BTC <b>일정확정</b> · Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data D\n🔴 <code>D-27  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-11-16",
-   "first_seen": "2026-11-10",
+   "event_date": "2026-11-17",
+   "first_seen": "2026-11-11",
    "grade": "A",
-   "impact": "SUPPLY",
-   "key": "news:pancakeswap-delays-weekly-cake-burn-to-november-16-for-smart",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 2.2,
-    "score_at_detect": 50.4
-   },
-   "score": 50.4,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-11-10",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "CAKE",
-   "title": "PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart Contract Security Upgrade - Cryptonews.net",
-   "transition": "NEW",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94cWRGSW52Tng5dnlQdXFLNWxOZWZXR0lUYk5zb0hDV0g4LVROWG5ZYWpkcUdUZnQ4YkxUenNrT1RwMnEzcDF4TVZOVkZUbjVKY0NiOUYwWjZvQQ?oc=5",
-   "when": "Mon, 09 Nov 2026"
-  },
-  {
-   "event_date": "2026-12-08",
-   "first_seen": "2026-11-10",
-   "grade": "B",
    "impact": "INFRA",
-   "key": "news:bnb-news-bnb-chain-fixes-a-node-bug-before-its-december-8-up",
+   "key": "cosmoshub:gov:1061",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 746.55,
-    "score_at_detect": 30.0
+    "detected_at": "2026-11-11",
+    "price_at_detect": 1.59,
+    "score_at_detect": 45.5
    },
-   "score": 30.0,
+   "score": 45.5,
+   "source": "cosmos",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-11",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "ATOM",
+   "title": "Gaia v29.1.0 upgrade",
+   "transition": "NEW",
+   "trust": 1.0,
+   "url": "https://www.mintscan.io/cosmoshub/proposals/1061",
+   "when": "2026-11-17"
+  },
+  {
+   "event_date": "2026-12-02",
+   "first_seen": "2026-11-11",
+   "grade": "B",
+   "impact": "SUPPLY",
+   "key": "news:coinbase-falls-4-robinhood-slides-3-as-hot-inflation-data-dr",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 79682,
+    "score_at_detect": 42.8
+   },
+   "score": 42.8,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-10",
+     "at": "2026-11-11",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "BNB",
-   "title": "BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upgrade, but Pepeto Is the Real Story - openPR.com",
+   "symbol": "BTC",
+   "title": "Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data Drags Bitcoin Lower; Webull Declines 2% - 24/7 Wall St.",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQemFrYU9KLVg1ci1CS2QtZEhLRE5HS2UxOHpISnh4dGV5WF9GLU1yRnRVam5xTk15eFAwVnQ4TTM0Z0szNXFtakVXb3BvemZOWmtCbzRuUVB0NExrMU15MHBuNDRmYm81M05nVFM2UlpIV1BNaEhXdTFlZXhTRWQxSEpjRlRTU18ybkVKZ2VPRTBmNzhiYnEzZld2YlFPVm9VenJj?oc=5",
-   "when": "Mon, 09 Nov 2026"
-  },
-  {
-   "event_date": "2026-11-16",
-   "first_seen": "2026-11-10",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 0.644312,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-10",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MNT",
-   "title": "Recognition of Halo Prime as a strategic partner of Mantle",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "vote_state": "active",
-   "when": "2026-11-16"
-  },
-  {
-   "event_date": "2026-11-16",
-   "first_seen": "2026-11-10",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-10",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "ARB",
-   "title": "[Constitutional] AIP: Approve Release of Frozen ETH and ARB",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "vote_state": "active",
-   "when": "2026-11-16"
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMEJIVzZDajJZSDNmb3BHVnFJS1VUbTdoOVRqb1IzLW52ckcySTZzampHVl95UzdiV0tTbWYzYXR0VEhQQW9NVnZrMFhsTWZFb2pMU3UxamFOSUFCa28xemJfa1UzMnZoODFXc1pjWjF1dFJCTFAxUnRZcVF3NmtrQ2tMWk9yREZuQ1V6R1NqSGo2eWwxblZKVG5iSFB4b2t3YnhQaThJeWlocWZMSElMSWYxcXhFODRiMVFrbzZMN2JtUlZmUUJTN1plNlZlRTdCT1VQZWF3?oc=5",
+   "when": "Tue, 10 Nov 2026"
   },
   {
    "event_date": null,
-   "first_seen": "2026-11-10",
+   "first_seen": "2026-11-11",
    "grade": "B",
    "impact": "INFRA",
-   "key": "MystenLabs/sui@devnet-v1.84.0",
+   "key": "MystenLabs/sui@testnet-v1.84.0",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-11-11",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "SUI",
+   "title": "sui testnet-v1.84.0 — Sui Protocol Version in this release: `142`",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.84.0",
+   "when": "2026-11-10"
+  },
+  {
+   "event_date": "2026-11-13",
+   "first_seen": "2026-11-11",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0xd42b7b5115152c3377b3a598d1fd12f8e29c617bcebdc15859d46ce9f3154a00",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 2.6,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-11",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MORPHO",
+   "title": "MIP 135 – Add new LLTVs on Morpho Midnight",
+   "transition": "NEW",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/morpho.eth/proposal/0xd42b7b5115152c3377b3a598d1fd12f8e29c617bcebdc15859d46ce9f3154a00",
+   "vote_state": "active",
+   "when": "2026-11-13"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-11",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "IntersectMBO/cardano-node@11.2.1",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 0.796873,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 0.218904,
     "score_at_detect": 26.9
    },
    "score": 26.9,
@@ -337,16 +422,16 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-10",
+     "at": "2026-11-11",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "SUI",
-   "title": "sui devnet-v1.84.0 — Sui Protocol Version in this release: `142`",
+   "symbol": "ADA",
+   "title": "cardano-node 11.2.1 — Release Notes",
    "transition": "NEW",
    "trust": 0.95,
-   "url": "https://github.com/MystenLabs/sui/releases/tag/devnet-v1.84.0",
-   "when": "2026-11-09"
+   "url": "https://github.com/IntersectMBO/cardano-node/releases/tag/11.2.1",
+   "when": "2026-11-10"
   }
  ],
  "universe": {
@@ -446,7 +531,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 48,
+   "n": 43,
    "status": "OK"
   },
   {
@@ -458,7 +543,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 12,
+   "n": 11,
    "status": "OK"
   },
   {
@@ -470,20 +555,14 @@
     0.0
    ],
    "median": 0.0,
-   "n": 22,
+   "n": 17,
    "status": "OK"
   },
   {
    "bucket": "impact:FEATURE",
-   "hit_rate": 0.0,
    "horizon": 30,
-   "iqr": [
-    0.0,
-    0.0
-   ],
-   "median": 0.0,
-   "n": 8,
-   "status": "OK"
+   "n": 7,
+   "status": "표본 부족"
   },
   {
    "bucket": "impact:INFRA",
@@ -524,7 +603,7 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 2,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -542,21 +621,21 @@
     0.0
    ],
    "median": 0.0,
-   "n": 30,
+   "n": 27,
    "status": "OK"
   },
   {
    "bucket": "source:release",
    "horizon": 30,
-   "n": 7,
+   "n": 6,
    "status": "표본 부족"
   },
   {
    "bucket": "source:snapshot",
    "horizon": 7,
-   "n": 5,
+   "n": 1,
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)"
 }
