@@ -1,5 +1,5 @@
 {
- "generated_at": 1794463709,
+ "generated_at": 1794465503,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -156,6 +156,10 @@
   [
    1794463709,
    "d"
+  ],
+  [
+   1794465503,
+   "d"
   ]
  ],
  "status": {
@@ -166,14 +170,14 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": false
+   "x:arcus_xyz": true
   },
   "extended": {
    "docs": true,
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
@@ -199,7 +203,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:pacifica_fi": false
+   "x:pacifica_fi": true
   },
   "qfex": {
    "docs": true,
@@ -224,7 +228,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": true
+   "x:TxFlow_L1": false
   },
   "variational": {
    "api_watch": true,
