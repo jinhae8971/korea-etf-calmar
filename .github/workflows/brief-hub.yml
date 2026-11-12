@@ -9,6 +9,8 @@ name: Brief Hub
 # 코스피 매매기준점은 수집이 끝나자마자 한 번 더 돈다 — 수집 잡이 08:00 KST에 끝나며 허브를 깨운다(2026-10-24, 장 시작 전 도착용).
 # 라이터RH 전환감시는 2026-10-24 '퍼프덱스 레이더'로 바뀌면서 이 허브에서 빠졌다 — 메시지는 퍼프 에어드랍 데일리 채널
 # (@spytltgld_airdrop_bot)로 간다: PC의 airdrop-radar가 perp_dex_radar/data/latest.json의 outbox를 중계.
+# AI 크레딧 레이더(2026-11-13): 수집은 별도 레포 ai-credit-radar. 허브가 실행마다 docs/hub/latest.json·cds_measured.png 를
+# Contents API로 받아 ai_credit/data/ 에 두고(커밋 안 함) 화~토 08:10 이후 발송. 받기 실패 시 빈 스텁 → 4시간 뒤 지연 알림.
 on:
   schedule:
     - cron: "17 22,23,0-12 * * *"
@@ -73,6 +75,16 @@ jobs:
                 "days": [0, 1, 2, 3, 4],
                 "fresh_key": "as_of_kst",
                 "why": "5파 상승 → ABC 조정 시나리오 일간 판정 · 평일 08:00 매매기준점 다음 메시지 (2026-11-07, 수집은 KOSPI Levels 잡에서)"
+              },
+              {
+                "id": "ai_credit",
+                "name": "AI 크레딧 레이더",
+                "path": "ai_credit/data/latest.json",
+                "mode": "daily",
+                "earliest": "08:10",
+                "days": [1, 2, 3, 4, 5],
+                "fresh_key": "as_of_kst",
+                "why": "미국 마감 기준 AI 크레딧(실측 CDS·스트레스 지수) · 화~토 아침 · 오라클·코어위브 실측 CDS 트렌드 차트는 관측치 갱신·경보선 돌파·화요일에만 첨부 (2026-11-13, 수집 ai-credit-radar 06:07/07:37)"
               },
               {
                 "id": "topsignal",
@@ -407,6 +419,23 @@ jobs:
               now = datetime.fromisoformat(a.now).replace(tzinfo=KST) if a.now else datetime.now(KST)
               run(now, a.dry_run, a.root, a.state)
           PY_EOF
+      - name: Fetch remote sources
+        # 별도 레포에서 수집하는 브리프의 payload를 받아 온다 (커밋하지 않음). raw CDN 캐시를 피하려고 Contents API 사용.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p ai_credit/data
+          for f in latest.json cds_measured.png; do
+            if ! curl -fsSL --retry 3 --retry-delay 3 -H "Authorization: Bearer ${GH_TOKEN}" \
+                 -H "Accept: application/vnd.github.raw" \
+                 "https://api.github.com/repos/jinhae8971/ai-credit-radar/contents/docs/hub/${f}?ref=main" \
+                 -o "ai_credit/data/${f}"; then
+              echo "::warning::ai-credit-radar ${f} 수신 실패"
+              rm -f "ai_credit/data/${f}"
+              if [ "$f" = "latest.json" ]; then echo '{"as_of_kst": null}' > ai_credit/data/latest.json; fi
+            fi
+          done
+          ls -la ai_credit/data
       - name: Run hub
         env:
           HUB_BOT_TOKEN: ${{ secrets.HUB_BOT_TOKEN }}
