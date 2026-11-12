@@ -1,7 +1,85 @@
 {
- "generated_at": 1794487112,
+ "generated_at": 1794509588,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Builder-code attribution takes priority over referral and affiliate rewards. Fees from an attributed trade side generate no referral or affiliate commission and no trader rebate, including the standard 10% rebate. See builder-code priority.",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "b40b058a5cbc",
+   "ref": {
+    "added": [
+     "Builder-code attribution takes priority over referral and affiliate rewards. Fees from an attributed trade side generate no referral or affiliate commission and no trader rebate, including the standard 10% rebate. See [builder-code priority](https://docs.qfex.com/qfex/builder-code.md#priority-over-referral-and-affiliate-rewards)."
+    ],
+    "name": "수수료·보상",
+    "removed": 0,
+    "url": "https://docs.qfex.com/qfex/fees.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '수수료·보상' 문구 변경",
+   "ts": 1794509588,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0yQUpsMmFDXzFqa0lqM0JNZzBvT2pLZkhyODBhQXpPZHVxRGtPRXRzVE5Fc0tkT0NXTnhrLUlLVHFTbFluNFFsTWV1MmY1LVdmcnc?oc=5",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "8a202ff83ad2",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0yQUpsMmFDXzFqa0lqM0JNZzBvT2pLZkhyODBhQXpPZHVxRGtPRXRzVE5Fc0tkT0NXTnhrLUlLVHFTbFluNFFsTWV1MmY1LVdmcnc?oc=5",
+    "words": [
+     "Convert"
+    ]
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: XTEN/BRL Price: Convert Extended to Brazilian Real - Crypto.com",
+   "ts": 1794509588,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
+  {
+   "detail": "/docs/cookbook/deploy-erc20-token",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "60c790e50302",
+   "ref": {
+    "name": "문서 사이트 지도",
+    "url": "https://docs.risechain.com/sitemap.xml"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '문서 사이트 지도' 문구 변경",
+   "ts": 1794509588,
+   "venue": "risex",
+   "venue_name": "RISEx"
+  },
+  {
+   "detail": "Rewards Points Impact Pool Referrals and Affiliates",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "c47627e87157",
+   "ref": {
+    "added": [
+     "Rewards Points Impact Pool Referrals and Affiliates"
+    ],
+    "name": "포인트·시즌1 Ignite",
+    "removed": 1,
+    "url": "https://docs.risechain.com/docs/risex/rewards/points"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '포인트·시즌1 Ignite' 문구 변경",
+   "ts": 1794509588,
+   "venue": "risex",
+   "venue_name": "RISEx"
+  },
   {
    "detail": "Guild field updates — review preview",
    "family": "S2",
@@ -4706,81 +4784,9 @@
    "ts": 1792321666,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "102915a2a76a",
-   "ref": {
-    "name": "/api/v1/upDownCandles"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_path",
-   "title": "API 경로 추가: /api/v1/upDownCandles",
-   "ts": 1792321666,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x1a51016f→0xde1b4e9c",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "1470c58c891c",
-   "ref": {
-    "amount": 2199990.0,
-    "chain": "eth",
-    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-    "to": "0xde1b4e9c757e819da0c34c3eb0305d96a46ccdbf",
-    "tx": "0x5d594e852b9518c71c019d524fd591814a495dcebe7e6478c99e59694873da3c"
-   },
-   "refute": "72시간 내 수신처→송신처 원위치 시 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "ETH LIT 2.20M 대량 이동",
-   "ts": 1792190171,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "c70004afcadd",
-   "ref": {
-    "link": "http://nitter.perennialte.ch/Lighter_xyz/status/2111110126807511058#m"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "x",
-   "title": "X: RT by @vnovakovski: Lighter EVM devnet is live! An EVM-equiv",
-   "ts": 1792173865,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNko1WkhLSmN1TW9fZnQ2LXQ5WG1ZazVRRkVLYjEyWElfWko4VzlTUUtkdzhGdTdXWTR1Zmd3MER2eVQ1VDBCemN",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "80c4790c92cf",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNko1WkhLSmN1TW9fZnQ2LXQ5WG1ZazVRRkVLYjEyWElfWko4VzlTUUtkdzhGdTdXWTR1Zmd3MER2eVQ1VDBCemNLYWpyb2FlTGVFZE51aUphVWpFdXc5T0RUQzhWRTRvQmVwbXh4WDRXemd3cnZNcEFLQ3lPSDlkdmptakw?oc=5"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: Lighter’s $675M LIT Airdrop Becomes 10th Largest in Crypto H",
-   "ts": 1792063890,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1794418023,
-   "s"
-  ],
   [
    1794428071,
    "s"
@@ -4904,6 +4910,10 @@
   [
    1794487112,
    "d"
+  ],
+  [
+   1794509588,
+   "s"
   ]
  ],
  "venues": [
@@ -4949,27 +4959,6 @@
      "title": "Arcus 공식 X: Multi-Asset Collateral unlocks the basis trade on Arcus. Hold a token, short its perp, collect funding when it’s positiv",
      "ts": 1794260923,
      "venue": "arcus"
-    },
-    {
-     "detail": "How do I get early access? Can you whitelist me?",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "dc757d9a6d8a",
-     "ref": {
-      "moved": [],
-      "name": "도움말 전체 목록",
-      "new": [],
-      "removed": [
-       "How do I get early access? Can you whitelist me? — https://help.arcus.xyz/how-do-i-get-early-access-can-you-whitelist-me.md"
-      ],
-      "url": "https://help.arcus.xyz/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "index_change",
-     "title": "공식 문서 목록 변경: 삭제 1개",
-     "ts": 1793901563,
-     "venue": "arcus"
     }
    ],
    "groups": [],
@@ -4983,38 +4972,38 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794487112,
-     "note": "19건",
+     "at": 1794509588,
+     "note": "20건",
      "ok": true
     }
    },
@@ -5362,67 +5351,11 @@
      "title": "이더리움 LIT 1.94M개 대량 이동",
      "ts": 1793949467,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "RFQ, Internal Pricing Mechanism, Aggregated trades",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "bd7af508a046",
-     "ref": {
-      "moved": [],
-      "name": "문서 전체 목록",
-      "new": [
-       "RFQ — https://docs.lighter.xyz/trading/rfq.md",
-       "Internal Pricing Mechanism — https://docs.lighter.xyz/trading/internal-pricing-mechanism.md",
-       "Aggregated trades — https://docs.lighter.xyz/developers/integration-guides/aggregated-trades.md",
-       "RFQ — https://docs.lighter.xyz/developers/integration-guides/rfq.md"
-      ],
-      "removed": [
-       "RWA Pricing Mechanism — https://docs.lighter.xyz/trading/real-world-assets-rwas/rwa-pricing-mechanism.md",
-       "perpRFQ — https://docs.lighter.xyz/trading/perprfq.md"
-      ],
-      "url": "https://docs.lighter.xyz/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "index_change",
-     "title": "공식 문서 목록 변경: 새 문서 4개 · 삭제 2개",
-     "ts": 1793901563,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "For each market present on both venues, the 2.5x boost only applies to one pair of directions (e.g. long Core, short RH) out of the two.",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "482f224dbc3a",
-     "ref": {
-      "added": [
-       "For each market present on both venues, the 2.5x boost only applies to one pair of directions (e.g. long Core, short RH) out of the two.",
-       "A partial hedge also counts: if your position on Lighter RH is $100, but you're only hedged for $50 on Lighter Core, you will get a 1.75x boost. Otherwise, if the (opposing) position on Core is the same or larger, you get the complete boost.",
-       "The hedge boost only applies to weekly points and can be updated weekly. We consider the following categories for the boost, with directions specified below.",
-       "**W12 (Oct 30 - Nov 5)**",
-       "**W13 (Nov 6 - Nov 12)**"
-      ],
-      "name": "로빈후드 체인 포인트 안내",
-      "removed": 4,
-      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
-     "ts": 1793901563,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793421509,
-     242752.45,
-     57857.332
-    ],
     [
      1793423302,
      242762.553,
@@ -7417,6 +7350,11 @@
      1794487112,
      276893.506,
      67373.4
+    ],
+    [
+     1794509588,
+     277362.922,
+     67555.84
     ]
    ],
    "level": "WATCH",
@@ -7424,10 +7362,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793287952,
-     442569.78
-    ],
     [
      1793300371,
      442638.07
@@ -9211,64 +9145,68 @@
     [
      1794487112,
      459216.05
+    ],
+    [
+     1794509588,
+     459216.05
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794487112,
-     "note": "상위 10명 합계 276,894",
+     "at": 1794509588,
+     "note": "상위 10명 합계 277,363",
      "ok": true
     },
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794487112,
-     "note": "149블록 · 대량 0건",
+     "at": 1794509588,
+     "note": "1868블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
-     "note": "75건",
+     "at": 1794509588,
+     "note": "73건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "459,216 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794487112,
+     "at": 1794509588,
      "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
      "ok": false
     },
     "x:vnovakovski": {
-     "at": 1794487112,
-     "err": "X 수집 실패: https://xcancel.com/vnovakovski/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/vnovakovski/statuses → HTTP 404",
-     "ok": false
+     "at": 1794509588,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 7,
@@ -9279,6 +9217,26 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "Builder-code attribution takes priority over referral and affiliate rewards. Fees from an attributed trade side generate no referral or affiliate commission and no trader rebate, including the standard 10% rebate. See builder-code priority.",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "b40b058a5cbc",
+     "ref": {
+      "added": [
+       "Builder-code attribution takes priority over referral and affiliate rewards. Fees from an attributed trade side generate no referral or affiliate commission and no trader rebate, including the standard 10% rebate. See [builder-code priority](https://docs.qfex.com/qfex/builder-code.md#priority-over-referral-and-affiliate-rewards)."
+      ],
+      "name": "수수료·보상",
+      "removed": 0,
+      "url": "https://docs.qfex.com/qfex/fees.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '수수료·보상' 문구 변경",
+     "ts": 1794509588,
+     "venue": "qfex"
+    },
     {
      "detail": "Quantitative Managed Account: The invite-only Quantitative Managed Account offers systematic market-neutral trading for eligible high-volume QFEX traders.",
      "family": "S2",
@@ -9355,32 +9313,32 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 12% · 27년 6/30까지 26%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 12% · 27년 6/30까지 20%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "20건",
      "ok": true
     }
@@ -9393,6 +9351,24 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0yQUpsMmFDXzFqa0lqM0JNZzBvT2pLZkhyODBhQXpPZHVxRGtPRXRzVE5Fc0tkT0NXTnhrLUlLVHFTbFluNFFsTWV1MmY1LVdmcnc?oc=5",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "8a202ff83ad2",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0yQUpsMmFDXzFqa0lqM0JNZzBvT2pLZkhyODBhQXpPZHVxRGtPRXRzVE5Fc0tkT0NXTnhrLUlLVHFTbFluNFFsTWV1MmY1LVdmcnc?oc=5",
+      "words": [
+       "Convert"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: XTEN/BRL Price: Convert Extended to Brazilian Real - Crypto.com",
+     "ts": 1794509588,
+     "venue": "extended"
+    },
     {
      "detail": "extended-resources/legal/xten-community-distribution-terms",
      "family": "S2",
@@ -9725,27 +9701,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
-     "note": "33건",
+     "at": 1794509588,
+     "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "21건",
      "ok": true
     }
@@ -9838,29 +9814,6 @@
      "title": "뉴스: How to Participate in the Variational Airdrop and Earn VAR Crypto Rewards - CoinCodex",
      "ts": 1793986106,
      "venue": "variational"
-    },
-    {
-     "detail": "Order Types",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "339a44f2c42b",
-     "ref": {
-      "moved": [],
-      "name": "문서 전체 목록",
-      "new": [
-       "Order Types — https://docs.variational.io/omni/trading/order-types.md"
-      ],
-      "removed": [
-       "Market, Limit, and Trigger Orders — https://docs.variational.io/omni/trading/market-limit-and-trigger-orders.md"
-      ],
-      "url": "https://docs.variational.io/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "index_change",
-     "title": "공식 문서 목록 변경: 새 문서 1개 · 삭제 1개",
-     "ts": 1793901563,
-     "venue": "variational"
     }
    ],
    "groups": [],
@@ -9869,39 +9822,39 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 6% · 12/31까지 69%",
+   "odds": "토큰 출시 확률 11/30까지 5% · 12/31까지 71%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794487112,
-     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
-     "ok": false
+     "at": 1794509588,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -9950,21 +9903,6 @@
      "title": "공식 문서 목록 변경: 새 문서 46개",
      "ts": 1793938107,
      "venue": "pacifica"
-    },
-    {
-     "detail": "will-pacifica-launch-a-token-by-june-30-2027",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "183f6e2c1668",
-     "ref": {
-      "url": "https://polymarket.com/market/will-pacifica-launch-a-token-by-june-30-2027"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "polymarket",
-     "title": "Polymarket: Will Pacifica launch a token by June 30, 2027? 61% → 78%",
-     "ts": 1793901563,
-     "venue": "pacifica"
     }
    ],
    "groups": [],
@@ -9973,32 +9911,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 31% · 27년 6/30까지 59%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 31% · 27년 6/30까지 60%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "20건",
      "ok": true
     }
@@ -10039,33 +9977,33 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1794487112,
-     "note": "아직 공개 전",
-     "ok": true
+     "at": 1794509588,
+     "err": "공식 문서를 읽지 못했어요",
+     "ok": false
     },
     "docs": {
-     "at": 1794487112,
-     "note": "3/3 페이지",
-     "ok": true
+     "at": 1794509588,
+     "err": "전 페이지 실패",
+     "ok": false
     },
     "news": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794487112,
-     "note": "21건",
-     "ok": true
+     "at": 1794509588,
+     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
-   "sources_ok": 1,
+   "sources_ok": 0,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소 · 거래 API는 빌더 화이트리스트만(개인 미공개) — 공개 감시 중",
    "upcoming": []
   },
@@ -10083,24 +10021,24 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
-     "note": "8건",
+     "at": 1794509588,
+     "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794487112,
-     "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
-     "ok": false
+     "at": 1794509588,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
@@ -10144,19 +10082,19 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794487112,
-     "err": "X 수집 실패: https://xcancel.com/TitanExchange_/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TitanExchange_/statuses → HTTP 404",
-     "ok": false
+     "at": 1794509588,
+     "note": "9건",
+     "ok": true
     }
    },
    "sources_all": 1,
@@ -10167,6 +10105,42 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "/docs/cookbook/deploy-erc20-token",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "60c790e50302",
+     "ref": {
+      "name": "문서 사이트 지도",
+      "url": "https://docs.risechain.com/sitemap.xml"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '문서 사이트 지도' 문구 변경",
+     "ts": 1794509588,
+     "venue": "risex"
+    },
+    {
+     "detail": "Rewards Points Impact Pool Referrals and Affiliates",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "c47627e87157",
+     "ref": {
+      "added": [
+       "Rewards Points Impact Pool Referrals and Affiliates"
+      ],
+      "name": "포인트·시즌1 Ignite",
+      "removed": 1,
+      "url": "https://docs.risechain.com/docs/risex/rewards/points"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '포인트·시즌1 Ignite' 문구 변경",
+     "ts": 1794509588,
+     "venue": "risex"
+    },
     {
      "detail": "/docs/cookbook/deploy-erc20-token",
      "family": "S2",
@@ -10211,24 +10185,24 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794487112,
-     "note": "8건",
+     "at": 1794509588,
+     "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794487112,
+     "at": 1794509588,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794487112,
-     "note": "17건",
-     "ok": true
+     "at": 1794509588,
+     "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
