@@ -1,5 +1,5 @@
 {
- "generated_at": 1794509588,
+ "generated_at": 1794516851,
  "name": "퍼프덱스 레이더",
  "recent_all": [
   {
@@ -4788,10 +4788,6 @@
  ],
  "runs": [
   [
-   1794428071,
-   "s"
-  ],
-  [
    1794434908,
    "d"
   ],
@@ -4914,6 +4910,10 @@
   [
    1794509588,
    "s"
+  ],
+  [
+   1794516851,
+   "s"
   ]
  ],
  "venues": [
@@ -4972,38 +4972,38 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794509588,
-     "note": "20건",
+     "at": 1794516851,
+     "note": "17건",
      "ok": true
     }
    },
@@ -5356,11 +5356,6 @@
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793423302,
-     242762.553,
-     57859.84
-    ],
     [
      1793425113,
      242771.598,
@@ -7355,6 +7350,11 @@
      1794509588,
      277362.922,
      67555.84
+    ],
+    [
+     1794516851,
+     277439.314,
+     67591.03
     ]
    ],
    "level": "WATCH",
@@ -7362,10 +7362,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793300371,
-     442638.07
-    ],
     [
      1793311706,
      443367.5
@@ -9149,62 +9145,66 @@
     [
      1794509588,
      459216.05
+    ],
+    [
+     1794516851,
+     459216.05
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794509588,
-     "note": "상위 10명 합계 277,363",
+     "at": 1794516851,
+     "note": "상위 10명 합계 277,439",
      "ok": true
     },
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794509588,
-     "note": "1868블록 · 대량 0건",
+     "at": 1794516851,
+     "note": "604블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
-     "note": "73건",
+     "at": 1794516851,
+     "note": "74건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "459,216 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794509588,
-     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
-     "ok": false
+     "at": 1794516851,
+     "note": "20건",
+     "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     }
@@ -9289,22 +9289,6 @@
      "title": "공식 문서 목록 변경: 새 문서 1개",
      "ts": 1794251247,
      "venue": "qfex"
-    },
-    {
-     "detail": "Status / 运行状态",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "3e3ca0fe2c47",
-     "ref": {
-      "name": "문서 전체 목록",
-      "url": "https://docs.qfex.com/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '문서 전체 목록' 문구 변경",
-     "ts": 1793911349,
-     "venue": "qfex"
     }
    ],
    "groups": [],
@@ -9318,27 +9302,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     }
@@ -9601,90 +9585,6 @@
      "title": "Extended 공식 X: Stake XTEN and trade for less. From TGE, staked XTEN can earn staking rewards, and staking 500 XTEN or more places you i",
      "ts": 1794240799,
      "venue": "extended"
-    },
-    {
-     "detail": "Weekly points distributions have ended. As of 05.11.2026, all 70,000,000 points out of 70 million total points have been distributed under the program.",
-     "family": "S2",
-     "grade": "ALERT",
-     "id": "d3d5ae03bbd5",
-     "ref": {
-      "added": [
-       "Weekly points distributions have ended. As of 05.11.2026, all 70,000,000 points out of 70 million total points have been distributed under the program."
-      ],
-      "name": "포인트 프로그램",
-      "url": "https://docs.extended.exchange/extended-resources/points-program.md",
-      "words": [
-       "ended"
-      ]
-     },
-     "refute": "일정·비율이 아닌 일반 설명·약관 정정으로 확인되면 해제",
-     "refuted": false,
-     "signal": "doc_keyword",
-     "title": "공식 문서 '포인트 프로그램'에 전환·TGE 관련 문구 추가",
-     "ts": 1793911349,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQWx5bURZNTM1SEQzRVdDb0VPTUNqejZzdEdkTUpQcGtCejhQTlEwSkh3djEzWW5LUlNxcklyaFowNGl3RlBjTDMxc2FoVzJzcU5LZ3Nma0x",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "a65df8a65ded",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQWx5bURZNTM1SEQzRVdDb0VPTUNqejZzdEdkTUpQcGtCejhQTlEwSkh3djEzWW5LUlNxcklyaFowNGl3RlBjTDMxc2FoVzJzcU5LZ3Nma0x3Z2JiRC1mLWpBYVNQbTQzVVpucU9DRjIybDZ2b1J1UkhUbjhUUFdDX1RIQ05EZVNMMjRCMlNIRGZyQzdXLUw1NnZHbw?oc=5",
-      "words": [
-       "Airdrop"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: Extended Sets Final XTEN Airdrop Rate as Xpoints Program Ends - The Defiant",
-     "ts": 1793911349,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://x.com/extendedapp/status/2118437512452640910",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "359d3997a7b6",
-     "ref": {
-      "label": "공식 X",
-      "text": "The Xpoints programme has concluded.\n\nThe final conversion rate is 1 Xpoint = ~4.2857 XTEN, reflecting the 300,000,000 XTEN Community allocation distributed across 70,000,000 Xpoints.\n\n97 community members holding the Tester role in our Discord have also received Xpoint allocations, in recognition of their testing, feedback and consistent use of the platform during Extended's earliest stages.\n\nThe.",
-      "url": "https://x.com/extendedapp/status/2118437512452640910",
-      "words": [
-       "conversion",
-       "allocation",
-       "distributed",
-       "allocations",
-       "has concluded"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "x_post",
-     "title": "Extended 공식 X: The Xpoints programme has concluded. The final conversion rate is 1 Xpoint = ~4.2857 XTEN, reflecting the 300,000,000 XT",
-     "ts": 1793909836,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://x.com/extendedapp/status/2118437515086430610",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "913f17d6ed29",
-     "ref": {
-      "label": "공식 X",
-      "text": "XTEN allocations are subject to eligibility requirements, applicable compliance checks and acceptance of the Token Terms. XTEN may lose some or all of its value and may not always be liquid or transferable..",
-      "url": "https://x.com/extendedapp/status/2118437515086430610",
-      "words": [
-       "allocations"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "x_post",
-     "title": "Extended 공식 X: XTEN allocations are subject to eligibility requirements, applicable compliance checks and acceptance of the Token Terms",
-     "ts": 1793909836,
-     "venue": "extended"
     }
    ],
    "groups": [
@@ -9701,28 +9601,28 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794509588,
-     "note": "21건",
+     "at": 1794516851,
+     "note": "20건",
      "ok": true
     }
    },
@@ -9822,37 +9722,37 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 5% · 12/31까지 71%",
+   "odds": "토큰 출시 확률 11/30까지 6% · 12/31까지 71%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     }
@@ -9911,32 +9811,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 31% · 27년 6/30까지 60%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 31% · 27년 6/30까지 61%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     }
@@ -9977,33 +9877,33 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1794509588,
-     "err": "공식 문서를 읽지 못했어요",
-     "ok": false
+     "at": 1794516851,
+     "note": "아직 공개 전",
+     "ok": true
     },
     "docs": {
-     "at": 1794509588,
-     "err": "전 페이지 실패",
-     "ok": false
+     "at": 1794516851,
+     "note": "3/3 페이지",
+     "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794509588,
-     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
-     "ok": false
+     "at": 1794516851,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
-   "sources_ok": 0,
+   "sources_ok": 1,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소 · 거래 API는 빌더 화이트리스트만(개인 미공개) — 공개 감시 중",
    "upcoming": []
   },
@@ -10021,22 +9921,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "20건",
      "ok": true
     }
@@ -10082,19 +9982,19 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794509588,
-     "note": "9건",
-     "ok": true
+     "at": 1794516851,
+     "err": "X 수집 실패: https://xcancel.com/TitanExchange_/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TitanExchange_/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -10185,24 +10085,24 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794509588,
+     "at": 1794516851,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794509588,
-     "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
-     "ok": false
+     "at": 1794516851,
+     "note": "17건",
+     "ok": true
     }
    },
    "sources_all": 1,
