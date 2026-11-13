@@ -1,7 +1,28 @@
 {
- "generated_at": 1794571698,
+ "generated_at": 1794573517,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "W13, W14 (Nov 6 - Nov 19)",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "9f0d1f182eb8",
+   "ref": {
+    "added": [
+     "**W13, W14 (Nov 6 - Nov 19)**"
+    ],
+    "name": "로빈후드 체인 포인트 안내",
+    "removed": 1,
+    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+   "ts": 1794573517,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "0x260b364f → 0xb829e684",
    "family": "S1",
@@ -4782,33 +4803,9 @@
    "ts": 1792439853,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNOWlkdmVpOGQxUEJLc09TRDRFSFppXy04V05TYWctVTY2UFZNci1VMmNtQ0FPQ0ZJQVRMemZ3d1Q1ZTR3VEpvWUR",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "e1457a9d0462",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNOWlkdmVpOGQxUEJLc09TRDRFSFppXy04V05TYWctVTY2UFZNci1VMmNtQ0FPQ0ZJQVRMemZ3d1Q1ZTR3VEpvWURxUnNJal9JZm9FOFJxbTdzMXNoaXItQmtxek83MEk1Q3paa1lZTjYzVXZwVmdFd1VCNWVuT3pRV1h0SUw0bXkwSl8yYXV1NHJIZw?oc=5"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: Perp-DEX Lighter Announces Airdrop - ForkLog",
-   "ts": 1792362376,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1794485301,
-   "d"
-  ],
-  [
-   1794487112,
-   "d"
-  ],
   [
    1794509588,
    "s"
@@ -4932,6 +4929,10 @@
   [
    1794571698,
    "d"
+  ],
+  [
+   1794573517,
+   "d"
   ]
  ],
  "venues": [
@@ -4990,37 +4991,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "18건",
      "ok": true
     }
@@ -5033,6 +5034,26 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "W13, W14 (Nov 6 - Nov 19)",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "9f0d1f182eb8",
+     "ref": {
+      "added": [
+       "**W13, W14 (Nov 6 - Nov 19)**"
+      ],
+      "name": "로빈후드 체인 포인트 안내",
+      "removed": 1,
+      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+     "ts": 1794573517,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "0x260b364f → 0xb829e684",
      "family": "S1",
@@ -5378,11 +5399,6 @@
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793506109,
-     243234.057,
-     57924.633
-    ],
     [
      1793507902,
      243240.82,
@@ -7377,6 +7393,11 @@
      1794571698,
      278166.83,
      67895.13
+    ],
+    [
+     1794573517,
+     278180.147,
+     67902.16
     ]
    ],
    "level": "WATCH",
@@ -7384,10 +7405,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793363904,
-     445570.1
-    ],
     [
      1793373610,
      445570.1
@@ -9171,62 +9188,66 @@
     [
      1794571698,
      457216.05
+    ],
+    [
+     1794573517,
+     457216.05
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794571698,
-     "note": "상위 10명 합계 278,167",
+     "at": 1794573517,
+     "note": "상위 10명 합계 278,180",
      "ok": true
     },
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794571698,
-     "note": "148블록 · 대량 0건",
+     "at": 1794573517,
+     "note": "152블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
-     "note": "74건",
+     "at": 1794573517,
+     "note": "75건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "457,216 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "14건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     }
@@ -9324,27 +9345,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     }
@@ -9623,27 +9644,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "34건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "21건",
      "ok": true
     }
@@ -9765,32 +9786,32 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "19건",
      "ok": true
     }
@@ -9839,27 +9860,27 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     }
@@ -9900,27 +9921,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     }
@@ -9944,22 +9965,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "20건",
      "ok": true
     }
@@ -10005,17 +10026,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "9건",
      "ok": true
     }
@@ -10139,23 +10160,23 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794571698,
+     "at": 1794573517,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794571698,
-     "note": "17건",
+     "at": 1794573517,
+     "note": "19건",
      "ok": true
     }
    },
