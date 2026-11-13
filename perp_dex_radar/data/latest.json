@@ -1,5 +1,5 @@
 {
- "generated_at": 1794566304,
+ "generated_at": 1794568110,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -15,14 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1794479912,
-   "d"
-  ],
-  [
-   1794481120,
-   "s"
-  ],
   [
    1794483508,
    "d"
@@ -146,6 +138,10 @@
   [
    1794566304,
    "d"
+  ],
+  [
+   1794568110,
+   "d"
   ]
  ],
  "status": {
@@ -163,13 +159,13 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:hellotradeapp": false
+   "x:hellotradeapp": true
   },
   "lighter-rh": {
    "ann": true,
@@ -181,8 +177,8 @@
    "polymarket": true,
    "rh_supply": true,
    "rh_transfers": true,
-   "x:Lighter_xyz": true,
-   "x:vnovakovski": true
+   "x:Lighter_xyz": false,
+   "x:vnovakovski": false
   },
   "pacifica": {
    "ann": true,
@@ -196,7 +192,7 @@
    "feed": true,
    "news": true,
    "polymarket": true,
-   "x:QFEX": false
+   "x:QFEX": true
   },
   "risex": {
    "docs": true,
