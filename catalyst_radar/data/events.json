@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-12 11:33",
+ "as_of": "2026-11-13 11:10",
  "events": [
   {
    "event_date": "2026-12-08",
@@ -7,7 +7,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -38,7 +38,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "news:pancakeswap-delays-weekly-cake-burn-to-november-16-for-smart",
-   "last_seen": "2026-11-11",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -66,7 +66,7 @@
    "grade": "A",
    "impact": "SUPPLY",
    "key": "solana-foundation/solana-improvement-documents#704",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-22",
@@ -101,7 +101,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1061",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-11",
@@ -157,7 +157,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:hedera-v0-79-mainnet-upgrade-on-november-18-what-changes-cry",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-12",
@@ -310,13 +310,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "ava-labs/avalanchego@v1.15.3",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-06",
     "price_at_detect": 7.81,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-11-13"
    },
    "score": 29.9,
    "source": "release",
@@ -345,7 +347,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-11-06",
     "price_at_detect": 0.799444,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-11-13"
    },
    "score": 29.9,
    "source": "release",
@@ -374,7 +378,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-11-06",
     "price_at_detect": 0.799444,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-11-13"
    },
    "score": 29.9,
    "source": "release",
@@ -397,13 +403,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "vechain/thor@v2.5.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-06",
     "price_at_detect": 0.0072353,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-11-13"
    },
    "score": 29.9,
    "source": "release",
@@ -426,7 +434,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@testnet-v1.84.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -455,7 +463,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "near/nearcore@2.14.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -479,12 +487,70 @@
    "when": "2026-11-11"
   },
   {
+   "event_date": null,
+   "first_seen": "2026-11-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "filecoin-project/lotus@v1.39.1",
+   "last_seen": "2026-11-13",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-13",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-11-13",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "lotus v1.39.1 — This Node and Miner patch release is recommended for all node operators and storage providers. It moves the FV",
+   "trust": 0.95,
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/v1.39.1",
+   "when": "2026-11-12"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-13",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "filecoin-project/lotus@miner/v1.39.1",
+   "last_seen": "2026-11-13",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-13",
+    "price_at_detect": 0.799444,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-11-13",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "FIL",
+   "title": "lotus miner/v1.39.1 — This Node and Miner patch release is recommended for all node operators and storage providers. It moves the FV",
+   "trust": 0.95,
+   "url": "https://github.com/filecoin-project/lotus/releases/tag/miner/v1.39.1",
+   "when": "2026-11-12"
+  },
+  {
    "event_date": "2026-11-16",
    "first_seen": "2026-11-10",
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -513,7 +579,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -542,7 +608,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0xd42b7b5115152c3377b3a598d1fd12f8e29c617bcebdc15859d46ce9f3154a00",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-11",
@@ -571,7 +637,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "anza-xyz/agave@v4.5.0-beta.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -600,7 +666,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@devnet-v1.84.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -629,7 +695,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "IntersectMBO/cardano-node@11.2.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -658,7 +724,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "snapshot:0xbb3a36f5149d731c9fd11c150634b9bf90f95e73b8ec85e88cd5541149c6a8b6",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -693,13 +759,15 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "anza-xyz/agave@v4.4.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-06",
     "price_at_detect": 105.14,
-    "score_at_detect": 19.2
+    "score_at_detect": 19.2,
+    "t7": 0.0,
+    "t7_at": "2026-11-13"
    },
    "score": 19.2,
    "source": "release",
@@ -722,7 +790,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "algorand/go-algorand@v5.1.0-beta",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -751,7 +819,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmos/gaia@v29.1.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -815,7 +883,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-11-06",
     "price_at_detect": 86.24,
-    "score_at_detect": 50.4
+    "score_at_detect": 50.4,
+    "t7": 0.0,
+    "t7_at": "2026-11-13"
    },
    "score": 17.3,
    "source": "news",
@@ -868,7 +938,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmos/gaia@v29.1.0-rc0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -899,7 +969,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "vechain/thor@v2.5.1-rc.2",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -958,7 +1028,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "ethereum/EIPs#12638",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-09",
@@ -1015,7 +1085,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0xed53c0264b1ca4ec8dbd658b7aca8dcbe0193747313099b1a3c4549d866ba41d",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-05",
@@ -1050,7 +1120,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1060",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
@@ -1117,7 +1187,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-11-06",
     "price_at_detect": 105.14,
-    "score_at_detect": 35.3
+    "score_at_detect": 35.3,
+    "t7": 0.0,
+    "t7_at": "2026-11-13"
    },
    "score": 12.1,
    "source": "news",
@@ -1230,7 +1302,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "news:algorand-mandates-node-operators-to-upgrade-to-algod-5-0-5-f",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-08",
@@ -1314,7 +1386,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "solana-foundation/solana-improvement-documents#713",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -1345,7 +1417,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "filecoin-project/FIPs#1303",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-04",
@@ -1376,7 +1448,7 @@
    "grade": "C",
    "impact": "SUPPLY",
    "key": "bnb-chain/bsc@v1.8.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1407,7 +1479,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.0.5-stable",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1438,7 +1510,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "near/nearcore@2.14.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1469,7 +1541,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "ethereum/go-ethereum@v1.17.10",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1531,7 +1603,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.4",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1562,7 +1634,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.78.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1593,7 +1665,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.77.3",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1626,7 +1698,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "XRPLF/rippled@3.4.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1659,7 +1731,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "bitcoin-cash-node/bitcoin-cash-node@v29.2.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1692,7 +1764,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.3",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1725,7 +1797,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "IntersectMBO/cardano-node@11.2.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1756,7 +1828,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1059",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-21",
@@ -1790,7 +1862,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1055",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-18",
@@ -1826,7 +1898,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v32.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1857,7 +1929,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v31.2",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1888,7 +1960,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.2",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1919,7 +1991,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ava-labs/avalanchego@v1.15.2",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1950,7 +2022,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ethereum/go-ethereum@v1.17.9",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1981,7 +2053,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v30.0.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2012,7 +2084,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v29.0.0",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2045,7 +2117,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.1",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2142,7 +2214,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-06",
@@ -2178,7 +2250,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1057",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -2214,7 +2286,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1054",
-   "last_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-11",
