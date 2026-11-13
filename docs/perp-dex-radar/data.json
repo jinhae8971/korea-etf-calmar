@@ -1,7 +1,64 @@
 {
- "generated_at": 1794573517,
+ "generated_at": 1794591701,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral and margin, and others. Most markets have the same weight.",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "c0fb4565c4a6",
+   "ref": {
+    "added": [
+     "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral and margin, and others. Most markets have the same weight."
+    ],
+    "name": "로빈후드 체인 포인트 안내",
+    "removed": 1,
+    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+   "ts": 1794591701,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "will-risex-launch-a-token-by-june-30-2027-20260708174012705",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "dad79ae9d3e5",
+   "ref": {
+    "url": "https://polymarket.com/market/will-risex-launch-a-token-by-june-30-2027-20260708174012705"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "polymarket",
+   "title": "Polymarket: Will RISEx launch a token by June 30, 2027? 26% → 55%",
+   "ts": 1794591701,
+   "venue": "risex",
+   "venue_name": "RISEx"
+  },
+  {
+   "detail": "0x073f5644 → 0x91d40e48",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "4b3793ade811",
+   "ref": {
+    "amount": 1318769.06,
+    "chain": "eth",
+    "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+    "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "tx": "0x6590f8d7d374b50fb2457e38c339cd55c47d054430a985499bc349992c6bd9a6"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.32M개 대량 이동",
+   "ts": 1794576311,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "W13, W14 (Nov 6 - Nov 19)",
    "family": "S2",
@@ -109,7 +166,10 @@
     "tx": "0x6a3d86a207a193b94ac3f921214865a981ec3e0bdd8a1214761fd09bb9eb4612"
    },
    "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
+   "refute_kind": "data",
+   "refute_reason": "이동한 LIT가 72시간 안에 원래 지갑으로 돌아왔어요",
+   "refuted": true,
+   "refuted_at": 1794591701,
    "signal": "eth_large",
    "title": "이더리움 LIT 1.41M개 대량 이동",
    "ts": 1794542387,
@@ -4755,54 +4815,6 @@
    "ts": 1792439853,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "a6a7070843f9",
-   "ref": {
-    "name": "detail"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: detail",
-   "ts": 1792439853,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "22524920d62a",
-   "ref": {
-    "name": "getPaidFees"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: getPaidFees",
-   "ts": 1792439853,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "19e6de7f34b0",
-   "ref": {
-    "name": "subscribeCandleForeground"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "화면 모듈 추가: subscribeCandleForeground",
-   "ts": 1792439853,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
@@ -4933,6 +4945,10 @@
   [
    1794573517,
    "d"
+  ],
+  [
+   1794591701,
+   "s"
   ]
  ],
  "venues": [
@@ -4991,38 +5007,38 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794573517,
-     "note": "18건",
+     "at": 1794591701,
+     "note": "19건",
      "ok": true
     }
    },
@@ -5034,6 +5050,45 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral and margin, and others. Most markets have the same weight.",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "c0fb4565c4a6",
+     "ref": {
+      "added": [
+       "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral and margin, and others. Most markets have the same weight."
+      ],
+      "name": "로빈후드 체인 포인트 안내",
+      "removed": 1,
+      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+     "ts": 1794591701,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x073f5644 → 0x91d40e48",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "4b3793ade811",
+     "ref": {
+      "amount": 1318769.06,
+      "chain": "eth",
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "tx": "0x6590f8d7d374b50fb2457e38c339cd55c47d054430a985499bc349992c6bd9a6"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.32M개 대량 이동",
+     "ts": 1794576311,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "W13, W14 (Nov 6 - Nov 19)",
      "family": "S2",
@@ -5090,25 +5145,6 @@
      "signal": "eth_large",
      "title": "이더리움 LIT 1.00M개 대량 이동",
      "ts": 1794563615,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "0x91d40e48 → 0x073f5644",
-     "family": "S1",
-     "grade": "WATCH",
-     "id": "440819f5b453",
-     "ref": {
-      "amount": 1414947.02,
-      "chain": "eth",
-      "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-      "to": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
-      "tx": "0x6a3d86a207a193b94ac3f921214865a981ec3e0bdd8a1214761fd09bb9eb4612"
-     },
-     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-     "refuted": false,
-     "signal": "eth_large",
-     "title": "이더리움 LIT 1.41M개 대량 이동",
-     "ts": 1794542387,
      "venue": "lighter-rh"
     },
     {
@@ -5374,36 +5410,11 @@
      "title": "공식 문서 목록 변경: 새 문서 1개 · 주소 이전 1개",
      "ts": 1794002913,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral, and others. Most markets have the same weight.",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "05d7da9427a8",
-     "ref": {
-      "added": [
-       "The live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral, and others. Most markets have the same weight."
-      ],
-      "name": "로빈후드 체인 포인트 안내",
-      "removed": 1,
-      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
-     "ts": 1793986106,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793507902,
-     243240.82,
-     57925.47
-    ],
     [
      1793509711,
      243247.92,
@@ -7398,6 +7409,11 @@
      1794573517,
      278180.147,
      67902.16
+    ],
+    [
+     1794591701,
+     298146.957,
+     72607.61
     ]
    ],
    "level": "WATCH",
@@ -7405,10 +7421,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793373610,
-     445570.1
-    ],
     [
      1793385590,
      445732.7
@@ -9192,62 +9204,66 @@
     [
      1794573517,
      457216.05
+    ],
+    [
+     1794591701,
+     457216.05
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794573517,
-     "note": "상위 10명 합계 278,180",
+     "at": 1794591701,
+     "note": "상위 10명 합계 298,147",
      "ok": true
     },
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794573517,
-     "note": "152블록 · 대량 0건",
+     "at": 1794591701,
+     "note": "1512블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "모듈 161 · API 148",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "75건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "457,216 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "14건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     }
@@ -9340,32 +9356,32 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 12% · 27년 6/30까지 19%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 12% · 27년 6/30까지 27%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     }
@@ -9644,27 +9660,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
-     "note": "34건",
+     "at": 1794591701,
+     "note": "32건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 15개",
      "ok": true
     },
     "telegram": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "21건",
      "ok": true
     }
@@ -9754,25 +9770,6 @@
      "title": "Polymarket: Will Variational launch a token by November 30, 2026? 2% → 18%",
      "ts": 1794418023,
      "venue": "variational"
-    },
-    {
-     "detail": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52WUwtUVVpemNZb0VXajl1bXFPMlVMWklsczZVOC1NamFoWERfUVR1SFJTaDh4UVRkcDhENDZoOS05dWhOejBwZXZhWVpva016YWM1UlBGLVB",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "d37d97c5e56c",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52WUwtUVVpemNZb0VXajl1bXFPMlVMWklsczZVOC1NamFoWERfUVR1SFJTaDh4UVRkcDhENDZoOS05dWhOejBwZXZhWVpva016YWM1UlBGLVBKLW9qbFJyaExyUERKLThseWlfS0ZoUURDMnU4R0E?oc=5",
-      "words": [
-       "Airdrop",
-       "Rewards"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: How to Participate in the Variational Airdrop and Earn VAR Crypto Rewards - CoinCodex",
-     "ts": 1793986106,
-     "venue": "variational"
     }
    ],
    "groups": [],
@@ -9781,37 +9778,37 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 4% · 12/31까지 70%",
+   "odds": "토큰 출시 확률 11/30까지 4% · 12/31까지 71%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "19건",
      "ok": true
     }
@@ -9855,32 +9852,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 30% · 27년 6/30까지 64%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 30% · 27년 6/30까지 58%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
-     "note": "9건",
+     "at": 1794591701,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     }
@@ -9921,27 +9918,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     }
@@ -9965,22 +9962,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "20건",
      "ok": true
     }
@@ -10026,17 +10023,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "9건",
      "ok": true
     }
@@ -10049,6 +10046,21 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "will-risex-launch-a-token-by-june-30-2027-20260708174012705",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "dad79ae9d3e5",
+     "ref": {
+      "url": "https://polymarket.com/market/will-risex-launch-a-token-by-june-30-2027-20260708174012705"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket: Will RISEx launch a token by June 30, 2027? 26% → 55%",
+     "ts": 1794591701,
+     "venue": "risex"
+    },
     {
      "detail": "/docs/risex/faq",
      "family": "S2",
@@ -10155,28 +10167,28 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 52% · 27년 12/31까지 74%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 55% · 27년 12/31까지 74%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794573517,
+     "at": 1794591701,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794573517,
-     "note": "19건",
+     "at": 1794591701,
+     "note": "17건",
      "ok": true
     }
    },
