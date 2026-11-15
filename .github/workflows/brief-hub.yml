@@ -11,6 +11,8 @@ name: Brief Hub
 # (@spytltgld_airdrop_bot)로 간다: PC의 airdrop-radar가 perp_dex_radar/data/latest.json의 outbox를 중계.
 # AI 크레딧 레이더(2026-11-13): 수집은 별도 레포 ai-credit-radar. 허브가 실행마다 docs/hub/latest.json·cds_measured.png 를
 # Contents API로 받아 ai_credit/data/ 에 두고(커밋 안 함) 화~토 08:10 이후 발송. 받기 실패 시 빈 스텁 → 4시간 뒤 지연 알림.
+# 주간 마감 리포트(2026-11-15): 매주 일요일 아침 Claude 예약작업이 weekly_close/data/stock.json·crypto.json outbox를 커밋하면
+# push로 허브가 깨어나 주식·크립토 2건(각각 차트 앨범 + 본문)을 보낸다. 전체 글은 docs/weekly-close/<week>/ (블로그형).
 on:
   schedule:
     - cron: "17 22,23,0-12 * * *"
@@ -19,7 +21,7 @@ on:
     types: [completed]
   push:
     branches: [main]
-    paths: [".github/workflows/brief-hub.yml", "us_close/data/latest.json"]
+    paths: [".github/workflows/brief-hub.yml", "us_close/data/latest.json", "weekly_close/data/stock.json", "weekly_close/data/crypto.json"]
   workflow_dispatch:
     inputs:
       dry_run:
@@ -135,6 +137,20 @@ jobs:
                 "path": "us_close/data/latest.json",
                 "mode": "outbox",
                 "why": "미증시 마감 브리핑(크로스에셋·섹터·대형주 히트맵·브레드스·기술적 확률) · 미국 거래일 다음날 07:40 KST · 사진 앨범 + 본문 · Claude 예약작업이 outbox를 커밋하면 push로 바로 발송 (2026-10-28)"
+              },
+              {
+                "id": "weekly_stock",
+                "name": "주간 마감 · 주식",
+                "path": "weekly_close/data/stock.json",
+                "mode": "outbox",
+                "why": "한 주 마감 리포트(주식): 글로벌 지수·섹터·종목·핵심 3가지·인사이트·다음 주 · 일요일 아침 · 사진 앨범 + 본문 + 블로그형 전체 글 (2026-11-15)"
+              },
+              {
+                "id": "weekly_crypto",
+                "name": "주간 마감 · 크립토",
+                "path": "weekly_close/data/crypto.json",
+                "mode": "outbox",
+                "why": "한 주 마감 리포트(크립토): 주요 코인·상위 100·심리·자금 흐름·인사이트·다음 주 · 일요일 아침 · 주식 메시지 다음 (2026-11-15)"
               }
             ]
           }
