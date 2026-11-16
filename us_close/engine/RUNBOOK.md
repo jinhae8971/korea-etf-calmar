@@ -54,7 +54,7 @@
 - 실패 시(SENT OK 없음)에만 SendUserMessage로 원인 한 줄 + 리포트 링크를 보낸다.
 - **복구**: /home/claude/market_brief가 없으면 korea-etf-calmar의 `us_close/engine/`(코드·런북·확률 기록·narrative, publish 때마다 백업)을 /home/claude/market_brief로 복사하고 `pip install --break-system-packages pandas numpy matplotlib`(없을 때만)
 - 클론이 없으면: `add_repo jinhae8971/korea-etf-calmar (push)` → `git clone --depth 1 https://github.com/jinhae8971/korea-etf-calmar /home/claude/korea-etf-calmar`.
-- 마지막으로 확률을 기록한다:
+- 확률 기록은 **publish 전에** 한다(publish가 state/probs_*를 repo 백업에 올리므로, 순서가 바뀌면 워크스페이스 리셋 때 직전 확률이 사라진다 — 11/17 실제 발생):
   `python3 /home/claude/market_brief/brief.py --record '{"session":"<session>","QQQ":{"short_up":N,"swing_up":N},"SPY":{...},"SOXX":{...},"DRAM":{...},"note":"..."}'`
 
 ## 5. 확률 산정 원칙 (QQQ·SPY·SOXX·DRAM)
