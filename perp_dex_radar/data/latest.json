@@ -1,5 +1,5 @@
 {
- "generated_at": 1794798513,
+ "generated_at": 1794800311,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -15,10 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1794713906,
-   "d"
-  ],
   [
    1794715710,
    "d"
@@ -142,6 +138,10 @@
   [
    1794798513,
    "d"
+  ],
+  [
+   1794800311,
+   "d"
   ]
  ],
  "status": {
@@ -149,23 +149,23 @@
    "api": true,
    "blog": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": true
+   "x:arcus_xyz": false
   },
   "extended": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:extendedapp": true
   },
   "hellotrade": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:hellotradeapp": true
+   "x:hellotradeapp": false
   },
   "lighter-rh": {
    "ann": true,
@@ -173,52 +173,52 @@
    "docs": true,
    "eth_transfers": true,
    "frontend": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "rh_supply": true,
    "rh_transfers": true,
    "x:Lighter_xyz": true,
-   "x:vnovakovski": true
+   "x:vnovakovski": false
   },
   "pacifica": {
    "ann": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:pacifica_fi": true
   },
   "qfex": {
    "docs": true,
    "feed": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:QFEX": true
+   "x:QFEX": false
   },
   "risex": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:risextrade": true
+   "x:risextrade": false
   },
   "titanx": {
    "docs": true,
-   "news": true,
-   "x:TitanExchange_": true
+   "news": false,
+   "x:TitanExchange_": false
   },
   "txflow": {
    "api_watch": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:TxFlow_L1": true
   },
   "variational": {
    "api_watch": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": true
+   "x:variational_io": false
   }
  },
  "undecidable": false
