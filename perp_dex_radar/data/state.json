@@ -5,18 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1794659909,
-   "d"
-  ],
-  [
-   1794672376,
-   "s"
-  ],
-  [
-   1794681961,
-   "s"
-  ],
-  [
    1794694111,
    "d"
   ],
@@ -263,6 +251,10 @@
   [
    1794832699,
    "d"
+  ],
+  [
+   1794858709,
+   "s"
   ]
  ],
  "scope": [
@@ -719,42 +711,43 @@
      "4f701ea37623",
      "dc58d58aac2d",
      "1272a25f923d",
-     "2a395a9a2fc9"
+     "2a395a9a2fc9",
+     "4eec45ea972d"
     ]
    },
    "status": {
     "api": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "18건",
      "ok": true
     }
@@ -1529,6 +1522,48 @@
      "title": "뉴스: XTEN/BRL Price: Convert Extended to Brazilian Real - Crypto.com",
      "ts": 1794632904,
      "venue": "extended"
+    },
+    {
+     "detail": "extended-fdv-above-50m-one-day-after-launch-1794847845750 · Yes 87.5%",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "86822b202f79",
+     "ref": {
+      "end": "2027-01-01T05:00:00Z",
+      "event": "extended-fdv-above-one-day-after-launch",
+      "slug": "extended-fdv-above-50m-one-day-after-launch-1794847845750",
+      "title": "Extended FDV above $50M one day after launch?",
+      "url": "https://polymarket.com/event/extended-fdv-above-50m-one-day-after-launch-1794847845750",
+      "volume": 0.0,
+      "yes_pct": 87.5
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket 새 시장: Extended FDV above $50M one day after launch?",
+     "ts": 1794858709,
+     "venue": "extended"
+    },
+    {
+     "detail": "extended-fdv-above-100m-one-day-after-launch-1794847845750 · Yes 69.5%",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "d7edbdcc1e41",
+     "ref": {
+      "end": "2027-01-01T05:00:00Z",
+      "event": "extended-fdv-above-one-day-after-launch",
+      "slug": "extended-fdv-above-100m-one-day-after-launch-1794847845750",
+      "title": "Extended FDV above $100M one day after launch?",
+      "url": "https://polymarket.com/event/extended-fdv-above-100m-one-day-after-launch-1794847845750",
+      "volume": 0.0,
+      "yes_pct": 69.5
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket 새 시장: Extended FDV above $100M one day after launch?",
+     "ts": 1794858709,
+     "venue": "extended"
     }
    ],
    "frontend": null,
@@ -1556,6 +1591,7 @@
     "206035205396",
     "20be8f6eeb73",
     "278f403265d0",
+    "2b2bd21e9ed5",
     "2b68f73dff6f",
     "2beb9c29d368",
     "2ef50f856d79",
@@ -1662,10 +1698,6 @@
    ],
    "odds": {
     "extended-fdv-above-150m-one-day-after-launch-452": [
-     [
-      1793645429,
-      78.5
-     ],
      [
       1793657302,
       79.5
@@ -2077,13 +2109,13 @@
      [
       1794820104,
       49.0
+     ],
+     [
+      1794858709,
+      53.5
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
-     [
-      1793645429,
-      4.5
-     ],
      [
       1793660926,
       4.3
@@ -2379,17 +2411,13 @@
      [
       1794825513,
       3.1
+     ],
+     [
+      1794858709,
+      3.2
      ]
     ],
     "extended-fdv-above-2b-one-day-after-launch-692-597-187": [
-     [
-      1793623105,
-      1.7
-     ],
-     [
-      1793645429,
-      2.3
-     ],
      [
       1793657302,
       2.4
@@ -2741,13 +2769,13 @@
      [
       1794828855,
       1.2
+     ],
+     [
+      1794858709,
+      1.2
      ]
     ],
     "extended-fdv-above-300m-one-day-after-launch-351-333": [
-     [
-      1793645429,
-      33.5
-     ],
      [
       1793658129,
       32.5
@@ -3179,13 +3207,13 @@
      [
       1794832699,
       14.5
+     ],
+     [
+      1794858709,
+      14.5
      ]
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
-     [
-      1793645429,
-      2.2
-     ],
      [
       1793668106,
       2.2
@@ -3409,13 +3437,13 @@
      [
       1794828855,
       0.9
+     ],
+     [
+      1794858709,
+      0.9
      ]
     ],
     "extended-fdv-above-500m-one-day-after-launch-711-975-248": [
-     [
-      1793645429,
-      16.5
-     ],
      [
       1793657302,
       13.5
@@ -3667,13 +3695,13 @@
      [
       1794821648,
       5.5
+     ],
+     [
+      1794858709,
+      4.5
      ]
     ],
     "extended-fdv-above-800m-one-day-after-launch-299-255-178": [
-     [
-      1793645429,
-      6.5
-     ],
      [
       1793668106,
       6.5
@@ -3985,13 +4013,13 @@
      [
       1794830905,
       3.2
+     ],
+     [
+      1794858709,
+      3.2
      ]
     ],
     "extended-listed-on-binance-within-30-days-of-tge": [
-     [
-      1793645429,
-      17.5
-     ],
      [
       1793657302,
       10.5
@@ -4223,13 +4251,13 @@
      [
       1794830905,
       5.6
+     ],
+     [
+      1794858709,
+      5.7
      ]
     ],
     "extended-listed-on-bybit-within-30-days-of-tge": [
-     [
-      1794101060,
-      46.5
-     ],
      [
       1794103707,
       45.0
@@ -5025,17 +5053,13 @@
      [
       1794830905,
       62.5
+     ],
+     [
+      1794858709,
+      58.5
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
-     [
-      1793623105,
-      51.5
-     ],
-     [
-      1793645429,
-      50.5
-     ],
      [
       1793657302,
       48.5
@@ -5327,13 +5351,13 @@
      [
       1794832699,
       40.0
+     ],
+     [
+      1794858709,
+      38.5
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
-     [
-      1793927314,
-      71.0
-     ],
      [
       1793930913,
       70.5
@@ -6129,13 +6153,13 @@
      [
       1794832699,
       51.5
+     ],
+     [
+      1794858709,
+      56.5
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
-     [
-      1793645429,
-      28.0
-     ],
      [
       1793657302,
       33.0
@@ -6627,13 +6651,13 @@
      [
       1794832699,
       28.5
+     ],
+     [
+      1794858709,
+      28.5
      ]
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
-     [
-      1793645429,
-      33.5
-     ],
      [
       1793657302,
       32.5
@@ -6961,13 +6985,13 @@
      [
       1794827312,
       17.5
+     ],
+     [
+      1794858709,
+      13.0
      ]
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
-     [
-      1793645429,
-      31.5
-     ],
      [
       1793668106,
       31.5
@@ -7607,17 +7631,13 @@
      [
       1794830905,
       25.5
+     ],
+     [
+      1794858709,
+      26.0
      ]
     ],
     "will-extended-launch-a-token-by-december-31-2026": [
-     [
-      1793623105,
-      93.0
-     ],
-     [
-      1793645429,
-      92.5
-     ],
      [
       1793657302,
       94.8
@@ -8153,6 +8173,10 @@
      [
       1794821648,
       94.5
+     ],
+     [
+      1794858709,
+      94.1
      ]
     ]
    },
@@ -8174,12 +8198,14 @@
     "will-extended-launch-a-token-by-december-31-2026": "Will Extended launch a token by December 31 2026?"
    },
    "pm_seen": [
+    "extended-fdv-above-100m-one-day-after-launch-1794847845750",
     "extended-fdv-above-150m-one-day-after-launch-452",
     "extended-fdv-above-1b-one-day-after-launch-166-135-747",
     "extended-fdv-above-2b-one-day-after-launch-692-597-187",
     "extended-fdv-above-300m-one-day-after-launch-351-333",
     "extended-fdv-above-3b-one-day-after-launch-437-271-658",
     "extended-fdv-above-500m-one-day-after-launch-711-975-248",
+    "extended-fdv-above-50m-one-day-after-launch-1794847845750",
     "extended-fdv-above-800m-one-day-after-launch-299-255-178",
     "extended-listed-on-binance-within-30-days-of-tge",
     "extended-listed-on-bybit-within-30-days-of-tge",
@@ -8299,27 +8325,27 @@
    },
    "status": {
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
-     "note": "33건",
+     "at": 1794858709,
+     "note": "32건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
-     "note": "열린 시장 15개",
+     "at": 1794858709,
+     "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "21건",
      "ok": true
     }
@@ -8468,27 +8494,28 @@
      "1766ed941357",
      "14c23ccc04e9",
      "8de24430033c",
-     "d46971d85e1c"
+     "d46971d85e1c",
+     "34323d26c963"
     ]
    },
    "status": {
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "20건",
      "ok": true
     }
@@ -8601,7 +8628,7 @@
      "tags": []
     },
     "0x2c9dfa068db78063401507075312739ff03a6c13": {
-     "_at": 1793300371,
+     "_at": 1794858709,
      "addr": "0x2c9dfa068db78063401507075312739ff03a6c13",
      "created_ts": null,
      "is_contract": false,
@@ -8696,6 +8723,14 @@
      "name": "",
      "tags": []
     },
+    "0x6b20b8f8cd932ec25cbf0459640c2dd424631f2b": {
+     "_at": 1794858709,
+     "addr": "0x6b20b8f8cd932ec25cbf0459640c2dd424631f2b",
+     "created_ts": null,
+     "is_contract": false,
+     "name": "",
+     "tags": []
+    },
     "0x7d328f5d5f4640f81b2f93d2903ec0a6c030eed6": {
      "_at": 1793657302,
      "addr": "0x7d328f5d5f4640f81b2f93d2903ec0a6c030eed6",
@@ -8715,6 +8750,14 @@
     "0x841ed663f2636863d40be4ee76243377dff13a34": {
      "_at": 1793398113,
      "addr": "0x841ed663f2636863d40be4ee76243377dff13a34",
+     "created_ts": null,
+     "is_contract": false,
+     "name": "",
+     "tags": []
+    },
+    "0x8dd38a4fba5f3bc1da0f2fb209d08770aa57886d": {
+     "_at": 1794858709,
+     "addr": "0x8dd38a4fba5f3bc1da0f2fb209d08770aa57886d",
      "created_ts": null,
      "is_contract": false,
      "name": "",
@@ -8776,6 +8819,14 @@
      "name": "",
      "tags": []
     },
+    "0xb135faa59ab685f3c70765f66956ac1cb276f7ae": {
+     "_at": 1794858709,
+     "addr": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
+     "created_ts": null,
+     "is_contract": false,
+     "name": "",
+     "tags": []
+    },
     "0xb829e684df8e31b402a4d4aedf3bbc18a52e7589": {
      "_at": 1794563913,
      "addr": "0xb829e684df8e31b402a4d4aedf3bbc18a52e7589",
@@ -8801,7 +8852,7 @@
      "tags": []
     },
     "0xcd531ae9efcce479654c4926dec5f6209531ca7b": {
-     "_at": 1793287952,
+     "_at": 1794858709,
      "addr": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
      "created_ts": null,
      "is_contract": false,
@@ -8839,14 +8890,22 @@
      "is_contract": false,
      "name": "",
      "tags": []
+    },
+    "0xfc30b24c49e8ac26777d31a4517fb378b57bda97": {
+     "_at": 1794858709,
+     "addr": "0xfc30b24c49e8ac26777d31a4517fb378b57bda97",
+     "created_ts": null,
+     "is_contract": false,
+     "name": "",
+     "tags": []
     }
    },
    "api_drop": null,
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26427639,
-    "rh": 115766886
+    "eth": 26429796,
+    "rh": 116018008
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -11774,7 +11833,10 @@
       "tx": "0x8944a733b92c836a9b0cf48d04bbdc9d45ac6a822ddc41c9614e2ab725516eff"
      },
      "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-     "refuted": false,
+     "refute_kind": "data",
+     "refute_reason": "이동한 LIT가 72시간 안에 원래 지갑으로 돌아왔어요",
+     "refuted": true,
+     "refuted_at": 1794858709,
      "signal": "eth_large",
      "title": "이더리움 LIT 1.69M개 대량 이동",
      "ts": 1794801515,
@@ -11831,6 +11893,139 @@
      "signal": "eth_large",
      "title": "이더리움 LIT 1.00M개 대량 이동",
      "ts": 1794818315,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x073f5644 → 0x91d40e48",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "957315675a1d",
+     "ref": {
+      "amount": 1541395.45,
+      "chain": "eth",
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "tx": "0xff51edad5f3db6b4e71225ae3019ad6813510f7ac8bb2f4333a9e5fdcab6dbb4"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.54M개 대량 이동",
+     "ts": 1794836555,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x2c9dfa06 → 0xcd531ae9",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "88475f48f1e0",
+     "ref": {
+      "amount": 1430288.04,
+      "chain": "eth",
+      "from": "0x2c9dfa068db78063401507075312739ff03a6c13",
+      "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "tx": "0x656d590a7ace10a5523cf13bf61fe871191a4a24d7629f0a10df10a84fe35b7a"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.43M개 대량 이동",
+     "ts": 1794847451,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0xcd531ae9 → 0x8dd38a4f",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "e7573b8e3b08",
+     "ref": {
+      "amount": 1559863.0,
+      "chain": "eth",
+      "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "to": "0x8dd38a4fba5f3bc1da0f2fb209d08770aa57886d",
+      "tx": "0xd2509168117c0297c5e76ec380ded20200a6800e3381ab22d7264be82a239dd1"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.56M개 대량 이동",
+     "ts": 1794847475,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0xb135faa5 → 0xcd531ae9",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "274c3de175a0",
+     "ref": {
+      "amount": 1313910.3,
+      "chain": "eth",
+      "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
+      "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "tx": "0x9b89b715f1106ebc2edb6e8b850bca93d17ca7c5b9b89505dd65b2721228835c"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.31M개 대량 이동",
+     "ts": 1794848651,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0xcd531ae9 → 0xfc30b24c",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "bd28254d69c5",
+     "ref": {
+      "amount": 1549593.3,
+      "chain": "eth",
+      "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "to": "0xfc30b24c49e8ac26777d31a4517fb378b57bda97",
+      "tx": "0xc8f1dd96960d01307522fc1a95498e7216a320d8dc1fc1add67be1a869a625e5"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.55M개 대량 이동",
+     "ts": 1794848675,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0xb135faa5 → 0xcd531ae9",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "9831d4bbe067",
+     "ref": {
+      "amount": 1539342.42,
+      "chain": "eth",
+      "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
+      "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "tx": "0xc7f54973a8a7c163e1dc18217686df1606360084595bc560f511103589881704"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.54M개 대량 이동",
+     "ts": 1794851651,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0xcd531ae9 → 0x6b20b8f8",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "e61599365cf3",
+     "ref": {
+      "amount": 1539323.6,
+      "chain": "eth",
+      "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "to": "0x6b20b8f8cd932ec25cbf0459640c2dd424631f2b",
+      "tx": "0x9d795a829bb4551e9e4b07da7e318f3609b90e78427df900bf482ec301d9d1c5"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.54M개 대량 이동",
+     "ts": 1794851711,
      "venue": "lighter-rh"
     }
    ],
@@ -12167,14 +12362,6 @@
    "js": null,
    "large_hist": [
     {
-     "amount": 2934340.25,
-     "block": 26377396,
-     "from": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
-     "to": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
-     "ts": 1794228035,
-     "tx": "0x15af90a27011f3954533a77c119b5b067477291073530b6fcafcb7d48d265182"
-    },
-    {
      "amount": 1517999.44,
      "block": 26379680,
      "from": "0x3b4d794a66304f130a4db8f2551b0070dfcf5ca7",
@@ -12309,14 +12496,65 @@
      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
      "ts": 1794818315,
      "tx": "0x242ca28eec7fbd8905e0e0e2cd28ffbbd209d7edb05af51a1ad3a819bdd15662"
+    },
+    {
+     "amount": 1541395.45,
+     "block": 26427962,
+     "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+     "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+     "ts": 1794836555,
+     "tx": "0xff51edad5f3db6b4e71225ae3019ad6813510f7ac8bb2f4333a9e5fdcab6dbb4"
+    },
+    {
+     "amount": 1430288.04,
+     "block": 26428864,
+     "from": "0x2c9dfa068db78063401507075312739ff03a6c13",
+     "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+     "ts": 1794847451,
+     "tx": "0x656d590a7ace10a5523cf13bf61fe871191a4a24d7629f0a10df10a84fe35b7a"
+    },
+    {
+     "amount": 1559863.0,
+     "block": 26428866,
+     "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+     "to": "0x8dd38a4fba5f3bc1da0f2fb209d08770aa57886d",
+     "ts": 1794847475,
+     "tx": "0xd2509168117c0297c5e76ec380ded20200a6800e3381ab22d7264be82a239dd1"
+    },
+    {
+     "amount": 1313910.3,
+     "block": 26428963,
+     "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
+     "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+     "ts": 1794848651,
+     "tx": "0x9b89b715f1106ebc2edb6e8b850bca93d17ca7c5b9b89505dd65b2721228835c"
+    },
+    {
+     "amount": 1549593.3,
+     "block": 26428965,
+     "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+     "to": "0xfc30b24c49e8ac26777d31a4517fb378b57bda97",
+     "ts": 1794848675,
+     "tx": "0xc8f1dd96960d01307522fc1a95498e7216a320d8dc1fc1add67be1a869a625e5"
+    },
+    {
+     "amount": 1539342.42,
+     "block": 26429213,
+     "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
+     "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+     "ts": 1794851651,
+     "tx": "0xc7f54973a8a7c163e1dc18217686df1606360084595bc560f511103589881704"
+    },
+    {
+     "amount": 1539323.6,
+     "block": 26429218,
+     "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+     "to": "0x6b20b8f8cd932ec25cbf0459640c2dd424631f2b",
+     "ts": 1794851711,
+     "tx": "0x9d795a829bb4551e9e4b07da7e318f3609b90e78427df900bf482ec301d9d1c5"
     }
    ],
    "lb_hist": [
-    [
-     1791027665,
-     150181.142,
-     36346.414
-    ],
     [
      1791044365,
      150306.466,
@@ -16311,6 +16549,11 @@
      1794832699,
      301855.171,
      73982.79
+    ],
+    [
+     1794858709,
+     302279.371,
+     74156.99
     ]
    ],
    "level": "WATCH",
@@ -16570,6 +16813,7 @@
     "ed30621eea45",
     "ed5228624773",
     "ed76c710715d",
+    "ee622392071a",
     "eecfe3e27d59",
     "eee7b21705bc",
     "efb35b0ed012",
@@ -16603,14 +16847,6 @@
    "odds_titles": {},
    "pm_seen": [],
    "rh_supply_hist": [
-    [
-     1793623105,
-     448369.56
-    ],
-    [
-     1793645429,
-     448369.56
-    ],
     [
      1793657302,
      448369.56
@@ -18394,6 +18630,10 @@
     [
      1794832699,
      489195.03
+    ],
+    [
+     1794858709,
+     490194.96
     ]
    ],
    "seeded": true,
@@ -18494,7 +18734,10 @@
      "f06942f0f397",
      "91138f6ad6f0",
      "1cef0e5a9827",
-     "2ba09ed0fc47"
+     "2ba09ed0fc47",
+     "c7dcc405d6ca",
+     "32df4dafd025",
+     "55c2c11a530a"
     ],
     "x:vnovakovski": [
      "954280aa62a6",
@@ -18521,62 +18764,63 @@
      "260f7dbe18e6",
      "920ccafba05b",
      "164296d69493",
-     "a654c05ead52"
+     "a654c05ead52",
+     "bb2b8b6a2e84"
     ]
    },
    "status": {
     "ann": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794832699,
-     "note": "상위 10명 합계 301,855",
+     "at": 1794858709,
+     "note": "상위 10명 합계 302,279",
      "ok": true
     },
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794832699,
-     "note": "150블록 · 대량 0건",
+     "at": 1794858709,
+     "note": "2157블록 · 대량 7건",
      "ok": true
     },
     "frontend": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "모듈 161 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
-     "note": "77건",
+     "at": 1794858709,
+     "note": "84건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794832699,
-     "note": "489,195 LIT",
+     "at": 1794858709,
+     "note": "490,195 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794832699,
-     "note": "14건",
+     "at": 1794858709,
+     "note": "17건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "20건",
      "ok": true
     }
@@ -19009,14 +19253,6 @@
    "notified_ids": [],
    "odds": {
     "pacifica-fdv-above-100m-one-day-after-launch": [
-     [
-      1793623105,
-      9.7
-     ],
-     [
-      1793645429,
-      9.2
-     ],
      [
       1793657302,
       9.3
@@ -19692,17 +19928,13 @@
      [
       1794830905,
       7.4
+     ],
+     [
+      1794858709,
+      7.4
      ]
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
-     [
-      1793623105,
-      3.2
-     ],
-     [
-      1793645429,
-      3.0
-     ],
      [
       1793657302,
       3.6
@@ -19954,17 +20186,13 @@
      [
       1794830905,
       0.6
+     ],
+     [
+      1794858709,
+      0.6
      ]
     ],
     "pacifica-fdv-above-200m-one-day-after-launch": [
-     [
-      1793623105,
-      10.9
-     ],
-     [
-      1793645429,
-      8.9
-     ],
      [
       1793657302,
       9.5
@@ -20608,13 +20836,13 @@
      [
       1794825513,
       5.8
+     ],
+     [
+      1794858709,
+      5.9
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
-     [
-      1793645429,
-      4.2
-     ],
      [
       1793657302,
       4.3
@@ -21098,13 +21326,13 @@
      [
       1794827312,
       1.4
+     ],
+     [
+      1794858709,
+      1.2
      ]
     ],
     "pacifica-fdv-above-300m-one-day-after-launch-488": [
-     [
-      1793645429,
-      4.8
-     ],
      [
       1793668106,
       4.8
@@ -21420,17 +21648,13 @@
      [
       1794827312,
       2.2
+     ],
+     [
+      1794858709,
+      2.2
      ]
     ],
     "pacifica-fdv-above-3b-one-day-after-launch-755-395": [
-     [
-      1793623105,
-      1.5
-     ],
-     [
-      1793645429,
-      1.8
-     ],
      [
       1793657302,
       1.6
@@ -21802,17 +22026,13 @@
      [
       1794814708,
       0.8
+     ],
+     [
+      1794858709,
+      0.8
      ]
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
-     [
-      1793623105,
-      4.5
-     ],
-     [
-      1793645429,
-      4.5
-     ],
      [
       1793657302,
       4.3
@@ -22100,13 +22320,13 @@
      [
       1794827312,
       2.6
+     ],
+     [
+      1794858709,
+      2.6
      ]
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
-     [
-      1793645429,
-      15.5
-     ],
      [
       1793668106,
       15.5
@@ -22534,13 +22754,13 @@
      [
       1794825513,
       12.5
+     ],
+     [
+      1794858709,
+      15.0
      ]
     ],
     "pacifica-fdv-above-800m-one-day-after-launch-685-634": [
-     [
-      1793645429,
-      4.8
-     ],
      [
       1793668106,
       4.8
@@ -22808,17 +23028,13 @@
      [
       1794827312,
       3.4
+     ],
+     [
+      1794858709,
+      3.4
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
-     [
-      1793623105,
-      15.0
-     ],
-     [
-      1793645429,
-      16.0
-     ],
      [
       1793657302,
       14.0
@@ -23166,17 +23382,13 @@
      [
       1794827312,
       12.5
+     ],
+     [
+      1794858709,
+      12.5
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2027": [
-     [
-      1793623105,
-      59.5
-     ],
-     [
-      1793645429,
-      60.0
-     ],
      [
       1793668106,
       60.0
@@ -23748,13 +23960,13 @@
      [
       1794827312,
       65.0
+     ],
+     [
+      1794858709,
+      65.0
      ]
     ],
     "will-pacifica-launch-a-token-by-june-30-2027": [
-     [
-      1793968704,
-      71.5
-     ],
      [
       1793995131,
       65.0
@@ -24550,13 +24762,13 @@
      [
       1794814708,
       43.5
+     ],
+     [
+      1794858709,
+      43.5
      ]
     ],
     "will-pacifica-launch-a-token-by-march-31-2027": [
-     [
-      1793645429,
-      49.0
-     ],
      [
       1793668106,
       49.0
@@ -24812,6 +25024,10 @@
      [
       1794825513,
       29.5
+     ],
+     [
+      1794858709,
+      29.5
      ]
     ]
    },
@@ -24968,32 +25184,34 @@
      "3816e005dd5c",
      "8e74cff80250",
      "2b3ad1f65a28",
-     "893e9259bd3c"
+     "893e9259bd3c",
+     "b33f32720f3d",
+     "2a2eabf2ab96"
     ]
    },
    "status": {
     "ann": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
-     "note": "10건",
+     "at": 1794858709,
+     "note": "9건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "20건",
      "ok": true
     }
@@ -25008,9 +25226,9 @@
    "doc_moves": {},
    "docs": {
     "https://docs.qfex.com/llms.txt": {
-     "changed": 1794398912,
-     "hash": "a2460de49d89a5c3",
-     "text": "# QFEX API Documentation\n\n## Latest\n\n### QFEX\n\n#### Intro\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n- [Market Makers](https://docs.qfex.com/qfex/market-makers.md): Institutional connectivity enquiries\n- [FAQ](https://docs.qfex.com/qfex/faq.md): Frequently Asked Questions\n\n#### Getting Started\n\n##### Account Funding\n\n- [Bank Transfer](https://docs.qfex.com/qfex/bank-transfer.md): Pay via Bank Transfer\n- [Stablecoins](https://docs.qfex.com/qfex/stablecoins.md): Pay via Stablecoins\n\n#### Community\n\n- [Builder Codes](https://docs.qfex.com/qfex/builder-code.md): Create a builder code, integrate QFEX trading, and earn builder rewards\n- [Referral and Affiliate Program](https://docs.qfex.com/qfex/referral.md): Two commission programs: open referrals and approved affiliates\n\n#### Strategies\n\n- [Quantitative Managed Account](https://docs.qfex.com/qfex/managed-account.md): The invite-only Quantitative Managed Account offers systematic market-neutral trading for eligible high-volume QFEX traders.\n- [Agentic Trading](https://docs.qfex.com/qfex/agentic-trading.md): Use AI agents to research markets, manage positions, and trade on QFEX.\n\n#### Trading Rulebook\n\n- [Definitions and Formulae](https://docs.qfex.com/qfex/definitions.md): Common Terms Used in the Rulebook\n- [Exchange](https://docs.qfex.com/qfex/architecture.md): Technical Description of the Exchange\n- [Order Entry](https://docs.qfex.com/qfex/order-types.md): Supported Order Types and Times in Force\n- [Contract Specifications](https://docs.qfex.com/qfex/contract-specifications.md): Perpetual Futures Adapted for Traditional Assets\n- [Pre-IPO Stock Perpetuals](https://docs.qfex.com/qfex/pre-ipo-stocks.md): How QFEX prices, funds, and adjusts perpetuals referencing companies before an IPO.\n- [Specification Index](https://docs.qfex.com/qfex/specification-index.md): A consolidated view of active QFEX production contract, execution, session, and risk parameters.\n- [Roll Schedules](https://docs.qfex.com/qfex/roll-schedules.md): Published dated-futures contracts and roll boundaries used by QFEX oracle pricing.\n- [Funding](https://docs.qfex.com/qfex/funding.md): When funding is active, why it can be zero, and how rates are computed.\n- [Risk Limits](https://docs.qfex.com/qfex/risk-limits.md): Stay Safe\n- [Margin and Liquidations](https://docs.qfex.com/qfex/liquidation-margin-call.md): A Detailed Description of the Liquidation Cascade\n- [Corporate Actions](https://docs.qfex.com/qfex/corporate-actions.md): QFEX Policy on Equity Corporate Actions\n- [Fees](https://docs.qfex.com/qfex/fees.md)\n- [Subaccounts](https://docs.qfex.com/qfex/subaccounts.md): Separate your margin and risk\n\n#### Glossary\n\n- [Blocked Countries and Restrictions](https://docs.qfex.com/qfex/prohibited-jurisdictions.md)\n\n### API Reference\n\n#### API Documentation\n\n- [Introduction](https://docs.qfex.com/api-reference/introduction.md)\n- [API versioning](https://docs.qfex.com/api-reference/versioning.md): Select a REST API contract and pin the request and response format for your integration.\n- [Account execution history](https://docs.qfex.com/api-reference/executions.md): Retrieve funding payments, fee rebates and referral rewards, and use the correct timestamp formats.\n- [API Keys](https://docs.qfex.com/api-reference/api-keys.md): Create and securely use account-scoped API keys with granular permissions.\n- [Wallet authentication](https://docs.qfex.com/api-reference/wallet-authentication.md): Sign up or sign in to QFEX programmatically with an Ethereum wallet and use the resulting session.\n- [Programmatic deposits and withdrawals](https://docs.qfex.com/api-reference/programmatic-funding.md): Fund a QFEX account and request crypto or USD withdrawals with the REST API.\n- [CLI](https://docs.qfex.com/api-reference/cli.md): JSON-native command-line access to QFEX market data, trading, and account state.\n- [Enums](https://docs.qfex.com/api-reference/enums.md)\n- [Errors](https://docs.qfex.com/websocket/errors.md)\n- [API Rate Limits](https://docs.qfex.com/websocket/rate.md): This page explains how request throttling works on our **WebSocket trading API**. If you’re writing a client, read this to avoid `RateLimited` errors.\n- [Changelog](https://docs.qfex.com/websocket/changelog.md): Product updates and announcements\n\n#### Builder Codes\n\n- [Builder Integration Guide](https://docs.qfex.com/api-reference/builder-integration.md): Choose OAuth or wallet-signed trading keys to onboard users and attribute their trading to your builder code\n- [Builder wallet registration](https://docs.qfex.com/api-reference/builder-wallet-registration.md): Use a wallet signature to create a main-account trading key for a builder's users.\n- [Builder Codes API](https://docs.qfex.com/api-reference/builder-codes.md): Create and retrieve builder codes, attach them to Trade WebSocket sessions, and read builder rewards\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n#### Funding API\n\n##### funding\n\n- [Get a crypto deposit address](https://docs.qfex.com/api-reference/funding/funding/get-a-crypto-deposit-address.md): API keys require view_balance. Returns the existing deposit address or provisions one on the first call without rotating an existing address. ARBITRUM_ONE deposits USDC; TRON deposits USDT. POST /address/rotate requires deposit_withdraw.\n- [List registered crypto withdrawal addresses](https://docs.qfex.com/api-reference/funding/funding/list-registered-crypto-withdrawal-addresses.md): API keys require view_balance. Returns all crypto withdrawal addresses registered by the authenticated user across networks. The user is resolved from authentication; no user-ID query parameter is used. This endpoint does not register, change, or delete addresses.\n- [Request a crypto withdrawal to a registered address](https://docs.qfex.com/api-reference/funding/funding/request-a-crypto-withdrawal-to-a-registered-address.md): Standard API keys require deposit_withdraw. Keys issued or replaced through POST /builder/web3/api-key also support crypto withdrawals to registered destinations when the user owns the selected account. This builder access is not selectable in Developer Settings. Every withdrawal, including all API…\n\n#### WebSocket\n\n- [Websocket Overview](https://docs.qfex.com/websocket/main.md)\n- [Trade Playground](https://docs.qfex.com/websocket/trade.md): Single channel for order commands, positions, balances, fills\n- [MDS Playground](https://docs.qfex.com/websocket/mds.md): Single channel for orderbook, trades, candles\n\n##### Market Data\n\n- [Reference Data](https://docs.qfex.com/websocket/channels/mds/refdata.md)\n- [Pulsed Order Book](https://docs.qfex.com/websocket/channels/mds/orderbook.md)\n- [Public Trades](https://docs.qfex.com/websocket/channels/mds/trades.md)\n- [Pulsed BBO](https://docs.qfex.com/websocket/channels/mds/bbo.md)\n- [Underlier Price](https://docs.qfex.com/websocket/channels/mds/underlier.md)\n- [Funding Rate](https://docs.qfex.com/websocket/channels/mds/funding_rate.md)\n- [Mark Price](https://docs.qfex.com/websocket/channels/mds/mark_price.md)\n- [Open Interest](https://docs.qfex.com/websocket/channels/mds/open_interest.md)\n- [Minmax Price](https://docs.qfex.com/websocket/channels/mds/minmax_price.md)\n- [Market Stats](https://docs.qfex.com/websocket/channels/mds/market_stats.md): Consolidated BBO, mark price, open interest, funding, and rolling 24-hour volume snapshots.\n\n##### Trade\n\n- [Authenticate](https://docs.qfex.com/websocket/channels/trade/authenticate.md)\n- [Subscribe — Order Responses](https://docs.qfex.com/websocket/channels/trade/order.md)\n- [Subscribe — Fills](https://docs.qfex.com/websocket/channels/trade/fills.md)\n- [Order Entry — Add Order](https://docs.qfex.com/websocket/channels/trade/add_order.md)\n- [Order Entry — Cancel Order](https://docs.qfex.com/websocket/channels/trade/cancel_order.md)\n- [Order Entry — Modify Order](https://docs.qfex.com/websocket/channels/trade/modify_order.md)\n- [Cancel All Orders](https://docs.qfex.com/websocket/channels/trade/cancel_all_orders.md)\n- [Order Entry — Close Position](https://docs.qfex.com/websocket/channels/trade/close_position.md)\n- [Order Entry — Add TWAP](https://docs.qfex.com/websocket/channels/trade/add_twap.md)\n- [Get User Orders](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md)\n- [Get Order](https://docs.qfex.com/websocket/channels/trade/get_order.md)\n- [Get User Trades](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md)\n- [Subscribe — Balances](https://docs.qfex.com/websocket/channels/trade/balance.md)\n- [Subscribe — Positions](https://docs.qfex.com/websocket/channels/trade/positions.md)\n- [Get Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_leverage.md)\n- [Get Available Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_available_leverage.md)\n- [Set Leverage](https://docs.qfex.com/websocket/channels/trade/set_leverage.md)\n- [Cancel On Disconnect](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md)\n- [Order Entry — Add Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md)\n- [Order Entry — Cancel Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md)\n- [Order Entry — Modify Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md)\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n- [Privacy Policy](https://docs.qfex.com/legal/privacy-policy.md): Last Updated: 6 October 2026\n- [Cookie Policy](https://docs.qfex.com/legal/cookie-policy.md): Last Updated: 28 November 2025\n- [Bug Bounty](https://docs.qfex.com/legal/bug-bounty.md)\n\n## 2026-10-29\n\n### QFEX\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n\n### API Reference\n\n#### Contract guide\n\n- [REST API: 2026-10-29](https://docs.qfex.com/api-reference/versions/2026-10-29.md): Use the published 2026-10-29 request and response contract.\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/2026-10-29/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/2026-10-29/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/2026-10-29/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/2026-10-29/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n\n## OpenAPI Specs\n\n- [openapi](https://api.qfex.com/openapi.yaml)\n- [funding-openapi](/api-reference/funding-openapi.yaml)\n- [openapi](https://api.qfex.com/contracts/2026-10-29/openapi.yaml)\n\n## AsyncAPI Specs\n\n- [trade](/websocket/trade.yaml)\n- [mds](/websocket/mds.yaml)\n- [asyncapi](/docs/websocket/asyncapi.yaml)\n- [mds](/docs/websocket/mds.yaml)\n- [trade](/docs/websocket/trade.yaml)\n\n## Optional\n\n- [Status / 运行状态](https://status.qfex.com)\n\n> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.\n\n## Indexes\n\n- [Chinese (165 pages)](https://docs.qfex.com/_llms/cn.txt): Latest, 2026-10-29.",
+     "changed": 1794858709,
+     "hash": "7eda9dae3fa0b60c",
+     "text": "# QFEX API Documentation\n\n## Latest\n\n### QFEX\n\n#### Intro\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n- [Market Makers](https://docs.qfex.com/qfex/market-makers.md): Institutional connectivity enquiries\n- [FAQ](https://docs.qfex.com/qfex/faq.md): Frequently Asked Questions\n\n#### Getting Started\n\n##### Account Funding\n\n- [Bank Transfer](https://docs.qfex.com/qfex/bank-transfer.md): Pay via Bank Transfer\n- [Stablecoins](https://docs.qfex.com/qfex/stablecoins.md): Pay via Stablecoins\n\n#### Community\n\n- [Builder Codes](https://docs.qfex.com/qfex/builder-code.md): Create a builder code, integrate QFEX trading, and earn builder rewards\n- [Referral and Affiliate Program](https://docs.qfex.com/qfex/referral.md): Two commission programs: open referrals and approved affiliates\n\n#### Strategies\n\n- [Quantitative Managed Account](https://docs.qfex.com/qfex/managed-account.md): The invite-only Quantitative Managed Account offers systematic market-neutral trading for eligible high-volume QFEX traders.\n- [Agentic Trading](https://docs.qfex.com/qfex/agentic-trading.md): Use AI agents to research markets, manage positions, and trade on QFEX.\n\n#### Trading Rulebook\n\n- [Definitions and Formulae](https://docs.qfex.com/qfex/definitions.md): Common Terms Used in the Rulebook\n- [Exchange](https://docs.qfex.com/qfex/architecture.md): Technical Description of the Exchange\n- [Order Entry](https://docs.qfex.com/qfex/order-types.md): Supported Order Types and Times in Force\n- [Contract Specifications](https://docs.qfex.com/qfex/contract-specifications.md): Perpetual Futures Adapted for Traditional Assets\n- [Pre-IPO Stock Perpetuals](https://docs.qfex.com/qfex/pre-ipo-stocks.md): How QFEX prices, funds, and adjusts perpetuals referencing companies before an IPO.\n- [Specification Index](https://docs.qfex.com/qfex/specification-index.md): A consolidated view of active QFEX production contract, execution, session, and risk parameters.\n- [Roll Schedules](https://docs.qfex.com/qfex/roll-schedules.md): Published dated-futures contracts and roll boundaries used by QFEX oracle pricing.\n- [Funding](https://docs.qfex.com/qfex/funding.md): When funding is active, why it can be zero, and how rates are computed.\n- [Risk Limits](https://docs.qfex.com/qfex/risk-limits.md): Stay Safe\n- [Margin and Liquidations](https://docs.qfex.com/qfex/liquidation-margin-call.md): A Detailed Description of the Liquidation Cascade\n- [Corporate Actions](https://docs.qfex.com/qfex/corporate-actions.md): QFEX Policy on Equity Corporate Actions\n- [Fees](https://docs.qfex.com/qfex/fees.md)\n- [Subaccounts](https://docs.qfex.com/qfex/subaccounts.md): Separate your margin and risk\n\n#### Glossary\n\n- [Blocked Countries and Restrictions](https://docs.qfex.com/qfex/prohibited-jurisdictions.md)\n\n### API Reference\n\n#### API Documentation\n\n- [Introduction](https://docs.qfex.com/api-reference/introduction.md)\n- [API versioning](https://docs.qfex.com/api-reference/versioning.md): Select a REST API contract and pin the request and response format for your integration.\n- [Account execution history](https://docs.qfex.com/api-reference/executions.md): Retrieve funding payments, fee rebates and referral rewards, and use the correct timestamp formats.\n- [API Keys](https://docs.qfex.com/api-reference/api-keys.md): Create and securely use account-scoped API keys with granular permissions.\n- [Affiliate challenge leaderboards](https://docs.qfex.com/api-reference/affiliate-challenges.md): Read your challenge standings and prize pool through the public REST API.\n- [Wallet authentication](https://docs.qfex.com/api-reference/wallet-authentication.md): Sign up or sign in to QFEX programmatically with an Ethereum wallet and use the resulting session.\n- [Programmatic deposits and withdrawals](https://docs.qfex.com/api-reference/programmatic-funding.md): Fund a QFEX account and request crypto or USD withdrawals with the REST API.\n- [CLI](https://docs.qfex.com/api-reference/cli.md): JSON-native command-line access to QFEX market data, trading, and account state.\n- [Enums](https://docs.qfex.com/api-reference/enums.md)\n- [Errors](https://docs.qfex.com/websocket/errors.md)\n- [API Rate Limits](https://docs.qfex.com/websocket/rate.md): This page explains how request throttling works on our **WebSocket trading API**. If you’re writing a client, read this to avoid `RateLimited` errors.\n- [Changelog](https://docs.qfex.com/websocket/changelog.md): Product updates and announcements\n\n#### Builder Codes\n\n- [Builder Integration Guide](https://docs.qfex.com/api-reference/builder-integration.md): Choose OAuth or wallet-signed trading keys to onboard users and attribute their trading to your builder code\n- [Builder wallet registration](https://docs.qfex.com/api-reference/builder-wallet-registration.md): Use a wallet signature to create a main-account trading key for a builder's users.\n- [Builder Codes API](https://docs.qfex.com/api-reference/builder-codes.md): Create and retrieve builder codes, attach them to Trade WebSocket sessions, and read builder rewards\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n#### Funding API\n\n##### funding\n\n- [Get a crypto deposit address](https://docs.qfex.com/api-reference/funding/funding/get-a-crypto-deposit-address.md): API keys require view_balance. Returns the existing deposit address or provisions one on the first call without rotating an existing address. ARBITRUM_ONE deposits USDC; TRON deposits USDT. POST /address/rotate requires deposit_withdraw.\n- [List registered crypto withdrawal addresses](https://docs.qfex.com/api-reference/funding/funding/list-registered-crypto-withdrawal-addresses.md): API keys require view_balance. Returns all crypto withdrawal addresses registered by the authenticated user across networks. The user is resolved from authentication; no user-ID query parameter is used. This endpoint does not register, change, or delete addresses.\n- [Request a crypto withdrawal to a registered address](https://docs.qfex.com/api-reference/funding/funding/request-a-crypto-withdrawal-to-a-registered-address.md): Standard API keys require deposit_withdraw. Keys issued or replaced through POST /builder/web3/api-key also support crypto withdrawals to registered destinations when the user owns the selected account. This builder access is not selectable in Developer Settings. Every withdrawal, including all API…\n\n#### WebSocket\n\n- [Websocket Overview](https://docs.qfex.com/websocket/main.md)\n- [Trade Playground](https://docs.qfex.com/websocket/trade.md): Single channel for order commands, positions, balances, fills\n- [MDS Playground](https://docs.qfex.com/websocket/mds.md): Single channel for orderbook, trades, candles\n\n##### Market Data\n\n- [Reference Data](https://docs.qfex.com/websocket/channels/mds/refdata.md)\n- [Pulsed Order Book](https://docs.qfex.com/websocket/channels/mds/orderbook.md)\n- [Public Trades](https://docs.qfex.com/websocket/channels/mds/trades.md)\n- [Pulsed BBO](https://docs.qfex.com/websocket/channels/mds/bbo.md)\n- [Underlier Price](https://docs.qfex.com/websocket/channels/mds/underlier.md)\n- [Funding Rate](https://docs.qfex.com/websocket/channels/mds/funding_rate.md)\n- [Mark Price](https://docs.qfex.com/websocket/channels/mds/mark_price.md)\n- [Open Interest](https://docs.qfex.com/websocket/channels/mds/open_interest.md)\n- [Minmax Price](https://docs.qfex.com/websocket/channels/mds/minmax_price.md)\n- [Market Stats](https://docs.qfex.com/websocket/channels/mds/market_stats.md): Consolidated BBO, mark price, open interest, funding, and rolling 24-hour volume snapshots.\n\n##### Trade\n\n- [Authenticate](https://docs.qfex.com/websocket/channels/trade/authenticate.md)\n- [Subscribe — Order Responses](https://docs.qfex.com/websocket/channels/trade/order.md)\n- [Subscribe — Fills](https://docs.qfex.com/websocket/channels/trade/fills.md)\n- [Order Entry — Add Order](https://docs.qfex.com/websocket/channels/trade/add_order.md)\n- [Order Entry — Cancel Order](https://docs.qfex.com/websocket/channels/trade/cancel_order.md)\n- [Order Entry — Modify Order](https://docs.qfex.com/websocket/channels/trade/modify_order.md)\n- [Cancel All Orders](https://docs.qfex.com/websocket/channels/trade/cancel_all_orders.md)\n- [Order Entry — Close Position](https://docs.qfex.com/websocket/channels/trade/close_position.md)\n- [Order Entry — Add TWAP](https://docs.qfex.com/websocket/channels/trade/add_twap.md)\n- [Get User Orders](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md)\n- [Get Order](https://docs.qfex.com/websocket/channels/trade/get_order.md)\n- [Get User Trades](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md)\n- [Subscribe — Balances](https://docs.qfex.com/websocket/channels/trade/balance.md)\n- [Subscribe — Positions](https://docs.qfex.com/websocket/channels/trade/positions.md)\n- [Get Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_leverage.md)\n- [Get Available Leverage Levels](https://docs.qfex.com/websocket/channels/trade/get_available_leverage.md)\n- [Set Leverage](https://docs.qfex.com/websocket/channels/trade/set_leverage.md)\n- [Cancel On Disconnect](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md)\n- [Order Entry — Add Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md)\n- [Order Entry — Cancel Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md)\n- [Order Entry — Modify Stop Order](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md)\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n- [Privacy Policy](https://docs.qfex.com/legal/privacy-policy.md): Last Updated: 6 October 2026\n- [Cookie Policy](https://docs.qfex.com/legal/cookie-policy.md): Last Updated: 28 November 2025\n- [Bug Bounty](https://docs.qfex.com/legal/bug-bounty.md)\n\n## 2026-10-29\n\n### QFEX\n\n- [About QFEX](https://docs.qfex.com/qfex/about.md): How Markets Should Be\n\n### API Reference\n\n#### Contract guide\n\n- [REST API: 2026-10-29](https://docs.qfex.com/api-reference/versions/2026-10-29.md): Use the published 2026-10-29 request and response contract.\n\n#### REST API\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### user\n\n- [Executions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/2026-10-29/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/2026-10-29/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/2026-10-29/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [User Positions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/2026-10-29/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n### Legal\n\n- [Terms of Use](https://docs.qfex.com/legal/client-agreement.md): Last Updated: 20 October 2026\n\n## OpenAPI Specs\n\n- [openapi](https://api.qfex.com/openapi.yaml)\n- [funding-openapi](/api-reference/funding-openapi.yaml)\n- [openapi](https://api.qfex.com/contracts/2026-10-29/openapi.yaml)\n\n## AsyncAPI Specs\n\n- [trade](/websocket/trade.yaml)\n- [mds](/websocket/mds.yaml)\n- [asyncapi](/docs/websocket/asyncapi.yaml)\n- [mds](/docs/websocket/mds.yaml)\n- [trade](/docs/websocket/trade.yaml)\n\n## Optional\n\n- [Status / 运行状态](https://status.qfex.com)\n\n> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.\n\n## Indexes\n\n- [Chinese (166 pages)](https://docs.qfex.com/_llms/cn.txt): Latest, 2026-10-29.",
      "url": "https://docs.qfex.com/llms.txt"
     },
     "https://docs.qfex.com/qfex/fees.md": {
@@ -25358,6 +25576,27 @@
      "title": "공식 문서 '수수료·보상' 문구 변경",
      "ts": 1794509588,
      "venue": "qfex"
+    },
+    {
+     "detail": "Affiliate challenge leaderboards",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "d1800371f7b4",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Affiliate challenge leaderboards — https://docs.qfex.com/api-reference/affiliate-challenges.md"
+      ],
+      "removed": [],
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 1개",
+     "ts": 1794858709,
+     "venue": "qfex"
     }
    ],
    "frontend": null,
@@ -25417,14 +25656,6 @@
    "notified_ids": [],
    "odds": {
     "qfex-fdv-above-100m-one-day-after-launch": [
-     [
-      1793623105,
-      39.0
-     ],
-     [
-      1793645429,
-      48.5
-     ],
      [
       1793657302,
       47.0
@@ -26112,13 +26343,13 @@
      [
       1794823711,
       53.5
+     ],
+     [
+      1794858709,
+      53.5
      ]
     ],
     "qfex-fdv-above-200m-one-day-after-launch": [
-     [
-      1793794110,
-      47.0
-     ],
      [
       1793795901,
       48.0
@@ -26914,13 +27145,13 @@
      [
       1794823711,
       47.5
+     ],
+     [
+      1794858709,
+      47.5
      ]
     ],
     "qfex-fdv-above-300m-one-day-after-launch": [
-     [
-      1793645429,
-      38.5
-     ],
      [
       1793668106,
       38.5
@@ -27448,13 +27679,13 @@
      [
       1794827312,
       42.0
+     ],
+     [
+      1794858709,
+      42.0
      ]
     ],
     "qfex-fdv-above-500m-one-day-after-launch": [
-     [
-      1793645429,
-      35.0
-     ],
      [
       1793657302,
       39.5
@@ -28130,13 +28361,13 @@
      [
       1794830905,
       27.0
+     ],
+     [
+      1794858709,
+      28.5
      ]
     ],
     "qfex-fdv-above-50m-one-day-after-launch": [
-     [
-      1793645429,
-      56.0
-     ],
      [
       1793668106,
       56.0
@@ -28524,13 +28755,13 @@
      [
       1794828855,
       56.5
+     ],
+     [
+      1794858709,
+      56.5
      ]
     ],
     "qfex-fdv-above-80m-one-day-after-launch": [
-     [
-      1793645429,
-      50.5
-     ],
      [
       1793657302,
       53.0
@@ -29082,13 +29313,13 @@
      [
       1794825513,
       56.0
+     ],
+     [
+      1794858709,
+      55.5
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2026": [
-     [
-      1793645429,
-      2.8
-     ],
      [
       1793668106,
       2.8
@@ -29308,13 +29539,13 @@
      [
       1794814708,
       1.8
+     ],
+     [
+      1794858709,
+      1.8
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2027": [
-     [
-      1793645429,
-      57.0
-     ],
      [
       1793657302,
       50.0
@@ -29918,17 +30149,13 @@
      [
       1794816502,
       63.0
+     ],
+     [
+      1794858709,
+      63.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
-     [
-      1793623105,
-      24.5
-     ],
-     [
-      1793645429,
-      25.5
-     ],
      [
       1793662701,
       26.0
@@ -30660,13 +30887,13 @@
      [
       1794832699,
       25.0
+     ],
+     [
+      1794858709,
+      25.5
      ]
     ],
     "will-qfex-launch-a-token-by-march-31-2027": [
-     [
-      1793645429,
-      12.0
-     ],
      [
       1793668106,
       12.0
@@ -30926,13 +31153,13 @@
      [
       1794827312,
       6.0
+     ],
+     [
+      1794858709,
+      6.0
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
-     [
-      1793645429,
-      48.5
-     ],
      [
       1793668106,
       48.5
@@ -31576,6 +31803,10 @@
      [
       1794832699,
       31.5
+     ],
+     [
+      1794858709,
+      36.0
      ]
     ]
    },
@@ -31703,27 +31934,27 @@
    },
    "status": {
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
-     "note": "14건",
+     "at": 1794858709,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "20건",
      "ok": true
     }
@@ -32011,10 +32242,6 @@
    "odds": {
     "will-risex-launch-a-token-by-december-31-2026-20260708174012704": [
      [
-      1793645429,
-      2.8
-     ],
-     [
       1793668106,
       2.8
      ],
@@ -32293,17 +32520,13 @@
      [
       1794830905,
       2.4
+     ],
+     [
+      1794858709,
+      2.6
      ]
     ],
     "will-risex-launch-a-token-by-december-31-2027-20260708174012706": [
-     [
-      1793623105,
-      74.0
-     ],
-     [
-      1793645429,
-      74.0
-     ],
      [
       1793657302,
       73.5
@@ -32599,17 +32822,13 @@
      [
       1794828855,
       51.5
+     ],
+     [
+      1794858709,
+      52.0
      ]
     ],
     "will-risex-launch-a-token-by-june-30-2027-20260708174012705": [
-     [
-      1793623105,
-      35.5
-     ],
-     [
-      1793645429,
-      35.5
-     ],
      [
       1793668106,
       35.5
@@ -33253,6 +33472,10 @@
      [
       1794832699,
       42.0
+     ],
+     [
+      1794858709,
+      41.5
      ]
     ]
    },
@@ -33377,28 +33600,30 @@
      "cb0866de7675",
      "c96152f2fbc5",
      "6324ff9f9cc6",
-     "614bb01bfc41"
+     "614bb01bfc41",
+     "59547257d632",
+     "2a38e3f157d7"
     ]
    },
    "status": {
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
-     "note": "8건",
+     "at": 1794858709,
+     "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794832699,
-     "note": "17건",
+     "at": 1794858709,
+     "note": "18건",
      "ok": true
     }
    }
@@ -34915,17 +35140,17 @@
    },
    "status": {
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "5건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "9건",
      "ok": true
     }
@@ -34938,7 +35163,7 @@
    "api_watch": {
     "pages": {
      "https://docs.txflow.com/api/exchange.md": {
-      "at": 1794832699,
+      "at": 1794858709,
       "state": "closed"
      }
     },
@@ -35295,27 +35520,27 @@
    },
    "status": {
     "api_watch": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "21건",
      "ok": true
     }
@@ -35328,11 +35553,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1794832699,
+      "at": 1794858709,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1794832699,
+      "at": 1794858709,
       "state": "closed"
      }
     },
@@ -35615,10 +35840,6 @@
    "notified_ids": [],
    "odds": {
     "variational-fdv-above-100m-one-day-after-launch-519": [
-     [
-      1793645429,
-      98.0
-     ],
      [
       1793657302,
       97.9
@@ -35998,13 +36219,13 @@
      [
       1794830905,
       94.8
+     ],
+     [
+      1794858709,
+      95.6
      ]
     ],
     "variational-fdv-above-1b-one-day-after-launch-636-229-681": [
-     [
-      1793645429,
-      56.5
-     ],
      [
       1793668106,
       56.5
@@ -36308,13 +36529,13 @@
      [
       1794827312,
       45.5
+     ],
+     [
+      1794858709,
+      45.5
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
-     [
-      1793848111,
-      98.4
-     ],
      [
       1793871500,
       98.4
@@ -37110,13 +37331,13 @@
      [
       1794832699,
       95.2
+     ],
+     [
+      1794858709,
+      96.0
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
-     [
-      1793645429,
-      27.5
-     ],
      [
       1793658129,
       27.6
@@ -37716,13 +37937,13 @@
      [
       1794832699,
       21.2
+     ],
+     [
+      1794858709,
+      19.2
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
-     [
-      1793645429,
-      93.1
-     ],
      [
       1793668106,
       93.1
@@ -38030,17 +38251,13 @@
      [
       1794811110,
       93.1
+     ],
+     [
+      1794858709,
+      93.2
      ]
     ],
     "variational-fdv-above-3b-one-day-after-launch-846-887-175": [
-     [
-      1793623105,
-      14.0
-     ],
-     [
-      1793645429,
-      14.1
-     ],
      [
       1793657302,
       13.8
@@ -38472,13 +38689,13 @@
      [
       1794827312,
       11.7
+     ],
+     [
+      1794858709,
+      11.7
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
-     [
-      1793645429,
-      5.7
-     ],
      [
       1793668106,
       5.7
@@ -38746,13 +38963,13 @@
      [
       1794827312,
       5.3
+     ],
+     [
+      1794858709,
+      5.3
      ]
     ],
     "variational-fdv-above-500m-one-day-after-launch-547-272": [
-     [
-      1793645429,
-      88.0
-     ],
      [
       1793668106,
       88.0
@@ -39032,17 +39249,13 @@
      [
       1794823711,
       84.5
+     ],
+     [
+      1794858709,
+      84.5
      ]
     ],
     "variational-fdv-above-5b-one-day-after-launch-995-724-585": [
-     [
-      1793623105,
-      4.1
-     ],
-     [
-      1793645429,
-      3.9
-     ],
      [
       1793668106,
       3.9
@@ -39270,13 +39483,13 @@
      [
       1794827312,
       3.0
+     ],
+     [
+      1794858709,
+      3.0
      ]
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
-     [
-      1793645429,
-      72.5
-     ],
      [
       1793668106,
       72.5
@@ -39632,13 +39845,13 @@
      [
       1794814708,
       63.5
+     ],
+     [
+      1794858709,
+      63.5
      ]
     ],
     "will-variational-launch-a-token-by-december-31-2026-577-621": [
-     [
-      1793911349,
-      80.5
-     ],
      [
       1793934505,
       80.5
@@ -40434,17 +40647,13 @@
      [
       1794832699,
       68.0
+     ],
+     [
+      1794858709,
+      61.0
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
-     [
-      1793623105,
-      22.0
-     ],
-     [
-      1793645429,
-      18.0
-     ],
      [
       1793668106,
       18.0
@@ -40996,6 +41205,10 @@
      [
       1794818317,
       3.2
+     ],
+     [
+      1794858709,
+      3.2
      ]
     ]
    },
@@ -41077,7 +41290,8 @@
      "f5694a11d8a4",
      "0fc572c10838",
      "fc707219caa7",
-     "7d5b75e4e947"
+     "7d5b75e4e947",
+     "81f706039803"
     ],
     "x:variational_io": [
      "21f25f747f75",
@@ -41177,37 +41391,39 @@
      "216e5b6fa427",
      "e1bbff12aae6",
      "ec8e992ea0d8",
-     "0f16dd405575"
+     "0f16dd405575",
+     "6aeee7ebca1d",
+     "a4eb4d851630"
     ]
    },
    "status": {
     "api_watch": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794832699,
+     "at": 1794858709,
      "note": "19건",
      "ok": true
     }
