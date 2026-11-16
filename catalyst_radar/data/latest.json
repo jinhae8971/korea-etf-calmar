@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-11-15 10:21",
+ "as_of_kst": "2026-11-16 10:26",
  "calendar": [
   {
    "event_date": "2026-11-16",
@@ -35,7 +35,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "last_seen": "2026-11-15",
+   "last_seen": "2026-11-16",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -64,7 +64,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "last_seen": "2026-11-15",
+   "last_seen": "2026-11-16",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -93,7 +93,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1061",
-   "last_seen": "2026-11-15",
+   "last_seen": "2026-11-16",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-11",
@@ -121,7 +121,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:hedera-v0-79-mainnet-upgrade-on-november-18-what-changes-cry",
-   "last_seen": "2026-11-15",
+   "last_seen": "2026-11-16",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-12",
@@ -144,12 +144,41 @@
    "when": "Thu, 12 Nov 2026"
   },
   {
+   "event_date": "2026-11-20",
+   "first_seen": "2026-11-16",
+   "grade": "A",
+   "impact": "INFRA",
+   "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "last_seen": "2026-11-16",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-16",
+    "price_at_detect": 6.96,
+    "score_at_detect": 45.5
+   },
+   "score": 45.5,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-16",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "UNI",
+   "title": "Upgrade VolatilePair hook and update X Layer Releaser",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "vote_state": "active",
+   "when": "2026-11-20"
+  },
+  {
    "event_date": "2026-11-24",
    "first_seen": "2026-11-14",
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-veyra-upgrade-heads-to-governance-vote-ahead-of-no",
-   "last_seen": "2026-11-15",
+   "last_seen": "2026-11-16",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
@@ -177,7 +206,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-targets-november-24-veyra-upgrade-will-inj-demand-",
-   "last_seen": "2026-11-15",
+   "last_seen": "2026-11-16",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
@@ -233,7 +262,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-15",
+   "last_seen": "2026-11-16",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -290,7 +319,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 71,
+ "event_count": 70,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -314,8 +343,67 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-15 10:21\n감시 52종목(체인 34·프로토콜 18) · 이벤트 71건\n\n<b>■ 오늘의 상태 전이</b>\n· 신규 승격 없음\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-1   </code> CAKE <b>일정확정</b> · PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart C\n🟠 <code>D-1   </code> MNT <b>투표중</b> · Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <code>D-1   </code> ARB <b>투표중</b> · [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🔴 <code>D-2   </code> ATOM <b>투표중</b> · Gaia v29.1.0 upgrade\n🟠 <code>D-3   </code> HBAR <b>일정확정</b> · Hedera v0.79 mainnet upgrade on November 18: what changes - Cr\n🟠 <code>D-9   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-9   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-17  </code> BTC <b>일정확정</b> · Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data D\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
- "transitions": [],
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-16 10:26\n감시 52종목(체인 34·프로토콜 18) · 이벤트 70건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>UNI</b> [인프라·신규] Upgrade VolatilePair hook and update X Layer Releaser\n🟠 <b>ETH</b> [인프라·신규] Add EIP: SLOT precompile\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> CAKE <b>일정확정</b> · PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart C\n🟠 <code>D-DAY </code> MNT <b>투표중</b> · Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <code>D-DAY </code> ARB <b>투표중</b> · [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🔴 <code>D-1   </code> ATOM <b>투표중</b> · Gaia v29.1.0 upgrade\n🟠 <code>D-2   </code> HBAR <b>일정확정</b> · Hedera v0.79 mainnet upgrade on November 18: what changes - Cr\n🔴 <code>D-4   </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🟠 <code>D-8   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-8   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "transitions": [
+  {
+   "event_date": "2026-11-20",
+   "first_seen": "2026-11-16",
+   "grade": "A",
+   "impact": "INFRA",
+   "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-16",
+    "price_at_detect": 6.96,
+    "score_at_detect": 45.5
+   },
+   "score": 45.5,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-16",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "UNI",
+   "title": "Upgrade VolatilePair hook and update X Layer Releaser",
+   "transition": "NEW",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "vote_state": "active",
+   "when": "2026-11-20"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-16",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "ethereum/EIPs#9141",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-16",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 32.7
+   },
+   "score": 32.7,
+   "source": "proposal",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-11-16",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Add EIP: SLOT precompile",
+   "transition": "NEW",
+   "trust": 1.0,
+   "updated_at": "2026-11-15T01:35:00Z",
+   "url": "https://github.com/ethereum/EIPs/pull/9141",
+   "when": null
+  }
+ ],
  "universe": {
   "chain": 34,
   "protocol": 18,
@@ -413,7 +501,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 48,
+   "n": 47,
    "status": "OK"
   },
   {
@@ -437,13 +525,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 20,
+   "n": 18,
    "status": "OK"
   },
   {
    "bucket": "impact:FEATURE",
    "horizon": 30,
-   "n": 7,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -455,7 +543,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 26,
+   "n": 27,
    "status": "OK"
   },
   {
@@ -471,27 +559,33 @@
    "status": "표본 부족"
   },
   {
+   "bucket": "impact:SUPPLY",
+   "horizon": 30,
+   "n": 1,
+   "status": "표본 부족"
+  },
+  {
    "bucket": "source:cosmos",
    "horizon": 7,
-   "n": 7,
+   "n": 6,
    "status": "표본 부족"
   },
   {
    "bucket": "source:cosmos",
    "horizon": 30,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 3,
+   "n": 4,
    "status": "표본 부족"
   },
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
@@ -503,14 +597,20 @@
     0.0
    ],
    "median": 0.0,
-   "n": 32,
+   "n": 30,
    "status": "OK"
   },
   {
    "bucket": "source:release",
+   "hit_rate": 0.0,
    "horizon": 30,
-   "n": 7,
-   "status": "표본 부족"
+   "iqr": [
+    0.0,
+    0.0
+   ],
+   "median": 0.0,
+   "n": 8,
+   "status": "OK"
   },
   {
    "bucket": "source:snapshot",
