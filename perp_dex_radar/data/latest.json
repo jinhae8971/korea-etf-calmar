@@ -1,5 +1,5 @@
 {
- "generated_at": 1794917313,
+ "generated_at": 1794919119,
  "levels": {
   "arcus": "NONE",
   "extended": "IMMINENT",
@@ -15,10 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1794832699,
-   "d"
-  ],
   [
    1794858709,
    "s"
@@ -138,6 +134,10 @@
   [
    1794917313,
    "d"
+  ],
+  [
+   1794919119,
+   "d"
   ]
  ],
  "status": {
@@ -206,7 +206,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": false
+   "x:TxFlow_L1": true
   },
   "variational": {
    "api_watch": true,
@@ -214,7 +214,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": false
+   "x:variational_io": true
   }
  },
  "undecidable": false
