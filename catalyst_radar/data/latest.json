@@ -1,99 +1,13 @@
 {
- "as_of_kst": "2026-11-16 10:26",
+ "as_of_kst": "2026-11-17 13:12",
  "calendar": [
-  {
-   "event_date": "2026-11-16",
-   "first_seen": "2026-11-10",
-   "grade": "A",
-   "impact": "SUPPLY",
-   "key": "news:pancakeswap-delays-weekly-cake-burn-to-november-16-for-smart",
-   "last_seen": "2026-11-14",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 2.2,
-    "score_at_detect": 50.4
-   },
-   "score": 50.4,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-11-10",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "CAKE",
-   "title": "PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart Contract Security Upgrade - Cryptonews.net",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94cWRGSW52Tng5dnlQdXFLNWxOZWZXR0lUYk5zb0hDV0g4LVROWG5ZYWpkcUdUZnQ4YkxUenNrT1RwMnEzcDF4TVZOVkZUbjVKY0NiOUYwWjZvQQ?oc=5",
-   "when": "Mon, 09 Nov 2026"
-  },
-  {
-   "event_date": "2026-11-16",
-   "first_seen": "2026-11-10",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "last_seen": "2026-11-16",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 0.644312,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-10",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MNT",
-   "title": "Recognition of Halo Prime as a strategic partner of Mantle",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "vote_state": "active",
-   "when": "2026-11-16"
-  },
-  {
-   "event_date": "2026-11-16",
-   "first_seen": "2026-11-10",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "last_seen": "2026-11-16",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
-    "price_at_detect": 0.175026,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-10",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "ARB",
-   "title": "[Constitutional] AIP: Approve Release of Frozen ETH and ARB",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/arbitrumfoundation.eth/proposal/0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "vote_state": "active",
-   "when": "2026-11-16"
-  },
   {
    "event_date": "2026-11-17",
    "first_seen": "2026-11-11",
    "grade": "A",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1061",
-   "last_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-11",
@@ -149,7 +63,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
-   "last_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-16",
@@ -173,19 +87,77 @@
    "when": "2026-11-20"
   },
   {
+   "event_date": "2026-11-21",
+   "first_seen": "2026-11-17",
+   "grade": "A",
+   "impact": "INFRA",
+   "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
+   "last_seen": "2026-11-17",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-17",
+    "price_at_detect": 6.96,
+    "score_at_detect": 45.5
+   },
+   "score": 45.5,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-17",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "UNI",
+   "title": "Upgrade the v4 Protocol Fee Adapter",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
+   "vote_state": "active",
+   "when": "2026-11-21"
+  },
+  {
+   "event_date": "2026-11-21",
+   "first_seen": "2026-11-17",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
+   "last_seen": "2026-11-17",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-17",
+    "price_at_detect": 6.96,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-17",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "UNI",
+   "title": "Protocol Fee Expansion: v4 on Five More Chains",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
+   "vote_state": "active",
+   "when": "2026-11-21"
+  },
+  {
    "event_date": "2026-11-24",
    "first_seen": "2026-11-14",
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-veyra-upgrade-heads-to-governance-vote-ahead-of-no",
-   "last_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
     "price_at_detect": 5.55,
     "score_at_detect": 30.0
    },
-   "score": 30.0,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
@@ -206,14 +178,14 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-targets-november-24-veyra-upgrade-will-inj-demand-",
-   "last_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
     "price_at_detect": 5.55,
     "score_at_detect": 30.0
    },
-   "score": 30.0,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
@@ -223,38 +195,10 @@
     }
    ],
    "symbol": "INJ",
-   "title": "Injective Targets November 24 Veyra Upgrade: Will INJ Demand Surge? - Coin Edition",
+   "title": "Injective Targets November 24 Veyra Upgrade: Will INJ Demand Surge? - CryptoRank",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPOUtMZnA1VVNvdkhaeVUwSXdrU0IwMkkxSUhpRWhWQVpJRnlyejJydndRTnVyaWFLM0pmb3ZYc2pqQ1RGNm5IS3JDUXl5WkxoUjV6U0JfRGUtLUNZaERzdFFtb0VoTWNNeUI0am5wQjlJRVhzNG11Z1JwVVcyeC1Oanl0Y2F3T1ZIZjBzcXB0OFFrU1hW?oc=5",
-   "when": "Fri, 13 Nov 2026"
-  },
-  {
-   "event_date": "2026-12-02",
-   "first_seen": "2026-11-11",
-   "grade": "B",
-   "impact": "SUPPLY",
-   "key": "news:coinbase-falls-4-robinhood-slides-3-as-hot-inflation-data-dr",
-   "last_seen": "2026-11-11",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-11",
-    "price_at_detect": 79682,
-    "score_at_detect": 42.8
-   },
-   "score": 42.8,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-11-11",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "BTC",
-   "title": "Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data Drags Bitcoin Lower; Webull Declines 2% - 24/7 Wall St.",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMEJIVzZDajJZSDNmb3BHVnFJS1VUbTdoOVRqb1IzLW52ckcySTZzampHVl95UzdiV0tTbWYzYXR0VEhQQW9NVnZrMFhsTWZFb2pMU3UxamFOSUFCa28xemJfa1UzMnZoODFXc1pjWjF1dFJCTFAxUnRZcVF3NmtrQ2tMWk9yREZuQ1V6R1NqSGo2eWwxblZKVG5iSFB4b2t3YnhQaThJeWlocWZMSElMSWYxcXhFODRiMVFrbzZMN2JtUlZmUUJTN1plNlZlRTdCT1VQZWF3?oc=5",
-   "when": "Tue, 10 Nov 2026"
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdWFiTGMtQlBzSHlpM0NldFRDQVEtNjJpeW5ubTdKQWc5NXVxdlVzTXNsblFuM3dTRWQwNmxhNXl0Ym9ZREZua1ZZZEx0Vk81eUdTUGFuVnMxNngxRTAtcnZ2TVYtYW1DaTY2Tkk2Zm1jSTdQS1RXYzc1X01ydHphbGRpa25RNmNBWjVnbVEyVGktNm5WUmhPaVNSWHNaTDZSa3dUdUNn?oc=5",
+   "when": "Sat, 14 Nov 2026"
   },
   {
    "event_date": "2026-12-08",
@@ -262,7 +206,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -289,14 +233,14 @@
   },
   {
    "event_date": "2026-12-08",
-   "first_seen": "2026-11-10",
+   "first_seen": "2026-11-17",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:bnb-news-bnb-chain-fixes-a-node-bug-before-its-december-8-up",
-   "last_seen": "2026-11-11",
+   "key": "news:bnb-price-context-shifts-to-december-8-jenner-upgrade-ad-hoc",
+   "last_seen": "2026-11-17",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-10",
+    "detected_at": "2026-11-17",
     "price_at_detect": 746.55,
     "score_at_detect": 30.0
    },
@@ -305,21 +249,21 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-10",
+     "at": "2026-11-17",
      "stage": "SCHEDULED"
     }
    ],
    "symbol": "BNB",
-   "title": "BNB News: BNB Chain Fixes a Node Bug Before Its December 8 Upgrade, but Pepeto Is the Real Story - openPR.com",
+   "title": "BNB price context shifts to December 8 Jenner upgrade - ad-hoc-news.de",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQemFrYU9KLVg1ci1CS2QtZEhLRE5HS2UxOHpISnh4dGV5WF9GLU1yRnRVam5xTk15eFAwVnQ4TTM0Z0szNXFtakVXb3BvemZOWmtCbzRuUVB0NExrMU15MHBuNDRmYm81M05nVFM2UlpIV1BNaEhXdTFlZXhTRWQxSEpjRlRTU18ybkVKZ2VPRTBmNzhiYnEzZld2YlFPVm9VenJj?oc=5",
-   "when": "Mon, 09 Nov 2026"
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWVaN0w3eUZ6QjQ5SGNETUVXMVVnc0hCMG5JZFhyMklEUzJ0eGNIcDhTQTBxVFhHTlpJc3ZSR2ctQjFGWmF5eWFVbzFRSnFSaS0zZXVtS2tJN3FSOGVUcjVJM1RxYXRsV2dQb0FiOGp5Z251czlfNDNDMjhucGVjUzlfdklzQXhudDBmRlZIYmQ3OFZCU2RwYjBrUnl3U3A0LVBmWUsxQXZicW5lWUtyU2NkTWdrUQ?oc=5",
+   "when": "Mon, 16 Nov 2026"
   }
  ],
- "coverage": 1.0,
+ "coverage": 0.95,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 70,
+ "event_count": 69,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -332,8 +276,8 @@
     "ok": 6
    },
    "news.google.com": {
-    "fail": 0,
-    "ok": 52
+    "fail": 5,
+    "ok": 47
    },
    "rest.cosmos.directory": {
     "fail": 0,
@@ -341,19 +285,19 @@
    }
   },
   "calls": 101,
-  "fail": 0
+  "fail": 5
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-16 10:26\n감시 52종목(체인 34·프로토콜 18) · 이벤트 70건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>UNI</b> [인프라·신규] Upgrade VolatilePair hook and update X Layer Releaser\n🟠 <b>ETH</b> [인프라·신규] Add EIP: SLOT precompile\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> CAKE <b>일정확정</b> · PancakeSwap Delays Weekly CAKE Burn to November 16 for Smart C\n🟠 <code>D-DAY </code> MNT <b>투표중</b> · Recognition of Halo Prime as a strategic partner of Mantle\n🟠 <code>D-DAY </code> ARB <b>투표중</b> · [Constitutional] AIP: Approve Release of Frozen ETH and ARB\n🔴 <code>D-1   </code> ATOM <b>투표중</b> · Gaia v29.1.0 upgrade\n🟠 <code>D-2   </code> HBAR <b>일정확정</b> · Hedera v0.79 mainnet upgrade on November 18: what changes - Cr\n🔴 <code>D-4   </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🟠 <code>D-8   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-8   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-17 13:12\n감시 52종목(체인 34·프로토콜 18) · 이벤트 69건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>UNI</b> [인프라·신규] Upgrade the v4 Protocol Fee Adapter\n🟠 <b>BNB</b> [인프라·신규] BNB price context shifts to December 8 Jenner upgrade - ad-hoc-news.de\n🟠 <b>UNI</b> [기능·신규] Protocol Fee Expansion: v4 on Five More Chains\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> ATOM <b>투표중</b> · Gaia v29.1.0 upgrade\n🟠 <code>D-1   </code> HBAR <b>일정확정</b> · Hedera v0.79 mainnet upgrade on November 18: what changes - Cr\n🔴 <code>D-3   </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🔴 <code>D-4   </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-4   </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-7   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-7   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🔴 <code>D-21  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-11-20",
-   "first_seen": "2026-11-16",
+   "event_date": "2026-11-21",
+   "first_seen": "2026-11-17",
    "grade": "A",
    "impact": "INFRA",
-   "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-16",
+    "detected_at": "2026-11-17",
     "price_at_detect": 6.96,
     "score_at_detect": 45.5
    },
@@ -362,46 +306,74 @@
    "stage": "VOTING",
    "stage_history": [
     {
-     "at": "2026-11-16",
+     "at": "2026-11-17",
      "stage": "VOTING"
     }
    ],
    "symbol": "UNI",
-   "title": "Upgrade VolatilePair hook and update X Layer Releaser",
+   "title": "Upgrade the v4 Protocol Fee Adapter",
    "transition": "NEW",
    "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
    "vote_state": "active",
-   "when": "2026-11-20"
+   "when": "2026-11-21"
   },
   {
-   "event_date": null,
-   "first_seen": "2026-11-16",
+   "event_date": "2026-12-08",
+   "first_seen": "2026-11-17",
    "grade": "B",
    "impact": "INFRA",
-   "key": "ethereum/EIPs#9141",
+   "key": "news:bnb-price-context-shifts-to-december-8-jenner-upgrade-ad-hoc",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-16",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 32.7
+    "detected_at": "2026-11-17",
+    "price_at_detect": 746.55,
+    "score_at_detect": 30.0
    },
-   "score": 32.7,
-   "source": "proposal",
-   "stage": "PASSED",
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-16",
-     "stage": "PASSED"
+     "at": "2026-11-17",
+     "stage": "SCHEDULED"
     }
    ],
-   "symbol": "ETH",
-   "title": "Add EIP: SLOT precompile",
+   "symbol": "BNB",
+   "title": "BNB price context shifts to December 8 Jenner upgrade - ad-hoc-news.de",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWVaN0w3eUZ6QjQ5SGNETUVXMVVnc0hCMG5JZFhyMklEUzJ0eGNIcDhTQTBxVFhHTlpJc3ZSR2ctQjFGWmF5eWFVbzFRSnFSaS0zZXVtS2tJN3FSOGVUcjVJM1RxYXRsV2dQb0FiOGp5Z251czlfNDNDMjhucGVjUzlfdklzQXhudDBmRlZIYmQ3OFZCU2RwYjBrUnl3U3A0LVBmWUsxQXZicW5lWUtyU2NkTWdrUQ?oc=5",
+   "when": "Mon, 16 Nov 2026"
+  },
+  {
+   "event_date": "2026-11-21",
+   "first_seen": "2026-11-17",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-17",
+    "price_at_detect": 6.96,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-17",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "UNI",
+   "title": "Protocol Fee Expansion: v4 on Five More Chains",
    "transition": "NEW",
    "trust": 1.0,
-   "updated_at": "2026-11-15T01:35:00Z",
-   "url": "https://github.com/ethereum/EIPs/pull/9141",
-   "when": null
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
+   "vote_state": "active",
+   "when": "2026-11-21"
   }
  ],
  "universe": {
@@ -501,7 +473,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 47,
+   "n": 50,
    "status": "OK"
   },
   {
@@ -525,7 +497,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 18,
+   "n": 20,
    "status": "OK"
   },
   {
@@ -543,7 +515,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 27,
+   "n": 26,
    "status": "OK"
   },
   {
@@ -555,7 +527,7 @@
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 2,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -597,7 +569,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 30,
+   "n": 31,
    "status": "OK"
   },
   {
@@ -615,7 +587,7 @@
   {
    "bucket": "source:snapshot",
    "horizon": 7,
-   "n": 2,
+   "n": 4,
    "status": "표본 부족"
   }
  ],
