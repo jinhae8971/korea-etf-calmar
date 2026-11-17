@@ -1,0 +1,58 @@
+[
+ {
+  "id": "quarters",
+  "title": "엔비디아 분기 실적 추이",
+  "description": "최근 8개 분기 매출·데이터센터 매출·조정 총이익률·조정 EPS, 각 분기 직전에 회사가 낸 매출 가이던스와 다음 분기 가이던스예요. 회사 실적 보도자료(SEC 8-K) 기준이에요.",
+  "updated_at": "2026-11-17T23:03:00Z",
+  "fixed": true
+ },
+ {
+  "id": "scorecard",
+  "title": "엔비디아 3분기 성적표",
+  "description": "3분기(FY27) 매출·조정 EPS·다음 분기 가이던스·조정 총이익률·데이터센터 매출의 실제 값과 발표 직전 컨센서스(LSEG), 그 차이예요.",
+  "updated_at": "2026-11-17T23:03:00Z",
+  "fixed": true
+ },
+ {
+  "id": "report",
+  "title": "엔비디아 발표 개요와 주가 위치",
+  "description": "발표 일정, 11/17 정규장 종가와 발표 후 시간외 가격, 고점 대비·연초 대비 등락률이에요(Yahoo Finance).",
+  "updated_at": "2026-11-17T23:03:00Z",
+  "fixed": true
+ },
+ {
+  "id": "price",
+  "title": "엔비디아 일봉 종가",
+  "description": "Yahoo Finance 일봉 종가, 2026-05-18 ~ 2026-11-17예요.",
+  "updated_at": "2026-11-17T23:03:00Z",
+  "fixed": true
+ },
+ {
+  "id": "eps",
+  "title": "엔비디아 EPS와 컨센서스",
+  "description": "최근 5개 분기 EPS·컨센서스·서프라이즈예요. 지난 4개 분기는 나스닥이 제공하는 Zacks 수치, 최신 분기는 회사 조정 EPS와 Zacks 컨센서스예요.",
+  "updated_at": "2026-11-17T23:03:00Z",
+  "fixed": true
+ },
+ {
+  "id": "notes",
+  "title": "엔비디아 실적 정리와 블로그 초안",
+  "description": "좋았던 점·남은 숙제·다음 체크포인트, 주가 차트의 주요 사건, 블로그 제목·본문·태그·차트 이미지 주소예요. Claude가 실적 보도자료와 기사를 읽고 쓴 글이에요.",
+  "updated_at": "2026-11-17T23:03:00Z",
+  "fixed": true
+ },
+ {
+  "id": "reactions",
+  "title": "대형주 실적 발표 후 주가 반응",
+  "description": "10/20~11/17 실적을 낸 시가총액 2,000억 달러 이상 기업의 EPS·컨센서스·서프라이즈(나스닥 제공 Zacks 수치)와 발표 전후 2거래일 주가 변화(Yahoo 종가로 계산)예요.",
+  "updated_at": "2026-11-17T23:05:00Z",
+  "fixed": false
+ },
+ {
+  "id": "calendar",
+  "title": "다가오는 대형주 실적 발표",
+  "description": "11/18~12/3 실적 발표 예정인 시가총액 500억 달러 이상 기업과 EPS 컨센서스예요(나스닥 실적 캘린더, Zacks 수치).",
+  "updated_at": "2026-11-17T23:05:00Z",
+  "fixed": false
+ }
+]
