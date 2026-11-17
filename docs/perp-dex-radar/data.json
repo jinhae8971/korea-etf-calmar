@@ -1,7 +1,73 @@
 {
- "generated_at": 1794923472,
+ "generated_at": 1794952120,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Affiliate-owned challenges, Affiliate-owned challenge leaderboard, Affiliate-owned challenges",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "8bd30c5a9bc7",
+   "ref": {
+    "moved": [],
+    "name": "문서 전체 목록",
+    "new": [
+     "Affiliate-owned challenges — https://docs.qfex.com/api-reference/rest/user/affiliate-owned-challenges.md",
+     "Affiliate-owned challenge leaderboard — https://docs.qfex.com/api-reference/rest/user/affiliate-owned-challenge-leaderboard.md",
+     "Affiliate-owned challenges — https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenges.md",
+     "Affiliate-owned challenge leaderboard — https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenge-leaderboard.md"
+    ],
+    "removed": [],
+    "url": "https://docs.qfex.com/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 새 문서 4개",
+   "ts": 1794952120,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "17th November 2026",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "f9cc605773d8",
+   "ref": {
+    "added": [
+     "**17th November 2026**",
+     "New Endpoint",
+     "**Affiliates can retrieve their own challenge standings for website display.**",
+     "Endpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+     "Authenticated affiliates can list their challenges and fetch each competition's configuration, prize pool, payout distribution, and participant standings. Each participant includes username, maker volume, taker volume, PnL, score, and projected payout. The routes require an HMAC API key with view\\_balance permission; the detail route rejects keys that do not belong to the challenge owner. Website publishers must protect their own viewer access."
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1794952120,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "will-pacifica-launch-a-token-by-june-30-2027",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "b0f8fa76228c",
+   "ref": {
+    "url": "https://polymarket.com/market/will-pacifica-launch-a-token-by-june-30-2027"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "polymarket",
+   "title": "Polymarket: Will Pacifica launch a token by June 30, 2027? 32% → 53%",
+   "ts": 1794952120,
+   "venue": "pacifica",
+   "venue_name": "Pacifica"
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOb1pHdTVWc0Nmd2pIdno1TUg1OUJJOXhfU2dkcUFSUnZ1WEdudlFWTWM3X3RBZjNNSFFKRVRiZFVhRGtRdFdsT3paWkstdV9TdnpUYjJ1R1Z",
    "family": "S4",
@@ -4848,73 +4914,9 @@
    "ts": 1793014631,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0xa0e56f65 → 0x18add7f0",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "4fdf0a2fa2f5",
-   "ref": {
-    "amount": 1000008.0,
-    "chain": "eth",
-    "from": "0xa0e56f656c89e4819909d921a880329bc9bc8e38",
-    "to": "0x18add7f0bd3ee215677d6b55b5c967e057777e4b",
-    "tx": "0x287507452e49672688714d50cdf7bc90263326f68d10c0797336332de4e7bc62"
-   },
-   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "이더리움 LIT 1.00M개 대량 이동",
-   "ts": 1793014091,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x4a4aaa01 → 0xa0e56f65",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "ff8599c016a1",
-   "ref": {
-    "amount": 1000008.0,
-    "chain": "eth",
-    "from": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
-    "to": "0xa0e56f656c89e4819909d921a880329bc9bc8e38",
-    "tx": "0xeed8f100ef63c71f67fd1c2a9e35ed7e920b4c19ad42b58891ad03835cd98094"
-   },
-   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "이더리움 LIT 1.00M개 대량 이동",
-   "ts": 1793013923,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcl9QTDZHeTBJYjVHVW5jVmxUVk0zVW43VUVuLW5Cc0t6NTdoWjU1aDVBejNMbkw2YkVhbWVOb0sxenUxRnhUWVROREpyNFhKMWhMaWZVZzc",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "8d38c28e1ff9",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcl9QTDZHeTBJYjVHVW5jVmxUVk0zVW43VUVuLW5Cc0t6NTdoWjU1aDVBejNMbkw2YkVhbWVOb0sxenUxRnhUWVROREpyNFhKMWhMaWZVZzcydXFVWEF1SUhhT2lVUkJoeU9IY01qZG9iUjdGZTlFaUxpS3ozQTFZQUN5NnBwTzF2RVN4bQ?oc=5",
-    "words": [
-     "Airdrop",
-     "Launches"
-    ]
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: TxFlow Launches Points Program, Confirms Airdrop for Q1 2027 - Coinfomania",
-   "ts": 1792970712,
-   "venue": "txflow",
-   "venue_name": "TxFlow"
   }
  ],
  "runs": [
-  [
-   1794858709,
-   "s"
-  ],
   [
    1794866899,
    "d"
@@ -5038,6 +5040,10 @@
   [
    1794923472,
    "s"
+  ],
+  [
+   1794952120,
+   "s"
   ]
  ],
  "venues": [
@@ -5055,37 +5061,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "18건",
      "ok": true
     }
@@ -5554,37 +5560,11 @@
      "title": "이더리움 LIT 1.65M개 대량 이동",
      "ts": 1794408539,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "Manage Guilds and Guild Duels",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "779f382437e9",
-     "ref": {
-      "moved": [],
-      "name": "문서 전체 목록",
-      "new": [
-       "Manage Guilds and Guild Duels — https://docs.lighter.xyz/developers/integration-guides/manage-guilds.md"
-      ],
-      "removed": [],
-      "url": "https://docs.lighter.xyz/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "index_change",
-     "title": "공식 문서 목록 변경: 새 문서 1개",
-     "ts": 1794340820,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793855313,
-     248267.592,
-     59463.918
-    ],
     [
      1793857106,
      248286.249,
@@ -7579,6 +7559,11 @@
      1794923472,
      303020.357,
      74459.195
+    ],
+    [
+     1794952120,
+     303501.708,
+     74673.45
     ]
    ],
    "level": "WATCH",
@@ -7586,14 +7571,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793731239,
-     448369.56
-    ],
-    [
-     1793736594,
-     448369.56
-    ],
     [
      1793743725,
      448399.6
@@ -9377,62 +9354,66 @@
     [
      1794923472,
      485694.96
+    ],
+    [
+     1794952120,
+     485694.96
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "17건",
      "ok": true
     },
     "board": {
-     "at": 1794923472,
-     "note": "상위 10명 합계 303,020",
+     "at": 1794952120,
+     "note": "상위 10명 합계 303,502",
      "ok": true
     },
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1794923472,
-     "note": "360블록 · 대량 1건",
+     "at": 1794952120,
+     "note": "2379블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "모듈 162 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
-     "note": "91건",
+     "at": 1794952120,
+     "note": "89건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "485,695 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "17건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "20건",
      "ok": true
     }
@@ -9445,6 +9426,54 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "Affiliate-owned challenges, Affiliate-owned challenge leaderboard, Affiliate-owned challenges",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "8bd30c5a9bc7",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Affiliate-owned challenges — https://docs.qfex.com/api-reference/rest/user/affiliate-owned-challenges.md",
+       "Affiliate-owned challenge leaderboard — https://docs.qfex.com/api-reference/rest/user/affiliate-owned-challenge-leaderboard.md",
+       "Affiliate-owned challenges — https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenges.md",
+       "Affiliate-owned challenge leaderboard — https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenge-leaderboard.md"
+      ],
+      "removed": [],
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 4개",
+     "ts": 1794952120,
+     "venue": "qfex"
+    },
+    {
+     "detail": "17th November 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "f9cc605773d8",
+     "ref": {
+      "added": [
+       "**17th November 2026**",
+       "New Endpoint",
+       "**Affiliates can retrieve their own challenge standings for website display.**",
+       "Endpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+       "Authenticated affiliates can list their challenges and fetch each competition's configuration, prize pool, payout distribution, and participant standings. Each participant includes username, maker volume, taker volume, PnL, score, and projected payout. The routes require an HMAC API key with view\\_balance permission; the detail route rejects keys that do not belong to the challenge owner. Website publishers must protect their own viewer access."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1794952120,
+     "venue": "qfex"
+    },
     {
      "detail": "Affiliate challenge leaderboards",
      "family": "S2",
@@ -9501,22 +9530,6 @@
      "title": "공식 문서 '문서 전체 목록' 문구 변경",
      "ts": 1794398912,
      "venue": "qfex"
-    },
-    {
-     "detail": "Chinese (165 pages): Latest, 2026-10-29.",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "a6110dfc7bab",
-     "ref": {
-      "name": "문서 전체 목록",
-      "url": "https://docs.qfex.com/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '문서 전체 목록' 문구 변경",
-     "ts": 1794340820,
-     "venue": "qfex"
     }
    ],
    "groups": [],
@@ -9525,33 +9538,33 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 6% · 27년 6/30까지 23%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 6% · 27년 6/30까지 24%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1794923472,
-     "note": "21건",
+     "at": 1794952120,
+     "note": "20건",
      "ok": true
     }
    },
@@ -9841,32 +9854,32 @@
    "level": "IMMINENT",
    "links": {},
    "name": "Extended",
-   "odds": "토큰 출시 확률 12/31까지 89%",
+   "odds": "토큰 출시 확률 12/31까지 95%",
    "rh_supply_hist": null,
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "30건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "22건",
      "ok": true
     }
@@ -10005,37 +10018,37 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 67%",
+   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 60%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "19건",
      "ok": true
     }
@@ -10057,6 +10070,21 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "will-pacifica-launch-a-token-by-june-30-2027",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "b0f8fa76228c",
+     "ref": {
+      "url": "https://polymarket.com/market/will-pacifica-launch-a-token-by-june-30-2027"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket: Will Pacifica launch a token by June 30, 2027? 32% → 53%",
+     "ts": 1794952120,
+     "venue": "pacifica"
+    },
     {
      "detail": "Print is available on BTC, ETH, SOL, HYPE, ZEC, XRP, LIT, NEAR, ENA, SKHYNIX, NVDA, GOLD (XAU), and CL. Every listed Print market offers a 24-hour cycle; BTC also offers 7-day and 30-day cycles. See Specifications for current leverage and deposit limits.",
      "family": "S2",
@@ -10099,32 +10127,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 30% · 27년 6/30까지 34%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 30% · 27년 6/30까지 53%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "20건",
      "ok": true
     }
@@ -10136,28 +10164,11 @@
   },
   {
    "api_watch": "closed",
-   "events": [
-    {
-     "detail": "Vaults: Pooled USDC accounts that trade a strategy and share the result with depositors: the Protocol Vault, User Vaults, lock-ups, profit share and withdrawals.",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "6e24ba6e7185",
-     "ref": {
-      "name": "문서 전체 목록",
-      "url": "https://docs.txflow.com/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '문서 전체 목록' 문구 변경",
-     "ts": 1794340820,
-     "venue": "txflow"
-    }
-   ],
+   "events": [],
    "groups": [],
    "id": "txflow",
    "lb_hist": null,
-   "level": "WATCH",
+   "level": "NONE",
    "links": {},
    "name": "TxFlow",
    "odds": "",
@@ -10165,28 +10176,28 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
-     "note": "10건",
+     "at": 1794952120,
+     "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1794923472,
-     "note": "22건",
+     "at": 1794952120,
+     "note": "20건",
      "ok": true
     }
    },
@@ -10209,22 +10220,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "20건",
      "ok": true
     }
@@ -10248,17 +10259,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "9건",
      "ok": true
     }
@@ -10381,28 +10392,28 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 44% · 27년 12/31까지 49%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 42% · 27년 12/31까지 49%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1794923472,
+     "at": 1794952120,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1794923472,
-     "note": "20건",
+     "at": 1794952120,
+     "note": "19건",
      "ok": true
     }
    },
