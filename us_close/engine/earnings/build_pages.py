@@ -120,6 +120,11 @@ SHIM = r"""
       if (window.innerWidth === lastW) return;
       lastW = window.innerWidth; clearTimeout(timer); timer = setTimeout(runAll, 150);
     });
+    /* charts measure their labels, so draw again once the web font has arrived */
+    if (document.fonts && document.fonts.addEventListener) {
+      var ft = null;
+      document.fonts.addEventListener("loadingdone", function () { clearTimeout(ft); ft = setTimeout(runAll, 60); });
+    }
   };
 })();
 """ % {"ids": json.dumps(IDS + ["datasets"])}
