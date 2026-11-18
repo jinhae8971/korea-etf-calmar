@@ -1,34 +1,6 @@
 {
- "as_of_kst": "2026-11-17 13:12",
+ "as_of_kst": "2026-11-18 12:10",
  "calendar": [
-  {
-   "event_date": "2026-11-17",
-   "first_seen": "2026-11-11",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "cosmoshub:gov:1061",
-   "last_seen": "2026-11-17",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-11",
-    "price_at_detect": 1.59,
-    "score_at_detect": 45.5
-   },
-   "score": 45.5,
-   "source": "cosmos",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-11",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "ATOM",
-   "title": "Gaia v29.1.0 upgrade",
-   "trust": 1.0,
-   "url": "https://www.mintscan.io/cosmoshub/proposals/1061",
-   "when": "2026-11-17"
-  },
   {
    "event_date": "2026-11-18",
    "first_seen": "2026-11-12",
@@ -58,12 +30,40 @@
    "when": "Thu, 12 Nov 2026"
   },
   {
+   "event_date": "2026-11-18",
+   "first_seen": "2026-11-18",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:hedera-schedules-40-minute-mainnet-upgrade-to-v0-79-on-novem",
+   "last_seen": "2026-11-18",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-18",
+    "price_at_detect": 0.080914,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-18",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "HBAR",
+   "title": "Hedera Schedules 40-Minute Mainnet Upgrade to v0.79 on November 18 - Altcoin Buzz",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1ETm5HNE9qTGpIWEZlZFdRdGt1UFF2Q3hBREt4U3k4cmpRLVk2ODkyMFVZVndGR2pxempBekdaVUUzU09naUlYYXJjTEJYXzhCcFF5a3N0c093OU1tRnViS2pWYTZKRE9hMU9sNjUwLTBTdDNw?oc=5",
+   "when": "Tue, 17 Nov 2026"
+  },
+  {
    "event_date": "2026-11-20",
    "first_seen": "2026-11-16",
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
-   "last_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-16",
@@ -92,7 +92,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "last_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -121,7 +121,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
-   "last_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -150,7 +150,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-veyra-upgrade-heads-to-governance-vote-ahead-of-no",
-   "last_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
@@ -178,7 +178,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-targets-november-24-veyra-upgrade-will-inj-demand-",
-   "last_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
@@ -195,10 +195,10 @@
     }
    ],
    "symbol": "INJ",
-   "title": "Injective Targets November 24 Veyra Upgrade: Will INJ Demand Surge? - CryptoRank",
+   "title": "Injective Targets November 24 Veyra Upgrade: Will INJ Demand Surge? - Cryptonews.net",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdWFiTGMtQlBzSHlpM0NldFRDQVEtNjJpeW5ubTdKQWc5NXVxdlVzTXNsblFuM3dTRWQwNmxhNXl0Ym9ZREZua1ZZZEx0Vk81eUdTUGFuVnMxNngxRTAtcnZ2TVYtYW1DaTY2Tkk2Zm1jSTdQS1RXYzc1X01ydHphbGRpa25RNmNBWjVnbVEyVGktNm5WUmhPaVNSWHNaTDZSa3dUdUNn?oc=5",
-   "when": "Sat, 14 Nov 2026"
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52eUxpZkNmVVBhUXQtVTFHcTg1Z3pLRDFwd2lQbnVfZHFVRWFFMkZ6bkJ1V0Z5QW5kSGtXUlhzNlNpUmpXd1dhWXdjOElFd3Y5UVJxMGZidTAzaUE?oc=5",
+   "when": "Fri, 13 Nov 2026"
   },
   {
    "event_date": "2026-12-08",
@@ -206,7 +206,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -260,10 +260,10 @@
    "when": "Mon, 16 Nov 2026"
   }
  ],
- "coverage": 0.95,
+ "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 69,
+ "event_count": 66,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -276,8 +276,8 @@
     "ok": 6
    },
    "news.google.com": {
-    "fail": 5,
-    "ok": 47
+    "fail": 0,
+    "ok": 52
    },
    "rest.cosmos.directory": {
     "fail": 0,
@@ -285,95 +285,101 @@
    }
   },
   "calls": 101,
-  "fail": 5
+  "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-17 13:12\n감시 52종목(체인 34·프로토콜 18) · 이벤트 69건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>UNI</b> [인프라·신규] Upgrade the v4 Protocol Fee Adapter\n🟠 <b>BNB</b> [인프라·신규] BNB price context shifts to December 8 Jenner upgrade - ad-hoc-news.de\n🟠 <b>UNI</b> [기능·신규] Protocol Fee Expansion: v4 on Five More Chains\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> ATOM <b>투표중</b> · Gaia v29.1.0 upgrade\n🟠 <code>D-1   </code> HBAR <b>일정확정</b> · Hedera v0.79 mainnet upgrade on November 18: what changes - Cr\n🔴 <code>D-3   </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🔴 <code>D-4   </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-4   </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-7   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-7   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🔴 <code>D-21  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-18 12:10\n감시 52종목(체인 34·프로토콜 18) · 이벤트 66건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>HBAR</b> [인프라·신규] Hedera Schedules 40-Minute Mainnet Upgrade to v0.79 on November 18 - Cryptonew\n🟠 <b>SUI</b> [인프라·신규] sui testnet-v1.84.1 — Sui Protocol Version in this release: `142`\n🟠 <b>ATOM</b> [인프라·투표중→가결] Gaia v29.1.0 upgrade\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> HBAR <b>일정확정</b> · Hedera v0.79 mainnet upgrade on November 18: what changes - Cr\n🟠 <code>D-DAY </code> HBAR <b>일정확정</b> · Hedera Schedules 40-Minute Mainnet Upgrade to v0.79 on Novembe\n🔴 <code>D-2   </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🔴 <code>D-3   </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-3   </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-6   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-6   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🔴 <code>D-20  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-11-21",
-   "first_seen": "2026-11-17",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-17",
-    "price_at_detect": 6.96,
-    "score_at_detect": 45.5
-   },
-   "score": 45.5,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-17",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "UNI",
-   "title": "Upgrade the v4 Protocol Fee Adapter",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "vote_state": "active",
-   "when": "2026-11-21"
-  },
-  {
-   "event_date": "2026-12-08",
-   "first_seen": "2026-11-17",
+   "event_date": "2026-11-18",
+   "first_seen": "2026-11-18",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:bnb-price-context-shifts-to-december-8-jenner-upgrade-ad-hoc",
+   "key": "news:hedera-schedules-40-minute-mainnet-upgrade-to-v0-79-on-novem",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-17",
-    "price_at_detect": 746.55,
-    "score_at_detect": 30.0
+    "detected_at": "2026-11-18",
+    "price_at_detect": 0.080914,
+    "score_at_detect": 35.3
    },
-   "score": 30.0,
+   "score": 35.3,
    "source": "news",
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-17",
+     "at": "2026-11-18",
      "stage": "SCHEDULED"
     }
    ],
-   "symbol": "BNB",
-   "title": "BNB price context shifts to December 8 Jenner upgrade - ad-hoc-news.de",
+   "symbol": "HBAR",
+   "title": "Hedera Schedules 40-Minute Mainnet Upgrade to v0.79 on November 18 - Cryptonews.net",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWVaN0w3eUZ6QjQ5SGNETUVXMVVnc0hCMG5JZFhyMklEUzJ0eGNIcDhTQTBxVFhHTlpJc3ZSR2ctQjFGWmF5eWFVbzFRSnFSaS0zZXVtS2tJN3FSOGVUcjVJM1RxYXRsV2dQb0FiOGp5Z251czlfNDNDMjhucGVjUzlfdklzQXhudDBmRlZIYmQ3OFZCU2RwYjBrUnl3U3A0LVBmWUsxQXZicW5lWUtyU2NkTWdrUQ?oc=5",
-   "when": "Mon, 16 Nov 2026"
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB5UkM4a3lpSE5yZDJZOVBQMXF4N01Ka0tWM29rNkx1ekFyVUNiVHl1ZGU1eHl6MFJfRHZud0hrTXdXRGVJZEVKNW0wNmNSRUlZWV9uUGdXRGVhdw?oc=5",
+   "when": "Tue, 17 Nov 2026"
   },
   {
-   "event_date": "2026-11-21",
-   "first_seen": "2026-11-17",
+   "event_date": null,
+   "first_seen": "2026-11-18",
    "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
+   "impact": "INFRA",
+   "key": "MystenLabs/sui@testnet-v1.84.1",
+   "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-17",
-    "price_at_detect": 6.96,
-    "score_at_detect": 29.2
+    "detected_at": "2026-11-18",
+    "price_at_detect": 0.796873,
+    "score_at_detect": 29.9
    },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-11-17",
-     "stage": "VOTING"
+     "at": "2026-11-18",
+     "stage": "ACTIVATED"
     }
    ],
-   "symbol": "UNI",
-   "title": "Protocol Fee Expansion: v4 on Five More Chains",
+   "symbol": "SUI",
+   "title": "sui testnet-v1.84.1 — Sui Protocol Version in this release: `142`",
    "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.84.1",
+   "when": "2026-11-17"
+  },
+  {
+   "event_date": "2026-11-17",
+   "first_seen": "2026-11-11",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "cosmoshub:gov:1061",
+   "prev_stage": "VOTING",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-11",
+    "price_at_detect": 1.59,
+    "score_at_detect": 45.5,
+    "t7": 0.0,
+    "t7_at": "2026-11-18"
+   },
+   "score": 26.8,
+   "source": "cosmos",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-11-11",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-11-18",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ATOM",
+   "title": "Gaia v29.1.0 upgrade",
+   "transition": "STAGE_UP",
    "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
-   "vote_state": "active",
-   "when": "2026-11-21"
+   "url": "https://www.mintscan.io/cosmoshub/proposals/1061",
+   "when": "2026-11-17"
   }
  ],
  "universe": {
@@ -497,7 +503,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 20,
+   "n": 21,
    "status": "OK"
   },
   {
@@ -515,7 +521,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 26,
+   "n": 25,
    "status": "OK"
   },
   {
@@ -539,7 +545,7 @@
   {
    "bucket": "source:cosmos",
    "horizon": 7,
-   "n": 6,
+   "n": 7,
    "status": "표본 부족"
   },
   {
@@ -551,13 +557,13 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 4,
+   "n": 3,
    "status": "표본 부족"
   },
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -587,7 +593,7 @@
   {
    "bucket": "source:snapshot",
    "horizon": 7,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   }
  ],
