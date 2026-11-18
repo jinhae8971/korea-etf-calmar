@@ -1,7 +1,105 @@
 {
- "generated_at": 1795004069,
+ "generated_at": 1795033792,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Affiliate-owned challenge leaderboard: Return challenge configuration, prize pool, payouts, and each participant's maker volume, taker volume, PnL, and score. Only the challenge's affiliates can read ",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "078a3bdaa4e5",
+   "ref": {
+    "name": "문서 전체 목록",
+    "url": "https://docs.qfex.com/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '문서 전체 목록' 문구 변경",
+   "ts": 1795033792,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "API Update",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "2b9520258ae3",
+   "ref": {
+    "added": [
+     "API Update",
+     "**Multiple affiliates can share a trading challenge leaderboard.**",
+     "Endpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+     "Each configured affiliate can list the shared challenge and fetch its merged referral standings and prize pool. Responses include additional\\_affiliate\\_user\\_ids alongside the existing primary affiliate\\_user\\_id.",
+     "**18th November 2026**"
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1795033792,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "will-pacifica-launch-a-token-by-june-30-2027",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "fd0bb3b2592f",
+   "ref": {
+    "url": "https://polymarket.com/market/will-pacifica-launch-a-token-by-june-30-2027"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "polymarket",
+   "title": "Polymarket: Will Pacifica launch a token by June 30, 2027? 32% → 59%",
+   "ts": 1795033792,
+   "venue": "pacifica",
+   "venue_name": "Pacifica"
+  },
+  {
+   "detail": "0x4a4aaa01 → 0x03ffb8cc",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "8ac9201bb061",
+   "ref": {
+    "amount": 2585690.69,
+    "chain": "eth",
+    "from": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
+    "to": "0x03ffb8cc16499d20cf79261ebc7064f72984330e",
+    "tx": "0x756d329627ed00dcb71179802e2e210713684e4e6cb9425e6197238acec7af95"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 2.59M개 대량 이동",
+   "ts": 1795014335,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x03ffb8cc → 0x4a4aaa01",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "714f5f06373e",
+   "ref": {
+    "amount": 2358123.14,
+    "chain": "eth",
+    "from": "0x03ffb8cc16499d20cf79261ebc7064f72984330e",
+    "to": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
+    "tx": "0xb3770907e17a8808d0e3e1b16ffd109065fa5ec5879700db4e7eb3f39650b776"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 2.36M개 대량 이동",
+   "ts": 1795011431,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "Latest (125 pages), Public leverage limits",
    "family": "S2",
@@ -4838,114 +4936,9 @@
    "ts": 1793101113,
    "venue": "extended",
    "venue_name": "Extended"
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTUd3ZFdYWXJoWERteXBERHI0S1BPY2lULUZ2dmllLXpxYmpfcHhNblFLNS0zV1NPTllpb2RUUE9LcWZJeUxjYTZZbkJpeDdXaUhCNmVhQy1",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "d571914f9ddf",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTUd3ZFdYWXJoWERteXBERHI0S1BPY2lULUZ2dmllLXpxYmpfcHhNblFLNS0zV1NPTllpb2RUUE9LcWZJeUxjYTZZbkJpeDdXaUhCNmVhQy1yNFFxOFNON0FlMl9oUHhGTTNZbmc1akRud0YyYzRzM3p4SHBhZkJYTUNB?oc=5",
-    "words": [
-     "Launches"
-    ]
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: Hyperliquid Launches Extended (XTEN) with 3x Leverage - Coinfomania",
-   "ts": 1793090305,
-   "venue": "extended",
-   "venue_name": "Extended"
-  },
-  {
-   "detail": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVGI5NU1YVWZ5SzNfcTZLRDhWY0h4ZmxWaGRnZnpsdUJGaTVXaHpTYXhFY0REaVFnY0hQZWlaaDRwYlVDaUhwZGlPZEE5Rk5ueUd5ZUhpNjV",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "09438b730498",
-   "ref": {
-    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVGI5NU1YVWZ5SzNfcTZLRDhWY0h4ZmxWaGRnZnpsdUJGaTVXaHpTYXhFY0REaVFnY0hQZWlaaDRwYlVDaUhwZGlPZEE5Rk5ueUd5ZUhpNjV3b3VRMm94NnN4elVDUHYzRk5aQlFGSVdVbGNyZmhuV3lQSHh5U2lxdjlKLVpGc2ZoMGI5NnVNZWYyRTRTejhTMC12YXpXUXl4bVByanByS2FpVWFPSjVvUWxvMlpGQQ?oc=5",
-    "words": [
-     "Launches"
-    ]
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "news",
-   "title": "뉴스: Arcus, Built by dYdX Labs, Launches Leveraged Stock and Crypto Tokens on Robinhood Chain - unchained",
-   "ts": 1793042602,
-   "venue": "arcus",
-   "venue_name": "Arcus"
-  },
-  {
-   "detail": "A partial hedge also counts: if your position on Lighter RH is $100, but you're only hedged for $50 on Lighter Core, you will get a 1.75x boost. Otherwise, if the (opposing) position on Core is the same or larger, you get the complete boost.",
-   "family": "S2",
-   "grade": "WATCH",
-   "id": "cdec1654086b",
-   "ref": {
-    "added": [
-     "A partial hedge also counts: if your position on Lighter RH is $100, but you're only hedged for $50 on Lighter Core, you will get a 1.75x boost. Otherwise, if the (opposing) position on Core is the same or larger, you get the complete boost."
-    ],
-    "name": "로빈후드 체인 포인트 안내",
-    "removed": 0,
-    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "doc_change",
-   "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
-   "ts": 1793042602,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "Earnings Week PnL Card Competition",
-   "family": "S2",
-   "grade": "WATCH",
-   "id": "5f33291751ea",
-   "ref": {
-    "moved": [],
-    "name": "문서 전체 목록",
-    "new": [
-     "Earnings Week PnL Card Competition — https://docs.variational.io/omni/pnl-card-comp.md"
-    ],
-    "removed": [],
-    "url": "https://docs.variational.io/llms.txt"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "index_change",
-   "title": "공식 문서 목록 변경: 새 문서 1개",
-   "ts": 1793042602,
-   "venue": "variational",
-   "venue_name": "Variational"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "17ad4cbf5120",
-   "ref": {
-    "name": "ToasterContainer"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "앱에 새 화면 모듈: ToasterContainer",
-   "ts": 1793018312,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1794919119,
-   "d"
-  ],
-  [
-   1794923472,
-   "s"
-  ],
   [
    1794952120,
    "s"
@@ -5069,6 +5062,10 @@
   [
    1795004069,
    "s"
+  ],
+  [
+   1795033792,
+   "s"
   ]
  ],
  "venues": [
@@ -5086,37 +5083,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "24건",
      "ok": true
     },
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "18건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "18건",
      "ok": true
     }
@@ -5129,6 +5126,44 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "0x4a4aaa01 → 0x03ffb8cc",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "8ac9201bb061",
+     "ref": {
+      "amount": 2585690.69,
+      "chain": "eth",
+      "from": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
+      "to": "0x03ffb8cc16499d20cf79261ebc7064f72984330e",
+      "tx": "0x756d329627ed00dcb71179802e2e210713684e4e6cb9425e6197238acec7af95"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 2.59M개 대량 이동",
+     "ts": 1795014335,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x03ffb8cc → 0x4a4aaa01",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "714f5f06373e",
+     "ref": {
+      "amount": 2358123.14,
+      "chain": "eth",
+      "from": "0x03ffb8cc16499d20cf79261ebc7064f72984330e",
+      "to": "0x4a4aaa0155237881fbd5c34bfae16e985a7b068d",
+      "tx": "0xb3770907e17a8808d0e3e1b16ffd109065fa5ec5879700db4e7eb3f39650b776"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 2.36M개 대량 이동",
+     "ts": 1795011431,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOb1pHdTVWc0Nmd2pIdno1TUg1OUJJOXhfU2dkcUFSUnZ1WEdudlFWTWM3X3RBZjNNSFFKRVRiZFVhRGtRdFdsT3paWkstdV9TdnpUYjJ1R1Z",
      "family": "S4",
@@ -5547,54 +5582,11 @@
      "title": "공식 문서 목록 변경: 삭제 1개",
      "ts": 1794442115,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "0x96381b9f → 0x260b364f",
-     "family": "S1",
-     "grade": "WATCH",
-     "id": "ef80fbef6e80",
-     "ref": {
-      "amount": 1649875.0,
-      "chain": "eth",
-      "from": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
-      "to": "0x260b364fe0d3d37e6fd3cda0fa50926a06c54cea",
-      "tx": "0xf4c5efbaaf0955609f73b4058037db8024918021dd2dfec3c909c7608d367abc"
-     },
-     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-     "refuted": false,
-     "signal": "eth_large",
-     "title": "이더리움 LIT 1.65M개 대량 이동",
-     "ts": 1794409583,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "0x7fdafde5 → 0x96381b9f",
-     "family": "S1",
-     "grade": "WATCH",
-     "id": "ebc8b9b8546d",
-     "ref": {
-      "amount": 1649875.0,
-      "chain": "eth",
-      "from": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
-      "to": "0x96381b9f1e73cba58ffdf5c4d9754e32d0d9d343",
-      "tx": "0xe5065c5851628e146b5190601c46eaff27be3ef9082e327f4bdbe45ada09cad1"
-     },
-     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-     "refuted": false,
-     "signal": "eth_large",
-     "title": "이더리움 LIT 1.65M개 대량 이동",
-     "ts": 1794408539,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1793939898,
-     249743.395,
-     60032.586
-    ],
     [
      1793941704,
      249755.37,
@@ -7589,6 +7581,11 @@
      1795004069,
      304146.706,
      74922.88
+    ],
+    [
+     1795033792,
+     304604.943,
+     75157.6
     ]
    ],
    "level": "WATCH",
@@ -7596,18 +7593,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793795901,
-     448460.76
-    ],
-    [
-     1793815140,
-     451660.06
-    ],
-    [
-     1793824046,
-     451726.31
-    ],
     [
      1793830118,
      451726.31
@@ -9387,62 +9372,66 @@
     [
      1795004069,
      485694.96
+    ],
+    [
+     1795033792,
+     485694.96
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795004069,
-     "note": "17건",
+     "at": 1795033792,
+     "note": "18건",
      "ok": true
     },
     "board": {
-     "at": 1795004069,
-     "note": "상위 10명 합계 304,147",
+     "at": 1795033792,
+     "note": "상위 10명 합계 304,605",
      "ok": true
     },
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795004069,
-     "note": "30블록 · 대량 0건",
+     "at": 1795033792,
+     "note": "2477블록 · 대량 2건",
      "ok": true
     },
     "frontend": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "모듈 162 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
-     "note": "83건",
+     "at": 1795033792,
+     "note": "81건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "485,695 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795004069,
-     "note": "17건",
+     "at": 1795033792,
+     "note": "18건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "20건",
      "ok": true
     }
@@ -9455,6 +9444,46 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "Affiliate-owned challenge leaderboard: Return challenge configuration, prize pool, payouts, and each participant's maker volume, taker volume, PnL, and score. Only the challenge's affiliates can read ",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "078a3bdaa4e5",
+     "ref": {
+      "name": "문서 전체 목록",
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '문서 전체 목록' 문구 변경",
+     "ts": 1795033792,
+     "venue": "qfex"
+    },
+    {
+     "detail": "API Update",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "2b9520258ae3",
+     "ref": {
+      "added": [
+       "API Update",
+       "**Multiple affiliates can share a trading challenge leaderboard.**",
+       "Endpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+       "Each configured affiliate can list the shared challenge and fetch its merged referral standings and prize pool. Responses include additional\\_affiliate\\_user\\_ids alongside the existing primary affiliate\\_user\\_id.",
+       "**18th November 2026**"
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1795033792,
+     "venue": "qfex"
+    },
     {
      "detail": "Latest (125 pages), Public leverage limits",
      "family": "S2",
@@ -9624,33 +9653,33 @@
    "level": "WATCH",
    "links": {},
    "name": "QFEX",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 6% · 27년 6/30까지 24%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 3/31까지 6% · 27년 6/30까지 26%",
    "rh_supply_hist": null,
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
-     "note": "13건",
+     "at": 1795033792,
+     "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795004069,
-     "note": "19건",
+     "at": 1795033792,
+     "note": "18건",
      "ok": true
     }
    },
@@ -9781,192 +9810,41 @@
      "title": "뉴스: XTEN/BRL Price: Convert Extended to Brazilian Real - Crypto.com",
      "ts": 1794509588,
      "venue": "extended"
-    },
-    {
-     "detail": "extended-resources/legal/xten-community-distribution-terms",
-     "family": "S2",
-     "grade": "ALERT",
-     "id": "dea06eec8af9",
-     "ref": {
-      "added": [
-       "XTEN Community Distribution Terms — https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md"
-      ],
-      "name": "XTEN Community Distribution Terms",
-      "url": "https://docs.extended.exchange/extended-resources/legal/xten-community-distribution-terms.md",
-      "words": [
-       "Distribution"
-      ]
-     },
-     "refute": "전환·청구와 무관한 문서로 확인되면 해제",
-     "refuted": false,
-     "signal": "index_keyword",
-     "title": "공식 문서에 새 페이지 'XTEN Community Distribution Terms'",
-     "ts": 1794418023,
-     "venue": "extended"
-    },
-    {
-     "detail": "Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.",
-     "family": "S2",
-     "grade": "IMMINENT",
-     "id": "b0992ca7e8d1",
-     "ref": {
-      "added": [
-       "**Points distributions have ended. The final snapshot was taken at 00:00 UTC on 6 November 2026.**",
-       "Weekly points distributions have ended. As of 5 November 2026, all 70,000,000 points out of 70 million total points have been distributed under the program."
-      ],
-      "name": "포인트 프로그램",
-      "url": "https://docs.extended.exchange/extended-resources/points-program.md",
-      "words": [
-       "ended"
-      ]
-     },
-     "refute": "일정·비율이 아닌 일반 설명·약관 정정으로 확인되면 해제",
-     "refuted": false,
-     "signal": "doc_keyword",
-     "title": "공식 문서 '포인트 프로그램'에 전환·TGE 관련 문구 추가",
-     "ts": 1794418023,
-     "venue": "extended"
-    },
-    {
-     "detail": "This competition has ended.",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "ab5a900d426c",
-     "ref": {
-      "added": [
-       "**This competition has ended.**",
-       "The Competition ran for four weeks **from** **7 October 2026, 00:00 UTC until 3 November 2026, 00:00 UTC.**"
-      ],
-      "name": "Final Arc 대회",
-      "removed": 1,
-      "url": "https://docs.extended.exchange/extended-resources/trading-competitions/the-final-arc-trading-competition.md"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 'Final Arc 대회' 문구 변경",
-     "ts": 1794418023,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://t.me/extended_updates/398",
-     "family": "S2",
-     "grade": "ALERT",
-     "id": "58206d9f9889",
-     "ref": {
-      "label": "공식 텔레그램",
-      "text": "XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now live. Eligible Xpoints holders can now sign the Terms to see their XTEN allocations in the Extended app. Allocations are calculated from final Xpoints balances, at approximately 4.2857 XTEN per Xpoint. Figures in the app may be rounded for display. The TGE date will be announced sep.",
-      "url": "https://t.me/extended_updates/398",
-      "words": [
-       "TGE"
-      ]
-     },
-     "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
-     "refuted": false,
-     "signal": "telegram_post",
-     "title": "Extended 공식 텔레그램: XTEN Allocation Checker and T&Cs The XTEN allocation checker and Community Distribution Terms and Conditions are now liv",
-     "ts": 1794415973,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://x.com/extendedapp/status/2120559562151313881",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "49e135daf894",
-     "ref": {
-      "label": "공식 X",
-      "text": "Full details: https://docs.extended.exchange/extended-resources/xten/airdrop-distribution.",
-      "url": "https://x.com/extendedapp/status/2120559562151313881",
-      "words": [
-       "airdrop",
-       "distribution"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "x_post",
-     "title": "Extended 공식 X: Full details: https://docs.extended.exchange/extended-resources/xten/airdrop-distribution",
-     "ts": 1794415772,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://x.com/extendedapp/status/2120559564332339357",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "82d0baa193a9",
-     "ref": {
-      "label": "공식 X",
-      "text": "XTEN allocations are subject to eligibility requirements, applicable compliance checks and acceptance of the Community Distribution Terms and Conditions. XTEN may lose some or all of its value and may not always be liquid or transferable.\n\nThe offeror of XTEN is Extended Ecosystem Limited, whose contact details are as follows: legal@extended.exchange | +1 284 394 4030.\n\nThe XTEN crypto-asset white.",
-      "url": "https://x.com/extendedapp/status/2120559564332339357",
-      "words": [
-       "allocations",
-       "Distribution"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "x_post",
-     "title": "Extended 공식 X: XTEN allocations are subject to eligibility requirements, applicable compliance checks and acceptance of the Community D",
-     "ts": 1794415772,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://x.com/extendedapp/status/2120559559513129130",
-     "family": "S2",
-     "grade": "ALERT",
-     "id": "6490d5117372",
-     "ref": {
-      "label": "공식 X",
-      "text": "The XTEN allocation checker and T&Cs are now live.\n\nEligible Xpoints holders can sign the Terms in the Extended app to see their XTEN allocation.\n\nSigning window: 11 November 2026 to 31 December 2026, 23:59 UTC.\n\nStarknet accounts must nominate a self-custodial EVM wallet with an active Extended account to receive XTEN. The TGE date will be announced separately.\n\nSign only in the Extended app: htt.",
-      "url": "https://x.com/extendedapp/status/2120559559513129130",
-      "words": [
-       "TGE"
-      ]
-     },
-     "refute": "토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제",
-     "refuted": false,
-     "signal": "x_post",
-     "title": "Extended 공식 X: The XTEN allocation checker and T&Cs are now live. Eligible Xpoints holders can sign the Terms in the Extended app to se",
-     "ts": 1794415771,
-     "venue": "extended"
     }
    ],
-   "groups": [
-    "docs",
-    "post"
-   ],
+   "groups": [],
    "id": "extended",
    "lb_hist": null,
-   "level": "IMMINENT",
+   "level": "WATCH",
    "links": {},
    "name": "Extended",
-   "odds": "토큰 출시 확률 12/31까지 92%",
+   "odds": "토큰 출시 확률 12/31까지 93%",
    "rh_supply_hist": null,
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
-     "note": "30건",
+     "at": 1795033792,
+     "note": "32건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795004069,
-     "note": "22건",
+     "at": 1795033792,
+     "note": "20건",
      "ok": true
     }
    },
@@ -10043,59 +9921,6 @@
      "title": "공식 문서 '문서 전체 목록' 문구 변경",
      "ts": 1794539297,
      "venue": "variational"
-    },
-    {
-     "detail": "[x] Omni public mainnet launch",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "470b88acde6e",
-     "ref": {
-      "added": [
-       "* [x] Omni public mainnet launch"
-      ],
-      "name": "로드맵",
-      "removed": 1,
-      "url": "https://docs.variational.io/getting-started/roadmap.md"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '로드맵' 문구 변경",
-     "ts": 1794428071,
-     "venue": "variational"
-    },
-    {
-     "detail": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3R",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "f2a50e417041",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9IYmNLbU1XYnplM2Izak5GT3VLTVV0ZEZELUZYMVZmOHZZb19yYl85U2haWTZablRUVGRyc0VHUzN0NTJSdkVTSnkxNWlrcXJqdWZ1eTdha3RyN25pQjNtcUFabUh0SGVvVlhxQmZsWGZhUQ?oc=5",
-      "words": [
-       "launches"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: Variational launches on mainnet ahead of $VAR token event - Crypto Briefing",
-     "ts": 1794418023,
-     "venue": "variational"
-    },
-    {
-     "detail": "will-variational-launch-a-token-by-november-30-2026",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "256747fcc983",
-     "ref": {
-      "url": "https://polymarket.com/market/will-variational-launch-a-token-by-november-30-2026"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "polymarket",
-     "title": "Polymarket: Will Variational launch a token by November 30, 2026? 2% → 18%",
-     "ts": 1794418023,
-     "venue": "variational"
     }
    ],
    "groups": [],
@@ -10104,38 +9929,38 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 61%",
+   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 56%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
-     "note": "11건",
+     "at": 1795033792,
+     "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795004069,
-     "note": "19건",
+     "at": 1795033792,
+     "note": "16건",
      "ok": true
     }
    },
@@ -10156,6 +9981,21 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "will-pacifica-launch-a-token-by-june-30-2027",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "fd0bb3b2592f",
+     "ref": {
+      "url": "https://polymarket.com/market/will-pacifica-launch-a-token-by-june-30-2027"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "polymarket",
+     "title": "Polymarket: Will Pacifica launch a token by June 30, 2027? 32% → 59%",
+     "ts": 1795033792,
+     "venue": "pacifica"
+    },
     {
      "detail": "will-pacifica-launch-a-token-by-june-30-2027",
      "family": "S4",
@@ -10213,32 +10053,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 26% · 27년 6/30까지 42%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 29% · 27년 6/30까지 59%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "20건",
      "ok": true
     }
@@ -10262,27 +10102,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "20건",
      "ok": true
     }
@@ -10306,22 +10146,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
-     "note": "7건",
+     "at": 1795033792,
+     "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "20건",
      "ok": true
     }
@@ -10345,17 +10185,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "9건",
      "ok": true
     }
@@ -10494,28 +10334,28 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 40% · 27년 12/31까지 50%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 42% · 27년 12/31까지 48%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795004069,
+     "at": 1795033792,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795004069,
-     "note": "17건",
+     "at": 1795033792,
+     "note": "16건",
      "ok": true
     }
    },
