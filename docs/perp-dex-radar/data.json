@@ -1,7 +1,47 @@
 {
- "generated_at": 1795120206,
+ "generated_at": 1795124361,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "0xcd531ae9 → 0x2326a309",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "98f35267dd6e",
+   "ref": {
+    "amount": 2200000.0,
+    "chain": "eth",
+    "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+    "to": "0x2326a309ad344bb1545f544f7bd18bfed7777251",
+    "tx": "0xef341b9fa1f5624598c2224371f24451a5d899d909aec5ef284de81ef9a07eb8"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 2.20M개 대량 이동",
+   "ts": 1795122851,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0xb135faa5 → 0xcd531ae9",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "fe0fa1869f21",
+   "ref": {
+    "amount": 2198968.44,
+    "chain": "eth",
+    "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
+    "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+    "tx": "0x1458218f755ea67d7fc45c57e949487dc3160a471d4a9dc75207571a49d326cd"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 2.20M개 대량 이동",
+   "ts": 1795122731,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVXdhNEk0MlJ1Ymt3Z0YtUjlyNm9GR0J1SFlOcEtWZmpldFB6TTU0aVRYQzdhTlVfUlVLQ3ZBWU5Gd1J0VFZLcTI1SXZIMm9ZWlo5U2NhNFV",
    "family": "S4",
@@ -4883,45 +4923,9 @@
    "ts": 1793197839,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "04dcc1a2b01f",
-   "ref": {
-    "name": "/api/v1/guild/myDuels"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_path",
-   "title": "앱에 새 API 경로: /api/v1/guild/myDuels",
-   "ts": 1793197839,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "6d378df89e1b",
-   "ref": {
-    "name": "/api/v1/publicProfiles"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_path",
-   "title": "앱에 새 API 경로: /api/v1/publicProfiles",
-   "ts": 1793197839,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1795037274,
-   "s"
-  ],
   [
    1795039715,
    "d"
@@ -5049,6 +5053,10 @@
   [
    1795120206,
    "s"
+  ],
+  [
+   1795124361,
+   "s"
   ]
  ],
  "venues": [
@@ -5066,37 +5074,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "26건",
      "ok": true
     },
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "17건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "18건",
      "ok": true
     }
@@ -5109,6 +5117,44 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "0xcd531ae9 → 0x2326a309",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "98f35267dd6e",
+     "ref": {
+      "amount": 2200000.0,
+      "chain": "eth",
+      "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "to": "0x2326a309ad344bb1545f544f7bd18bfed7777251",
+      "tx": "0xef341b9fa1f5624598c2224371f24451a5d899d909aec5ef284de81ef9a07eb8"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 2.20M개 대량 이동",
+     "ts": 1795122851,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0xb135faa5 → 0xcd531ae9",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "fe0fa1869f21",
+     "ref": {
+      "amount": 2198968.44,
+      "chain": "eth",
+      "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
+      "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
+      "tx": "0x1458218f755ea67d7fc45c57e949487dc3160a471d4a9dc75207571a49d326cd"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 2.20M개 대량 이동",
+     "ts": 1795122731,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "0x073f5644 → 0x91d40e48",
      "family": "S1",
@@ -5692,11 +5738,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794029903,
-     271263.143,
-     65128.773
-    ],
     [
      1794031697,
      271276.695,
@@ -7691,6 +7732,11 @@
      1795120206,
      305773.267,
      75724.695
+    ],
+    [
+     1795124361,
+     305865.73,
+     75774.15
     ]
    ],
    "level": "ALERT",
@@ -7698,10 +7744,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1793911349,
-     454554.83
-    ],
     [
      1793916504,
      454554.83
@@ -9489,62 +9531,66 @@
     [
      1795120206,
      482074.56
+    ],
+    [
+     1795124361,
+     482074.56
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "19건",
      "ok": true
     },
     "board": {
-     "at": 1795120206,
-     "note": "상위 10명 합계 305,773",
+     "at": 1795124361,
+     "note": "상위 10명 합계 305,866",
      "ok": true
     },
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795120206,
-     "note": "2354블록 · 대량 1건",
+     "at": 1795124361,
+     "note": "346블록 · 대량 2건",
      "ok": true
     },
     "frontend": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "모듈 163 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
-     "note": "79건",
+     "at": 1795124361,
+     "note": "122건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "482,075 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "22건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "20건",
      "ok": true
     }
@@ -9751,27 +9797,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
-     "note": "13건",
+     "at": 1795124361,
+     "note": "14건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "18건",
      "ok": true
     }
@@ -9898,27 +9944,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "20건",
      "ok": true
     }
@@ -10040,38 +10086,38 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 65%",
+   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 66%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
-     "note": "14건",
+     "at": 1795124361,
+     "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795120206,
-     "note": "17건",
+     "at": 1795124361,
+     "note": "16건",
      "ok": true
     }
    },
@@ -10164,32 +10210,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 20% · 27년 6/30까지 50%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 21% · 27년 6/30까지 48%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "5건",
      "ok": true
     },
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
-     "note": "10건",
+     "at": 1795124361,
+     "note": "25건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "14건",
      "ok": true
     }
@@ -10213,27 +10259,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "20건",
      "ok": true
     }
@@ -10257,22 +10303,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "20건",
      "ok": true
     }
@@ -10296,17 +10342,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "9건",
      "ok": true
     }
@@ -10425,27 +10471,27 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 40% · 27년 12/31까지 48%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 42% · 27년 12/31까지 48%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795120206,
-     "note": "6건",
+     "at": 1795124361,
+     "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795120206,
+     "at": 1795124361,
      "note": "17건",
      "ok": true
     }
