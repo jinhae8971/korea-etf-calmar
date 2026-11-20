@@ -1,5 +1,5 @@
 {
- "generated_at": 1795156700,
+ "generated_at": 1795158524,
  "levels": {
   "arcus": "NONE",
   "extended": "WATCH",
@@ -15,14 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1795070304,
-   "d"
-  ],
-  [
-   1795072109,
-   "d"
-  ],
   [
    1795073903,
    "d"
@@ -150,6 +142,10 @@
   [
    1795156700,
    "d"
+  ],
+  [
+   1795158524,
+   "d"
   ]
  ],
  "status": {
@@ -214,8 +210,8 @@
    "x:TitanExchange_": true
   },
   "txflow": {
-   "api_watch": true,
-   "docs": true,
+   "api_watch": false,
+   "docs": false,
    "news": true,
    "polymarket": true,
    "x:TxFlow_L1": true
