@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-20",
- "as_of_kst": "2026-11-20 07:41",
+ "as_of": "2026-11-21",
+ "as_of_kst": "2026-11-21 07:41",
  "data_status": "OK",
  "failed": [],
  "thresholds_frozen_at": "2026-09-05",
@@ -8,30 +8,30 @@
   {
    "key": "kimchi",
    "label": "김치프리미엄",
-   "level": 0,
-   "value": 2.65,
-   "display": "+2.65%",
-   "note": "정상 범위",
+   "level": 1,
+   "value": 3.07,
+   "display": "+3.07%",
+   "note": "국내 프리미엄 확대",
    "raw": {
-    "value": 2.65,
-    "krw": 84776000.0,
-    "usd": 62171.195,
-    "fx": 1328.45,
+    "value": 3.07,
+    "krw": 81560000.0,
+    "usd": 59078.115,
+    "fx": 1339.44,
     "hist": {
-     "d1": 2.65,
-     "d30": 1.85
+     "d1": 3.07,
+     "d30": -2.16
     }
    },
    "deltas": {
     "d1": {
-     "delta": 0.29,
+     "delta": 0.42,
      "dir": "up",
-     "text": "+0.29%p"
+     "text": "+0.42%p"
     },
     "d30": {
-     "delta": 2.28,
+     "delta": 2.52,
      "dir": "up",
-     "text": "+2.28%p"
+     "text": "+2.52%p"
     }
    },
    "extra": ""
@@ -40,38 +40,38 @@
    "key": "altseason",
    "label": "알트시즌 지수",
    "level": 0,
-   "value": 50,
-   "display": "50 / 100",
+   "value": 48,
+   "display": "48 / 100",
    "note": "비트코인 우위",
    "raw": {
-    "value": 50,
+    "value": 48,
     "sample": 50,
-    "btc_30d": -25.7,
+    "btc_30d": -30.4,
     "leaders": [
      {
       "sym": "M",
-      "chg": 7.7
+      "chg": 14.2
      },
      {
       "sym": "LEO",
-      "chg": 2.5
+      "chg": 1.1
      },
      {
-      "sym": "FIGR_HELOC",
-      "chg": 1.0
+      "sym": "USDY",
+      "chg": 0.3
      }
     ]
    },
    "deltas": {
     "d1": {
-     "delta": -4,
+     "delta": -2,
      "dir": "down",
-     "text": "-4"
+     "text": "-2"
     },
     "d30": {
-     "delta": 20,
+     "delta": 4,
      "dir": "up",
-     "text": "+20"
+     "text": "+4"
     }
    },
    "extra": ""
@@ -80,27 +80,27 @@
    "key": "fng",
    "label": "공포탐욕지수",
    "level": 0,
-   "value": 10,
-   "display": "10 (Extreme Fear)",
+   "value": 12,
+   "display": "12 (Extreme Fear)",
    "note": "탐욕 임계 미만",
    "raw": {
-    "value": 10,
+    "value": 12,
     "label": "Extreme Fear",
     "hist": {
-     "d1": 11,
-     "d30": 55
+     "d1": 10,
+     "d30": 63
     }
    },
    "deltas": {
     "d1": {
-     "delta": -1,
-     "dir": "down",
-     "text": "-1"
+     "delta": 2,
+     "dir": "up",
+     "text": "+2"
     },
     "d30": {
-     "delta": -53,
+     "delta": -56,
      "dir": "down",
-     "text": "-53"
+     "text": "-56"
     }
    },
    "extra": ""
@@ -109,34 +109,36 @@
    "key": "mvrv",
    "label": "MVRV",
    "level": 0,
-   "value": 1.33,
-   "display": "1.33 · Z 0.57",
+   "value": 1.27,
+   "display": "1.27 · Z 0.47",
    "note": "평균 회귀 구간",
    "raw": {
-    "value": 1.33,
-    "as_of": "2026-11-12",
-    "zscore": 0.57
+    "value": 1.27,
+    "as_of": "2026-11-13",
+    "zscore": 0.47
    },
    "deltas": {
     "d1": {
-     "delta": -0.04,
+     "delta": -0.06,
      "dir": "down",
-     "text": "-0.04"
+     "text": "-0.06"
     },
     "d30": {
-     "delta": -0.19,
+     "delta": -0.27,
      "dir": "down",
-     "text": "-0.19"
+     "text": "-0.27"
     }
    },
    "extra": ""
   }
  ],
  "phase": {
-  "score": 0,
+  "score": 1,
   "max": 8,
   "phase": "평온"
  },
- "changes": [],
- "message": "🧭 <b>크립토 고점신호</b>  2026-11-20 07:41 KST\n국면: <b>평온</b>  (과열도 0/8)\n\n🟢 <b>김치프리미엄</b> +2.65%\n     1일 🔺+0.29%p  ·  30일 🔺+2.28%p\n     <i>정상 범위</i>\n🟢 <b>알트시즌 지수</b> 50 / 100\n     1일 🔻-4  ·  30일 🔺+20\n     <i>비트코인 우위</i>\n🟢 <b>공포탐욕지수</b> 10 (Extreme Fear)\n     1일 🔻-1  ·  30일 🔻-53\n     <i>탐욕 임계 미만</i>\n🟢 <b>MVRV</b> 1.33 · Z 0.57\n     1일 🔻-0.04  ·  30일 🔻-0.19\n     <i>평균 회귀 구간</i>\n\n<i>관측 리포트입니다. 각 지표는 현재 구간의 서술이며 고점 시점이나 수익률을 주장하지 않습니다.</i>"
+ "changes": [
+  "김치프리미엄 단계 상승 (🟢 → 🟠)"
+ ],
+ "message": "🧭 <b>크립토 고점신호</b>  2026-11-21 07:41 KST\n국면: <b>평온</b>  (과열도 1/8)\n\n🟠 <b>김치프리미엄</b> +3.07%\n     1일 🔺+0.42%p  ·  30일 🔺+2.52%p\n     <i>국내 프리미엄 확대</i>\n🟢 <b>알트시즌 지수</b> 48 / 100\n     1일 🔻-2  ·  30일 🔺+4\n     <i>비트코인 우위</i>\n🟢 <b>공포탐욕지수</b> 12 (Extreme Fear)\n     1일 🔺+2  ·  30일 🔻-56\n     <i>탐욕 임계 미만</i>\n🟢 <b>MVRV</b> 1.27 · Z 0.47\n     1일 🔻-0.06  ·  30일 🔻-0.27\n     <i>평균 회귀 구간</i>\n\n⚡ <b>변화</b>\n· 김치프리미엄 단계 상승 (🟢 → 🟠)\n\n<i>관측 리포트입니다. 각 지표는 현재 구간의 서술이며 고점 시점이나 수익률을 주장하지 않습니다.</i>"
 }
