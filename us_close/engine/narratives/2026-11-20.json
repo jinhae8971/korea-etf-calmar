@@ -1,0 +1,77 @@
+{
+ "headline": "엔비디아가 SEC 회계 조사 보도에 −14% 급락해 반도체 −10.7%, 나스닥100 −5.6%였어요. VIX는 35.9예요.",
+ "breadth_note": "오른 종목 24, 내린 종목 73이에요. SMA50 위 비율은 30.9%로 하루 만에 7%p, 5일 전(66.0%)보다 35%p 떨어졌고, 52주 신저가 11개·신고가 0개예요. 동일가중(RSP −1.98%)이 시총가중(SPY −3.64%)보다 1.7%p 덜 빠져 대형 기술주에 매도가 몰렸어요. 이번 주 SPY −8.6%, QQQ −10.5%예요.",
+ "drivers": [
+  "엔비디아 −14.0%(125.53달러): SEC가 엔비디아를 조사한다는 WSJ 보도(화요일)에 이어, 금요일 로이터가 '집행 부서가 회계 문제를 들여다보고 있다'고 보도했어요. 하루에 시총 약 4,910억 달러가 사라졌고, 10/6 최고가 대비 −48%예요(Motley Fool). 7주 연속 하락으로 2008년 이후 최장이에요(CNBC).",
+  "반도체 동반 급락: 마이크론 −13.9%, AMD −13.3%, 브로드컴 −12.2%, 아리스타 −11.6%로 필라델피아 반도체가 −10.7%였어요. 인튜이트는 실적 뒤 −12.8%, 앤트로픽은 88.91달러(−8.5%)로 공모가(83달러)에 다가갔어요.",
+  "안전자산 쏠림: 10년물 4.91%(−14bp), 5년물 4.70%(−16.5bp)로 국채 금리가 크게 내렸고, VIX는 35.9(+7.4pt)예요. 금(−4.0%)과 비트코인(−4.6%)도 함께 팔려 현금을 마련하려는 매도가 컸어요.",
+  "방어주로 이동: 필수소비재(+0.7%)만 올랐고 UNH +2.8%, 월마트 +1.5%, AT&T·T모바일·버라이즌 등 통신주가 강했어요. 성장주는 가치주 대비 1개월 −11.3%p로 벌어졌어요."
+ ],
+ "after_hours": [
+  "QQQ 616.8(+1.4%), SPY 695.6(+0.8%), SOXX 127.3(+3.2%), DRAM 34.3(+2.8%), 엔비디아 129.75(+3.4%)로 시간외에서 반등하고 있어요."
+ ],
+ "tech": {
+  "QQQ": {
+   "short": 45,
+   "swing": 25,
+   "short_d": 5,
+   "swing_d": 0,
+   "note": "608.45(−5.7%)로 고점 대비 −20.2%예요. 4H RSI 22.2, 일봉 RSI 26.6으로 과매도 극단이고 일봉 거래량은 평균의 2.6배였어요. 주봉 MACD 히스토그램은 −9.88→−14.19로 커졌어요. 시간외 616.8(+1.4%)로 반등 중이라 단기는 5%p 올렸고, 스윙은 하한(25%) 그대로예요. 583.3을 내주면 555.6까지 열려 있어요.",
+   "up": "629.2 회복 → 636.8, 647.2",
+   "down": "583.3 이탈 → 555.6"
+  },
+  "SPY": {
+   "short": 45,
+   "swing": 25,
+   "short_d": 5,
+   "swing_d": 0,
+   "note": "689.8(−3.6%)로 지지선 689.7 바로 위에서 마감했고, 금요일 종가로 주봉 SuperTrend가 하락(785.8)으로 확정됐어요. 4H RSI 19.6, 4H 거래량이 평균의 7.5배로 투매에 가까운 모습이에요. 이번 주는 −8.6%예요. 과매도와 시간외 반등(695.6)을 반영해 단기만 5%p 올렸어요.",
+   "up": "697.8 회복 → 716.6, 722.9(주봉 EMA50)",
+   "down": "689.7 이탈 → 651.9, 629.3"
+  },
+  "SOXX": {
+   "short": 40,
+   "swing": 25,
+   "short_d": 0,
+   "swing_d": 0,
+   "note": "−10.55%로 하루 만에 4H SuperTrend가 하락으로 바뀌었고, 고점 대비 −43.6%예요. 지지선 122.9 바로 위에서 마감했어요. 시간외 127.3(+3.2%)로 반등했지만, 엔비디아 회계 조사 결과가 나오기 전까지 변동성이 클 거예요. 그 아래 주봉 EMA120(120.1)이 마지막 장기선이에요.",
+   "up": "130.8 회복 → 135.2",
+   "down": "122.9 이탈 → 120.1(주봉 EMA120)"
+  },
+  "DRAM": {
+   "short": 40,
+   "swing": 25,
+   "short_d": 0,
+   "swing_d": 0,
+   "note": "33.36(−13.2%)으로 고점 대비 −59%예요. 주봉 EMA120(38.4)을 크게 내줬고, 다음 지지는 주봉 SuperTrend(29.4)뿐이에요. 4H RSI 26.5로 과매도이고 시간외 34.3(+2.8%)이에요. 마이크론은 −13.9%였어요. 상장 이력이 짧아 주봉 지표는 참고만 해요.",
+   "up": "38.4 회복 → 41.9(4H SuperTrend)",
+   "down": "29.4(주봉 SuperTrend)까지 지지 없음"
+  }
+ },
+ "calendar": [
+  "11/23 HPE(장후), 11/24 델(장후)·ADI·메드트로닉(장전) 실적",
+  "11/26 추수감사절 휴장, 11/27 조기 폐장",
+  "12/8~9 FOMC"
+ ],
+ "view": "엔비디아 회계 조사 보도가 AI 매도에 기름을 부어 반도체가 하루 −10.7% 빠졌어요. 나스닥100은 고점 대비 −20%로 약세장 기준에 닿았고, SPY는 금요일 종가로 주봉 SuperTrend 하락이 확정됐어요. 다만 10년물이 하루 14bp 내린 안전자산 쏠림, 4H RSI 20 안팎의 과매도, 거래량 급증과 시간외 반등은 투매 끝물에서 자주 보이는 모습이에요. 지수 단기 확률만 5%p 올렸고, 조사 결과가 나오기 전까지 반도체 변동성은 클 거예요. 다음 주는 추수감사절로 거래일이 짧아 유동성이 얇아요.",
+ "summary": [
+  "엔비디아가 SEC 회계 조사 보도에 −14%, 반도체 지수는 −10.7%예요.",
+  "S&P −3.7%, 나스닥100 −5.6%(고점 대비 −20%), VIX 35.9예요.",
+  "10년물은 4.91%(−14bp)로 내렸고, 시간외 QQQ는 +1.4%예요.",
+  "SPY 689.7, QQQ 583.3이 지지선이고, 다음 주는 추수감사절 주간이에요."
+ ],
+ "sources": [
+  {
+   "title": "Stock Market Today, Nov. 20: Nvidia's $2.5 Trillion Rout Deepens as SEC Accounting Probe Adds to Wall Street's AI Sell-Off (Motley Fool)",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-nvidia-s-usd2-5-trillion-rout-deepens-as-sec-accounting-probe-adds-to-wall-street-s-ai-sell-off/"
+  },
+  {
+   "title": "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting (Motley Fool)",
+   "url": "https://www.fool.com/investing/2026/11/20/nvidia-stock-plunge-wipes-out-nearly-usd500-billion-in-one-day-as-sec-reportedly-probes-its-accounting/"
+  },
+  {
+   "title": "Nvidia stock plunges 14%, wraps up longest weekly losing streak since 2008 financial crisis (CNBC)",
+   "url": "https://www.cnbc.com/2026/11/20/nvidias-7-week-losing-streak-is-longest-since-2008-financial-crisis.html"
+  }
+ ]
+}
