@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-11-19 11:51",
+ "as_of_kst": "2026-11-20 11:41",
  "calendar": [
   {
    "event_date": "2026-11-20",
@@ -7,7 +7,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-16",
@@ -36,7 +36,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -65,7 +65,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -89,12 +89,41 @@
    "when": "2026-11-21"
   },
   {
+   "event_date": "2026-11-22",
+   "first_seen": "2026-11-20",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
+   "last_seen": "2026-11-20",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-20",
+    "price_at_detect": 2.6,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-20",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MORPHO",
+   "title": "MIP 136 – List MidnightAdapter in Morpho Registry",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/morpho.eth/proposal/0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
+   "vote_state": "active",
+   "when": "2026-11-22"
+  },
+  {
    "event_date": "2026-11-24",
    "first_seen": "2026-11-14",
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-veyra-upgrade-heads-to-governance-vote-ahead-of-no",
-   "last_seen": "2026-11-18",
+   "last_seen": "2026-11-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
@@ -122,7 +151,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-targets-november-24-veyra-upgrade-will-inj-demand-",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
@@ -139,10 +168,10 @@
     }
    ],
    "symbol": "INJ",
-   "title": "Injective Targets November 24 Veyra Upgrade: Will INJ Demand Surge? - Cryptonews.net",
+   "title": "Injective Targets November 24 Veyra Upgrade: Will INJ Demand Surge? - CryptoRank",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52eUxpZkNmVVBhUXQtVTFHcTg1Z3pLRDFwd2lQbnVfZHFVRWFFMkZ6bkJ1V0Z5QW5kSGtXUlhzNlNpUmpXd1dhWXdjOElFd3Y5UVJxMGZidTAzaUE?oc=5",
-   "when": "Fri, 13 Nov 2026"
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdWFiTGMtQlBzSHlpM0NldFRDQVEtNjJpeW5ubTdKQWc5NXVxdlVzTXNsblFuM3dTRWQwNmxhNXl0Ym9ZREZua1ZZZEx0Vk81eUdTUGFuVnMxNngxRTAtcnZ2TVYtYW1DaTY2Tkk2Zm1jSTdQS1RXYzc1X01ydHphbGRpa25RNmNBWjVnbVEyVGktNm5WUmhPaVNSWHNaTDZSa3dUdUNn?oc=5",
+   "when": "Sat, 14 Nov 2026"
   },
   {
    "event_date": "2026-11-24",
@@ -150,7 +179,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-s-veyra-mainnet-upgrade-set-for-november-24-after-",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-19",
@@ -173,12 +202,41 @@
    "when": "Wed, 18 Nov 2026"
   },
   {
+   "event_date": "2026-11-26",
+   "first_seen": "2026-11-20",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
+   "last_seen": "2026-11-20",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-20",
+    "price_at_detect": 0.644312,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-20",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MNT",
+   "title": "MIP-36: Recognition of Halo Prime as a Strategic Partner of Mantle",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
+   "vote_state": "active",
+   "when": "2026-11-26"
+  },
+  {
    "event_date": "2026-12-08",
    "first_seen": "2026-11-03",
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -235,7 +293,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 68,
+ "event_count": 72,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -259,105 +317,19 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-19 11:51\n감시 52종목(체인 34·프로토콜 18) · 이벤트 68건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>HBAR</b> [인프라·신규] hiero-consensus-node v0.79.0 — Release Notes\n🔴 <b>HBAR</b> [인프라·신규] hiero-consensus-node v0.79.2 — Release Notes\n🟠 <b>INJ</b> [인프라·신규] Injective’s Veyra mainnet upgrade set for November 24 after 99% approval - Cry\n🟠 <b>SUI</b> [인프라·신규] sui mainnet-v1.84.1 — Sui Protocol Version in this release: `142`\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-1   </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🔴 <code>D-2   </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-2   </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-5   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-5   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-5   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🔴 <code>D-19  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n🟠 <code>D-19  </code> BNB <b>일정확정</b> · BNB price context shifts to December 8 Jenner upgrade - ad-hoc\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-20 11:41\n감시 52종목(체인 34·프로토콜 18) · 이벤트 72건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>ALGO</b> [인프라·신규] go-algorand v5.1.1-beta — ![GitHub Logo](https://raw.githubusercontent.com/alg\n🟠 <b>MNT</b> [기능·신규] MIP-36: Recognition of Halo Prime as a Strategic Partner of Mantle\n🟠 <b>MORPHO</b> [기능·신규] MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <b>SOL</b> [인프라·신규] agave v5.0.0-alpha.1 — This is a pre-release for testing only. Do not deploy t\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🔴 <code>D-1   </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-1   </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-2   </code> MORPHO <b>투표중</b> · MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <code>D-4   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-4   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-4   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🟠 <code>D-6   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
    "event_date": null,
-   "first_seen": "2026-11-19",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "hiero-ledger/hiero-consensus-node@v0.79.0",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-19",
-    "price_at_detect": 0.080914,
-    "score_at_detect": 66.5
-   },
-   "score": 66.5,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-11-19",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "HBAR",
-   "title": "hiero-consensus-node v0.79.0 — Release Notes",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/hiero-ledger/hiero-consensus-node/releases/tag/v0.79.0",
-   "when": "2026-11-19"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-11-19",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "hiero-ledger/hiero-consensus-node@v0.79.2",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-19",
-    "price_at_detect": 0.080914,
-    "score_at_detect": 66.5
-   },
-   "score": 66.5,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-11-19",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "HBAR",
-   "title": "hiero-consensus-node v0.79.2 — Release Notes",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/hiero-ledger/hiero-consensus-node/releases/tag/v0.79.2",
-   "when": "2026-11-19"
-  },
-  {
-   "event_date": "2026-11-24",
-   "first_seen": "2026-11-19",
+   "first_seen": "2026-11-20",
    "grade": "B",
    "impact": "INFRA",
-   "key": "news:injective-s-veyra-mainnet-upgrade-set-for-november-24-after-",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-19",
-    "price_at_detect": 5.55,
-    "score_at_detect": 35.3
-   },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-11-19",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "INJ",
-   "title": "Injective’s Veyra mainnet upgrade set for November 24 after 99% approval - Cryptonews.net",
-   "transition": "NEW",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE55Ri1SVW5QcTlnOWpNLUw4MVljYm5CZFZVQmU4Xy1sUmJUd1VYRFIwZnRQZUdYem4yd1BnVXNMWG1pTlduaklaTWMtZENUXzhwQVlXaUhrY0E2dw?oc=5",
-   "when": "Wed, 18 Nov 2026"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-11-19",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "MystenLabs/sui@mainnet-v1.84.1",
+   "key": "algorand/go-algorand@v5.1.1-beta",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-19",
-    "price_at_detect": 0.796873,
+    "detected_at": "2026-11-20",
+    "price_at_detect": 0.094562,
     "score_at_detect": 29.9
    },
    "score": 29.9,
@@ -365,16 +337,103 @@
    "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-11-19",
+     "at": "2026-11-20",
      "stage": "ACTIVATED"
     }
    ],
-   "symbol": "SUI",
-   "title": "sui mainnet-v1.84.1 — Sui Protocol Version in this release: `142`",
+   "symbol": "ALGO",
+   "title": "go-algorand v5.1.1-beta — ![GitHub Logo](https://raw.githubusercontent.com/algorand/go-algorand/master/release/release-banner.jpg)",
    "transition": "NEW",
    "trust": 0.95,
-   "url": "https://github.com/MystenLabs/sui/releases/tag/mainnet-v1.84.1",
-   "when": "2026-11-18"
+   "url": "https://github.com/algorand/go-algorand/releases/tag/v5.1.1-beta",
+   "when": "2026-11-19"
+  },
+  {
+   "event_date": "2026-11-26",
+   "first_seen": "2026-11-20",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-20",
+    "price_at_detect": 0.644312,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-20",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MNT",
+   "title": "MIP-36: Recognition of Halo Prime as a Strategic Partner of Mantle",
+   "transition": "NEW",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
+   "vote_state": "active",
+   "when": "2026-11-26"
+  },
+  {
+   "event_date": "2026-11-22",
+   "first_seen": "2026-11-20",
+   "grade": "B",
+   "impact": "FEATURE",
+   "key": "snapshot:0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-20",
+    "price_at_detect": 2.6,
+    "score_at_detect": 29.2
+   },
+   "score": 29.2,
+   "source": "snapshot",
+   "stage": "VOTING",
+   "stage_history": [
+    {
+     "at": "2026-11-20",
+     "stage": "VOTING"
+    }
+   ],
+   "symbol": "MORPHO",
+   "title": "MIP 136 – List MidnightAdapter in Morpho Registry",
+   "transition": "NEW",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/morpho.eth/proposal/0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
+   "vote_state": "active",
+   "when": "2026-11-22"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-20",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "anza-xyz/agave@v5.0.0-alpha.1",
+   "prerelease": true,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-20",
+    "price_at_detect": 105.14,
+    "score_at_detect": 26.9
+   },
+   "score": 26.9,
+   "source": "release",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-20",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "SOL",
+   "title": "agave v5.0.0-alpha.1 — This is a pre-release for testing only. Do not deploy to mainnet, testnet, or any production host.",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/anza-xyz/agave/releases/tag/v5.0.0-alpha.1",
+   "when": "2026-11-19"
   }
  ],
  "universe": {
@@ -486,7 +545,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 11,
+   "n": 12,
    "status": "OK"
   },
   {
@@ -516,19 +575,19 @@
     0.0
    ],
    "median": 0.0,
-   "n": 25,
+   "n": 27,
    "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
    "bucket": "impact:SUPPLY",
    "horizon": 7,
-   "n": 4,
+   "n": 2,
    "status": "표본 부족"
   },
   {
@@ -546,13 +605,13 @@
   {
    "bucket": "source:cosmos",
    "horizon": 30,
-   "n": 4,
+   "n": 5,
    "status": "표본 부족"
   },
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 4,
+   "n": 2,
    "status": "표본 부족"
   },
   {
@@ -570,7 +629,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 31,
+   "n": 33,
    "status": "OK"
   },
   {
@@ -586,5 +645,5 @@
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=11, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)"
 }
