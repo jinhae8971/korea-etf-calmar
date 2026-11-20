@@ -1,5 +1,5 @@
 {
- "generated_at": 1795209292,
+ "generated_at": 1795212513,
  "levels": {
   "arcus": "NONE",
   "extended": "IMMINENT",
@@ -12,17 +12,23 @@
   "txflow": "NONE",
   "variational": "WATCH"
  },
- "outbox": null,
- "outboxes": [],
+ "outbox": {
+  "created": 1795212513,
+  "id": "fddd7016870f",
+  "kind": "alert",
+  "level": "IMMINENT",
+  "text": "🔴 <b>퍼프덱스 레이더 · Extended 임박</b>\n11/21(토) 02:31 ~ 02:34 감지 · 공식 발표\n알려진 상태: <b>Xpoints 프로그램 종료·최종 배분 확정(11/6)</b> · 전환 1 Xpoint ≈ 4.2857 XTEN(커뮤니티 3억 ÷ 7,000만 pt, TGE 때 전량 언락) · <b>TGE·청구 일정 미정 — 청구 오픈 공지를 기다리는 중</b> · 청구 때 자격·컴플라이언스 확인·토큰 약관 동의 필요\n\n<b>무슨 일</b>\n· Extended 공식 X에 새 글\n  <i>“The date is set. XTEN launches on 30 November. Sign the T&amp;Cs before TGE to be included in the first XTEN transfer batch..”</i>\n  잡힌 단어: TGE\n· Extended 공식 텔레그램에 새 글\n  <i>“XTEN TGE XTEN launches on 30 November. To receive XTEN, sign the Community Distribution Terms in the app. The signing window is open until 23:59 UTC on 31 December 2026. Any allocation not signed for by the close of the window is transferred to the Ecosystem Fund. Eligibility, lo”</i>\n  잡힌 단어: TGE\n\n<b>의미</b>\n공식 문서·발표에 TGE·청구 일정(날짜)이 함께 나왔어요. 일정이 잡혔다는 뜻이에요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n공식 공지 채널에 토큰·에어드랍 관련 글이 올라왔어요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n<a href=\"https://x.com/extendedapp/status/2123831601213722961\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+ },
+ "outboxes": [
+  {
+   "created": 1795212513,
+   "id": "fddd7016870f",
+   "kind": "alert",
+   "level": "IMMINENT",
+   "text": "🔴 <b>퍼프덱스 레이더 · Extended 임박</b>\n11/21(토) 02:31 ~ 02:34 감지 · 공식 발표\n알려진 상태: <b>Xpoints 프로그램 종료·최종 배분 확정(11/6)</b> · 전환 1 Xpoint ≈ 4.2857 XTEN(커뮤니티 3억 ÷ 7,000만 pt, TGE 때 전량 언락) · <b>TGE·청구 일정 미정 — 청구 오픈 공지를 기다리는 중</b> · 청구 때 자격·컴플라이언스 확인·토큰 약관 동의 필요\n\n<b>무슨 일</b>\n· Extended 공식 X에 새 글\n  <i>“The date is set. XTEN launches on 30 November. Sign the T&amp;Cs before TGE to be included in the first XTEN transfer batch..”</i>\n  잡힌 단어: TGE\n· Extended 공식 텔레그램에 새 글\n  <i>“XTEN TGE XTEN launches on 30 November. To receive XTEN, sign the Community Distribution Terms in the app. The signing window is open until 23:59 UTC on 31 December 2026. Any allocation not signed for by the close of the window is transferred to the Ecosystem Fund. Eligibility, lo”</i>\n  잡힌 단어: TGE\n\n<b>의미</b>\n공식 문서·발표에 TGE·청구 일정(날짜)이 함께 나왔어요. 일정이 잡혔다는 뜻이에요.\n공식 계정이 토큰·에어드랍 일정을 직접 언급했어요.\n공식 공지 채널에 토큰·에어드랍 관련 글이 올라왔어요.\n\n<b>해제 조건</b>\n토큰·에어드랍과 무관한 이벤트 안내로 확인되면 해제\n\n<a href=\"https://x.com/extendedapp/status/2123831601213722961\">원문</a> · <a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
+  }
+ ],
  "runs": [
-  [
-   1795124361,
-   "s"
-  ],
-  [
-   1795126110,
-   "d"
-  ],
   [
    1795127904,
    "d"
@@ -146,6 +152,10 @@
   [
    1795209292,
    "s"
+  ],
+  [
+   1795212513,
+   "d"
   ]
  ],
  "status": {
