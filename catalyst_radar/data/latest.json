@@ -1,42 +1,13 @@
 {
- "as_of_kst": "2026-11-20 11:41",
+ "as_of_kst": "2026-11-21 11:52",
  "calendar": [
-  {
-   "event_date": "2026-11-20",
-   "first_seen": "2026-11-16",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
-   "last_seen": "2026-11-20",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-16",
-    "price_at_detect": 6.96,
-    "score_at_detect": 45.5
-   },
-   "score": 45.5,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-16",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "UNI",
-   "title": "Upgrade VolatilePair hook and update X Layer Releaser",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
-   "vote_state": "active",
-   "when": "2026-11-20"
-  },
   {
    "event_date": "2026-11-21",
    "first_seen": "2026-11-17",
    "grade": "A",
    "impact": "INFRA",
    "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -65,7 +36,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -94,7 +65,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -128,7 +99,9 @@
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
     "price_at_detect": 5.55,
-    "score_at_detect": 30.0
+    "score_at_detect": 30.0,
+    "t7": 0.0,
+    "t7_at": "2026-11-21"
    },
    "score": 35.3,
    "source": "news",
@@ -151,12 +124,14 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-targets-november-24-veyra-upgrade-will-inj-demand-",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
     "price_at_detect": 5.55,
-    "score_at_detect": 30.0
+    "score_at_detect": 30.0,
+    "t7": 0.0,
+    "t7_at": "2026-11-21"
    },
    "score": 35.3,
    "source": "news",
@@ -179,7 +154,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-s-veyra-mainnet-upgrade-set-for-november-24-after-",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-19",
@@ -207,7 +182,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -236,7 +211,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -293,7 +268,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 72,
+ "event_count": 74,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -317,19 +292,19 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-20 11:41\n감시 52종목(체인 34·프로토콜 18) · 이벤트 72건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>ALGO</b> [인프라·신규] go-algorand v5.1.1-beta — ![GitHub Logo](https://raw.githubusercontent.com/alg\n🟠 <b>MNT</b> [기능·신규] MIP-36: Recognition of Halo Prime as a Strategic Partner of Mantle\n🟠 <b>MORPHO</b> [기능·신규] MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <b>SOL</b> [인프라·신규] agave v5.0.0-alpha.1 — This is a pre-release for testing only. Do not deploy t\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> UNI <b>투표중</b> · Upgrade VolatilePair hook and update X Layer Releaser\n🔴 <code>D-1   </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-1   </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-2   </code> MORPHO <b>투표중</b> · MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <code>D-4   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-4   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-4   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🟠 <code>D-6   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-21 11:52\n감시 52종목(체인 34·프로토콜 18) · 이벤트 74건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>SUI</b> [인프라·신규] sui mainnet-v1.84.2 — Sui v1.84.2: mainnet hotfix\n🟠 <b>UNI</b> [인프라·투표중→가결] Upgrade VolatilePair hook and update X Layer Releaser\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-DAY </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-1   </code> MORPHO <b>투표중</b> · MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <code>D-3   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-3   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-3   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🟠 <code>D-5   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🔴 <code>D-17  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=13, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
    "event_date": null,
-   "first_seen": "2026-11-20",
+   "first_seen": "2026-11-21",
    "grade": "B",
    "impact": "INFRA",
-   "key": "algorand/go-algorand@v5.1.1-beta",
+   "key": "MystenLabs/sui@mainnet-v1.84.2",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-20",
-    "price_at_detect": 0.094562,
+    "detected_at": "2026-11-21",
+    "price_at_detect": 0.796873,
     "score_at_detect": 29.9
    },
    "score": 29.9,
@@ -337,103 +312,50 @@
    "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-11-20",
+     "at": "2026-11-21",
      "stage": "ACTIVATED"
     }
    ],
-   "symbol": "ALGO",
-   "title": "go-algorand v5.1.1-beta — ![GitHub Logo](https://raw.githubusercontent.com/algorand/go-algorand/master/release/release-banner.jpg)",
+   "symbol": "SUI",
+   "title": "sui mainnet-v1.84.2 — Sui v1.84.2: mainnet hotfix",
    "transition": "NEW",
    "trust": 0.95,
-   "url": "https://github.com/algorand/go-algorand/releases/tag/v5.1.1-beta",
-   "when": "2026-11-19"
+   "url": "https://github.com/MystenLabs/sui/releases/tag/mainnet-v1.84.2",
+   "when": "2026-11-20"
   },
   {
-   "event_date": "2026-11-26",
-   "first_seen": "2026-11-20",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-20",
-    "price_at_detect": 0.644312,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-20",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MNT",
-   "title": "MIP-36: Recognition of Halo Prime as a Strategic Partner of Mantle",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "vote_state": "active",
-   "when": "2026-11-26"
-  },
-  {
-   "event_date": "2026-11-22",
-   "first_seen": "2026-11-20",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-20",
-    "price_at_detect": 2.6,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-20",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MORPHO",
-   "title": "MIP 136 – List MidnightAdapter in Morpho Registry",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/morpho.eth/proposal/0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
-   "vote_state": "active",
-   "when": "2026-11-22"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-11-20",
+   "event_date": "2026-11-20",
+   "first_seen": "2026-11-16",
    "grade": "B",
    "impact": "INFRA",
-   "key": "anza-xyz/agave@v5.0.0-alpha.1",
-   "prerelease": true,
+   "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "prev_stage": "VOTING",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-20",
-    "price_at_detect": 105.14,
-    "score_at_detect": 26.9
+    "detected_at": "2026-11-16",
+    "price_at_detect": 6.96,
+    "score_at_detect": 45.5
    },
-   "score": 26.9,
-   "source": "release",
-   "stage": "SCHEDULED",
+   "score": 26.8,
+   "source": "snapshot",
+   "stage": "PASSED",
    "stage_history": [
     {
-     "at": "2026-11-20",
-     "stage": "SCHEDULED"
+     "at": "2026-11-16",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-11-21",
+     "stage": "PASSED"
     }
    ],
-   "symbol": "SOL",
-   "title": "agave v5.0.0-alpha.1 — This is a pre-release for testing only. Do not deploy to mainnet, testnet, or any production host.",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/anza-xyz/agave/releases/tag/v5.0.0-alpha.1",
-   "when": "2026-11-19"
+   "symbol": "UNI",
+   "title": "Upgrade VolatilePair hook and update X Layer Releaser",
+   "transition": "STAGE_UP",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "vote_state": "closed",
+   "when": "2026-11-20"
   }
  ],
  "universe": {
@@ -533,7 +455,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 50,
+   "n": 51,
    "status": "OK"
   },
   {
@@ -545,7 +467,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 12,
+   "n": 13,
    "status": "OK"
   },
   {
@@ -563,7 +485,7 @@
   {
    "bucket": "impact:FEATURE",
    "horizon": 30,
-   "n": 6,
+   "n": 7,
    "status": "표본 부족"
   },
   {
@@ -575,13 +497,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 27,
+   "n": 28,
    "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -593,7 +515,7 @@
   {
    "bucket": "impact:SUPPLY",
    "horizon": 30,
-   "n": 1,
+   "n": 2,
    "status": "표본 부족"
   },
   {
@@ -611,13 +533,19 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 2,
+   "n": 4,
    "status": "표본 부족"
   },
   {
    "bucket": "source:proposal",
    "horizon": 7,
    "n": 3,
+   "status": "표본 부족"
+  },
+  {
+   "bucket": "source:proposal",
+   "horizon": 30,
+   "n": 1,
    "status": "표본 부족"
   },
   {
@@ -629,7 +557,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 33,
+   "n": 32,
    "status": "OK"
   },
   {
@@ -645,5 +573,5 @@
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=12, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=13, BTC 대비)"
 }
