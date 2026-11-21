@@ -81,7 +81,7 @@ def main():
     sh("git", "add", "docs/us-close", "us_close/data/latest.json", "us_close/engine")
     if not sh("git", "status", "--porcelain"):
         print("nothing to publish"); return
-    sh("git", "-c", "user.name=us-close", "-c", "user.email=us-close@users.noreply.github.com",
+    sh("git", "-c", "user.name=Claude", "-c", "user.email=noreply@anthropic.com",
        "commit", "-m", f"data(us-close): {a.session} {a.kind}")
     for i in range(4):
         try:

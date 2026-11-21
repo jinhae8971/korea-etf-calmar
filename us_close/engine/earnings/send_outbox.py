@@ -44,7 +44,7 @@ def main(suffix, text_p, cap_p, img_dir, docs_sub):
                       "photos": [f"docs/{docs_sub}/{f}" for f in imgs]}}
     json.dump(out, open(os.path.join(CLONE, "us_close", "data", "latest.json"), "w"), ensure_ascii=False, indent=1)
     sh("git", "add", f"docs/{docs_sub}", "us_close/data/latest.json")
-    sh("git", "-c", "user.name=us-close", "-c", "user.email=us-close@users.noreply.github.com", "commit", "-m", f"data(earnings): {suffix}")
+    sh("git", "-c", "user.name=Claude", "-c", "user.email=noreply@anthropic.com", "commit", "-m", f"data(earnings): {suffix}")
     for i in range(4):
         try:
             sh("git", "push", "origin", "HEAD:main"); break

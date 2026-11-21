@@ -95,7 +95,7 @@ def main():
         json.dump(out, open(os.path.join(CLONE, "weekly_close", "data", f"{k}.json"), "w"), ensure_ascii=False, indent=1)
     sh("git", "add", "docs/weekly-close", "weekly_close")
     if sh("git", "status", "--porcelain"):
-        sh("git", "-c", "user.name=weekly-close", "-c", "user.email=weekly-close@users.noreply.github.com",
+        sh("git", "-c", "user.name=Claude", "-c", "user.email=noreply@anthropic.com",
            "commit", "-m", f"data(weekly-close): {a.week} weekly")
         for i in range(4):
             try:
