@@ -1,7 +1,64 @@
 {
- "generated_at": 1795264711,
+ "generated_at": 1795283839,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "0x073f5644 · 6건",
+   "family": "S1",
+   "grade": "ALERT",
+   "id": "12066c64b2f1",
+   "ref": {
+    "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+    "total": 9674492.61
+   },
+   "refute": "누적분이 원래 지갑으로 돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_pool_cumulative",
+   "title": "같은 지갑에서 7일간 LIT 9.67M개 출금 (포인트 풀 규모)",
+   "ts": 1795283839,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0xb829e684 → 0xf89d7b9c",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "113c85975f9a",
+   "ref": {
+    "amount": 1000000.0,
+    "chain": "eth",
+    "from": "0xb829e684df8e31b402a4d4aedf3bbc18a52e7589",
+    "to": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
+    "tx": "0x9e7fd709eb97cee907212b58c1792e7c6778cbfa0016c1f0f52529a71e71ca7e"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.00M개 대량 이동",
+   "ts": 1795277411,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x073f5644 → 0x91d40e48",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "a252b7545d70",
+   "ref": {
+    "amount": 2009742.28,
+    "chain": "eth",
+    "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+    "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "tx": "0xa9f9b9a26cf0fbbdb01c79582f02e0d92129492e2672f4e82c3493bf6ca03e9b"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 2.01M개 대량 이동",
+   "ts": 1795267187,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVllhbHRIYWM0ZElwQnVmSGZKemxXSzVhazJTd1A5ZXczYmpBV3R3T0l0R0o0MmdxRUZxUlpJMkg1NGpCcGNiNzFidHY4Yld4cTVldDJGZkY",
    "family": "S4",
@@ -34,7 +91,10 @@
     "tx": "0x05a582cf0a6b646640a4ef43a5e5abc1ed086b2b6dd49e46a575450212fc8b6f"
    },
    "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
+   "refute_kind": "data",
+   "refute_reason": "이동한 LIT가 72시간 안에 원래 지갑으로 돌아왔어요",
+   "refuted": true,
+   "refuted_at": 1795283839,
    "signal": "eth_large",
    "title": "이더리움 LIT 1.99M개 대량 이동",
    "ts": 1795229675,
@@ -4963,67 +5023,9 @@
    "ts": 1793264908,
    "venue": "qfex",
    "venue_name": "QFEX"
-  },
-  {
-   "detail": "Manage Trading Mode and Margin",
-   "family": "S2",
-   "grade": "WATCH",
-   "id": "f013e08f054d",
-   "ref": {
-    "moved": [],
-    "name": "문서 전체 목록",
-    "new": [
-     "Manage Trading Mode and Margin — https://docs.lighter.xyz/developers/integration-guides/manage-trading-mode-and-margin.md"
-    ],
-    "removed": [],
-    "url": "https://docs.lighter.xyz/llms.txt"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "index_change",
-   "title": "공식 문서 목록 변경: 새 문서 1개",
-   "ts": 1793225318,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "19e000d1fc8e",
-   "ref": {
-    "name": "/api/v1/connectX"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_path",
-   "title": "앱에 새 API 경로: /api/v1/connectX",
-   "ts": 1793197839,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "29197866c577",
-   "ref": {
-    "name": "/api/v1/connectXCallback"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_path",
-   "title": "앱에 새 API 경로: /api/v1/connectXCallback",
-   "ts": 1793197839,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1795178313,
-   "d"
-  ],
   [
    1795202119,
    "s"
@@ -5155,6 +5157,10 @@
   [
    1795264711,
    "d"
+  ],
+  [
+   1795283839,
+   "s"
   ]
  ],
  "venues": [
@@ -5172,37 +5178,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "26건",
      "ok": true
     },
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
-     "note": "17건",
+     "at": 1795283839,
+     "note": "19건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "18건",
      "ok": true
     }
@@ -5216,22 +5222,57 @@
    "api_watch": null,
    "events": [
     {
-     "detail": "0x91d40e48 → 0x073f5644",
+     "detail": "0x073f5644 · 6건",
+     "family": "S1",
+     "grade": "ALERT",
+     "id": "12066c64b2f1",
+     "ref": {
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "total": 9674492.61
+     },
+     "refute": "누적분이 원래 지갑으로 돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_pool_cumulative",
+     "title": "같은 지갑에서 7일간 LIT 9.67M개 출금 (포인트 풀 규모)",
+     "ts": 1795283839,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0xb829e684 → 0xf89d7b9c",
      "family": "S1",
      "grade": "WATCH",
-     "id": "2238719ac812",
+     "id": "113c85975f9a",
      "ref": {
-      "amount": 1987143.17,
+      "amount": 1000000.0,
       "chain": "eth",
-      "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-      "to": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
-      "tx": "0x05a582cf0a6b646640a4ef43a5e5abc1ed086b2b6dd49e46a575450212fc8b6f"
+      "from": "0xb829e684df8e31b402a4d4aedf3bbc18a52e7589",
+      "to": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
+      "tx": "0x9e7fd709eb97cee907212b58c1792e7c6778cbfa0016c1f0f52529a71e71ca7e"
      },
      "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
      "refuted": false,
      "signal": "eth_large",
-     "title": "이더리움 LIT 1.99M개 대량 이동",
-     "ts": 1795229675,
+     "title": "이더리움 LIT 1.00M개 대량 이동",
+     "ts": 1795277411,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x073f5644 → 0x91d40e48",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "a252b7545d70",
+     "ref": {
+      "amount": 2009742.28,
+      "chain": "eth",
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "tx": "0xa9f9b9a26cf0fbbdb01c79582f02e0d92129492e2672f4e82c3493bf6ca03e9b"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 2.01M개 대량 이동",
+     "ts": 1795267187,
      "venue": "lighter-rh"
     },
     {
@@ -5804,11 +5845,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794202705,
-     273087.399,
-     65809.945
-    ],
     [
      1794204514,
      273104.169,
@@ -7803,6 +7839,11 @@
      1795264711,
      330502.074,
      83735.56
+    ],
+    [
+     1795283839,
+     330844.21,
+     83902.02
     ]
    ],
    "level": "ALERT",
@@ -7810,10 +7851,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1794064160,
-     456141.03
-    ],
     [
      1794074697,
      456141.03
@@ -9605,63 +9642,67 @@
     [
      1795264711,
      516842.88
+    ],
+    [
+     1795283839,
+     516842.88
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "19건",
      "ok": true
     },
     "board": {
-     "at": 1795264711,
-     "note": "상위 10명 합계 330,502",
+     "at": 1795283839,
+     "note": "상위 10명 합계 330,844",
      "ok": true
     },
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795264711,
-     "note": "150블록 · 대량 0건",
+     "at": 1795283839,
+     "note": "1587블록 · 대량 2건",
      "ok": true
     },
     "frontend": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "모듈 163 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "77건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "516,843 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795264711,
-     "note": "22건",
-     "ok": true
+     "at": 1795283839,
+     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
+     "ok": false
     },
     "x:vnovakovski": {
-     "at": 1795264711,
-     "note": "20건",
+     "at": 1795283839,
+     "note": "19건",
      "ok": true
     }
    },
@@ -9891,29 +9932,29 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795264711,
-     "note": "19건",
-     "ok": true
+     "at": 1795283839,
+     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -10120,29 +10161,29 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
-     "note": "46건",
+     "at": 1795283839,
+     "note": "30건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795264711,
-     "note": "20건",
-     "ok": true
+     "at": 1795283839,
+     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -10261,38 +10302,38 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 2% · 12/31까지 63%",
+   "odds": "토큰 출시 확률 11/30까지 2% · 12/31까지 65%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
-     "note": "14건",
+     "at": 1795283839,
+     "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795264711,
-     "note": "14건",
+     "at": 1795283839,
+     "note": "15건",
      "ok": true
     }
    },
@@ -10370,34 +10411,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 25% · 27년 6/30까지 51%",
+   "odds": "토큰 출시 확률 12/31까지 12% · 27년 3/31까지 25% · 27년 6/30까지 54%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
-     "note": "9건",
+     "at": 1795283839,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795264711,
-     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
-     "ok": false
+     "at": 1795283839,
+     "note": "14건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -10419,29 +10460,29 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795264711,
-     "note": "20건",
-     "ok": true
+     "at": 1795283839,
+     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -10463,24 +10504,24 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795264711,
-     "note": "20건",
-     "ok": true
+     "at": 1795283839,
+     "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -10502,19 +10543,19 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795264711,
-     "note": "9건",
-     "ok": true
+     "at": 1795283839,
+     "err": "X 수집 실패: https://xcancel.com/TitanExchange_/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TitanExchange_/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
@@ -10569,24 +10610,24 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795264711,
+     "at": 1795283839,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795264711,
-     "note": "18건",
-     "ok": true
+     "at": 1795283839,
+     "err": "X 수집 실패: https://xcancel.com/risextrade/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/risextrade/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 1,
