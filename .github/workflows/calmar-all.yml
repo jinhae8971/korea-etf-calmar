@@ -58,7 +58,7 @@ jobs:
           else
             git commit -m "chore: update calmar snapshots & dashboard $(date +%Y-%m-%d)"
             git pull --rebase origin main
-            git push
+            python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py"
           fi
 
       # ---- 전체 실패 시에만 알림 (부분 실패는 통합 메시지 안에 인라인 표시) ----

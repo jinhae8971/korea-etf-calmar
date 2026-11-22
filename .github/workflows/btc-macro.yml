@@ -75,7 +75,7 @@ jobs:
           STAMP="$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
           git commit -m "chore(btc-macro): snapshot ${STAMP} KST"
           for i in 1 2 3; do
-            if git push; then exit 0; fi
+            if python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py"; then exit 0; fi
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
             sleep $((i * 5))
           done

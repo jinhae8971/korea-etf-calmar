@@ -104,7 +104,7 @@ jobs:
           fi
           git commit -m "chore(narrative-radar): $(date -u +%Y-%m-%d) 스냅샷"
           for i in 1 2 3; do
-            if git push; then exit 0; fi
+            if python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py"; then exit 0; fi
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
             sleep $((i * 5))
           done

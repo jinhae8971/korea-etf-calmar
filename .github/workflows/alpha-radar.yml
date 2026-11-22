@@ -55,7 +55,7 @@ jobs:
           else
             git commit -m "chore(alpha-radar): $(date -u +%Y-%m-%d) 스냅샷"
             for i in 1 2 3; do
-              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break || sleep 8
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py" && break || sleep 8
             done
           fi
 

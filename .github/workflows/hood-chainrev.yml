@@ -115,7 +115,7 @@ jobs:
           AS_OF=$(python -c "import json;print(json.load(open('hood_chainrev/data/latest.json'))['as_of_date'])" 2>/dev/null || date +%F)
           git commit -m "chore(hood-chainrev): chain revenue snapshot ${AS_OF}"
           for i in 1 2 3; do
-            if git push; then exit 0; fi
+            if python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py"; then exit 0; fi
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
             sleep $((i * 5))
           done

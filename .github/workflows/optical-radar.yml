@@ -91,7 +91,7 @@ jobs:
           if git diff --cached --quiet; then echo "변경 없음 — 커밋 생략"; exit 0; fi
           git commit -m "chore(optical-radar): $(python -c 'import json;print(json.load(open("optical_radar/data/latest.json"))["as_of"])' 2>/dev/null || date -u +%Y-%m-%d) 스냅샷"
           for i in 1 2 3; do
-            if git push; then exit 0; fi
+            if python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py"; then exit 0; fi
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; sleep $((i * 5))
           done
           echo "::error::3회 시도 후에도 푸시 실패"; exit 1

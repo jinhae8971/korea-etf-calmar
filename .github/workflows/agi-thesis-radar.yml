@@ -116,7 +116,7 @@ jobs:
           # 단독 소유하므로, 충돌 시 리베이스로 씨름하지 말고 원격 최신 위에
           # 생성물을 그대로 다시 얹는다 (충돌 자체가 발생하지 않는 구조).
           for i in 1 2 3; do
-            if git push; then exit 0; fi
+            if python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py"; then exit 0; fi
             echo "푸시 경합 감지 — 원격 최신 위에 재적용 ($i/3)"
             tar cf /tmp/generated.tar ${GEN_PATHS}
             git fetch origin "${GITHUB_REF_NAME}"
