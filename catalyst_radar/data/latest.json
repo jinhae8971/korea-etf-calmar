@@ -1,71 +1,13 @@
 {
- "as_of_kst": "2026-11-21 11:52",
+ "as_of_kst": "2026-11-22 10:41",
  "calendar": [
-  {
-   "event_date": "2026-11-21",
-   "first_seen": "2026-11-17",
-   "grade": "A",
-   "impact": "INFRA",
-   "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "last_seen": "2026-11-21",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-17",
-    "price_at_detect": 6.96,
-    "score_at_detect": 45.5
-   },
-   "score": 45.5,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-17",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "UNI",
-   "title": "Upgrade the v4 Protocol Fee Adapter",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "vote_state": "active",
-   "when": "2026-11-21"
-  },
-  {
-   "event_date": "2026-11-21",
-   "first_seen": "2026-11-17",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
-   "last_seen": "2026-11-21",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-17",
-    "price_at_detect": 6.96,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-17",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "UNI",
-   "title": "Protocol Fee Expansion: v4 on Five More Chains",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
-   "vote_state": "active",
-   "when": "2026-11-21"
-  },
   {
    "event_date": "2026-11-22",
    "first_seen": "2026-11-20",
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
-   "last_seen": "2026-11-21",
+   "last_seen": "2026-11-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -124,7 +66,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-targets-november-24-veyra-upgrade-will-inj-demand-",
-   "last_seen": "2026-11-21",
+   "last_seen": "2026-11-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-14",
@@ -154,7 +96,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-s-veyra-mainnet-upgrade-set-for-november-24-after-",
-   "last_seen": "2026-11-21",
+   "last_seen": "2026-11-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-19",
@@ -182,7 +124,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "last_seen": "2026-11-21",
+   "last_seen": "2026-11-22",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -211,7 +153,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-21",
+   "last_seen": "2026-11-22",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -268,7 +210,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 74,
+ "event_count": 73,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -292,47 +234,18 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-21 11:52\n감시 52종목(체인 34·프로토콜 18) · 이벤트 74건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>SUI</b> [인프라·신규] sui mainnet-v1.84.2 — Sui v1.84.2: mainnet hotfix\n🟠 <b>UNI</b> [인프라·투표중→가결] Upgrade VolatilePair hook and update X Layer Releaser\n\n<b>■ D-45 캘린더</b>\n🔴 <code>D-DAY </code> UNI <b>투표중</b> · Upgrade the v4 Protocol Fee Adapter\n🟠 <code>D-DAY </code> UNI <b>투표중</b> · Protocol Fee Expansion: v4 on Five More Chains\n🟠 <code>D-1   </code> MORPHO <b>투표중</b> · MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <code>D-3   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-3   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-3   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🟠 <code>D-5   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🔴 <code>D-17  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=13, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-22 10:41\n감시 52종목(체인 34·프로토콜 18) · 이벤트 73건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>UNI</b> [인프라·투표중→가결] Upgrade the v4 Protocol Fee Adapter\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MORPHO <b>투표중</b> · MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🟠 <code>D-4   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🔴 <code>D-16  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n🟠 <code>D-16  </code> BNB <b>일정확정</b> · BNB price context shifts to December 8 Jenner upgrade - ad-hoc\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=15, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": null,
-   "first_seen": "2026-11-21",
+   "event_date": "2026-11-21",
+   "first_seen": "2026-11-17",
    "grade": "B",
    "impact": "INFRA",
-   "key": "MystenLabs/sui@mainnet-v1.84.2",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-21",
-    "price_at_detect": 0.796873,
-    "score_at_detect": 29.9
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-11-21",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "SUI",
-   "title": "sui mainnet-v1.84.2 — Sui v1.84.2: mainnet hotfix",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/MystenLabs/sui/releases/tag/mainnet-v1.84.2",
-   "when": "2026-11-20"
-  },
-  {
-   "event_date": "2026-11-20",
-   "first_seen": "2026-11-16",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
    "prev_stage": "VOTING",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-16",
+    "detected_at": "2026-11-17",
     "price_at_detect": 6.96,
     "score_at_detect": 45.5
    },
@@ -341,21 +254,21 @@
    "stage": "PASSED",
    "stage_history": [
     {
-     "at": "2026-11-16",
+     "at": "2026-11-17",
      "stage": "VOTING"
     },
     {
-     "at": "2026-11-21",
+     "at": "2026-11-22",
      "stage": "PASSED"
     }
    ],
    "symbol": "UNI",
-   "title": "Upgrade VolatilePair hook and update X Layer Releaser",
+   "title": "Upgrade the v4 Protocol Fee Adapter",
    "transition": "STAGE_UP",
    "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
+   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
    "vote_state": "closed",
-   "when": "2026-11-20"
+   "when": "2026-11-21"
   }
  ],
  "universe": {
@@ -455,7 +368,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 51,
+   "n": 49,
    "status": "OK"
   },
   {
@@ -467,7 +380,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 13,
+   "n": 15,
    "status": "OK"
   },
   {
@@ -479,7 +392,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 21,
+   "n": 20,
    "status": "OK"
   },
   {
@@ -497,13 +410,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 28,
+   "n": 27,
    "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 4,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -539,7 +452,7 @@
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 3,
+   "n": 2,
    "status": "표본 부족"
   },
   {
@@ -557,14 +470,20 @@
     0.0
    ],
    "median": 0.0,
-   "n": 32,
+   "n": 31,
    "status": "OK"
   },
   {
    "bucket": "source:release",
+   "hit_rate": 0.0,
    "horizon": 30,
-   "n": 7,
-   "status": "표본 부족"
+   "iqr": [
+    0.0,
+    0.0
+   ],
+   "median": 0.0,
+   "n": 9,
+   "status": "OK"
   },
   {
    "bucket": "source:snapshot",
@@ -573,5 +492,5 @@
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=13, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=15, BTC 대비)"
 }
