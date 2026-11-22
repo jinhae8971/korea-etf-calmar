@@ -1,5 +1,5 @@
 {
- "generated_at": 1795304301,
+ "generated_at": 1795306110,
  "levels": {
   "arcus": "NONE",
   "extended": "IMMINENT",
@@ -29,14 +29,6 @@
   }
  ],
  "runs": [
-  [
-   1795217910,
-   "d"
-  ],
-  [
-   1795219705,
-   "d"
-  ],
   [
    1795221512,
    "d"
@@ -164,6 +156,10 @@
   [
    1795304301,
    "d"
+  ],
+  [
+   1795306110,
+   "d"
   ]
  ],
  "status": {
@@ -214,7 +210,7 @@
    "feed": true,
    "news": true,
    "polymarket": true,
-   "x:QFEX": true
+   "x:QFEX": false
   },
   "risex": {
    "docs": true,
@@ -228,8 +224,8 @@
    "x:TitanExchange_": true
   },
   "txflow": {
-   "api_watch": true,
-   "docs": true,
+   "api_watch": false,
+   "docs": false,
    "news": true,
    "polymarket": true,
    "x:TxFlow_L1": true
@@ -240,7 +236,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": true
+   "x:variational_io": false
   }
  },
  "undecidable": false
