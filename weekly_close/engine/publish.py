@@ -6,7 +6,7 @@ python3 publish.py <week> <narrative.json> [--only stock|crypto] [--resend]
   2. weekly_close/data/{stock,crypto}.json outbox {text, caption, photos} -> push -> Brief Hub sends album + text per message
   3. waits until brief_hub/data/sent.json records both outbox ids ("SENT OK")
 """
-import argparse, json, os, shutil, subprocess, sys, time
+import argparse, json, os, shutil, subprocess, sys, time, atexit, tempfile
 from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -14,7 +14,18 @@ sys.path.insert(0, HERE)
 import render  # noqa: E402
 
 REPO = "jinhae8971/korea-etf-calmar"
-CLONE = "/home/claude/korea-etf-calmar"
+CLONE = tempfile.mkdtemp(prefix="kec_publish_")       # fresh clone per run, removed on exit: no long-lived checkout
+atexit.register(shutil.rmtree, CLONE, True)
+
+
+def fresh_clone():
+    """Shallow-clone main into CLONE. Commits made there use the global git identity and signing key."""
+    if os.path.isdir(os.path.join(CLONE, ".git")):
+        return
+    r = subprocess.run(["git", "clone", "-q", "--depth", "1", "--branch", "main", f"https://github.com/{REPO}", CLONE],
+                       capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(f"clone failed (add_repo {REPO} push first?): {r.stderr.strip()[:300]}")
 KST = timezone(timedelta(hours=9))
 IMGS = {"stock": [f for f, _ in render.STOCK_IMGS], "crypto": [f for f, _ in render.CRYPTO_IMGS]}
 ORDER = {"stock": ["s1_indices.png", "s4_path.png", "s2_sectors.png", "s3_movers.png"], "crypto": IMGS["crypto"]}
@@ -28,6 +39,7 @@ def sh(*cmd, check=True):
 
 
 def sent_state():
+    fresh_clone()
     sh("git", "fetch", "--depth", "1", "origin", "main")
     try:
         return json.loads(sh("git", "show", "origin/main:brief_hub/data/sent.json"))
@@ -49,9 +61,7 @@ def main():
         for f in IMGS[k]:
             if not os.path.exists(os.path.join(odir, "img", f)):
                 sys.exit(f"missing chart {f}: run charts.py {a.week}")
-    if not os.path.isdir(os.path.join(CLONE, ".git")):
-        sys.exit(f"clone missing: {CLONE} (add_repo {REPO} push -> git clone --depth 1)")
-    sh("git", "fetch", "--depth", "1", "origin", "main"); sh("git", "reset", "--hard", "origin/main")
+    fresh_clone()
 
     base = os.path.join(CLONE, "docs", "weekly-close")
     wk = os.path.join(base, a.week)
@@ -95,7 +105,7 @@ def main():
         json.dump(out, open(os.path.join(CLONE, "weekly_close", "data", f"{k}.json"), "w"), ensure_ascii=False, indent=1)
     sh("git", "add", "docs/weekly-close", "weekly_close")
     if sh("git", "status", "--porcelain"):
-        sh("git", "-c", "user.name=Claude", "-c", "user.email=noreply@anthropic.com",
+        sh("git",
            "commit", "-m", f"data(weekly-close): {a.week} weekly")
         for i in range(4):
             try:

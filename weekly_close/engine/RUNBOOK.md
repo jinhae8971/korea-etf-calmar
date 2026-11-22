@@ -11,6 +11,7 @@
 ## 0. 준비 (새 세션이면)
 1. `add_repo jinhae8971/korea-etf-calmar (push)` → `git clone --depth 1 https://github.com/jinhae8971/korea-etf-calmar /home/claude/korea-etf-calmar`
 2. `/home/claude/weekly_close`가 없으면 `cp -r /home/claude/korea-etf-calmar/weekly_close/engine /home/claude/weekly_close`
+   - 복구가 끝나면 `rm -rf /home/claude/korea-etf-calmar`로 클론을 지운다(2026-11-22). publish.py가 실행할 때마다 임시 폴더에 새로 클론해 서명 커밋으로 푸시하고 지우므로 클론을 남길 필요가 없고, 남기면 봇 커밋 때문에 미검증 커밋 경고가 난다. 직전 호 narrative는 `/home/claude/weekly_close/narratives/`에 있다.
 3. `pip install --break-system-packages pandas numpy matplotlib` (없을 때만). 한글 폰트는 Noto Sans CJK KR.
 
 ## 1. 수집
