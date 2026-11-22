@@ -53,7 +53,7 @@
   - 본문 1,500자, 캡션 1,000자를 넘으면 중단되니 narrative를 줄인다.
 - 실패 시(SENT OK 없음)에만 SendUserMessage로 원인 한 줄 + 리포트 링크를 보낸다.
 - **복구**: /home/claude/market_brief가 없으면 korea-etf-calmar의 `us_close/engine/`(코드·런북·확률 기록·narrative, publish 때마다 백업)을 /home/claude/market_brief로 복사하고 `pip install --break-system-packages pandas numpy matplotlib`(없을 때만)
-- 클론이 없으면: `add_repo jinhae8971/korea-etf-calmar (push)` → `git clone --depth 1 https://github.com/jinhae8971/korea-etf-calmar /home/claude/korea-etf-calmar`.
+- 저장소 클론은 두지 않는다(2026-11-22): publish.py·send_outbox.py가 실행할 때마다 임시 폴더에 새로 클론해 서명 커밋(Claude <noreply@anthropic.com>, 전역 git 설정)으로 푸시하고 끝나면 지운다. 세션에 저장소가 없으면 `add_repo jinhae8971/korea-etf-calmar (push)`만 하면 된다. 엔진 복구나 수동 작업으로 클론했다면 푸시 뒤 그 폴더를 지운다(봇 커밋이 섞인 클론이 남으면 미검증 커밋 경고가 난다).
 - 확률 기록은 **publish 전에** 한다(publish가 state/probs_*를 repo 백업에 올리므로, 순서가 바뀌면 워크스페이스 리셋 때 직전 확률이 사라진다 — 11/17 실제 발생):
   `python3 /home/claude/market_brief/brief.py --record '{"session":"<session>","QQQ":{"short_up":N,"swing_up":N},"SPY":{...},"SOXX":{...},"DRAM":{...},"note":"..."}'`
 

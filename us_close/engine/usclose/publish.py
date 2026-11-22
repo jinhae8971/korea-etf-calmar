@@ -6,7 +6,7 @@ python3 publish.py <session> <narrative.json> [--kind daily]
   2. us_close/data/latest.json outbox {text, caption, photos} -> push -> Brief Hub sends album + text
   3. waits for the hub run and confirms brief_hub/data/sent.json recorded the outbox id ("SENT OK")
 """
-import argparse, base64, json, os, shutil, subprocess, sys, time, urllib.request
+import argparse, base64, json, os, shutil, subprocess, sys, time, urllib.request, atexit, tempfile
 from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -14,7 +14,18 @@ sys.path.insert(0, HERE)
 import render  # noqa: E402
 
 REPO = "jinhae8971/korea-etf-calmar"
-CLONE = "/home/claude/korea-etf-calmar"
+CLONE = tempfile.mkdtemp(prefix="kec_publish_")       # fresh clone per run, removed on exit: no long-lived checkout
+atexit.register(shutil.rmtree, CLONE, True)
+
+
+def fresh_clone():
+    """Shallow-clone main into CLONE. Commits made there use the global git identity and signing key."""
+    if os.path.isdir(os.path.join(CLONE, ".git")):
+        return
+    r = subprocess.run(["git", "clone", "-q", "--depth", "1", "--branch", "main", f"https://github.com/{REPO}", CLONE],
+                       capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(f"clone failed (add_repo {REPO} push first?): {r.stderr.strip()[:300]}")
 API = f"https://api.github.com/repos/{REPO}"
 KST = timezone(timedelta(hours=9))
 
@@ -41,9 +52,7 @@ def main():
     d = json.load(open(os.path.join(sdir, "data.json")))
     n = json.load(open(a.narrative))
     imgs = sorted(os.listdir(os.path.join(sdir, "img")))
-    if not os.path.isdir(os.path.join(CLONE, ".git")):
-        sys.exit(f"clone missing: {CLONE} (add_repo {REPO} push → git clone --depth 1)")
-    sh("git", "fetch", "--depth", "1", "origin", "main"); sh("git", "reset", "--hard", "origin/main")
+    fresh_clone()
 
     base = os.path.join(CLONE, "docs", "us-close")
     day = os.path.join(base, a.session)
@@ -81,7 +90,7 @@ def main():
     sh("git", "add", "docs/us-close", "us_close/data/latest.json", "us_close/engine")
     if not sh("git", "status", "--porcelain"):
         print("nothing to publish"); return
-    sh("git", "-c", "user.name=Claude", "-c", "user.email=noreply@anthropic.com",
+    sh("git",
        "commit", "-m", f"data(us-close): {a.session} {a.kind}")
     for i in range(4):
         try:
