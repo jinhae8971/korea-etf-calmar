@@ -1,7 +1,103 @@
 {
- "generated_at": 1795343912,
+ "generated_at": 1795368240,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "0x91d40e48 · 6건",
+   "family": "S1",
+   "grade": "ALERT",
+   "id": "fdf26f663ba6",
+   "ref": {
+    "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "total": 10627824.629999999
+   },
+   "refute": "누적분이 원래 지갑으로 돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_pool_cumulative",
+   "title": "같은 지갑에서 7일간 LIT 10.63M개 출금 (포인트 풀 규모)",
+   "ts": 1795368240,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "0x073f5644 · 6건",
+   "family": "S1",
+   "grade": "ALERT",
+   "id": "d2d23eb3f194",
+   "ref": {
+    "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+    "total": 10060813.91
+   },
+   "refute": "누적분이 원래 지갑으로 돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_pool_cumulative",
+   "title": "같은 지갑에서 7일간 LIT 10.06M개 출금 (포인트 풀 규모)",
+   "ts": 1795368240,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "Latest (126 pages): QFEX, API Reference, Legal.",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "fd4d3ff34f21",
+   "ref": {
+    "name": "문서 전체 목록",
+    "url": "https://docs.qfex.com/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '문서 전체 목록' 문구 변경",
+   "ts": 1795368240,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "Private-order API reference",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "d27e4a48dc91",
+   "ref": {
+    "added": [
+     "Private-order API reference",
+     "Private orders now use one optional JSON boolean, `dark`, defaulting to `false`. For `LIMIT GTC` and `ALO GTC`, `true` makes resting quantity private. For `LIMIT IOC`, `LIMIT FOK` and `MARKET IOC/FOK`, it selects only private passive liquidity. Private FOK fills completely or cancels without fills. There is no displayed-BBO comparison, quote requirement or displayed fallback.",
+     "Individual trade publication depends only on the passive order: displayed passives publish; private passives do not. A private GTC can produce public entry fills and private passive fills after resting. Funding, marks, candles, volume and authenticated execution records still include all activity.",
+     "Order responses and active-order queries return `dark: true` for private instructions and omit default `false`. Modifications preserve the flag. The earlier draft fields `visibility` and `liquidity_pool` are retired and ignored in add-order requests; migrate those requests to `dark`. Private-order entry must be enabled by the exchange before `dark: true` requests are accepted.",
+     "See [Private-order API](https://docs.qfex.com/api-reference/private-orders.md), [Add order](https://docs.qfex.com/websocket/channels/trade/add_order.md), [Order responses](https://docs.qfex.com/websocket/channels/trade/order.md#private-order-fields) and [Private flag](https://docs.qfex.com/api-reference/enums.md#darkflag)."
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1795368240,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "0x073f5644 → 0x91d40e48",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "8a2f2b06aef0",
+   "ref": {
+    "amount": 2007715.79,
+    "chain": "eth",
+    "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+    "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "tx": "0x1bcf6326bb85d979e9ffbec11828a304a6aafebb8db104dcb3eb9dbf8c0ab67c"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 2.01M개 대량 이동",
+   "ts": 1795353707,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "0x91d40e48 → 0x073f5644",
    "family": "S1",
@@ -15,7 +111,10 @@
     "tx": "0x68307414611ae15ac8565ee9370420db513a5e83aab6fc9cee22ab1b033581de"
    },
    "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
+   "refute_kind": "data",
+   "refute_reason": "이동한 LIT가 72시간 안에 원래 지갑으로 돌아왔어요",
+   "refuted": true,
+   "refuted_at": 1795368240,
    "signal": "eth_large",
    "title": "이더리움 LIT 1.96M개 대량 이동",
    "ts": 1795316015,
@@ -4918,125 +5017,9 @@
    "ts": 1793299991,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x2c9dfa06 → 0xcd531ae9",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "0365e91710fa",
-   "ref": {
-    "amount": 1692284.54,
-    "chain": "eth",
-    "from": "0x2c9dfa068db78063401507075312739ff03a6c13",
-    "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-    "tx": "0xf48c7464749f0836da5cdd4b46a647f977dad096b9ee0c6dd7b305936298a75d"
-   },
-   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "이더리움 LIT 1.69M개 대량 이동",
-   "ts": 1793299331,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0xab00e8f5 → 0xcd531ae9",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "ad9b46ef9367",
-   "ref": {
-    "amount": 1500000.0,
-    "chain": "eth",
-    "from": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-    "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-    "tx": "0x4c25fbbad929f10585c3bb352b365b35f783c0ed5619255e3a841991192f8c14"
-   },
-   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "이더리움 LIT 1.50M개 대량 이동",
-   "ts": 1793287055,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x1a51016f → 0xab00e8f5",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "d84d35f6eeab",
-   "ref": {
-    "amount": 1500000.0,
-    "chain": "eth",
-    "from": "0x1a51016fad47de690d1f48adf2f6407f3cdc160d",
-    "to": "0xab00e8f5f76e0522d9599b8735d4f6cfdc6e5f48",
-    "tx": "0x089586a765fc8281a1b968998ae1ce6a313c1eed86f143faa8bbc4dcaba8a716"
-   },
-   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "이더리움 LIT 1.50M개 대량 이동",
-   "ts": 1793287031,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x09671d2a → 0xf89d7b9c",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "3292ca6458f4",
-   "ref": {
-    "amount": 1216000.0,
-    "chain": "eth",
-    "from": "0x09671d2a9a43bf70cd282318f75c9c9f122a0440",
-    "to": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
-    "tx": "0xc6469c2337327d542b5818517b8fc1ac3135f1ff3373e69e10972c0ddf801865"
-   },
-   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "이더리움 LIT 1.22M개 대량 이동",
-   "ts": 1793281763,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "0x5ee84d30 → 0x091d1c97",
-   "family": "S1",
-   "grade": "WATCH",
-   "id": "fae76bebf886",
-   "ref": {
-    "amount": 1600000.0,
-    "chain": "eth",
-    "from": "0x5ee84d30c7ee57f63f71c92247ff31f95e26916b",
-    "to": "0x091d1c972cb1648537a2ba78eaba371b1ce18336",
-    "tx": "0x5bdabbb2266f443ba053a710fd4e22bb9ac0e83ffa5c293c5a53dd1511721f5e"
-   },
-   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
-   "signal": "eth_large",
-   "title": "이더리움 LIT 1.60M개 대량 이동",
-   "ts": 1793279171,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1795258559,
-   "s"
-  ],
-  [
-   1795261116,
-   "d"
-  ],
-  [
-   1795262899,
-   "d"
-  ],
-  [
-   1795264711,
-   "d"
-  ],
   [
    1795283839,
    "s"
@@ -5156,6 +5139,10 @@
   [
    1795343912,
    "d"
+  ],
+  [
+   1795368240,
+   "s"
   ]
  ],
  "venues": [
@@ -5173,37 +5160,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "26건",
      "ok": true
     },
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "19건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "18건",
      "ok": true
     }
@@ -5217,22 +5204,54 @@
    "api_watch": null,
    "events": [
     {
-     "detail": "0x91d40e48 → 0x073f5644",
+     "detail": "0x91d40e48 · 6건",
+     "family": "S1",
+     "grade": "ALERT",
+     "id": "fdf26f663ba6",
+     "ref": {
+      "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "total": 10627824.629999999
+     },
+     "refute": "누적분이 원래 지갑으로 돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_pool_cumulative",
+     "title": "같은 지갑에서 7일간 LIT 10.63M개 출금 (포인트 풀 규모)",
+     "ts": 1795368240,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x073f5644 · 6건",
+     "family": "S1",
+     "grade": "ALERT",
+     "id": "d2d23eb3f194",
+     "ref": {
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "total": 10060813.91
+     },
+     "refute": "누적분이 원래 지갑으로 돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_pool_cumulative",
+     "title": "같은 지갑에서 7일간 LIT 10.06M개 출금 (포인트 풀 규모)",
+     "ts": 1795368240,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x073f5644 → 0x91d40e48",
      "family": "S1",
      "grade": "WATCH",
-     "id": "08445c23274b",
+     "id": "8a2f2b06aef0",
      "ref": {
-      "amount": 1960747.03,
+      "amount": 2007715.79,
       "chain": "eth",
-      "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-      "to": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
-      "tx": "0x68307414611ae15ac8565ee9370420db513a5e83aab6fc9cee22ab1b033581de"
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "tx": "0x1bcf6326bb85d979e9ffbec11828a304a6aafebb8db104dcb3eb9dbf8c0ab67c"
      },
      "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
      "refuted": false,
      "signal": "eth_large",
-     "title": "이더리움 LIT 1.96M개 대량 이동",
-     "ts": 1795316015,
+     "title": "이더리움 LIT 2.01M개 대량 이동",
+     "ts": 1795353707,
      "venue": "lighter-rh"
     },
     {
@@ -5821,11 +5840,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794285511,
-     274237.193,
-     66291.32
-    ],
     [
      1794287306,
      274246.211,
@@ -7820,6 +7834,11 @@
      1795343912,
      331476.585,
      84131.25
+    ],
+    [
+     1795368240,
+     331771.156,
+     84254.59
     ]
    ],
    "level": "ALERT",
@@ -7827,26 +7846,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1794136100,
-     456141.03
-    ],
-    [
-     1794137910,
-     456141.03
-    ],
-    [
-     1794139698,
-     456141.03
-    ],
-    [
-     1794141509,
-     456141.03
-    ],
-    [
-     1794150514,
-     456141.03
-    ],
     [
      1794162240,
      456935.47
@@ -9630,62 +9629,66 @@
     [
      1795343912,
      516995.79
+    ],
+    [
+     1795368240,
+     516995.79
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "19건",
      "ok": true
     },
     "board": {
-     "at": 1795343912,
-     "note": "상위 10명 합계 331,477",
+     "at": 1795368240,
+     "note": "상위 10명 합계 331,771",
      "ok": true
     },
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795343912,
-     "note": "150블록 · 대량 0건",
+     "at": 1795368240,
+     "note": "2022블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "모듈 163 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
-     "note": "90건",
+     "at": 1795368240,
+     "note": "99건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "516,996 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795343912,
-     "note": "22건",
-     "ok": true
+     "at": 1795368240,
+     "err": "X 수집 실패: https://xcancel.com/Lighter_xyz/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/Lighter_xyz/statuses → HTTP 404",
+     "ok": false
     },
     "x:vnovakovski": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "19건",
      "ok": true
     }
@@ -9698,6 +9701,46 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "Latest (126 pages): QFEX, API Reference, Legal.",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "fd4d3ff34f21",
+     "ref": {
+      "name": "문서 전체 목록",
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '문서 전체 목록' 문구 변경",
+     "ts": 1795368240,
+     "venue": "qfex"
+    },
+    {
+     "detail": "Private-order API reference",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "d27e4a48dc91",
+     "ref": {
+      "added": [
+       "Private-order API reference",
+       "Private orders now use one optional JSON boolean, `dark`, defaulting to `false`. For `LIMIT GTC` and `ALO GTC`, `true` makes resting quantity private. For `LIMIT IOC`, `LIMIT FOK` and `MARKET IOC/FOK`, it selects only private passive liquidity. Private FOK fills completely or cancels without fills. There is no displayed-BBO comparison, quote requirement or displayed fallback.",
+       "Individual trade publication depends only on the passive order: displayed passives publish; private passives do not. A private GTC can produce public entry fills and private passive fills after resting. Funding, marks, candles, volume and authenticated execution records still include all activity.",
+       "Order responses and active-order queries return `dark: true` for private instructions and omit default `false`. Modifications preserve the flag. The earlier draft fields `visibility` and `liquidity_pool` are retired and ignored in add-order requests; migrate those requests to `dark`. Private-order entry must be enabled by the exchange before `dark: true` requests are accepted.",
+       "See [Private-order API](https://docs.qfex.com/api-reference/private-orders.md), [Add order](https://docs.qfex.com/websocket/channels/trade/add_order.md), [Order responses](https://docs.qfex.com/websocket/channels/trade/order.md#private-order-fields) and [Private flag](https://docs.qfex.com/api-reference/enums.md#darkflag)."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1795368240,
+     "venue": "qfex"
+    },
     {
      "detail": "20th November 2026",
      "family": "S2",
@@ -9916,29 +9959,29 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "12건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795343912,
-     "note": "19건",
-     "ok": true
+     "at": 1795368240,
+     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -10145,28 +10188,28 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
-     "note": "28건",
+     "at": 1795368240,
+     "note": "29건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795343912,
-     "note": "21건",
+     "at": 1795368240,
+     "note": "20건",
      "ok": true
     }
    },
@@ -10286,39 +10329,39 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 70%",
+   "odds": "토큰 출시 확률 11/30까지 3% · 12/31까지 72%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
-     "note": "31건",
+     "at": 1795368240,
+     "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795343912,
-     "note": "15건",
-     "ok": true
+     "at": 1795368240,
+     "err": "X 수집 실패: https://xcancel.com/variational_io/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/variational_io/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -10395,34 +10438,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 14% · 27년 3/31까지 24% · 27년 6/30까지 51%",
+   "odds": "토큰 출시 확률 12/31까지 15% · 27년 3/31까지 24% · 27년 6/30까지 48%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
-     "note": "9건",
+     "at": 1795368240,
+     "note": "26건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795343912,
-     "note": "14건",
-     "ok": true
+     "at": 1795368240,
+     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
+     "ok": false
     }
    },
    "sources_all": 2,
@@ -10444,33 +10487,33 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795343912,
-     "err": "공식 문서를 읽지 못했어요",
-     "ok": false
+     "at": 1795368240,
+     "note": "아직 공개 전",
+     "ok": true
     },
     "docs": {
-     "at": 1795343912,
-     "err": "전 페이지 실패",
-     "ok": false
+     "at": 1795368240,
+     "note": "3/3 페이지",
+     "ok": true
     },
     "news": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "20건",
      "ok": true
     }
    },
    "sources_all": 1,
-   "sources_ok": 0,
+   "sources_ok": 1,
    "status_note": "자체 L1 퍼프·예측시장 · 토큰·TGE 미발표 · **시즌1 포인트 진행 중**(10/12~, 트레이더 몫 매주 125만 pt · 월요일 마감·화요일 지급, 늦어도 2027년 1분기까지) · 공식 약관: 포인트는 향후 토큰 배분의 한 요소 · 거래 API는 빌더 화이트리스트만(개인 미공개) — 공개 감시 중",
    "upcoming": []
   },
@@ -10488,22 +10531,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "20건",
      "ok": true
     }
@@ -10527,17 +10570,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795343912,
+     "at": 1795368240,
      "err": "X 수집 실패: https://xcancel.com/TitanExchange_/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TitanExchange_/statuses → HTTP 404",
      "ok": false
     }
@@ -10604,27 +10647,27 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 36% · 27년 12/31까지 57%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 36% · 27년 12/31까지 58%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795343912,
+     "at": 1795368240,
      "note": "18건",
      "ok": true
     }
