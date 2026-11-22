@@ -1,5 +1,5 @@
 {
- "generated_at": 1795324104,
+ "generated_at": 1795325916,
  "levels": {
   "arcus": "NONE",
   "extended": "IMMINENT",
@@ -29,14 +29,6 @@
   }
  ],
  "runs": [
-  [
-   1795237710,
-   "d"
-  ],
-  [
-   1795239508,
-   "d"
-  ],
   [
    1795241302,
    "d"
@@ -164,6 +156,10 @@
   [
    1795324104,
    "d"
+  ],
+  [
+   1795325916,
+   "d"
   ]
  ],
  "status": {
@@ -171,23 +167,23 @@
    "api": true,
    "blog": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:arcus_xyz": true
   },
   "extended": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:extendedapp": true
   },
   "hellotrade": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:hellotradeapp": true
+   "x:hellotradeapp": false
   },
   "lighter-rh": {
    "ann": true,
@@ -195,49 +191,49 @@
    "docs": true,
    "eth_transfers": true,
    "frontend": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "rh_supply": true,
    "rh_transfers": true,
-   "x:Lighter_xyz": true,
+   "x:Lighter_xyz": false,
    "x:vnovakovski": true
   },
   "pacifica": {
    "ann": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:pacifica_fi": true
+   "x:pacifica_fi": false
   },
   "qfex": {
    "docs": true,
    "feed": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:QFEX": true
+   "x:QFEX": false
   },
   "risex": {
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:risextrade": true
   },
   "titanx": {
    "docs": true,
-   "news": true,
+   "news": false,
    "x:TitanExchange_": true
   },
   "txflow": {
    "api_watch": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
-   "x:TxFlow_L1": true
+   "x:TxFlow_L1": false
   },
   "variational": {
    "api_watch": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "telegram": true,
    "x:variational_io": true
