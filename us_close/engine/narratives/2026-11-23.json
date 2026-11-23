@@ -1,0 +1,79 @@
+{
+ "headline": "엔비디아가 젠슨 황 복귀에 +31.5% 급등해 반도체 +14.0%, 나스닥100 +6.9%였어요. VIX는 26.6이에요.",
+ "breadth_note": "오른 종목 80, 내린 종목 16으로 금요일(24/73)에서 뒤집혔어요. SMA50 위 비율은 30.9%에서 42.3%로 올라왔지만 5일 전(56.7%)에는 못 미쳐요. 시총가중(SPY +4.71%)이 동일가중(RSP +2.59%)보다 2.1%p 더 올라 반도체·대형 기술주가 반등을 이끌었어요.",
+ "drivers": [
+  "엔비디아 +31.5%(165.05달러): 이사회가 만장일치로 젠슨 황을 CEO로 복귀시켰어요. 이사회는 '미국 정부 고위층의 의견을 들었고 복귀에 국가안보 위험은 없다'고 밝혔고, 트럼프 대통령도 일요일에 복귀를 공개적으로 촉구했어요(Yahoo Finance). 11/12 사임과 관련된 독립 조사는 계속 진행돼요.",
+  "반도체 동반 반등: 마이크론 +19.0%, 인텔 +16.3%, KLA +15.0%, 어플라이드 +14.6%, 램리서치 +14.5%로 필라델피아 반도체가 +14.0%였어요. QQQ는 1999년 상장 이후 가장 큰 폭(약 8%)으로 출발했어요(Yahoo Finance).",
+  "공포 완화: VIX가 26.6(−9.3pt)으로 내려왔어요. 금은 +3.4% 반등했고, WTI는 −4.4%(80.3달러)로 약세가 이어졌어요. 10년물은 4.92%(+0.6bp)로 거의 그대로예요.",
+  "연준: 12/9 회의 인상 확률은 채권시장 기준 약 92%, 폴리마켓 91%로 11/12(98%)보다 조금 낮아졌어요. 쿡 이사는 '더 기다리면 뒤처질 위험이 있다'고 했어요(Yahoo Finance).",
+  "남은 변수: 지난주 보도된 엔비디아 SEC 회계 조사는 아직 정리되지 않았어요. 필수소비재(−0.1%)·에너지(−1.1%)만 쉬었어요."
+ ],
+ "after_hours": [
+  "HPE는 정규장 +17.4%에 이어 실적 발표 뒤 시간외 −5.5%, 애질런트 +6.8%, 줌 −2.1%예요.",
+  "QQQ 651.1(0.0%), SPY 723.5(+0.2%), SOXX 140.0(−0.2%), DRAM 39.7(+0.3%), 엔비디아 165.2(+0.1%)로 시간외는 잠잠해요(마감 30분 기준)."
+ ],
+ "tech": {
+  "QQQ": {
+   "short": 55,
+   "swing": 30,
+   "short_d": 10,
+   "swing_d": 5,
+   "note": "+7.0%로 649.6을 되찾고 651.0에 마감했어요. 4H·일봉 RSI가 30 위로 올라왔고(44.8, 42.2), 4H·일봉·주봉 MACD 히스토그램이 모두 돌아섰어요. 다만 4H SuperTrend(665.1)와 주봉 EMA50(668.5)이 바로 위에 있어 추세 전환은 아직이에요. 단기 10%p, 스윙 5%p 올렸어요.",
+   "up": "661.1 회복 → 665.1(4H SuperTrend), 668.5(주봉 EMA50)",
+   "down": "647.2 이탈 → 636.8, 629.2"
+  },
+  "SPY": {
+   "short": 55,
+   "swing": 30,
+   "short_d": 10,
+   "swing_d": 5,
+   "note": "+4.7%로 722.3에 마감해 주봉 EMA50(722.9) 바로 아래까지 회복했어요. 4H RSI는 19.6에서 43.2로 과매도를 벗어났고, 4H 거래량은 평균의 4.1배였어요. 주봉 EMA50을 이번 주 종가로 되찾는지가 핵심이에요.",
+   "up": "722.9 회복(주봉 EMA50) → 729.1, 734.2(4H SuperTrend)",
+   "down": "716.6 이탈 → 697.8, 689.7"
+  },
+  "SOXX": {
+   "short": 50,
+   "swing": 30,
+   "short_d": 10,
+   "swing_d": 5,
+   "note": "+13.6%로 140.2에 마감해 금요일 낙폭(−10.6%)을 모두 되돌렸어요. 4H MACD 히스토그램이 −1.55에서 −0.14로 0선에 다가갔고, 일봉 RSI도 42.8로 올라왔어요. 4H SuperTrend(148.5)와 주봉 EMA50(150.1)이 위쪽 저항이에요.",
+   "up": "148.5 회복(4H SuperTrend) → 151.0",
+   "down": "130.8 이탈 → 120.5(주봉 EMA120)"
+  },
+  "DRAM": {
+   "short": 50,
+   "swing": 30,
+   "short_d": 10,
+   "swing_d": 5,
+   "note": "+18.6%로 39.57에 마감해 주봉 EMA120(38.45)을 되찾았어요. 4H MACD가 골든크로스를 냈고 히스토그램은 +0.12로 플러스예요. 마이크론은 +19.0%였어요. 41.9(4H SuperTrend)를 넘어야 하락 추세가 끝나요. 상장 이력이 짧아 주봉 지표는 참고만 해요.",
+   "up": "41.9 돌파(4H SuperTrend) → 43.7",
+   "down": "38.45 이탈(주봉 EMA120) → 37.8, 37.0"
+  }
+ },
+ "calendar": [
+  "11/24(화) 밤 ADI·메드트로닉(장전), 11/25(수) 새벽 델 실적",
+  "11/25(수) 22:30 10월 PCE·3분기 GDP 수정치",
+  "11/26(목) 추수감사절 휴장, 27일 조기 폐장"
+ ],
+ "view": "젠슨 황 복귀로 엔비디아가 하루 만에 금요일 낙폭(−14%)의 두 배 넘게 올랐고, 반도체 지수도 금요일 하락(−10.7%)을 모두 되돌렸어요. 네 종목 모두 4H·일봉 RSI가 30 위로 올라오고 MACD가 돌아서 단기 확률을 10%p씩 올렸어요. 다만 일봉·주봉 SuperTrend는 여전히 하락이고 SPY는 주봉 EMA50(722.9) 바로 아래라, 이번 주 종가로 이 선을 되찾아야 바닥을 확인했다고 볼 수 있어요. SEC 회계 조사와 수요일 밤 PCE 물가(12월 인상 폭)가 남은 변수예요.",
+ "summary": [
+  "엔비디아가 젠슨 황 복귀에 +31.5%, 반도체 지수는 +14.0%예요.",
+  "S&P +4.7%, 나스닥100 +6.9%였고 VIX는 26.6까지 내려왔어요.",
+  "네 종목 모두 RSI가 30 위로 올라와 단기 확률을 10%p씩 올렸어요.",
+  "SPY 722.9(주봉 EMA50) 회복이 관건이고, 수요일 밤 PCE가 나와요."
+ ],
+ "sources": [
+  {
+   "title": "Stock market today: Dow, S&P 500, Nasdaq post best day since April 2025 as Nvidia stock soars 31% on Jensen Huang's return (Yahoo Finance)",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-surge-after-nvidia-reinstates-jensen-huang-182039397.html"
+  },
+  {
+   "title": "Nvidia soars 31% as board reinstates Jensen Huang as CEO, chip stocks jump (Yahoo Finance)",
+   "url": "https://finance.yahoo.com/markets/article/nvidia-soars-25-as-board-reinstates-jensen-huang-as-ceo-chip-stocks-jump-142353537.html"
+  },
+  {
+   "title": "Wall Street just put a $1 trillion price on Jensen Huang as Nvidia stock soars 31% after his return as CEO (Fortune)",
+   "url": "https://fortune.com/2026/11/23/wall-street-1-trillion-jensen-huang-nvidia-stock-market-cap/"
+  }
+ ]
+}
