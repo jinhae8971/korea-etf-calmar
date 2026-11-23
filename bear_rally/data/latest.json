@@ -1,0 +1,1658 @@
+{
+ "as_of_kst": "2026-11-24 07:59",
+ "as_of_date": "2026-11-24",
+ "hub_date": "2026-11-23",
+ "basis": "미국 11/23(월) · 코스피 11/23(월) 종가 · 크립토 11/22(일) 일봉 기준",
+ "pages_url": "https://jinhae8971.github.io/korea-etf-calmar/bear-rally/",
+ "data_key": {
+  "SPY": "2026-11-23",
+  "QQQ": "2026-11-23",
+  "SOXX": "2026-11-23",
+  "KOSPI": "2026-11-23",
+  "BTC": "2026-11-22",
+  "ETH": "2026-11-22"
+ },
+ "assets": [
+  {
+   "key": "SPY",
+   "name": "S&P 500 (SPY)",
+   "market": "us",
+   "mode": "stock",
+   "state": 0,
+   "state_ko": "강세",
+   "state_since": "2025-05-30",
+   "last_date": "2026-11-23",
+   "close": 722.51,
+   "patched": true,
+   "ma200": 732.9218499999992,
+   "ma200_gap": -0.014205948424104387,
+   "ma50_gap": 0.03614375802822711,
+   "ma_fall": false,
+   "ma50_up": false,
+   "dd_peak": -0.075624984007574,
+   "dd63": -0.075624984007574,
+   "dd_len": 63,
+   "dd_min_pct": 10.0,
+   "rsi": 41.59963040407601,
+   "avwap": 749.7372921129974,
+   "w_line": 732.3625000000004,
+   "w_bot": 747.1833328845545,
+   "w_close": 689.81,
+   "w_up": 0,
+   "hold_weeks": 2,
+   "rally_base": null,
+   "rally_pct": null,
+   "rally_min_pct": 10.0,
+   "rally_trigger": null,
+   "fib_ratio": null,
+   "hits": [],
+   "bear_hits": 0,
+   "hits_max": 7,
+   "min_hits": 3,
+   "hits_all": [
+    "rsi_ceil",
+    "ma50",
+    "ma200",
+    "avwap",
+    "fib",
+    "narrow",
+    "zbt_near"
+   ],
+   "evid": [
+    "ma_flat"
+   ],
+   "shift_score": 1,
+   "shift_max": 6,
+   "shift_min": 3,
+   "evid_all": [
+    "zbt",
+    "breadth",
+    "rsi_shift",
+    "weekly",
+    "ma_flat",
+    "reclaim"
+   ],
+   "breadth_on": true,
+   "br200": 38.54,
+   "br50": 30.93,
+   "zbt": 0.3078155671265222,
+   "zbt_state": "셋업 진행",
+   "cond": {
+    "dd": false,
+    "slope_or_cross": false,
+    "weekly_below_band": true
+   },
+   "events_recent": [
+    {
+     "d": "2023-02-02",
+     "type": "rally",
+     "state": 2,
+     "c": 416.78,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 2,
+     "rally_pct": 0.10722065777588852,
+     "fib_ratio": 0.532342458481838
+    },
+    {
+     "d": "2023-02-03",
+     "type": "shift",
+     "state": 4,
+     "c": 412.35,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 2,
+     "rally_pct": 0.09545188884756395,
+     "fib_ratio": 0.532342458481838
+    },
+    {
+     "d": "2023-02-06",
+     "type": "bull",
+     "state": 0,
+     "c": 409.83,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 2,
+     "rally_pct": 0.08875723925402457,
+     "fib_ratio": 0.532342458481838
+    },
+    {
+     "d": "2023-08-29",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 449.16,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.19324159183890344,
+     "fib_ratio": null
+    },
+    {
+     "d": "2023-10-17",
+     "type": "zbt_near",
+     "state": 0,
+     "c": 436.02,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.1583337761011634,
+     "fib_ratio": null
+    },
+    {
+     "d": "2023-11-02",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 430.76,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 4,
+     "bear_hits": 0,
+     "rally_pct": 0.14436002337814147,
+     "fib_ratio": null
+    },
+    {
+     "d": "2024-08-15",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 553.07,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.46928962329313006,
+     "fib_ratio": null
+    },
+    {
+     "d": "2025-04-14",
+     "type": "bear_enter",
+     "state": 1,
+     "c": 539.12,
+     "hits": [],
+     "evid": [
+      "ma_flat"
+     ],
+     "shift_score": 1,
+     "bear_hits": 0,
+     "rally_pct": 0.11897052718970524,
+     "fib_ratio": null
+    },
+    {
+     "d": "2025-04-15",
+     "type": "rally",
+     "state": 2,
+     "c": 537.61,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "ma_flat"
+     ],
+     "shift_score": 1,
+     "bear_hits": 1,
+     "rally_pct": 0.11583644665836457,
+     "fib_ratio": 0.4673970935098532
+    },
+    {
+     "d": "2025-05-14",
+     "type": "shift",
+     "state": 4,
+     "c": 587.59,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 2,
+     "rally_pct": 0.21957243669572435,
+     "fib_ratio": 0.8162519972608995
+    },
+    {
+     "d": "2025-05-30",
+     "type": "bull",
+     "state": 0,
+     "c": 589.39,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 4,
+     "bear_hits": 2,
+     "rally_pct": 0.22330842673308426,
+     "fib_ratio": 0.8654036369169896
+    },
+    {
+     "d": "2025-11-28",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 683.39,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.4184101286841013,
+     "fib_ratio": null
+    }
+   ],
+   "changes": [],
+   "src": "nasdaq",
+   "chart": "img/SPY.png"
+  },
+  {
+   "key": "QQQ",
+   "name": "나스닥100 (QQQ)",
+   "market": "us",
+   "mode": "stock",
+   "state": 0,
+   "state_ko": "강세",
+   "state_since": "2025-05-28",
+   "last_date": "2026-11-23",
+   "close": 651.03,
+   "patched": true,
+   "ma200": 683.2677500000018,
+   "ma200_gap": -0.047181723416628074,
+   "ma50_gap": 0.03882292117548025,
+   "ma_fall": false,
+   "ma50_up": false,
+   "dd_peak": -0.1465930839210341,
+   "dd63": -0.1465930839210341,
+   "dd_len": 63,
+   "dd_min_pct": 10.0,
+   "rsi": 42.18460294878416,
+   "avwap": 687.9524304183648,
+   "w_line": 683.1522500000003,
+   "w_bot": 693.7269376389685,
+   "w_close": 608.45,
+   "w_up": 0,
+   "hold_weeks": 2,
+   "rally_base": null,
+   "rally_pct": null,
+   "rally_min_pct": 10.0,
+   "rally_trigger": null,
+   "fib_ratio": null,
+   "hits": [],
+   "bear_hits": 0,
+   "hits_max": 7,
+   "min_hits": 3,
+   "hits_all": [
+    "rsi_ceil",
+    "ma50",
+    "ma200",
+    "avwap",
+    "fib",
+    "narrow",
+    "zbt_near"
+   ],
+   "evid": [
+    "ma_flat"
+   ],
+   "shift_score": 1,
+   "shift_max": 6,
+   "shift_min": 3,
+   "evid_all": [
+    "zbt",
+    "breadth",
+    "rsi_shift",
+    "weekly",
+    "ma_flat",
+    "reclaim"
+   ],
+   "breadth_on": true,
+   "br200": 38.54,
+   "br50": 30.93,
+   "zbt": 0.3078155671265222,
+   "zbt_state": "셋업 진행",
+   "cond": {
+    "dd": true,
+    "slope_or_cross": false,
+    "weekly_below_band": true
+   },
+   "events_recent": [
+    {
+     "d": "2023-02-06",
+     "type": "bull",
+     "state": 0,
+     "c": 303.59,
+     "hits": [
+      "fib",
+      "narrow"
+     ],
+     "evid": [
+      "breadth",
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 4,
+     "bear_hits": 2,
+     "rally_pct": 0.16886767027297567,
+     "fib_ratio": 1.4592337917485259
+    },
+    {
+     "d": "2023-08-29",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 374.77,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.4429214953990681,
+     "fib_ratio": null
+    },
+    {
+     "d": "2023-10-17",
+     "type": "zbt_near",
+     "state": 0,
+     "c": 368.2,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.4176259962268509,
+     "fib_ratio": null
+    },
+    {
+     "d": "2023-11-02",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 363.44,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.3992992723212565,
+     "fib_ratio": null
+    },
+    {
+     "d": "2024-08-15",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 474.42,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.8265891502714358,
+     "fib_ratio": null
+    },
+    {
+     "d": "2025-04-10",
+     "type": "bear_enter",
+     "state": 1,
+     "c": 446.18,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.10882477198737539,
+     "fib_ratio": null
+    },
+    {
+     "d": "2025-04-11",
+     "type": "rally",
+     "state": 2,
+     "c": 454.4,
+     "hits": [
+      "fib"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 1,
+     "rally_pct": 0.1292527150277094,
+     "fib_ratio": 0.38578240138708314
+    },
+    {
+     "d": "2025-04-21",
+     "type": "rearm",
+     "state": 1,
+     "c": 433.11,
+     "hits": [
+      "fib"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 1,
+     "rally_pct": 0.012104783492627336,
+     "fib_ratio": 0.45268024851900046
+    },
+    {
+     "d": "2025-04-25",
+     "type": "rally",
+     "state": 2,
+     "c": 472.56,
+     "hits": [
+      "fib"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 1,
+     "rally_pct": 0.1042927581613815,
+     "fib_ratio": 0.5107643404132352
+    },
+    {
+     "d": "2025-05-14",
+     "type": "shift",
+     "state": 4,
+     "c": 518.68,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "rsi_shift",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.21206739419998577,
+     "fib_ratio": 0.8440825025285366
+    },
+    {
+     "d": "2025-05-28",
+     "type": "bull",
+     "state": 0,
+     "c": 518.91,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "rsi_shift",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 1,
+     "rally_pct": 0.21260486528170497,
+     "fib_ratio": 0.876246207195492
+    },
+    {
+     "d": "2025-11-28",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 619.25,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.447082466758582,
+     "fib_ratio": null
+    }
+   ],
+   "changes": [],
+   "src": "nasdaq",
+   "chart": "img/QQQ.png"
+  },
+  {
+   "key": "SOXX",
+   "name": "반도체 (SOXX)",
+   "market": "us",
+   "mode": "stock",
+   "state": 0,
+   "state_ko": "강세",
+   "state_since": "2025-06-16",
+   "last_date": "2026-11-23",
+   "close": 140.22,
+   "patched": true,
+   "ma200": 161.0940480000001,
+   "ma200_gap": -0.1295767798944384,
+   "ma50_gap": 0.040413262195755806,
+   "ma_fall": false,
+   "ma50_up": false,
+   "dd_peak": -0.35870112051223424,
+   "dd63": -0.294715192595264,
+   "dd_len": 63,
+   "dd_min_pct": 10.0,
+   "rsi": 42.77265979144932,
+   "avwap": 170.19977293676072,
+   "w_line": 161.5662375,
+   "w_bot": 162.88969294060647,
+   "w_close": 123.4,
+   "w_up": 0,
+   "hold_weeks": 2,
+   "rally_base": null,
+   "rally_pct": null,
+   "rally_min_pct": 10.0,
+   "rally_trigger": null,
+   "fib_ratio": null,
+   "hits": [],
+   "bear_hits": 0,
+   "hits_max": 7,
+   "min_hits": 3,
+   "hits_all": [
+    "rsi_ceil",
+    "ma50",
+    "ma200",
+    "avwap",
+    "fib",
+    "narrow",
+    "zbt_near"
+   ],
+   "evid": [
+    "ma_flat"
+   ],
+   "shift_score": 1,
+   "shift_max": 6,
+   "shift_min": 3,
+   "evid_all": [
+    "zbt",
+    "breadth",
+    "rsi_shift",
+    "weekly",
+    "ma_flat",
+    "reclaim"
+   ],
+   "breadth_on": true,
+   "br200": 38.54,
+   "br50": 30.93,
+   "zbt": 0.3078155671265222,
+   "zbt_state": "셋업 진행",
+   "cond": {
+    "dd": true,
+    "slope_or_cross": false,
+    "weekly_below_band": true
+   },
+   "events_recent": [
+    {
+     "d": "2025-01-21",
+     "type": "rally",
+     "state": 2,
+     "c": 77.4833,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 2,
+     "rally_pct": 0.11278615539279047,
+     "fib_ratio": 0.44027249357326464
+    },
+    {
+     "d": "2025-01-22",
+     "type": "shift",
+     "state": 4,
+     "c": 78.6033,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 2,
+     "rally_pct": 0.12887117621714794,
+     "fib_ratio": 0.5047146529562987
+    },
+    {
+     "d": "2025-01-29",
+     "type": "shift_fail",
+     "state": 3,
+     "c": 71.46,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "ma200",
+      "avwap",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly"
+     ],
+     "shift_score": 2,
+     "bear_hits": 5,
+     "rally_pct": 0.02628177509694085,
+     "fib_ratio": 0.5047146529562987
+    },
+    {
+     "d": "2025-01-30",
+     "type": "rearm",
+     "state": 1,
+     "c": 72.9133,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "ma200",
+      "avwap",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "weekly",
+      "ma_flat"
+     ],
+     "shift_score": 3,
+     "bear_hits": 5,
+     "rally_pct": 0.013811179087875436,
+     "fib_ratio": 0.5047146529562987
+    },
+    {
+     "d": "2025-04-09",
+     "type": "rally",
+     "state": 2,
+     "c": 61.2067,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.2380822344533513,
+     "fib_ratio": 0.31320803263098673
+    },
+    {
+     "d": "2025-04-17",
+     "type": "rearm",
+     "state": 1,
+     "c": 55.5167,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.010557605389475588,
+     "fib_ratio": 0.31320803263098673
+    },
+    {
+     "d": "2025-04-24",
+     "type": "rally",
+     "state": 2,
+     "c": 61.01,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.14208161737177072,
+     "fib_ratio": 0.29639308533850617
+    },
+    {
+     "d": "2025-05-13",
+     "type": "shift",
+     "state": 4,
+     "c": 71.2533,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "rsi_shift",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.33383189816548087,
+     "fib_ratio": 0.5592369959110368
+    },
+    {
+     "d": "2025-05-23",
+     "type": "shift_fail",
+     "state": 3,
+     "c": 67.52,
+     "hits": [
+      "ma200",
+      "avwap",
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "rsi_shift"
+     ],
+     "shift_score": 2,
+     "bear_hits": 3,
+     "rally_pct": 0.2639460876076374,
+     "fib_ratio": 0.5750429454661948
+    },
+    {
+     "d": "2025-06-03",
+     "type": "shift",
+     "state": 4,
+     "c": 71.2067,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "breadth",
+      "rsi_shift",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.33295956570572804,
+     "fib_ratio": 0.5750429454661948
+    },
+    {
+     "d": "2025-06-16",
+     "type": "bull",
+     "state": 0,
+     "c": 75.8133,
+     "hits": [
+      "fib",
+      "narrow"
+     ],
+     "evid": [
+      "breadth",
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 4,
+     "bear_hits": 2,
+     "rally_pct": 0.4191931860726319,
+     "fib_ratio": 0.6851927059553568
+    },
+    {
+     "d": "2025-11-28",
+     "type": "zbt_fire",
+     "state": 0,
+     "c": 98.9133,
+     "hits": [],
+     "evid": [
+      "zbt",
+      "breadth",
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 5,
+     "bear_hits": 0,
+     "rally_pct": 0.8516154998128043,
+     "fib_ratio": null
+    }
+   ],
+   "changes": [],
+   "src": "nasdaq",
+   "chart": "img/SOXX.png"
+  },
+  {
+   "key": "KOSPI",
+   "name": "코스피",
+   "market": "kr",
+   "mode": "stock",
+   "state": 1,
+   "state_ko": "베어",
+   "state_since": "2026-11-03",
+   "last_date": "2026-11-23",
+   "close": 4708.54,
+   "patched": false,
+   "ma200": 6523.027799999989,
+   "ma200_gap": -0.27816649807931093,
+   "ma50_gap": -0.07705274535239648,
+   "ma_fall": false,
+   "ma50_up": false,
+   "dd_peak": -0.498322428318305,
+   "dd63": -0.3434390477890322,
+   "dd_len": 63,
+   "dd_min_pct": 10.0,
+   "rsi": 31.213189801575908,
+   "avwap": 6758.691095931184,
+   "w_line": 6647.275250000001,
+   "w_bot": 6201.663215033964,
+   "w_close": 4869.96,
+   "w_up": 0,
+   "hold_weeks": 2,
+   "rally_base": 4586.8,
+   "rally_pct": 0.026541379611057847,
+   "rally_min_pct": 10.0,
+   "rally_trigger": 5045.4800000000005,
+   "fib_ratio": null,
+   "hits": [],
+   "bear_hits": 0,
+   "hits_max": 5,
+   "min_hits": 3,
+   "hits_all": [
+    "rsi_ceil",
+    "ma50",
+    "ma200",
+    "avwap",
+    "fib"
+   ],
+   "evid": [
+    "ma_flat"
+   ],
+   "shift_score": 1,
+   "shift_max": 4,
+   "shift_min": 3,
+   "evid_all": [
+    "rsi_shift",
+    "weekly",
+    "ma_flat",
+    "reclaim"
+   ],
+   "breadth_on": false,
+   "br200": null,
+   "br50": null,
+   "zbt": null,
+   "zbt_state": "대기",
+   "cond": {
+    "dd": true,
+    "slope_or_cross": true,
+    "weekly_below_band": true
+   },
+   "events_recent": [
+    {
+     "d": "2023-12-19",
+     "type": "bull",
+     "state": 0,
+     "c": 2568.55,
+     "hits": [
+      "rsi_ceil",
+      "fib"
+     ],
+     "evid": [
+      "weekly",
+      "ma_flat",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 2,
+     "rally_pct": 0.12954436514114098,
+     "fib_ratio": 0.7616172889610391
+    },
+    {
+     "d": "2024-09-30",
+     "type": "bear_enter",
+     "state": 1,
+     "c": 2593.27,
+     "hits": [],
+     "evid": [
+      "ma_flat"
+     ],
+     "shift_score": 1,
+     "bear_hits": 0,
+     "rally_pct": 0.04093043792397544,
+     "fib_ratio": null
+    },
+    {
+     "d": "2025-02-17",
+     "type": "rally",
+     "state": 2,
+     "c": 2610.42,
+     "hits": [
+      "rsi_ceil",
+      "ma200",
+      "fib"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 3,
+     "rally_pct": 0.1060258115906414,
+     "fib_ratio": 0.47108624708624774
+    },
+    {
+     "d": "2025-02-24",
+     "type": "shift",
+     "state": 4,
+     "c": 2645.27,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.12079163453634889,
+     "fib_ratio": 0.5977062937062937
+    },
+    {
+     "d": "2025-02-28",
+     "type": "shift_fail",
+     "state": 3,
+     "c": 2532.78,
+     "hits": [
+      "ma200",
+      "avwap",
+      "fib"
+     ],
+     "evid": [
+      "rsi_shift",
+      "weekly"
+     ],
+     "shift_score": 2,
+     "bear_hits": 3,
+     "rally_pct": 0.07313001550729203,
+     "fib_ratio": 0.5977062937062937
+    },
+    {
+     "d": "2025-03-24",
+     "type": "shift",
+     "state": 4,
+     "c": 2632.07,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.11519884076638243,
+     "fib_ratio": 0.5977062937062937
+    },
+    {
+     "d": "2025-03-28",
+     "type": "shift_fail",
+     "state": 3,
+     "c": 2557.98,
+     "hits": [
+      "ma50",
+      "ma200",
+      "avwap",
+      "fib"
+     ],
+     "evid": [
+      "rsi_shift",
+      "weekly"
+     ],
+     "shift_score": 2,
+     "bear_hits": 4,
+     "rally_pct": 0.08380716724995563,
+     "fib_ratio": 0.5977062937062937
+    },
+    {
+     "d": "2025-03-31",
+     "type": "rearm",
+     "state": 1,
+     "c": 2481.12,
+     "hits": [
+      "ma50",
+      "ma200",
+      "avwap",
+      "fib"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 4,
+     "rally_pct": 0.0006695006170698292,
+     "fib_ratio": 0.5977062937062937
+    },
+    {
+     "d": "2025-04-23",
+     "type": "rally",
+     "state": 2,
+     "c": 2525.56,
+     "hits": [
+      "ma50",
+      "fib"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 2,
+     "rally_pct": 0.10541335480934211,
+     "fib_ratio": 0.39561229994605285
+    },
+    {
+     "d": "2025-05-29",
+     "type": "shift",
+     "state": 4,
+     "c": 2720.64,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.190797997128751,
+     "fib_ratio": 0.7126252636053032
+    },
+    {
+     "d": "2025-05-30",
+     "type": "bull",
+     "state": 0,
+     "c": 2697.67,
+     "hits": [
+      "fib"
+     ],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.1807442487482056,
+     "fib_ratio": 0.7126252636053032
+    },
+    {
+     "d": "2026-11-03",
+     "type": "bear_enter",
+     "state": 1,
+     "c": 5648.79,
+     "hits": [],
+     "evid": [
+      "ma_flat"
+     ],
+     "shift_score": 1,
+     "bear_hits": 0,
+     "rally_pct": 0.06460823448260267,
+     "fib_ratio": null
+    }
+   ],
+   "changes": [],
+   "src": "naver",
+   "chart": "img/KOSPI.png"
+  },
+  {
+   "key": "BTC",
+   "name": "비트코인",
+   "market": "crypto",
+   "mode": "crypto",
+   "state": 1,
+   "state_ko": "베어",
+   "state_since": "2026-11-16",
+   "last_date": "2026-11-22",
+   "close": 61163.01,
+   "patched": false,
+   "ma200": 72324.37370000007,
+   "ma200_gap": -0.15432368272274521,
+   "ma50_gap": 0.06001000047373872,
+   "ma_fall": true,
+   "ma50_up": false,
+   "dd_peak": -0.515716966491417,
+   "dd63": -0.3001703719807316,
+   "dd_len": 63,
+   "dd_min_pct": 20.0,
+   "rsi": 26.74123024041843,
+   "avwap": 78325.25410105354,
+   "w_line": 75515.01184157956,
+   "w_bot": 73861.45499999999,
+   "w_close": 65315.35,
+   "w_up": 0,
+   "hold_weeks": 2,
+   "rally_base": 55106.0,
+   "rally_pct": 0.10991561717417353,
+   "rally_min_pct": 20.0,
+   "rally_trigger": 66127.2,
+   "fib_ratio": null,
+   "hits": [],
+   "bear_hits": 0,
+   "hits_max": 6,
+   "min_hits": 3,
+   "hits_all": [
+    "rsi_ceil",
+    "ma50",
+    "ma200",
+    "band",
+    "avwap",
+    "fib"
+   ],
+   "evid": [],
+   "shift_score": 0,
+   "shift_max": 4,
+   "shift_min": 3,
+   "evid_all": [
+    "rsi_shift",
+    "weekly",
+    "ma_flat",
+    "reclaim"
+   ],
+   "breadth_on": false,
+   "br200": null,
+   "br50": null,
+   "zbt": null,
+   "zbt_state": "대기",
+   "cond": {
+    "dd": true,
+    "slope_or_cross": true,
+    "weekly_below_band": true
+   },
+   "events_recent": [
+    {
+     "d": "2026-01-14",
+     "type": "rally",
+     "state": 2,
+     "c": 96955.16,
+     "hits": [
+      "rsi_ceil",
+      "band",
+      "avwap"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 3,
+     "rally_pct": 0.20404323396624524,
+     "fib_ratio": 0.3810018712578938
+    },
+    {
+     "d": "2026-01-19",
+     "type": "bear_rally",
+     "state": 3,
+     "c": 92559.66,
+     "hits": [
+      "rsi_ceil",
+      "band",
+      "avwap"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 3,
+     "rally_pct": 0.14945746426715312,
+     "fib_ratio": 0.3810018712578938
+    },
+    {
+     "d": "2026-01-20",
+     "type": "rearm",
+     "state": 1,
+     "c": 88310.6,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "band",
+      "avwap"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 4,
+     "rally_pct": 0.006187595799950207,
+     "fib_ratio": 0.3810018712578938
+    },
+    {
+     "d": "2026-03-04",
+     "type": "rally",
+     "state": 2,
+     "c": 72683.26,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.21136747720871307,
+     "fib_ratio": 0.2126706388113734
+    },
+    {
+     "d": "2026-03-08",
+     "type": "rearm",
+     "state": 1,
+     "c": 65970.56,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.005365102011612333,
+     "fib_ratio": 0.2126706388113734
+    },
+    {
+     "d": "2026-04-22",
+     "type": "rally",
+     "state": 2,
+     "c": 78208.52,
+     "hits": [
+      "rsi_ceil"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 1,
+     "rally_pct": 0.20434453066940406,
+     "fib_ratio": 0.2944716796138472
+    },
+    {
+     "d": "2026-05-22",
+     "type": "bear_rally",
+     "state": 3,
+     "c": 75443.91,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "ma200",
+      "band"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 4,
+     "rally_pct": 0.1617718936608794,
+     "fib_ratio": 0.34411690172712867
+    },
+    {
+     "d": "2026-05-28",
+     "type": "rearm",
+     "state": 1,
+     "c": 73512.56,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "ma200",
+      "band"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 4,
+     "rally_pct": 0.01473460389528003,
+     "fib_ratio": 0.34411690172712867
+    },
+    {
+     "d": "2026-08-19",
+     "type": "rally",
+     "state": 2,
+     "c": 69300.01,
+     "hits": [],
+     "evid": [
+      "rsi_shift",
+      "reclaim"
+     ],
+     "shift_score": 2,
+     "bear_hits": 0,
+     "rally_pct": 0.2006748380691834,
+     "fib_ratio": 0.17942793982657818
+    },
+    {
+     "d": "2026-08-24",
+     "type": "shift",
+     "state": 4,
+     "c": 78981.59,
+     "hits": [],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 0,
+     "rally_pct": 0.3684154992718851,
+     "fib_ratio": 0.3249189796503129
+    },
+    {
+     "d": "2026-08-31",
+     "type": "bull",
+     "state": 0,
+     "c": 78562.74,
+     "hits": [
+      "avwap"
+     ],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 1,
+     "rally_pct": 0.36115860773716135,
+     "fib_ratio": 0.3464929580648148
+    },
+    {
+     "d": "2026-11-16",
+     "type": "bear_enter",
+     "state": 1,
+     "c": 64816.79,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.046340556647812114,
+     "fib_ratio": null
+    }
+   ],
+   "changes": [],
+   "src": "coinbase",
+   "chart": "img/BTC.png"
+  },
+  {
+   "key": "ETH",
+   "name": "이더리움",
+   "market": "crypto",
+   "mode": "crypto",
+   "state": 1,
+   "state_ko": "베어",
+   "state_since": "2026-11-09",
+   "last_date": "2026-11-22",
+   "close": 1721.29,
+   "patched": false,
+   "ma200": 2122.2495999999996,
+   "ma200_gap": -0.18893140561788757,
+   "ma50_gap": 0.05828079788541185,
+   "ma_fall": true,
+   "ma50_up": false,
+   "dd_peak": -0.6526786254767045,
+   "dd63": -0.3868084500017812,
+   "dd_len": 63,
+   "dd_min_pct": 20.0,
+   "rsi": 29.79685912092063,
+   "avwap": 2637.96534049618,
+   "w_line": 2256.0043282520724,
+   "w_bot": 2225.5144999999934,
+   "w_close": 1834.54,
+   "w_up": 0,
+   "hold_weeks": 2,
+   "rally_base": 1535.37,
+   "rally_pct": 0.12109133303373132,
+   "rally_min_pct": 20.0,
+   "rally_trigger": 1842.4439999999997,
+   "fib_ratio": null,
+   "hits": [],
+   "bear_hits": 0,
+   "hits_max": 6,
+   "min_hits": 3,
+   "hits_all": [
+    "rsi_ceil",
+    "ma50",
+    "ma200",
+    "band",
+    "avwap",
+    "fib"
+   ],
+   "evid": [],
+   "shift_score": 0,
+   "shift_max": 4,
+   "shift_min": 3,
+   "evid_all": [
+    "rsi_shift",
+    "weekly",
+    "ma_flat",
+    "reclaim"
+   ],
+   "breadth_on": false,
+   "br200": null,
+   "br50": null,
+   "zbt": null,
+   "zbt_state": "대기",
+   "cond": {
+    "dd": true,
+    "slope_or_cross": true,
+    "weekly_below_band": true
+   },
+   "events_recent": [
+    {
+     "d": "2026-01-21",
+     "type": "rearm",
+     "state": 1,
+     "c": 2979.6,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "band"
+     ],
+     "evid": [
+      "ma_flat"
+     ],
+     "shift_score": 1,
+     "bear_hits": 3,
+     "rally_pct": 0.04058112733114472,
+     "fib_ratio": 0.3360717496468172
+    },
+    {
+     "d": "2026-02-09",
+     "type": "rally",
+     "state": 2,
+     "c": 2103.83,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.2071620791948543,
+     "fib_ratio": 0.12572554316534457
+    },
+    {
+     "d": "2026-02-11",
+     "type": "rearm",
+     "state": 1,
+     "c": 1939.45,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.02005985346945005,
+     "fib_ratio": 0.12572554316534457
+    },
+    {
+     "d": "2026-03-15",
+     "type": "rally",
+     "state": 2,
+     "c": 2178.67,
+     "hits": [],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 0,
+     "rally_pct": 0.21031170663689047,
+     "fib_ratio": 0.14325684461471913
+    },
+    {
+     "d": "2026-03-21",
+     "type": "rearm",
+     "state": 1,
+     "c": 2084.64,
+     "hits": [
+      "rsi_ceil"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 1,
+     "rally_pct": 0.006727161215235311,
+     "fib_ratio": 0.20025458200933055
+    },
+    {
+     "d": "2026-04-13",
+     "type": "rally",
+     "state": 2,
+     "c": 2370.28,
+     "hits": [
+      "rsi_ceil"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 1,
+     "rally_pct": 0.22331349769559106,
+     "fib_ratio": 0.20298402482330208
+    },
+    {
+     "d": "2026-05-15",
+     "type": "bear_rally",
+     "state": 3,
+     "c": 2223.0,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "band"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 3,
+     "rally_pct": 0.14730154470243972,
+     "fib_ratio": 0.22523660876845178
+    },
+    {
+     "d": "2026-05-16",
+     "type": "rearm",
+     "state": 1,
+     "c": 2179.96,
+     "hits": [
+      "rsi_ceil",
+      "ma50",
+      "band"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 3,
+     "rally_pct": 0.00840040706818379,
+     "fib_ratio": 0.22523660876845178
+    },
+    {
+     "d": "2026-07-14",
+     "type": "rally",
+     "state": 2,
+     "c": 1890.63,
+     "hits": [
+      "rsi_ceil"
+     ],
+     "evid": [],
+     "shift_score": 0,
+     "bear_hits": 1,
+     "rally_pct": 0.25623255813953505,
+     "fib_ratio": 0.11319076183024716
+    },
+    {
+     "d": "2026-08-24",
+     "type": "shift",
+     "state": 4,
+     "c": 2482.2,
+     "hits": [],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 0,
+     "rally_pct": 0.6493023255813952,
+     "fib_ratio": 0.3022399953635284
+    },
+    {
+     "d": "2026-08-31",
+     "type": "bull",
+     "state": 0,
+     "c": 2467.29,
+     "hits": [],
+     "evid": [
+      "rsi_shift",
+      "weekly",
+      "reclaim"
+     ],
+     "shift_score": 3,
+     "bear_hits": 0,
+     "rally_pct": 0.6393953488372093,
+     "fib_ratio": 0.30774580544205865
+    },
+    {
+     "d": "2026-11-09",
+     "type": "bear_enter",
+     "state": 1,
+     "c": 2132.15,
+     "hits": [],
+     "evid": [
+      "ma_flat"
+     ],
+     "shift_score": 1,
+     "bear_hits": 0,
+     "rally_pct": 0.024899656307832974,
+     "fib_ratio": null
+    }
+   ],
+   "changes": [],
+   "src": "coinbase",
+   "chart": "img/ETH.png"
+  }
+ ],
+ "overview": "img/overview.png",
+ "breadth": {
+  "universe": 97,
+  "last_date": "2026-11-20",
+  "mode": "incremental"
+ },
+ "notes": [
+  "미국 브레드스는 11/20(금) 기준 (원천 하루 지연 — 직전 값 유지)"
+ ],
+ "data_status": "OK",
+ "failed": [],
+ "message": "<b>베어랠리 레이더</b>  11/24(화)\n<i>미국 11/23(월) · 코스피 11/23(월) 종가 · 크립토 11/22(일) 일봉 기준</i>\n\n<b>오늘 바뀐 것</b>\n상태 변화 없음\n\n<b>현재 상태</b>\n<b>SPY</b> 강세 · 200일선 −1.4%\n   └ 베어 진입 대기: 데드크로스 + 63일 고점 −10%\n<b>QQQ</b> 강세 · 200일선 −4.7% · 고점 −15%\n   └ 베어 진입 대기: 데드크로스 (50·200일선 간격 3.9%)\n<b>SOXX</b> 강세 · 200일선 −13.0% · 고점 −36%\n   └ 베어 진입 대기: 데드크로스 (50·200일선 간격 4.0%)\n<b>KOSPI</b> 베어 · 고점 −50% · 저점 +2.7%\n   └ 5,045 위 마감 시 반등 감시 (저점 +10%)\n<b>BTC</b> 베어 · 고점 −52% · 저점 +11.0%\n   └ 66,127 위 마감 시 반등 감시 (저점 +20%)\n<b>ETH</b> 베어 · 고점 −65% · 저점 +12.1%\n   └ 1,842 위 마감 시 반등 감시 (저점 +20%)\n\n<i>미국 브레드스는 11/20(금) 기준 (원천 하루 지연 — 직전 값 유지)</i>\n\n리포트 › https://jinhae8971.github.io/korea-etf-calmar/bear-rally/",
+ "photos": [
+  "docs/bear-rally/img/overview.png"
+ ],
+ "photo_caption": "베어랠리 레이더 · 최근 12개월 상태 (자산별 차트는 리포트)"
+}

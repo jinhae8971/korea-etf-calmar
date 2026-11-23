@@ -1,0 +1,461 @@
+//@version=6
+indicator("Bear Market Rally Detector", shorttitle = "BMR", overlay = true, max_labels_count = 300)
+
+// ============================================================================
+//  Bear Market Rally Detector (BMR) · Pine Script v6
+//  ① 레짐 판정 → ② 반등 포착 → ③ 진위 판별 (베어랠리 vs 레짐 전환)
+//
+//  상태 흐름
+//    강세 ─(베어 진입)→ 베어 ─(저점 대비 +N%)→ 반등 감시
+//    반등 감시 ─(저항 근거 ≥ 기준 + 반락)→ 베어랠리 판정
+//    반등 감시 ─(전환 점수 ≥ 기준 또는 ZBT)→ 전환 후보 ─(주봉 연속 안착)→ 강세
+//    반등 중 신저점 → 베어 (다음 반등 재감시)
+//
+//  · 일봉 차트 기준 설계. 주봉 값은 확정된 직전 주봉만 사용 (리페인트 없음)
+//  · 상태 전이와 알림은 봉 마감 시에만 확정
+//  · S5TH · S5FI · ZBT는 미국 시장 데이터 → USD 표시 종목에서만 자동 적용
+//  · 사용: 일봉 차트에 추가 → 상태 표 · 라벨 확인 → 알림은 조건 선택 또는
+//          "Any alert() function call" + "Once Per Bar Close"
+// ============================================================================
+
+// ---------- 상수 ----------
+S_BULL   = 0   // 강세 레짐
+S_BEAR   = 1   // 베어 레짐 · 하락 진행
+S_RALLY  = 2   // 반등 감시 (베어 레짐 안의 의미 있는 반등)
+S_FAILED = 3   // 베어랠리 판정 (저항에서 반락 확인)
+S_SHIFT  = 4   // 전환 후보 (진짜 바닥 근거 충족, 주봉 안착 대기)
+
+C_BULL  = #26a69a
+C_BEAR  = #ef5350
+C_RALLY = #ffa726
+C_FAIL  = #e91e63
+C_SHIFT = #42a5f5
+C_VW    = #ab47bc
+C_TXT   = #d1d4dc
+C_MUTED = #787b86
+
+G_MODE = "0. 모드"
+G_REG  = "1. 레짐 판정"
+G_RAL  = "2. 반등 포착"
+G_VAL  = "3. 진위 판별"
+G_BR   = "4. 브레드스 · ZBT (미국 시장)"
+G_VIS  = "5. 표시"
+
+// ---------- 입력 ----------
+modeIn      = input.string("Auto", "시장 모드", options = ["Auto", "Stock", "Crypto"], group = G_MODE, tooltip = "Auto: 심볼 유형이 crypto면 크립토 모드, 그 외는 주식 모드")
+
+maLen       = input.int(200, "장기 이평 (봉)", minval = 50, group = G_REG)
+ma50Len     = input.int(50, "중기 이평 (봉)", minval = 10, group = G_REG)
+slopeLen    = input.int(20, "이평 기울기 비교 봉수", minval = 5, group = G_REG)
+ddLen       = input.int(63, "낙폭 계산용 고점 기간 (봉)", minval = 20, group = G_REG)
+ddStock     = input.float(10.0, "베어 진입 최소 낙폭 % · 주식", minval = 1.0, group = G_REG)
+ddCrypto    = input.float(20.0, "베어 진입 최소 낙폭 % · 크립토", minval = 1.0, group = G_REG)
+
+rallyStock  = input.float(10.0, "반등 감시 기준 % · 주식", minval = 1.0, group = G_RAL, tooltip = "베어 레짐 안 직전 저점 대비 종가 반등률")
+rallyCrypto = input.float(20.0, "반등 감시 기준 % · 크립토", minval = 1.0, group = G_RAL)
+rsiLen      = input.int(14, "RSI 길이", minval = 2, group = G_RAL)
+rsiCeil     = input.float(60.0, "베어장 RSI 천장", group = G_RAL)
+rsiBull     = input.float(70.0, "강세 레인지 진입 RSI", group = G_RAL)
+rsiFloor    = input.float(40.0, "강세 레인지 지지 RSI", group = G_RAL)
+touchTol    = input.float(1.0, "저항 터치 허용오차 %", minval = 0.0, step = 0.5, group = G_RAL)
+atrLen      = input.int(14, "ATR 길이", minval = 2, group = G_RAL)
+rejAtr      = input.float(2.0, "반락 확인: 반등 고점 대비 ATR 배수", minval = 0.5, step = 0.5, group = G_RAL)
+rearmFrac   = input.float(50.0, "재감시: 반등폭 되돌림 %", minval = 10.0, maxval = 100.0, group = G_RAL)
+
+minHits     = input.int(3, "베어랠리 판정 최소 근거 수", minval = 1, maxval = 7, group = G_VAL)
+shiftStock  = input.int(3, "전환 후보 최소 점수 · 브레드스 ON (/6)", minval = 1, maxval = 6, group = G_VAL)
+shiftCrypto = input.int(3, "전환 후보 최소 점수 · 크립토/브레드스 OFF (/4)", minval = 1, maxval = 4, group = G_VAL)
+holdWeeks   = input.int(2, "강세 확정: 주봉 연속 안착 수", minval = 1, maxval = 8, group = G_VAL)
+
+useBreadth  = input.bool(true, "브레드스 · ZBT 사용 (주식 모드)", group = G_BR, tooltip = "미국 시장 데이터라 USD 표시 종목(미국 주식 · ETF · 지수)에서만 자동 적용됩니다.")
+br200Sym    = input.symbol("INDEX:S5TH", "200일선 위 종목 비율", group = G_BR)
+br50Sym     = input.symbol("INDEX:S5FI", "50일선 위 종목 비율", group = G_BR)
+advSym      = input.symbol("USI:ADVN.NY", "NYSE 상승 종목 수", group = G_BR)
+decSym      = input.symbol("USI:DECL.NY", "NYSE 하락 종목 수", group = G_BR)
+zbtNearLvl  = input.float(0.58, "ZBT 근접 실패 기준", minval = 0.45, maxval = 0.61, step = 0.01, group = G_BR)
+zbtMem      = input.int(40, "ZBT 신호 유효 기간 (봉)", minval = 5, group = G_BR)
+divTol      = input.float(5.0, "좁은 반등: S5FI 20일 고점 대비 미달 폭 (pt)", minval = 0.0, group = G_BR)
+
+showBg      = input.bool(true, "상태 배경색", group = G_VIS)
+showLines   = input.bool(true, "이평 · 밴드 · AVWAP · 피보 선", group = G_VIS)
+showLabels  = input.bool(true, "이벤트 라벨", group = G_VIS)
+showTable   = input.bool(true, "상태 표", group = G_VIS)
+tblPosIn    = input.string("top_right", "표 위치", options = ["top_right", "top_left", "bottom_right", "bottom_left"], group = G_VIS)
+tblSizeIn   = input.string("small", "표 글자 크기", options = ["tiny", "small", "normal"], group = G_VIS)
+
+// ---------- 모드별 파라미터 ----------
+isCrypto = modeIn == "Crypto" or (modeIn == "Auto" and syminfo.type == "crypto")
+isUSD    = syminfo.currency == "USD"
+useBr    = useBreadth and not isCrypto and isUSD   // 미국 시장 데이터라 USD 표시 종목에서만 적용
+rallyMin = (isCrypto ? rallyCrypto : rallyStock) / 100.0
+ddMin    = (isCrypto ? ddCrypto : ddStock) / 100.0
+shiftMin = useBr ? shiftStock : shiftCrypto
+shiftMax = useBr ? 6 : 4
+hitsMax  = isCrypto ? 6 : useBr ? 7 : 5
+peakLen  = isCrypto ? 365 : 252
+tol      = touchTol / 100.0
+
+// ---------- 기본 시계열 (v6 지연 평가 대비: 모든 ta.* 는 전역에서 매 봉 계산) ----------
+ma200  = ta.sma(close, maLen)
+ma50   = ta.sma(close, ma50Len)
+maFall = ma200 < ma200[slopeLen]
+ma50Up = ma50 > ma50[slopeLen]
+rsi    = ta.rsi(close, rsiLen)
+atr    = ta.atr(atrLen)
+lo20   = ta.lowest(low, 20)
+hiDD   = ta.highest(high, ddLen)
+hiPeak = ta.highest(high, peakLen)
+hiC20  = ta.highest(close, 20)
+dd     = close / hiDD - 1.0
+
+// ---------- 주봉: BMSB(20W SMA · 21W EMA) · 40주선 · 연속 안착 수 (확정 주봉만) ----------
+f_consec(bool cond) =>
+    var int n = 0
+    n := cond ? n + 1 : 0
+    n
+
+f_weekly() =>
+    float s20  = ta.sma(close, 20)
+    float e21  = ta.ema(close, 21)
+    float s40  = ta.sma(close, 40)
+    float top  = math.max(s20, e21)
+    float bot  = math.min(s20, e21)
+    int   upB  = f_consec(close > top)
+    int   up40 = f_consec(close > s40)
+    [top[1], bot[1], s40[1], close[1], upB[1], up40[1]]
+
+[wTop, wBot, w40, wClose, wUpBand, wUp40] = request.security(syminfo.tickerid, "W", f_weekly(), lookahead = barmerge.lookahead_on)
+wLine   = isCrypto ? wTop : w40        // 강세 확정 기준선: 크립토 = BMSB 상단, 주식 = 40주선(≈200일선)
+wUpLine = isCrypto ? wUpBand : wUp40
+
+// ---------- 브레드스 · ZBT (미국 시장) ----------
+br200 = request.security(br200Sym, "1D", close, ignore_invalid_symbol = true)
+br50  = request.security(br50Sym, "1D", close, ignore_invalid_symbol = true)
+advN  = request.security(advSym, "1D", close, ignore_invalid_symbol = true)
+decN  = request.security(decSym, "1D", close, ignore_invalid_symbol = true)
+
+br50Hi20  = ta.highest(br50, 20)
+narrowNow = useBr and not na(br50) and not na(br50Hi20) and close >= hiC20 and br50 <= br50Hi20 - divTol
+
+zRaw   = advN + decN > 0 ? advN / (advN + decN) : na
+zRatio = fixnan(zRaw)
+zbtR   = ta.ema(zRatio, 10)
+
+// ZBT: 10일 EMA가 0.40 미만 → 10거래일 안에 0.615 초과 = VALID, 근처까지만 가고 실패 = 근접 실패
+var int   zbtCnt   = -1
+var float zbtMx    = na
+var bool  zbtFired = false
+bool zbtFire = false
+bool zbtNear = false
+if barstate.isconfirmed and not na(zbtR)
+    if zbtR < 0.40
+        zbtCnt   := 0
+        zbtMx    := zbtR
+        zbtFired := false
+    else if zbtCnt >= 0
+        zbtCnt += 1
+        zbtMx  := math.max(zbtMx, zbtR)
+        if not zbtFired and zbtR > 0.615
+            zbtFire  := true
+            zbtFired := true
+        if zbtCnt >= 10
+            if not zbtFired and zbtMx >= zbtNearLvl
+                zbtNear := true
+            zbtCnt := -1
+
+zbtSinceFire = ta.barssince(zbtFire)
+zbtSinceNear = ta.barssince(zbtNear)
+zbtRecent    = useBr and not na(zbtSinceFire) and zbtSinceFire <= zbtMem
+zbtNearRec   = useBr and not na(zbtSinceNear) and zbtSinceNear <= zbtMem
+
+// ---------- 상태 변수 ----------
+var int   state      = S_BULL
+var float bearLow    = na     // 베어 진입 이후 사이클 저점
+var float rallyBase  = na     // 현재 반등의 기준 저점
+var float rallyHigh  = na
+var float rallyRsiMx = na
+var bool  rsiBullArm = false
+var float rsiMinAft  = na
+var bool  hit50      = false
+var bool  hit200     = false
+var bool  hitBand    = false
+var bool  hitVW      = false
+var bool  narrowSeen = false
+
+// ---------- 고점 앵커 AVWAP (강세 구간의 최근 신고점에 앵커, 베어 구간에서는 고정) ----------
+var float peakPrice = na
+var float cumPV     = 0.0
+var float cumV      = 0.0
+if (state == S_BULL and high >= hiPeak) or na(peakPrice)
+    peakPrice := high
+    cumPV     := hlc3 * nz(volume)
+    cumV      := nz(volume)
+else
+    cumPV += hlc3 * nz(volume)
+    cumV  += nz(volume)
+avwap = cumV > 0 ? cumPV / cumV : na
+
+// ---------- ① 레짐 진입 조건 ----------
+bearEnterStock  = close < ma200 and (maFall or ma50 < ma200) and dd <= -ddMin
+bearEnterCrypto = close < ma200 and wClose < wBot and dd <= -ddMin
+bearEnterCond   = isCrypto ? bearEnterCrypto : bearEnterStock
+
+bool evBearEnter = false
+bool evRally     = false
+bool evNewLow    = false
+bool evRearm     = false
+bool evBearRally = false
+bool evShift     = false
+bool evShiftFail = false
+bool evBull      = false
+
+// ---------- 블록 1: 레짐 진입 · 신저점 · 반등 시작 · 반등 추적 ----------
+if barstate.isconfirmed
+    if state == S_BULL
+        if bearEnterCond
+            state       := S_BEAR
+            evBearEnter := true
+            bearLow     := lo20
+            rallyBase   := lo20
+    else
+        bearLow := math.min(bearLow, low)
+        if state != S_BEAR and low < rallyBase
+            state     := S_BEAR
+            evNewLow  := true
+            rallyBase := low
+        if state == S_BEAR
+            rallyBase := math.min(rallyBase, low)
+            if not evNewLow and close >= rallyBase * (1 + rallyMin)
+                state      := S_RALLY
+                evRally    := true
+                rallyHigh  := high
+                rallyRsiMx := rsi
+                rsiBullArm := false
+                rsiMinAft  := na
+                hit50      := false
+                hit200     := false
+                hitBand    := false
+                hitVW      := false
+                narrowSeen := false
+        if state >= S_RALLY
+            rallyHigh  := math.max(rallyHigh, high)
+            rallyRsiMx := math.max(rallyRsiMx, rsi)
+            if rsi >= rsiBull
+                rsiBullArm := true
+                rsiMinAft  := rsi
+            else if rsiBullArm
+                rsiMinAft := math.min(rsiMinAft, rsi)
+            hit50      := hit50 or high >= ma50 * (1 - tol)
+            hit200     := hit200 or high >= ma200 * (1 - tol)
+            hitBand    := hitBand or (isCrypto and high >= wBot * (1 - tol))
+            hitVW      := hitVW or high >= avwap * (1 - tol)
+            narrowSeen := narrowSeen or narrowNow
+
+// ---------- ③ 진위 판별 근거 ----------
+inRally    = state >= S_RALLY
+turnDown   = inRally and (rallyHigh - close) >= rejAtr * atr and rsi < rsiCeil
+fibRange   = peakPrice - bearLow
+fibRatio   = inRally and fibRange > 0 ? (rallyHigh - bearLow) / fibRange : na
+
+// 베어랠리 근거 (저항에서 막힌 흔적)
+rsiCeilHit = inRally and rallyRsiMx >= rsiCeil and rallyRsiMx < rsiBull
+rej50      = inRally and hit50 and close < ma50
+rej200     = inRally and hit200 and close < ma200
+rejBand    = inRally and hitBand and close < wBot
+rejVW      = inRally and hitVW and close < avwap
+fibHit     = inRally and fibRatio >= 0.382
+narrowHit  = inRally and useBr and narrowSeen
+zbtNearHit = inRally and zbtNearRec
+bearHits   = (rsiCeilHit ? 1 : 0) + (rej50 ? 1 : 0) + (rej200 ? 1 : 0) + (rejBand ? 1 : 0) + (rejVW ? 1 : 0) + (fibHit ? 1 : 0) + (narrowHit ? 1 : 0) + (zbtNearHit ? 1 : 0)
+
+// 전환 근거 (진짜 바닥 쪽 증거)
+e_zbt      = zbtRecent
+e_br       = useBr and br200 >= 50
+e_rsi      = inRally and rsiBullArm and rsiMinAft >= rsiFloor
+e_wk       = wUpLine >= 1
+e_ma       = not maFall
+e_reclaim  = close > ma200
+shiftScore = (e_zbt ? 1 : 0) + (e_br ? 1 : 0) + (e_rsi ? 1 : 0) + (e_wk ? 1 : 0) + (e_ma ? 1 : 0) + (e_reclaim ? 1 : 0)
+shiftOK    = shiftScore >= shiftMin or zbtRecent
+
+rearmHit    = inRally and close <= rallyBase + (rallyHigh - rallyBase) * (1 - rearmFrac / 100.0)
+bullConfirm = state == S_SHIFT and wUpLine >= holdWeeks and close > ma200 and ma50Up and shiftOK
+
+// ---------- 블록 2: 베어랠리 판정 · 전환 후보 · 강세 확정 ----------
+if barstate.isconfirmed and inRally and not evRally
+    if state == S_RALLY
+        if shiftOK
+            state   := S_SHIFT
+            evShift := true
+        else if turnDown and bearHits >= minHits
+            state       := S_FAILED
+            evBearRally := true
+        else if rearmHit
+            state     := S_BEAR
+            evRearm   := true
+            rallyBase := low
+    else if state == S_FAILED
+        if zbtRecent or (shiftScore >= shiftMin and close > ma200)
+            state   := S_SHIFT
+            evShift := true
+        else if rearmHit
+            state     := S_BEAR
+            evRearm   := true
+            rallyBase := low
+    else if state == S_SHIFT
+        if bullConfirm
+            state  := S_BULL
+            evBull := true
+        else if not shiftOK and turnDown and close < ma200
+            state       := S_FAILED
+            evShiftFail := true
+
+// ---------- 텍스트 ----------
+f_add(string acc, bool cond, string s) =>
+    cond ? (acc == "" ? s : acc + " · " + s) : acc
+
+f_pct(float x) =>
+    na(x) ? "—" : (x >= 0 ? "+" : "") + str.tostring(x, "0.0") + "%"
+
+string bearWhy = ""
+bearWhy := f_add(bearWhy, rsiCeilHit, "RSI 천장")
+bearWhy := f_add(bearWhy, rej50, "50일선")
+bearWhy := f_add(bearWhy, rej200, "200일선")
+bearWhy := f_add(bearWhy, rejBand, "BMSB")
+bearWhy := f_add(bearWhy, rejVW, "AVWAP")
+bearWhy := f_add(bearWhy, fibHit, "피보 " + str.tostring(math.round(nz(fibRatio) * 100)) + "%")
+bearWhy := f_add(bearWhy, narrowHit, "좁은 반등")
+bearWhy := f_add(bearWhy, zbtNearHit, "ZBT 근접실패")
+
+string shiftWhy = ""
+shiftWhy := f_add(shiftWhy, e_zbt, "ZBT")
+shiftWhy := f_add(shiftWhy, e_br, "S5TH≥50")
+shiftWhy := f_add(shiftWhy, e_rsi, "RSI 레인지 전환")
+shiftWhy := f_add(shiftWhy, e_wk, "주봉 안착")
+shiftWhy := f_add(shiftWhy, e_ma, "200일선 하락 멈춤")
+shiftWhy := f_add(shiftWhy, e_reclaim, "200일선 회복")
+
+// ---------- 라벨 ----------
+if showLabels
+    if evBearEnter
+        label.new(bar_index, high, "베어 레짐 진입", yloc = yloc.abovebar, style = label.style_label_down, color = C_BEAR, textcolor = color.white, size = size.small)
+    if evRally
+        label.new(bar_index, low, "반등 감시\n저점 대비 " + f_pct((close / rallyBase - 1) * 100), yloc = yloc.belowbar, style = label.style_label_up, color = C_RALLY, textcolor = color.white, size = size.small)
+    if evBearRally or evShiftFail
+        label.new(bar_index, high, (evShiftFail ? "전환 실패 → 베어랠리" : "베어랠리 판정") + "\n" + bearWhy, yloc = yloc.abovebar, style = label.style_label_down, color = C_FAIL, textcolor = color.white, size = size.small)
+    if evShift
+        label.new(bar_index, low, "전환 후보 " + str.tostring(shiftScore) + "/" + str.tostring(shiftMax) + "\n" + shiftWhy, yloc = yloc.belowbar, style = label.style_label_up, color = C_SHIFT, textcolor = color.white, size = size.small)
+    if evBull
+        label.new(bar_index, low, "강세 레짐 확정", yloc = yloc.belowbar, style = label.style_label_up, color = C_BULL, textcolor = color.white, size = size.small)
+
+// ---------- 선 · 배경 · 마커 ----------
+inBearSt = state != S_BULL
+fib382   = inBearSt and fibRange > 0 ? bearLow + 0.382 * fibRange : na
+fib618   = inBearSt and fibRange > 0 ? bearLow + 0.618 * fibRange : na
+
+plot(showLines ? ma200 : na, "200일선", color = maFall ? color.new(C_BEAR, 15) : color.new(C_BULL, 15), linewidth = 2)
+plot(showLines ? ma50 : na, "50일선", color = color.new(C_MUTED, 25), linewidth = 1)
+pTop = plot(showLines and isCrypto ? wTop : na, "BMSB 상단", color = color.new(C_RALLY, 35))
+pBot = plot(showLines and isCrypto ? wBot : na, "BMSB 하단", color = color.new(C_RALLY, 35))
+fill(pTop, pBot, color = color.new(C_RALLY, 85), title = "BMSB 밴드")
+plot(showLines and inBearSt ? avwap : na, "AVWAP (고점 앵커)", color = color.new(C_VW, 10), linewidth = 1, style = plot.style_linebr)
+plot(showLines and inBearSt ? fib382 : na, "피보 38.2%", color = color.new(C_MUTED, 10), style = plot.style_linebr)
+plot(showLines and inBearSt ? fib618 : na, "피보 61.8%", color = color.new(C_MUTED, 10), style = plot.style_linebr)
+
+color bgCol = na
+if showBg
+    bgCol := state == S_BEAR ? color.new(C_BEAR, 92) : state == S_RALLY ? color.new(C_RALLY, 88) : state == S_FAILED ? color.new(C_FAIL, 85) : state == S_SHIFT ? color.new(C_SHIFT, 88) : color(na)
+bgcolor(bgCol, title = "상태 배경")
+
+plotshape(showLabels and evNewLow, title = "신저점 (반등 실패)", style = shape.xcross, location = location.abovebar, color = C_MUTED, size = size.tiny)
+plotshape(showLabels and useBr and zbtFire, title = "ZBT 발생", style = shape.triangleup, location = location.belowbar, color = C_BULL, size = size.small, text = "ZBT", textcolor = C_BULL)
+plotshape(showLabels and useBr and zbtNear, title = "ZBT 근접 실패", style = shape.circle, location = location.belowbar, color = C_RALLY, size = size.tiny, text = "ZBT×", textcolor = C_RALLY)
+
+// ---------- 알림 ----------
+// 알림 생성 시 조건을 고르거나 "Any alert() function call" 선택, 빈도는 "Once Per Bar Close" 권장
+alertcondition(evBearEnter, "BMR · 베어 레짐 진입", "BMR | {{ticker}} 베어 레짐 진입 | close {{close}}")
+alertcondition(evRally, "BMR · 반등 감시 시작", "BMR | {{ticker}} 반등 감시 시작 | close {{close}}")
+alertcondition(evBearRally or evShiftFail, "BMR · 베어랠리 판정", "BMR | {{ticker}} 베어랠리 판정 | close {{close}}")
+alertcondition(evShift, "BMR · 전환 후보", "BMR | {{ticker}} 전환 후보 | close {{close}}")
+alertcondition(evBull, "BMR · 강세 레짐 확정", "BMR | {{ticker}} 강세 레짐 확정 | close {{close}}")
+alertcondition(useBr and zbtFire, "BMR · ZBT 발생", "BMR | ZBT 발생 (NYSE 브레드스 스러스트) | {{ticker}}")
+
+f_msg(string ev, string why) =>
+    "BMR | " + syminfo.ticker + " | " + ev + (why == "" ? "" : " | " + why) + " | close " + str.tostring(close, format.mintick)
+
+if evBearEnter
+    alert(f_msg("베어 레짐 진입", ""), alert.freq_once_per_bar_close)
+if evRally
+    alert(f_msg("반등 감시 시작", "저점 대비 " + f_pct((close / rallyBase - 1) * 100)), alert.freq_once_per_bar_close)
+if evBearRally or evShiftFail
+    alert(f_msg(evShiftFail ? "전환 실패 → 베어랠리" : "베어랠리 판정", bearWhy), alert.freq_once_per_bar_close)
+if evShift
+    alert(f_msg("전환 후보 " + str.tostring(shiftScore) + "/" + str.tostring(shiftMax), shiftWhy), alert.freq_once_per_bar_close)
+if evBull
+    alert(f_msg("강세 레짐 확정", shiftWhy), alert.freq_once_per_bar_close)
+
+// ---------- 상태 표 ----------
+tblPos = switch tblPosIn
+    "top_left"     => position.top_left
+    "bottom_right" => position.bottom_right
+    "bottom_left"  => position.bottom_left
+    => position.top_right
+tblSize = switch tblSizeIn
+    "tiny"   => size.tiny
+    "normal" => size.normal
+    => size.small
+
+var table tbl = table.new(tblPos, 2, 13, bgcolor = color.new(#131722, 5), frame_color = color.new(C_MUTED, 40), frame_width = 1, border_color = color.new(C_MUTED, 75), border_width = 1)
+
+f_row(int r, string k, string v, color vc) =>
+    table.cell(tbl, 0, r, k, text_color = C_TXT, text_size = tblSize, text_halign = text.align_left)
+    table.cell(tbl, 1, r, v, text_color = vc, text_size = tblSize, text_halign = text.align_right)
+
+f_stateTxt(int s) =>
+    switch s
+        0 => "강세 레짐"
+        1 => "베어 레짐 · 하락"
+        2 => "반등 감시"
+        3 => "베어랠리 판정"
+        4 => "전환 후보"
+        => "—"
+
+f_stateCol(int s) =>
+    switch s
+        0 => C_BULL
+        1 => C_BEAR
+        2 => C_RALLY
+        3 => C_FAIL
+        4 => C_SHIFT
+        => C_TXT
+
+if showTable and barstate.islast
+    inRallyNow = state >= S_RALLY
+    modeTxt    = isCrypto ? "크립토" : useBr ? "주식 · 브레드스 ON" : isUSD ? "주식 · 브레드스 OFF" : "주식 · 브레드스 OFF (비USD)"
+    peakTxt    = na(peakPrice) ? "—" : f_pct((close / peakPrice - 1) * 100)
+    maTxt      = f_pct((close / ma200 - 1) * 100) + (maFall ? " · 하락 중" : " · 하락 아님")
+    wName      = isCrypto ? "주봉 BMSB 상단" : "40주선 (≈200일)"
+    wTxt       = na(wLine) ? "—" : (wClose > wLine ? "위" : "아래") + " · 연속 " + str.tostring(nz(wUpLine)) + "주"
+    rallyTxt   = state == S_BULL ? "—" : state == S_BEAR ? "저점 대비 " + f_pct((close / rallyBase - 1) * 100) + " (기준 +" + str.tostring(rallyMin * 100, "0") + "%)" : "저점 대비 " + f_pct((close / rallyBase - 1) * 100) + (na(fibRatio) ? "" : " · 되돌림 " + str.tostring(math.round(fibRatio * 100)) + "%")
+    rsiTxt     = str.tostring(rsi, "0.0") + (inRallyNow ? " · 반등 최고 " + str.tostring(rallyRsiMx, "0") : "")
+    rsiCol     = rsi >= rsiBull ? C_BULL : rsi >= rsiCeil ? C_RALLY : C_TXT
+    vwTxt      = na(avwap) ? "N/A (거래량 없음)" : f_pct((close / avwap - 1) * 100)
+    brTxt      = not useBr ? "—" : na(br200) ? "데이터 없음" : "S5TH " + str.tostring(br200, "0") + " · S5FI " + (na(br50) ? "—" : str.tostring(br50, "0"))
+    zbtTxt     = not useBr ? "—" : na(zbtR) ? "데이터 없음" : str.tostring(zbtR, "0.000") + " · " + (zbtRecent ? "VALID " + str.tostring(zbtSinceFire) + "봉 전" : zbtCnt >= 0 ? "셋업 " + str.tostring(zbtCnt) + "/10" : zbtNearRec ? "근접 실패" : "대기")
+    hitTxt     = inRallyNow ? str.tostring(bearHits) + "/" + str.tostring(hitsMax) + " (기준 " + str.tostring(minHits) + ")" + (bearWhy == "" ? "" : " · " + bearWhy) : "—"
+    shTxt      = str.tostring(shiftScore) + "/" + str.tostring(shiftMax) + " (기준 " + str.tostring(shiftMin) + ")" + (shiftWhy == "" ? "" : " · " + shiftWhy)
+
+    f_row(0, "BMR · 베어랠리 감지", modeTxt, C_MUTED)
+    f_row(1, "상태", f_stateTxt(state), f_stateCol(state))
+    f_row(2, "고점 대비", peakTxt, C_TXT)
+    f_row(3, "200일선 대비", maTxt, maFall ? C_BEAR : C_BULL)
+    f_row(4, wName, wTxt, nz(wUpLine) >= holdWeeks ? C_BULL : C_TXT)
+    f_row(5, "반등", rallyTxt, inRallyNow ? C_RALLY : C_TXT)
+    f_row(6, "RSI", rsiTxt, rsiCol)
+    f_row(7, "AVWAP (고점 앵커)", vwTxt, C_TXT)
+    f_row(8, "브레드스", brTxt, e_br ? C_BULL : C_TXT)
+    f_row(9, "ZBT", zbtTxt, zbtRecent ? C_BULL : C_TXT)
+    f_row(10, "베어랠리 근거", hitTxt, inRallyNow and bearHits >= minHits ? C_FAIL : C_TXT)
+    f_row(11, "전환 점수", shTxt, shiftOK ? C_SHIFT : C_TXT)
+    if not timeframe.isdaily
+        f_row(12, "주의", "일봉 차트 기준으로 설계됨", C_RALLY)

@@ -1,0 +1,15 @@
+{
+  "_comment": "베어랠리 레이더 설정. 파라미터는 트레이딩뷰 Pine 지표(bear_rally_detector_v6.pine) 기본값과 동일. 자산별 params로 덮어쓸 수 있음.",
+  "title": "베어랠리 레이더",
+  "pages_url": "https://jinhae8971.github.io/korea-etf-calmar/bear-rally/",
+  "photo_until": "2026-11-24",
+  "assets": [
+    {"key": "SPY",   "name": "S&P 500 (SPY)",      "market": "us",     "symbol": "SPY",  "assetclass": "etf", "mode": "stock",  "breadth": true},
+    {"key": "QQQ",   "name": "나스닥100 (QQQ)",     "market": "us",     "symbol": "QQQ",  "assetclass": "etf", "mode": "stock",  "breadth": true},
+    {"key": "SOXX",  "name": "반도체 (SOXX)",       "market": "us",     "symbol": "SOXX", "assetclass": "etf", "mode": "stock",  "breadth": true},
+    {"key": "KOSPI", "name": "코스피",              "market": "kr",     "symbol": "KOSPI",                     "mode": "stock",  "breadth": false},
+    {"key": "BTC",   "name": "비트코인",            "market": "crypto", "coinbase": "BTC-USD", "kraken": "XBTUSD", "mode": "crypto"},
+    {"key": "ETH",   "name": "이더리움",            "market": "crypto", "coinbase": "ETH-USD", "kraken": "ETHUSD", "mode": "crypto"}
+  ],
+  "params": {}
+}

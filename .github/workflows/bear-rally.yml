@@ -1,0 +1,89 @@
+name: Bear Rally Radar
+
+# 베어랠리 레이더 — 하락 레짐 판정 → 반등 포착 → 베어랠리/전환 판별 (SPY·QQQ·SOXX·KOSPI·BTC·ETH). 2026-11-24 영길님 요청.
+# 트레이딩뷰 지표(bear_rally/pine/bear_rally_detector_v6.pine)와 같은 규칙을 파이썬으로 이식해 트레이딩뷰 없이 돈다.
+# 계산만 하고 bear_rally/data/latest.json(message·photos) + docs/bear-rally/ 리포트를 커밋한다. 발송은 Brief Hub(@spytltgld_strategy_bot).
+#
+# 타이밍: 크립토 일봉이 09:00 KST에 닫힌 뒤 계산. 이 레포 크론은 1~2시간 밀리고 슬롯이 빠지므로 슬롯 4개 + 멱등(새 확정 봉이 없으면 쓰기 생략).
+#   잡이 끝나면 Brief Hub가 workflow_run으로 깨어나 바로 발송한다(허브 기준 hub_date = 마지막 크립토 봉 + 1일 → 09시 전 계산은 안 보냄).
+on:
+  schedule:
+    - cron: "7 0 * * *"      # KST 09:07
+    - cron: "41 0 * * *"     # 09:41
+    - cron: "23 1 * * *"     # 10:23
+    - cron: "17 2 * * *"     # 11:17
+  push:
+    branches: [main]
+    paths:
+      - "bear_rally/*.py"
+      - "bear_rally/settings.json"
+      - "bear_rally/requirements.txt"
+      - "bear_rally/tests/**"
+      - ".github/workflows/bear-rally.yml"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "새 확정 봉이 없어도 다시 계산"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bear-rally
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 차트(PNG)만 matplotlib 필요 — 설치가 실패해도 판정·본문은 차트 없이 만든다.
+      - name: Install deps
+        continue-on-error: true
+        run: pip install -q -r bear_rally/requirements.txt
+
+      - name: Test gate
+        run: python -m unittest discover -s bear_rally/tests
+
+      - name: Collect & judge
+        env:
+          TZ: "Asia/Seoul"
+          FORCE: ${{ github.event_name == 'push' || inputs.force == true }}
+        run: |
+          set -euo pipefail
+          if [ "$FORCE" = "true" ]; then
+            python bear_rally/bmr.py --force
+          else
+            python bear_rally/bmr.py
+          fi
+
+      - name: Commit
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bear_rally/data docs/bear-rally
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+            exit 0
+          fi
+          AS_OF=$(python -c "import json;print(json.load(open('bear_rally/data/latest.json'))['as_of_kst'])" 2>/dev/null || date +%FT%T)
+          git commit -m "data(bear-rally): ${AS_OF} KST"
+          for i in 1 2 3; do
+            if python3 "$GITHUB_WORKSPACE/.github/scripts/verified_push.py"; then exit 0; fi
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            sleep $((i * 5))
+          done
+          echo "::error::3회 시도 후에도 푸시 실패"; exit 1
