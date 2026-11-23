@@ -14,11 +14,13 @@ name: Brief Hub
 # Contents API로 받아 ai_credit/data/ 에 두고(커밋 안 함) 화~토 08:10 이후 발송. 받기 실패 시 빈 스텁 → 4시간 뒤 지연 알림.
 # 주간 마감 리포트(2026-11-15): 매주 일요일 아침 Claude 예약작업이 weekly_close/data/stock.json·crypto.json outbox를 커밋하면
 # push로 허브가 깨어나 주식·크립토 2건(각각 차트 앨범 + 본문)을 보낸다. 전체 글은 docs/weekly-close/<week>/ (블로그형).
+# 베어랠리 레이더(2026-11-24): bear-rally.yml이 크립토 일봉 마감(09:00 KST) 뒤 계산해 bear_rally/data/latest.json을 커밋하면
+# workflow_run으로 허브가 깨어나 매일 발송. 신선도 기준 hub_date(= 마지막 크립토 봉 + 1일) — 09시 전 계산은 보내지 않는다.
 on:
   schedule:
     - cron: "17 22,23,0-12 * * *"
   workflow_run:
-    workflows: ["KOSPI Levels", "Crypto Top Signal", "BTC Macro Radar", "Onchain Liquidity Radar"]   # 수집이 끝나면 바로 발송 (11/03: 아침 슬롯 지연 대비, OLQ 11/10 추가)
+    workflows: ["KOSPI Levels", "Crypto Top Signal", "BTC Macro Radar", "Onchain Liquidity Radar", "Bear Rally Radar"]   # 수집이 끝나면 바로 발송 (11/03: 아침 슬롯 지연 대비, OLQ 11/10 추가, 베어랠리 11/24 추가)
     types: [completed]
   push:
     branches: [main]
@@ -120,6 +122,16 @@ jobs:
                 "change_key": "state",
                 "alert_key": "alert",
                 "why": "느린 지표 · 국면 변화·경보 시 즉시, 평소엔 월요일 정기 1회"
+              },
+              {
+                "id": "bear_rally",
+                "name": "베어랠리 레이더",
+                "path": "bear_rally/data/latest.json",
+                "mode": "daily",
+                "earliest": "09:05",
+                "days": [0, 1, 2, 3, 4, 5, 6],
+                "fresh_key": "hub_date",
+                "why": "하락 레짐 판정 → 반등 포착 → 베어랠리/전환 판별 · SPY·QQQ·SOXX·KOSPI·BTC·ETH · 매일 크립토 일봉 마감(09:00) 뒤 · 상태 변화·월요일엔 12개월 요약 차트 첨부 · 트레이딩뷰 지표와 같은 규칙 (2026-11-24 영길님 요청)"
               },
               {
                 "id": "hood_chainrev",
