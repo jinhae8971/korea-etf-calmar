@@ -1,35 +1,6 @@
 {
- "as_of_kst": "2026-11-22 10:41",
+ "as_of_kst": "2026-11-23 11:01",
  "calendar": [
-  {
-   "event_date": "2026-11-22",
-   "first_seen": "2026-11-20",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
-   "last_seen": "2026-11-22",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-20",
-    "price_at_detect": 2.6,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-20",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MORPHO",
-   "title": "MIP 136 – List MidnightAdapter in Morpho Registry",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/morpho.eth/proposal/0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
-   "vote_state": "active",
-   "when": "2026-11-22"
-  },
   {
    "event_date": "2026-11-24",
    "first_seen": "2026-11-14",
@@ -96,7 +67,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "news:injective-s-veyra-mainnet-upgrade-set-for-november-24-after-",
-   "last_seen": "2026-11-22",
+   "last_seen": "2026-11-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-19",
@@ -119,12 +90,40 @@
    "when": "Wed, 18 Nov 2026"
   },
   {
+   "event_date": "2026-11-24",
+   "first_seen": "2026-11-23",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:injective-wins-approval-for-veyra-upgrade-set-for-tuesday-no",
+   "last_seen": "2026-11-23",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-23",
+    "price_at_detect": 5.55,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-23",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "INJ",
+   "title": "Injective Wins Approval for Veyra Upgrade Set for Tuesday, Nov. 24 - www.tokenpost.com",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9Id1doV1JtblI5Z3dfc2Z4WkY1T0ZEWEFTQXFVRlZsNGVCaEtmZ0FKZWZkTDltZXUzVURORzNMbHFwa3doUDlKOTlFR183bHpPZzJFa3JfaTB2REU?oc=5",
+   "when": "Wed, 18 Nov 2026"
+  },
+  {
    "event_date": "2026-11-26",
    "first_seen": "2026-11-20",
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "last_seen": "2026-11-22",
+   "last_seen": "2026-11-23",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -153,7 +152,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-22",
+   "last_seen": "2026-11-23",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -177,40 +176,12 @@
    "trust": 0.95,
    "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.2",
    "when": "2026-11-03"
-  },
-  {
-   "event_date": "2026-12-08",
-   "first_seen": "2026-11-17",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:bnb-price-context-shifts-to-december-8-jenner-upgrade-ad-hoc",
-   "last_seen": "2026-11-17",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-17",
-    "price_at_detect": 746.55,
-    "score_at_detect": 30.0
-   },
-   "score": 30.0,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-11-17",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "BNB",
-   "title": "BNB price context shifts to December 8 Jenner upgrade - ad-hoc-news.de",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWVaN0w3eUZ6QjQ5SGNETUVXMVVnc0hCMG5JZFhyMklEUzJ0eGNIcDhTQTBxVFhHTlpJc3ZSR2ctQjFGWmF5eWFVbzFRSnFSaS0zZXVtS2tJN3FSOGVUcjVJM1RxYXRsV2dQb0FiOGp5Z251czlfNDNDMjhucGVjUzlfdklzQXhudDBmRlZIYmQ3OFZCU2RwYjBrUnl3U3A0LVBmWUsxQXZicW5lWUtyU2NkTWdrUQ?oc=5",
-   "when": "Mon, 16 Nov 2026"
   }
  ],
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 73,
+ "event_count": 71,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -234,41 +205,35 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-22 10:41\n감시 52종목(체인 34·프로토콜 18) · 이벤트 73건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>UNI</b> [인프라·투표중→가결] Upgrade the v4 Protocol Fee Adapter\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MORPHO <b>투표중</b> · MIP 136 – List MidnightAdapter in Morpho Registry\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-2   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🟠 <code>D-4   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🔴 <code>D-16  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n🟠 <code>D-16  </code> BNB <b>일정확정</b> · BNB price context shifts to December 8 Jenner upgrade - ad-hoc\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=15, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-23 11:01\n감시 52종목(체인 34·프로토콜 18) · 이벤트 71건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>INJ</b> [인프라·신규] Injective Wins Approval for Veyra Upgrade Set for Tuesday, Nov. 24 - www.token\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> INJ <b>일정확정</b> · Injective Veyra upgrade heads to governance vote ahead of Nove\n🟠 <code>D-1   </code> INJ <b>일정확정</b> · Injective Targets November 24 Veyra Upgrade: Will INJ Demand S\n🟠 <code>D-1   </code> INJ <b>일정확정</b> · Injective’s Veyra mainnet upgrade set for November 24 after 99\n🟠 <code>D-1   </code> INJ <b>일정확정</b> · Injective Wins Approval for Veyra Upgrade Set for Tuesday, Nov\n🟠 <code>D-3   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🔴 <code>D-15  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=16, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
-   "event_date": "2026-11-21",
-   "first_seen": "2026-11-17",
+   "event_date": "2026-11-24",
+   "first_seen": "2026-11-23",
    "grade": "B",
    "impact": "INFRA",
-   "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "prev_stage": "VOTING",
+   "key": "news:injective-wins-approval-for-veyra-upgrade-set-for-tuesday-no",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-17",
-    "price_at_detect": 6.96,
-    "score_at_detect": 45.5
+    "detected_at": "2026-11-23",
+    "price_at_detect": 5.55,
+    "score_at_detect": 35.3
    },
-   "score": 26.8,
-   "source": "snapshot",
-   "stage": "PASSED",
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-17",
-     "stage": "VOTING"
-    },
-    {
-     "at": "2026-11-22",
-     "stage": "PASSED"
+     "at": "2026-11-23",
+     "stage": "SCHEDULED"
     }
    ],
-   "symbol": "UNI",
-   "title": "Upgrade the v4 Protocol Fee Adapter",
-   "transition": "STAGE_UP",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/uniswapgovernance.eth/proposal/0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "vote_state": "closed",
-   "when": "2026-11-21"
+   "symbol": "INJ",
+   "title": "Injective Wins Approval for Veyra Upgrade Set for Tuesday, Nov. 24 - www.tokenpost.com",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9Id1doV1JtblI5Z3dfc2Z4WkY1T0ZEWEFTQXFVRlZsNGVCaEtmZ0FKZWZkTDltZXUzVURORzNMbHFwa3doUDlKOTlFR183bHpPZzJFa3JfaTB2REU?oc=5",
+   "when": "Wed, 18 Nov 2026"
   }
  ],
  "universe": {
@@ -380,7 +345,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 15,
+   "n": 16,
    "status": "OK"
   },
   {
@@ -416,7 +381,7 @@
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 6,
+   "n": 7,
    "status": "표본 부족"
   },
   {
@@ -446,13 +411,13 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 4,
+   "n": 3,
    "status": "표본 부족"
   },
   {
    "bucket": "source:proposal",
    "horizon": 7,
-   "n": 2,
+   "n": 3,
    "status": "표본 부족"
   },
   {
@@ -470,7 +435,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 31,
+   "n": 30,
    "status": "OK"
   },
   {
@@ -482,15 +447,15 @@
     0.0
    ],
    "median": 0.0,
-   "n": 9,
+   "n": 10,
    "status": "OK"
   },
   {
    "bucket": "source:snapshot",
    "horizon": 7,
-   "n": 5,
+   "n": 6,
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=15, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=16, BTC 대비)"
 }
