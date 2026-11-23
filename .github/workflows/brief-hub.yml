@@ -3,6 +3,7 @@ name: Brief Hub
 # 흩어진 브리프를 새 봇(@spytltgld_strategy_bot) 하나로 모아 기능별 별도 메시지로 발송.
 # 단일 파일 구성 — 이 파일 하나만 korea-etf-calmar/.github/workflows/brief-hub.yml 로 만들면 끝.
 # 매시 :17 실행(KST 07~21시). 기능별 발송 요일·시각·조건은 아래 schedule.json 이 판정.
+# 야간 금지 창(22~07시) 예외: night_ok_from 이 있는 소스만 그 시각부터 발송 — 미증시 마감 브리핑 06:30 (2026-11-24).
 # 미증시 마감 브리핑(us_close)은 Claude 예약작업이 us_close/data/latest.json 을 커밋하는 순간 push 로 허브가 깨어나 발송한다(2026-10-28).
 # 코스피 엘리어트 파동은 C파 완성도 점수(0~100)·지표 신호등(11/07)·과거 유사 사례 조정 기간 추정·비교 차트(11/08)·엔벨로프 20일선 ±10%(11/09) 포함. latest.json의 photos가 있으면 본문 앞에 사진 발송.
 # 즉시 1회 발송: Actions 수동 실행의 send_now 입력, 또는 이 파일을 바꾸는 푸시 커밋 메시지에 send-now 태그(대괄호 안 'send-now:기능id') (2026-11-07).
@@ -136,7 +137,8 @@ jobs:
                 "name": "미증시 마감 브리핑",
                 "path": "us_close/data/latest.json",
                 "mode": "outbox",
-                "why": "미증시 마감 브리핑(크로스에셋·섹터·대형주 히트맵·브레드스·기술적 확률) · 미국 거래일 다음날 07:40 KST · 사진 앨범 + 본문 · Claude 예약작업이 outbox를 커밋하면 push로 바로 발송 (2026-10-28)"
+                "night_ok_from": "06:30",
+                "why": "미증시 마감 브리핑(크로스에셋·섹터·대형주 히트맵·브레드스·기술적 확률) · 미국 거래일 다음날 06:30 KST 작성(2026-11-24 영길님 요청, 07:40→06:30) · 야간 금지 창 중 이 소스만 06:30부터 발송 허용 · 사진 앨범 + 본문 · Claude 예약작업이 outbox를 커밋하면 push로 바로 발송 (2026-10-28)"
               },
               {
                 "id": "weekly_stock",
@@ -368,7 +370,16 @@ jobs:
               force = (os.environ.get("SEND_NOW") or "").strip()
               if force and force not in {s["id"] for s in cfg["sources"]}:
                   sys.exit(f"send_now: 알 수 없는 기능 id '{force}'")
-              if not force and not (ng["start"] <= now.hour < ng["end"]):
+              in_window = ng["start"] <= now.hour < ng["end"]
+
+              def allowed(src: dict) -> bool:
+                  """야간 금지 창 안에서는 night_ok_from(HH:MM) 이후, 창이 열리기 전 아침에만 그 소스를 허용 (2026-11-24)."""
+                  if force or in_window:
+                      return True
+                  f = src.get("night_ok_from")
+                  return bool(f) and hm(f) <= (now.hour, now.minute) and now.hour < ng["start"]
+
+              if not force and not in_window and not any(allowed(s) for s in cfg["sources"]):
                   print(f"[night] {now:%H:%M} KST — 야간 발송 금지 창, 종료")
                   return []
               state = load_json(state_path) if os.path.exists(state_path) else {}
@@ -385,6 +396,8 @@ jobs:
                       d = None
                   st = state.get(src["id"], {})
                   if force and src["id"] != force:
+                      continue
+                  if not allowed(src):
                       continue
                   if force:
                       text, new, why = (body_of(d) if d else None), dict(st), "수동 즉시 발송"

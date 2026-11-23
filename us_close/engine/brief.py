@@ -9,7 +9,7 @@ MACD 12/26/9) on 4H (extended hours, 04:00 ET anchored), 1D and 1W.
 
 Commands
   python3 brief.py                 snapshot for QQQ, SPY -> JSON on stdout, state saved
-  python3 brief.py --next-run      next delivery time (07:40 KST after each NYSE session)
+  python3 brief.py --next-run      next run time (06:30 KST after each NYSE session)
   python3 brief.py --record JSON   store the published probabilities for the session
   python3 brief.py --calibrate     MA / indicator candidates vs. reference chart values
 """
@@ -35,7 +35,7 @@ UTC = dt.timezone.utc
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0 Safari/537.36")
 SYMBOLS = ["QQQ", "SPY", "SOXX", "DRAM"]  # 2026-10-31: AAPL out, SOXX·DRAM in (user request)
-RUN_HH, RUN_MM = 7, 40  # KST delivery time
+RUN_HH, RUN_MM = 6, 30  # KST run time (2026-11-24: 07:40 -> 06:30 per 영길님)
 
 # NYSE full-day holidays (2026-2027)
 NYSE_HOLIDAYS = {dt.date(*d) for d in [

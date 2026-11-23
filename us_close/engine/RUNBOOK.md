@@ -1,6 +1,6 @@
 # 미증시 마감 브리핑: 실행 절차 (v2, 2026-10-28 재설계)
 
-- 요청: 영길님. 미국 거래일 다음날 07:40 KST, 텔레그램 전략 봇(Brief Hub, @spytltgld_strategy_bot)으로 발송한다.
+- 요청: 영길님. 미국 거래일 다음날 06:30 KST에 작성을 시작해(2026-11-24부터, 이전 07:40) 끝나는 대로 텔레그램 전략 봇(Brief Hub, @spytltgld_strategy_bot)으로 발송한다. 허브 야간 금지 창(22~07시)에서 이 소스만 06:30부터 예외 허용(schedule.json `night_ok_from`).
 - 구성: 사진 앨범 7장 + 본문 1건 + 전체 리포트 페이지(GitHub Pages)
   - 사진: 크로스에셋, 섹터·테마 히트맵, 대형주 트리맵, 브레드스·팩터, QQQ·SPY·SOXX·DRAM 일봉
   - 리포트: https://jinhae8971.github.io/korea-etf-calmar/us-close/ (날짜별 보관)
@@ -40,7 +40,7 @@
 - 장 마감 후 실적·시간외 반응
 - 다가오는 일정: FOMC, CPI, PCE, 고용, 빅테크·반도체 실적
 - 시간외 가격: Yahoo chart API `range=1d&interval=5m&includePrePost=true`의 마지막 봉
-- 일정 메모: 11/1부터 미국 서머타임이 끝나 마감이 06:00 KST가 된다(발송 07:40은 유지).
+- 일정 메모: 11/1~3월 서머타임 해제 기간엔 미국 마감이 06:00 KST라 06:30 작성 시점에 정규장 종가는 확정돼 있다(시간외는 마감 후 30분치). 서머타임 기간엔 마감이 05:00 KST.
 
 ## 4. narrative.json 작성 → 발송
 - 파일: `out/<session>/narrative.json`. 스키마와 문체는 `out/2026-10-27/narrative.json`을 그대로 따른다.
