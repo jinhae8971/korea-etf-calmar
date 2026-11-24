@@ -1,5 +1,5 @@
 {
- "generated_at": 1795498708,
+ "generated_at": 1795500500,
  "levels": {
   "arcus": "NONE",
   "extended": "IMMINENT",
@@ -106,6 +106,10 @@
   [
    1795498708,
    "d"
+  ],
+  [
+   1795500500,
+   "d"
   ]
  ],
  "status": {
@@ -170,8 +174,8 @@
    "x:TitanExchange_": true
   },
   "txflow": {
-   "api_watch": true,
-   "docs": true,
+   "api_watch": false,
+   "docs": false,
    "news": true,
    "polymarket": true,
    "x:TxFlow_L1": true
@@ -182,7 +186,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:variational_io": false
+   "x:variational_io": true
   }
  },
  "undecidable": false
