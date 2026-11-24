@@ -1,5 +1,5 @@
 {
- "generated_at": 1795484309,
+ "generated_at": 1795486113,
  "levels": {
   "arcus": "NONE",
   "extended": "IMMINENT",
@@ -12,27 +12,9 @@
   "txflow": "NONE",
   "variational": "WATCH"
  },
- "outbox": {
-  "created": 1795398535,
-  "id": "5290d6305770",
-  "kind": "alert",
-  "level": "ALERT",
-  "text": "🟡 <b>퍼프덱스 레이더 · Lighter RH 경보</b>\n11/23(월) 02:24 감지 · 온체인\n알려진 상태: LIT 출시됨 · RH 포인트 → LIT 전환 일정 미정\n\n<b>무슨 일</b>\n같은 지갑에서 7일간 LIT 10.06M개 출금 (포인트 풀 규모)\n  0x073f5644 · 6건\n\n<b>의미</b>\n에어드랍 물량을 여러 번에 나눠 옮기는 모습일 수 있어요.\n다른 종류 근거(온체인·공식 문서·공식 발표·리더보드·앱 중)가 7일 안에 하나 더 나오면 '임박'으로 올려요.\n\n<b>해제 조건</b>\n누적분이 원래 지갑으로 돌아오면 해제\n\n앞서 보낸 '경보' 알림 뒤에 새로 나온 신호예요.\n\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
- },
- "outboxes": [
-  {
-   "created": 1795398535,
-   "id": "5290d6305770",
-   "kind": "alert",
-   "level": "ALERT",
-   "text": "🟡 <b>퍼프덱스 레이더 · Lighter RH 경보</b>\n11/23(월) 02:24 감지 · 온체인\n알려진 상태: LIT 출시됨 · RH 포인트 → LIT 전환 일정 미정\n\n<b>무슨 일</b>\n같은 지갑에서 7일간 LIT 10.06M개 출금 (포인트 풀 규모)\n  0x073f5644 · 6건\n\n<b>의미</b>\n에어드랍 물량을 여러 번에 나눠 옮기는 모습일 수 있어요.\n다른 종류 근거(온체인·공식 문서·공식 발표·리더보드·앱 중)가 7일 안에 하나 더 나오면 '임박'으로 올려요.\n\n<b>해제 조건</b>\n누적분이 원래 지갑으로 돌아오면 해제\n\n앞서 보낸 '경보' 알림 뒤에 새로 나온 신호예요.\n\n<a href=\"https://jinhae8971.github.io/korea-etf-calmar/perp-dex-radar/\">대시보드</a>"
-  }
- ],
+ "outbox": null,
+ "outboxes": [],
  "runs": [
-  [
-   1795398535,
-   "s"
-  ],
   [
    1795401754,
    "s"
@@ -95,6 +77,10 @@
   ],
   [
    1795484309,
+   "d"
+  ],
+  [
+   1795486113,
    "d"
   ]
  ],
