@@ -1,0 +1,83 @@
+{
+ "headline": "ADI −17.4%에 반도체가 −7.9% 되밀려 나스닥100 −2.0%, 다우는 +0.9%였어요.",
+ "breadth_note": "오른 종목 64, 내린 종목 33으로 지수 하락에도 상승 종목이 두 배였어요. SMA50 위 비율은 43.3%(전일 42.3%)로 조금 올랐고, 52주 신고가 4·신저가 0이에요. 동일가중(RSP +0.54%)이 시총가중(SPY −0.49%)을 1.0%p 앞서 하락은 반도체·대형 기술주에 몰렸어요.",
+ "drivers": [
+  "반도체 되돌림: 필라델피아 반도체가 −7.9%로 월요일 상승분(+14.0%)의 약 64%를 반납했어요. 마이크론 −11.0%, AMD −8.9%, 인텔 −8.2%, 엔비디아 −5.9%(월요일 상승분의 약 4분의 1 반납)예요(StockTitan).",
+  "ADI −17.4%: 4분기 매출 43.7억 달러(+42%)·EPS 4.06달러로 예상을 넘었지만, 1분기 EPS 가이던스 3.82달러가 블룸버그 컨센서스에 못 미쳤고 재고일수가 134일에서 141일로 늘었어요(MoneyCheck). 같은 아날로그 업체 TI도 −11.3%였어요.",
+  "AI 서버주: HPE가 2027회계연도 클라우드·AI 영업이익률을 약 14%(직전 분기 18.4%)로 제시해 −16.3%였고, 실적을 앞둔 델도 −11.8%로 같이 밀렸어요(Yahoo Finance).",
+  "방어주로 이동: 헬스케어가 +3.0%로 1위예요. 사노피가 인스메드를 주당 175달러, 약 410억 달러에 현금 인수하기로 해 인스메드 +14.1%, 바이오 ETF +6.6%였고 릴리 +3.1%, 머크 +4.5%, 암젠 +5.5%도 올랐어요(StockTitan). 필수소비재 +1.7%, 부동산 +1.3%예요.",
+  "금리·원자재: 10년물 4.90%(−1.4bp), 달러인덱스 −0.5%, WTI +1.6%(81.5달러), 금 −2.7%예요. VIX는 26.4로 거의 그대로였고, 12월 회의 25bp 인상 확률은 약 95%로 반영돼 있어요(Yahoo Finance)."
+ ],
+ "after_hours": [
+  "델이 3분기 매출 549억 달러(+103%, 예상 493억)·EPS 9.45달러(예상 6.59)를 내 시간외 +2.8%예요(TipRanks). 워크데이 −3.2%, 오토데스크 −3.8%예요.",
+  "QQQ 637.5(−0.1%), SPY 718.2(−0.1%), SOXX 128.7(0.0%), DRAM 35.9(−0.1%), 엔비디아 153.9(−1.0%)로 시간외는 잠잠해요(마감 37분 기준)."
+ ],
+ "tech": {
+  "QQQ": {
+   "short": 50,
+   "swing": 30,
+   "short_d": -5,
+   "swing_d": 0,
+   "note": "−2.0%로 647.2를 내주고 638.1에 마감해 지지 636.8 바로 위예요. 4H·일봉 MACD 히스토그램은 계속 0선 쪽으로 올라오고 있어(4H −0.77→−0.45, 일봉 −3.25→−2.81) 반등 흐름이 끊긴 건 아니에요. 다만 주봉 EMA50(668.0)에서 다시 멀어져 단기 5%p 내렸어요.",
+   "up": "647.2 회복 → 661.1, 665.1(4H SuperTrend)",
+   "down": "636.8 이탈 → 629.2, 583.3"
+  },
+  "SPY": {
+   "short": 55,
+   "swing": 30,
+   "short_d": 0,
+   "swing_d": 0,
+   "note": "−0.5%로 718.8에 마감해 716.6 지지를 지켰어요. 상승 종목이 하락의 두 배였고 동일가중이 더 강했어요. 4H·일봉 MACD 히스토그램도 개선 중이라 확률은 그대로 뒀어요. 주봉 EMA50(722.8)은 이틀째 못 넘었어요.",
+   "up": "722.8 회복(주봉 EMA50) → 729.1, 734.2(4H SuperTrend)",
+   "down": "716.6 이탈 → 697.8, 689.7"
+  },
+  "SOXX": {
+   "short": 40,
+   "swing": 25,
+   "short_d": -10,
+   "swing_d": -5,
+   "note": "−8.3%로 130.8을 내주고 128.6에 마감했어요. 4H·일봉 MACD 히스토그램이 하루 만에 다시 꺾였어요(4H −0.14→−0.51, 일봉 −0.60→−0.85). 아래로는 122.9와 주봉 EMA120(120.3)이 남아 있어요. 단기 10%p, 스윙 5%p 내렸어요.",
+   "up": "130.8 회복 → 148.5(4H SuperTrend)",
+   "down": "122.9 이탈 → 120.3(주봉 EMA120)"
+  },
+  "DRAM": {
+   "short": 40,
+   "swing": 25,
+   "short_d": -10,
+   "swing_d": -5,
+   "note": "−9.2%로 35.92에 마감해 하루 만에 주봉 EMA120(38.39)을 다시 내줬어요. 마이크론은 −11.0%예요. 4H MACD 히스토그램은 +0.02로 겨우 플러스지만 꺾였어요. 주봉 SuperTrend(29.39)는 아직 상승이지만 상장 이력이 짧아 참고만 해요. 단기 10%p, 스윙 5%p 내렸어요.",
+   "up": "37.0 회복 → 38.4(주봉 EMA120), 41.9(4H SuperTrend)",
+   "down": "33.4(11/20 종가) 이탈 → 29.4(주봉 SuperTrend)"
+  }
+ },
+ "calendar": [
+  "11/25(수) 22:30 10월 PCE·3분기 GDP 수정치",
+  "11/26(목) 추수감사절 휴장, 27일(금) 조기 폐장(ET 13시)",
+  "12/10(목) 04:00 FOMC 결과(25bp 인상 확률 약 95%)"
+ ],
+ "view": "월요일 반등을 이끈 반도체가 하루 만에 상승분의 64%를 반납했지만, 상승 종목이 하락의 두 배였고 헬스케어·필수소비재·동일가중이 강해 시장 전체가 무너진 날은 아니에요. 돈이 반도체·AI 서버에서 방어주로 옮겨 간 하루예요. SOXX·DRAM은 지지(130.8, 38.4)를 내주고 MACD가 다시 꺾여 확률을 내렸고, SPY는 716.6을 지켜 그대로 뒀어요. 델의 호실적(시간외 +2.8%)이 AI 하드웨어 심리를 받칠지, 수요일 밤 PCE·GDP가 12월 인상 기대를 바꿀지가 휴장 전 변수예요.",
+ "summary": [
+  "ADI −17.4%에 반도체 지수 −7.9%, 월요일 상승분의 64%를 반납했어요.",
+  "헬스케어 +3.0%·다우 +0.9%로 상승 종목이 하락의 두 배였어요.",
+  "SOXX·DRAM은 지지를 내줘 단기 10%p 내렸고, SPY는 716.6을 지켰어요.",
+  "델 시간외 +2.8%, 수요일 밤 PCE·GDP 뒤 목요일은 휴장이에요."
+ ],
+ "sources": [
+  {
+   "title": "Stock Market Today Live, November 24, 2026: Chip Stocks Slide After Monday's Big Rally (StockTitan)",
+   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-24-2026"
+  },
+  {
+   "title": "Analog Devices (ADI) Stock Falls 17% as Weak Q1 Profit Outlook Overshadows Beat (MoneyCheck)",
+   "url": "https://moneycheck.com/analog-devices-adi-stock-falls-17-as-weak-q1-profit-outlook-overshadows-beat"
+  },
+  {
+   "title": "Stock market today: Dow rises, S&P 500 and Nasdaq decline as chip sector tumbles, Nvidia stock falls 6% (Yahoo Finance)",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+  },
+  {
+   "title": "Dell Stock Rises After Q3 EPS Blows Past Estimates (TipRanks)",
+   "url": "https://www.tipranks.com/news/dell-stock-rises-after-q3-eps-blows-past-estimates"
+  }
+ ]
+}

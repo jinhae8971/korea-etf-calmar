@@ -185,6 +185,18 @@ def squarify_layout(vals, x, y, w, h):
     return rects
 
 
+def fit_text(ax, x, y, max_w, variants, **kw):
+    """Draw the first (text, fontsize) variant whose rendered width fits max_w data units; draw nothing if none fits."""
+    r = ax.figure.canvas.get_renderer()
+    limit = abs(ax.transData.transform((max_w, 0))[0] - ax.transData.transform((0, 0))[0])
+    for s, fs in variants:
+        t = ax.text(x, y, s, fontsize=fs, **kw)
+        if t.get_window_extent(renderer=r).width <= limit:
+            return t
+        t.remove()
+    return None
+
+
 def chart_treemap(d, path):
     st = [s for s in d["stocks"] if s.get("mcap") and s["d1"] is not None]
     by = {}
@@ -201,7 +213,10 @@ def chart_treemap(d, path):
         rects = squarify_layout([x["mcap"] for x in items], sx + 0.25, sy + pad_top, sw - 0.5, sh - pad_top - 0.25)
         if pad_top:
             sec_chg = sum(x["d1"] * x["mcap"] for x in items) / sum(x["mcap"] for x in items)
-            ax.text(sx + 0.6, sy + 1.6, f"{name} {sec_chg:+.1f}%", fontsize=10, color=INK2, va="center", weight="bold")
+            # narrow sector boxes: shrink, then shorten, so the label never runs into the next box (11/24 소재·부동산 overlap)
+            fit_text(ax, sx + 0.6, sy + 1.6, sw - 0.9,
+                     [(f"{name} {sec_chg:+.1f}%", 10), (f"{name} {sec_chg:+.1f}%", 8), (name, 8), (f"{sec_chg:+.1f}%", 8)],
+                     color=INK2, va="center", weight="bold")
         for it, (x, y, w, h) in zip(items, rects):
             ax.add_patch(Rectangle((x, y), w, h, facecolor=cell_color(it["d1"], 4), edgecolor=SURF, lw=1.6))
             area = w * h
