@@ -5,10 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1795368240,
-   "s"
-  ],
-  [
    1795379014,
    "s"
   ],
@@ -167,6 +163,10 @@
   [
    1795523902,
    "d"
+  ],
+  [
+   1795544336,
+   "s"
   ]
  ],
  "scope": [
@@ -210,7 +210,7 @@
     "tiers.3": "Silver",
     "tiers.4": "Bronze"
    },
-   "calm_since": 1794866899,
+   "calm_since": null,
    "cursors": {},
    "doc_moves": {},
    "docs": {
@@ -221,9 +221,9 @@
      "url": "https://help.arcus.xyz/faq/general-faq/general/does-arcus-have-a-token.md"
     },
     "https://help.arcus.xyz/llms.txt": {
-     "changed": 1793901563,
-     "hash": "96bc0d9462200d14",
-     "text": "# Arcus Help Center\n\n- [Arcus Help Center](https://help.arcus.xyz/index.md): Answers to common questions about trading on Arcus.\n- [What is Arcus?](https://help.arcus.xyz/faq/general-faq/general/what-is-arcus.md)\n- [Who is Arcus designed for?](https://help.arcus.xyz/faq/general-faq/general/who-is-arcus-designed-for.md)\n- [How is Arcus different from a CEX? ](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-a-cex.md)\n- [How is Arcus different from other DEXes?](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-other-dexes.md)\n- [Does Arcus have a token? ](https://help.arcus.xyz/faq/general-faq/general/does-arcus-have-a-token.md)\n- [How is Arcus different from CFD (contract for difference) platforms? ](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-cfd-contract-for-difference-platforms.md)\n- [How is Arcus different from tokenized stock issuers (Backed, Ondo, Swarm)? ](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-tokenized-stock-issuers-backed-ondo-swarm.md)\n- [What can I trade on Arcus?](https://help.arcus.xyz/faq/general-faq/markets/what-can-i-trade-on-arcus.md)\n- [Which assets launch first?](https://help.arcus.xyz/faq/general-faq/markets/which-assets-launch-first.md)\n- [Are markets truly 24/7?](https://help.arcus.xyz/faq/general-faq/markets/are-markets-truly-24-7.md)\n- [What collateral is supported?](https://help.arcus.xyz/faq/general-faq/markets/what-collateral-is-supported.md)\n- [What's the maximum leverage?](https://help.arcus.xyz/faq/general-faq/markets/what-s-the-maximum-leverage.md)\n- [How is liquidity sourced at launch?](https://help.arcus.xyz/faq/general-faq/markets/how-is-liquidity-sourced-at-launch.md)\n- [How is Arcus built?](https://help.arcus.xyz/faq/general-faq/self-custody-security/how-is-arcus-built.md)\n- [Is Arcus non-custodial?](https://help.arcus.xyz/faq/general-faq/self-custody-security/is-arcus-non-custodial.md)\n- [Have the smart contracts been audited?](https://help.arcus.xyz/faq/general-faq/self-custody-security/have-the-smart-contracts-been-audited.md)\n- [Where do my funds and positions actually live?](https://help.arcus.xyz/faq/general-faq/self-custody-security/where-do-my-funds-and-positions-actually-live.md)\n- [Can Arcus or Robinhood Chain freeze or seize my Stock Tokens?](https://help.arcus.xyz/faq/general-faq/self-custody-security/can-arcus-or-robinhood-chain-freeze-or-seize-my-stock-tokens.md)\n- [Are my Stock Tokens really backed?](https://help.arcus.xyz/faq/general-faq/self-custody-security/are-my-stock-tokens-really-backed.md)\n- [Is There Proof of Reserves?](https://help.arcus.xyz/faq/general-faq/self-custody-security/is-there-proof-of-reserves.md)\n- [What is the Robinhood partnership? ](https://help.arcus.xyz/faq/general-faq/the-robinhood-partnership/what-is-robinhood-s-role.md)\n- [Is Arcus owned by Robinhood?](https://help.arcus.xyz/faq/general-faq/the-robinhood-partnership/is-arcus-owned-by-robinhood.md)\n- [Why Robinhood Chain?](https://help.arcus.xyz/faq/general-faq/the-robinhood-partnership/why-robinhood-chain.md)\n- [What are the trading fees?](https://help.arcus.xyz/faq/general-faq/fees/what-are-the-trading-fees.md)\n- [Is there an API?](https://help.arcus.xyz/faq/general-faq/platform-technology/is-there-an-api.md)\n- [Will there be a mobile app?](https://help.arcus.xyz/faq/general-faq/platform-technology/will-there-be-a-mobile-app.md)\n- [Where can I follow Arcus updates?](https://help.arcus.xyz/faq/general-faq/platform-technology/where-can-i-follow-arcus-updates.md)\n- [Am I eligible?](https://help.arcus.xyz/faq/onboarding-faq/access-eligibility/am-i-eligible.md)\n- [When does access begin?](https://help.arcus.xyz/faq/onboarding-faq/access-eligibility/when-does-access-begin.md)\n- [How do I get an invite code?](https://help.arcus.xyz/faq/onboarding-faq/access-eligibility/how-do-i-get-an-invite-code.md)\n- [What wallets are supported?](https://help.arcus.xyz/faq/onboarding-faq/sign-in-wallets/what-wallets-are-supported.md)\n- [What do I need to start?](https://help.arcus.xyz/faq/onboarding-faq/getting-started/what-do-i-need-to-start.md)\n- [Why was I asked to sign twice on my first trade? ](https://help.arcus.xyz/faq/onboarding-faq/getting-started/why-was-i-asked-to-sign-twice-on-my-first-trade-spot-trading-with-a-self-custodial-wallet.md)\n- [How to onboard and fund a testnet wallet](https://help.arcus.xyz/faq/onboarding-faq/how-to-onboard-and-fund-a-testnet-wallet.md)\n- [How do I deposit funds?](https://help.arcus.xyz/faq/onboarding-faq/deposits/how-do-i-deposit-funds.md)\n- [What can I deposit from, and how does it work?](https://help.arcus.xyz/faq/onboarding-faq/deposits/what-can-i-deposit-from-and-how-does-it-work.md)\n- [What are the fees to deposit with fiat?](https://help.arcus.xyz/faq/onboarding-faq/deposits/what-are-the-fees-to-deposit-with-fiat.md)\n- [Are there FX fees when I fund my account?](https://help.arcus.xyz/faq/onboarding-faq/deposits/are-there-fx-fees-when-i-fund-my-account.md)\n- [Can I fund my account in my local currency (e.g. EUR)?](https://help.arcus.xyz/faq/onboarding-faq/deposits/can-i-fund-my-account-in-my-local-currency-e-g-eur.md)\n- [How long do deposits take?](https://help.arcus.xyz/faq/onboarding-faq/deposits/how-long-do-deposits-take.md)\n- [Are there bridging fees?](https://help.arcus.xyz/faq/onboarding-faq/deposits/are-there-bridging-fees.md)\n- [How do I withdraw?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/how-do-i-withdraw.md)\n- [How long do withdrawals take?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/how-long-do-withdrawals-take.md)\n- [What's the minimum withdrawal?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/what-s-the-minimum-withdrawal.md)\n- [What's the maximum withdrawal?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/what-s-the-maximum-withdrawal.md)\n- [Can I cancel a pending withdrawal?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/can-i-cancel-a-pending-withdrawal.md)\n- [Why did my withdrawal fail?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/why-did-my-withdrawal-fail.md)\n- [Troubleshooting Deposits & Withdrawals](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/troubleshooting-deposits-withdrawals.md)\n- [What does the waitlist gate?](https://help.arcus.xyz/faq/waitlist-faq/overview/what-does-the-waitlist-gate.md)\n- [When does Arcus launch?](https://help.arcus.xyz/faq/waitlist-faq/overview/when-does-arcus-launch.md)\n- [What do I need to join?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/what-do-i-need-to-join.md)\n- [How is my waitlist position determined?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/how-is-my-waitlist-position-determined.md)\n- [How do I move up the queue?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/how-do-i-move-up-the-queue.md)\n- [What do I get for referring other traders?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/what-do-i-get-for-referring-other-traders.md)\n- [What wallets can I use to join?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/what-wallets-can-i-use-to-join.md)\n- [When will I get access?](https://help.arcus.xyz/faq/waitlist-faq/access-notification/when-will-i-get-access.md)\n- [How will I know I'm in?](https://help.arcus.xyz/faq/waitlist-faq/access-notification/how-will-i-know-i-m-in.md)\n- [What happens to my waitlist position if I don't act when I'm notified?](https://help.arcus.xyz/faq/waitlist-faq/access-notification/what-happens-to-my-waitlist-position-if-i-don-t-act-when-i-m-notified.md)\n- [What do I get as an early access user?](https://help.arcus.xyz/faq/waitlist-faq/what-early-access-includes/what-do-i-get-as-an-early-access-user.md)\n- [Am I eligible?](https://help.arcus.xyz/faq/waitlist-faq/eligibility-restrictions/am-i-eligible.md)\n- [I'm on the waitlist but live in a restricted region - what happens?](https://help.arcus.xyz/faq/waitlist-faq/eligibility-restrictions/i-m-on-the-waitlist-but-live-in-a-restricted-region-what-happens.md)\n- [Where can I learn more about Arcus?](https://help.arcus.xyz/faq/waitlist-faq/learn-more/where-can-i-learn-more-about-arcus.md)\n- [How is spot trading different from trading perpetual futures (perps)?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/how-is-spot-trading-different-from-trading-perpetual-futures-perps.md)\n- [What’s the trading mechanism for spot assets on Arcus?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-s-the-trading-mechanism-for-spot-assets-on-arcus.md)\n- [What can I trade?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-can-i-trade.md)\n- [How is the price set when the US market is closed?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/how-is-the-price-set-when-the-us-market-is-closed.md)\n- [What currency are Stock Tokens priced in?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-currency-are-stock-tokens-priced-in.md)\n- [Do I need crypto to pay network fees (gas fees)?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/do-i-need-crypto-to-pay-network-fees-gas-fees.md)\n- [What fees do I pay when buying or selling a Stock Token?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-fees-do-i-pay-when-buying-or-selling-a-stock-token.md)\n- [Are there any FX fees on Stock Token trades?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/are-there-any-fx-fees-on-stock-token-trades.md)\n- [Who is elgible to trade on Arcus Spot?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/who-can-trade-on-arcus-spot.md)\n- [How is my price set?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/how-is-my-price-set.md)\n- [What is slippage?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/what-is-slippage.md)\n- [Why is slippage higher on some Stock Tokens outside US market hours?](https://help.arcus.xyz/untitled-page.md)\n- [Why does my quote expire?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/why-does-my-quote-expire.md)\n- [Why is the quote different from the price on a stock chart?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/why-is-the-quote-different-from-the-price-on-a-stock-chart.md)\n- [Why might the token price differ from the real stock price?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/why-might-the-token-price-differ-from-the-real-stock-price.md)\n- [What Stock Tokens are available on Arcus?](https://help.arcus.xyz/faq/arcus-spot-faq/what-s-available/what-stock-tokens-are-available-on-arcus.md)\n- [Can I use Stock Tokens as collateral for perp positions?](https://help.arcus.xyz/faq/arcus-spot-faq/what-s-available/can-i-use-stock-tokens-as-collateral-for-perp-positions.md)\n- [What are Stock Tokens?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-are-stock-tokens.md)\n- [How are Stock Tokens different from traditional stocks?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/how-are-stock-tokens-different-from-traditional-stocks.md)\n- [Who issues the Stock Tokens?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/who-issues-the-stock-tokens.md)\n- [Do I own the actual stock?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/do-i-own-the-actual-stock.md)\n- [Can I redeem a Stock Token for the actual share?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/can-i-redeem-a-stock-token-for-the-actual-share.md)\n- [Can I move my Stock Tokens to another wallet?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/can-i-move-my-stock-tokens-to-another-wallet.md)\n- [Do I get dividends?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/do-i-get-dividends.md)\n- [Do I get voting rights?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/do-i-get-voting-rights.md)\n- [What about stock splits?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-about-stock-splits.md)\n- [What happens during a trading halt on the underlying?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-happens-during-a-trading-halt-on-the-underlying.md)\n- [What’s the roadmap for new markets?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-s-the-roadmap-for-new-markets.md)\n- [What does it cost?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/what-does-it-cost.md)\n- [Are there gas fees on Arcus Spot?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/are-there-gas-fees-on-spot-swaps.md)\n- [Are there minimum or maximum trade sizes?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/are-there-minimum-or-maximum-trade-sizes.md)\n- [Can I get a record of my trades?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/can-i-get-a-record-of-my-trades.md)\n- [Do RFQ trades carry the same fee schedule as perps, or a separate spot schedule?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/do-rfq-trades-carry-the-same-fee-schedule-as-perps-or-a-separate-spot-schedule.md)\n- [My trade didn't go through - did I lose money?](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/my-trade-didn-t-go-through-did-i-lose-money.md)\n- [I traded but don't see my token yet.](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/i-traded-but-don-t-see-my-token-yet.md)\n- [I got \"no quotes available.\"](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/i-got-no-quotes-available.md)\n- [The price keeps changing when I refresh.](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/the-price-keeps-changing-when-i-refresh.md)\n- [If the settlement transaction reverts mid-flight, what does the user see?](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/if-the-atomic-settlement-transaction-reverts-mid-flight-what-does-the-user-see-and-is-there-partial-fill-handling-across-makers.md)\n- [What is a perpetual future?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/what-is-a-perpetual-future.md)\n- [What is an Equity Perpetual?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/what-is-an-equity-perpetual.md)\n- [How does an Equity Perp differ from a Stock Token?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/how-does-an-equity-perp-differ-from-a-stock-token.md)\n- [Why trade Equity Perps instead of Stock Tokens?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/why-trade-equity-perps-instead-of-stock-tokens.md)\n- [Can I hedge a Stock Token position with an Equity Perp?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-hedge-a-stock-token-position-with-an-equity-perp.md)\n- [Can I use Stock Tokens as collateral for perp positions?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-use-stock-tokens-as-collateral-for-perp-positions.md)\n- [How do Equity Perps stay aligned with the underlying stock price?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/how-do-equity-perps-stay-aligned-with-the-underlying-stock-price.md)\n- [How is an Equity Perp settled?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/how-is-an-equity-perp-settled.md)\n- [Can I trade Equity Perps when the underlying market is closed?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-trade-equity-perps-when-the-underlying-market-is-closed.md)\n- [Can I test Arcus Perps?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-test-arcus-perps.md)\n- [What perp markets are available at launch?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/what-perp-markets-are-available-at-launch.md)\n- [What's the roadmap for new markets?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/what-s-the-roadmap-for-new-markets.md)\n- [Can the community propose new markets?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/can-the-community-propose-new-markets.md)\n- [What's the leverage on each market?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/what-s-the-leverage-on-each-market.md)\n- [Why does leverage vary by market?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/why-does-leverage-vary-by-market.md)\n- [Why are commodity perps based on ETFs (GLD, SLV, USO) rather than futures?](https://help.arcus.xyz/why-commodity-perps-are-based-on-ETFS-GLD-SLV-USO.md)\n- [What is the funding rate?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/what-is-the-funding-rate.md)\n- [How are funding rates calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/how-are-funding-rates-calculated.md)\n- [How often is funding paid?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/how-often-is-funding-paid.md)\n- [How is funding charged for my position?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/how-is-funding-charged-for-my-position.md)\n- [Where do I see the current funding rate and my funding payments?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/where-do-i-see-the-current-funding-rate-and-my-funding-payments.md)\n- [What is the oracle price?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/what-is-the-oracle-price.md)\n- [What sources are used to provide oracle prices?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/what-sources-are-used-to-provide-oracle-prices.md)\n- [What is the mark price?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/what-is-the-mark-price.md)\n- [Why are the last price and mark price different?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/why-are-the-last-price-and-mark-price-different.md)\n- [What counts as \"outside regular trading hours\" (oRTH)?](https://help.arcus.xyz/what-counts-as-outside-regular-trading-hours-o-rth.md)\n- [What happens during off-market hours, weekends, and holidays?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/what-happens-during-off-market-hours-weekends-and-holidays.md)\n- [How do price bands work in 24/7 trading?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/how-do-price-bands-work-in-24-7-trading.md)\n- [Are Equity Perps halted when the underlying is halted?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/are-equity-perps-halted-when-the-underlying-is-halted.md)\n- [Do corporate actions affect Equity Perps?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/do-corporate-actions-affect-equity-perps.md)\n- [What corporate actions does Arcus handle?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/what-corporate-actions-does-arcus-handle.md)\n- [How do I know when a corporate action affects my position?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/how-do-i-know-when-a-corporate-action-affects-my-position.md)\n- [Can I trade during a corporate action?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/can-i-trade-during-a-corporate-action.md)\n- [During a delisting, can I close my position?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/during-a-delisting-can-i-close-my-position.md)\n- [How do I open and close a position?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/how-do-i-open-and-close-a-position.md)\n- [What order types are supported at launch?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-order-types-are-supported-at-launch.md)\n- [What time-in-force options are supported?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-time-in-force-options-are-supported.md)\n- [What is a reduce-only order?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-is-a-reduce-only-order.md)\n- [Do you support TWAP, trailing stops, or OCO orders?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/do-you-support-twap-trailing-stops-or-oco-orders.md)\n- [How do I modify an order?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/how-do-i-modify-an-order.md)\n- [How do I cancel an order?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/how-do-i-cancel-an-order.md)\n- [Can I cancel all my orders or place orders in bulk?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/can-i-cancel-all-my-orders-or-place-orders-in-bulk.md)\n- [Why didn't my order fill?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/why-didn-t-my-order-fill.md)\n- [Why did my order partially fill?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/why-did-my-order-partially-fill.md)\n- [What's the minimum order size?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-s-the-minimum-order-size.md)\n- [What's the maximum order size?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-s-the-maximum-order-size.md)\n- [Is there an anti-MEV mechanism?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/is-there-an-anti-mev-mechanism.md)\n- [What can I use as collateral for perps?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-can-i-use-as-collateral-for-perps.md)\n- [What's the maximum leverage per market?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-s-the-maximum-leverage-per-market.md)\n- [How do I set or change my leverage on a market?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-do-i-set-or-change-my-leverage-on-a-market.md)\n- [What's the difference between cross and isolated margin?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-s-the-difference-between-cross-and-isolated-margin.md)\n- [What's the default margin mode?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-s-the-default-margin-mode.md)\n- [Can I switch margin modes mid-position?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/can-i-switch-margin-modes-mid-position.md)\n- [What is the initial margin requirement?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-is-the-initial-margin-requirement.md)\n- [What is the maintenance margin?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-is-the-maintenance-margin.md)\n- [How is unrealized PnL calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-is-unrealized-pnl-calculated.md)\n- [How is PnL calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-is-pnl-calculated.md)\n- [How are positions netted?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-are-positions-netted.md)\n- [Can I hold both long and short on the same market (hedge mode)?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/can-i-hold-both-long-and-short-on-the-same-market-hedge-mode.md)\n- [Can I use sub-accounts?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/can-i-use-sub-accounts.md)\n- [What is Multi-Asset Collateral](https://help.arcus.xyz/what-is-multi-asset-collateral.md)\n- [Who has access to Multi-Asset Collateral?](https://help.arcus.xyz/who-has-access-to-multi-asset-collateral.md)\n- [Where can I find the feature?](https://help.arcus.xyz/where-can-i-find-the-feature.md)\n- [Which assets are eligible as collateral, and what are the LTVs?](https://help.arcus.xyz/which-assets-are-eligible-as-collateral-and-what-are-the-ltvs.md)\n- [How does the collateral loan work? Do I need to manage it?](https://help.arcus.xyz/how-does-the-collateral-loan-work-do-i-need-to-manage-it.md)\n- [What's the interest rate, and when does it accrue?](https://help.arcus.xyz/whats-the-interest-rate-and-when-does-it-accrue.md)\n- [What do \"LTV,\" \"utilization,\" and \"maintenance threshold\" in the Margin window mean?](https://help.arcus.xyz/what-do-ltv-utilization-and-maintenance-threshold-in-the-margin-window-mean.md)\n- [Can I be liquidated when using Multi-Asset Collateral?](https://help.arcus.xyz/can-i-be-liquidated-when-using-multi-asset-collateral.md)\n- [Are there limits on Multi-Asset Collateral deposits?](https://help.arcus.xyz/are-there-limits-on-multi-asset-collateral-deposits.md)\n- [Why is my deposit being rejected / why can't I deposit more?](https://help.arcus.xyz/why-is-my-deposit-being-rejected-why-cant-i-deposit-more.md)\n- [Does my Stock Token position still exist while it's being used as collateral?](https://help.arcus.xyz/does-my-stock-token-position-still-exist-while-its-being-used-as-collateral.md)\n- [Do Stock Tokens used as collateral still earn points / count for anything?](https://help.arcus.xyz/do-stock-tokens-used-as-collateral-still-earn-points-count-for-anything.md)\n- [What is liquidation?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-is-liquidation.md)\n- [How does liquidation work?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-does-liquidation-work.md)\n- [How is my liquidation price calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-is-my-liquidation-price-calculated.md)\n- [What happens after I'm liquidated?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-happens-after-i-m-liquidated.md)\n- [Are there partial liquidations?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/are-there-partial-liquidations.md)\n- [What is auto-deleveraging (ADL)?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-is-auto-deleveraging-adl.md)\n- [How are ADL counterparties chosen?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-are-adl-counterparties-chosen.md)\n- [How is ADL triggered?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-is-adl-triggered.md)\n- [What is the insurance fund?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-is-the-insurance-fund.md)\n- [How is the insurance fund capitalized?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-is-the-insurance-fund-capitalized.md)\n- [What if the insurance fund is depleted?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-if-the-insurance-fund-is-depleted.md)\n- [Are there socialized losses?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/are-there-socialized-losses.md)\n- [Is there a liquidation fee?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/is-there-a-liquidation-fee.md)\n- [I think my liquidation was wrong - how do I dispute it?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/i-think-my-liquidation-was-wrong-how-do-i-dispute-it.md)\n- [What are the perp fee tiers?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/what-are-the-perp-fee-tiers.md)\n- [What are maker fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/what-are-maker-fees.md)\n- [What are taker fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/what-are-taker-fees.md)\n- [What are the current beta fee discounts?](https://help.arcus.xyz/untitled-page-2.md)\n- [How do I qualify for lower fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/how-do-i-qualify-for-lower-fees.md)\n- [Are there maker rebates?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-maker-rebates.md)\n- [How are rebates paid - instantly or in epochs/periodic?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/how-are-rebates-paid-instantly-or-in-epochs-periodic.md)\n- [Can volume be aggregated across sub-accounts for fee tiers?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/can-volume-be-aggregated-across-sub-accounts-for-fee-tiers.md)\n- [Are there gas fees on every action?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-gas-fees-on-every-action.md)\n- [Are there bridge fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-bridge-fees.md)\n- [Do I pay funding on top of trading fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/do-i-pay-funding-on-top-of-trading-fees.md)\n- [Are there hidden fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-hidden-fees.md)\n- [Where can I see the full fee schedule?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/where-can-i-see-the-full-fee-schedule.md)\n- [Where can I learn more on API perps trading?](https://help.arcus.xyz/where-can-i-learn-more-on-api-perps-trading.md)\n- [Can I test Arcus Perps](https://help.arcus.xyz/can-i-test-arcus-perps.md)\n- [What is the Referrals Program?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/overview/what-is-the-referrals-program.md)\n- [How do I get a referral code?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/how-do-i-get-a-referral-code.md): Go to Rewards → Referrals and select Create Ref Code to create your code.\n- [What can my code be?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/what-can-my-code-be.md)\n- [Can I rename my code or have more than one?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/can-i-rename-my-code-or-have-more-than-one.md)\n- [Can I turn my code off?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/can-i-turn-my-code-off.md)\n- [How do I use a referral code?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/how-do-i-use-a-referral-code.md)\n- [Is there a deadline to add a code?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/is-there-a-deadline-to-add-a-code.md)\n- [Can I change or remove my referrer later?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/can-i-change-or-remove-my-referrer-later.md)\n- [Can I refer myself?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/can-i-refer-myself.md)\n- [Where can I see who referred me?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/where-can-i-see-who-referred-me.md)\n- [How are referral fees earned?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/referral-structure/how-are-referral-fees-earned.md)\n- [How much do referrers earn per level?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/referral-structure/how-much-do-referrers-earn-per-level.md)\n- [How do I track my earnings?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/referral-structure/how-do-i-track-my-earnings.md)\n- [Fee tiers are separate from referrals and apply to every trader](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/fee-tiers-your-own-trading-fees/fee-tiers-are-separate-from-referrals-and-apply-to-every-trader.md)\n- [How are my fees set?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/fee-tiers-your-own-trading-fees/how-are-my-fees-set.md)\n- [What are the rebates at the top tiers?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/fee-tiers-your-own-trading-fees/what-are-the-rebates-at-the-top-tiers.md)\n- [How do I claim referral rewards?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-paid/how-do-i-claim-referral-rewards.md)\n- [Is there a minimum to claim?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-paid/is-there-a-minimum-to-claim.md)",
+     "changed": 1795544336,
+     "hash": "44156088e361fcb8",
+     "text": "# Arcus Help Center\n\n- [Arcus Help Center](https://help.arcus.xyz/index.md): Answers to common questions about trading on Arcus.\n- [What is Arcus?](https://help.arcus.xyz/faq/general-faq/general/what-is-arcus.md)\n- [Who is Arcus designed for?](https://help.arcus.xyz/faq/general-faq/general/who-is-arcus-designed-for.md)\n- [How is Arcus different from a CEX? ](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-a-cex.md)\n- [How is Arcus different from other DEXes?](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-other-dexes.md)\n- [Does Arcus have a token? ](https://help.arcus.xyz/faq/general-faq/general/does-arcus-have-a-token.md)\n- [How is Arcus different from CFD (contract for difference) platforms? ](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-cfd-contract-for-difference-platforms.md)\n- [How is Arcus different from tokenized stock issuers (Backed, Ondo, Swarm)? ](https://help.arcus.xyz/faq/general-faq/general/how-is-arcus-different-from-tokenized-stock-issuers-backed-ondo-swarm.md)\n- [What can I trade on Arcus?](https://help.arcus.xyz/faq/general-faq/markets/what-can-i-trade-on-arcus.md)\n- [Which assets launch first?](https://help.arcus.xyz/faq/general-faq/markets/which-assets-launch-first.md)\n- [Are markets truly 24/7?](https://help.arcus.xyz/faq/general-faq/markets/are-markets-truly-24-7.md)\n- [What collateral is supported?](https://help.arcus.xyz/faq/general-faq/markets/what-collateral-is-supported.md)\n- [What's the maximum leverage?](https://help.arcus.xyz/faq/general-faq/markets/what-s-the-maximum-leverage.md)\n- [How is liquidity sourced at launch?](https://help.arcus.xyz/faq/general-faq/markets/how-is-liquidity-sourced-at-launch.md)\n- [How is Arcus built?](https://help.arcus.xyz/faq/general-faq/self-custody-security/how-is-arcus-built.md)\n- [Is Arcus non-custodial?](https://help.arcus.xyz/faq/general-faq/self-custody-security/is-arcus-non-custodial.md)\n- [Have the smart contracts been audited?](https://help.arcus.xyz/faq/general-faq/self-custody-security/have-the-smart-contracts-been-audited.md)\n- [Where do my funds and positions actually live?](https://help.arcus.xyz/faq/general-faq/self-custody-security/where-do-my-funds-and-positions-actually-live.md)\n- [Can Arcus or Robinhood Chain freeze or seize my Stock Tokens?](https://help.arcus.xyz/faq/general-faq/self-custody-security/can-arcus-or-robinhood-chain-freeze-or-seize-my-stock-tokens.md)\n- [Are my Stock Tokens really backed?](https://help.arcus.xyz/faq/general-faq/self-custody-security/are-my-stock-tokens-really-backed.md)\n- [Is There Proof of Reserves?](https://help.arcus.xyz/faq/general-faq/self-custody-security/is-there-proof-of-reserves.md)\n- [What is the Robinhood partnership? ](https://help.arcus.xyz/faq/general-faq/the-robinhood-partnership/what-is-robinhood-s-role.md)\n- [Is Arcus owned by Robinhood?](https://help.arcus.xyz/faq/general-faq/the-robinhood-partnership/is-arcus-owned-by-robinhood.md)\n- [Why Robinhood Chain?](https://help.arcus.xyz/faq/general-faq/the-robinhood-partnership/why-robinhood-chain.md)\n- [What are the trading fees?](https://help.arcus.xyz/faq/general-faq/fees/what-are-the-trading-fees.md)\n- [Is there an API?](https://help.arcus.xyz/faq/general-faq/platform-technology/is-there-an-api.md)\n- [Will there be a mobile app?](https://help.arcus.xyz/faq/general-faq/platform-technology/will-there-be-a-mobile-app.md)\n- [Where can I follow Arcus updates?](https://help.arcus.xyz/faq/general-faq/platform-technology/where-can-i-follow-arcus-updates.md)\n- [Am I eligible?](https://help.arcus.xyz/faq/onboarding-faq/access-eligibility/am-i-eligible.md)\n- [When does access begin?](https://help.arcus.xyz/faq/onboarding-faq/access-eligibility/when-does-access-begin.md)\n- [How do I get an invite code?](https://help.arcus.xyz/faq/onboarding-faq/access-eligibility/how-do-i-get-an-invite-code.md)\n- [What wallets are supported?](https://help.arcus.xyz/faq/onboarding-faq/sign-in-wallets/what-wallets-are-supported.md)\n- [What do I need to start?](https://help.arcus.xyz/faq/onboarding-faq/getting-started/what-do-i-need-to-start.md)\n- [Why was I asked to sign twice on my first trade? ](https://help.arcus.xyz/faq/onboarding-faq/getting-started/why-was-i-asked-to-sign-twice-on-my-first-trade-spot-trading-with-a-self-custodial-wallet.md)\n- [How to onboard and fund a testnet wallet](https://help.arcus.xyz/faq/onboarding-faq/how-to-onboard-and-fund-a-testnet-wallet.md)\n- [How do I deposit funds?](https://help.arcus.xyz/faq/onboarding-faq/deposits/how-do-i-deposit-funds.md)\n- [What can I deposit from, and how does it work?](https://help.arcus.xyz/faq/onboarding-faq/deposits/what-can-i-deposit-from-and-how-does-it-work.md)\n- [What are the fees to deposit with fiat?](https://help.arcus.xyz/faq/onboarding-faq/deposits/what-are-the-fees-to-deposit-with-fiat.md)\n- [Are there FX fees when I fund my account?](https://help.arcus.xyz/faq/onboarding-faq/deposits/are-there-fx-fees-when-i-fund-my-account.md)\n- [Can I fund my account in my local currency (e.g. EUR)?](https://help.arcus.xyz/faq/onboarding-faq/deposits/can-i-fund-my-account-in-my-local-currency-e-g-eur.md)\n- [How long do deposits take?](https://help.arcus.xyz/faq/onboarding-faq/deposits/how-long-do-deposits-take.md)\n- [Are there bridging fees?](https://help.arcus.xyz/faq/onboarding-faq/deposits/are-there-bridging-fees.md)\n- [How do I withdraw?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/how-do-i-withdraw.md)\n- [How long do withdrawals take?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/how-long-do-withdrawals-take.md)\n- [What's the minimum withdrawal?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/what-s-the-minimum-withdrawal.md)\n- [What's the maximum withdrawal?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/what-s-the-maximum-withdrawal.md)\n- [Can I cancel a pending withdrawal?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/can-i-cancel-a-pending-withdrawal.md)\n- [Why did my withdrawal fail?](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/why-did-my-withdrawal-fail.md)\n- [Troubleshooting Deposits & Withdrawals](https://help.arcus.xyz/faq/onboarding-faq/withdrawals/troubleshooting-deposits-withdrawals.md)\n- [What does the waitlist gate?](https://help.arcus.xyz/faq/waitlist-faq/overview/what-does-the-waitlist-gate.md)\n- [When does Arcus launch?](https://help.arcus.xyz/faq/waitlist-faq/overview/when-does-arcus-launch.md)\n- [What do I need to join?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/what-do-i-need-to-join.md)\n- [How is my waitlist position determined?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/how-is-my-waitlist-position-determined.md)\n- [How do I move up the queue?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/how-do-i-move-up-the-queue.md)\n- [What do I get for referring other traders?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/what-do-i-get-for-referring-other-traders.md)\n- [What wallets can I use to join?](https://help.arcus.xyz/faq/waitlist-faq/joining-the-waitlist/what-wallets-can-i-use-to-join.md)\n- [When will I get access?](https://help.arcus.xyz/faq/waitlist-faq/access-notification/when-will-i-get-access.md)\n- [How will I know I'm in?](https://help.arcus.xyz/faq/waitlist-faq/access-notification/how-will-i-know-i-m-in.md)\n- [What happens to my waitlist position if I don't act when I'm notified?](https://help.arcus.xyz/faq/waitlist-faq/access-notification/what-happens-to-my-waitlist-position-if-i-don-t-act-when-i-m-notified.md)\n- [What do I get as an early access user?](https://help.arcus.xyz/faq/waitlist-faq/what-early-access-includes/what-do-i-get-as-an-early-access-user.md)\n- [Am I eligible?](https://help.arcus.xyz/faq/waitlist-faq/eligibility-restrictions/am-i-eligible.md)\n- [I'm on the waitlist but live in a restricted region - what happens?](https://help.arcus.xyz/faq/waitlist-faq/eligibility-restrictions/i-m-on-the-waitlist-but-live-in-a-restricted-region-what-happens.md)\n- [Where can I learn more about Arcus?](https://help.arcus.xyz/faq/waitlist-faq/learn-more/where-can-i-learn-more-about-arcus.md)\n- [How is spot trading different from trading perpetual futures (perps)?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/how-is-spot-trading-different-from-trading-perpetual-futures-perps.md)\n- [What’s the trading mechanism for spot assets on Arcus?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-s-the-trading-mechanism-for-spot-assets-on-arcus.md)\n- [What can I trade?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-can-i-trade.md)\n- [How is the price set when the US market is closed?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/how-is-the-price-set-when-the-us-market-is-closed.md)\n- [What currency are Stock Tokens priced in?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-currency-are-stock-tokens-priced-in.md)\n- [Do I need crypto to pay network fees (gas fees)?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/do-i-need-crypto-to-pay-network-fees-gas-fees.md)\n- [What fees do I pay when buying or selling a Stock Token?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/what-fees-do-i-pay-when-buying-or-selling-a-stock-token.md)\n- [Are there any FX fees on Stock Token trades?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/are-there-any-fx-fees-on-stock-token-trades.md)\n- [Who is elgible to trade on Arcus Spot?](https://help.arcus.xyz/faq/arcus-spot-faq/the-basics/who-can-trade-on-arcus-spot.md)\n- [How is my price set?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/how-is-my-price-set.md)\n- [What is slippage?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/what-is-slippage.md)\n- [Why is slippage higher on some Stock Tokens outside US market hours?](https://help.arcus.xyz/untitled-page.md)\n- [Why does my quote expire?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/why-does-my-quote-expire.md)\n- [Why is the quote different from the price on a stock chart?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/why-is-the-quote-different-from-the-price-on-a-stock-chart.md)\n- [Why might the token price differ from the real stock price?](https://help.arcus.xyz/faq/arcus-spot-faq/prices-quotes/why-might-the-token-price-differ-from-the-real-stock-price.md)\n- [What Stock Tokens are available on Arcus?](https://help.arcus.xyz/faq/arcus-spot-faq/what-s-available/what-stock-tokens-are-available-on-arcus.md)\n- [Can I use Stock Tokens as collateral for perp positions?](https://help.arcus.xyz/faq/arcus-spot-faq/what-s-available/can-i-use-stock-tokens-as-collateral-for-perp-positions.md)\n- [What are Stock Tokens?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-are-stock-tokens.md)\n- [How are Stock Tokens different from traditional stocks?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/how-are-stock-tokens-different-from-traditional-stocks.md)\n- [Who issues the Stock Tokens?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/who-issues-the-stock-tokens.md)\n- [Do I own the actual stock?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/do-i-own-the-actual-stock.md)\n- [Can I redeem a Stock Token for the actual share?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/can-i-redeem-a-stock-token-for-the-actual-share.md)\n- [Can I move my Stock Tokens to another wallet?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/can-i-move-my-stock-tokens-to-another-wallet.md)\n- [Do I get dividends?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/do-i-get-dividends.md)\n- [Do I get voting rights?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/do-i-get-voting-rights.md)\n- [What about stock splits?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-about-stock-splits.md)\n- [What happens during a trading halt on the underlying?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-happens-during-a-trading-halt-on-the-underlying.md)\n- [What’s the roadmap for new markets?](https://help.arcus.xyz/faq/arcus-spot-faq/stock-tokens/what-s-the-roadmap-for-new-markets.md)\n- [What does it cost?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/what-does-it-cost.md)\n- [Are there gas fees on Arcus Spot?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/are-there-gas-fees-on-spot-swaps.md)\n- [Are there minimum or maximum trade sizes?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/are-there-minimum-or-maximum-trade-sizes.md)\n- [Can I get a record of my trades?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/can-i-get-a-record-of-my-trades.md)\n- [Do RFQ trades carry the same fee schedule as perps, or a separate spot schedule?](https://help.arcus.xyz/faq/arcus-spot-faq/fees-limits-records/do-rfq-trades-carry-the-same-fee-schedule-as-perps-or-a-separate-spot-schedule.md)\n- [My trade didn't go through - did I lose money?](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/my-trade-didn-t-go-through-did-i-lose-money.md)\n- [I traded but don't see my token yet.](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/i-traded-but-don-t-see-my-token-yet.md)\n- [I got \"no quotes available.\"](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/i-got-no-quotes-available.md)\n- [The price keeps changing when I refresh.](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/the-price-keeps-changing-when-i-refresh.md)\n- [If the settlement transaction reverts mid-flight, what does the user see?](https://help.arcus.xyz/faq/arcus-spot-faq/if-something-goes-wrong/if-the-atomic-settlement-transaction-reverts-mid-flight-what-does-the-user-see-and-is-there-partial-fill-handling-across-makers.md)\n- [What is a perpetual future?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/what-is-a-perpetual-future.md)\n- [What is an Equity Perpetual?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/what-is-an-equity-perpetual.md)\n- [How does an Equity Perp differ from a Stock Token?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/how-does-an-equity-perp-differ-from-a-stock-token.md)\n- [Why trade Equity Perps instead of Stock Tokens?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/why-trade-equity-perps-instead-of-stock-tokens.md)\n- [Can I hedge a Stock Token position with an Equity Perp?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-hedge-a-stock-token-position-with-an-equity-perp.md)\n- [Can I use Stock Tokens as collateral for perp positions?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-use-stock-tokens-as-collateral-for-perp-positions.md)\n- [How do Equity Perps stay aligned with the underlying stock price?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/how-do-equity-perps-stay-aligned-with-the-underlying-stock-price.md)\n- [How is an Equity Perp settled?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/how-is-an-equity-perp-settled.md)\n- [Can I trade Equity Perps when the underlying market is closed?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-trade-equity-perps-when-the-underlying-market-is-closed.md)\n- [Can I test Arcus Perps?](https://help.arcus.xyz/faq/arcus-perps-faq/the-basics/can-i-test-arcus-perps.md)\n- [What perp markets are available at launch?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/what-perp-markets-are-available-at-launch.md)\n- [What's the roadmap for new markets?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/what-s-the-roadmap-for-new-markets.md)\n- [Can the community propose new markets?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/can-the-community-propose-new-markets.md)\n- [What's the leverage on each market?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/what-s-the-leverage-on-each-market.md)\n- [Why does leverage vary by market?](https://help.arcus.xyz/faq/arcus-perps-faq/markets/why-does-leverage-vary-by-market.md)\n- [Why are commodity perps based on ETFs (GLD, SLV, USO) rather than futures?](https://help.arcus.xyz/why-commodity-perps-are-based-on-ETFS-GLD-SLV-USO.md)\n- [What is the funding rate?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/what-is-the-funding-rate.md)\n- [How are funding rates calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/how-are-funding-rates-calculated.md)\n- [How often is funding paid?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/how-often-is-funding-paid.md)\n- [How is funding charged for my position?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/how-is-funding-charged-for-my-position.md)\n- [Where do I see the current funding rate and my funding payments?](https://help.arcus.xyz/faq/arcus-perps-faq/funding/where-do-i-see-the-current-funding-rate-and-my-funding-payments.md)\n- [What is the oracle price?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/what-is-the-oracle-price.md)\n- [What sources are used to provide oracle prices?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/what-sources-are-used-to-provide-oracle-prices.md)\n- [What is the mark price?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/what-is-the-mark-price.md)\n- [Why are the last price and mark price different?](https://help.arcus.xyz/faq/arcus-perps-faq/oracle-index-mark-price/why-are-the-last-price-and-mark-price-different.md)\n- [What counts as \"outside regular trading hours\" (oRTH)?](https://help.arcus.xyz/what-counts-as-outside-regular-trading-hours-o-rth.md)\n- [What happens during off-market hours, weekends, and holidays?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/what-happens-during-off-market-hours-weekends-and-holidays.md)\n- [How do price bands work in 24/7 trading?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/how-do-price-bands-work-in-24-7-trading.md)\n- [Are Equity Perps halted when the underlying is halted?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/are-equity-perps-halted-when-the-underlying-is-halted.md)\n- [Do corporate actions affect Equity Perps?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/do-corporate-actions-affect-equity-perps.md)\n- [What corporate actions does Arcus handle?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/what-corporate-actions-does-arcus-handle.md)\n- [How do I know when a corporate action affects my position?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/how-do-i-know-when-a-corporate-action-affects-my-position.md)\n- [Can I trade during a corporate action?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/can-i-trade-during-a-corporate-action.md)\n- [During a delisting, can I close my position?](https://help.arcus.xyz/faq/arcus-perps-faq/off-hours-24-7-trading/during-a-delisting-can-i-close-my-position.md)\n- [How do I open and close a position?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/how-do-i-open-and-close-a-position.md)\n- [What order types are supported at launch?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-order-types-are-supported-at-launch.md)\n- [What time-in-force options are supported?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-time-in-force-options-are-supported.md)\n- [What is a reduce-only order?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-is-a-reduce-only-order.md)\n- [Do you support TWAP, trailing stops, or OCO orders?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/do-you-support-twap-trailing-stops-or-oco-orders.md)\n- [How do I modify an order?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/how-do-i-modify-an-order.md)\n- [How do I cancel an order?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/how-do-i-cancel-an-order.md)\n- [Can I cancel all my orders or place orders in bulk?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/can-i-cancel-all-my-orders-or-place-orders-in-bulk.md)\n- [Why didn't my order fill?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/why-didn-t-my-order-fill.md)\n- [Why did my order partially fill?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/why-did-my-order-partially-fill.md)\n- [What's the minimum order size?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-s-the-minimum-order-size.md)\n- [What's the maximum order size?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/what-s-the-maximum-order-size.md)\n- [Is there an anti-MEV mechanism?](https://help.arcus.xyz/faq/arcus-perps-faq/order-types-execution/is-there-an-anti-mev-mechanism.md)\n- [What can I use as collateral for perps?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-can-i-use-as-collateral-for-perps.md)\n- [What's the maximum leverage per market?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-s-the-maximum-leverage-per-market.md)\n- [How do I set or change my leverage on a market?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-do-i-set-or-change-my-leverage-on-a-market.md)\n- [What's the difference between cross and isolated margin?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-s-the-difference-between-cross-and-isolated-margin.md)\n- [What's the default margin mode?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-s-the-default-margin-mode.md)\n- [Can I switch margin modes mid-position?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/can-i-switch-margin-modes-mid-position.md)\n- [What is the initial margin requirement?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-is-the-initial-margin-requirement.md)\n- [What is the maintenance margin?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/what-is-the-maintenance-margin.md)\n- [How is unrealized PnL calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-is-unrealized-pnl-calculated.md)\n- [How is PnL calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-is-pnl-calculated.md)\n- [Is funding included in realized PnL?](https://help.arcus.xyz/is-funding-included-in-realized-pn-l.md)\n- [How are positions netted?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/how-are-positions-netted.md)\n- [Can I hold both long and short on the same market (hedge mode)?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/can-i-hold-both-long-and-short-on-the-same-market-hedge-mode.md)\n- [Can I use sub-accounts?](https://help.arcus.xyz/faq/arcus-perps-faq/margin-leverage-positions/can-i-use-sub-accounts.md)\n- [What is Multi-Asset Collateral](https://help.arcus.xyz/what-is-multi-asset-collateral.md)\n- [Who has access to Multi-Asset Collateral?](https://help.arcus.xyz/who-has-access-to-multi-asset-collateral.md)\n- [Where can I find the feature?](https://help.arcus.xyz/where-can-i-find-the-feature.md)\n- [Which assets are eligible as collateral, and what are the LTVs?](https://help.arcus.xyz/which-assets-are-eligible-as-collateral-and-what-are-the-ltvs.md)\n- [How does the collateral loan work? Do I need to manage it?](https://help.arcus.xyz/how-does-the-collateral-loan-work-do-i-need-to-manage-it.md)\n- [What's the interest rate, and when does it accrue?](https://help.arcus.xyz/whats-the-interest-rate-and-when-does-it-accrue.md)\n- [What do \"LTV,\" \"utilization,\" and \"maintenance threshold\" in the Margin window mean?](https://help.arcus.xyz/what-do-ltv-utilization-and-maintenance-threshold-in-the-margin-window-mean.md)\n- [Can I be liquidated when using Multi-Asset Collateral?](https://help.arcus.xyz/can-i-be-liquidated-when-using-multi-asset-collateral.md)\n- [Are there limits on Multi-Asset Collateral deposits?](https://help.arcus.xyz/are-there-limits-on-multi-asset-collateral-deposits.md)\n- [Why is my deposit being rejected / why can't I deposit more?](https://help.arcus.xyz/why-is-my-deposit-being-rejected-why-cant-i-deposit-more.md)\n- [Does my Stock Token position still exist while it's being used as collateral?](https://help.arcus.xyz/does-my-stock-token-position-still-exist-while-its-being-used-as-collateral.md)\n- [Do Stock Tokens used as collateral still earn points / count for anything?](https://help.arcus.xyz/do-stock-tokens-used-as-collateral-still-earn-points-count-for-anything.md)\n- [What is liquidation?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-is-liquidation.md)\n- [How does liquidation work?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-does-liquidation-work.md)\n- [How is my liquidation price calculated?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-is-my-liquidation-price-calculated.md)\n- [What happens after I'm liquidated?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-happens-after-i-m-liquidated.md)\n- [Are there partial liquidations?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/are-there-partial-liquidations.md)\n- [What is auto-deleveraging (ADL)?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-is-auto-deleveraging-adl.md)\n- [How are ADL counterparties chosen?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-are-adl-counterparties-chosen.md)\n- [How is ADL triggered?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-is-adl-triggered.md)\n- [What is the insurance fund?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-is-the-insurance-fund.md)\n- [How is the insurance fund capitalized?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/how-is-the-insurance-fund-capitalized.md)\n- [What if the insurance fund is depleted?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/what-if-the-insurance-fund-is-depleted.md)\n- [Are there socialized losses?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/are-there-socialized-losses.md)\n- [Is there a liquidation fee?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/is-there-a-liquidation-fee.md)\n- [I think my liquidation was wrong - how do I dispute it?](https://help.arcus.xyz/faq/arcus-perps-faq/risk-liquidations/i-think-my-liquidation-was-wrong-how-do-i-dispute-it.md)\n- [What are the perp fee tiers?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/what-are-the-perp-fee-tiers.md)\n- [What are maker fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/what-are-maker-fees.md)\n- [What are taker fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/what-are-taker-fees.md)\n- [What are the current beta fee discounts?](https://help.arcus.xyz/untitled-page-2.md)\n- [How do I qualify for lower fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/how-do-i-qualify-for-lower-fees.md)\n- [Are there maker rebates?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-maker-rebates.md)\n- [How are rebates paid - instantly or in epochs/periodic?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/how-are-rebates-paid-instantly-or-in-epochs-periodic.md)\n- [Can volume be aggregated across sub-accounts for fee tiers?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/can-volume-be-aggregated-across-sub-accounts-for-fee-tiers.md)\n- [Are there gas fees on every action?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-gas-fees-on-every-action.md)\n- [Are there bridge fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-bridge-fees.md)\n- [Do I pay funding on top of trading fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/do-i-pay-funding-on-top-of-trading-fees.md)\n- [Are there hidden fees?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/are-there-hidden-fees.md)\n- [Where can I see the full fee schedule?](https://help.arcus.xyz/faq/arcus-perps-faq/fees/where-can-i-see-the-full-fee-schedule.md)\n- [Where can I learn more on API perps trading?](https://help.arcus.xyz/where-can-i-learn-more-on-api-perps-trading.md)\n- [Can I test Arcus Perps](https://help.arcus.xyz/can-i-test-arcus-perps.md)\n- [What is the Vaults page?](https://help.arcus.xyz/what-is-the-vaults-page.md)\n- [What are Variable Rate Markets?](https://help.arcus.xyz/what-are-variable-rate-markets.md)\n- [Who holds my collateral and deposits?](https://help.arcus.xyz/who-holds-my-collateral-and-deposits.md)\n- [Is this the same as Multi-Asset Collateral?](https://help.arcus.xyz/is-this-the-same-as-multi-asset-collateral.md)\n- [Do I need ETH?](https://help.arcus.xyz/do-i-need-eth.md)\n- [Which Stock Tokens can I borrow against?](https://help.arcus.xyz/which-stock-tokens-can-i-borrow-against.md)\n- [How much can I borrow?](https://help.arcus.xyz/how-much-can-i-borrow.md)\n- [What does borrowing cost?](https://help.arcus.xyz/what-does-borrowing-cost.md)\n- [How do I monitor my position?](https://help.arcus.xyz/how-do-i-monitor-my-position.md)\n- [Can I be liquidated?](https://help.arcus.xyz/can-i-be-liquidated.md)\n- [How do I repay and get my collateral back?](https://help.arcus.xyz/how-do-i-repay-and-get-my-collateral-back.md)\n- [Why did the available amount drop before I confirmed?](https://help.arcus.xyz/why-did-the-available-amount-drop-before-i-confirmed.md)\n- [Can I supply USDG through Arcus?](https://help.arcus.xyz/can-i-supply-usdg-through-arcus.md)\n- [What do I earn?](https://help.arcus.xyz/what-do-i-earn.md)\n- [Can I withdraw anytime?](https://help.arcus.xyz/can-i-withdraw-anytime.md)\n- [Is it like a savings account?](https://help.arcus.xyz/is-it-like-a-savings-account.md)\n- [Can I still repay if my region is restricted?](https://help.arcus.xyz/can-i-still-repay-if-my-region-is-restricted.md)\n- [What is the Referrals Program?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/overview/what-is-the-referrals-program.md)\n- [How do I get a referral code?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/how-do-i-get-a-referral-code.md): Go to Rewards → Referrals and select Create Ref Code to create your code.\n- [What can my code be?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/what-can-my-code-be.md)\n- [Can I rename my code or have more than one?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/can-i-rename-my-code-or-have-more-than-one.md)\n- [Can I turn my code off?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-a-referral-code-affiliates/can-i-turn-my-code-off.md)\n- [How do I use a referral code?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/how-do-i-use-a-referral-code.md)\n- [Is there a deadline to add a code?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/is-there-a-deadline-to-add-a-code.md)\n- [Can I change or remove my referrer later?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/can-i-change-or-remove-my-referrer-later.md)\n- [Can I refer myself?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/can-i-refer-myself.md)\n- [Where can I see who referred me?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/joining-with-a-code-referees/where-can-i-see-who-referred-me.md)\n- [How are referral fees earned?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/referral-structure/how-are-referral-fees-earned.md)\n- [How much do referrers earn per level?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/referral-structure/how-much-do-referrers-earn-per-level.md)\n- [How do I track my earnings?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/referral-structure/how-do-i-track-my-earnings.md)\n- [Fee tiers are separate from referrals and apply to every trader](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/fee-tiers-your-own-trading-fees/fee-tiers-are-separate-from-referrals-and-apply-to-every-trader.md)\n- [How are my fees set?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/fee-tiers-your-own-trading-fees/how-are-my-fees-set.md)\n- [What are the rebates at the top tiers?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/fee-tiers-your-own-trading-fees/what-are-the-rebates-at-the-top-tiers.md)\n- [How do I claim referral rewards?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-paid/how-do-i-claim-referral-rewards.md)\n- [Is there a minimum to claim?](https://help.arcus.xyz/faq/referrals-fee-tiers-faq/getting-paid/is-there-a-minimum-to-claim.md)",
      "url": "https://help.arcus.xyz/llms.txt"
     }
    },
@@ -324,6 +324,36 @@
      "title": "Arcus 공식 텔레그램: Multi-Asset Collateral unlocks the basis trade on Arcus. Hold a token, short its perp, collect funding when it’s positiv",
      "ts": 1794260950,
      "venue": "arcus"
+    },
+    {
+     "detail": "Is funding included in realized PnL?, What is the Vaults page?, What are Variable Rate Markets?",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "b6df79553c38",
+     "ref": {
+      "moved": [],
+      "name": "도움말 전체 목록",
+      "new": [
+       "Is funding included in realized PnL? — https://help.arcus.xyz/is-funding-included-in-realized-pn-l.md",
+       "What is the Vaults page? — https://help.arcus.xyz/what-is-the-vaults-page.md",
+       "What are Variable Rate Markets? — https://help.arcus.xyz/what-are-variable-rate-markets.md",
+       "Who holds my collateral and deposits? — https://help.arcus.xyz/who-holds-my-collateral-and-deposits.md",
+       "Is this the same as Multi-Asset Collateral? — https://help.arcus.xyz/is-this-the-same-as-multi-asset-collateral.md",
+       "Do I need ETH? — https://help.arcus.xyz/do-i-need-eth.md",
+       "Which Stock Tokens can I borrow against? — https://help.arcus.xyz/which-stock-tokens-can-i-borrow-against.md",
+       "How much can I borrow? — https://help.arcus.xyz/how-much-can-i-borrow.md",
+       "What does borrowing cost? — https://help.arcus.xyz/what-does-borrowing-cost.md",
+       "How do I monitor my position? — https://help.arcus.xyz/how-do-i-monitor-my-position.md"
+      ],
+      "removed": [],
+      "url": "https://help.arcus.xyz/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 18개",
+     "ts": 1795544336,
+     "venue": "arcus"
     }
    ],
    "frontend": null,
@@ -331,7 +361,7 @@
    "js": null,
    "large_hist": [],
    "lb_hist": [],
-   "level": "NONE",
+   "level": "WATCH",
    "news_seen": [
     "00b1be05fd19",
     "01ecea61dd4a",
@@ -374,6 +404,7 @@
     "7169dd2b54ff",
     "737e4963c781",
     "7517ac17a0dc",
+    "7b56a20b0674",
     "8029fbe126e4",
     "822346ebbbbf",
     "82b632a99920",
@@ -469,7 +500,8 @@
      "a00b1308a332",
      "29fabab52750",
      "e35cd71c2f8a",
-     "6ffc40ad1083"
+     "6ffc40ad1083",
+     "81325277fd70"
     ],
     "telegram": [
      "0d5fc7c616da",
@@ -529,7 +561,8 @@
      "997618347159",
      "58f88545fddb",
      "1881e99de4da",
-     "fc85de53c750"
+     "fc85de53c750",
+     "0cf0ab071724"
     ],
     "x:arcus_xyz": [
      "7e39c42d9fa8",
@@ -634,43 +667,44 @@
      "7597cc1a995d",
      "adfcf71c208c",
      "b81e70b67e40",
-     "5555806701fc"
+     "5555806701fc",
+     "16fce1343a16"
     ]
    },
    "status": {
     "api": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795523902,
-     "note": "26건",
+     "at": 1795544336,
+     "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "20건",
+     "at": 1795544336,
+     "note": "22건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795523902,
-     "note": "19건",
+     "at": 1795544336,
+     "note": "20건",
      "ok": true
     }
    }
@@ -2083,6 +2117,10 @@
      [
       1795523902,
       82.0
+     ],
+     [
+      1795544336,
+      80.0
      ]
     ],
     "extended-fdv-above-150m-one-day-after-launch-452": [
@@ -2577,6 +2615,10 @@
      [
       1795509500,
       55.5
+     ],
+     [
+      1795544336,
+      54.5
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
@@ -2934,6 +2976,10 @@
      ],
      [
       1795516702,
+      1.8
+     ],
+     [
+      1795544336,
       1.8
      ]
     ],
@@ -3345,6 +3391,10 @@
      [
       1795516702,
       0.8
+     ],
+     [
+      1795544336,
+      0.4
      ]
     ],
     "extended-fdv-above-300m-one-day-after-launch-351-333": [
@@ -3727,6 +3777,10 @@
      [
       1795507714,
       9.0
+     ],
+     [
+      1795544336,
+      8.5
      ]
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
@@ -3929,6 +3983,10 @@
      [
       1795516702,
       0.5
+     ],
+     [
+      1795544336,
+      0.4
      ]
     ],
     "extended-fdv-above-500m-one-day-after-launch-711-975-248": [
@@ -4175,6 +4233,10 @@
      [
       1795516702,
       4.5
+     ],
+     [
+      1795544336,
+      4.5
      ]
     ],
     "extended-fdv-above-50m-one-day-after-launch-1794847845750": [
@@ -4357,6 +4419,10 @@
      [
       1795522117,
       95.5
+     ],
+     [
+      1795544336,
+      95.0
      ]
     ],
     "extended-fdv-above-800m-one-day-after-launch-299-255-178": [
@@ -4811,6 +4877,10 @@
      [
       1795516702,
       2.0
+     ],
+     [
+      1795544336,
+      1.9
      ]
     ],
     "extended-listed-on-binance-within-30-days-of-tge": [
@@ -5109,13 +5179,13 @@
      [
       1795516702,
       6.6
+     ],
+     [
+      1795544336,
+      6.6
      ]
     ],
     "extended-listed-on-bybit-within-30-days-of-tge": [
-     [
-      1794474502,
-      60.0
-     ],
      [
       1794476315,
       57.5
@@ -5911,6 +5981,10 @@
      [
       1795523902,
       35.5
+     ],
+     [
+      1795544336,
+      40.0
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
@@ -6425,13 +6499,13 @@
      [
       1795523902,
       43.0
+     ],
+     [
+      1795544336,
+      54.0
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
-     [
-      1794641899,
-      49.0
-     ],
      [
       1794643706,
       47.5
@@ -7227,6 +7301,10 @@
      [
       1795523902,
       52.5
+     ],
+     [
+      1795544336,
+      74.0
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
@@ -7649,6 +7727,10 @@
      [
       1795514910,
       26.0
+     ],
+     [
+      1795544336,
+      26.0
      ]
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
@@ -7911,13 +7993,13 @@
      [
       1795523902,
       5.1
+     ],
+     [
+      1795544336,
+      6.8
      ]
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
-     [
-      1794418023,
-      30.5
-     ],
      [
       1794428071,
       31.5
@@ -8713,6 +8795,10 @@
      [
       1795523902,
       22.0
+     ],
+     [
+      1795544336,
+      20.0
      ]
     ],
     "will-extended-launch-a-token-by-december-31-2026": [
@@ -9243,6 +9329,10 @@
      [
       1795507714,
       99.0
+     ],
+     [
+      1795544336,
+      97.9
      ]
     ]
    },
@@ -9407,33 +9497,35 @@
      "d830e2890ccc",
      "c56a37aff75f",
      "4ce0de68b799",
-     "78ec74aeaf53"
+     "78ec74aeaf53",
+     "380f55a148a4",
+     "c8e37cc0e355"
     ]
    },
    "status": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "48건",
+     "at": 1795544336,
+     "note": "27건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795523902,
-     "note": "21건",
+     "at": 1795544336,
+     "note": "20건",
      "ok": true
     }
    }
@@ -9466,24 +9558,6 @@
     }
    },
    "events": [
-    {
-     "detail": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1BOUNsczJKd19Sc2JmcTY5NElpc3lCQ3RKUFdBYmJOb0VFOVY1UU9UYTBVWVVHV282bWp1d0FQTHZYcTQ3VHF6QWt4Qk4?oc=5",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "b3c901dd924a",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1BOUNsczJKd19Sc2JmcTY5NElpc3lCQ3RKUFdBYmJOb0VFOVY1UU9UYTBVWVVHV282bWp1d0FQTHZYcTQ3VHF6QWt4Qk4?oc=5",
-      "words": [
-       "Tokenomics"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: HelloTrade Funding Rounds, Token Sale Review & Tokenomics Analysis - CryptoRank",
-     "ts": 1792933865,
-     "venue": "hellotrade"
-    },
     {
      "detail": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xY2JJU2tuNkF1a3VONzQxOVJXby1wWTJSMVBsbENrS2FjTmw0RWljcDZ6MW1NaFB3b1BaWmN3VFBaLWd6RU1LQ1NUdTBOZnRCT0hlemRObFh",
      "family": "S4",
@@ -9603,28 +9677,29 @@
      "34323d26c963",
      "695adcc3188d",
      "1fe4fbcf197e",
-     "ed2795923acf"
+     "ed2795923acf",
+     "9b35372189c9"
     ]
    },
    "status": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "9건",
+     "at": 1795544336,
+     "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795523902,
-     "note": "20건",
+     "at": 1795544336,
+     "note": "21건",
      "ok": true
     }
    }
@@ -10028,8 +10103,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26485065,
-    "rh": 122229052
+    "eth": 26486763,
+    "rh": 122429841
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -10072,24 +10147,6 @@
     }
    },
    "events": [
-    {
-     "detail": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1xSjRQd1Q3dWpuNm5EblI3X1V0UHFMY0VuVXB2ZFBGWDNGYWo2NGJHYVUzajZMSlBwSjlBc2h3bDVEaFluamx4bndhQ1JRbmhrQ1JidA?oc=5",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "4e097322f022",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1xSjRQd1Q3dWpuNm5EblI3X1V0UHFMY0VuVXB2ZFBGWDNGYWo2NGJHYVUzajZMSlBwSjlBc2h3bDVEaFluamx4bndhQ1JRbmhrQ1JidA?oc=5",
-      "words": [
-       "Token Launch"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: Lighter Airdrop Guide: The Most Hyped DEX Token Launch For 2026? - CryptoManiaks",
-     "ts": 1792949934,
-     "venue": "lighter-rh"
-    },
     {
      "detail": "0x4a4aaa01 → 0xa0e56f65",
      "family": "S1",
@@ -13161,10 +13218,32 @@
       "tx": "0x1852d50c0edf7fefd647c3cf739013d91b690f4e589806b6b59508a5c350859a"
      },
      "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-     "refuted": false,
+     "refute_kind": "data",
+     "refute_reason": "이동한 LIT가 72시간 안에 원래 지갑으로 돌아왔어요",
+     "refuted": true,
+     "refuted_at": 1795544336,
      "signal": "eth_large",
      "title": "이더리움 LIT 1.90M개 대량 이동",
      "ts": 1795489115,
+     "venue": "lighter-rh"
+    },
+    {
+     "detail": "0x073f5644 → 0x91d40e48",
+     "family": "S1",
+     "grade": "WATCH",
+     "id": "2c5911fd1f22",
+     "ref": {
+      "amount": 1951206.5,
+      "chain": "eth",
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "tx": "0x69cc1c069fc247e8d974df7ce73f18c7a969ca073f619ea8299078dce1bcd0cb"
+     },
+     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+     "refuted": false,
+     "signal": "eth_large",
+     "title": "이더리움 LIT 1.95M개 대량 이동",
+     "ts": 1795526639,
      "venue": "lighter-rh"
     }
    ],
@@ -13506,14 +13585,6 @@
    "js": null,
    "large_hist": [
     {
-     "amount": 1402318.11,
-     "block": 26435115,
-     "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
-     "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-     "ts": 1794922715,
-     "tx": "0x8bfb310c52ec45b2ca21e89723ee26ef938e901969749ffd6cfc895a94f843c6"
-    },
-    {
      "amount": 2358123.14,
      "block": 26442488,
      "from": "0x03ffb8cc16499d20cf79261ebc7064f72984330e",
@@ -13640,14 +13711,17 @@
      "to": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
      "ts": 1795489115,
      "tx": "0x1852d50c0edf7fefd647c3cf739013d91b690f4e589806b6b59508a5c350859a"
+    },
+    {
+     "amount": 1951206.5,
+     "block": 26485295,
+     "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+     "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+     "ts": 1795526639,
+     "tx": "0x69cc1c069fc247e8d974df7ce73f18c7a969ca073f619ea8299078dce1bcd0cb"
     }
    ],
    "lb_hist": [
-    [
-     1793320701,
-     223255.968,
-     53675.32
-    ],
     [
      1793322506,
      223290.312,
@@ -17642,6 +17716,11 @@
      1795523902,
      334028.54,
      85292.26
+    ],
+    [
+     1795544336,
+     334288.225,
+     85433.65
     ]
    ],
    "level": "ALERT",
@@ -17919,6 +17998,7 @@
     "e7731688ebdb",
     "e8884c639c76",
     "e98ab3287c1d",
+    "eabbcca4aa37",
     "eabde10ae149",
     "eacb753778d7",
     "eaff9ca771a5",
@@ -19661,6 +19741,10 @@
     [
      1795523902,
      518585.47
+    ],
+    [
+     1795544336,
+     518712.93
     ]
    ],
    "seeded": true,
@@ -19774,7 +19858,8 @@
      "5d658d0bb156",
      "39a6cd4a5c10",
      "03a2b1b8c17f",
-     "fa658fd4a89a"
+     "fa658fd4a89a",
+     "a2d55ab83aea"
     ],
     "x:vnovakovski": [
      "954280aa62a6",
@@ -19806,62 +19891,63 @@
      "3550c568af1a",
      "564e312f9338",
      "91bb3c120321",
-     "cc5bbff0f544"
+     "cc5bbff0f544",
+     "8fccf1a14897"
     ]
    },
    "status": {
     "ann": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "19건",
      "ok": true
     },
     "board": {
-     "at": 1795523902,
-     "note": "상위 10명 합계 334,029",
+     "at": 1795544336,
+     "note": "상위 10명 합계 334,288",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795523902,
-     "note": "148블록 · 대량 0건",
+     "at": 1795544336,
+     "note": "1698블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "모듈 163 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "90건",
+     "at": 1795544336,
+     "note": "91건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795523902,
-     "note": "518,585 LIT",
+     "at": 1795544336,
+     "note": "518,713 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795523902,
-     "note": "20건",
+     "at": 1795544336,
+     "note": "21건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     }
@@ -20768,6 +20854,10 @@
      [
       1795523902,
       4.7
+     ],
+     [
+      1795544336,
+      4.8
      ]
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
@@ -20953,6 +21043,10 @@
      ],
      [
       1795516702,
+      0.6
+     ],
+     [
+      1795544336,
       0.6
      ]
     ],
@@ -21340,6 +21434,10 @@
      [
       1795522117,
       4.1
+     ],
+     [
+      1795544336,
+      4.0
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
@@ -21846,6 +21944,10 @@
      [
       1795520302,
       1.3
+     ],
+     [
+      1795544336,
+      1.3
      ]
     ],
     "pacifica-fdv-above-300m-one-day-after-launch-488": [
@@ -22055,6 +22157,10 @@
      ],
      [
       1795516702,
+      2.1
+     ],
+     [
+      1795544336,
       2.1
      ]
     ],
@@ -22510,6 +22616,10 @@
      [
       1795523902,
       1.4
+     ],
+     [
+      1795544336,
+      1.7
      ]
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
@@ -22691,6 +22801,10 @@
      ],
      [
       1795516702,
+      2.6
+     ],
+     [
+      1795544336,
       2.6
      ]
     ],
@@ -23432,6 +23546,10 @@
      [
       1795518509,
       2.8
+     ],
+     [
+      1795544336,
+      2.9
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
@@ -23661,6 +23779,10 @@
      ],
      [
       1795504113,
+      13.0
+     ],
+     [
+      1795544336,
       13.0
      ]
     ],
@@ -24132,13 +24254,13 @@
      [
       1795522117,
       69.5
+     ],
+     [
+      1795544336,
+      70.0
      ]
     ],
     "will-pacifica-launch-a-token-by-june-30-2027": [
-     [
-      1794544707,
-      63.0
-     ],
      [
       1794546499,
       53.5
@@ -24934,6 +25056,10 @@
      [
       1795520302,
       56.5
+     ],
+     [
+      1795544336,
+      59.0
      ]
     ],
     "will-pacifica-launch-a-token-by-march-31-2027": [
@@ -25216,6 +25342,10 @@
      [
       1795516702,
       24.5
+     ],
+     [
+      1795544336,
+      24.5
      ]
     ]
    },
@@ -25393,34 +25523,37 @@
      "02db8d047a32",
      "0018ff536bb4",
      "34b0ec3692b7",
-     "862883b2c2d4"
+     "862883b2c2d4",
+     "d4c5369f02c8",
+     "05fb84dbccd5",
+     "101a1268add7"
     ]
    },
    "status": {
     "ann": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3건",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795523902,
-     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
-     "ok": false
+     "at": 1795544336,
+     "note": "14건",
+     "ok": true
     }
    }
   },
@@ -25433,9 +25566,9 @@
    "doc_moves": {},
    "docs": {
     "https://docs.qfex.com/llms.txt": {
-     "changed": 1795398535,
-     "hash": "675dbf4482e01133",
-     "text": "# QFEX API Documentation\n\n- [Latest (128 pages)](https://docs.qfex.com/_llms/en/latest.txt): QFEX, API Reference, Legal.\n\n## 2026-10-29\n\n### API Reference\n\n#### Contract guide\n\n- [REST API: 2026-10-29](https://docs.qfex.com/api-reference/versions/2026-10-29.md): Use the published 2026-10-29 request and response contract.\n\n#### REST API\n\n##### user\n\n- [Affiliate-owned challenges](https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenges.md): List the authenticated affiliate's own trading challenges for server-side website integrations.\n- [Affiliate-owned challenge leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenge-leaderboard.md): Return challenge configuration, prize pool, payouts, and each participant's maker volume, taker volume, PnL, and score. Only the challenge's affiliates can read it.\n- [Executions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/2026-10-29/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/2026-10-29/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/2026-10-29/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [Set Margin Mode](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-margin-mode.md): Set `cross` or `isolated` margin for a symbol on the authenticated account. API keys require the `execute_orders` permission. Close the position and cancel open orders for the symbol before switching modes. Switching to cross margin also requires removing any isolated collateral for the symbol and a…\n- [User Positions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n- [Withdrawable Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/withdrawable-balance.md): Returns the authenticated user's primary account withdrawable balance from the latest balance snapshot. API keys require View Balance permission and primary account scope. The amount is rechecked when a withdrawal is submitted. Returns 503 if a current snapshot is unavailable.\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Public leverage limits](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/public-leverage-limits.md): Return default-margin-group leverage tiers, position notional caps and margin-mode availability for each symbol. No authentication is required. These limits do not include account-specific overrides; use authenticated account APIs for personalised limits. When risk_limits_available is false, numeric…\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/2026-10-29/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n## OpenAPI Specs\n\n- [openapi](https://api.qfex.com/openapi.yaml)\n- [funding-openapi](/api-reference/funding-openapi.yaml)\n- [openapi](https://api.qfex.com/contracts/2026-10-29/openapi.yaml)\n\n## AsyncAPI Specs\n\n- [trade](/websocket/trade.yaml)\n- [mds](/websocket/mds.yaml)\n- [asyncapi](/docs/websocket/asyncapi.yaml)\n- [mds](/docs/websocket/mds.yaml)\n- [trade](/docs/websocket/trade.yaml)\n\n## Optional\n\n- [Status / 运行状态](https://status.qfex.com)\n\n> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.\n\n## Indexes\n\n- [English / Latest (128 pages)](https://docs.qfex.com/_llms/en/latest.txt): QFEX, API Reference, Legal.\n- [Chinese (80 pages)](https://docs.qfex.com/_llms/cn.txt): Latest, 2026-10-29.",
+     "changed": 1795544336,
+     "hash": "94b8e0bd44acb650",
+     "text": "# QFEX API Documentation\n\n- [Latest (129 pages)](https://docs.qfex.com/_llms/en/latest.txt): QFEX, API Reference, Legal.\n\n## 2026-10-29\n\n### API Reference\n\n#### Contract guide\n\n- [REST API: 2026-10-29](https://docs.qfex.com/api-reference/versions/2026-10-29.md): Use the published 2026-10-29 request and response contract.\n\n#### REST API\n\n##### user\n\n- [Affiliate-owned challenges](https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenges.md): List the authenticated affiliate's own trading challenges for server-side website integrations.\n- [Affiliate-owned challenge leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/user/affiliate-owned-challenge-leaderboard.md): Return challenge configuration, prize pool, payouts, and each participant's maker volume, taker volume, PnL, and score. Only the challenge's affiliates can read it.\n- [Executions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/executions.md): Return executions (funding, deposits, withdrawals, referral rewards, fee rebates) for the authenticated account, globally sorted by created_at.\n- [Stream Historic Orders CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-orders-csv.md): Stream a CSV of all historic orders for the authenticated user.\n- [Stream Historic TWAPs CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-historic-twaps-csv.md): Stream a CSV of all historic TWAPs for the authenticated user.\n- [Redeem Invitation Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/redeem-invitation-code.md): Redeem a valid invitation code for the authenticated user, create the referral link, and enable user access.\n- [Stream Trades CSV](https://docs.qfex.com/api-reference/rest/2026-10-29/user/stream-trades-csv.md): Stream a CSV of all trades for the authenticated user.\n- [Account Equity](https://docs.qfex.com/api-reference/rest/2026-10-29/user/account-equity.md): Return total account equity over time for preset durations.\n- [Builder Code Details](https://docs.qfex.com/api-reference/rest/2026-10-29/user/builder-code-details.md): Return the authenticated user's most recently created active builder code and configured QFEX/builder fee shares.\n- [Create Builder Code](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-builder-code.md): Create the authenticated user's builder code. The code is generated server-side as a UUID and stored with active=true. Specify both QFEX and builder fee shares in basis points; they need not sum to 10000. QFEX share must be at least 5000 (50%), builder share must be >= 0, and their sum must be at mo…\n- [User Fees](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-fees.md): Return the fee schedule for the authenticated user. Fees are user-level and do not change when a subaccount is selected.\n- [User Flat Funding](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-flat-funding.md): Return per-symbol net funding from the most recent snapshot where the authenticated account's position was flat.\n- [Historic Orders](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-orders.md): Return historic orders (filled or terminally closed) for the authenticated user.\n- [Historic User PnL](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-user-pnl.md): Return historic user pnl change over preset durations. Supports number and percent units, and optional comma-separated symbol filters.\n- [Historic TWAPs](https://docs.qfex.com/api-reference/rest/2026-10-29/user/historic-twaps.md): Return historic TWAPs (cancelled or completed) for the authenticated user.\n- [Reconcile Invitation Codes (Legacy Path)](https://docs.qfex.com/api-reference/rest/2026-10-29/user/reconcile-invitation-codes-legacy-path.md): Immediately reconciles invitation-code rewards for the authenticated user.\n- [Set User Leverage](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-user-leverage.md): Set the leverage for the authenticated user.\n- [Set Margin Mode](https://docs.qfex.com/api-reference/rest/2026-10-29/user/set-margin-mode.md): Set `cross` or `isolated` margin for a symbol on the authenticated account. API keys require the `execute_orders` permission. Close the position and cancel open orders for the symbol before switching modes. Switching to cross margin also requires removing any isolated collateral for the symbol and a…\n- [User Positions](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-positions.md): Return current positions for the authenticated user.\n- [User Referral Rewards](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-rewards.md): Return daily referral rewards for the authenticated user.\n- [User Referral Notional Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-referral-notional-volume.md): Return rolling 14-day and lifetime notional volume for the authenticated user and their direct referrals.\n- [List Subaccounts](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-subaccounts.md): Returns secondary account IDs for the authenticated user (accounts except the primary row where account_id equals user_id).\n- [Create Subaccount](https://docs.qfex.com/api-reference/rest/2026-10-29/user/create-subaccount.md): Allocates a new subaccount UUID for the authenticated user and returns it in the response body.\n- [List Account Balances](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-balances.md): Returns the authenticated user's primary account and each secondary account together with current account equity and available balance from the latest user position balance snapshot.\n- [List Account Equities](https://docs.qfex.com/api-reference/rest/2026-10-29/user/list-account-equities.md): Returns the authenticated user's primary account and each secondary account together with current account equity from the latest user position balance snapshot.\n- [User Trades](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-trades.md): Return trades for the authenticated user.\n- [Transfer Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/transfer-balance.md): Transfer balance between two of the authenticated user's accounts (parent account or subaccounts).\n- [User Volume](https://docs.qfex.com/api-reference/rest/2026-10-29/user/user-volume.md): Return daily user notional volume for one of: 1w, 1m, ytd, or all time. Supports optional comma-separated symbol filters.\n- [Withdrawable Balance](https://docs.qfex.com/api-reference/rest/2026-10-29/user/withdrawable-balance.md): Returns the authenticated user's primary account withdrawable balance from the latest balance snapshot. API keys require View Balance permission and primary account scope. The amount is rechecked when a withdrawal is submitted. Returns 503 if a current snapshot is unavailable.\n\n##### builder\n\n- [Generate a wallet user's main-account trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/generate-a-wallet-users-main-account-trading-key.md): Requires the builder's existing API key with register_user. The signed wallet message must authorize the caller's active builder code and be issued within ten minutes. Replaces the wallet user's previous builder-{builder-username} key by deleting the previous key. The key permits trading, account an…\n- [Get the wallet message for a builder trading key](https://docs.qfex.com/api-reference/rest/2026-10-29/builder/get-the-wallet-message-for-a-builder-trading-key.md): Public endpoint. Pass address and builder_code as query parameters. Returns a SIWE message with the supplied wallet address and the supplied builder code, a random nonce, and a ten-minute validity window. Sign the returned message unchanged and submit it to /builder/web3/api-key.\n\n##### market-data\n\n- [Earnings and Economic Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md): Return company earnings and economic events for an inclusive date range of up to 93 days. No authentication is required. Earnings use report dates; economic events use their stored calendar dates. For timezone-aware weekly displays, include one extra date on either side and group exact release times…\n- [Candles](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/candles.md): Return OHLCV candles for a symbol over a time range.\n- [DefiLlama Metrics](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/defillama-metrics.md): Return QFEX aggregate volume and USD open interest metrics for DefiLlama.\n- [Funding Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/funding-historic.md): Return historic funding rates for a symbol over a time range with forward filling.\n- [Public leverage limits](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/public-leverage-limits.md): Return default-margin-group leverage tiers, position notional caps and margin-mode availability for each symbol. No authentication is required. These limits do not include account-specific overrides; use authenticated account APIs for personalised limits. When risk_limits_available is false, numeric…\n- [Reference Market Holidays](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/reference-market-holidays.md): Return reference-market holiday dates from the calendar used by QFEX Slack alerts. Dates are local calendar dates, not UTC closure timestamps. These are not QFEX trading halts or instrument-specific session schedules; US futures may have shortened sessions on these dates. Weekends and early closes a…\n- [Contracts](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/contracts.md): Return mandatory contract metadata and current market data for all symbols.\n- [Order Book](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/order-book.md): Return current order book depth for a ticker.\n- [Open Interest Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/open-interest-historic.md): Return historic open interest for a symbol over a time range with forward filling.\n- [Refdata](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/refdata.md): Return symbol reference data, including market_hours for each symbol. No authentication is required. See /market-holidays for reference-market holiday dates and /calendar for earnings and economic events.\n- [Settlement Calendar](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-calendar.md): Return the settlement calendar entry for a symbol at a given time, based on active_until.\n- [Settlement Prices](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/settlement-prices.md): Return current and historic settlement prices and ratios.\n- [Symbol Long Short Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/symbol-long-short-historic.md): Return historic long and short user counts for a symbol over a time range.\n- [Taker Volume Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/taker-volume-historic.md): Return historic taker volume metrics for a symbol over a time range.\n- [Underlier Historic](https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/underlier-historic.md): Return historic underlier OHLC data for a symbol over a time range.\n\n##### pnl\n\n- [Hourly PnL (approx. first position per hour)](https://docs.qfex.com/api-reference/rest/2026-10-29/pnl/hourly-pnl-approx-first-position-per-hour.md): Return approximate first position per symbol per hour for the user, including realised/unrealised pnl, net_funding, fees, quantity, and cost.\n\n##### public\n\n- [Public Leaderboard](https://docs.qfex.com/api-reference/rest/2026-10-29/public/public-leaderboard.md): Return the global top 100 participating master accounts by trading PnL or cash-flow-adjusted time-weighted return. Username filtering only reduces that selected top 100. Return can be null when no positive-equity subperiod exists; positive dollar PnL and negative TWR can coexist.\n\n## OpenAPI Specs\n\n- [openapi](https://api.qfex.com/openapi.yaml)\n- [funding-openapi](/api-reference/funding-openapi.yaml)\n- [openapi](https://api.qfex.com/contracts/2026-10-29/openapi.yaml)\n\n## AsyncAPI Specs\n\n- [trade](/websocket/trade.yaml)\n- [mds](/websocket/mds.yaml)\n- [asyncapi](/docs/websocket/asyncapi.yaml)\n- [mds](/docs/websocket/mds.yaml)\n- [trade](/docs/websocket/trade.yaml)\n\n## Optional\n\n- [Status / 运行状态](https://status.qfex.com)\n\n> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.\n\n## Indexes\n\n- [English / Latest (129 pages)](https://docs.qfex.com/_llms/en/latest.txt): QFEX, API Reference, Legal.\n- [Chinese (81 pages)](https://docs.qfex.com/_llms/cn.txt): Latest, 2026-10-29.\n- [Spanish (14 pages)](https://docs.qfex.com/_llms/es.txt): Latest, 2026-10-29.",
      "url": "https://docs.qfex.com/llms.txt"
     },
     "https://docs.qfex.com/qfex/fees.md": {
@@ -25445,9 +25578,9 @@
      "url": "https://docs.qfex.com/qfex/fees.md"
     },
     "https://docs.qfex.com/websocket/changelog.md": {
-     "changed": 1795471708,
-     "hash": "f46365d86ee7d03b",
-     "text": "# Changelog\n\n> Product updates and announcements\n\n**23rd November 2026**\n\nFix\n\n**Return the withdrawable balance when an older balance snapshot is current.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe endpoint can now calculate the amount from a current balance snapshot that does not include a precomputed withdrawable balance. Missing or stale snapshots still return HTTP 503.\n\n**23rd November 2026**\n\nAPI Update\n\n**Confirm leverage changes in Kafka before returning success.**\n\nEndpoints: `POST /user/leverage`.\n\nIf confirmation takes too long, the request returns HTTP 503 and the change may still complete. Check the current leverage before retrying. New exposure and isolated collateral removals for the position are blocked until confirmation.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Publish the endpoint for setting a symbol to cross or isolated margin.**\n\nEndpoints: `POST /user/margin-mode`.\n\nSend the symbol and margin\\_mode for the authenticated account. API keys require the execute\\_orders permission. Close the position and cancel open orders for the symbol before switching modes. Switching to cross margin also requires removing any isolated collateral for the symbol and a market that supports cross margin for your account.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Check the withdrawable balance of your primary account.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe response includes the maximum withdrawal amount in USD and the balance snapshot timestamp in as\\_of. API keys require View Balance permission and primary account scope. If a current snapshot is unavailable, the endpoint returns HTTP 503 and clients can retry. Withdrawal submission checks the current balance again.\n\n**20th November 2026**\n\nAPI Update\n\n**Staff can disable affiliate trading challenges.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nDisabled challenges are omitted from the owned challenges list and their leaderboard returns 404. Re-enabling a challenge restores access for eligible users and preserves the existing settings and enrollment.\n\n**18th November 2026**\n\nAPI Update\n\n**Multiple affiliates can share a trading challenge leaderboard.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nEach configured affiliate can list the shared challenge and fetch its merged referral standings and prize pool. Responses include additional\\_affiliate\\_user\\_ids alongside the existing primary affiliate\\_user\\_id.\n\n**18th November 2026**\n\nNew Endpoint\n\n**Publish default-account leverage tiers, position notional caps and margin-mode availability through a dedicated public leverage endpoint.**\n\nEndpoints: `GET /leverage`.\n\nGET /leverage accepts an optional ticker filter and publishes only the configured default margin group's schedule. Each symbol includes risk\\_limits\\_available and margin\\_mode. When available, max\\_leverage, max\\_position\\_notional, max\\_position\\_notional\\_at\\_max\\_leverage, position\\_limit\\_currency, risk\\_limits\\_scope and leverage\\_tiers describe exact leverage-dependent limits. Position notionals are precise decimal strings in quote-currency units and include same-side open-order exposure. Unavailable or invalid margin data omits numeric risk fields. Custom groups and account overrides remain private. GET /refdata and its legacy default\\_max\\_leverage behavior are unchanged.\n\n**17th November 2026**\n\nNew Endpoint\n\n**Affiliates can retrieve their own challenge standings for website display.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nAuthenticated affiliates can list their challenges and fetch each competition's configuration, prize pool, payout distribution, and participant standings. Each participant includes username, maker volume, taker volume, PnL, score, and projected payout. The routes require an HMAC API key with view\\_balance permission; the detail route rejects keys that do not belong to the challenge owner. Website publishers must protect their own viewer access.\n\n**1st November 2026**\n\nFix\n\n**Reference data now populates underlier\\_price and price\\_change\\_24h.**\n\nEndpoints: `GET /refdata`.\n\nunderlier\\_price returns the latest available underlier price. price\\_change\\_24h returns the rolling 24-hour percentage change in mark price using minute-resolution history, rounded to eight decimal places. Mark prices are refreshed at most once every 30 seconds. Missing or invalid prices and unavailable history remain empty strings, and reference metadata remains available if the price lookup fails.\n\n**1st November 2026**\n\nNew Endpoint\n\n**Public reference-market holiday calendar.**\n\nEndpoints: `GET /market-holidays`.\n\nReturns holidays from a generated snapshot of the Entimos Slack calendar for inclusive date ranges up to 366 days, with an optional market filter. Includes coverage windows and incomplete markets so missing schedules are explicit. These dates are not QFEX trading halts or instrument-specific session times.\n\n**1st November 2026**\n\nDocs Update\n\n**Link public market hours, holidays, and earnings and economic calendars.**\n\nEndpoints: `GET /refdata`, `GET /calendar`.\n\nClarify that symbol market hours are available in refdata without authentication and cross-link the public calendar endpoints in their operation descriptions.\n\n**30th October 2026**\n\nBreaking Change\n\n**Publish API version 2026-10-30 with source-free earnings metadata.**\n\nEndpoints: `GET /calendar`.\n\nThe latest API contract is now 2026-10-30. Calendar earnings metadata omits source, sources, source\\_name and source\\_url keys, including nested release-time attribution. Financial results, release timing and economic events are unchanged. The 2026-10-29 contract preserves its original response.\n\n**Migration:** Pin api\\_version=2026-10-29 to keep earnings attribution. Omitted api\\_version, latest and 2026-10-30 select the new response. Clients using earnings sources must pin the previous version or stop relying on those fields.\n\n**30th October 2026**\n\nNew Endpoint\n\n**Public earnings and economic calendar endpoint.**\n\nEndpoints: `GET /calendar`.\n\nReturns earnings and economic events for an inclusive from/to date range of up to 93 days without authentication. Economic events include the last successful sync timestamp and stale status. Missing financial results and release times remain null. Invalid ranges are rejected and upstream failures return 503. CloudFront caching is capped at five minutes and varies only by api\\_version, from and to query parameters, with hostname and CORS-origin separation.\n\n**29th October 2026**\n\nTrade WebSocket documentation correction\n\nCorrected the [Balances](https://docs.qfex.com/websocket/channels/trade/balance.md) and [Positions](https://docs.qfex.com/websocket/channels/trade/positions.md) references and Trade Playground schema: both channels have a 60-second periodic refresh plus event-driven updates.\n\nDocumented immediate cached snapshots on subscription and coalesced updates when placing or cancelling orders changes reserved margin. Clarified that subscribers receive `balance_response` and per-symbol `position_response` snapshots, and removed the obsolete v4 envelopes from the Trade schema. This corrects the documentation; it does not announce a protocol change.\n\n**29th October 2026**\n\nNew Endpoint\n\n**Select a dated REST API contract with the api\\_version query parameter.**\n\nOmitting api\\_version or using latest selects the latest contract. The first published contract is 2026-10-29. Unsupported, empty, or repeated versions return HTTP 400. Qfex-Api-Version reports the selected contract. OpenAPI exports accept the same selector, and documentation and schema links have stable dated metadata URLs.\n\n**27th October 2026**\n\nBreaking Change\n\n**Builder wallet messages accept a website domain and default to qfex.com.**\n\nEndpoints: `GET /builder/web3/message`.\n\nThe optional domain query parameter accepts non-QFEX hostnames and sets the message domain and HTTPS URI. If the domain is not provided  the default website uri in the message is [www.qfex.com](http://www.qfex.com). Browser access still requires the website origin in the API CORS configuration. Registration requires the generated URI in the Supabase Auth Redirect URLs allowlist.\n\n**Migration:** Pass domain=[www.qfex.com](http://www.qfex.com) to retain the previous message domain, or supply your website hostname without a scheme, path, port, or credentials.\n\n**23rd October 2026**\n\nPrivate-order API reference\n\nPrivate orders now use one optional JSON boolean, `dark`, defaulting to `false`. For `LIMIT GTC` and `ALO GTC`, `true` makes resting quantity private. For `LIMIT IOC`, `LIMIT FOK` and `MARKET IOC/FOK`, it selects only private passive liquidity. Private FOK fills completely or cancels without fills. There is no displayed-BBO comparison, quote requirement or displayed fallback.\n\nIndividual trade publication depends only on the passive order: displayed passives publish; private passives do not. A private GTC can produce public entry fills and private passive fills after resting. Funding, marks, candles, volume and authenticated execution records still include all activity.\n\nOrder responses and active-order queries return `dark: true` for private instructions and omit default `false`. Modifications preserve the flag. The earlier draft fields `visibility` and `liquidity_pool` are retired and ignored in add-order requests; migrate those requests to `dark`. Private-order entry must be enabled by the exchange before `dark: true` requests are accepted.\n\nSee [Private-order API](https://docs.qfex.com/api-reference/private-orders.md), [Add order](https://docs.qfex.com/websocket/channels/trade/add_order.md), [Order responses](https://docs.qfex.com/websocket/channels/trade/order.md#private-order-fields) and [Private flag](https://docs.qfex.com/api-reference/enums.md#darkflag).\n\n**23rd October 2026**\n\nNew Endpoint\n\n**Isolated positions now expose cash collateral separately from equity.**\n\nEndpoints: `GET /user/positions`.\n\nIsolated positions include isolated\\_collateral, which excludes unrealised PnL and includes settled fees, funding and realised PnL. Their existing margin field continues to report equity including unrealised PnL.\n\n**22nd October 2026**\n\nNew Endpoint\n\n**Symbol reference data now includes isolated\\_only.**\n\nEndpoints: `GET /refdata`.\n\nEach symbol returns an explicit boolean indicating whether it requires isolated margin. Flagged symbols require isolated route registration before trading. Existing cross exposure can still be cancelled or closed with reduce-only orders.\n\n**14th October 2026**\n\nMarket Data Update\n\n`market_stats` wildcard subscriptions (`symbols: [\"*\"]`) now receive all-symbol snapshots every 10 seconds. Named-symbol subscriptions continue to update once per second. An initial snapshot is sent on subscription when data is available.\n\nThe [Market Stats reference](https://docs.qfex.com/websocket/channels/mds/market_stats.md) and MDS Playground schema now document funding rates, rolling 24-hour traded quantity, and rolling 24-hour USD notional volume.\n\n**14th October 2026**\n\nAPI Update\n\n**Initial invitation qualification now uses lifetime personal trading volume.**\n\nEndpoints: `POST /user/invitation-codes/job`, `GET /user/referrals/notional-volume`.\n\nCreators receive their initial five invitations after reaching \\$100,000 of all-time personal trading volume, including subaccounts, rather than volume in the last 14 days. The qualification responses add self\\_lifetime\\_notional\\_volume; existing self\\_notional\\_volume remains the 14-day value. Referred volume does not count toward initial qualification. Existing grants and recurring invitation rules are unchanged.\n\n**13th October 2026**\n\nDocs Update\n\n**REST API release notes now follow production deployments.**\n\nPublic REST API changes now appear in the REST API changelog after the corresponding API revision is available in production. The reference is rebuilt from the production OpenAPI document with each tracked release.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 signed messages now link to the QFEX Client Agreement.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe legal consent statement includes [https://docs.qfex.com/legal/client-agreement](https://docs.qfex.com/legal/client-agreement.md) beside the Client Agreement. Key issuance requires the updated statement, including this link.\n\n**Migration:** Request and sign a fresh message from GET /builder/web3/message. Submit that string unchanged to POST /builder/web3/api-key; messages without the agreement link are rejected.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 registration now includes legal consent and an Arbitrum withdrawal address.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe signed message now authorizes a trading API key and includes acceptance of the QFEX Client Agreement, Privacy Policy, and Cookie Policy. Messages without this consent are rejected. Successful key issuance records the acceptance date and registers the verified wallet address on ARBITRUM\\_ONE without duplicating an existing address.\n\n**Migration:** Request a fresh message from GET /builder/web3/message and sign the returned string unchanged before submitting it to POST /builder/web3/api-key. Clients that construct messages themselves must include the updated consent statement.\n\n**9th September 2026**\n\nBreaking Change\n\n`modify_order` now requires the `reduce_only` field. It must match the order being modified, as a modify cannot change reduce-only.\n\nRequests that omit it are rejected with `InvalidJSONFormat`, and a value that does not match the resting order is rejected with `CANNOT_MODIFY_NO_SUCH_ORDER`.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details\n\n**7th September 2026**\n\nDocs Update\n\nAdded builder codes: create and view a code over REST, then attach it on the Trade WebSocket auth message as `params.builder_code`. Public balances expose credited share as `builder_rewards`.\n\nSee [here](https://docs.qfex.com/qfex/builder-code.md) and [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\n**17th February 2026**\n\nDocs Update\n\nAdded default\\_max\\_leverage field to refdata response.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/refdata.md) for further details\n\n**9th February 2026**\n\nDocs Update\n\nAdded funding scaling documentation. The final funding rate is now documented as scaled by `1/100`, and the funding stream reflects the post-scaling value.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/funding_rate.md), [here](https://docs.qfex.com/qfex/contract-specifications.md), and [here](https://docs.qfex.com/qfex/faq.md) for further details\n\n**26th January 2026**\n\nDocs Update\n\nAdded the `fills` channel and fill response payload documentation.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/fills.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated trades response to include `execution_type`.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/trades.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated order response to include trade\\_id. This is used for order responses with a status of FILLED, it provides the unique trade id of that fill.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details\n\n**11th November 2025**\n\nDocs Update\n\nUpdated get\\_user\\_trades endpoint to support more filtering.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md) for further details\n\n**30th October 2025**\n\nDocs Update\n\nUpdated stop order response type. Type is now `STOP_LOSS` and `TAKE_PROFIT`. Stop orders are shown in the `orders` key in `get_orders_response`\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md) and [here](https://docs.qfex.com/api-reference/enums.md) for further details\n\n**27th October 2025**\n\nDocs Update\n\nAdded documentation for stop orders.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md), [here](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md) and [here](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md) for further details\n\n**17th October 2025**\n\nDocs Update\n\nAdded Close Position request.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/close_position.md) for further details\n\nThis is only intended for use in the frontend as a quick way to close a position.\n\n**15th October 2025**\n\nDocs Update\n\nAdded HMAC-SHA256 authentication requirements for the trade WebSocket, including refreshed client samples.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\nDocumented the new cancel-on-disconnect channel with end-to-end examples for Python, Node.js, Go, and Java.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md) for further details\n\n**13th October 2025**\n\nv0.0.10\n\nYou must now include order type in a modify order\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details.\n\n**25th September 2025**\n\nv0.0.10\n\nYou must now subscribe to order responses.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details.",
+     "changed": 1795544336,
+     "hash": "85f8da979b708dc3",
+     "text": "# Changelog\n\n> Product updates and announcements\n\n**24th November 2026**\n\nAPI Update\n\n**Affiliate competition standings support global enrollment and host removals.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nChallenge responses include is\\_global. Global competitions rank signed-in users who opt in. Referral-only competitions retain their direct-referral eligibility. Removed entrants are excluded from standings, prize pool calculations, and payouts.\n\n**23rd November 2026**\n\nFix\n\n**Return the withdrawable balance when an older balance snapshot is current.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe endpoint can now calculate the amount from a current balance snapshot that does not include a precomputed withdrawable balance. Missing or stale snapshots still return HTTP 503.\n\n**23rd November 2026**\n\nAPI Update\n\n**Confirm leverage changes in Kafka before returning success.**\n\nEndpoints: `POST /user/leverage`.\n\nIf confirmation takes too long, the request returns HTTP 503 and the change may still complete. Check the current leverage before retrying. New exposure and isolated collateral removals for the position are blocked until confirmation.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Publish the endpoint for setting a symbol to cross or isolated margin.**\n\nEndpoints: `POST /user/margin-mode`.\n\nSend the symbol and margin\\_mode for the authenticated account. API keys require the execute\\_orders permission. Close the position and cancel open orders for the symbol before switching modes. Switching to cross margin also requires removing any isolated collateral for the symbol and a market that supports cross margin for your account.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Check the withdrawable balance of your primary account.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe response includes the maximum withdrawal amount in USD and the balance snapshot timestamp in as\\_of. API keys require View Balance permission and primary account scope. If a current snapshot is unavailable, the endpoint returns HTTP 503 and clients can retry. Withdrawal submission checks the current balance again.\n\n**20th November 2026**\n\nAPI Update\n\n**Staff can disable affiliate trading challenges.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nDisabled challenges are omitted from the owned challenges list and their leaderboard returns 404. Re-enabling a challenge restores access for eligible users and preserves the existing settings and enrollment.\n\n**18th November 2026**\n\nAPI Update\n\n**Multiple affiliates can share a trading challenge leaderboard.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nEach configured affiliate can list the shared challenge and fetch its merged referral standings and prize pool. Responses include additional\\_affiliate\\_user\\_ids alongside the existing primary affiliate\\_user\\_id.\n\n**18th November 2026**\n\nNew Endpoint\n\n**Publish default-account leverage tiers, position notional caps and margin-mode availability through a dedicated public leverage endpoint.**\n\nEndpoints: `GET /leverage`.\n\nGET /leverage accepts an optional ticker filter and publishes only the configured default margin group's schedule. Each symbol includes risk\\_limits\\_available and margin\\_mode. When available, max\\_leverage, max\\_position\\_notional, max\\_position\\_notional\\_at\\_max\\_leverage, position\\_limit\\_currency, risk\\_limits\\_scope and leverage\\_tiers describe exact leverage-dependent limits. Position notionals are precise decimal strings in quote-currency units and include same-side open-order exposure. Unavailable or invalid margin data omits numeric risk fields. Custom groups and account overrides remain private. GET /refdata and its legacy default\\_max\\_leverage behavior are unchanged.\n\n**17th November 2026**\n\nNew Endpoint\n\n**Affiliates can retrieve their own challenge standings for website display.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nAuthenticated affiliates can list their challenges and fetch each competition's configuration, prize pool, payout distribution, and participant standings. Each participant includes username, maker volume, taker volume, PnL, score, and projected payout. The routes require an HMAC API key with view\\_balance permission; the detail route rejects keys that do not belong to the challenge owner. Website publishers must protect their own viewer access.\n\n**1st November 2026**\n\nFix\n\n**Reference data now populates underlier\\_price and price\\_change\\_24h.**\n\nEndpoints: `GET /refdata`.\n\nunderlier\\_price returns the latest available underlier price. price\\_change\\_24h returns the rolling 24-hour percentage change in mark price using minute-resolution history, rounded to eight decimal places. Mark prices are refreshed at most once every 30 seconds. Missing or invalid prices and unavailable history remain empty strings, and reference metadata remains available if the price lookup fails.\n\n**1st November 2026**\n\nNew Endpoint\n\n**Public reference-market holiday calendar.**\n\nEndpoints: `GET /market-holidays`.\n\nReturns holidays from a generated snapshot of the Entimos Slack calendar for inclusive date ranges up to 366 days, with an optional market filter. Includes coverage windows and incomplete markets so missing schedules are explicit. These dates are not QFEX trading halts or instrument-specific session times.\n\n**1st November 2026**\n\nDocs Update\n\n**Link public market hours, holidays, and earnings and economic calendars.**\n\nEndpoints: `GET /refdata`, `GET /calendar`.\n\nClarify that symbol market hours are available in refdata without authentication and cross-link the public calendar endpoints in their operation descriptions.\n\n**30th October 2026**\n\nBreaking Change\n\n**Publish API version 2026-10-30 with source-free earnings metadata.**\n\nEndpoints: `GET /calendar`.\n\nThe latest API contract is now 2026-10-30. Calendar earnings metadata omits source, sources, source\\_name and source\\_url keys, including nested release-time attribution. Financial results, release timing and economic events are unchanged. The 2026-10-29 contract preserves its original response.\n\n**Migration:** Pin api\\_version=2026-10-29 to keep earnings attribution. Omitted api\\_version, latest and 2026-10-30 select the new response. Clients using earnings sources must pin the previous version or stop relying on those fields.\n\n**30th October 2026**\n\nNew Endpoint\n\n**Public earnings and economic calendar endpoint.**\n\nEndpoints: `GET /calendar`.\n\nReturns earnings and economic events for an inclusive from/to date range of up to 93 days without authentication. Economic events include the last successful sync timestamp and stale status. Missing financial results and release times remain null. Invalid ranges are rejected and upstream failures return 503. CloudFront caching is capped at five minutes and varies only by api\\_version, from and to query parameters, with hostname and CORS-origin separation.\n\n**29th October 2026**\n\nTrade WebSocket documentation correction\n\nCorrected the [Balances](https://docs.qfex.com/websocket/channels/trade/balance.md) and [Positions](https://docs.qfex.com/websocket/channels/trade/positions.md) references and Trade Playground schema: both channels have a 60-second periodic refresh plus event-driven updates.\n\nDocumented immediate cached snapshots on subscription and coalesced updates when placing or cancelling orders changes reserved margin. Clarified that subscribers receive `balance_response` and per-symbol `position_response` snapshots, and removed the obsolete v4 envelopes from the Trade schema. This corrects the documentation; it does not announce a protocol change.\n\n**29th October 2026**\n\nNew Endpoint\n\n**Select a dated REST API contract with the api\\_version query parameter.**\n\nOmitting api\\_version or using latest selects the latest contract. The first published contract is 2026-10-29. Unsupported, empty, or repeated versions return HTTP 400. Qfex-Api-Version reports the selected contract. OpenAPI exports accept the same selector, and documentation and schema links have stable dated metadata URLs.\n\n**27th October 2026**\n\nBreaking Change\n\n**Builder wallet messages accept a website domain and default to qfex.com.**\n\nEndpoints: `GET /builder/web3/message`.\n\nThe optional domain query parameter accepts non-QFEX hostnames and sets the message domain and HTTPS URI. If the domain is not provided  the default website uri in the message is [www.qfex.com](http://www.qfex.com). Browser access still requires the website origin in the API CORS configuration. Registration requires the generated URI in the Supabase Auth Redirect URLs allowlist.\n\n**Migration:** Pass domain=[www.qfex.com](http://www.qfex.com) to retain the previous message domain, or supply your website hostname without a scheme, path, port, or credentials.\n\n**23rd October 2026**\n\nPrivate-order API reference\n\nPrivate orders now use one optional JSON boolean, `dark`, defaulting to `false`. For `LIMIT GTC` and `ALO GTC`, `true` makes resting quantity private. For `LIMIT IOC`, `LIMIT FOK` and `MARKET IOC/FOK`, it selects only private passive liquidity. Private FOK fills completely or cancels without fills. There is no displayed-BBO comparison, quote requirement or displayed fallback.\n\nIndividual trade publication depends only on the passive order: displayed passives publish; private passives do not. A private GTC can produce public entry fills and private passive fills after resting. Funding, marks, candles, volume and authenticated execution records still include all activity.\n\nOrder responses and active-order queries return `dark: true` for private instructions and omit default `false`. Modifications preserve the flag. The earlier draft fields `visibility` and `liquidity_pool` are retired and ignored in add-order requests; migrate those requests to `dark`. Private-order entry must be enabled by the exchange before `dark: true` requests are accepted.\n\nSee [Private-order API](https://docs.qfex.com/api-reference/private-orders.md), [Add order](https://docs.qfex.com/websocket/channels/trade/add_order.md), [Order responses](https://docs.qfex.com/websocket/channels/trade/order.md#private-order-fields) and [Private flag](https://docs.qfex.com/api-reference/enums.md#darkflag).\n\n**23rd October 2026**\n\nNew Endpoint\n\n**Isolated positions now expose cash collateral separately from equity.**\n\nEndpoints: `GET /user/positions`.\n\nIsolated positions include isolated\\_collateral, which excludes unrealised PnL and includes settled fees, funding and realised PnL. Their existing margin field continues to report equity including unrealised PnL.\n\n**22nd October 2026**\n\nNew Endpoint\n\n**Symbol reference data now includes isolated\\_only.**\n\nEndpoints: `GET /refdata`.\n\nEach symbol returns an explicit boolean indicating whether it requires isolated margin. Flagged symbols require isolated route registration before trading. Existing cross exposure can still be cancelled or closed with reduce-only orders.\n\n**14th October 2026**\n\nMarket Data Update\n\n`market_stats` wildcard subscriptions (`symbols: [\"*\"]`) now receive all-symbol snapshots every 10 seconds. Named-symbol subscriptions continue to update once per second. An initial snapshot is sent on subscription when data is available.\n\nThe [Market Stats reference](https://docs.qfex.com/websocket/channels/mds/market_stats.md) and MDS Playground schema now document funding rates, rolling 24-hour traded quantity, and rolling 24-hour USD notional volume.\n\n**14th October 2026**\n\nAPI Update\n\n**Initial invitation qualification now uses lifetime personal trading volume.**\n\nEndpoints: `POST /user/invitation-codes/job`, `GET /user/referrals/notional-volume`.\n\nCreators receive their initial five invitations after reaching \\$100,000 of all-time personal trading volume, including subaccounts, rather than volume in the last 14 days. The qualification responses add self\\_lifetime\\_notional\\_volume; existing self\\_notional\\_volume remains the 14-day value. Referred volume does not count toward initial qualification. Existing grants and recurring invitation rules are unchanged.\n\n**13th October 2026**\n\nDocs Update\n\n**REST API release notes now follow production deployments.**\n\nPublic REST API changes now appear in the REST API changelog after the corresponding API revision is available in production. The reference is rebuilt from the production OpenAPI document with each tracked release.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 signed messages now link to the QFEX Client Agreement.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe legal consent statement includes [https://docs.qfex.com/legal/client-agreement](https://docs.qfex.com/legal/client-agreement.md) beside the Client Agreement. Key issuance requires the updated statement, including this link.\n\n**Migration:** Request and sign a fresh message from GET /builder/web3/message. Submit that string unchanged to POST /builder/web3/api-key; messages without the agreement link are rejected.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 registration now includes legal consent and an Arbitrum withdrawal address.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe signed message now authorizes a trading API key and includes acceptance of the QFEX Client Agreement, Privacy Policy, and Cookie Policy. Messages without this consent are rejected. Successful key issuance records the acceptance date and registers the verified wallet address on ARBITRUM\\_ONE without duplicating an existing address.\n\n**Migration:** Request a fresh message from GET /builder/web3/message and sign the returned string unchanged before submitting it to POST /builder/web3/api-key. Clients that construct messages themselves must include the updated consent statement.\n\n**9th September 2026**\n\nBreaking Change\n\n`modify_order` now requires the `reduce_only` field. It must match the order being modified, as a modify cannot change reduce-only.\n\nRequests that omit it are rejected with `InvalidJSONFormat`, and a value that does not match the resting order is rejected with `CANNOT_MODIFY_NO_SUCH_ORDER`.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details\n\n**7th September 2026**\n\nDocs Update\n\nAdded builder codes: create and view a code over REST, then attach it on the Trade WebSocket auth message as `params.builder_code`. Public balances expose credited share as `builder_rewards`.\n\nSee [here](https://docs.qfex.com/qfex/builder-code.md) and [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\n**17th February 2026**\n\nDocs Update\n\nAdded default\\_max\\_leverage field to refdata response.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/refdata.md) for further details\n\n**9th February 2026**\n\nDocs Update\n\nAdded funding scaling documentation. The final funding rate is now documented as scaled by `1/100`, and the funding stream reflects the post-scaling value.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/funding_rate.md), [here](https://docs.qfex.com/qfex/contract-specifications.md), and [here](https://docs.qfex.com/qfex/faq.md) for further details\n\n**26th January 2026**\n\nDocs Update\n\nAdded the `fills` channel and fill response payload documentation.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/fills.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated trades response to include `execution_type`.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/trades.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated order response to include trade\\_id. This is used for order responses with a status of FILLED, it provides the unique trade id of that fill.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details\n\n**11th November 2025**\n\nDocs Update\n\nUpdated get\\_user\\_trades endpoint to support more filtering.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md) for further details\n\n**30th October 2025**\n\nDocs Update\n\nUpdated stop order response type. Type is now `STOP_LOSS` and `TAKE_PROFIT`. Stop orders are shown in the `orders` key in `get_orders_response`\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md) and [here](https://docs.qfex.com/api-reference/enums.md) for further details\n\n**27th October 2025**\n\nDocs Update\n\nAdded documentation for stop orders.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md), [here](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md) and [here](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md) for further details\n\n**17th October 2025**\n\nDocs Update\n\nAdded Close Position request.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/close_position.md) for further details\n\nThis is only intended for use in the frontend as a quick way to close a position.\n\n**15th October 2025**\n\nDocs Update\n\nAdded HMAC-SHA256 authentication requirements for the trade WebSocket, including refreshed client samples.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\nDocumented the new cancel-on-disconnect channel with end-to-end examples for Python, Node.js, Go, and Java.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md) for further details\n\n**13th October 2025**\n\nv0.0.10\n\nYou must now include order type in a modify order\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details.\n\n**25th September 2025**\n\nv0.0.10\n\nYou must now subscribe to order responses.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details.",
      "url": "https://docs.qfex.com/websocket/changelog.md"
     }
    },
@@ -26098,6 +26231,51 @@
      "signal": "doc_change",
      "title": "공식 문서 '변경 기록' 문구 변경",
      "ts": 1795471708,
+     "venue": "qfex"
+    },
+    {
+     "detail": "Spanish (14 pages)",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "922f2794eaac",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Spanish (14 pages) — https://docs.qfex.com/_llms/es.txt"
+      ],
+      "removed": [],
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 1개",
+     "ts": 1795544336,
+     "venue": "qfex"
+    },
+    {
+     "detail": "24th November 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "aa79b98bf9ce",
+     "ref": {
+      "added": [
+       "**24th November 2026**",
+       "API Update",
+       "**Affiliate competition standings support global enrollment and host removals.**",
+       "Endpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+       "Challenge responses include is\\_global. Global competitions rank signed-in users who opt in. Referral-only competitions retain their direct-referral eligibility. Removed entrants are excluded from standings, prize pool calculations, and payouts."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1795544336,
      "venue": "qfex"
     }
    ],
@@ -27006,6 +27184,10 @@
      [
       1795513099,
       50.5
+     ],
+     [
+      1795544336,
+      50.5
      ]
     ],
     "qfex-fdv-above-300m-one-day-after-launch": [
@@ -27320,6 +27502,10 @@
      [
       1795523902,
       45.0
+     ],
+     [
+      1795544336,
+      44.5
      ]
     ],
     "qfex-fdv-above-500m-one-day-after-launch": [
@@ -27878,6 +28064,10 @@
      [
       1795516702,
       30.5
+     ],
+     [
+      1795544336,
+      37.5
      ]
     ],
     "qfex-fdv-above-50m-one-day-after-launch": [
@@ -28336,6 +28526,10 @@
      [
       1795516702,
       60.5
+     ],
+     [
+      1795544336,
+      60.0
      ]
     ],
     "qfex-fdv-above-80m-one-day-after-launch": [
@@ -28714,6 +28908,10 @@
      [
       1795516702,
       57.5
+     ],
+     [
+      1795544336,
+      57.5
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2026": [
@@ -28911,6 +29109,10 @@
      ],
      [
       1795516702,
+      1.7
+     ],
+     [
+      1795544336,
       1.7
      ]
     ],
@@ -29210,6 +29412,10 @@
      [
       1795516702,
       57.5
+     ],
+     [
+      1795544336,
+      51.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
@@ -29816,6 +30022,10 @@
      [
       1795522117,
       29.5
+     ],
+     [
+      1795544336,
+      30.0
      ]
     ],
     "will-qfex-launch-a-token-by-march-31-2027": [
@@ -30037,10 +30247,6 @@
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
-     [
-      1794719310,
-      34.5
-     ],
      [
       1794722911,
       34.0
@@ -30836,6 +31042,10 @@
      [
       1795516702,
       36.5
+     ],
+     [
+      1795544336,
+      38.0
      ]
     ]
    },
@@ -30981,27 +31191,27 @@
    },
    "status": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "21건",
+     "at": 1795544336,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "19건",
      "ok": true
     }
@@ -31590,6 +31800,10 @@
      [
       1795504113,
       1.9
+     ],
+     [
+      1795544336,
+      1.9
      ]
     ],
     "will-risex-launch-a-token-by-december-31-2027-20260708174012706": [
@@ -31960,6 +32174,10 @@
      [
       1795522117,
       56.0
+     ],
+     [
+      1795544336,
+      55.5
      ]
     ],
     "will-risex-launch-a-token-by-june-30-2027-20260708174012705": [
@@ -32630,6 +32848,10 @@
      [
       1795518509,
       41.5
+     ],
+     [
+      1795544336,
+      39.5
      ]
     ]
    },
@@ -32787,27 +33009,28 @@
      "ecba8d1a18d2",
      "2a966adcf540",
      "57bd5f4f303b",
-     "3e61c5be09af"
+     "3e61c5be09af",
+     "67d450ed49e7"
     ]
    },
    "status": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     }
@@ -34325,17 +34548,17 @@
    },
    "status": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "3건",
+     "at": 1795544336,
+     "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "9건",
      "ok": true
     }
@@ -34348,7 +34571,7 @@
    "api_watch": {
     "pages": {
      "https://docs.txflow.com/api/exchange.md": {
-      "at": 1795523902,
+      "at": 1795544336,
       "state": "closed"
      }
     },
@@ -34740,27 +34963,27 @@
    },
    "status": {
     "api_watch": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     }
@@ -34773,11 +34996,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1795523902,
+      "at": 1795544336,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1795523902,
+      "at": 1795544336,
       "state": "closed"
      }
     },
@@ -35176,6 +35399,7 @@
     "c43e414545c5",
     "c607bf41885b",
     "cb79f4fb8a7b",
+    "d435f9b1c6aa",
     "da395b6c01cd",
     "e099d49d2417",
     "e1ed8d816a18",
@@ -35183,6 +35407,7 @@
     "e953a2afcf17",
     "e98dc5cfa238",
     "ea358ab290da",
+    "eabbcca4aa37",
     "eb4a4729e243",
     "fbc51c315056"
    ],
@@ -35594,6 +35819,10 @@
      [
       1795522117,
       98.0
+     ],
+     [
+      1795544336,
+      98.4
      ]
     ],
     "variational-fdv-above-1b-one-day-after-launch-636-229-681": [
@@ -35939,10 +36168,6 @@
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
-     [
-      1794357500,
-      96.9
-     ],
      [
       1794362092,
       97.2
@@ -36738,6 +36963,10 @@
      [
       1795516702,
       97.5
+     ],
+     [
+      1795544336,
+      97.5
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
@@ -37376,6 +37605,10 @@
      [
       1795516702,
       15.3
+     ],
+     [
+      1795544336,
+      16.2
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
@@ -37666,6 +37899,10 @@
      [
       1795516702,
       95.7
+     ],
+     [
+      1795544336,
+      96.1
      ]
     ],
     "variational-fdv-above-3b-one-day-after-launch-846-887-175": [
@@ -38426,6 +38663,10 @@
      [
       1795522117,
       4.7
+     ],
+     [
+      1795544336,
+      4.7
      ]
     ],
     "variational-fdv-above-500m-one-day-after-launch-547-272": [
@@ -38740,6 +38981,10 @@
      [
       1795504113,
       90.5
+     ],
+     [
+      1795544336,
+      91.0
      ]
     ],
     "variational-fdv-above-5b-one-day-after-launch-995-724-585": [
@@ -39154,6 +39399,10 @@
      [
       1795516702,
       1.9
+     ],
+     [
+      1795544336,
+      1.9
      ]
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
@@ -39536,13 +39785,13 @@
      [
       1795504113,
       75.5
+     ],
+     [
+      1795544336,
+      75.5
      ]
     ],
     "will-variational-launch-a-token-by-december-31-2026-577-621": [
-     [
-      1794467312,
-      68.3
-     ],
      [
       1794469118,
       67.9
@@ -40338,6 +40587,10 @@
      [
       1795523902,
       63.5
+     ],
+     [
+      1795544336,
+      53.4
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
@@ -40676,6 +40929,10 @@
      [
       1795518509,
       1.8
+     ],
+     [
+      1795544336,
+      2.1
      ]
     ]
    },
@@ -40762,7 +41019,8 @@
      "7adcb3de5e04",
      "cc13e5967e6d",
      "c719cd5a8946",
-     "593d198147bd"
+     "593d198147bd",
+     "5e1247d0f367"
     ],
     "x:variational_io": [
      "21f25f747f75",
@@ -40884,37 +41142,40 @@
      "3ba78dbeff13",
      "2299e285f36d",
      "abb388996f59",
-     "857a83005d2d"
+     "857a83005d2d",
+     "5c7657af64f0",
+     "56d4f9d057bf",
+     "4ac34795ea6b"
     ]
    },
    "status": {
     "api_watch": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "15건",
+     "at": 1795544336,
+     "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "18건",
      "ok": true
     }

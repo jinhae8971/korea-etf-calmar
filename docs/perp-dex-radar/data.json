@@ -1,7 +1,105 @@
 {
- "generated_at": 1795523902,
+ "generated_at": 1795544336,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Is funding included in realized PnL?, What is the Vaults page?, What are Variable Rate Markets?",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "b6df79553c38",
+   "ref": {
+    "moved": [],
+    "name": "도움말 전체 목록",
+    "new": [
+     "Is funding included in realized PnL? — https://help.arcus.xyz/is-funding-included-in-realized-pn-l.md",
+     "What is the Vaults page? — https://help.arcus.xyz/what-is-the-vaults-page.md",
+     "What are Variable Rate Markets? — https://help.arcus.xyz/what-are-variable-rate-markets.md",
+     "Who holds my collateral and deposits? — https://help.arcus.xyz/who-holds-my-collateral-and-deposits.md",
+     "Is this the same as Multi-Asset Collateral? — https://help.arcus.xyz/is-this-the-same-as-multi-asset-collateral.md",
+     "Do I need ETH? — https://help.arcus.xyz/do-i-need-eth.md",
+     "Which Stock Tokens can I borrow against? — https://help.arcus.xyz/which-stock-tokens-can-i-borrow-against.md",
+     "How much can I borrow? — https://help.arcus.xyz/how-much-can-i-borrow.md",
+     "What does borrowing cost? — https://help.arcus.xyz/what-does-borrowing-cost.md",
+     "How do I monitor my position? — https://help.arcus.xyz/how-do-i-monitor-my-position.md"
+    ],
+    "removed": [],
+    "url": "https://help.arcus.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 새 문서 18개",
+   "ts": 1795544336,
+   "venue": "arcus",
+   "venue_name": "Arcus"
+  },
+  {
+   "detail": "Spanish (14 pages)",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "922f2794eaac",
+   "ref": {
+    "moved": [],
+    "name": "문서 전체 목록",
+    "new": [
+     "Spanish (14 pages) — https://docs.qfex.com/_llms/es.txt"
+    ],
+    "removed": [],
+    "url": "https://docs.qfex.com/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 새 문서 1개",
+   "ts": 1795544336,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "24th November 2026",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "aa79b98bf9ce",
+   "ref": {
+    "added": [
+     "**24th November 2026**",
+     "API Update",
+     "**Affiliate competition standings support global enrollment and host removals.**",
+     "Endpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+     "Challenge responses include is\\_global. Global competitions rank signed-in users who opt in. Referral-only competitions retain their direct-referral eligibility. Removed entrants are excluded from standings, prize pool calculations, and payouts."
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1795544336,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "0x073f5644 → 0x91d40e48",
+   "family": "S1",
+   "grade": "WATCH",
+   "id": "2c5911fd1f22",
+   "ref": {
+    "amount": 1951206.5,
+    "chain": "eth",
+    "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+    "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+    "tx": "0x69cc1c069fc247e8d974df7ce73f18c7a969ca073f619ea8299078dce1bcd0cb"
+   },
+   "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
+   "refuted": false,
+   "signal": "eth_large",
+   "title": "이더리움 LIT 1.95M개 대량 이동",
+   "ts": 1795526639,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
   {
    "detail": "0x91d40e48 → 0x073f5644",
    "family": "S1",
@@ -15,7 +113,10 @@
     "tx": "0x1852d50c0edf7fefd647c3cf739013d91b690f4e589806b6b59508a5c350859a"
    },
    "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-   "refuted": false,
+   "refute_kind": "data",
+   "refute_reason": "이동한 LIT가 72시간 안에 원래 지갑으로 돌아왔어요",
+   "refuted": true,
+   "refuted_at": 1795544336,
    "signal": "eth_large",
    "title": "이더리움 LIT 1.90M개 대량 이동",
    "ts": 1795489115,
@@ -4925,105 +5026,9 @@
    "ts": 1793387243,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "Earnings and Economic Calendar, Earnings and Economic Calendar",
-   "family": "S2",
-   "grade": "WATCH",
-   "id": "3be07dd68d67",
-   "ref": {
-    "moved": [],
-    "name": "문서 전체 목록",
-    "new": [
-     "Earnings and Economic Calendar — https://docs.qfex.com/api-reference/rest/market-data/earnings-and-economic-calendar.md",
-     "Earnings and Economic Calendar — https://docs.qfex.com/api-reference/rest/2026-10-29/market-data/earnings-and-economic-calendar.md"
-    ],
-    "removed": [],
-    "url": "https://docs.qfex.com/llms.txt"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "index_change",
-   "title": "공식 문서 목록 변경: 새 문서 2개",
-   "ts": 1793385590,
-   "venue": "qfex",
-   "venue_name": "QFEX"
-  },
-  {
-   "detail": "30th October 2026",
-   "family": "S2",
-   "grade": "WATCH",
-   "id": "619ad2a64bd3",
-   "ref": {
-    "added": [
-     "**30th October 2026**",
-     "Breaking Change",
-     "**Publish API version 2026-10-30 with source-free earnings metadata.**",
-     "Endpoints: `GET /calendar`.",
-     "The latest API contract is now 2026-10-30. Calendar earnings metadata omits source, sources, source\\_name and source\\_url keys, including nested release-time attribution. Financial results, release timing and economic events are unchanged. The 2026-10-29 contract preserves its original response."
-    ],
-    "name": "변경 기록",
-    "removed": 0,
-    "url": "https://docs.qfex.com/websocket/changelog.md"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "doc_change",
-   "title": "공식 문서 '변경 기록' 문구 변경",
-   "ts": 1793385590,
-   "venue": "qfex",
-   "venue_name": "QFEX"
-  },
-  {
-   "detail": "will-pacifica-launch-a-token-by-december-31-2027 · Yes 51.0%",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "090924e10a0a",
-   "ref": {
-    "end": "2028-01-01T04:59:00Z",
-    "event": "will-pacifica-launch-a-token-by",
-    "slug": "will-pacifica-launch-a-token-by-december-31-2027",
-    "title": "Will Pacifica launch a token by December 31, 2027?",
-    "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-december-31-2027",
-    "volume": 0.0,
-    "yes_pct": 51.0
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "polymarket",
-   "title": "Polymarket 새 시장: Will Pacifica launch a token by December 31, 2027?",
-   "ts": 1793385590,
-   "venue": "pacifica",
-   "venue_name": "Pacifica"
-  },
-  {
-   "detail": "will-pacifica-launch-a-token-by-june-30-2027 · Yes 50.0%",
-   "family": "S4",
-   "grade": "WATCH",
-   "id": "9985f24ec047",
-   "ref": {
-    "end": "2027-07-01T03:59:00Z",
-    "event": "will-pacifica-launch-a-token-by",
-    "slug": "will-pacifica-launch-a-token-by-june-30-2027",
-    "title": "Will Pacifica launch a token by June 30, 2027?",
-    "url": "https://polymarket.com/event/will-pacifica-launch-a-token-by-june-30-2027",
-    "volume": 0.0,
-    "yes_pct": 50.0
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "polymarket",
-   "title": "Polymarket 새 시장: Will Pacifica launch a token by June 30, 2027?",
-   "ts": 1793385590,
-   "venue": "pacifica",
-   "venue_name": "Pacifica"
   }
  ],
  "runs": [
-  [
-   1795437511,
-   "d"
-  ],
   [
    1795471708,
    "d"
@@ -5147,16 +5152,51 @@
   [
    1795523902,
    "d"
+  ],
+  [
+   1795544336,
+   "s"
   ]
  ],
  "venues": [
   {
    "api_watch": null,
-   "events": [],
+   "events": [
+    {
+     "detail": "Is funding included in realized PnL?, What is the Vaults page?, What are Variable Rate Markets?",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "b6df79553c38",
+     "ref": {
+      "moved": [],
+      "name": "도움말 전체 목록",
+      "new": [
+       "Is funding included in realized PnL? — https://help.arcus.xyz/is-funding-included-in-realized-pn-l.md",
+       "What is the Vaults page? — https://help.arcus.xyz/what-is-the-vaults-page.md",
+       "What are Variable Rate Markets? — https://help.arcus.xyz/what-are-variable-rate-markets.md",
+       "Who holds my collateral and deposits? — https://help.arcus.xyz/who-holds-my-collateral-and-deposits.md",
+       "Is this the same as Multi-Asset Collateral? — https://help.arcus.xyz/is-this-the-same-as-multi-asset-collateral.md",
+       "Do I need ETH? — https://help.arcus.xyz/do-i-need-eth.md",
+       "Which Stock Tokens can I borrow against? — https://help.arcus.xyz/which-stock-tokens-can-i-borrow-against.md",
+       "How much can I borrow? — https://help.arcus.xyz/how-much-can-i-borrow.md",
+       "What does borrowing cost? — https://help.arcus.xyz/what-does-borrowing-cost.md",
+       "How do I monitor my position? — https://help.arcus.xyz/how-do-i-monitor-my-position.md"
+      ],
+      "removed": [],
+      "url": "https://help.arcus.xyz/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 18개",
+     "ts": 1795544336,
+     "venue": "arcus"
+    }
+   ],
    "groups": [],
    "id": "arcus",
    "lb_hist": null,
-   "level": "NONE",
+   "level": "WATCH",
    "links": {},
    "name": "Arcus",
    "odds": "",
@@ -5164,38 +5204,38 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795523902,
-     "note": "26건",
+     "at": 1795544336,
+     "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "20건",
+     "at": 1795544336,
+     "note": "22건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795523902,
-     "note": "19건",
+     "at": 1795544336,
+     "note": "20건",
      "ok": true
     }
    },
@@ -5208,22 +5248,22 @@
    "api_watch": null,
    "events": [
     {
-     "detail": "0x91d40e48 → 0x073f5644",
+     "detail": "0x073f5644 → 0x91d40e48",
      "family": "S1",
      "grade": "WATCH",
-     "id": "7f041aa227a4",
+     "id": "2c5911fd1f22",
      "ref": {
-      "amount": 1895544.84,
+      "amount": 1951206.5,
       "chain": "eth",
-      "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-      "to": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
-      "tx": "0x1852d50c0edf7fefd647c3cf739013d91b690f4e589806b6b59508a5c350859a"
+      "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
+      "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
+      "tx": "0x69cc1c069fc247e8d974df7ce73f18c7a969ca073f619ea8299078dce1bcd0cb"
      },
      "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
      "refuted": false,
      "signal": "eth_large",
-     "title": "이더리움 LIT 1.90M개 대량 이동",
-     "ts": 1795489115,
+     "title": "이더리움 LIT 1.95M개 대량 이동",
+     "ts": 1795526639,
      "venue": "lighter-rh"
     },
     {
@@ -5576,24 +5616,6 @@
      "title": "이더리움 LIT 2.36M개 대량 이동",
      "ts": 1795011431,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOb1pHdTVWc0Nmd2pIdno1TUg1OUJJOXhfU2dkcUFSUnZ1WEdudlFWTWM3X3RBZjNNSFFKRVRiZFVhRGtRdFdsT3paWkstdV9TdnpUYjJ1R1Z",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "3c02e2e908d7",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOb1pHdTVWc0Nmd2pIdno1TUg1OUJJOXhfU2dkcUFSUnZ1WEdudlFWTWM3X3RBZjNNSFFKRVRiZFVhRGtRdFdsT3paWkstdV9TdnpUYjJ1R1ZPTUVIM2dRdDI2TkxiSGJmYTYySmdsZUc4S2RtaTdEVzJ2NTZoRGtBWXR1Yk5qTG5RSi1nc1J1V1QtdTVEdWdHVTRFMEZEeF93NEkyU2hlTzJxbkpWak12R1ZhU2MwWkpaMDZ4VTdR?oc=5",
-      "words": [
-       "airdrop"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: Lighter’s LIT token faces $2B–$3B valuation debate after airdrop - CoinDesk",
-     "ts": 1794923472,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [
@@ -5601,11 +5623,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794388105,
-     275628.878,
-     66847.75
-    ],
     [
      1794388773,
      275637.428,
@@ -7600,6 +7617,11 @@
      1795523902,
      334028.54,
      85292.26
+    ],
+    [
+     1795544336,
+     334288.225,
+     85433.65
     ]
    ],
    "level": "ALERT",
@@ -9302,62 +9324,66 @@
     [
      1795523902,
      518585.47
+    ],
+    [
+     1795544336,
+     518712.93
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "19건",
      "ok": true
     },
     "board": {
-     "at": 1795523902,
-     "note": "상위 10명 합계 334,029",
+     "at": 1795544336,
+     "note": "상위 10명 합계 334,288",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795523902,
-     "note": "148블록 · 대량 0건",
+     "at": 1795544336,
+     "note": "1698블록 · 대량 1건",
      "ok": true
     },
     "frontend": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "모듈 163 · API 149",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "90건",
+     "at": 1795544336,
+     "note": "91건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795523902,
-     "note": "518,585 LIT",
+     "at": 1795544336,
+     "note": "518,713 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795523902,
-     "note": "20건",
+     "at": 1795544336,
+     "note": "21건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     }
@@ -9370,6 +9396,51 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "Spanish (14 pages)",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "922f2794eaac",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [
+       "Spanish (14 pages) — https://docs.qfex.com/_llms/es.txt"
+      ],
+      "removed": [],
+      "url": "https://docs.qfex.com/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 1개",
+     "ts": 1795544336,
+     "venue": "qfex"
+    },
+    {
+     "detail": "24th November 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "aa79b98bf9ce",
+     "ref": {
+      "added": [
+       "**24th November 2026**",
+       "API Update",
+       "**Affiliate competition standings support global enrollment and host removals.**",
+       "Endpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+       "Challenge responses include is\\_global. Global competitions rank signed-in users who opt in. Referral-only competitions retain their direct-referral eligibility. Removed entrants are excluded from standings, prize pool calculations, and payouts."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1795544336,
+     "venue": "qfex"
+    },
     {
      "detail": "Fix",
      "family": "S2",
@@ -9677,27 +9748,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "21건",
+     "at": 1795544336,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "19건",
      "ok": true
     }
@@ -9851,33 +9922,33 @@
    "level": "IMMINENT",
    "links": {},
    "name": "Extended",
-   "odds": "토큰 출시 확률 12/31까지 99%",
+   "odds": "토큰 출시 확률 12/31까지 98%",
    "rh_supply_hist": null,
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "48건",
+     "at": 1795544336,
+     "note": "27건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795523902,
-     "note": "21건",
+     "at": 1795544336,
+     "note": "20건",
      "ok": true
     }
    },
@@ -9972,37 +10043,37 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 2% · 12/31까지 64%",
+   "odds": "토큰 출시 확률 11/30까지 2% · 12/31까지 53%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "15건",
+     "at": 1795544336,
+     "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 12개",
      "ok": true
     },
     "telegram": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "18건",
      "ok": true
     }
@@ -10053,26 +10124,6 @@
      "title": "Polymarket: Will Pacifica launch a token by June 30, 2027? 32% → 53%",
      "ts": 1794952120,
      "venue": "pacifica"
-    },
-    {
-     "detail": "Print is available on BTC, ETH, SOL, HYPE, ZEC, XRP, LIT, NEAR, ENA, SKHYNIX, NVDA, GOLD (XAU), and CL. Every listed Print market offers a 24-hour cycle; BTC also offers 7-day and 30-day cycles. See Specifications for current leverage and deposit limits.",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "e33da5b87d05",
-     "ref": {
-      "added": [
-       "Print is available on **BTC, ETH, SOL, HYPE, ZEC, XRP, LIT, NEAR, ENA, SKHYNIX, NVDA, GOLD (XAU), and CL**. Every listed Print market offers a 24-hour cycle; BTC also offers 7-day and 30-day cycles. See [Specifications](https://docs.pacifica.fi/print/specifications.md) for current leverage and deposit limits."
-      ],
-      "name": "Print",
-      "removed": 1,
-      "url": "https://docs.pacifica.fi/print.md"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 'Print' 문구 변경",
-     "ts": 1794923472,
-     "venue": "pacifica"
     }
    ],
    "groups": [],
@@ -10081,34 +10132,34 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 13% · 27년 3/31까지 24% · 27년 6/30까지 56%",
+   "odds": "토큰 출시 확률 12/31까지 13% · 27년 3/31까지 24% · 27년 6/30까지 59%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3건",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795523902,
-     "err": "X 수집 실패: https://xcancel.com/pacifica_fi/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/pacifica_fi/statuses → HTTP 404",
-     "ok": false
+     "at": 1795544336,
+     "note": "14건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -10130,27 +10181,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     }
@@ -10191,23 +10242,23 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "9건",
+     "at": 1795544336,
+     "note": "8건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795523902,
-     "note": "20건",
+     "at": 1795544336,
+     "note": "21건",
      "ok": true
     }
    },
@@ -10230,17 +10281,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
-     "note": "3건",
+     "at": 1795544336,
+     "note": "4건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "9건",
      "ok": true
     }
@@ -10327,27 +10378,27 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 42% · 27년 12/31까지 56%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 40% · 27년 12/31까지 56%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795523902,
+     "at": 1795544336,
      "note": "20건",
      "ok": true
     }
