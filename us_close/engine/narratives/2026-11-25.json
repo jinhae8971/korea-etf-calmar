@@ -1,0 +1,86 @@
+{
+ "headline": "장중 −4.7%까지 밀린 나스닥100이 11/20 저점을 지키고 −0.6%로 마감했어요.",
+ "breadth_note": "오른 종목 55, 내린 종목 41이에요. 동일가중(RSP +0.83%)이 시총가중(SPY −0.29%)을 1.1%p 앞서 이틀째 동일가중이 강했고, 러셀2000도 +0.7%였어요. SMA50 위 비율은 45.4%(전일 43.3%)로 사흘째 올랐어요.",
+ "drivers": [
+  "장중 급락 뒤 반등: 나스닥100이 장 초반 −4.7%(24,970.7)로 고점 대비 −20% 문턱까지 밀렸다가 −0.6%로 마감했어요. 11/20 저점(24,910.5)을 깨지 않자 저가 매수가 들어왔고, 다우는 장중 −1,100포인트에서 +0.3%로 돌아섰어요(Bloomingbit·Reuters).",
+  "물가·성장 동반 상승: 10월 PCE 3.8%(전월 3.6%), 근원 3.3%(예상 3.2%)로 2023년 이후 최고였고, 3분기 GDP는 4.3%로 속보치(3.4%)보다 크게 올랐어요. 12월 25bp 인상 확률은 약 98%예요(Yahoo Finance).",
+  "관세: 미국이 '구조적 과잉 생산'을 이유로 중국·EU 등 14개국에 최대 20% 추가 관세를 제안했어요. 기존 관세에 더해져 일부 품목은 40%를 넘을 수 있고, 시행은 내년 1월 이후로 보여요(Yahoo Finance·Reuters).",
+  "AI·반도체: 엔비디아는 장중 −9.1%에서 −3.9%로, 마이크론은 −13.0%에서 −4.5%로 줄였지만 램리서치 −5.7%, 오라클 −5.1%로 약세가 이어졌어요. 전날 급락한 ADI +6.4%, TI +4.5%는 되올랐어요.",
+  "금리·순환매: 10년물이 4.85%(−5.6bp)로 내려 주택건설 +2.9%, 금광 +3.5%, 소재 +2.1%(섹터 1위)가 강했어요. HP는 예상을 넘은 실적과 2027회계연도 전망에 +11.5%예요(Motley Fool). WTI +2.6%(84.2달러), VIX는 28.3(+1.9pt)이에요."
+ ],
+ "after_hours": [
+  "QQQ 633.3(−0.1%), SPY 716.8(0.0%), SOXX 127.8(−0.1%), DRAM 34.9(+0.1%), 엔비디아 149.4(+0.1%)로 시간외는 잠잠해요(마감 33분 기준)."
+ ],
+ "tech": {
+  "QQQ": {
+   "short": 55,
+   "swing": 30,
+   "short_d": 5,
+   "swing_d": 0,
+   "note": "장중 607.8(−4.8%)까지 밀려 11/20 저점(606.2)을 시험한 뒤 633.9(−0.65%)로 마감해 하루 범위의 96% 위치에서 끝났어요. 저점을 높인 반등이고 4H·일봉 MACD 히스토그램도 개선 중(4H −0.68→−0.38, 일봉 −2.81→−2.50)이라 단기 5%p 올렸어요. 다만 636.8 아래 마감이라 다음 거래일 확인이 필요해요.",
+   "up": "636.8 회복 → 647.2, 661.1",
+   "down": "629.2 이탈 → 606.2(11/20 저점), 583.3"
+  },
+  "SPY": {
+   "short": 60,
+   "swing": 30,
+   "short_d": 5,
+   "swing_d": 0,
+   "note": "장중 695.5(−3.2%)에서 716.7(−0.29%)로 회복해 716.6 지지 위에서 마감했어요. 11/20 저점(686.8)보다 높은 저점이고, 4H MACD가 골든크로스(히스토그램 −0.24→+0.15)를 냈어요. 단기 5%p 올렸고, 주봉 EMA50(722.7)은 사흘째 못 넘어 스윙은 그대로예요.",
+   "up": "722.7 회복(주봉 EMA50) → 729.1, 734.2(4H SuperTrend)",
+   "down": "716.6 이탈 → 697.8, 686.8(11/20 저점)"
+  },
+  "SOXX": {
+   "short": 45,
+   "swing": 25,
+   "short_d": 5,
+   "swing_d": 0,
+   "note": "장중 118.2(−8.1%)로 11/20 저점(122.2)과 주봉 EMA120(120.3)을 잠깐 깼다가 128.0(−0.5%)으로 마감했어요. 하루 범위 꼭대기(99%)에서 끝났고 4H MACD 히스토그램도 개선(−0.76→−0.64)됐지만, 일봉 히스토그램은 아직 내려가고 있어요(−0.85→−0.92). 단기 5%p 올렸어요.",
+   "up": "130.8 회복 → 147.6(4H EMA50), 148.3(4H SuperTrend)",
+   "down": "122.9 이탈 → 120.3(주봉 EMA120), 118.2(11/25 저점)"
+  },
+  "DRAM": {
+   "short": 40,
+   "swing": 25,
+   "short_d": 0,
+   "swing_d": 0,
+   "note": "장중 31.92(−11.1%)로 11/20 저점(33.32)을 깬 뒤 34.83(−3.0%)까지 회복했어요. 다만 4H MACD가 데드크로스를 냈고 일봉 히스토그램도 내려가(−0.19→−0.23) 확률은 그대로 뒀어요. 마이크론은 장중 −13.0%에서 −4.5%로 줄였어요.",
+   "up": "37.0 회복 → 38.4(주봉 EMA120), 41.9(4H SuperTrend)",
+   "down": "31.9(11/25 저점) 이탈 → 29.4(주봉 SuperTrend)"
+  }
+ },
+ "calendar": [
+  "11/26(목) 추수감사절 휴장, 27일(금) ET 13시 조기 폐장",
+  "12/4(금) 22:30 11월 고용보고서",
+  "12/10(목) 04:00 FOMC 결과(25bp 인상 확률 약 98%)"
+ ],
+ "view": "물가(근원 PCE 3.3%)·성장(GDP 4.3%)·관세가 한꺼번에 겹친 장 초반 매도에 나스닥100이 고점 대비 −20% 문턱까지 밀렸지만, 11/20 저점을 지키자 저가 매수가 들어와 대부분 되돌렸어요. QQQ·SPY는 저점을 높였고 SPY 4H MACD가 골든크로스를 내 단기 확률을 5%p씩 올렸어요. 반도체는 장중 새 저점을 만든 뒤 되올라 아직 바닥 확인 전이에요. 금요일은 조기 폐장이라 거래가 얇으니, 11/20 저점(QQQ 606.2, SPY 686.8)을 지키는지가 다음 주까지 이어질 기준이에요.",
+ "summary": [
+  "근원 PCE 3.3%·GDP 4.3%·관세 제안에 나스닥100이 장중 −4.7%였어요.",
+  "11/20 저점을 지키자 저가 매수로 −0.6%까지 회복, 다우는 +0.3%예요.",
+  "QQQ·SPY·SOXX 단기 확률 +5%p, DRAM은 4H 데드크로스로 유지했어요.",
+  "목요일 휴장·금요일 조기 폐장, 12월 인상 확률은 약 98%예요."
+ ],
+ "sources": [
+  {
+   "title": "Stock market today: Dow erases losses to end positive, S&P 500 and Nasdaq recover ground amid AI sell-off (Yahoo Finance)",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html"
+  },
+  {
+   "title": "Nasdaq Erases Most of 4.6% Slump as Dip Buyers Step In (Bloomingbit)",
+   "url": "https://en.bloomingbit.io/feed/news/125251"
+  },
+  {
+   "title": "Nasdaq, S&P 500 ease, but off lows of the day as investors seek bargains (Reuters via MarketScreener)",
+   "url": "https://www.marketscreener.com/news/nasdaq-s-p-500-ease-but-off-lows-of-the-day-as-investors-seek-bargains-ce7851d8da8ef121"
+  },
+  {
+   "title": "Stock Market Midday, Nov. 25: Nasdaq Plunges 4% as AI Sell-Off Deepens (Motley Fool)",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-midday-nov-25-nasdaq-plunges-4-as-ai-sell-off-deepens-and-inflation-remains-stubborn/"
+  },
+  {
+   "title": "Schedule of Releases for December 2026 (BLS)",
+   "url": "https://www.bls.gov/schedule/2026/12_sched_list.htm"
+  }
+ ]
+}
