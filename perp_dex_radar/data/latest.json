@@ -1,11 +1,11 @@
 {
- "generated_at": 1795620797,
+ "generated_at": 1795644515,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
   "hellotrade": "WATCH",
   "lighter-rh": "ALERT",
-  "pacifica": "WATCH",
+  "pacifica": "NONE",
   "qfex": "WATCH",
   "risex": "WATCH",
   "titanx": "NONE",
@@ -29,10 +29,6 @@
   }
  ],
  "runs": [
-  [
-   1795544336,
-   "s"
-  ],
   [
    1795561461,
    "s"
@@ -72,6 +68,10 @@
   [
    1795620797,
    "s"
+  ],
+  [
+   1795644515,
+   "d"
   ]
  ],
  "status": {
@@ -95,7 +95,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:hellotradeapp": true
+   "x:hellotradeapp": false
   },
   "lighter-rh": {
    "ann": true,
@@ -140,7 +140,7 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:TxFlow_L1": true
+   "x:TxFlow_L1": false
   },
   "variational": {
    "api_watch": true,
