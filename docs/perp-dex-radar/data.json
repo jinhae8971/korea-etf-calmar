@@ -1,7 +1,29 @@
 {
- "generated_at": 1795644515,
+ "generated_at": 1795646191,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "What happens during a stock split?",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "c84b6c5c5c14",
+   "ref": {
+    "moved": [],
+    "name": "도움말 전체 목록",
+    "new": [
+     "What happens during a stock split? — https://help.arcus.xyz/what-happens-during-a-stock-split.md"
+    ],
+    "removed": [],
+    "url": "https://help.arcus.xyz/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 새 문서 1개",
+   "ts": 1795646191,
+   "venue": "arcus",
+   "venue_name": "Arcus"
+  },
   {
    "detail": "How do take-profit and stop-loss orders work?, What are stop market and stop limit orders?, What is a scale order?",
    "family": "S2",
@@ -4983,23 +5005,6 @@
    "ts": 1793684303,
    "venue": "extended",
    "venue_name": "Extended"
-  },
-  {
-   "detail": "/docs/cookbook/deploy-erc20-token",
-   "family": "S2",
-   "grade": "WATCH",
-   "id": "cfc5db2c34ce",
-   "ref": {
-    "name": "문서 사이트 지도",
-    "url": "https://docs.risechain.com/sitemap.xml"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "doc_change",
-   "title": "공식 문서 '문서 사이트 지도' 문구 변경",
-   "ts": 1793678912,
-   "venue": "risex",
-   "venue_name": "RISEx"
   }
  ],
  "runs": [
@@ -5046,12 +5051,37 @@
   [
    1795644515,
    "d"
+  ],
+  [
+   1795646191,
+   "s"
   ]
  ],
  "venues": [
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "What happens during a stock split?",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "c84b6c5c5c14",
+     "ref": {
+      "moved": [],
+      "name": "도움말 전체 목록",
+      "new": [
+       "What happens during a stock split? — https://help.arcus.xyz/what-happens-during-a-stock-split.md"
+      ],
+      "removed": [],
+      "url": "https://help.arcus.xyz/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 새 문서 1개",
+     "ts": 1795646191,
+     "venue": "arcus"
+    },
     {
      "detail": "How do take-profit and stop-loss orders work?, What are stop market and stop limit orders?, What is a scale order?",
      "family": "S2",
@@ -5118,37 +5148,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "20건",
      "ok": true
     }
@@ -5839,11 +5869,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794438511,
-     276389.123,
-     67167.12
-    ],
     [
      1794440302,
      276436.239,
@@ -7838,6 +7863,11 @@
      1795644515,
      335528.095,
      86104.625
+    ],
+    [
+     1795646191,
+     335539.59,
+     86109.73
     ]
    ],
    "level": "ALERT",
@@ -9448,62 +9478,66 @@
     [
      1795644515,
      524276.31
+    ],
+    [
+     1795646191,
+     524276.31
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795644515,
-     "note": "19건",
+     "at": 1795646191,
+     "note": "20건",
      "ok": true
     },
     "board": {
-     "at": 1795644515,
-     "note": "상위 10명 합계 335,528",
+     "at": 1795646191,
+     "note": "상위 10명 합계 335,540",
      "ok": true
     },
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795644515,
-     "note": "1967블록 · 대량 0건",
+     "at": 1795646191,
+     "note": "139블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "모듈 176 · API 153",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
-     "note": "98건",
+     "at": 1795646191,
+     "note": "131건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "524,276 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "20건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "20건",
      "ok": true
     }
@@ -9793,27 +9827,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "19건",
      "ok": true
     }
@@ -9972,29 +10006,29 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "22건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795644515,
-     "err": "X 수집 실패: https://xcancel.com/extendedapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/extendedapp/statuses → HTTP 404",
-     "ok": false
+     "at": 1795646191,
+     "note": "21건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -10188,32 +10222,32 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
-     "note": "16건",
+     "at": 1795646191,
+     "note": "28건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "18건",
      "ok": true
     }
@@ -10241,32 +10275,32 @@
    "level": "NONE",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 7% · 27년 3/31까지 35% · 27년 6/30까지 49%",
+   "odds": "토큰 출시 확률 12/31까지 8% · 27년 3/31까지 35% · 27년 6/30까지 49%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "3건",
      "ok": true
     },
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
-     "note": "26건",
+     "at": 1795646191,
+     "note": "25건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "17건",
      "ok": true
     }
@@ -10342,29 +10376,29 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795644515,
-     "err": "X 수집 실패: https://xcancel.com/TxFlow_L1/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/TxFlow_L1/statuses → HTTP 404",
-     "ok": false
+     "at": 1795646191,
+     "note": "20건",
+     "ok": true
     }
    },
    "sources_all": 1,
@@ -10403,22 +10437,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795644515,
+     "at": 1795646191,
      "err": "X 수집 실패: https://xcancel.com/hellotradeapp/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/hellotradeapp/statuses → HTTP 404",
      "ok": false
     }
@@ -10442,17 +10476,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "9건",
      "ok": true
     }
@@ -10544,22 +10578,22 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795644515,
-     "note": "18건",
+     "at": 1795646191,
+     "note": "6건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795644515,
+     "at": 1795646191,
      "note": "18건",
      "ok": true
     }
