@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-25",
- "as_of_kst": "2026-11-25 07:41",
+ "as_of": "2026-11-26",
+ "as_of_kst": "2026-11-26 07:41",
  "data_status": "OK",
  "failed": [],
  "thresholds_frozen_at": "2026-09-05",
@@ -9,29 +9,29 @@
    "key": "kimchi",
    "label": "김치프리미엄",
    "level": 0,
-   "value": 1.45,
-   "display": "+1.45%",
+   "value": 0.99,
+   "display": "+0.99%",
    "note": "정상 범위",
    "raw": {
-    "value": 1.45,
-    "krw": 81802000.0,
-    "usd": 59969.955,
-    "fx": 1344.51,
+    "value": 0.99,
+    "krw": 81717000.0,
+    "usd": 60142.675,
+    "fx": 1345.4,
     "hist": {
-     "d1": 1.45,
-     "d30": 0.8
+     "d1": 0.99,
+     "d30": 1.47
     }
    },
    "deltas": {
     "d1": {
-     "delta": -0.01,
-     "dir": "flat",
-     "text": "-0.01%p"
+     "delta": -0.46,
+     "dir": "down",
+     "text": "-0.46%p"
     },
     "d30": {
-     "delta": 0.3,
+     "delta": 0.23,
      "dir": "up",
-     "text": "+0.30%p"
+     "text": "+0.23%p"
     }
    },
    "extra": ""
@@ -40,17 +40,17 @@
    "key": "altseason",
    "label": "알트시즌 지수",
    "level": 0,
-   "value": 50,
-   "display": "50 / 100",
+   "value": 54,
+   "display": "54 / 100",
    "note": "비트코인 우위",
    "raw": {
-    "value": 50,
+    "value": 54,
     "sample": 50,
-    "btc_30d": -25.6,
+    "btc_30d": -24.5,
     "leaders": [
      {
-      "sym": "LEO",
-      "chg": 0.6
+      "sym": "VVV",
+      "chg": 16.1
      },
      {
       "sym": "USDY",
@@ -64,14 +64,14 @@
    },
    "deltas": {
     "d1": {
-     "delta": -10,
-     "dir": "down",
-     "text": "-10"
+     "delta": 4,
+     "dir": "up",
+     "text": "+4"
     },
     "d30": {
-     "delta": 20,
+     "delta": 18,
      "dir": "up",
-     "text": "+20"
+     "text": "+18"
     }
    },
    "extra": ""
@@ -80,27 +80,27 @@
    "key": "fng",
    "label": "공포탐욕지수",
    "level": 0,
-   "value": 11,
-   "display": "11 (Extreme Fear)",
+   "value": 13,
+   "display": "13 (Extreme Fear)",
    "note": "탐욕 임계 미만",
    "raw": {
-    "value": 11,
+    "value": 13,
     "label": "Extreme Fear",
     "hist": {
      "d1": 11,
-     "d30": 54
+     "d30": 50
     }
    },
    "deltas": {
     "d1": {
-     "delta": 0,
-     "dir": "flat",
-     "text": "+0"
+     "delta": 2,
+     "dir": "up",
+     "text": "+2"
     },
     "d30": {
-     "delta": -39,
+     "delta": -35,
      "dir": "down",
-     "text": "-39"
+     "text": "-35"
     }
    },
    "extra": ""
@@ -109,24 +109,24 @@
    "key": "mvrv",
    "label": "MVRV",
    "level": 0,
-   "value": 1.21,
-   "display": "1.21 · Z 0.37",
+   "value": 1.18,
+   "display": "1.18 · Z 0.31",
    "note": "평균 회귀 구간",
    "raw": {
-    "value": 1.21,
-    "as_of": "2026-11-17",
-    "zscore": 0.37
+    "value": 1.18,
+    "as_of": "2026-11-18",
+    "zscore": 0.31
    },
    "deltas": {
     "d1": {
-     "delta": 0.0,
-     "dir": "flat",
-     "text": "+0.00"
+     "delta": -0.03,
+     "dir": "down",
+     "text": "-0.03"
     },
     "d30": {
-     "delta": -0.32,
+     "delta": -0.37,
      "dir": "down",
-     "text": "-0.32"
+     "text": "-0.37"
     }
    },
    "extra": ""
@@ -137,8 +137,6 @@
   "max": 8,
   "phase": "평온"
  },
- "changes": [
-  "알트시즌 지수 단계 하락 (🟠 → 🟢)"
- ],
- "message": "🧭 <b>크립토 고점신호</b>  2026-11-25 07:41 KST\n국면: <b>평온</b>  (과열도 0/8)\n\n🟢 <b>김치프리미엄</b> +1.45%\n     1일 ▬-0.01%p  ·  30일 🔺+0.30%p\n     <i>정상 범위</i>\n🟢 <b>알트시즌 지수</b> 50 / 100\n     1일 🔻-10  ·  30일 🔺+20\n     <i>비트코인 우위</i>\n🟢 <b>공포탐욕지수</b> 11 (Extreme Fear)\n     1일 ▬+0  ·  30일 🔻-39\n     <i>탐욕 임계 미만</i>\n🟢 <b>MVRV</b> 1.21 · Z 0.37\n     1일 ▬+0.00  ·  30일 🔻-0.32\n     <i>평균 회귀 구간</i>\n\n⚡ <b>변화</b>\n· 알트시즌 지수 단계 하락 (🟠 → 🟢)\n\n<i>관측 리포트입니다. 각 지표는 현재 구간의 서술이며 고점 시점이나 수익률을 주장하지 않습니다.</i>"
+ "changes": [],
+ "message": "🧭 <b>크립토 고점신호</b>  2026-11-26 07:41 KST\n국면: <b>평온</b>  (과열도 0/8)\n\n🟢 <b>김치프리미엄</b> +0.99%\n     1일 🔻-0.46%p  ·  30일 🔺+0.23%p\n     <i>정상 범위</i>\n🟢 <b>알트시즌 지수</b> 54 / 100\n     1일 🔺+4  ·  30일 🔺+18\n     <i>비트코인 우위</i>\n🟢 <b>공포탐욕지수</b> 13 (Extreme Fear)\n     1일 🔺+2  ·  30일 🔻-35\n     <i>탐욕 임계 미만</i>\n🟢 <b>MVRV</b> 1.18 · Z 0.31\n     1일 🔻-0.03  ·  30일 🔻-0.37\n     <i>평균 회귀 구간</i>\n\n<i>관측 리포트입니다. 각 지표는 현재 구간의 서술이며 고점 시점이나 수익률을 주장하지 않습니다.</i>"
 }
