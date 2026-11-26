@@ -1,5 +1,5 @@
 {
- "generated_at": 1795649908,
+ "generated_at": 1795651724,
  "levels": {
   "arcus": "WATCH",
   "extended": "IMMINENT",
@@ -80,6 +80,10 @@
   [
    1795649908,
    "d"
+  ],
+  [
+   1795651724,
+   "d"
   ]
  ],
  "status": {
@@ -90,20 +94,20 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:arcus_xyz": false
+   "x:arcus_xyz": true
   },
   "extended": {
    "docs": true,
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": false
+   "x:extendedapp": true
   },
   "hellotrade": {
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:hellotradeapp": false
+   "x:hellotradeapp": true
   },
   "lighter-rh": {
    "ann": true,
@@ -116,14 +120,14 @@
    "rh_supply": true,
    "rh_transfers": true,
    "x:Lighter_xyz": true,
-   "x:vnovakovski": false
+   "x:vnovakovski": true
   },
   "pacifica": {
    "ann": true,
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:pacifica_fi": true
+   "x:pacifica_fi": false
   },
   "qfex": {
    "docs": true,
@@ -136,17 +140,17 @@
    "docs": true,
    "news": true,
    "polymarket": true,
-   "x:risextrade": false
+   "x:risextrade": true
   },
   "titanx": {
    "docs": true,
    "news": true,
-   "x:TitanExchange_": false
+   "x:TitanExchange_": true
   },
   "txflow": {
    "api_watch": true,
    "docs": true,
-   "news": true,
+   "news": false,
    "polymarket": true,
    "x:TxFlow_L1": true
   },
