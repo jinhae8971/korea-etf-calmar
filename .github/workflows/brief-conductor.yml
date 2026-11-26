@@ -1,0 +1,51 @@
+name: Brief Conductor
+
+# 아침 브리프 지휘자 (2026-11-26) — 이 계정의 GitHub cron 이 5~10시간씩 밀리고 슬롯 대부분이 빠져
+# (11/24~25 실측: 설정 약 73회/일 중 19~26회만 실행 · 11/26 13:10 '베어랠리 레이더 오늘 데이터가 아직 없습니다' 알림)
+# 아침 브리프의 시각을 cron 대신 이 잡이 잡는다. 매일 07:41 KST Claude 예약작업이 workflow_dispatch 로 깨운다
+# (같은 예약작업이 ai-credit-radar 수집도 함께 깨운다).
+#   ① 오늘 데이터가 없는 수집기(코스피 기준점·고점신호·BTC 매크로·온체인 유동성·체인 수익) 즉시 실행, 미갱신이면 5분 뒤 재시도
+#   ② schedule.json 의 earliest 마다 Brief Hub 실행, 늦게 들어온 데이터는 도착 즉시 허브 실행
+#   ③ 09:01 베어랠리(크립토 일봉 09:00 마감 뒤)  ④ 오늘 보낼 daily 소스가 다 나가면 종료(평소 09:07 전후, 월요일 10:01, 상한 10:40)
+# 발송 규칙은 brief-hub.yml 의 schedule.json 이 유일한 기준. 기존 cron 은 예비로 남겨 둔다(수집·발송 모두 멱등).
+# 늦게 수동 실행하면(복구용) 그 시각 기준으로 빠진 수집·발송을 25분 안에 따라잡고 끝낸다.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "디스패치 없이 지금 시각 기준 판단만 출력"
+        type: boolean
+        default: false
+
+permissions:
+  actions: write      # 수집기·허브 workflow_dispatch
+  contents: read
+
+concurrency:
+  group: brief-conductor
+  cancel-in-progress: false
+
+jobs:
+  conduct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test gate
+        run: python .github/scripts/test_brief_conductor.py
+
+      - name: Conduct
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python .github/scripts/brief_conductor.py --dry-run
+          else
+            python .github/scripts/brief_conductor.py
+          fi
