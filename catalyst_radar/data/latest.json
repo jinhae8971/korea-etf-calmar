@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-11-25 13:37",
+ "as_of_kst": "2026-11-26 12:48",
  "calendar": [
   {
    "event_date": "2026-11-26",
@@ -7,7 +7,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-26",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -36,7 +36,7 @@
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-26",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-25",
@@ -65,7 +65,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-26",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -94,7 +94,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 71,
+ "event_count": 68,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -118,125 +118,8 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-25 13:37\n감시 52종목(체인 34·프로토콜 18) · 이벤트 71건\n\n<b>■ 오늘의 상태 전이</b>\n🟠 <b>HBAR</b> [인프라·신규] hiero-consensus-node v0.79.4 — Release Notes\n🟠 <b>HBAR</b> [인프라·신규] hiero-consensus-node v0.79.3 — Release Notes\n🟠 <b>SUI</b> [인프라·신규] sui testnet-v1.85.1 — Sui Protocol Version in this release: `144`\n🟠 <b>MORPHO</b> [기능·신규] MIP 137 – List MidnightAdapter in Morpho Registry\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-1   </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🟠 <code>D-2   </code> MORPHO <b>투표중</b> · MIP 137 – List MidnightAdapter in Morpho Registry\n🔴 <code>D-13  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=13, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
- "transitions": [
-  {
-   "event_date": null,
-   "first_seen": "2026-11-25",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "hiero-ledger/hiero-consensus-node@v0.79.4",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-25",
-    "price_at_detect": 0.080914,
-    "score_at_detect": 29.9
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-11-25",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "HBAR",
-   "title": "hiero-consensus-node v0.79.4 — Release Notes",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/hiero-ledger/hiero-consensus-node/releases/tag/v0.79.4",
-   "when": "2026-11-24"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-11-25",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "hiero-ledger/hiero-consensus-node@v0.79.3",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-25",
-    "price_at_detect": 0.080914,
-    "score_at_detect": 29.9
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-11-25",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "HBAR",
-   "title": "hiero-consensus-node v0.79.3 — Release Notes",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/hiero-ledger/hiero-consensus-node/releases/tag/v0.79.3",
-   "when": "2026-11-24"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-11-25",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "MystenLabs/sui@testnet-v1.85.1",
-   "prerelease": false,
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-25",
-    "price_at_detect": 0.796873,
-    "score_at_detect": 29.9
-   },
-   "score": 29.9,
-   "source": "release",
-   "stage": "ACTIVATED",
-   "stage_history": [
-    {
-     "at": "2026-11-25",
-     "stage": "ACTIVATED"
-    }
-   ],
-   "symbol": "SUI",
-   "title": "sui testnet-v1.85.1 — Sui Protocol Version in this release: `144`",
-   "transition": "NEW",
-   "trust": 0.95,
-   "url": "https://github.com/MystenLabs/sui/releases/tag/testnet-v1.85.1",
-   "when": "2026-11-24"
-  },
-  {
-   "event_date": "2026-11-27",
-   "first_seen": "2026-11-25",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-25",
-    "price_at_detect": 2.6,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-25",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MORPHO",
-   "title": "MIP 137 – List MidnightAdapter in Morpho Registry",
-   "transition": "NEW",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/morpho.eth/proposal/0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "vote_state": "active",
-   "when": "2026-11-27"
-  }
- ],
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-26 12:48\n감시 52종목(체인 34·프로토콜 18) · 이벤트 68건\n\n<b>■ 오늘의 상태 전이</b>\n· 신규 승격 없음\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🟠 <code>D-1   </code> MORPHO <b>투표중</b> · MIP 137 – List MidnightAdapter in Morpho Registry\n🔴 <code>D-12  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=14, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "transitions": [],
  "universe": {
   "chain": 34,
   "protocol": 18,
@@ -346,7 +229,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 13,
+   "n": 14,
    "status": "OK"
   },
   {
@@ -358,7 +241,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 18,
+   "n": 16,
    "status": "OK"
   },
   {
@@ -376,13 +259,13 @@
     0.0
    ],
    "median": 0.0,
-   "n": 24,
+   "n": 26,
    "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 5,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -441,9 +324,15 @@
   },
   {
    "bucket": "source:release",
+   "hit_rate": 0.0,
    "horizon": 30,
-   "n": 7,
-   "status": "표본 부족"
+   "iqr": [
+    0.0,
+    0.0
+   ],
+   "median": 0.0,
+   "n": 8,
+   "status": "OK"
   },
   {
    "bucket": "source:snapshot",
@@ -452,5 +341,5 @@
    "status": "표본 부족"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=13, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=14, BTC 대비)"
 }
