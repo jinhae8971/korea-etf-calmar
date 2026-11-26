@@ -1,7 +1,95 @@
 {
- "generated_at": 1795701027,
+ "generated_at": 1795730921,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "| RWA (Commodities, ETFs) | Long | Short | 2.5x |",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "69f272b8de4c",
+   "ref": {
+    "added": [
+     "| **RWA (Commodities, ETFs)**  | Long           | Short        | 2.5x  |",
+     "| **RWA (Pre IPOs, Equities)** | Long           | Short        | 2.5x  |",
+     "**W16 (Nov 27 - Dec 3)**",
+     "| Category                     | (Lighter) Core | (Lighter) RH | Boost |",
+     "| ---------------------------- | -------------- | ------------ | ----- |"
+    ],
+    "name": "로빈후드 체인 포인트 안내",
+    "removed": 6,
+    "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+   "ts": 1795730921,
+   "venue": "lighter-rh",
+   "venue_name": "Lighter RH"
+  },
+  {
+   "detail": "26th November 2026",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "af9597742a3a",
+   "ref": {
+    "added": [
+     "**26th November 2026**",
+     "Fix",
+     "**Affiliate challenge standings include isolated margin accounts.**",
+     "Endpoints: `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+     "CIC standings use qualifying perpetual futures taker volume for the score and prize pool. Opening and closing fills count for quantities held at least one minute, matched oldest first. Entrants need \\$300,000 of qualifying volume for a ranked payout estimate. The owner response's maker and taker split continues to report raw volume."
+    ],
+    "name": "변경 기록",
+    "removed": 0,
+    "url": "https://docs.qfex.com/websocket/changelog.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '변경 기록' 문구 변경",
+   "ts": 1795730921,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT3NJUHU1MjBLVUNfLTV2OHRBTWUzMjFUU0NSSnNLUW5CVnNSelhmZ2ZCbi1HVUFZazRNZnBtODU1ZjN0eEhwLVJjSEFEYUhxMVVZTWZmdG4",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "7bc731b7ee91",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT3NJUHU1MjBLVUNfLTV2OHRBTWUzMjFUU0NSSnNLUW5CVnNSelhmZ2ZCbi1HVUFZazRNZnBtODU1ZjN0eEhwLVJjSEFEYUhxMVVZTWZmdG4xY3VXMDhXbjJtdlFzeGpWaUhmbTc5U1Q4LTVMRU9tZFljeHpXdTRCT25CVmptZGpMSHU4cVdDYi1tUQ?oc=5",
+    "words": [
+     "Airdrop"
+    ]
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: Extended Sets XTEN Airdrop for Nov. 29 Ahead of Trading - The Defiant",
+   "ts": 1795730921,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
+  {
+   "detail": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZekRlZHZ6VGd5RVZRRzctSDlFLWZqMEx5aUhnQ1BkVlNDSURwOGJmSkd1YUVISUlROXFMVWlqbERVY25TYzlEN2hScmZuQndFWTBQYzRBMFl",
+   "family": "S4",
+   "grade": "WATCH",
+   "id": "a6ef2f2874e0",
+   "ref": {
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZekRlZHZ6VGd5RVZRRzctSDlFLWZqMEx5aUhnQ1BkVlNDSURwOGJmSkd1YUVISUlROXFMVWlqbERVY25TYzlEN2hScmZuQndFWTBQYzRBMFlCbEZCd24ydXF3SXRzMmM?oc=5",
+    "words": [
+     "airdrop"
+    ]
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "news",
+   "title": "뉴스: Extended sets XTEN airdrop for Nov. 29, a day before trading begins - Crypto Briefing",
+   "ts": 1795730921,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
   {
    "detail": "https://t.me/extended_updates/403",
    "family": "S2",
@@ -4959,81 +5047,9 @@
    "ts": 1793707709,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "9d808cbd8030",
-   "ref": {
-    "name": "guilds"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "앱에 새 화면 모듈: guilds",
-   "ts": 1793707709,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "0340f912a00b",
-   "ref": {
-    "name": "tickOnSecondBoundaries"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "앱에 새 화면 모듈: tickOnSecondBoundaries",
-   "ts": 1793707709,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "98a12d4d0c4c",
-   "ref": {
-    "name": "useDebouncedValue"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "앱에 새 화면 모듈: useDebouncedValue",
-   "ts": 1793707709,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "6ef270b84aa2",
-   "ref": {
-    "name": "useGuildDuelQueries"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "앱에 새 화면 모듈: useGuildDuelQueries",
-   "ts": 1793707709,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1795620797,
-   "s"
-  ],
-  [
-   1795644515,
-   "d"
-  ],
   [
    1795646191,
    "s"
@@ -5153,6 +5169,10 @@
   [
    1795701027,
    "s"
+  ],
+  [
+   1795730921,
+   "d"
   ]
  ],
  "venues": [
@@ -5246,37 +5266,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "21건",
+     "at": 1795730921,
+     "note": "30건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -5289,6 +5309,30 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "| RWA (Commodities, ETFs) | Long | Short | 2.5x |",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "69f272b8de4c",
+     "ref": {
+      "added": [
+       "| **RWA (Commodities, ETFs)**  | Long           | Short        | 2.5x  |",
+       "| **RWA (Pre IPOs, Equities)** | Long           | Short        | 2.5x  |",
+       "**W16 (Nov 27 - Dec 3)**",
+       "| Category                     | (Lighter) Core | (Lighter) RH | Boost |",
+       "| ---------------------------- | -------------- | ------------ | ----- |"
+      ],
+      "name": "로빈후드 체인 포인트 안내",
+      "removed": 6,
+      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+     "ts": 1795730921,
+     "venue": "lighter-rh"
+    },
     {
      "detail": "",
      "family": "S3",
@@ -5810,68 +5854,6 @@
      "title": "공식 문서 목록 변경: 새 문서 121개 · 삭제 20개",
      "ts": 1795202119,
      "venue": "lighter-rh"
-    },
-    {
-     "detail": "W15 (Nov 20 - Nov 26)",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "1154bd65e454",
-     "ref": {
-      "added": [
-       "**W15 (Nov 20 - Nov 26)**",
-       "| Category                     | (Lighter) Core | (Lighter) RH | Boost |",
-       "| ---------------------------- | -------------- | ------------ | ----- |",
-       "| **Crypto**                   | Short          | Long         | 2.5x  |",
-       "| **RWA (Commodities, ETFs)**  | Long           | Short        | 2.5x  |"
-      ],
-      "name": "로빈후드 체인 포인트 안내",
-      "removed": 6,
-      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
-     "ts": 1795126110,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "0xcd531ae9 → 0x2326a309",
-     "family": "S1",
-     "grade": "WATCH",
-     "id": "98f35267dd6e",
-     "ref": {
-      "amount": 2200000.0,
-      "chain": "eth",
-      "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-      "to": "0x2326a309ad344bb1545f544f7bd18bfed7777251",
-      "tx": "0xef341b9fa1f5624598c2224371f24451a5d899d909aec5ef284de81ef9a07eb8"
-     },
-     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-     "refuted": false,
-     "signal": "eth_large",
-     "title": "이더리움 LIT 2.20M개 대량 이동",
-     "ts": 1795122851,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "0xb135faa5 → 0xcd531ae9",
-     "family": "S1",
-     "grade": "WATCH",
-     "id": "fe0fa1869f21",
-     "ref": {
-      "amount": 2198968.44,
-      "chain": "eth",
-      "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
-      "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-      "tx": "0x1458218f755ea67d7fc45c57e949487dc3160a471d4a9dc75207571a49d326cd"
-     },
-     "refute": "72시간 안에 받은 지갑에서 보낸 지갑으로 되돌아오면 해제",
-     "refuted": false,
-     "signal": "eth_large",
-     "title": "이더리움 LIT 2.20M개 대량 이동",
-     "ts": 1795122731,
-     "venue": "lighter-rh"
     }
    ],
    "groups": [
@@ -5879,11 +5861,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794521309,
-     277481.305,
-     67608.72
-    ],
     [
      1794523110,
      277525.131,
@@ -7878,6 +7855,11 @@
      1795701027,
      336085.464,
      86317.45
+    ],
+    [
+     1795730921,
+     336258.136,
+     86402.21
     ]
    ],
    "level": "ALERT",
@@ -7885,18 +7867,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1794509588,
-     459216.05
-    ],
-    [
-     1794516851,
-     459216.05
-    ],
-    [
-     1794521309,
-     459216.05
-    ],
     [
      1794523110,
      459216.05
@@ -9492,62 +9462,66 @@
     [
      1795701027,
      528568.26
+    ],
+    [
+     1795730921,
+     528568.26
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "board": {
-     "at": 1795701027,
-     "note": "상위 10명 합계 336,085",
+     "at": 1795730921,
+     "note": "상위 10명 합계 336,258",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795701027,
-     "note": "359블록 · 대량 0건",
+     "at": 1795730921,
+     "note": "2480블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "모듈 173 · API 153",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "113건",
+     "at": 1795730921,
+     "note": "83건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "528,568 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795701027,
-     "note": "21건",
+     "at": 1795730921,
+     "note": "20건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -9560,6 +9534,30 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "26th November 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "af9597742a3a",
+     "ref": {
+      "added": [
+       "**26th November 2026**",
+       "Fix",
+       "**Affiliate challenge standings include isolated margin accounts.**",
+       "Endpoints: `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+       "CIC standings use qualifying perpetual futures taker volume for the score and prize pool. Opening and closing fills count for quantities held at least one minute, matched oldest first. Entrants need \\$300,000 of qualifying volume for a ranked payout estimate. The owner response's maker and taker split continues to report raw volume."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1795730921,
+     "venue": "qfex"
+    },
     {
      "detail": "Builder Fills, Builder User Volume",
      "family": "S2",
@@ -9837,29 +9835,29 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795701027,
-     "note": "17건",
+     "at": 1795730921,
+     "note": "18건",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "13건",
+     "at": 1795730921,
+     "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795701027,
-     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
-     "ok": false
+     "at": 1795730921,
+     "note": "19건",
+     "ok": true
     }
    },
    "sources_all": 2,
@@ -9870,6 +9868,42 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT3NJUHU1MjBLVUNfLTV2OHRBTWUzMjFUU0NSSnNLUW5CVnNSelhmZ2ZCbi1HVUFZazRNZnBtODU1ZjN0eEhwLVJjSEFEYUhxMVVZTWZmdG4",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "7bc731b7ee91",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT3NJUHU1MjBLVUNfLTV2OHRBTWUzMjFUU0NSSnNLUW5CVnNSelhmZ2ZCbi1HVUFZazRNZnBtODU1ZjN0eEhwLVJjSEFEYUhxMVVZTWZmdG4xY3VXMDhXbjJtdlFzeGpWaUhmbTc5U1Q4LTVMRU9tZFljeHpXdTRCT25CVmptZGpMSHU4cVdDYi1tUQ?oc=5",
+      "words": [
+       "Airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Extended Sets XTEN Airdrop for Nov. 29 Ahead of Trading - The Defiant",
+     "ts": 1795730921,
+     "venue": "extended"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZekRlZHZ6VGd5RVZRRzctSDlFLWZqMEx5aUhnQ1BkVlNDSURwOGJmSkd1YUVISUlROXFMVWlqbERVY25TYzlEN2hScmZuQndFWTBQYzRBMFl",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "a6ef2f2874e0",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZekRlZHZ6VGd5RVZRRzctSDlFLWZqMEx5aUhnQ1BkVlNDSURwOGJmSkd1YUVISUlROXFMVWlqbERVY25TYzlEN2hScmZuQndFWTBQYzRBMFlCbEZCd24ydXF3SXRzMmM?oc=5",
+      "words": [
+       "airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Extended sets XTEN airdrop for Nov. 29, a day before trading begins - Crypto Briefing",
+     "ts": 1795730921,
+     "venue": "extended"
+    },
     {
      "detail": "https://t.me/extended_updates/403",
      "family": "S2",
@@ -10057,27 +10091,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "23건",
+     "at": 1795730921,
+     "note": "26건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -10239,24 +10273,6 @@
      "title": "Polymarket: Will Variational launch a token by December 31, 2026? 56% → 71%",
      "ts": 1795144079,
      "venue": "variational"
-    },
-    {
-     "detail": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVXdhNEk0MlJ1Ymt3Z0YtUjlyNm9GR0J1SFlOcEtWZmpldFB6TTU0aVRYQzdhTlVfUlVLQ3ZBWU5Gd1J0VFZLcTI1SXZIMm9ZWlo5U2NhNFV",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "e3e86d5d25cb",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVXdhNEk0MlJ1Ymt3Z0YtUjlyNm9GR0J1SFlOcEtWZmpldFB6TTU0aVRYQzdhTlVfUlVLQ3ZBWU5Gd1J0VFZLcTI1SXZIMm9ZWlo5U2NhNFVTSDBmSWRjNVZSMFJhZ3NGMTBEOGVVRl95R3JQbjBSLWlOamluRmh5a2lkaEhxMHZEZU5MYkdqb2VKM0lSaVZJZk1uS1hJRjh4MWg4?oc=5",
-      "words": [
-       "Airdrop"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: How Much Is a Variational Airdrop Point Worth After the $1.5 Billion Raise? - Yahoo Finance",
-     "ts": 1795120206,
-     "venue": "variational"
     }
    ],
    "groups": [],
@@ -10265,38 +10281,38 @@
    "level": "WATCH",
    "links": {},
    "name": "Variational",
-   "odds": "토큰 출시 확률 11/30까지 2% · 12/31까지 64%",
+   "odds": "토큰 출시 확률 11/30까지 2% · 12/31까지 61%",
    "rh_supply_hist": null,
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "15건",
+     "at": 1795730921,
+     "note": "23건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795701027,
-     "note": "17건",
+     "at": 1795730921,
+     "note": "19건",
      "ok": true
     }
    },
@@ -10365,33 +10381,33 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 8% · 27년 3/31까지 36% · 27년 6/30까지 54%",
+   "odds": "토큰 출시 확률 12/31까지 6% · 27년 3/31까지 36% · 27년 6/30까지 52%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3건",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795701027,
-     "note": "16건",
+     "at": 1795730921,
+     "note": "17건",
      "ok": true
     }
    },
@@ -10466,27 +10482,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "10건",
+     "at": 1795730921,
+     "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "22건",
      "ok": true
     }
@@ -10527,22 +10543,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -10566,17 +10582,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "9건",
      "ok": true
     }
@@ -10655,22 +10671,6 @@
      "title": "Polymarket: Will RISEx launch a token by December 31, 2027? 56% → 71%",
      "ts": 1795306110,
      "venue": "risex"
-    },
-    {
-     "detail": "/docs/risex/faq",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "4b2872db84ca",
-     "ref": {
-      "name": "문서 사이트 지도",
-      "url": "https://docs.risechain.com/sitemap.xml"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '문서 사이트 지도' 문구 변경",
-     "ts": 1795120206,
-     "venue": "risex"
     }
    ],
    "groups": [],
@@ -10679,27 +10679,27 @@
    "level": "WATCH",
    "links": {},
    "name": "RISEx",
-   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 43% · 27년 12/31까지 57%",
+   "odds": "토큰 출시 확률 12/31까지 2% · 27년 6/30까지 43% · 27년 12/31까지 56%",
    "rh_supply_hist": null,
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "6건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "18건",
      "ok": true
     }

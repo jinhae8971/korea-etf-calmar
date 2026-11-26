@@ -5,10 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1795544336,
-   "s"
-  ],
-  [
    1795561461,
    "s"
   ],
@@ -171,6 +167,10 @@
   [
    1795701027,
    "s"
+  ],
+  [
+   1795730921,
+   "d"
   ]
  ],
  "scope": [
@@ -705,42 +705,43 @@
      "16fce1343a16",
      "72156f6381f4",
      "0f8fac66e6ae",
-     "3e52a703606d"
+     "3e52a703606d",
+     "34c81cc128f4"
     ]
    },
    "status": {
     "api": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "21건",
+     "at": 1795730921,
+     "note": "30건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -774,58 +775,6 @@
     }
    },
    "events": [
-    {
-     "detail": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9YNm5RbDBHcjhyeEZ6OTNFM3Z3Z3BKcXU4cjFKVGQzSUhVeDA4UlRkcTBvQmhWN3JQY0tMV0pFdjJUbkxndXQ4TkRCWVdKLXh3V1A0Q1pWVUl",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "6d045aadb2b3",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9YNm5RbDBHcjhyeEZ6OTNFM3Z3Z3BKcXU4cjFKVGQzSUhVeDA4UlRkcTBvQmhWN3JQY0tMV0pFdjJUbkxndXQ4TkRCWVdKLXh3V1A0Q1pWVUlkNWJ3eFVTa0pINGVVSGZBcFVrc05XWQ?oc=5",
-      "words": [
-       "Launch"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: XTEN 3x Leverage Launch Expands Options on Hyperliquid - The Cryptonomist",
-     "ts": 1793126672,
-     "venue": "extended"
-    },
-    {
-     "detail": "Migration from Starknet to Arc: Eligibility and jurisdictional restrictions apply. Trading involves risk of total loss. See the Terms, Risk Statement and Restricted Countries.",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "fa96b2a91b38",
-     "ref": {
-      "name": "문서 전체 목록",
-      "url": "https://docs.extended.exchange/llms.txt"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '문서 전체 목록' 문구 변경",
-     "ts": 1793138904,
-     "venue": "extended"
-    },
-    {
-     "detail": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE96X2ZmbUFiZnZ4WmR1aHV4RF8xM1I4dXV4Z2ZwMlZCeVZETGhxNXZUWDc4S2FQS3E1SUV3SzZYaU9fSDY3Wk5vaWU0bm1Pa2FqUE1oWXl3WQ?",
-     "family": "S4",
-     "grade": "WATCH",
-     "id": "dcf3293b981d",
-     "ref": {
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE96X2ZmbUFiZnZ4WmR1aHV4RF8xM1I4dXV4Z2ZwMlZCeVZETGhxNXZUWDc4S2FQS3E1SUV3SzZYaU9fSDY3Wk5vaWU0bm1Pa2FqUE1oWXl3WQ?oc=5",
-      "words": [
-       "Launches"
-      ]
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "news",
-     "title": "뉴스: Hyperliquid Launches Extended (XTEN) with 3x Leverage - Cryptonews.net",
-     "ts": 1793138904,
-     "venue": "extended"
-    },
     {
      "detail": "Interface Terms of Use, Spot Trading Service Terms of Use",
      "family": "S2",
@@ -1718,6 +1667,42 @@
      "title": "Extended 공식 텔레그램: XTEN Distribution Mechanics 29 November: XTEN distribution starts. 1500 UTC on 30 November: XTEN/USDC spot market opens.",
      "ts": 1795700731,
      "venue": "extended"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT3NJUHU1MjBLVUNfLTV2OHRBTWUzMjFUU0NSSnNLUW5CVnNSelhmZ2ZCbi1HVUFZazRNZnBtODU1ZjN0eEhwLVJjSEFEYUhxMVVZTWZmdG4",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "7bc731b7ee91",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT3NJUHU1MjBLVUNfLTV2OHRBTWUzMjFUU0NSSnNLUW5CVnNSelhmZ2ZCbi1HVUFZazRNZnBtODU1ZjN0eEhwLVJjSEFEYUhxMVVZTWZmdG4xY3VXMDhXbjJtdlFzeGpWaUhmbTc5U1Q4LTVMRU9tZFljeHpXdTRCT25CVmptZGpMSHU4cVdDYi1tUQ?oc=5",
+      "words": [
+       "Airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Extended Sets XTEN Airdrop for Nov. 29 Ahead of Trading - The Defiant",
+     "ts": 1795730921,
+     "venue": "extended"
+    },
+    {
+     "detail": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZekRlZHZ6VGd5RVZRRzctSDlFLWZqMEx5aUhnQ1BkVlNDSURwOGJmSkd1YUVISUlROXFMVWlqbERVY25TYzlEN2hScmZuQndFWTBQYzRBMFl",
+     "family": "S4",
+     "grade": "WATCH",
+     "id": "a6ef2f2874e0",
+     "ref": {
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZekRlZHZ6VGd5RVZRRzctSDlFLWZqMEx5aUhnQ1BkVlNDSURwOGJmSkd1YUVISUlROXFMVWlqbERVY25TYzlEN2hScmZuQndFWTBQYzRBMFlCbEZCd24ydXF3SXRzMmM?oc=5",
+      "words": [
+       "airdrop"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "news",
+     "title": "뉴스: Extended sets XTEN airdrop for Nov. 29, a day before trading begins - Crypto Briefing",
+     "ts": 1795730921,
+     "venue": "extended"
     }
    ],
    "frontend": null,
@@ -1759,6 +1744,7 @@
     "35597c51ff09",
     "3b6723cebba8",
     "3dd51f59113b",
+    "4080086a5098",
     "4298033f90bf",
     "44028f1e7284",
     "468c9fdc1e8e",
@@ -1851,6 +1837,7 @@
     "ee9b3c143556",
     "f20a74346b08",
     "f5369de9ec79",
+    "f818546a0037",
     "f828c8cdade3",
     "f88cd1ca0749",
     "fd2d42ccdc52"
@@ -2238,21 +2225,13 @@
      [
       1795701027,
       77.5
+     ],
+     [
+      1795730921,
+      76.5
      ]
     ],
     "extended-fdv-above-150m-one-day-after-launch-452": [
-     [
-      1794509588,
-      73.5
-     ],
-     [
-      1794516851,
-      74.0
-     ],
-     [
-      1794521309,
-      73.5
-     ],
      [
       1794544707,
       72.5
@@ -2748,17 +2727,13 @@
      [
       1795701027,
       47.0
+     ],
+     [
+      1795730921,
+      43.0
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
-     [
-      1794509588,
-      4.2
-     ],
-     [
-      1794516851,
-      3.8
-     ],
      [
       1794523110,
       3.9
@@ -3102,13 +3077,13 @@
      [
       1795689510,
       1.6
+     ],
+     [
+      1795730921,
+      1.4
      ]
     ],
     "extended-fdv-above-2b-one-day-after-launch-692-597-187": [
-     [
-      1794509588,
-      1.1
-     ],
      [
       1794532110,
       1.1
@@ -3536,17 +3511,13 @@
      [
       1795696700,
       0.9
+     ],
+     [
+      1795730921,
+      0.5
      ]
     ],
     "extended-fdv-above-300m-one-day-after-launch-351-333": [
-     [
-      1794509588,
-      23.5
-     ],
-     [
-      1794516851,
-      25.5
-     ],
      [
       1794534875,
       27.0
@@ -3926,13 +3897,13 @@
      [
       1795694908,
       11.5
+     ],
+     [
+      1795730921,
+      8.5
      ]
     ],
     "extended-fdv-above-3b-one-day-after-launch-437-271-658": [
-     [
-      1794509588,
-      1.1
-     ],
      [
       1794524907,
       1.2
@@ -4124,17 +4095,13 @@
      [
       1795689510,
       0.4
+     ],
+     [
+      1795730921,
+      0.5
      ]
     ],
     "extended-fdv-above-500m-one-day-after-launch-711-975-248": [
-     [
-      1794509588,
-      9.0
-     ],
-     [
-      1794516851,
-      9.5
-     ],
      [
       1794523110,
       10.0
@@ -4362,6 +4329,10 @@
      [
       1795689510,
       3.5
+     ],
+     [
+      1795730921,
+      3.3
      ]
     ],
     "extended-fdv-above-50m-one-day-after-launch-1794847845750": [
@@ -4592,13 +4563,13 @@
      [
       1795689510,
       91.0
+     ],
+     [
+      1795730921,
+      91.0
      ]
     ],
     "extended-fdv-above-800m-one-day-after-launch-299-255-178": [
-     [
-      1794509588,
-      4.5
-     ],
      [
       1794532110,
       4.5
@@ -5042,13 +5013,13 @@
      [
       1795689510,
       1.8
+     ],
+     [
+      1795730921,
+      1.7
      ]
     ],
     "extended-listed-on-binance-within-30-days-of-tge": [
-     [
-      1794509588,
-      14.5
-     ],
      [
       1794532110,
       14.5
@@ -5352,13 +5323,13 @@
      [
       1795685911,
       4.6
+     ],
+     [
+      1795730921,
+      4.6
      ]
     ],
     "extended-listed-on-bybit-within-30-days-of-tge": [
-     [
-      1794609512,
-      60.0
-     ],
      [
       1794613112,
       58.5
@@ -6154,13 +6125,13 @@
      [
       1795701027,
       51.0
+     ],
+     [
+      1795730921,
+      57.5
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
-     [
-      1794509588,
-      37.5
-     ],
      [
       1794532110,
       37.5
@@ -6732,13 +6703,13 @@
      [
       1795701027,
       53.0
+     ],
+     [
+      1795730921,
+      62.5
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
-     [
-      1794782311,
-      62.0
-     ],
      [
       1794784110,
       63.0
@@ -7534,13 +7505,13 @@
      [
       1795701027,
       80.5
+     ],
+     [
+      1795730921,
+      80.5
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
-     [
-      1794509588,
-      27.0
-     ],
      [
       1794523110,
       28.0
@@ -7924,13 +7895,13 @@
      [
       1795696700,
       28.0
+     ],
+     [
+      1795730921,
+      28.0
      ]
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
-     [
-      1794509588,
-      17.5
-     ],
      [
       1794532110,
       17.5
@@ -8206,17 +8177,13 @@
      [
       1795701027,
       7.5
+     ],
+     [
+      1795730921,
+      7.8
      ]
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
-     [
-      1794509588,
-      30.0
-     ],
-     [
-      1794516851,
-      29.5
-     ],
      [
       1794539297,
       29.5
@@ -9000,13 +8967,13 @@
      [
       1795701027,
       22.5
+     ],
+     [
+      1795730921,
+      20.0
      ]
     ],
     "will-extended-launch-a-token-by-december-31-2026": [
-     [
-      1794509588,
-      96.7
-     ],
      [
       1794532110,
       96.5
@@ -9510,6 +9477,10 @@
      [
       1795685911,
       98.4
+     ],
+     [
+      1795730921,
+      97.8
      ]
     ]
    },
@@ -9686,27 +9657,27 @@
    },
    "status": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "23건",
+     "at": 1795730921,
+     "note": "26건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -9861,27 +9832,28 @@
      "1fe4fbcf197e",
      "ed2795923acf",
      "9b35372189c9",
-     "32efaace3349"
+     "32efaace3349",
+     "c51c419de6a9"
     ]
    },
    "status": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -10286,8 +10258,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26499779,
-    "rh": 123624599
+    "eth": 26502259,
+    "rh": 123785577
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -10317,9 +10289,9 @@
      "url": "https://docs.lighter.xyz/llms.txt"
     },
     "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md": {
-     "changed": 1795126110,
-     "hash": "e2f8d7d913fd72b3",
-     "text": "# Lighter on Robinhood Chain Points\n\nThe Lighter Points Program on the Robinhood Chain is a way to recognize eligible users for participating in the trading platform and reward them for the value they bring.\n\nPoints are calculated and awarded in real time based on eligible activity, with an additional weekly points drop every Friday (first weekly drop on Fri Aug 21). The way points are calculated may change over time as we continue improving the program and rewarding meaningful participation while keeping things fair for everyone.\n\n### Live & Weekly Points\n\nThe live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral and margin, and others. Most markets have the same weight.\n\nWeekly points are based on the activity from the previous Friday (incl.) to Thursday (incl.), are distributed every Friday, and are fine-tuned depending on the week’s activity.\n\nFor both point types, standard-to-standard activity is not rewarded.\n\n### Boosts\n\nThere are several ways for a user to boost their points. Some apply to both live and weekly points; others apply only to weekly points.\n\n#### Robinhood Wallet Mobile boost\n\nThe mobile boost is linear and ranges from 1x for a user with only non-RH wallet mobile app volume to 2x for a user with only RH wallet volume. The volume is considered coming from the plaftorm that the order was placed from.\n\nThe boost influences both live and weekly points.\n\n#### Referral boost\n\nIf you refer a trader, you get 10% of their points (live + weekly).\n\nReferred traders get a 10% boost for their weekly points.\n\n#### Market boosts\n\nSome markets generate more points than others. Some do so for live points, some for the weekly, some for both.\n\nA notable current boost is the earnings boost for weekly points: if an RWA market is tied to a company that does its earnings call in the interval the weekly points are calculated for, that market is boosted.\n\nPre IPO markets and new listings may also get boosts.\n\n#### Hedge boost\n\nThe hedge boost allows traders to hedge (some of) their Lighter RH positions on Lighter Core and get more points for it.\n\nFor each market present on both venues, the 2.5x boost only applies to one pair of directions (e.g. long Core, short RH) out of the two.\n\nA partial hedge also counts: if your position on Lighter RH is $100, but you're only hedged for $50 on Lighter Core, you will get a 1.75x boost. Otherwise, if the (opposing) position on Core is the same or larger, you get the complete boost.\n\nThe hedge boost only applies to weekly points and can be updated weekly. We consider the following categories for the boost, with directions specified below.\n\n**W13, W14 (Nov 6 - Nov 19)**\n\n| Category                     | (Lighter) Core | (Lighter) RH | Boost |\n| ---------------------------- | -------------- | ------------ | ----- |\n| **Crypto**                   | Short          | Long         | 2.5x  |\n| **RWA (Commodities, ETFs)**  | Short          | Long         | 2.5x  |\n| **RWA (Pre IPOs, Equities)** | Short          | Long         | 2.5x  |\n\n**W15 (Nov 20 - Nov 26)**\n\n| Category                     | (Lighter) Core | (Lighter) RH | Boost |\n| ---------------------------- | -------------- | ------------ | ----- |\n| **Crypto**                   | Short          | Long         | 2.5x  |\n| **RWA (Commodities, ETFs)**  | Long           | Short        | 2.5x  |\n| **RWA (Pre IPOs, Equities)** | Long           | Short        | 2.5x  |\n\n### Support\n\nIf you have any questions about this program, please open a ticket in the Lighter Discord server.\n\nLighter Discord server: <https://discord.gg/lighterxyz>\n\n### Terms and Conditions\n\n<details>\n\n<summary>You can read the Terms and Conditions of this points program here.</summary>\n\nEffective Date: Monday, Aug 10th 2026\n\nThese Terms govern eligibility for the Lighter on the Robinhood Chain Points Program (the \"Program\"). By participating in the Program, you agree to these Terms.\n\nThe purpose of the Program is to reward genuine participation on Lighter on the Robinhood Chain. Points are intended to recognize authentic trading activity and meaningful participation in the ecosystem—not activity designed to manipulate or exploit the Program.\n\n### 1. General Eligibility\n\nLighter on the Robinhood Chain determines, in its sole discretion, whether activity is eligible to earn points.\n\n### 2. Ineligible Activity\n\nThe following activities are not eligible to receive points and may result in point adjustments, disqualification, or removal from the Program.\n\n#### A. Market Manipulation\n\nThis includes, but is not limited to:\n\n* Wash trading.\n* Self-trading or trading between commonly controlled accounts.\n* Artificially inflating trading volume or liquidity.\n* Coordinated trading intended to manipulate markets or Program metrics.\n* Spoofing, layering, quote stuffing, or other deceptive trading practices.\n* Any activity intended to create artificial or misleading market activity.\n\n#### B. Sybil Activity\n\nThis includes, but is not limited to:\n\n* Operating or controlling multiple accounts to earn additional points.\n* Splitting activity across multiple accounts to increase rewards.\n* Creating, purchasing, renting, borrowing, or otherwise controlling accounts for the purpose of farming points.\n* Any attempt to disguise common ownership or coordinated control of accounts.\n\n#### C. Referral Abuse\n\nThis includes, but is not limited to:\n\n* Self-referrals.\n* Circular or reciprocal referral schemes.\n* Creating accounts solely to generate referral rewards.\n* Artificially inflating referral activity or referral-based rewards.\n\n#### D. Automated or Artificial Participation\n\nThis includes, but is not limited to:\n\n* Activity primarily intended to farm points rather than participate in markets.\n* Using bots, scripts, or automated systems to manipulate Program metrics.\n* Coordinated behavior designed to exploit the Program or its scoring methodology.\n\n#### E. Abuse of Program Mechanics\n\nThis includes, but is not limited to:\n\n* Exploiting bugs, vulnerabilities, or unintended behavior.\n* Circumventing Program rules or safeguards.\n* Manipulating snapshots, scoring methodologies, or eligibility calculations.\n* Any activity intended to obtain points in a manner inconsistent with the purpose of the Program.\n\n#### F. Fraudulent or Unlawful Conduct\n\nThis includes, but is not limited to:\n\n* Fraud, deception, impersonation, or identity abuse.\n* Providing false, misleading, or inaccurate information.\n* Using stolen, compromised, or unauthorized accounts.\n* Activity that violates applicable law or the Terms of Service of Lighter on the Robinhood Chain.\n\n### 3. Ongoing Integrity Reviews\n\nTo protect the integrity of the Program, \\*\\*Lighter \\*\\* continuously performs automated and manual reviews, including Sybil detection, fraud detection, behavioral analysis, and other integrity checks.\n\nThese reviews may occur at any time during the Program or after it has concluded.\n\nThe fact that points have been awarded or remain visible in an account does not mean they have been permanently approved or are no longer subject to review.\n\n### 4. Point Adjustments and Enforcement\n\nIf Lighter determines that an account has engaged in fraudulent, abusive, manipulative, or otherwise ineligible activity, Lighter may, at any time and in its sole discretion:\n\n* Remove or reduce points.\n* Reverse previously awarded points.\n* Disqualify specific transactions or activity from earning points.\n* Suspend or permanently remove an account from the Program.\n* Exclude an account from future rewards, distributions, or Program benefits.\n\nThese actions may be taken before, during, or after points have been awarded, including after the conclusion of the Program if subsequent reviews identify activity that is determined to be fraudulent, abusive, manipulative, or otherwise ineligible.\n\n### 5. Final Determination\n\nLighter on the Robinhood Chain reserves the right to interpret these Terms and determine Program eligibility in its sole discretion.\n\nThe examples listed in these Terms are illustrative and not exhaustive. Any activity that Lighter on the Robinhood Chain reasonably believes undermines the fairness, integrity, or intended purpose of the Program may be deemed ineligible, even if not specifically described above.\n\nParticipation in the Program constitutes acceptance of these Terms and any updates or modifications published by Lighter on the Robinhood Chain.\n\n### 6. Restricted Regions\n\nFor both the Points Program and perpetual futures trading on Lighter on Robinhood Chain, the following countries and regions are restricted:\n\n* Belarus (BY)\n* Canada (CA)\n* China (CN)\n* Cuba (CU)\n* Iran (IR)\n* Myanmar (MM)\n* North Korea (KP)\n* Russia (RU)\n* Singapore (SG)\n* South Sudan (SS)\n* Sudan (SD)\n* Switzerland (CH)\n* Syria (SY)\n* Ukraine (UA)\n* United Arab Emirates (AE)\n* United Kingdom (GB)\n* United States (US)\n* Venezuela (VE)\n\n</details>",
+     "changed": 1795730921,
+     "hash": "22d88cab92be3f3a",
+     "text": "# Lighter on Robinhood Chain Points\n\nThe Lighter Points Program on the Robinhood Chain is a way to recognize eligible users for participating in the trading platform and reward them for the value they bring.\n\nPoints are calculated and awarded in real time based on eligible activity, with an additional weekly points drop every Friday (first weekly drop on Fri Aug 21). The way points are calculated may change over time as we continue improving the program and rewarding meaningful participation while keeping things fair for everyone.\n\n### Live & Weekly Points\n\nThe live points are distributed in real time based on factors like volume, positions held, fees paid, using assets other than USDG as collateral and margin, and others. Most markets have the same weight.\n\nWeekly points are based on the activity from the previous Friday (incl.) to Thursday (incl.), are distributed every Friday, and are fine-tuned depending on the week’s activity.\n\nFor both point types, standard-to-standard activity is not rewarded.\n\n### Boosts\n\nThere are several ways for a user to boost their points. Some apply to both live and weekly points; others apply only to weekly points.\n\n#### Robinhood Wallet Mobile boost\n\nThe mobile boost is linear and ranges from 1x for a user with only non-RH wallet mobile app volume to 2x for a user with only RH wallet volume. The volume is considered coming from the plaftorm that the order was placed from.\n\nThe boost influences both live and weekly points.\n\n#### Referral boost\n\nIf you refer a trader, you get 10% of their points (live + weekly).\n\nReferred traders get a 10% boost for their weekly points.\n\n#### Market boosts\n\nSome markets generate more points than others. Some do so for live points, some for the weekly, some for both.\n\nA notable current boost is the earnings boost for weekly points: if an RWA market is tied to a company that does its earnings call in the interval the weekly points are calculated for, that market is boosted.\n\nPre IPO markets and new listings may also get boosts.\n\n#### Hedge boost\n\nThe hedge boost allows traders to hedge (some of) their Lighter RH positions on Lighter Core and get more points for it.\n\nFor each market present on both venues, the 2.5x boost only applies to one pair of directions (e.g. long Core, short RH) out of the two.\n\nA partial hedge also counts: if your position on Lighter RH is $100, but you're only hedged for $50 on Lighter Core, you will get a 1.75x boost. Otherwise, if the (opposing) position on Core is the same or larger, you get the complete boost.\n\nThe hedge boost only applies to weekly points and can be updated weekly. We consider the following categories for the boost, with directions specified below.\n\n**W15 (Nov 20 - Nov 26)**\n\n| Category                     | (Lighter) Core | (Lighter) RH | Boost |\n| ---------------------------- | -------------- | ------------ | ----- |\n| **Crypto**                   | Short          | Long         | 2.5x  |\n| **RWA (Commodities, ETFs)**  | Long           | Short        | 2.5x  |\n| **RWA (Pre IPOs, Equities)** | Long           | Short        | 2.5x  |\n\n**W16 (Nov 27 - Dec 3)**\n\n| Category                     | (Lighter) Core | (Lighter) RH | Boost |\n| ---------------------------- | -------------- | ------------ | ----- |\n| **Crypto**                   | Long           | Short        | 2.5x  |\n| **RWA (Commodities, ETFs)**  | Long           | Short        | 2.5x  |\n| **RWA (Pre IPOs, Equities)** | Long           | Short        | 2.5x  |\n\n### Support\n\nIf you have any questions about this program, please open a ticket in the Lighter Discord server.\n\nLighter Discord server: <https://discord.gg/lighterxyz>\n\n### Terms and Conditions\n\n<details>\n\n<summary>You can read the Terms and Conditions of this points program here.</summary>\n\nEffective Date: Monday, Aug 10th 2026\n\nThese Terms govern eligibility for the Lighter on the Robinhood Chain Points Program (the \"Program\"). By participating in the Program, you agree to these Terms.\n\nThe purpose of the Program is to reward genuine participation on Lighter on the Robinhood Chain. Points are intended to recognize authentic trading activity and meaningful participation in the ecosystem—not activity designed to manipulate or exploit the Program.\n\n### 1. General Eligibility\n\nLighter on the Robinhood Chain determines, in its sole discretion, whether activity is eligible to earn points.\n\n### 2. Ineligible Activity\n\nThe following activities are not eligible to receive points and may result in point adjustments, disqualification, or removal from the Program.\n\n#### A. Market Manipulation\n\nThis includes, but is not limited to:\n\n* Wash trading.\n* Self-trading or trading between commonly controlled accounts.\n* Artificially inflating trading volume or liquidity.\n* Coordinated trading intended to manipulate markets or Program metrics.\n* Spoofing, layering, quote stuffing, or other deceptive trading practices.\n* Any activity intended to create artificial or misleading market activity.\n\n#### B. Sybil Activity\n\nThis includes, but is not limited to:\n\n* Operating or controlling multiple accounts to earn additional points.\n* Splitting activity across multiple accounts to increase rewards.\n* Creating, purchasing, renting, borrowing, or otherwise controlling accounts for the purpose of farming points.\n* Any attempt to disguise common ownership or coordinated control of accounts.\n\n#### C. Referral Abuse\n\nThis includes, but is not limited to:\n\n* Self-referrals.\n* Circular or reciprocal referral schemes.\n* Creating accounts solely to generate referral rewards.\n* Artificially inflating referral activity or referral-based rewards.\n\n#### D. Automated or Artificial Participation\n\nThis includes, but is not limited to:\n\n* Activity primarily intended to farm points rather than participate in markets.\n* Using bots, scripts, or automated systems to manipulate Program metrics.\n* Coordinated behavior designed to exploit the Program or its scoring methodology.\n\n#### E. Abuse of Program Mechanics\n\nThis includes, but is not limited to:\n\n* Exploiting bugs, vulnerabilities, or unintended behavior.\n* Circumventing Program rules or safeguards.\n* Manipulating snapshots, scoring methodologies, or eligibility calculations.\n* Any activity intended to obtain points in a manner inconsistent with the purpose of the Program.\n\n#### F. Fraudulent or Unlawful Conduct\n\nThis includes, but is not limited to:\n\n* Fraud, deception, impersonation, or identity abuse.\n* Providing false, misleading, or inaccurate information.\n* Using stolen, compromised, or unauthorized accounts.\n* Activity that violates applicable law or the Terms of Service of Lighter on the Robinhood Chain.\n\n### 3. Ongoing Integrity Reviews\n\nTo protect the integrity of the Program, \\*\\*Lighter \\*\\* continuously performs automated and manual reviews, including Sybil detection, fraud detection, behavioral analysis, and other integrity checks.\n\nThese reviews may occur at any time during the Program or after it has concluded.\n\nThe fact that points have been awarded or remain visible in an account does not mean they have been permanently approved or are no longer subject to review.\n\n### 4. Point Adjustments and Enforcement\n\nIf Lighter determines that an account has engaged in fraudulent, abusive, manipulative, or otherwise ineligible activity, Lighter may, at any time and in its sole discretion:\n\n* Remove or reduce points.\n* Reverse previously awarded points.\n* Disqualify specific transactions or activity from earning points.\n* Suspend or permanently remove an account from the Program.\n* Exclude an account from future rewards, distributions, or Program benefits.\n\nThese actions may be taken before, during, or after points have been awarded, including after the conclusion of the Program if subsequent reviews identify activity that is determined to be fraudulent, abusive, manipulative, or otherwise ineligible.\n\n### 5. Final Determination\n\nLighter on the Robinhood Chain reserves the right to interpret these Terms and determine Program eligibility in its sole discretion.\n\nThe examples listed in these Terms are illustrative and not exhaustive. Any activity that Lighter on the Robinhood Chain reasonably believes undermines the fairness, integrity, or intended purpose of the Program may be deemed ineligible, even if not specifically described above.\n\nParticipation in the Program constitutes acceptance of these Terms and any updates or modifications published by Lighter on the Robinhood Chain.\n\n### 6. Restricted Regions\n\nFor both the Points Program and perpetual futures trading on Lighter on Robinhood Chain, the following countries and regions are restricted:\n\n* Belarus (BY)\n* Canada (CA)\n* China (CN)\n* Cuba (CU)\n* Iran (IR)\n* Myanmar (MM)\n* North Korea (KP)\n* Russia (RU)\n* Singapore (SG)\n* South Sudan (SS)\n* Sudan (SD)\n* Switzerland (CH)\n* Syria (SY)\n* Ukraine (UA)\n* United Arab Emirates (AE)\n* United Kingdom (GB)\n* United States (US)\n* Venezuela (VE)\n\n</details>",
      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
     },
     "https://docs.lighter.xyz/programs/readme.md": {
@@ -10330,36 +10302,6 @@
     }
    },
    "events": [
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "3069cc204834",
-     "ref": {
-      "name": "MarketBadge"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "앱에 새 화면 모듈: MarketBadge",
-     "ts": 1793126672,
-     "venue": "lighter-rh"
-    },
-    {
-     "detail": "",
-     "family": "S3",
-     "grade": "WATCH",
-     "id": "244aa0381fd0",
-     "ref": {
-      "name": "marketData"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "fe_chunk",
-     "title": "앱에 새 화면 모듈: marketData",
-     "ts": 1793126672,
-     "venue": "lighter-rh"
-    },
     {
      "detail": "",
      "family": "S3",
@@ -13705,6 +13647,30 @@
      "title": "앱에 새 화면 모듈: TransLink",
      "ts": 1795693118,
      "venue": "lighter-rh"
+    },
+    {
+     "detail": "| RWA (Commodities, ETFs) | Long | Short | 2.5x |",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "69f272b8de4c",
+     "ref": {
+      "added": [
+       "| **RWA (Commodities, ETFs)**  | Long           | Short        | 2.5x  |",
+       "| **RWA (Pre IPOs, Equities)** | Long           | Short        | 2.5x  |",
+       "**W16 (Nov 27 - Dec 3)**",
+       "| Category                     | (Lighter) Core | (Lighter) RH | Boost |",
+       "| ---------------------------- | -------------- | ------------ | ----- |"
+      ],
+      "name": "로빈후드 체인 포인트 안내",
+      "removed": 6,
+      "url": "https://docs.lighter.xyz/programs/lighter-on-robinhood-chain-points.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '로빈후드 체인 포인트 안내' 문구 변경",
+     "ts": 1795730921,
+     "venue": "lighter-rh"
     }
    ],
    "frontend": {
@@ -14066,22 +14032,6 @@
    "js": null,
    "large_hist": [
     {
-     "amount": 2198968.44,
-     "block": 26451743,
-     "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
-     "to": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-     "ts": 1795122731,
-     "tx": "0x1458218f755ea67d7fc45c57e949487dc3160a471d4a9dc75207571a49d326cd"
-    },
-    {
-     "amount": 2200000.0,
-     "block": 26451753,
-     "from": "0xcd531ae9efcce479654c4926dec5f6209531ca7b",
-     "to": "0x2326a309ad344bb1545f544f7bd18bfed7777251",
-     "ts": 1795122851,
-     "tx": "0xef341b9fa1f5624598c2224371f24451a5d899d909aec5ef284de81ef9a07eb8"
-    },
-    {
      "amount": 1662235.02,
      "block": 26453447,
      "from": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
@@ -14203,11 +14153,6 @@
     }
    ],
    "lb_hist": [
-    [
-     1793425113,
-     242771.598,
-     57861.895
-    ],
     [
      1793426902,
      242780.554,
@@ -18202,6 +18147,11 @@
      1795701027,
      336085.464,
      86317.45
+    ],
+    [
+     1795730921,
+     336258.136,
+     86402.21
     ]
    ],
    "level": "ALERT",
@@ -18528,18 +18478,6 @@
    "odds_titles": {},
    "pm_seen": [],
    "rh_supply_hist": [
-    [
-     1794509588,
-     459216.05
-    ],
-    [
-     1794516851,
-     459216.05
-    ],
-    [
-     1794521309,
-     459216.05
-    ],
     [
      1794523110,
      459216.05
@@ -20135,6 +20073,10 @@
     [
      1795701027,
      528568.26
+    ],
+    [
+     1795730921,
+     528568.26
     ]
    ],
    "seeded": true,
@@ -20255,7 +20197,9 @@
      "30982d8641d1",
      "bc53b466cfef",
      "ab0b267aa99a",
-     "bf97d2b19a54"
+     "bf97d2b19a54",
+     "15dae16053b4",
+     "f3c43bc07c23"
     ],
     "x:vnovakovski": [
      "954280aa62a6",
@@ -20291,62 +20235,63 @@
      "8fccf1a14897",
      "213d1c8efdcd",
      "16dea2184202",
-     "0e3ce419ad31"
+     "0e3ce419ad31",
+     "23742440e088"
     ]
    },
    "status": {
     "ann": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "board": {
-     "at": 1795701027,
-     "note": "상위 10명 합계 336,085",
+     "at": 1795730921,
+     "note": "상위 10명 합계 336,258",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795701027,
-     "note": "359블록 · 대량 0건",
+     "at": 1795730921,
+     "note": "2480블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "모듈 173 · API 153",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "113건",
+     "at": 1795730921,
+     "note": "83건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "528,568 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795701027,
-     "note": "21건",
+     "at": 1795730921,
+     "note": "20건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     }
@@ -20889,14 +20834,6 @@
    "odds": {
     "pacifica-fdv-above-100m-one-day-after-launch": [
      [
-      1794509588,
-      7.8
-     ],
-     [
-      1794516851,
-      7.6
-     ],
-     [
       1794523110,
       7.4
      ],
@@ -21299,13 +21236,13 @@
      [
       1795696700,
       3.3
+     ],
+     [
+      1795730921,
+      2.5
      ]
     ],
     "pacifica-fdv-above-1b-one-day-after-launch-995-562": [
-     [
-      1794509588,
-      0.4
-     ],
      [
       1794532110,
       0.4
@@ -21485,21 +21422,13 @@
      [
       1795696700,
       0.7
+     ],
+     [
+      1795730921,
+      0.7
      ]
     ],
     "pacifica-fdv-above-200m-one-day-after-launch": [
-     [
-      1794509588,
-      5.5
-     ],
-     [
-      1794516851,
-      5.3
-     ],
-     [
-      1794521309,
-      5.2
-     ],
      [
       1794537399,
       5.3
@@ -21875,13 +21804,13 @@
      [
       1795701027,
       4.3
+     ],
+     [
+      1795730921,
+      3.6
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
-     [
-      1794509588,
-      1.0
-     ],
      [
       1794528508,
       1.1
@@ -22413,13 +22342,13 @@
      [
       1795694908,
       1.2
+     ],
+     [
+      1795730921,
+      1.3
      ]
     ],
     "pacifica-fdv-above-300m-one-day-after-launch-488": [
-     [
-      1794509588,
-      2.2
-     ],
      [
       1794532110,
       2.2
@@ -22651,13 +22580,13 @@
      [
       1795691306,
       1.9
+     ],
+     [
+      1795730921,
+      1.9
      ]
     ],
     "pacifica-fdv-above-3b-one-day-after-launch-755-395": [
-     [
-      1794509588,
-      1.4
-     ],
      [
       1794532110,
       1.4
@@ -23101,13 +23030,13 @@
      [
       1795696700,
       1.3
+     ],
+     [
+      1795730921,
+      1.4
      ]
     ],
     "pacifica-fdv-above-500m-one-day-after-launch-171-173": [
-     [
-      1794509588,
-      2.5
-     ],
      [
       1794532110,
       2.5
@@ -23287,21 +23216,13 @@
      [
       1795682306,
       2.5
+     ],
+     [
+      1795730921,
+      2.6
      ]
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
-     [
-      1794509588,
-      17.5
-     ],
-     [
-      1794516851,
-      18.5
-     ],
-     [
-      1794521309,
-      17.5
-     ],
      [
       1794523110,
       17.0
@@ -23617,13 +23538,13 @@
      [
       1795701027,
       4.5
+     ],
+     [
+      1795730921,
+      4.5
      ]
     ],
     "pacifica-fdv-above-800m-one-day-after-launch-685-634": [
-     [
-      1794509588,
-      3.5
-     ],
      [
       1794532110,
       3.5
@@ -24047,13 +23968,13 @@
      [
       1795701027,
       2.6
+     ],
+     [
+      1795730921,
+      2.7
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
-     [
-      1794509588,
-      12.5
-     ],
      [
       1794532110,
       12.5
@@ -24277,13 +24198,13 @@
      [
       1795684116,
       7.5
+     ],
+     [
+      1795730921,
+      6.5
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2027": [
-     [
-      1794509588,
-      64.5
-     ],
      [
       1794532110,
       64.5
@@ -24719,13 +24640,13 @@
      [
       1795701027,
       69.5
+     ],
+     [
+      1795730921,
+      69.5
      ]
     ],
     "will-pacifica-launch-a-token-by-june-30-2027": [
-     [
-      1794659909,
-      58.5
-     ],
      [
       1794672376,
       61.0
@@ -25521,13 +25442,13 @@
      [
       1795701027,
       54.5
+     ],
+     [
+      1795730921,
+      52.5
      ]
     ],
     "will-pacifica-launch-a-token-by-march-31-2027": [
-     [
-      1794509588,
-      31.0
-     ],
      [
       1794532110,
       31.0
@@ -25819,6 +25740,10 @@
      [
       1795682306,
       36.0
+     ],
+     [
+      1795730921,
+      36.0
      ]
     ]
    },
@@ -26008,33 +25933,35 @@
      "ab12cdfea58f",
      "9761f6e9ea84",
      "1c2f192f199a",
-     "f7c18816f34a"
+     "f7c18816f34a",
+     "5d4f56b5dc6a",
+     "eaa36024ffef"
     ]
    },
    "status": {
     "ann": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3건",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795701027,
-     "note": "16건",
+     "at": 1795730921,
+     "note": "17건",
      "ok": true
     }
    }
@@ -26060,37 +25987,13 @@
      "url": "https://docs.qfex.com/qfex/fees.md"
     },
     "https://docs.qfex.com/websocket/changelog.md": {
-     "changed": 1795644515,
-     "hash": "8769114217f76d6a",
-     "text": "# Changelog\n\n> Product updates and announcements\n\n**25th November 2026**\n\nNew Endpoint\n\n**Builders can read their attributed volume by user and inspect individual fills.**\n\nEndpoints: `GET /builder/user-volume`, `GET /builder/fills`.\n\nAuthenticate with a builder primary-account API key with view\\_balance. Both endpoints report recorded builder-owner attribution. Volume and fill notional are exact USD decimal strings, and pagination uses a fixed snapshot.\n\n**25th November 2026**\n\nAPI Update\n\n**Fetch balance and equity with API keys scoped to a single account.**\n\nEndpoints: `GET /user/subaccounts/balance`, `GET /user/subaccounts/equity`.\n\nBoth endpoints can now be called with an API key that has view\\_balance permission for only one account. Only that account's balance or equity is returned. API keys with access to all accounts and subaccount\\_ops permission continue to receive balances or equities for all accounts.\n\n**24th November 2026**\n\nAPI Update\n\n**Affiliate competition standings support global enrollment and host removals.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nChallenge responses include is\\_global. Global competitions rank signed-in users who opt in. Referral-only competitions retain their direct-referral eligibility. Removed entrants are excluded from standings, prize pool calculations, and payouts.\n\n**23rd November 2026**\n\nFix\n\n**Return the withdrawable balance when an older balance snapshot is current.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe endpoint can now calculate the amount from a current balance snapshot that does not include a precomputed withdrawable balance. Missing or stale snapshots still return HTTP 503.\n\n**23rd November 2026**\n\nAPI Update\n\n**Confirm leverage changes in Kafka before returning success.**\n\nEndpoints: `POST /user/leverage`.\n\nIf confirmation takes too long, the request returns HTTP 503 and the change may still complete. Check the current leverage before retrying. New exposure and isolated collateral removals for the position are blocked until confirmation.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Publish the endpoint for setting a symbol to cross or isolated margin.**\n\nEndpoints: `POST /user/margin-mode`.\n\nSend the symbol and margin\\_mode for the authenticated account. API keys require the execute\\_orders permission. Close the position and cancel open orders for the symbol before switching modes. Switching to cross margin also requires removing any isolated collateral for the symbol and a market that supports cross margin for your account.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Check the withdrawable balance of your primary account.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe response includes the maximum withdrawal amount in USD and the balance snapshot timestamp in as\\_of. API keys require View Balance permission and primary account scope. If a current snapshot is unavailable, the endpoint returns HTTP 503 and clients can retry. Withdrawal submission checks the current balance again.\n\n**20th November 2026**\n\nAPI Update\n\n**Staff can disable affiliate trading challenges.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nDisabled challenges are omitted from the owned challenges list and their leaderboard returns 404. Re-enabling a challenge restores access for eligible users and preserves the existing settings and enrollment.\n\n**18th November 2026**\n\nAPI Update\n\n**Multiple affiliates can share a trading challenge leaderboard.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nEach configured affiliate can list the shared challenge and fetch its merged referral standings and prize pool. Responses include additional\\_affiliate\\_user\\_ids alongside the existing primary affiliate\\_user\\_id.\n\n**18th November 2026**\n\nNew Endpoint\n\n**Publish default-account leverage tiers, position notional caps and margin-mode availability through a dedicated public leverage endpoint.**\n\nEndpoints: `GET /leverage`.\n\nGET /leverage accepts an optional ticker filter and publishes only the configured default margin group's schedule. Each symbol includes risk\\_limits\\_available and margin\\_mode. When available, max\\_leverage, max\\_position\\_notional, max\\_position\\_notional\\_at\\_max\\_leverage, position\\_limit\\_currency, risk\\_limits\\_scope and leverage\\_tiers describe exact leverage-dependent limits. Position notionals are precise decimal strings in quote-currency units and include same-side open-order exposure. Unavailable or invalid margin data omits numeric risk fields. Custom groups and account overrides remain private. GET /refdata and its legacy default\\_max\\_leverage behavior are unchanged.\n\n**17th November 2026**\n\nNew Endpoint\n\n**Affiliates can retrieve their own challenge standings for website display.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nAuthenticated affiliates can list their challenges and fetch each competition's configuration, prize pool, payout distribution, and participant standings. Each participant includes username, maker volume, taker volume, PnL, score, and projected payout. The routes require an HMAC API key with view\\_balance permission; the detail route rejects keys that do not belong to the challenge owner. Website publishers must protect their own viewer access.\n\n**1st November 2026**\n\nFix\n\n**Reference data now populates underlier\\_price and price\\_change\\_24h.**\n\nEndpoints: `GET /refdata`.\n\nunderlier\\_price returns the latest available underlier price. price\\_change\\_24h returns the rolling 24-hour percentage change in mark price using minute-resolution history, rounded to eight decimal places. Mark prices are refreshed at most once every 30 seconds. Missing or invalid prices and unavailable history remain empty strings, and reference metadata remains available if the price lookup fails.\n\n**1st November 2026**\n\nNew Endpoint\n\n**Public reference-market holiday calendar.**\n\nEndpoints: `GET /market-holidays`.\n\nReturns holidays from a generated snapshot of the Entimos Slack calendar for inclusive date ranges up to 366 days, with an optional market filter. Includes coverage windows and incomplete markets so missing schedules are explicit. These dates are not QFEX trading halts or instrument-specific session times.\n\n**1st November 2026**\n\nDocs Update\n\n**Link public market hours, holidays, and earnings and economic calendars.**\n\nEndpoints: `GET /refdata`, `GET /calendar`.\n\nClarify that symbol market hours are available in refdata without authentication and cross-link the public calendar endpoints in their operation descriptions.\n\n**30th October 2026**\n\nBreaking Change\n\n**Publish API version 2026-10-30 with source-free earnings metadata.**\n\nEndpoints: `GET /calendar`.\n\nThe latest API contract is now 2026-10-30. Calendar earnings metadata omits source, sources, source\\_name and source\\_url keys, including nested release-time attribution. Financial results, release timing and economic events are unchanged. The 2026-10-29 contract preserves its original response.\n\n**Migration:** Pin api\\_version=2026-10-29 to keep earnings attribution. Omitted api\\_version, latest and 2026-10-30 select the new response. Clients using earnings sources must pin the previous version or stop relying on those fields.\n\n**30th October 2026**\n\nNew Endpoint\n\n**Public earnings and economic calendar endpoint.**\n\nEndpoints: `GET /calendar`.\n\nReturns earnings and economic events for an inclusive from/to date range of up to 93 days without authentication. Economic events include the last successful sync timestamp and stale status. Missing financial results and release times remain null. Invalid ranges are rejected and upstream failures return 503. CloudFront caching is capped at five minutes and varies only by api\\_version, from and to query parameters, with hostname and CORS-origin separation.\n\n**29th October 2026**\n\nTrade WebSocket documentation correction\n\nCorrected the [Balances](https://docs.qfex.com/websocket/channels/trade/balance.md) and [Positions](https://docs.qfex.com/websocket/channels/trade/positions.md) references and Trade Playground schema: both channels have a 60-second periodic refresh plus event-driven updates.\n\nDocumented immediate cached snapshots on subscription and coalesced updates when placing or cancelling orders changes reserved margin. Clarified that subscribers receive `balance_response` and per-symbol `position_response` snapshots, and removed the obsolete v4 envelopes from the Trade schema. This corrects the documentation; it does not announce a protocol change.\n\n**29th October 2026**\n\nNew Endpoint\n\n**Select a dated REST API contract with the api\\_version query parameter.**\n\nOmitting api\\_version or using latest selects the latest contract. The first published contract is 2026-10-29. Unsupported, empty, or repeated versions return HTTP 400. Qfex-Api-Version reports the selected contract. OpenAPI exports accept the same selector, and documentation and schema links have stable dated metadata URLs.\n\n**27th October 2026**\n\nBreaking Change\n\n**Builder wallet messages accept a website domain and default to qfex.com.**\n\nEndpoints: `GET /builder/web3/message`.\n\nThe optional domain query parameter accepts non-QFEX hostnames and sets the message domain and HTTPS URI. If the domain is not provided  the default website uri in the message is [www.qfex.com](http://www.qfex.com). Browser access still requires the website origin in the API CORS configuration. Registration requires the generated URI in the Supabase Auth Redirect URLs allowlist.\n\n**Migration:** Pass domain=[www.qfex.com](http://www.qfex.com) to retain the previous message domain, or supply your website hostname without a scheme, path, port, or credentials.\n\n**23rd October 2026**\n\nPrivate-order API reference\n\nPrivate orders now use one optional JSON boolean, `dark`, defaulting to `false`. For `LIMIT GTC` and `ALO GTC`, `true` makes resting quantity private. For `LIMIT IOC`, `LIMIT FOK` and `MARKET IOC/FOK`, it selects only private passive liquidity. Private FOK fills completely or cancels without fills. There is no displayed-BBO comparison, quote requirement or displayed fallback.\n\nIndividual trade publication depends only on the passive order: displayed passives publish; private passives do not. A private GTC can produce public entry fills and private passive fills after resting. Funding, marks, candles, volume and authenticated execution records still include all activity.\n\nOrder responses and active-order queries return `dark: true` for private instructions and omit default `false`. Modifications preserve the flag. The earlier draft fields `visibility` and `liquidity_pool` are retired and ignored in add-order requests; migrate those requests to `dark`. Private-order entry must be enabled by the exchange before `dark: true` requests are accepted.\n\nSee [Private-order API](https://docs.qfex.com/api-reference/private-orders.md), [Add order](https://docs.qfex.com/websocket/channels/trade/add_order.md), [Order responses](https://docs.qfex.com/websocket/channels/trade/order.md#private-order-fields) and [Private flag](https://docs.qfex.com/api-reference/enums.md#darkflag).\n\n**23rd October 2026**\n\nNew Endpoint\n\n**Isolated positions now expose cash collateral separately from equity.**\n\nEndpoints: `GET /user/positions`.\n\nIsolated positions include isolated\\_collateral, which excludes unrealised PnL and includes settled fees, funding and realised PnL. Their existing margin field continues to report equity including unrealised PnL.\n\n**22nd October 2026**\n\nNew Endpoint\n\n**Symbol reference data now includes isolated\\_only.**\n\nEndpoints: `GET /refdata`.\n\nEach symbol returns an explicit boolean indicating whether it requires isolated margin. Flagged symbols require isolated route registration before trading. Existing cross exposure can still be cancelled or closed with reduce-only orders.\n\n**14th October 2026**\n\nMarket Data Update\n\n`market_stats` wildcard subscriptions (`symbols: [\"*\"]`) now receive all-symbol snapshots every 10 seconds. Named-symbol subscriptions continue to update once per second. An initial snapshot is sent on subscription when data is available.\n\nThe [Market Stats reference](https://docs.qfex.com/websocket/channels/mds/market_stats.md) and MDS Playground schema now document funding rates, rolling 24-hour traded quantity, and rolling 24-hour USD notional volume.\n\n**14th October 2026**\n\nAPI Update\n\n**Initial invitation qualification now uses lifetime personal trading volume.**\n\nEndpoints: `POST /user/invitation-codes/job`, `GET /user/referrals/notional-volume`.\n\nCreators receive their initial five invitations after reaching \\$100,000 of all-time personal trading volume, including subaccounts, rather than volume in the last 14 days. The qualification responses add self\\_lifetime\\_notional\\_volume; existing self\\_notional\\_volume remains the 14-day value. Referred volume does not count toward initial qualification. Existing grants and recurring invitation rules are unchanged.\n\n**13th October 2026**\n\nDocs Update\n\n**REST API release notes now follow production deployments.**\n\nPublic REST API changes now appear in the REST API changelog after the corresponding API revision is available in production. The reference is rebuilt from the production OpenAPI document with each tracked release.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 signed messages now link to the QFEX Client Agreement.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe legal consent statement includes [https://docs.qfex.com/legal/client-agreement](https://docs.qfex.com/legal/client-agreement.md) beside the Client Agreement. Key issuance requires the updated statement, including this link.\n\n**Migration:** Request and sign a fresh message from GET /builder/web3/message. Submit that string unchanged to POST /builder/web3/api-key; messages without the agreement link are rejected.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 registration now includes legal consent and an Arbitrum withdrawal address.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe signed message now authorizes a trading API key and includes acceptance of the QFEX Client Agreement, Privacy Policy, and Cookie Policy. Messages without this consent are rejected. Successful key issuance records the acceptance date and registers the verified wallet address on ARBITRUM\\_ONE without duplicating an existing address.\n\n**Migration:** Request a fresh message from GET /builder/web3/message and sign the returned string unchanged before submitting it to POST /builder/web3/api-key. Clients that construct messages themselves must include the updated consent statement.\n\n**9th September 2026**\n\nBreaking Change\n\n`modify_order` now requires the `reduce_only` field. It must match the order being modified, as a modify cannot change reduce-only.\n\nRequests that omit it are rejected with `InvalidJSONFormat`, and a value that does not match the resting order is rejected with `CANNOT_MODIFY_NO_SUCH_ORDER`.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details\n\n**7th September 2026**\n\nDocs Update\n\nAdded builder codes: create and view a code over REST, then attach it on the Trade WebSocket auth message as `params.builder_code`. Public balances expose credited share as `builder_rewards`.\n\nSee [here](https://docs.qfex.com/qfex/builder-code.md) and [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\n**17th February 2026**\n\nDocs Update\n\nAdded default\\_max\\_leverage field to refdata response.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/refdata.md) for further details\n\n**9th February 2026**\n\nDocs Update\n\nAdded funding scaling documentation. The final funding rate is now documented as scaled by `1/100`, and the funding stream reflects the post-scaling value.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/funding_rate.md), [here](https://docs.qfex.com/qfex/contract-specifications.md), and [here](https://docs.qfex.com/qfex/faq.md) for further details\n\n**26th January 2026**\n\nDocs Update\n\nAdded the `fills` channel and fill response payload documentation.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/fills.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated trades response to include `execution_type`.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/trades.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated order response to include trade\\_id. This is used for order responses with a status of FILLED, it provides the unique trade id of that fill.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details\n\n**11th November 2025**\n\nDocs Update\n\nUpdated get\\_user\\_trades endpoint to support more filtering.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md) for further details\n\n**30th October 2025**\n\nDocs Update\n\nUpdated stop order response type. Type is now `STOP_LOSS` and `TAKE_PROFIT`. Stop orders are shown in the `orders` key in `get_orders_response`\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md) and [here](https://docs.qfex.com/api-reference/enums.md) for further details\n\n**27th October 2025**\n\nDocs Update\n\nAdded documentation for stop orders.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md), [here](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md) and [here](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md) for further details\n\n**17th October 2025**\n\nDocs Update\n\nAdded Close Position request.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/close_position.md) for further details\n\nThis is only intended for use in the frontend as a quick way to close a position.\n\n**15th October 2025**\n\nDocs Update\n\nAdded HMAC-SHA256 authentication requirements for the trade WebSocket, including refreshed client samples.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\nDocumented the new cancel-on-disconnect channel with end-to-end examples for Python, Node.js, Go, and Java.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md) for further details\n\n**13th October 2025**\n\nv0.0.10\n\nYou must now include order type in a modify order\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details.\n\n**25th September 2025**\n\nv0.0.10\n\nYou must now subscribe to order responses.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details.",
+     "changed": 1795730921,
+     "hash": "38966f401ad154ec",
+     "text": "# Changelog\n\n> Product updates and announcements\n\n**26th November 2026**\n\nFix\n\n**Affiliate challenge standings include isolated margin accounts.**\n\nEndpoints: `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nCIC standings use qualifying perpetual futures taker volume for the score and prize pool. Opening and closing fills count for quantities held at least one minute, matched oldest first. Entrants need \\$300,000 of qualifying volume for a ranked payout estimate. The owner response's maker and taker split continues to report raw volume.\n\n**26th November 2026**\n\nBreaking Change\n\n**Wallet-only builder key issuance can require 2FA in QFEX.**\n\nEndpoints: `POST /builder/web3/api-key`.\n\nFor accounts with a verified second factor, wallet-only key creation or replacement can return HTTP 403 with a message to complete 2FA in QFEX.\n\n**Migration:** When the endpoint returns the 2FA requirement, direct the user to QFEX Developer Settings to verify 2FA and create an API key with the permissions the integration needs. For programmatic withdrawals, select Withdraw to approved crypto addresses. We recommend that builders migrate to QFEX OAuth for user-approved, revocable app access and short-lived access tokens that can be refreshed.\n\n**25th November 2026**\n\nNew Endpoint\n\n**Builders can read their attributed volume by user and inspect individual fills.**\n\nEndpoints: `GET /builder/user-volume`, `GET /builder/fills`.\n\nAuthenticate with a builder primary-account API key with view\\_balance. Both endpoints report recorded builder-owner attribution. Volume and fill notional are exact USD decimal strings, and pagination uses a fixed snapshot.\n\n**25th November 2026**\n\nAPI Update\n\n**Fetch balance and equity with API keys scoped to a single account.**\n\nEndpoints: `GET /user/subaccounts/balance`, `GET /user/subaccounts/equity`.\n\nBoth endpoints can now be called with an API key that has view\\_balance permission for only one account. Only that account's balance or equity is returned. API keys with access to all accounts and subaccount\\_ops permission continue to receive balances or equities for all accounts.\n\n**24th November 2026**\n\nAPI Update\n\n**Affiliate competition standings support global enrollment and host removals.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nChallenge responses include is\\_global. Global competitions rank signed-in users who opt in. Referral-only competitions retain their direct-referral eligibility. Removed entrants are excluded from standings, prize pool calculations, and payouts.\n\n**23rd November 2026**\n\nFix\n\n**Return the withdrawable balance when an older balance snapshot is current.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe endpoint can now calculate the amount from a current balance snapshot that does not include a precomputed withdrawable balance. Missing or stale snapshots still return HTTP 503.\n\n**23rd November 2026**\n\nAPI Update\n\n**Confirm leverage changes in Kafka before returning success.**\n\nEndpoints: `POST /user/leverage`.\n\nIf confirmation takes too long, the request returns HTTP 503 and the change may still complete. Check the current leverage before retrying. New exposure and isolated collateral removals for the position are blocked until confirmation.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Publish the endpoint for setting a symbol to cross or isolated margin.**\n\nEndpoints: `POST /user/margin-mode`.\n\nSend the symbol and margin\\_mode for the authenticated account. API keys require the execute\\_orders permission. Close the position and cancel open orders for the symbol before switching modes. Switching to cross margin also requires removing any isolated collateral for the symbol and a market that supports cross margin for your account.\n\n**23rd November 2026**\n\nNew Endpoint\n\n**Check the withdrawable balance of your primary account.**\n\nEndpoints: `GET /user/withdrawable-balance`.\n\nThe response includes the maximum withdrawal amount in USD and the balance snapshot timestamp in as\\_of. API keys require View Balance permission and primary account scope. If a current snapshot is unavailable, the endpoint returns HTTP 503 and clients can retry. Withdrawal submission checks the current balance again.\n\n**20th November 2026**\n\nAPI Update\n\n**Staff can disable affiliate trading challenges.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nDisabled challenges are omitted from the owned challenges list and their leaderboard returns 404. Re-enabling a challenge restores access for eligible users and preserves the existing settings and enrollment.\n\n**18th November 2026**\n\nAPI Update\n\n**Multiple affiliates can share a trading challenge leaderboard.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nEach configured affiliate can list the shared challenge and fetch its merged referral standings and prize pool. Responses include additional\\_affiliate\\_user\\_ids alongside the existing primary affiliate\\_user\\_id.\n\n**18th November 2026**\n\nNew Endpoint\n\n**Publish default-account leverage tiers, position notional caps and margin-mode availability through a dedicated public leverage endpoint.**\n\nEndpoints: `GET /leverage`.\n\nGET /leverage accepts an optional ticker filter and publishes only the configured default margin group's schedule. Each symbol includes risk\\_limits\\_available and margin\\_mode. When available, max\\_leverage, max\\_position\\_notional, max\\_position\\_notional\\_at\\_max\\_leverage, position\\_limit\\_currency, risk\\_limits\\_scope and leverage\\_tiers describe exact leverage-dependent limits. Position notionals are precise decimal strings in quote-currency units and include same-side open-order exposure. Unavailable or invalid margin data omits numeric risk fields. Custom groups and account overrides remain private. GET /refdata and its legacy default\\_max\\_leverage behavior are unchanged.\n\n**17th November 2026**\n\nNew Endpoint\n\n**Affiliates can retrieve their own challenge standings for website display.**\n\nEndpoints: `GET /affiliate-challenges/owned`, `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.\n\nAuthenticated affiliates can list their challenges and fetch each competition's configuration, prize pool, payout distribution, and participant standings. Each participant includes username, maker volume, taker volume, PnL, score, and projected payout. The routes require an HMAC API key with view\\_balance permission; the detail route rejects keys that do not belong to the challenge owner. Website publishers must protect their own viewer access.\n\n**1st November 2026**\n\nFix\n\n**Reference data now populates underlier\\_price and price\\_change\\_24h.**\n\nEndpoints: `GET /refdata`.\n\nunderlier\\_price returns the latest available underlier price. price\\_change\\_24h returns the rolling 24-hour percentage change in mark price using minute-resolution history, rounded to eight decimal places. Mark prices are refreshed at most once every 30 seconds. Missing or invalid prices and unavailable history remain empty strings, and reference metadata remains available if the price lookup fails.\n\n**1st November 2026**\n\nNew Endpoint\n\n**Public reference-market holiday calendar.**\n\nEndpoints: `GET /market-holidays`.\n\nReturns holidays from a generated snapshot of the Entimos Slack calendar for inclusive date ranges up to 366 days, with an optional market filter. Includes coverage windows and incomplete markets so missing schedules are explicit. These dates are not QFEX trading halts or instrument-specific session times.\n\n**1st November 2026**\n\nDocs Update\n\n**Link public market hours, holidays, and earnings and economic calendars.**\n\nEndpoints: `GET /refdata`, `GET /calendar`.\n\nClarify that symbol market hours are available in refdata without authentication and cross-link the public calendar endpoints in their operation descriptions.\n\n**30th October 2026**\n\nBreaking Change\n\n**Publish API version 2026-10-30 with source-free earnings metadata.**\n\nEndpoints: `GET /calendar`.\n\nThe latest API contract is now 2026-10-30. Calendar earnings metadata omits source, sources, source\\_name and source\\_url keys, including nested release-time attribution. Financial results, release timing and economic events are unchanged. The 2026-10-29 contract preserves its original response.\n\n**Migration:** Pin api\\_version=2026-10-29 to keep earnings attribution. Omitted api\\_version, latest and 2026-10-30 select the new response. Clients using earnings sources must pin the previous version or stop relying on those fields.\n\n**30th October 2026**\n\nNew Endpoint\n\n**Public earnings and economic calendar endpoint.**\n\nEndpoints: `GET /calendar`.\n\nReturns earnings and economic events for an inclusive from/to date range of up to 93 days without authentication. Economic events include the last successful sync timestamp and stale status. Missing financial results and release times remain null. Invalid ranges are rejected and upstream failures return 503. CloudFront caching is capped at five minutes and varies only by api\\_version, from and to query parameters, with hostname and CORS-origin separation.\n\n**29th October 2026**\n\nTrade WebSocket documentation correction\n\nCorrected the [Balances](https://docs.qfex.com/websocket/channels/trade/balance.md) and [Positions](https://docs.qfex.com/websocket/channels/trade/positions.md) references and Trade Playground schema: both channels have a 60-second periodic refresh plus event-driven updates.\n\nDocumented immediate cached snapshots on subscription and coalesced updates when placing or cancelling orders changes reserved margin. Clarified that subscribers receive `balance_response` and per-symbol `position_response` snapshots, and removed the obsolete v4 envelopes from the Trade schema. This corrects the documentation; it does not announce a protocol change.\n\n**29th October 2026**\n\nNew Endpoint\n\n**Select a dated REST API contract with the api\\_version query parameter.**\n\nOmitting api\\_version or using latest selects the latest contract. The first published contract is 2026-10-29. Unsupported, empty, or repeated versions return HTTP 400. Qfex-Api-Version reports the selected contract. OpenAPI exports accept the same selector, and documentation and schema links have stable dated metadata URLs.\n\n**27th October 2026**\n\nBreaking Change\n\n**Builder wallet messages accept a website domain and default to qfex.com.**\n\nEndpoints: `GET /builder/web3/message`.\n\nThe optional domain query parameter accepts non-QFEX hostnames and sets the message domain and HTTPS URI. If the domain is not provided  the default website uri in the message is [www.qfex.com](http://www.qfex.com). Browser access still requires the website origin in the API CORS configuration. Registration requires the generated URI in the Supabase Auth Redirect URLs allowlist.\n\n**Migration:** Pass domain=[www.qfex.com](http://www.qfex.com) to retain the previous message domain, or supply your website hostname without a scheme, path, port, or credentials.\n\n**23rd October 2026**\n\nPrivate-order API reference\n\nPrivate orders now use one optional JSON boolean, `dark`, defaulting to `false`. For `LIMIT GTC` and `ALO GTC`, `true` makes resting quantity private. For `LIMIT IOC`, `LIMIT FOK` and `MARKET IOC/FOK`, it selects only private passive liquidity. Private FOK fills completely or cancels without fills. There is no displayed-BBO comparison, quote requirement or displayed fallback.\n\nIndividual trade publication depends only on the passive order: displayed passives publish; private passives do not. A private GTC can produce public entry fills and private passive fills after resting. Funding, marks, candles, volume and authenticated execution records still include all activity.\n\nOrder responses and active-order queries return `dark: true` for private instructions and omit default `false`. Modifications preserve the flag. The earlier draft fields `visibility` and `liquidity_pool` are retired and ignored in add-order requests; migrate those requests to `dark`. Private-order entry must be enabled by the exchange before `dark: true` requests are accepted.\n\nSee [Private-order API](https://docs.qfex.com/api-reference/private-orders.md), [Add order](https://docs.qfex.com/websocket/channels/trade/add_order.md), [Order responses](https://docs.qfex.com/websocket/channels/trade/order.md#private-order-fields) and [Private flag](https://docs.qfex.com/api-reference/enums.md#darkflag).\n\n**23rd October 2026**\n\nNew Endpoint\n\n**Isolated positions now expose cash collateral separately from equity.**\n\nEndpoints: `GET /user/positions`.\n\nIsolated positions include isolated\\_collateral, which excludes unrealised PnL and includes settled fees, funding and realised PnL. Their existing margin field continues to report equity including unrealised PnL.\n\n**22nd October 2026**\n\nNew Endpoint\n\n**Symbol reference data now includes isolated\\_only.**\n\nEndpoints: `GET /refdata`.\n\nEach symbol returns an explicit boolean indicating whether it requires isolated margin. Flagged symbols require isolated route registration before trading. Existing cross exposure can still be cancelled or closed with reduce-only orders.\n\n**14th October 2026**\n\nMarket Data Update\n\n`market_stats` wildcard subscriptions (`symbols: [\"*\"]`) now receive all-symbol snapshots every 10 seconds. Named-symbol subscriptions continue to update once per second. An initial snapshot is sent on subscription when data is available.\n\nThe [Market Stats reference](https://docs.qfex.com/websocket/channels/mds/market_stats.md) and MDS Playground schema now document funding rates, rolling 24-hour traded quantity, and rolling 24-hour USD notional volume.\n\n**14th October 2026**\n\nAPI Update\n\n**Initial invitation qualification now uses lifetime personal trading volume.**\n\nEndpoints: `POST /user/invitation-codes/job`, `GET /user/referrals/notional-volume`.\n\nCreators receive their initial five invitations after reaching \\$100,000 of all-time personal trading volume, including subaccounts, rather than volume in the last 14 days. The qualification responses add self\\_lifetime\\_notional\\_volume; existing self\\_notional\\_volume remains the 14-day value. Referred volume does not count toward initial qualification. Existing grants and recurring invitation rules are unchanged.\n\n**13th October 2026**\n\nDocs Update\n\n**REST API release notes now follow production deployments.**\n\nPublic REST API changes now appear in the REST API changelog after the corresponding API revision is available in production. The reference is rebuilt from the production OpenAPI document with each tracked release.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 signed messages now link to the QFEX Client Agreement.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe legal consent statement includes [https://docs.qfex.com/legal/client-agreement](https://docs.qfex.com/legal/client-agreement.md) beside the Client Agreement. Key issuance requires the updated statement, including this link.\n\n**Migration:** Request and sign a fresh message from GET /builder/web3/message. Submit that string unchanged to POST /builder/web3/api-key; messages without the agreement link are rejected.\n\n**13th October 2026**\n\nBreaking Change\n\n**Builder Web3 registration now includes legal consent and an Arbitrum withdrawal address.**\n\nEndpoints: `GET /builder/web3/message`, `POST /builder/web3/api-key`.\n\nThe signed message now authorizes a trading API key and includes acceptance of the QFEX Client Agreement, Privacy Policy, and Cookie Policy. Messages without this consent are rejected. Successful key issuance records the acceptance date and registers the verified wallet address on ARBITRUM\\_ONE without duplicating an existing address.\n\n**Migration:** Request a fresh message from GET /builder/web3/message and sign the returned string unchanged before submitting it to POST /builder/web3/api-key. Clients that construct messages themselves must include the updated consent statement.\n\n**9th September 2026**\n\nBreaking Change\n\n`modify_order` now requires the `reduce_only` field. It must match the order being modified, as a modify cannot change reduce-only.\n\nRequests that omit it are rejected with `InvalidJSONFormat`, and a value that does not match the resting order is rejected with `CANNOT_MODIFY_NO_SUCH_ORDER`.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details\n\n**7th September 2026**\n\nDocs Update\n\nAdded builder codes: create and view a code over REST, then attach it on the Trade WebSocket auth message as `params.builder_code`. Public balances expose credited share as `builder_rewards`.\n\nSee [here](https://docs.qfex.com/qfex/builder-code.md) and [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\n**17th February 2026**\n\nDocs Update\n\nAdded default\\_max\\_leverage field to refdata response.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/refdata.md) for further details\n\n**9th February 2026**\n\nDocs Update\n\nAdded funding scaling documentation. The final funding rate is now documented as scaled by `1/100`, and the funding stream reflects the post-scaling value.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/funding_rate.md), [here](https://docs.qfex.com/qfex/contract-specifications.md), and [here](https://docs.qfex.com/qfex/faq.md) for further details\n\n**26th January 2026**\n\nDocs Update\n\nAdded the `fills` channel and fill response payload documentation.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/fills.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated trades response to include `execution_type`.\n\nSee [here](https://docs.qfex.com/websocket/channels/mds/trades.md) for further details\n\n**12th November 2025**\n\nDocs Update\n\nUpdated order response to include trade\\_id. This is used for order responses with a status of FILLED, it provides the unique trade id of that fill.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details\n\n**11th November 2025**\n\nDocs Update\n\nUpdated get\\_user\\_trades endpoint to support more filtering.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_trades.md) for further details\n\n**30th October 2025**\n\nDocs Update\n\nUpdated stop order response type. Type is now `STOP_LOSS` and `TAKE_PROFIT`. Stop orders are shown in the `orders` key in `get_orders_response`\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/get_user_orders.md) and [here](https://docs.qfex.com/api-reference/enums.md) for further details\n\n**27th October 2025**\n\nDocs Update\n\nAdded documentation for stop orders.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/stop_add_order.md), [here](https://docs.qfex.com/websocket/channels/trade/stop_modify_order.md) and [here](https://docs.qfex.com/websocket/channels/trade/stop_cancel_order.md) for further details\n\n**17th October 2025**\n\nDocs Update\n\nAdded Close Position request.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/close_position.md) for further details\n\nThis is only intended for use in the frontend as a quick way to close a position.\n\n**15th October 2025**\n\nDocs Update\n\nAdded HMAC-SHA256 authentication requirements for the trade WebSocket, including refreshed client samples.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/authenticate.md) for further details\n\nDocumented the new cancel-on-disconnect channel with end-to-end examples for Python, Node.js, Go, and Java.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/cancel_on_disconnect.md) for further details\n\n**13th October 2025**\n\nv0.0.10\n\nYou must now include order type in a modify order\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/modify_order.md) for further details.\n\n**25th September 2025**\n\nv0.0.10\n\nYou must now subscribe to order responses.\n\nSee [here](https://docs.qfex.com/websocket/channels/trade/order.md) for further details.",
      "url": "https://docs.qfex.com/websocket/changelog.md"
     }
    },
    "events": [
-    {
-     "detail": "27th October 2026",
-     "family": "S2",
-     "grade": "WATCH",
-     "id": "e422f38d0ee1",
-     "ref": {
-      "added": [
-       "**27th October 2026**",
-       "Breaking Change",
-       "**Builder wallet messages accept a website domain and default to qfex.com.**",
-       "Endpoints: `GET /builder/web3/message`.",
-       "The optional domain query parameter accepts non-QFEX hostnames and sets the message domain and HTTPS URI. If the domain is not provided  the default website uri in the message is [www.qfex.com](http://www.qfex.com). Browser access still requires the website origin in the API CORS configuration. Registration requires the generated URI in the Supabase Auth Redirect URLs allowlist."
-      ],
-      "name": "변경 기록",
-      "removed": 0,
-      "url": "https://docs.qfex.com/websocket/changelog.md"
-     },
-     "refute": "",
-     "refuted": false,
-     "signal": "doc_change",
-     "title": "공식 문서 '변경 기록' 문구 변경",
-     "ts": 1793126672,
-     "venue": "qfex"
-    },
     {
      "detail": "29th October 2026",
      "family": "S2",
@@ -26845,6 +26748,30 @@
      "title": "공식 문서 '변경 기록' 문구 변경",
      "ts": 1795644515,
      "venue": "qfex"
+    },
+    {
+     "detail": "26th November 2026",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "af9597742a3a",
+     "ref": {
+      "added": [
+       "**26th November 2026**",
+       "Fix",
+       "**Affiliate challenge standings include isolated margin accounts.**",
+       "Endpoints: `GET /affiliate-challenges/{challenge_id}/owner-leaderboard`.",
+       "CIC standings use qualifying perpetual futures taker volume for the score and prize pool. Opening and closing fills count for quantities held at least one minute, matched oldest first. Entrants need \\$300,000 of qualifying volume for a ranked payout estimate. The owner response's maker and taker split continues to report raw volume."
+      ],
+      "name": "변경 기록",
+      "removed": 0,
+      "url": "https://docs.qfex.com/websocket/changelog.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '변경 기록' 문구 변경",
+     "ts": 1795730921,
+     "venue": "qfex"
     }
    ],
    "frontend": null,
@@ -26908,10 +26835,6 @@
    "notified_ids": [],
    "odds": {
     "qfex-fdv-above-100m-one-day-after-launch": [
-     [
-      1794509588,
-      49.0
-     ],
      [
       1794524907,
       48.0
@@ -27271,13 +27194,13 @@
      [
       1795691306,
       55.5
+     ],
+     [
+      1795730921,
+      55.0
      ]
     ],
     "qfex-fdv-above-200m-one-day-after-launch": [
-     [
-      1794509588,
-      46.0
-     ],
      [
       1794532110,
       46.0
@@ -27609,13 +27532,13 @@
      [
       1795689510,
       50.5
+     ],
+     [
+      1795730921,
+      50.5
      ]
     ],
     "qfex-fdv-above-300m-one-day-after-launch": [
-     [
-      1794509588,
-      46.5
-     ],
      [
       1794532110,
       46.5
@@ -27943,13 +27866,13 @@
      [
       1795701027,
       44.5
+     ],
+     [
+      1795730921,
+      45.5
      ]
     ],
     "qfex-fdv-above-500m-one-day-after-launch": [
-     [
-      1794509588,
-      37.5
-     ],
      [
       1794523110,
       37.0
@@ -28381,13 +28304,13 @@
      [
       1795689510,
       35.5
+     ],
+     [
+      1795730921,
+      36.0
      ]
     ],
     "qfex-fdv-above-50m-one-day-after-launch": [
-     [
-      1794509588,
-      51.5
-     ],
      [
       1794532110,
       51.5
@@ -28875,17 +28798,13 @@
      [
       1795694908,
       57.5
+     ],
+     [
+      1795730921,
+      59.0
      ]
     ],
     "qfex-fdv-above-80m-one-day-after-launch": [
-     [
-      1794509588,
-      52.0
-     ],
-     [
-      1794516851,
-      52.5
-     ],
      [
       1794523110,
       52.0
@@ -29181,13 +29100,13 @@
      [
       1795689510,
       58.0
+     ],
+     [
+      1795730921,
+      58.0
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2026": [
-     [
-      1794509588,
-      2.1
-     ],
      [
       1794532110,
       2.1
@@ -29375,21 +29294,13 @@
      [
       1795689510,
       1.7
+     ],
+     [
+      1795730921,
+      1.7
      ]
     ],
     "will-qfex-launch-a-token-by-december-31-2027": [
-     [
-      1794509588,
-      61.5
-     ],
-     [
-      1794516851,
-      61.0
-     ],
-     [
-      1794521309,
-      62.0
-     ],
      [
       1794544707,
       62.0
@@ -29681,17 +29592,13 @@
      [
       1795701027,
       55.0
+     ],
+     [
+      1795730921,
+      53.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
-     [
-      1794509588,
-      20.5
-     ],
-     [
-      1794521309,
-      19.0
-     ],
      [
       1794544707,
       19.0
@@ -30183,13 +30090,13 @@
      [
       1795687703,
       25.0
+     ],
+     [
+      1795730921,
+      25.0
      ]
     ],
     "will-qfex-launch-a-token-by-march-31-2027": [
-     [
-      1794509588,
-      12.0
-     ],
      [
       1794526701,
       11.5
@@ -30397,13 +30304,13 @@
      [
       1795689510,
       7.5
+     ],
+     [
+      1795730921,
+      7.5
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
-     [
-      1794827312,
-      32.5
-     ],
      [
       1794828855,
       34.0
@@ -31199,6 +31106,10 @@
      [
       1795701027,
       37.0
+     ],
+     [
+      1795730921,
+      36.0
      ]
     ]
    },
@@ -31255,7 +31166,8 @@
      "45b297bfd5a7",
      "673511351c42",
      "91a7ee6e7d5d",
-     "7fc4f40860e1"
+     "7fc4f40860e1",
+     "b3ec520f2b12"
     ],
     "x:QFEX": [
      "58e260056fa5",
@@ -31339,34 +31251,35 @@
      "9dccbef12b69",
      "73443d4e2ba1",
      "3723085bef39",
-     "abac87a8d738"
+     "abac87a8d738",
+     "aa3a4b11ec85"
     ]
    },
    "status": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795701027,
-     "note": "17건",
+     "at": 1795730921,
+     "note": "18건",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "13건",
+     "at": 1795730921,
+     "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795701027,
-     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
-     "ok": false
+     "at": 1795730921,
+     "note": "19건",
+     "ok": true
     }
    }
   },
@@ -31777,10 +31690,6 @@
    "odds": {
     "will-risex-launch-a-token-by-december-31-2026-20260708174012704": [
      [
-      1794509588,
-      1.9
-     ],
-     [
       1794532110,
       1.9
      ],
@@ -31991,13 +31900,13 @@
      [
       1795689510,
       1.9
+     ],
+     [
+      1795730921,
+      1.9
      ]
     ],
     "will-risex-launch-a-token-by-december-31-2027-20260708174012706": [
-     [
-      1794509588,
-      73.5
-     ],
      [
       1794532110,
       73.5
@@ -32377,17 +32286,13 @@
      [
       1795693118,
       57.0
+     ],
+     [
+      1795730921,
+      56.5
      ]
     ],
     "will-risex-launch-a-token-by-june-30-2027-20260708174012705": [
-     [
-      1794509588,
-      26.5
-     ],
-     [
-      1794521309,
-      49.0
-     ],
      [
       1794523110,
       48.0
@@ -33063,6 +32968,10 @@
      [
       1795693118,
       43.0
+     ],
+     [
+      1795730921,
+      43.0
      ]
     ]
    },
@@ -33226,27 +33135,31 @@
      "683c9c500180",
      "bbb16b48e932",
      "401bde8ac7ba",
-     "217374515475"
+     "217374515475",
+     "38b4e452ddb3",
+     "0b85e3e5332e",
+     "498d499c3282",
+     "384056f737cb"
     ]
    },
    "status": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "6건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "18건",
      "ok": true
     }
@@ -34764,17 +34677,17 @@
    },
    "status": {
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "9건",
      "ok": true
     }
@@ -34787,7 +34700,7 @@
    "api_watch": {
     "pages": {
      "https://docs.txflow.com/api/exchange.md": {
-      "at": 1795701027,
+      "at": 1795730921,
       "state": "closed"
      }
     },
@@ -35176,27 +35089,27 @@
    },
    "status": {
     "api_watch": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "10건",
+     "at": 1795730921,
+     "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "22건",
      "ok": true
     }
@@ -35209,11 +35122,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1795701027,
+      "at": 1795730921,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1795701027,
+      "at": 1795730921,
       "state": "closed"
      }
     },
@@ -35720,14 +35633,6 @@
    "odds": {
     "variational-fdv-above-100m-one-day-after-launch-519": [
      [
-      1794509588,
-      97.4
-     ],
-     [
-      1794516851,
-      97.1
-     ],
-     [
       1794539297,
       97.1
      ],
@@ -36094,13 +35999,13 @@
      [
       1795701027,
       98.3
+     ],
+     [
+      1795730921,
+      98.3
      ]
     ],
     "variational-fdv-above-1b-one-day-after-launch-636-229-681": [
-     [
-      1794509588,
-      55.5
-     ],
      [
       1794526701,
       54.5
@@ -36452,6 +36357,10 @@
      [
       1795684116,
       61.5
+     ],
+     [
+      1795730921,
+      60.5
      ]
     ],
     "variational-fdv-above-1pt5b-one-day-after-launch": [
@@ -36486,21 +36395,13 @@
      [
       1795701027,
       30.5
+     ],
+     [
+      1795730921,
+      28.5
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
-     [
-      1794509588,
-      96.9
-     ],
-     [
-      1794516851,
-      96.5
-     ],
-     [
-      1794521309,
-      96.8
-     ],
      [
       1794523110,
       96.7
@@ -37156,17 +37057,13 @@
      [
       1795689510,
       97.5
+     ],
+     [
+      1795730921,
+      97.5
      ]
     ],
     "variational-fdv-above-2b-one-day-after-launch-713-376-681": [
-     [
-      1794509588,
-      21.4
-     ],
-     [
-      1794516851,
-      20.9
-     ],
      [
       1794524907,
       20.8
@@ -37762,17 +37659,13 @@
      [
       1795701027,
       15.8
+     ],
+     [
+      1795730921,
+      15.8
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
-     [
-      1794509588,
-      93.3
-     ],
-     [
-      1794516851,
-      93.4
-     ],
      [
       1794539297,
       93.4
@@ -38056,13 +37949,13 @@
      [
       1795689510,
       96.2
+     ],
+     [
+      1795730921,
+      96.2
      ]
     ],
     "variational-fdv-above-3b-one-day-after-launch-846-887-175": [
-     [
-      1794509588,
-      10.8
-     ],
      [
       1794530300,
       10.9
@@ -38598,13 +38491,13 @@
      [
       1795701027,
       8.2
+     ],
+     [
+      1795730921,
+      7.4
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
-     [
-      1794509588,
-      5.3
-     ],
      [
       1794532110,
       5.3
@@ -38836,13 +38729,13 @@
      [
       1795693118,
       3.7
+     ],
+     [
+      1795730921,
+      3.7
      ]
     ],
     "variational-fdv-above-500m-one-day-after-launch-547-272": [
-     [
-      1794509588,
-      89.5
-     ],
      [
       1794530300,
       90.5
@@ -39142,13 +39035,13 @@
      [
       1795689510,
       91.5
+     ],
+     [
+      1795730921,
+      91.5
      ]
     ],
     "variational-fdv-above-5b-one-day-after-launch-995-724-585": [
-     [
-      1794509588,
-      2.9
-     ],
      [
       1794532110,
       2.9
@@ -39548,17 +39441,13 @@
      [
       1795689510,
       1.9
+     ],
+     [
+      1795730921,
+      1.9
      ]
     ],
     "variational-fdv-above-800m-one-day-after-launch-842-835-884": [
-     [
-      1794509588,
-      75.5
-     ],
-     [
-      1794516851,
-      74.0
-     ],
      [
       1794524907,
       72.5
@@ -39898,13 +39787,13 @@
      [
       1795689510,
       73.5
+     ],
+     [
+      1795730921,
+      73.5
      ]
     ],
     "will-variational-launch-a-token-by-december-31-2026-577-621": [
-     [
-      1794640106,
-      70.4
-     ],
      [
       1794641899,
       70.3
@@ -40700,21 +40589,13 @@
      [
       1795701027,
       64.2
+     ],
+     [
+      1795730921,
+      61.0
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
-     [
-      1794509588,
-      5.4
-     ],
-     [
-      1794516851,
-      5.7
-     ],
-     [
-      1794521309,
-      5.8
-     ],
      [
       1794523110,
       5.7
@@ -41022,6 +40903,10 @@
      [
       1795694908,
       2.5
+     ],
+     [
+      1795730921,
+      2.5
      ]
     ]
    },
@@ -41113,7 +40998,8 @@
      "593d198147bd",
      "5e1247d0f367",
      "be870c5218b0",
-     "237c7882a8f5"
+     "237c7882a8f5",
+     "8013827c2a5a"
     ],
     "x:variational_io": [
      "21f25f747f75",
@@ -41244,38 +41130,43 @@
      "8383cceaec99",
      "8bbd2e5ed520",
      "d31688815004",
-     "c1414ab6bb45"
+     "c1414ab6bb45",
+     "ba3cfdcd8326",
+     "6a3101f61bbe",
+     "f7f411f70075",
+     "fc4195689ef7",
+     "00b5bb7d26df"
     ]
    },
    "status": {
     "api_watch": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795701027,
-     "note": "15건",
+     "at": 1795730921,
+     "note": "23건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1795701027,
+     "at": 1795730921,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795701027,
-     "note": "17건",
+     "at": 1795730921,
+     "note": "19건",
      "ok": true
     }
    }
