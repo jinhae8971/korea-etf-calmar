@@ -5,10 +5,6 @@
  "outbox_log": [],
  "runs": [
   [
-   1795523902,
-   "d"
-  ],
-  [
    1795544336,
    "s"
   ],
@@ -171,6 +167,10 @@
   [
    1795696700,
    "d"
+  ],
+  [
+   1795701027,
+   "s"
   ]
  ],
  "scope": [
@@ -710,37 +710,37 @@
    },
    "status": {
     "api": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "20건",
      "ok": true
     }
@@ -1677,6 +1677,47 @@
      "title": "공식 문서 '문서 전체 목록' 문구 변경",
      "ts": 1795471708,
      "venue": "extended"
+    },
+    {
+     "detail": "https://x.com/extendedapp/status/2125948196765507821",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "517a1ea1e39f",
+     "ref": {
+      "label": "공식 X",
+      "text": "XTEN Distribution Mechanics\n\n29 November: XTEN distribution starts.\n\n1500 UTC on 30 November: XTEN/USDC spot market opens.\n\nStaking will go live after the token distribution is complete. XTEN arrives a day before trading begins, so recipients in the first transfer batch have enough time to stake before rewards start accruing. Your League tier applies as soon as you stake.\n\nVault depositors: After.",
+      "url": "https://x.com/extendedapp/status/2125948196765507821",
+      "words": [
+       "Distribution",
+       "rewards"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "x_post",
+     "title": "Extended 공식 X: XTEN Distribution Mechanics 29 November: XTEN distribution starts. 1500 UTC on 30 November: XTEN/USDC spot market opens.",
+     "ts": 1795700522,
+     "venue": "extended"
+    },
+    {
+     "detail": "https://t.me/extended_updates/403",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "a39329c6f9ba",
+     "ref": {
+      "label": "공식 텔레그램",
+      "text": "XTEN Distribution Mechanics 29 November: XTEN distribution starts. 1500 UTC on 30 November: XTEN/USDC spot market opens. We will share an update here as soon as the distribution is complete and staking is live. Staking Staking will go live after the initial token distribution is complete. XTEN arrives a day before trading begins, so recipients in the first transfer batch have time to stake before.",
+      "url": "https://t.me/extended_updates/403",
+      "words": [
+       "Distribution"
+      ]
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "telegram_post",
+     "title": "Extended 공식 텔레그램: XTEN Distribution Mechanics 29 November: XTEN distribution starts. 1500 UTC on 30 November: XTEN/USDC spot market opens.",
+     "ts": 1795700731,
+     "venue": "extended"
     }
    ],
    "frontend": null,
@@ -2193,6 +2234,10 @@
      [
       1795694908,
       76.0
+     ],
+     [
+      1795701027,
+      77.5
      ]
     ],
     "extended-fdv-above-150m-one-day-after-launch-452": [
@@ -2699,6 +2744,10 @@
      [
       1795696700,
       48.0
+     ],
+     [
+      1795701027,
+      47.0
      ]
     ],
     "extended-fdv-above-1b-one-day-after-launch-166-135-747": [
@@ -4079,10 +4128,6 @@
     ],
     "extended-fdv-above-500m-one-day-after-launch-711-975-248": [
      [
-      1794487112,
-      8.5
-     ],
-     [
       1794509588,
       9.0
      ],
@@ -5311,10 +5356,6 @@
     ],
     "extended-listed-on-bybit-within-30-days-of-tge": [
      [
-      1794607708,
-      63.0
-     ],
-     [
       1794609512,
       60.0
      ],
@@ -6109,6 +6150,10 @@
      [
       1795696700,
       39.0
+     ],
+     [
+      1795701027,
+      51.0
      ]
     ],
     "extended-listed-on-coinbase-within-30-days-of-tge": [
@@ -6683,13 +6728,13 @@
      [
       1795693118,
       48.0
+     ],
+     [
+      1795701027,
+      53.0
      ]
     ],
     "extended-listed-on-kraken-within-30-days-of-tge": [
-     [
-      1794780502,
-      58.0
-     ],
      [
       1794782311,
       62.0
@@ -7485,6 +7530,10 @@
      [
       1795696700,
       79.5
+     ],
+     [
+      1795701027,
+      80.5
      ]
     ],
     "extended-listed-on-okx-within-30-days-of-tge": [
@@ -7879,10 +7928,6 @@
     ],
     "extended-listed-on-revolut-within-30-days-of-tge": [
      [
-      1794487112,
-      17.5
-     ],
-     [
       1794509588,
       17.5
      ],
@@ -8157,6 +8202,10 @@
      [
       1795696700,
       6.9
+     ],
+     [
+      1795701027,
+      7.5
      ]
     ],
     "extended-listed-on-upbit-within-30-days-of-tge": [
@@ -8947,13 +8996,13 @@
      [
       1795696700,
       17.5
+     ],
+     [
+      1795701027,
+      22.5
      ]
     ],
     "will-extended-launch-a-token-by-december-31-2026": [
-     [
-      1794487112,
-      96.6
-     ],
      [
       1794509588,
       96.7
@@ -9548,7 +9597,8 @@
      "c54e869aa9ee",
      "91a8e0281e6e",
      "4e52b2fc1c2d",
-     "eb213d03dd43"
+     "eb213d03dd43",
+     "6c2b54fe8dee"
     ],
     "x:extendedapp": [
      "201b3f784cc4",
@@ -9629,33 +9679,35 @@
      "380f55a148a4",
      "c8e37cc0e355",
      "ac9be1d20e9d",
-     "ff8dc599e9a2"
+     "ff8dc599e9a2",
+     "8f27db9ac62d",
+     "da4eade3ed28"
     ]
    },
    "status": {
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
-     "note": "46건",
+     "at": 1795701027,
+     "note": "23건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795696700,
-     "note": "22건",
+     "at": 1795701027,
+     "note": "20건",
      "ok": true
     }
    }
@@ -9814,22 +9866,22 @@
    },
    "status": {
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "20건",
      "ok": true
     }
@@ -10234,8 +10286,8 @@
    "api_flat": null,
    "calm_since": null,
    "cursors": {
-    "eth": 26499420,
-    "rh": 123610352
+    "eth": 26499779,
+    "rh": 123624599
    },
    "doc_moves": {
     "https://docs.lighter.xyz/points-program.md": {
@@ -14014,14 +14066,6 @@
    "js": null,
    "large_hist": [
     {
-     "amount": 1343149.76,
-     "block": 26449387,
-     "from": "0x073f564419b625a45d8aea3bb0de4d5647113ad7",
-     "to": "0x91d40e4818f4d4c57b4578d9eca6afc92ac8debe",
-     "ts": 1795094435,
-     "tx": "0xd63a6a032c8affac311cabef5f109ac0abf12221e3a1b4354bae147c24e75f2c"
-    },
-    {
      "amount": 2198968.44,
      "block": 26451743,
      "from": "0xb135faa59ab685f3c70765f66956ac1cb276f7ae",
@@ -14159,11 +14203,6 @@
     }
    ],
    "lb_hist": [
-    [
-     1793423302,
-     242762.553,
-     57859.84
-    ],
     [
      1793425113,
      242771.598,
@@ -18158,6 +18197,11 @@
      1795696700,
      336046.08,
      86299.87
+    ],
+    [
+     1795701027,
+     336085.464,
+     86317.45
     ]
    ],
    "level": "ALERT",
@@ -18484,10 +18528,6 @@
    "odds_titles": {},
    "pm_seen": [],
    "rh_supply_hist": [
-    [
-     1794487112,
-     459216.05
-    ],
     [
      1794509588,
      459216.05
@@ -20091,6 +20131,10 @@
     [
      1795696700,
      528568.26
+    ],
+    [
+     1795701027,
+     528568.26
     ]
    ],
    "seeded": true,
@@ -20252,57 +20296,57 @@
    },
    "status": {
     "ann": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "20건",
      "ok": true
     },
     "board": {
-     "at": 1795696700,
-     "note": "상위 10명 합계 336,046",
+     "at": 1795701027,
+     "note": "상위 10명 합계 336,085",
      "ok": true
     },
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795696700,
-     "note": "149블록 · 대량 0건",
+     "at": 1795701027,
+     "note": "359블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "모듈 173 · API 153",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
-     "note": "114건",
+     "at": 1795701027,
+     "note": "113건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "528,568 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "21건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "20건",
      "ok": true
     }
@@ -21827,6 +21871,10 @@
      [
       1795694908,
       4.2
+     ],
+     [
+      1795701027,
+      4.3
      ]
     ],
     "pacifica-fdv-above-2b-one-day-after-launch-382-482": [
@@ -22607,10 +22655,6 @@
     ],
     "pacifica-fdv-above-3b-one-day-after-launch-755-395": [
      [
-      1794487112,
-      1.4
-     ],
-     [
       1794509588,
       1.4
      ],
@@ -23247,10 +23291,6 @@
     ],
     "pacifica-fdv-above-50m-one-day-after-launch": [
      [
-      1794487112,
-      14.5
-     ],
-     [
       1794509588,
       17.5
      ],
@@ -23573,6 +23613,10 @@
      [
       1795689510,
       5.0
+     ],
+     [
+      1795701027,
+      4.5
      ]
     ],
     "pacifica-fdv-above-800m-one-day-after-launch-685-634": [
@@ -23999,6 +24043,10 @@
      [
       1795696700,
       2.7
+     ],
+     [
+      1795701027,
+      2.6
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2026": [
@@ -24232,10 +24280,6 @@
      ]
     ],
     "will-pacifica-launch-a-token-by-december-31-2027": [
-     [
-      1794487112,
-      65.5
-     ],
      [
       1794509588,
       64.5
@@ -24671,13 +24715,13 @@
      [
       1795678709,
       69.5
+     ],
+     [
+      1795701027,
+      69.5
      ]
     ],
     "will-pacifica-launch-a-token-by-june-30-2027": [
-     [
-      1794658103,
-      55.0
-     ],
      [
       1794659909,
       58.5
@@ -25473,6 +25517,10 @@
      [
       1795696700,
       53.0
+     ],
+     [
+      1795701027,
+      54.5
      ]
     ],
     "will-pacifica-launch-a-token-by-march-31-2027": [
@@ -25959,33 +26007,34 @@
      "e5cf2b7809dc",
      "ab12cdfea58f",
      "9761f6e9ea84",
-     "1c2f192f199a"
+     "1c2f192f199a",
+     "f7c18816f34a"
     ]
    },
    "status": {
     "ann": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "3건",
      "ok": true
     },
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
-     "note": "28건",
+     "at": 1795701027,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795696700,
-     "note": "15건",
+     "at": 1795701027,
+     "note": "16건",
      "ok": true
     }
    }
@@ -27890,6 +27939,10 @@
      [
       1795694908,
       45.5
+     ],
+     [
+      1795701027,
+      44.5
      ]
     ],
     "qfex-fdv-above-500m-one-day-after-launch": [
@@ -29624,6 +29677,10 @@
      [
       1795696700,
       59.0
+     ],
+     [
+      1795701027,
+      55.0
      ]
     ],
     "will-qfex-launch-a-token-by-june-30-2027": [
@@ -30343,10 +30400,6 @@
      ]
     ],
     "will-qfex-launch-a-token-by-september-30-2027": [
-     [
-      1794818317,
-      34.5
-     ],
      [
       1794827312,
       32.5
@@ -31142,6 +31195,10 @@
      [
       1795696700,
       38.0
+     ],
+     [
+      1795701027,
+      37.0
      ]
     ]
    },
@@ -31287,29 +31344,29 @@
    },
    "status": {
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "17건",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795696700,
-     "note": "19건",
-     "ok": true
+     "at": 1795701027,
+     "err": "X 수집 실패: https://xcancel.com/QFEX/rss → HTTP 451 / fxtwitter https://api.fxtwitter.com/2/profile/QFEX/statuses → HTTP 404",
+     "ok": false
     }
    }
   },
@@ -33174,22 +33231,22 @@
    },
    "status": {
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
-     "note": "20건",
+     "at": 1795701027,
+     "note": "6건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "18건",
      "ok": true
     }
@@ -34707,17 +34764,17 @@
    },
    "status": {
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "9건",
      "ok": true
     }
@@ -34730,7 +34787,7 @@
    "api_watch": {
     "pages": {
      "https://docs.txflow.com/api/exchange.md": {
-      "at": 1795696700,
+      "at": 1795701027,
       "state": "closed"
      }
     },
@@ -35119,27 +35176,27 @@
    },
    "status": {
     "api_watch": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "22건",
      "ok": true
     }
@@ -35152,11 +35209,11 @@
    "api_watch": {
     "pages": {
      "https://docs.variational.io/technical-documentation/api.md": {
-      "at": 1795696700,
+      "at": 1795701027,
       "state": "closed"
      },
      "https://help.variational.io/en/articles/14766804-variational-api-access": {
-      "at": 1795696700,
+      "at": 1795701027,
       "state": "closed"
      }
     },
@@ -36033,6 +36090,10 @@
      [
       1795682306,
       98.5
+     ],
+     [
+      1795701027,
+      98.3
      ]
     ],
     "variational-fdv-above-1b-one-day-after-launch-636-229-681": [
@@ -36421,13 +36482,13 @@
      [
       1795675113,
       33.0
+     ],
+     [
+      1795701027,
+      30.5
      ]
     ],
     "variational-fdv-above-200m-one-day-after-launch-918": [
-     [
-      1794487112,
-      96.8
-     ],
      [
       1794509588,
       96.9
@@ -37697,6 +37758,10 @@
      [
       1795689510,
       16.1
+     ],
+     [
+      1795701027,
+      15.8
      ]
     ],
     "variational-fdv-above-300m-one-day-after-launch-777-637": [
@@ -38529,6 +38594,10 @@
      [
       1795694908,
       8.1
+     ],
+     [
+      1795701027,
+      8.2
      ]
     ],
     "variational-fdv-above-4b-one-day-after-launch-174-657-695": [
@@ -39833,10 +39902,6 @@
     ],
     "will-variational-launch-a-token-by-december-31-2026-577-621": [
      [
-      1794638305,
-      70.5
-     ],
-     [
       1794640106,
       70.4
      ],
@@ -40631,13 +40696,13 @@
      [
       1795696700,
       64.3
+     ],
+     [
+      1795701027,
+      64.2
      ]
     ],
     "will-variational-launch-a-token-by-november-30-2026": [
-     [
-      1794487112,
-      6.1
-     ],
      [
       1794509588,
       5.4
@@ -41184,32 +41249,32 @@
    },
    "status": {
     "api_watch": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795696700,
-     "note": "26건",
+     "at": 1795701027,
+     "note": "15건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795696700,
+     "at": 1795701027,
      "note": "17건",
      "ok": true
     }
