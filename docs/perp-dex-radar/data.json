@@ -1,7 +1,32 @@
 {
- "generated_at": 1795781315,
+ "generated_at": 1795783107,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "QFEX uses a maker-taker fee model for determining its trading fees. Orders that provide liquidity (maker orders) are charged different fees than orders that take liquidity (taker orders). Fees are calculated based on the current pricing tier you are in when the order is placed, a",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "3932843f7247",
+   "ref": {
+    "added": [
+     "QFEX uses a maker-taker fee model for determining its trading fees. Orders that provide liquidity (maker orders) are charged different fees than orders that take liquidity (taker orders). Fees are calculated based on the current pricing tier you are in when the order is placed, and not on the tier you would be in after a trade is completed.",
+     "QFEX assigns one of five fee tiers based on your effective volume across 30 UTC calendar dates. The window includes trades from today and the preceding 29 UTC dates. At 00:00 UTC each day, the oldest date drops out and a new date begins.",
+     "Calculate effective volume using the following formula.",
+     "| Taker fees (%) / Tier | Effective volume | Commodities | Indices | Single stocks |",
+     "| Maker fees (%) / Tier | Effective volume | Commodities | Indices | Single stocks |"
+    ],
+    "name": "수수료·보상",
+    "removed": 4,
+    "url": "https://docs.qfex.com/qfex/fees.md"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "doc_change",
+   "title": "공식 문서 '수수료·보상' 문구 변경",
+   "ts": 1795783107,
+   "venue": "qfex",
+   "venue_name": "QFEX"
+  },
   {
    "detail": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOb1lOVUpwN255R3NZYThkOVNGUGE0Z2FicWRjbU9zbDNBLVFMMTlGeVZEaTdJamFlSHViMGc4MVdvMTJNTk03YUFtMTF0ZDVFUWE0cVp0a1F",
    "family": "S4",
@@ -5048,29 +5073,9 @@
    "ts": 1793707709,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "c9c1fcee77e6",
-   "ref": {
-    "name": "duel"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "앱에 새 화면 모듈: duel",
-   "ts": 1793707709,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
-  [
-   1795696700,
-   "d"
-  ],
   [
    1795701027,
    "s"
@@ -5194,6 +5199,10 @@
   [
    1795781315,
    "d"
+  ],
+  [
+   1795783107,
+   "d"
   ]
  ],
  "venues": [
@@ -5287,37 +5296,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
-     "note": "22건",
+     "at": 1795783107,
+     "note": "31건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     }
@@ -5882,11 +5891,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794591701,
-     298146.957,
-     72607.61
-    ],
     [
      1794601882,
      298267.997,
@@ -7881,6 +7885,11 @@
      1795781315,
      336712.619,
      86624.984
+    ],
+    [
+     1795783107,
+     336724.942,
+     86630.66
     ]
    ],
    "level": "ALERT",
@@ -9491,62 +9500,66 @@
     [
      1795781315,
      523568.26
+    ],
+    [
+     1795783107,
+     523568.26
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     },
     "board": {
-     "at": 1795781315,
-     "note": "상위 10명 합계 336,713",
+     "at": 1795783107,
+     "note": "상위 10명 합계 336,725",
      "ok": true
     },
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795781315,
-     "note": "146블록 · 대량 0건",
+     "at": 1795783107,
+     "note": "149블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "모듈 173 · API 153",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
-     "note": "114건",
+     "at": 1795783107,
+     "note": "86건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "523,568 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     }
@@ -9559,6 +9572,30 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "QFEX uses a maker-taker fee model for determining its trading fees. Orders that provide liquidity (maker orders) are charged different fees than orders that take liquidity (taker orders). Fees are calculated based on the current pricing tier you are in when the order is placed, a",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "3932843f7247",
+     "ref": {
+      "added": [
+       "QFEX uses a maker-taker fee model for determining its trading fees. Orders that provide liquidity (maker orders) are charged different fees than orders that take liquidity (taker orders). Fees are calculated based on the current pricing tier you are in when the order is placed, and not on the tier you would be in after a trade is completed.",
+       "QFEX assigns one of five fee tiers based on your effective volume across 30 UTC calendar dates. The window includes trades from today and the preceding 29 UTC dates. At 00:00 UTC each day, the oldest date drops out and a new date begins.",
+       "Calculate effective volume using the following formula.",
+       "| Taker fees (%) / Tier | Effective volume | Commodities | Indices | Single stocks |",
+       "| Maker fees (%) / Tier | Effective volume | Commodities | Indices | Single stocks |"
+      ],
+      "name": "수수료·보상",
+      "removed": 4,
+      "url": "https://docs.qfex.com/qfex/fees.md"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "doc_change",
+     "title": "공식 문서 '수수료·보상' 문구 변경",
+     "ts": 1795783107,
+     "venue": "qfex"
+    },
     {
      "detail": "26th November 2026",
      "family": "S2",
@@ -9836,27 +9873,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "18건",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
-     "note": "20건",
+     "at": 1795783107,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "19건",
      "ok": true
     }
@@ -10108,32 +10145,32 @@
    "level": "IMMINENT",
    "links": {},
    "name": "Extended",
-   "odds": "토큰 출시 확률 12/31까지 98%",
+   "odds": "토큰 출시 확률 12/31까지 99%",
    "rh_supply_hist": null,
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
-     "note": "25건",
+     "at": 1795783107,
+     "note": "47건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     }
@@ -10308,32 +10345,32 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
-     "note": "28건",
+     "at": 1795783107,
+     "note": "17건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "18건",
      "ok": true
     }
@@ -10403,32 +10440,32 @@
    "level": "WATCH",
    "links": {},
    "name": "Pacifica",
-   "odds": "토큰 출시 확률 12/31까지 6% · 27년 3/31까지 39% · 27년 6/30까지 52%",
+   "odds": "토큰 출시 확률 12/31까지 6% · 27년 3/31까지 41% · 27년 6/30까지 54%",
    "rh_supply_hist": null,
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "4건",
      "ok": true
     },
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
-     "note": "10건",
+     "at": 1795783107,
+     "note": "34건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "17건",
      "ok": true
     }
@@ -10504,27 +10541,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     }
@@ -10565,22 +10602,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "20건",
      "ok": true
     }
@@ -10604,17 +10641,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "9건",
      "ok": true
     }
@@ -10706,22 +10743,22 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795781315,
-     "note": "17건",
+     "at": 1795783107,
+     "note": "6건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795781315,
+     "at": 1795783107,
      "note": "19건",
      "ok": true
     }
