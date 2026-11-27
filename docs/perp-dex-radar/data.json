@@ -1,7 +1,29 @@
 {
- "generated_at": 1795743508,
+ "generated_at": 1795745301,
  "name": "퍼프덱스 레이더",
  "recent_all": [
+  {
+   "detail": "Issuer's Regulatory Disclosures",
+   "family": "S2",
+   "grade": "WATCH",
+   "id": "909df801309a",
+   "ref": {
+    "moved": [],
+    "name": "문서 전체 목록",
+    "new": [],
+    "removed": [
+     "Issuer's Regulatory Disclosures — https://docs.extended.exchange/extended-resources/xten/issuers-regulatory-disclosures.md"
+    ],
+    "url": "https://docs.extended.exchange/llms.txt"
+   },
+   "refute": "",
+   "refuted": false,
+   "signal": "index_change",
+   "title": "공식 문서 목록 변경: 삭제 1개",
+   "ts": 1795745301,
+   "venue": "extended",
+   "venue_name": "Extended"
+  },
   {
    "detail": "| RWA (Commodities, ETFs) | Long | Short | 2.5x |",
    "family": "S2",
@@ -5031,22 +5053,6 @@
    "ts": 1793707709,
    "venue": "lighter-rh",
    "venue_name": "Lighter RH"
-  },
-  {
-   "detail": "",
-   "family": "S3",
-   "grade": "WATCH",
-   "id": "f36aeb952d8b",
-   "ref": {
-    "name": "guildForm"
-   },
-   "refute": "",
-   "refuted": false,
-   "signal": "fe_chunk",
-   "title": "앱에 새 화면 모듈: guildForm",
-   "ts": 1793707709,
-   "venue": "lighter-rh",
-   "venue_name": "Lighter RH"
   }
  ],
  "runs": [
@@ -5173,6 +5179,10 @@
   [
    1795743508,
    "d"
+  ],
+  [
+   1795745301,
+   "d"
   ]
  ],
  "venues": [
@@ -5266,37 +5276,37 @@
    "site": "https://app.arcus.xyz/rewards",
    "sources": {
     "api": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "항목 19개",
      "ok": true
     },
     "blog": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "27건",
      "ok": true
     },
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
-     "note": "30건",
+     "at": 1795745301,
+     "note": "21건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 0개",
      "ok": true
     },
     "telegram": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     },
     "x:arcus_xyz": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     }
@@ -5861,11 +5871,6 @@
    ],
    "id": "lighter-rh",
    "lb_hist": [
-    [
-     1794534875,
-     277707.38,
-     67672.95
-    ],
     [
      1794537399,
      277738.09,
@@ -7860,6 +7865,11 @@
      1795743508,
      336367.011,
      86451.86
+    ],
+    [
+     1795745301,
+     336388.576,
+     86464.14
     ]
    ],
    "level": "ALERT",
@@ -7867,14 +7877,6 @@
    "name": "Lighter RH",
    "odds": "",
    "rh_supply_hist": [
-    [
-     1794533915,
-     459216.05
-    ],
-    [
-     1794534875,
-     459216.05
-    ],
     [
      1794537399,
      457216.05
@@ -9470,62 +9472,66 @@
     [
      1795743508,
      528568.26
+    ],
+    [
+     1795745301,
+     528568.26
     ]
    ],
    "site": "https://robinhoodchain.lighter.xyz",
    "sources": {
     "ann": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     },
     "board": {
-     "at": 1795743508,
-     "note": "상위 10명 합계 336,367",
+     "at": 1795745301,
+     "note": "상위 10명 합계 336,389",
      "ok": true
     },
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "4/4 페이지",
      "ok": true
     },
     "eth_transfers": {
-     "at": 1795743508,
-     "note": "149블록 · 대량 0건",
+     "at": 1795745301,
+     "note": "150블록 · 대량 0건",
      "ok": true
     },
     "frontend": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "모듈 173 · API 153",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
-     "note": "99건",
+     "at": 1795745301,
+     "note": "100건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 0개",
      "ok": true
     },
     "rh_supply": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "528,568 LIT",
      "ok": true
     },
     "rh_transfers": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "대량 0건",
      "ok": true
     },
     "x:Lighter_xyz": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     },
     "x:vnovakovski": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     }
@@ -9839,27 +9845,27 @@
    "site": "https://www.qfex.com",
    "sources": {
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "3/3 페이지",
      "ok": true
     },
     "feed": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "18건",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
-     "note": "20건",
+     "at": 1795745301,
+     "note": "13건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 11개",
      "ok": true
     },
     "x:QFEX": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "19건",
      "ok": true
     }
@@ -9872,6 +9878,27 @@
   {
    "api_watch": null,
    "events": [
+    {
+     "detail": "Issuer's Regulatory Disclosures",
+     "family": "S2",
+     "grade": "WATCH",
+     "id": "909df801309a",
+     "ref": {
+      "moved": [],
+      "name": "문서 전체 목록",
+      "new": [],
+      "removed": [
+       "Issuer's Regulatory Disclosures — https://docs.extended.exchange/extended-resources/xten/issuers-regulatory-disclosures.md"
+      ],
+      "url": "https://docs.extended.exchange/llms.txt"
+     },
+     "refute": "",
+     "refuted": false,
+     "signal": "index_change",
+     "title": "공식 문서 목록 변경: 삭제 1개",
+     "ts": 1795745301,
+     "venue": "extended"
+    },
     {
      "detail": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT3NJUHU1MjBLVUNfLTV2OHRBTWUzMjFUU0NSSnNLUW5CVnNSelhmZ2ZCbi1HVUFZazRNZnBtODU1ZjN0eEhwLVJjSEFEYUhxMVVZTWZmdG4",
      "family": "S4",
@@ -10095,27 +10122,27 @@
    "site": "https://app.extended.exchange",
    "sources": {
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
-     "note": "47건",
+     "at": 1795745301,
+     "note": "25건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 17개",
      "ok": true
     },
     "telegram": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     },
     "x:extendedapp": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     }
@@ -10290,32 +10317,32 @@
    "site": "https://omni.variational.io",
    "sources": {
     "api_watch": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
-     "note": "23건",
+     "at": 1795745301,
+     "note": "16건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 13개",
      "ok": true
     },
     "telegram": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     },
     "x:variational_io": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "18건",
      "ok": true
     }
@@ -10390,27 +10417,27 @@
    "site": "https://app.pacifica.fi",
    "sources": {
     "ann": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "3건",
      "ok": true
     },
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
-     "note": "9건",
+     "at": 1795745301,
+     "note": "10건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 13개",
      "ok": true
     },
     "x:pacifica_fi": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "17건",
      "ok": true
     }
@@ -10486,27 +10513,27 @@
    "site": "https://app.txflow.com",
    "sources": {
     "api_watch": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "아직 공개 전",
      "ok": true
     },
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "11건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:TxFlow_L1": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "22건",
      "ok": true
     }
@@ -10547,22 +10574,22 @@
    "site": "https://www.hello.trade",
    "sources": {
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "3/3 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "7건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 0개",
      "ok": true
     },
     "x:hellotradeapp": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "20건",
      "ok": true
     }
@@ -10586,17 +10613,17 @@
    "site": "https://titanx.cc",
    "sources": {
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "2/2 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "3건",
      "ok": true
     },
     "x:TitanExchange_": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "9건",
      "ok": true
     }
@@ -10688,22 +10715,22 @@
    "site": "https://www.rise.trade",
    "sources": {
     "docs": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "4/4 페이지",
      "ok": true
     },
     "news": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "19건",
      "ok": true
     },
     "polymarket": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "열린 시장 3개",
      "ok": true
     },
     "x:risextrade": {
-     "at": 1795743508,
+     "at": 1795745301,
      "note": "18건",
      "ok": true
     }
