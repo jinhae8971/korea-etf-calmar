@@ -1,42 +1,13 @@
 {
- "as_of_kst": "2026-11-26 12:48",
+ "as_of_kst": "2026-11-27 12:49",
  "calendar": [
-  {
-   "event_date": "2026-11-26",
-   "first_seen": "2026-11-20",
-   "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "last_seen": "2026-11-26",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-20",
-    "price_at_detect": 0.644312,
-    "score_at_detect": 29.2
-   },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
-   "stage_history": [
-    {
-     "at": "2026-11-20",
-     "stage": "VOTING"
-    }
-   ],
-   "symbol": "MNT",
-   "title": "MIP-36: Recognition of Halo Prime as a Strategic Partner of Mantle",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/bitdao.eth/proposal/0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "vote_state": "active",
-   "when": "2026-11-26"
-  },
   {
    "event_date": "2026-11-27",
    "first_seen": "2026-11-25",
    "grade": "B",
    "impact": "FEATURE",
    "key": "snapshot:0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "last_seen": "2026-11-26",
+   "last_seen": "2026-11-27",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-25",
@@ -60,12 +31,40 @@
    "when": "2026-11-27"
   },
   {
+   "event_date": "2026-12-01",
+   "first_seen": "2026-11-27",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:xrp-news-thanksgiving-rally-or-december-1-supply-shock-crypt",
+   "last_seen": "2026-11-27",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-27",
+    "price_at_detect": 1.41,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-27",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cryptonews",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wa3FxOWVkR1FmSVIwclNyU0ZfOTY1TUIyWTNnLVA4QjNIS1kwNk5QNXAwcFVlek9aTVNmNU1RU2xyMEhaVVJfV0JWbFJOMFZFRWl3RGlmMS1naWJ1ekQzODA1OTRaWUNWSGQwWFA1dC1CWXRpQ3lleUtUZDVoUk0?oc=5",
+   "when": "Thu, 26 Nov 2026"
+  },
+  {
    "event_date": "2026-12-08",
    "first_seen": "2026-11-03",
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-26",
+   "last_seen": "2026-11-27",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -94,7 +93,7 @@
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 68,
+ "event_count": 70,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -118,8 +117,66 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-26 12:48\n감시 52종목(체인 34·프로토콜 18) · 이벤트 68건\n\n<b>■ 오늘의 상태 전이</b>\n· 신규 승격 없음\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MNT <b>투표중</b> · MIP-36: Recognition of Halo Prime as a Strategic Partner of Ma\n🟠 <code>D-1   </code> MORPHO <b>투표중</b> · MIP 137 – List MidnightAdapter in Morpho Registry\n🔴 <code>D-12  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=14, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
- "transitions": [],
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-27 12:49\n감시 52종목(체인 34·프로토콜 18) · 이벤트 70건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>XRP</b> [공급·신규] XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cryptonews\n🟠 <b>ETH</b> [인프라·신규] Add EIP: Versioned Opcodes for Gas Repricing\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MORPHO <b>투표중</b> · MIP 137 – List MidnightAdapter in Morpho Registry\n🔴 <code>D-4   </code> XRP <b>일정확정</b> · XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cry\n🔴 <code>D-11  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=16, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "transitions": [
+  {
+   "event_date": "2026-12-01",
+   "first_seen": "2026-11-27",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:xrp-news-thanksgiving-rally-or-december-1-supply-shock-crypt",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-27",
+    "price_at_detect": 1.41,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-27",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cryptonews",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wa3FxOWVkR1FmSVIwclNyU0ZfOTY1TUIyWTNnLVA4QjNIS1kwNk5QNXAwcFVlek9aTVNmNU1RU2xyMEhaVVJfV0JWbFJOMFZFRWl3RGlmMS1naWJ1ekQzODA1OTRaWUNWSGQwWFA1dC1CWXRpQ3lleUtUZDVoUk0?oc=5",
+   "when": "Thu, 26 Nov 2026"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-27",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "ethereum/EIPs#12638",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-27",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 32.7
+   },
+   "score": 32.7,
+   "source": "proposal",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-11-27",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Add EIP: Versioned Opcodes for Gas Repricing",
+   "transition": "NEW",
+   "trust": 1.0,
+   "updated_at": "2026-11-27T02:20:06Z",
+   "url": "https://github.com/ethereum/EIPs/pull/12638",
+   "when": null
+  }
+ ],
  "universe": {
   "chain": 34,
   "protocol": 18,
@@ -217,7 +274,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 45,
+   "n": 51,
    "status": "OK"
   },
   {
@@ -229,7 +286,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 14,
+   "n": 16,
    "status": "OK"
   },
   {
@@ -241,14 +298,20 @@
     0.0
    ],
    "median": 0.0,
-   "n": 16,
+   "n": 20,
    "status": "OK"
   },
   {
    "bucket": "impact:FEATURE",
+   "hit_rate": 0.0,
    "horizon": 30,
-   "n": 6,
-   "status": "표본 부족"
+   "iqr": [
+    0.0,
+    0.0
+   ],
+   "median": 0.0,
+   "n": 8,
+   "status": "OK"
   },
   {
    "bucket": "impact:INFRA",
@@ -259,7 +322,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 26,
+   "n": 28,
    "status": "OK"
   },
   {
@@ -289,7 +352,7 @@
   {
    "bucket": "source:cosmos",
    "horizon": 30,
-   "n": 5,
+   "n": 6,
    "status": "표본 부족"
   },
   {
@@ -319,7 +382,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 24,
+   "n": 28,
    "status": "OK"
   },
   {
@@ -331,15 +394,21 @@
     0.0
    ],
    "median": 0.0,
-   "n": 8,
+   "n": 9,
    "status": "OK"
   },
   {
    "bucket": "source:snapshot",
+   "hit_rate": 0.0,
    "horizon": 7,
-   "n": 7,
-   "status": "표본 부족"
+   "iqr": [
+    0.0,
+    0.0
+   ],
+   "median": 0.0,
+   "n": 9,
+   "status": "OK"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=14, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=16, BTC 대비)"
 }
