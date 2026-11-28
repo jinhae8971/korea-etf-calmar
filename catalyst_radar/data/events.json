@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-27 12:49",
+ "as_of": "2026-11-28 12:35",
  "events": [
   {
    "event_date": "2026-12-08",
@@ -7,7 +7,7 @@
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -61,6 +61,34 @@
    "when": "Thu, 26 Nov 2026"
   },
   {
+   "event_date": "2026-12-01",
+   "first_seen": "2026-11-28",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:ripple-to-unlock-1-billion-xrp-on-december-1-could-xrp-price",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple to Unlock 1 Billion XRP on December 1: Could XRP Price Fall Further? - Coinpaper",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUzU0RnI3TXFHSjF1UXRfUGhJSU1FSmNVeFFVT181UkpScDJpVF9iX3FJaHFSa1JMVUFlZF9fREg2YTN3ZFJXRV9MUWVyNFJvbnZoSXpwWkpkNU1HRE9fQ19pX0xJbWxWcEFPdDlBeW94U2tLZEhUVDZHci1xeWdpMUo1dHpaeVZiVVBfeHVBM2FMWU44RWtYQ1RNSUtUcjJWb0NVeHNlSFh4VkE?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
    "event_date": null,
    "first_seen": "2026-10-22",
    "grade": "A",
@@ -99,6 +127,35 @@
   },
   {
    "event_date": null,
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "SUPPLY",
+   "key": "anza-xyz/agave@v4.4.2",
+   "last_seen": "2026-11-28",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 105.14,
+    "score_at_detect": 42.8
+   },
+   "score": 42.8,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "SOL",
+   "title": "agave v4.4.2 — This is stable release recommended for general adoption.",
+   "trust": 0.95,
+   "url": "https://github.com/anza-xyz/agave/releases/tag/v4.4.2",
+   "when": "2026-11-27"
+  },
+  {
+   "event_date": null,
    "first_seen": "2026-11-26",
    "grade": "B",
    "impact": "SUPPLY",
@@ -125,36 +182,6 @@
    "trust": 0.95,
    "url": "https://github.com/anza-xyz/agave/releases/tag/v4.5.0-rc.0",
    "when": "2026-11-25"
-  },
-  {
-   "event_date": "2026-11-24",
-   "first_seen": "2026-11-14",
-   "grade": "B",
-   "impact": "INFRA",
-   "key": "news:injective-targets-november-24-veyra-upgrade-will-inj-demand-",
-   "last_seen": "2026-11-22",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-14",
-    "price_at_detect": 5.55,
-    "score_at_detect": 30.0,
-    "t7": 0.0,
-    "t7_at": "2026-11-21"
-   },
-   "score": 35.3,
-   "source": "news",
-   "stage": "SCHEDULED",
-   "stage_history": [
-    {
-     "at": "2026-11-14",
-     "stage": "SCHEDULED"
-    }
-   ],
-   "symbol": "INJ",
-   "title": "Injective Targets November 24 Veyra Upgrade: Will INJ Demand Surge? - CryptoRank",
-   "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdWFiTGMtQlBzSHlpM0NldFRDQVEtNjJpeW5ubTdKQWc5NXVxdlVzTXNsblFuM3dTRWQwNmxhNXl0Ym9ZREZua1ZZZEx0Vk81eUdTUGFuVnMxNngxRTAtcnZ2TVYtYW1DaTY2Tkk2Zm1jSTdQS1RXYzc1X01ydHphbGRpa25RNmNBWjVnbVEyVGktNm5WUmhPaVNSWHNaTDZSa3dUdUNn?oc=5",
-   "when": "Sat, 14 Nov 2026"
   },
   {
    "event_date": "2026-11-24",
@@ -185,6 +212,34 @@
    "when": "Wed, 18 Nov 2026"
   },
   {
+   "event_date": "2026-11-30",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:flare-joins-zero-as-genesis-validator-before-nov-30-mainnet-",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 0.0066248,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "FLR",
+   "title": "Flare Joins Zero as Genesis Validator Before Nov. 30 Mainnet - www.tokenpost.com",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RVTdMNEVIZ1d1YmxXalozazBTRzJLci0xTHliOUlESDlFNDhpMWRnbnpRcWJtdlBZeTdQallaZm5zLS0xOGFLRUE3SDcxcnBVeTVVeDFxUk1LMWc?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
    "event_date": null,
    "first_seen": "2026-11-27",
    "grade": "B",
@@ -212,6 +267,146 @@
    "updated_at": "2026-11-27T02:20:06Z",
    "url": "https://github.com/ethereum/EIPs/pull/12638",
    "when": null
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-clears-delayed-glamsterdam-upgrade-for-december-15-",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum Clears Delayed Glamsterdam Upgrade for December 15 Hoodi Test - Bitcoin Foundation",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeVJWOHk4RnhWUWx3Q2VxS19WcTU4WHZXM2hLMi1icXBXa0kydDlldlB2QThONkI2czRTSUZJb19LeEJhcVhEcGZsYkNpTnUzeEZFcWk0SlNBS1FMLXJ0OVNIWk1VZFhQZ3MzaWxjOUdHRnBxT2MxUXF4TXFpTHI2NFlvaE85Qk5VQnBuR1hxcm5iZkh3ejBMQ2pxQjIxRnNNcS10QkZjNE4zTUZpREQ0NlhFR3Yxdw?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-price-rises-3-as-developers-confirm-december-15-tes",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum price rises 3% as developers confirm December 15 test for Glamsterdam upgrade - Crypto News",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB1V2V1R09fQTlQT2ZscGhOM2RiNVVNcWtPYmpSNnBrbUFZYlo3aEFSMTdRZlpIYWhHcHFWc3dmLTNoZV9Fb1RXX0ZHNm1oczEyWG5BZjA4VW42emVROXYtVVlGS29NTVM2dzFrYnRaRG5fVzFJdUR0N3B4VHVyQQ?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-developers-advance-glamsterdam-upgrade-schedule-hoo",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum developers advance Glamsterdam upgrade, schedule Hoodi for Dec. 15 - Crypto Briefing",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1aUkxnYWMwT0hMQWUyZDY1Z0RMbURreHdhby1LdnZPQWp5Mm9SeTlSNHBvLUlkWVJkRXc4Mm51QUZKanpvdWxFcTBoVHYtQTZjal91V2I4eGJSWlFTQVVQRm1QZHpkRTA5ejctY0xzX2I?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-09",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ripple-s-xrp-ledger-lending-proposal-nears-approval-as-vault",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple’s XRP Ledger lending proposal nears approval as vaults target December 9 activation - Crypto News",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9FRmV2cEFGYWNvbEFMVnlqYUYxbmtIdURvV3NUcktBaWhjYUtJLU1QcHNqUGNSOUhpNzVaWHgtbEZYa1VicWFMRWFCdzhtZTN1OV9LVDNidUZCYk1oMzBjVUJWVEVfbFhxSWw4anh2WFNHTk1WV1FxdUhETEVZdEk?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-09",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ripple-s-xrp-ledger-lending-proposal-near-approval-expected-",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple's XRP Ledger Lending Proposal Near Approval, Expected Activation on Dec 9 - KuCoin",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTUc3NFFiTVFNb0xLaU5RMWViX0JiTEVjSEg0bld3WUQ4UmN3M2o0MmJld0o3VW5lQW50S0w1Smg4ckRLeEpPYlBBQlhKWEdDQ1B1cTg5QlpjcXI4QjJ6VkZfazdNT0FCUWVGRzMzVGM2QkVfRmhCd3ljODRaamhhQ0JLZGtmbXUxZ3NURjJJd0ZHOUxqeVRaNzR6M0tvV0Q1VGszanV6c3EtYnVQRXVPbXJKcw?oc=5",
+   "when": "Fri, 27 Nov 2026"
   },
   {
    "event_date": null,
@@ -312,7 +507,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "algorand/go-algorand@v5.1.1-beta",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -343,13 +538,15 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@mainnet-v1.84.2",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-21",
     "price_at_detect": 0.796873,
-    "score_at_detect": 29.9
+    "score_at_detect": 29.9,
+    "t7": 0.0,
+    "t7_at": "2026-11-28"
    },
    "score": 29.9,
    "source": "release",
@@ -372,7 +569,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.79.4",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -401,7 +598,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "hiero-ledger/hiero-consensus-node@v0.79.3",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -430,7 +627,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "MystenLabs/sui@testnet-v1.85.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -454,32 +651,32 @@
    "when": "2026-11-24"
   },
   {
-   "event_date": "2026-11-27",
-   "first_seen": "2026-11-25",
+   "event_date": null,
+   "first_seen": "2026-11-28",
    "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "last_seen": "2026-11-27",
+   "impact": "INFRA",
+   "key": "anza-xyz/agave@v4.5.0-rc.1",
+   "last_seen": "2026-11-28",
+   "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-25",
-    "price_at_detect": 2.6,
-    "score_at_detect": 29.2
+    "detected_at": "2026-11-28",
+    "price_at_detect": 105.14,
+    "score_at_detect": 29.9
    },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-11-25",
-     "stage": "VOTING"
+     "at": "2026-11-28",
+     "stage": "ACTIVATED"
     }
    ],
-   "symbol": "MORPHO",
-   "title": "MIP 137 – List MidnightAdapter in Morpho Registry",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/morpho.eth/proposal/0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "vote_state": "active",
+   "symbol": "SOL",
+   "title": "agave v4.5.0-rc.1 — This is Mainnet-beta Upgrade Candidate release.",
+   "trust": 0.95,
+   "url": "https://github.com/anza-xyz/agave/releases/tag/v4.5.0-rc.1",
    "when": "2026-11-27"
   },
   {
@@ -548,7 +745,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "snapshot:0x65503933c85b5c813a350603a6f4be143e911f073ae17ff109aa978f494ae4bc",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -583,7 +780,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "snapshot:0xd010fad9c1abd897c165f2ff93cee3d321251330c977cb354bb59ddf3ae713df",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-16",
@@ -618,7 +815,7 @@
    "grade": "B",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1061",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-11",
@@ -652,7 +849,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.4",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -683,7 +880,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "algorand/go-algorand@v5.1.1-stable",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -714,13 +911,15 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v31.3",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-21",
     "price_at_detect": 79682,
-    "score_at_detect": 19.2
+    "score_at_detect": 19.2,
+    "t7": 0.0,
+    "t7_at": "2026-11-28"
    },
    "score": 19.2,
    "source": "release",
@@ -743,13 +942,15 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "bitcoin/bitcoin@v30.5",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-21",
     "price_at_detect": 79682,
-    "score_at_detect": 19.2
+    "score_at_detect": 19.2,
+    "t7": 0.0,
+    "t7_at": "2026-11-28"
    },
    "score": 19.2,
    "source": "release",
@@ -795,64 +996,6 @@
    "trust": 0.35,
    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOclpsWlZWQ1cxYTlTczJhaXZSSHFqN1dfUkZJQ2JmNWNfdExScHVWcWZXU2RrbTdnZWF0RlNybUg2U3RKMVhsRnQ5SkN2TjljQnltMVFRaWk2VFEzTmZtQ1VMVWZfaUs2VTZEV1EwUm1aTmtHSW15b2hDNUxPTllJVmhvNXYxeFFHR2JhWmlLdnBJRFN5anF5TDhn?oc=5",
    "when": "Mon, 16 Nov 2026"
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-11-22",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "ethereum/EIPs#12582",
-   "last_seen": "2026-11-22",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-22",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 17.3
-   },
-   "score": 17.3,
-   "source": "proposal",
-   "stage": "REVIEW",
-   "stage_history": [
-    {
-     "at": "2026-11-22",
-     "stage": "REVIEW"
-    }
-   ],
-   "symbol": "ETH",
-   "title": "Update EIP-2780: add the state-gas allowance of call frames",
-   "trust": 1.0,
-   "updated_at": "2026-11-21T11:04:11Z",
-   "url": "https://github.com/ethereum/EIPs/pull/12582",
-   "when": null
-  },
-  {
-   "event_date": null,
-   "first_seen": "2026-11-22",
-   "grade": "C",
-   "impact": "INFRA",
-   "key": "ethereum/EIPs#12581",
-   "last_seen": "2026-11-22",
-   "registry": {
-    "btc_at_detect": 79682,
-    "detected_at": "2026-11-22",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 17.3
-   },
-   "score": 17.3,
-   "source": "proposal",
-   "stage": "REVIEW",
-   "stage_history": [
-    {
-     "at": "2026-11-22",
-     "stage": "REVIEW"
-    }
-   ],
-   "symbol": "ETH",
-   "title": "Update EIP-2780: credit state-gas refills to the reservoir and add a legacy share",
-   "trust": 1.0,
-   "updated_at": "2026-11-21T11:04:00Z",
-   "url": "https://github.com/ethereum/EIPs/pull/12581",
-   "when": null
   },
   {
    "event_date": null,
@@ -918,7 +1061,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "near/nearcore@2.15.0-rc.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -942,12 +1085,45 @@
    "when": "2026-11-24"
   },
   {
+   "event_date": "2026-11-27",
+   "first_seen": "2026-11-25",
+   "grade": "C",
+   "impact": "FEATURE",
+   "key": "snapshot:0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-25",
+    "price_at_detect": 2.6,
+    "score_at_detect": 29.2
+   },
+   "score": 17.2,
+   "source": "snapshot",
+   "stage": "PASSED",
+   "stage_history": [
+    {
+     "at": "2026-11-25",
+     "stage": "VOTING"
+    },
+    {
+     "at": "2026-11-28",
+     "stage": "PASSED"
+    }
+   ],
+   "symbol": "MORPHO",
+   "title": "MIP 137 – List MidnightAdapter in Morpho Registry",
+   "trust": 1.0,
+   "url": "https://snapshot.org/#/morpho.eth/proposal/0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
+   "vote_state": "closed",
+   "when": "2026-11-27"
+  },
+  {
    "event_date": "2026-11-26",
    "first_seen": "2026-11-20",
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x0b0a0df683f7a167c67f13d5f4d908471cab33a245b046037b77634057f52e74",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -982,7 +1158,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x61def13acf0b950de21c6efaf8a80b0718cc81b8204cbf88566f834117929b37",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-20",
@@ -1017,7 +1193,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x28780882407a7a45326f0d72a036c02cb4a48591813d7847afd87e30e8e17f8c",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-17",
@@ -1052,7 +1228,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x94109db9ed61d54f7d3920bb4adb734c8a9cf2ee1985d60741716128de6e2414",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -1087,7 +1263,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "snapshot:0x83774601c51c3d35a5247d19dcef0651cde49aafa72e5eaf6f3f263411441e17",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-11-10",
@@ -1334,11 +1510,67 @@
   },
   {
    "event_date": null,
+   "first_seen": "2026-11-28",
+   "grade": "C",
+   "impact": "INFRA",
+   "key": "news:cardano-sets-q1-2027-target-for-next-major-blockchain-upgrad",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 0.218904,
+    "score_at_detect": 12.1
+   },
+   "score": 12.1,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ADA",
+   "title": "Cardano Sets Q1 2027 Target for Next Major Blockchain Upgrade - CoinGape",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNdF9KSTJVbmVnVm9meWR5N2pfOF93c2FpLUpCTk1QN252RzlZdlVlUGluY2pWdUNtMWFPalVZRGt4czFiZGcyRXBtSGJYNTczTzVWZGRKWUhwejgxdW5JdmRwMWlJeWp5Qy05STRJZ0NCdmlrMm5QVkJBbUw3WnQ2cDZqSTF1aXljQTBj?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-28",
+   "grade": "C",
+   "impact": "INFRA",
+   "key": "news:cardano-targets-q1-2027-for-its-next-major-blockchain-upgrad",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 0.218904,
+    "score_at_detect": 12.1
+   },
+   "score": 12.1,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ADA",
+   "title": "Cardano targets Q1 2027 for its next major blockchain upgrade - Crypto News",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5mazg2Q0VLb3Nhc3RZblY3QUUtc3pKaEdTMDdYWWxkOFZ2VlVRZkVPUDBhOVV3d0NmYUJpWGtXc084Wml2dXZ3Q3MycVoxSjNKeHI3c252Q0c2ZEhHVGpTSlIyMUk0N0d1QVlDdjdVM0tmVHVtQUZhWg?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": null,
    "first_seen": "2026-10-30",
    "grade": "C",
    "impact": "INFRA",
    "key": "solana-foundation/solana-improvement-documents#713",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-30",
@@ -1369,7 +1601,7 @@
    "grade": "C",
    "impact": "SUPPLY",
    "key": "bnb-chain/bsc@v1.8.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1402,7 +1634,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@v1.39.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1433,7 +1665,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "filecoin-project/lotus@miner/v1.39.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1464,7 +1696,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "near/nearcore@2.14.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1495,7 +1727,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "ava-labs/avalanchego@v1.15.3",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1526,7 +1758,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "vechain/thor@v2.5.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1590,7 +1822,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "ethereum/go-ethereum@v1.17.10",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1623,7 +1855,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "tronprotocol/java-tron@GreatVoyage-v4.8.2.4",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1689,7 +1921,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "IntersectMBO/cardano-node@11.2.1",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -1751,13 +1983,15 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "IntersectMBO/cardano-node@11.2.0",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-29",
     "price_at_detect": 0.218904,
     "score_at_detect": 26.9,
+    "t30": 0.0,
+    "t30_at": "2026-11-28",
     "t7": 0.0,
     "t7_at": "2026-11-05"
    },
@@ -1782,7 +2016,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1059",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-21",
@@ -1818,7 +2052,7 @@
    "grade": "C",
    "impact": "INFRA",
    "key": "cosmoshub:gov:1055",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-18",
@@ -1854,7 +2088,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmos/gaia@v29.1.0",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1885,7 +2119,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "OffchainLabs/nitro@v3.12.2",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1918,7 +2152,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ava-labs/avalanchego@v1.15.2",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1951,7 +2185,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "ethereum/go-ethereum@v1.17.9",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -1984,7 +2218,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "stellar/stellar-core@v30.0.0",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -2017,7 +2251,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "vechain/thor@v2.5.1-rc.2",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -2048,7 +2282,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1060",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-28",
@@ -2084,7 +2318,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmos/gaia@v29.1.0-rc0",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": true,
    "registry": {
     "btc_at_detect": 79682,
@@ -2115,7 +2349,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1058",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-10-06",
@@ -2151,7 +2385,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1057",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-25",
@@ -2187,7 +2421,7 @@
    "grade": "C",
    "impact": "FEATURE",
    "key": "cosmoshub:gov:1054",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
     "detected_at": "2026-09-11",

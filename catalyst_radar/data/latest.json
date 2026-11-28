@@ -1,34 +1,33 @@
 {
- "as_of_kst": "2026-11-27 12:49",
+ "as_of_kst": "2026-11-28 12:35",
  "calendar": [
   {
-   "event_date": "2026-11-27",
-   "first_seen": "2026-11-25",
+   "event_date": "2026-11-30",
+   "first_seen": "2026-11-28",
    "grade": "B",
-   "impact": "FEATURE",
-   "key": "snapshot:0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "last_seen": "2026-11-27",
+   "impact": "INFRA",
+   "key": "news:flare-joins-zero-as-genesis-validator-before-nov-30-mainnet-",
+   "last_seen": "2026-11-28",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-25",
-    "price_at_detect": 2.6,
-    "score_at_detect": 29.2
+    "detected_at": "2026-11-28",
+    "price_at_detect": 0.0066248,
+    "score_at_detect": 35.3
    },
-   "score": 29.2,
-   "source": "snapshot",
-   "stage": "VOTING",
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-25",
-     "stage": "VOTING"
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
     }
    ],
-   "symbol": "MORPHO",
-   "title": "MIP 137 – List MidnightAdapter in Morpho Registry",
-   "trust": 1.0,
-   "url": "https://snapshot.org/#/morpho.eth/proposal/0x3c5f50c6a9f392979f5ceab894710df6360fca79ab24bf6cdc4a2741b65424ee",
-   "vote_state": "active",
-   "when": "2026-11-27"
+   "symbol": "FLR",
+   "title": "Flare Joins Zero as Genesis Validator Before Nov. 30 Mainnet - www.tokenpost.com",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RVTdMNEVIZ1d1YmxXalozazBTRzJLci0xTHliOUlESDlFNDhpMWRnbnpRcWJtdlBZeTdQallaZm5zLS0xOGFLRUE3SDcxcnBVeTVVeDFxUk1LMWc?oc=5",
+   "when": "Fri, 27 Nov 2026"
   },
   {
    "event_date": "2026-12-01",
@@ -59,12 +58,40 @@
    "when": "Thu, 26 Nov 2026"
   },
   {
+   "event_date": "2026-12-01",
+   "first_seen": "2026-11-28",
+   "grade": "A",
+   "impact": "SUPPLY",
+   "key": "news:ripple-to-unlock-1-billion-xrp-on-december-1-could-xrp-price",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 50.4
+   },
+   "score": 50.4,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple to Unlock 1 Billion XRP on December 1: Could XRP Price Fall Further? - Coinpaper",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUzU0RnI3TXFHSjF1UXRfUGhJSU1FSmNVeFFVT181UkpScDJpVF9iX3FJaHFSa1JMVUFlZF9fREg2YTN3ZFJXRV9MUWVyNFJvbnZoSXpwWkpkNU1HRE9fQ19pX0xJbWxWcEFPdDlBeW94U2tLZEhUVDZHci1xeWdpMUo1dHpaeVZiVVBfeHVBM2FMWU44RWtYQ1RNSUtUcjJWb0NVeHNlSFh4VkE?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
    "event_date": "2026-12-08",
    "first_seen": "2026-11-03",
    "grade": "A",
    "impact": "INFRA",
    "key": "bnb-chain/bsc@v1.8.2",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-11-28",
    "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
@@ -88,12 +115,152 @@
    "trust": 0.95,
    "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.2",
    "when": "2026-11-03"
+  },
+  {
+   "event_date": "2026-12-09",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ripple-s-xrp-ledger-lending-proposal-nears-approval-as-vault",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple’s XRP Ledger lending proposal nears approval as vaults target December 9 activation - Crypto News",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9FRmV2cEFGYWNvbEFMVnlqYUYxbmtIdURvV3NUcktBaWhjYUtJLU1QcHNqUGNSOUhpNzVaWHgtbEZYa1VicWFMRWFCdzhtZTN1OV9LVDNidUZCYk1oMzBjVUJWVEVfbFhxSWw4anh2WFNHTk1WV1FxdUhETEVZdEk?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-09",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ripple-s-xrp-ledger-lending-proposal-near-approval-expected-",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple's XRP Ledger Lending Proposal Near Approval, Expected Activation on Dec 9 - KuCoin",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTUc3NFFiTVFNb0xLaU5RMWViX0JiTEVjSEg0bld3WUQ4UmN3M2o0MmJld0o3VW5lQW50S0w1Smg4ckRLeEpPYlBBQlhKWEdDQ1B1cTg5QlpjcXI4QjJ6VkZfazdNT0FCUWVGRzMzVGM2QkVfRmhCd3ljODRaamhhQ0JLZGtmbXUxZ3NURjJJd0ZHOUxqeVRaNzR6M0tvV0Q1VGszanV6c3EtYnVQRXVPbXJKcw?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-clears-delayed-glamsterdam-upgrade-for-december-15-",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum Clears Delayed Glamsterdam Upgrade for December 15 Hoodi Test - Bitcoin Foundation",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeVJWOHk4RnhWUWx3Q2VxS19WcTU4WHZXM2hLMi1icXBXa0kydDlldlB2QThONkI2czRTSUZJb19LeEJhcVhEcGZsYkNpTnUzeEZFcWk0SlNBS1FMLXJ0OVNIWk1VZFhQZ3MzaWxjOUdHRnBxT2MxUXF4TXFpTHI2NFlvaE85Qk5VQnBuR1hxcm5iZkh3ejBMQ2pxQjIxRnNNcS10QkZjNE4zTUZpREQ0NlhFR3Yxdw?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-price-rises-3-as-developers-confirm-december-15-tes",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum price rises 3% as developers confirm December 15 test for Glamsterdam upgrade - Crypto News",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB1V2V1R09fQTlQT2ZscGhOM2RiNVVNcWtPYmpSNnBrbUFZYlo3aEFSMTdRZlpIYWhHcHFWc3dmLTNoZV9Fb1RXX0ZHNm1oczEyWG5BZjA4VW42emVROXYtVVlGS29NTVM2dzFrYnRaRG5fVzFJdUR0N3B4VHVyQQ?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-developers-advance-glamsterdam-upgrade-schedule-hoo",
+   "last_seen": "2026-11-28",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum developers advance Glamsterdam upgrade, schedule Hoodi for Dec. 15 - Crypto Briefing",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1aUkxnYWMwT0hMQWUyZDY1Z0RMbURreHdhby1LdnZPQWp5Mm9SeTlSNHBvLUlkWVJkRXc4Mm51QUZKanpvdWxFcTBoVHYtQTZjal91V2I4eGJSWlFTQVVQRm1QZHpkRTA5ejctY0xzX2I?oc=5",
+   "when": "Fri, 27 Nov 2026"
   }
  ],
  "coverage": 1.0,
  "dashboard_url": "https://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "data_status": "OK",
- "event_count": 70,
+ "event_count": 78,
  "frozen_at": "2026-09-07",
  "http_stats": {
   "by_host": {
@@ -117,17 +284,17 @@
   "calls": 101,
   "fail": 0
  },
- "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-27 12:49\n감시 52종목(체인 34·프로토콜 18) · 이벤트 70건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>XRP</b> [공급·신규] XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cryptonews\n🟠 <b>ETH</b> [인프라·신규] Add EIP: Versioned Opcodes for Gas Repricing\n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-DAY </code> MORPHO <b>투표중</b> · MIP 137 – List MidnightAdapter in Morpho Registry\n🔴 <code>D-4   </code> XRP <b>일정확정</b> · XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cry\n🔴 <code>D-11  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=16, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
+ "message": "<b>⚡ 카탈리스트 레이더</b>  2026-11-28 12:35\n감시 52종목(체인 34·프로토콜 18) · 이벤트 78건\n\n<b>■ 오늘의 상태 전이</b>\n🔴 <b>XRP</b> [공급·신규] Ripple to Unlock 1 Billion XRP on December 1: Could XRP Price Fall Further? - \n🟠 <b>SOL</b> [공급·신규] agave v4.4.2 — This is stable release recommended for general adoption.\n🟠 <b>FLR</b> [인프라·신규] Flare Joins Zero as Genesis Validator Before Nov. 30 Mainnet - www.tokenpost.c\n🟠 <b>ETH</b> [인프라·신규] Ethereum Clears Delayed Glamsterdam Upgrade for December 15 Hoodi Test - Bitco\n🟠 <b>ETH</b> [인프라·신규] Ethereum price rises 3% as developers confirm December 15 test for Glamsterdam\n🟠 <b>ETH</b> [인프라·신규] Ethereum developers advance Glamsterdam upgrade, schedule Hoodi for Dec. 15 - \n\n<b>■ D-45 캘린더</b>\n🟠 <code>D-2   </code> FLR <b>일정확정</b> · Flare Joins Zero as Genesis Validator Before Nov. 30 Mainnet -\n🔴 <code>D-3   </code> XRP <b>일정확정</b> · XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cry\n🔴 <code>D-3   </code> XRP <b>일정확정</b> · Ripple to Unlock 1 Billion XRP on December 1: Could XRP Price \n🔴 <code>D-10  </code> BNB <b>활성화</b> · bsc v1.8.2 — Mandatory Update Required: Yes\n🟠 <code>D-11  </code> XRP <b>일정확정</b> · Ripple’s XRP Ledger lending proposal nears approval as vaults \n🟠 <code>D-11  </code> XRP <b>일정확정</b> · Ripple's XRP Ledger Lending Proposal Near Approval, Expected A\n🟠 <code>D-17  </code> ETH <b>일정확정</b> · Ethereum Clears Delayed Glamsterdam Upgrade for December 15 Ho\n🟠 <code>D-17  </code> ETH <b>일정확정</b> · Ethereum price rises 3% as developers confirm December 15 test\n\n<b>■ 미매칭 감사</b> — 시총 상위인데 원천 미연결\n· XMR, SHIB, PEPE, PI, QNT, KAS, JST, RENDER\n\n<i>검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=17, BTC 대비)</i>\n<i>예고된 일정의 D-day 관리이며 수익 예측이 아닙니다.</i>\nhttps://jinhae8971.github.io/korea-etf-calmar/catalyst-radar/",
  "transitions": [
   {
    "event_date": "2026-12-01",
-   "first_seen": "2026-11-27",
+   "first_seen": "2026-11-28",
    "grade": "A",
    "impact": "SUPPLY",
-   "key": "news:xrp-news-thanksgiving-rally-or-december-1-supply-shock-crypt",
+   "key": "news:ripple-to-unlock-1-billion-xrp-on-december-1-could-xrp-price",
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-27",
+    "detected_at": "2026-11-28",
     "price_at_detect": 1.41,
     "score_at_detect": 50.4
    },
@@ -136,45 +303,242 @@
    "stage": "SCHEDULED",
    "stage_history": [
     {
-     "at": "2026-11-27",
+     "at": "2026-11-28",
      "stage": "SCHEDULED"
     }
    ],
    "symbol": "XRP",
-   "title": "XRP News: Thanksgiving Rally or December 1 Supply Shock? - Cryptonews",
+   "title": "Ripple to Unlock 1 Billion XRP on December 1: Could XRP Price Fall Further? - Coinpaper",
    "transition": "NEW",
    "trust": 0.35,
-   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wa3FxOWVkR1FmSVIwclNyU0ZfOTY1TUIyWTNnLVA4QjNIS1kwNk5QNXAwcFVlek9aTVNmNU1RU2xyMEhaVVJfV0JWbFJOMFZFRWl3RGlmMS1naWJ1ekQzODA1OTRaWUNWSGQwWFA1dC1CWXRpQ3lleUtUZDVoUk0?oc=5",
-   "when": "Thu, 26 Nov 2026"
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUzU0RnI3TXFHSjF1UXRfUGhJSU1FSmNVeFFVT181UkpScDJpVF9iX3FJaHFSa1JMVUFlZF9fREg2YTN3ZFJXRV9MUWVyNFJvbnZoSXpwWkpkNU1HRE9fQ19pX0xJbWxWcEFPdDlBeW94U2tLZEhUVDZHci1xeWdpMUo1dHpaeVZiVVBfeHVBM2FMWU44RWtYQ1RNSUtUcjJWb0NVeHNlSFh4VkE?oc=5",
+   "when": "Fri, 27 Nov 2026"
   },
   {
    "event_date": null,
-   "first_seen": "2026-11-27",
+   "first_seen": "2026-11-28",
    "grade": "B",
-   "impact": "INFRA",
-   "key": "ethereum/EIPs#12638",
+   "impact": "SUPPLY",
+   "key": "anza-xyz/agave@v4.4.2",
+   "prerelease": false,
    "registry": {
     "btc_at_detect": 79682,
-    "detected_at": "2026-11-27",
-    "price_at_detect": 2497.06,
-    "score_at_detect": 32.7
+    "detected_at": "2026-11-28",
+    "price_at_detect": 105.14,
+    "score_at_detect": 42.8
    },
-   "score": 32.7,
-   "source": "proposal",
-   "stage": "PASSED",
+   "score": 42.8,
+   "source": "release",
+   "stage": "ACTIVATED",
    "stage_history": [
     {
-     "at": "2026-11-27",
-     "stage": "PASSED"
+     "at": "2026-11-28",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "SOL",
+   "title": "agave v4.4.2 — This is stable release recommended for general adoption.",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/anza-xyz/agave/releases/tag/v4.4.2",
+   "when": "2026-11-27"
+  },
+  {
+   "event_date": "2026-11-30",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:flare-joins-zero-as-genesis-validator-before-nov-30-mainnet-",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 0.0066248,
+    "score_at_detect": 35.3
+   },
+   "score": 35.3,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "FLR",
+   "title": "Flare Joins Zero as Genesis Validator Before Nov. 30 Mainnet - www.tokenpost.com",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RVTdMNEVIZ1d1YmxXalozazBTRzJLci0xTHliOUlESDlFNDhpMWRnbnpRcWJtdlBZeTdQallaZm5zLS0xOGFLRUE3SDcxcnBVeTVVeDFxUk1LMWc?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-clears-delayed-glamsterdam-upgrade-for-december-15-",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
     }
    ],
    "symbol": "ETH",
-   "title": "Add EIP: Versioned Opcodes for Gas Repricing",
+   "title": "Ethereum Clears Delayed Glamsterdam Upgrade for December 15 Hoodi Test - Bitcoin Foundation",
    "transition": "NEW",
-   "trust": 1.0,
-   "updated_at": "2026-11-27T02:20:06Z",
-   "url": "https://github.com/ethereum/EIPs/pull/12638",
-   "when": null
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeVJWOHk4RnhWUWx3Q2VxS19WcTU4WHZXM2hLMi1icXBXa0kydDlldlB2QThONkI2czRTSUZJb19LeEJhcVhEcGZsYkNpTnUzeEZFcWk0SlNBS1FMLXJ0OVNIWk1VZFhQZ3MzaWxjOUdHRnBxT2MxUXF4TXFpTHI2NFlvaE85Qk5VQnBuR1hxcm5iZkh3ejBMQ2pxQjIxRnNNcS10QkZjNE4zTUZpREQ0NlhFR3Yxdw?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-price-rises-3-as-developers-confirm-december-15-tes",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum price rises 3% as developers confirm December 15 test for Glamsterdam upgrade - Crypto News",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB1V2V1R09fQTlQT2ZscGhOM2RiNVVNcWtPYmpSNnBrbUFZYlo3aEFSMTdRZlpIYWhHcHFWc3dmLTNoZV9Fb1RXX0ZHNm1oczEyWG5BZjA4VW42emVROXYtVVlGS29NTVM2dzFrYnRaRG5fVzFJdUR0N3B4VHVyQQ?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-15",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ethereum-developers-advance-glamsterdam-upgrade-schedule-hoo",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 2497.06,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "ETH",
+   "title": "Ethereum developers advance Glamsterdam upgrade, schedule Hoodi for Dec. 15 - Crypto Briefing",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1aUkxnYWMwT0hMQWUyZDY1Z0RMbURreHdhby1LdnZPQWp5Mm9SeTlSNHBvLUlkWVJkRXc4Mm51QUZKanpvdWxFcTBoVHYtQTZjal91V2I4eGJSWlFTQVVQRm1QZHpkRTA5ejctY0xzX2I?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-09",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ripple-s-xrp-ledger-lending-proposal-nears-approval-as-vault",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple’s XRP Ledger lending proposal nears approval as vaults target December 9 activation - Crypto News",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9FRmV2cEFGYWNvbEFMVnlqYUYxbmtIdURvV3NUcktBaWhjYUtJLU1QcHNqUGNSOUhpNzVaWHgtbEZYa1VicWFMRWFCdzhtZTN1OV9LVDNidUZCYk1oMzBjVUJWVEVfbFhxSWw4anh2WFNHTk1WV1FxdUhETEVZdEk?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": "2026-12-09",
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "news:ripple-s-xrp-ledger-lending-proposal-near-approval-expected-",
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 1.41,
+    "score_at_detect": 30.0
+   },
+   "score": 30.0,
+   "source": "news",
+   "stage": "SCHEDULED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "SCHEDULED"
+    }
+   ],
+   "symbol": "XRP",
+   "title": "Ripple's XRP Ledger Lending Proposal Near Approval, Expected Activation on Dec 9 - KuCoin",
+   "transition": "NEW",
+   "trust": 0.35,
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTUc3NFFiTVFNb0xLaU5RMWViX0JiTEVjSEg0bld3WUQ4UmN3M2o0MmJld0o3VW5lQW50S0w1Smg4ckRLeEpPYlBBQlhKWEdDQ1B1cTg5QlpjcXI4QjJ6VkZfazdNT0FCUWVGRzMzVGM2QkVfRmhCd3ljODRaamhhQ0JLZGtmbXUxZ3NURjJJd0ZHOUxqeVRaNzR6M0tvV0Q1VGszanV6c3EtYnVQRXVPbXJKcw?oc=5",
+   "when": "Fri, 27 Nov 2026"
+  },
+  {
+   "event_date": null,
+   "first_seen": "2026-11-28",
+   "grade": "B",
+   "impact": "INFRA",
+   "key": "anza-xyz/agave@v4.5.0-rc.1",
+   "prerelease": false,
+   "registry": {
+    "btc_at_detect": 79682,
+    "detected_at": "2026-11-28",
+    "price_at_detect": 105.14,
+    "score_at_detect": 29.9
+   },
+   "score": 29.9,
+   "source": "release",
+   "stage": "ACTIVATED",
+   "stage_history": [
+    {
+     "at": "2026-11-28",
+     "stage": "ACTIVATED"
+    }
+   ],
+   "symbol": "SOL",
+   "title": "agave v4.5.0-rc.1 — This is Mainnet-beta Upgrade Candidate release.",
+   "transition": "NEW",
+   "trust": 0.95,
+   "url": "https://github.com/anza-xyz/agave/releases/tag/v4.5.0-rc.1",
+   "when": "2026-11-27"
   }
  ],
  "universe": {
@@ -274,7 +638,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 51,
+   "n": 53,
    "status": "OK"
   },
   {
@@ -286,7 +650,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 16,
+   "n": 17,
    "status": "OK"
   },
   {
@@ -298,7 +662,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 20,
+   "n": 22,
    "status": "OK"
   },
   {
@@ -328,7 +692,7 @@
   {
    "bucket": "impact:INFRA",
    "horizon": 30,
-   "n": 6,
+   "n": 7,
    "status": "표본 부족"
   },
   {
@@ -358,7 +722,7 @@
   {
    "bucket": "source:news",
    "horizon": 7,
-   "n": 5,
+   "n": 4,
    "status": "표본 부족"
   },
   {
@@ -382,7 +746,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 28,
+   "n": 31,
    "status": "OK"
   },
   {
@@ -394,7 +758,7 @@
     0.0
    ],
    "median": 0.0,
-   "n": 9,
+   "n": 10,
    "status": "OK"
   },
   {
@@ -410,5 +774,5 @@
    "status": "OK"
   }
  ],
- "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=16, BTC 대비)"
+ "verification_line": "검증: T+30 초과수익 중앙값 +0.0%p · 적중 0% (n=17, BTC 대비)"
 }
