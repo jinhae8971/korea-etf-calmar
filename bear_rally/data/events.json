@@ -1,5 +1,5 @@
 {
- "as_of_kst": "2026-11-27 17:13",
+ "as_of_kst": "2026-11-28 09:01",
  "events": {
   "SPY": [
    {
@@ -2380,12 +2380,14 @@
     "type": "rally",
     "state": 2,
     "c": 34654.58,
-    "hits": [],
+    "hits": [
+     "avwap"
+    ],
     "evid": [
      "ma_flat"
     ],
     "shift_score": 1,
-    "bear_hits": 0,
+    "bear_hits": 1,
     "rally_pct": 0.20328402777777788,
     "fib_ratio": null
    },
