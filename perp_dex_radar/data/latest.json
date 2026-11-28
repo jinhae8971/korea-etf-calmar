@@ -1,5 +1,5 @@
 {
- "generated_at": 1795867711,
+ "generated_at": 1795869515,
  "levels": {
   "arcus": "WATCH",
   "extended": "WATCH",
@@ -15,14 +15,6 @@
  "outbox": null,
  "outboxes": [],
  "runs": [
-  [
-   1795781315,
-   "d"
-  ],
-  [
-   1795783107,
-   "d"
-  ],
   [
    1795787295,
    "s"
@@ -142,6 +134,10 @@
   [
    1795867711,
    "d"
+  ],
+  [
+   1795869515,
+   "d"
   ]
  ],
  "status": {
@@ -159,7 +155,7 @@
    "news": true,
    "polymarket": true,
    "telegram": true,
-   "x:extendedapp": true
+   "x:extendedapp": false
   },
   "hellotrade": {
    "docs": true,
@@ -206,8 +202,8 @@
    "x:TitanExchange_": true
   },
   "txflow": {
-   "api_watch": false,
-   "docs": false,
+   "api_watch": true,
+   "docs": true,
    "news": true,
    "polymarket": true,
    "x:TxFlow_L1": true
